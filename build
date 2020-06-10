@@ -28,16 +28,18 @@ echo >> ./sitemap/README.md
 
 # generate markdown that displays the sitemap
 # feels like Im writing PHP T_T
+# TODO: replace this with something nicer
+# that generates a tree-like structure
 { find . -name "index.html" | grep -vE "^(./sitemap|./index)" | sed "s/index.html$//g" | while read -r indexdir; do
   printf "* ["
   # get the name of this from the Title metadata in the README.md file
   grep Title "$indexdir/README.md" | cut -d" " -f2- | xargs echo -n
   printf "]("
   echo -n "$indexdir" | cut -c 2- | tr -d "\n"
-  echo ")"
-  #printf " ("
-  #echo -n "$indexdir" | cut -c 2- | tr -d "\n"
-  #echo " )"
+  #echo ")"
+  printf ") ("
+  echo -n "$indexdir" | cut -c 2- | tr -d "\n"
+  echo " )"
 done } >> ./sitemap/README.md
 
 
