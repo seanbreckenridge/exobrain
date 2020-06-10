@@ -1,0 +1,68 @@
+#!/bin/bash
+
+cd "$(dirname "${BASH_SOURCE[0]}")" || exit
+
+mkmanifest () {
+  declare line
+  while IFS= read -r line; do
+    line=${line#./}
+    [[ "$line" == . ]] && continue
+    echo "$line"
+  done <<< "$(find . -name 'README.md' -printf "%h\n"| sort -d)" > MANIFEST
+}
+
+# converts $1 to $2 using pandoc
+pandoc_generate() {
+  pandoc -s -o "$2" --quiet --template=assets/template.html "$1"
+}
+
+render () {
+  declare dir="$1"
+  echo Building "'$dir'"
+  pandoc_generate "$dir/README.md" "$dir/index.html"
+}
+
+# create sitemap-like index page
+cat ./sitemap/BASE.md > ./sitemap/README.md
+echo >> ./sitemap/README.md
+
+# generate markdown that displays the sitemap
+# feels like Im writing PHP T_T
+{ find . -name "index.html" | grep -vE "^(./sitemap|./index)" | sed "s/index.html$//g" | while read -r indexdir; do
+  printf "* ["
+  # get the name of this from the Title metadata in the README.md file
+  grep Title "$indexdir/README.md" | cut -d" " -f2- | xargs echo -n
+  printf "]("
+  echo -n "$indexdir" | cut -c 2- | tr -d "\n"
+  echo ")"
+  #printf " ("
+  #echo -n "$indexdir" | cut -c 2- | tr -d "\n"
+  #echo " )"
+done } >> ./sitemap/README.md
+
+
+#if [[ -n "$*" ]];then
+  #for i in "$@"; do
+    #i=${i%/README.md}
+    #render $i
+  #done
+  #exit
+#fi
+
+
+# make manifest
+mkmanifest
+# render home page
+render "."
+# generate 404 page
+pandoc_generate "./404.md" "./404.html"
+
+declare -a pids
+while IFS= read -r node; do
+  render "$node" &
+  pids+=($!)
+done < ./MANIFEST
+
+for pid in ${pids[*]}; do
+  wait $pid
+done

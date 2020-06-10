@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  ${if(Title)}
+  <title>seans exobrain | ${Title}</title>
+  ${else}
+  <title>seans exobrain</title>
+  ${endif}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+  <link rel="shortcut icon" href="/assets/img/logo.png" type="image/png">
+  <meta http-equiv="Pragma" content="no-cache"/>
+  <meta http-equiv="Expires" content="0"/>
+  <!-- link rel="shortcut icon" href="/assets/img/logo.png" type="image/png"-->
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<header class=nav-bar>
+  <nav>
+    <!--div id=bwtoggle></div-->
+    <a class="homelink spy" href="/">seans exobrain</a>
+    <div class="nav-right">
+        <div class=nav-item><a class="nav-link" href="/sitemap">exobrain sitemap</a></div>
+        <div class=nav-item><a class="nav-link" href="https://sean.fish">Back to My Site</a></div>
+    </div>
+  </nav>
+</header>
+<main>
+<a id=top></a><div class=container>
+${if(Title)}
+<h1 class="main-title">${Title}</h1>
+${endif}
+${if(Subtitle)}
+<h2>${Subtitle}</h2>
+${endif}
+${body}
+</div>
+</main>
+<footer>
+  <p><a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" id=copyright>© 2020 Sean Breckenridge. Licensed under Creative Commons Attribution-ShareAlike.</a>
+  </p>
+</footer>
+<script src="/assets/main.js"></script>
+</body>
+</html>

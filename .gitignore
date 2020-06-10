@@ -1,0 +1,21 @@
+# Mac
+
+.DS_Store
+.DS_Store?
+.DS_Store
+.Spotlight-V100
+.Trashes
+
+# Windows
+
+Thumbs.db
+Desktop.ini
+
+# Emacs
+
+*~
+\#*\#
+.\#*
+
+tags*
+*.pdf

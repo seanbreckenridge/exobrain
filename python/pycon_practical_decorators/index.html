@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>seans exobrain | Reuven M. Lerner - Practical decorators</title>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+  <link rel="shortcut icon" href="/assets/img/logo.png" type="image/png">
+  <meta http-equiv="Pragma" content="no-cache"/>
+  <meta http-equiv="Expires" content="0"/>
+  <!-- link rel="shortcut icon" href="/assets/img/logo.png" type="image/png"-->
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<header class=nav-bar>
+  <nav>
+    <!--div id=bwtoggle></div-->
+    <a class="homelink spy" href="/">seans exobrain</a>
+    <div class="nav-right">
+        <div class=nav-item><a class="nav-link" href="/sitemap">exobrain sitemap</a></div>
+        <div class=nav-item><a class="nav-link" href="https://sean.fish">Back to My Site</a></div>
+    </div>
+  </nav>
+</header>
+<main>
+<a id=top></a><div class=container>
+<h1 class="main-title">Reuven M. Lerner - Practical decorators</h1>
+<p><a href="https://www.youtube.com/watch?v=MjHpMCIvwsY" class="uri">https://www.youtube.com/watch?v=MjHpMCIvwsY</a></p>
+<p><a href="https://lerner.co.il/wp-content/uploads/2019/05/practical-decorators.zip">Slides and Code Snippets can be downloaded here</a></p>
+<ul>
+<li><p>Decorating a function creates three callables - the decorated function, the decorator, and the return value (function) from the decorator function assigned back to the decorated function.</p></li>
+<li><p>Scope resolution in python follows the LEGB rule, looking for variables at each level before moving upwards. <a href="https://www.geeksforgeeks.org/scope-resolution-in-python-legb-rule/">Source</a>:</p>
+<ul>
+<li><p>Local(L): Defined inside function/class</p></li>
+<li><p>Enclosed(E): Defined inside enclosing functions(Nested function concept)</p></li>
+<li><p>Global(G): Defined at the uppermost level</p></li>
+<li><p>Built-in(B): Reserved names in Python builtin modules</p></li>
+</ul></li>
+<li><p>The decorator function (the one that you apply to others with e.g. <code>@decorator</code>) executes once, when you decorate a function, but the inner wrapper function gets executed every time function is called.</p></li>
+<li><p>Since the outside function is only executed once, you can use it to define additional functionality using <code>nonlocal</code>.</p></li>
+</ul>
+<p>Snippet from Lecture:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">import</span> time</span>
+<span id="cb1-2"><a href="#cb1-2"></a></span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="kw">class</span> CalledTooOftenError(<span class="pp">Exception</span>):</span>
+<span id="cb1-4"><a href="#cb1-4"></a>    <span class="cf">pass</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a></span>
+<span id="cb1-6"><a href="#cb1-6"></a><span class="kw">def</span> once_per_minute(func):</span>
+<span id="cb1-7"><a href="#cb1-7"></a>    last_invoked <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb1-8"><a href="#cb1-8"></a></span>
+<span id="cb1-9"><a href="#cb1-9"></a>    <span class="kw">def</span> wrapper(<span class="op">*</span>args, <span class="op">**</span>kwargs):</span>
+<span id="cb1-10"><a href="#cb1-10"></a>        <span class="kw">nonlocal</span> last_invoked</span>
+<span id="cb1-11"><a href="#cb1-11"></a></span>
+<span id="cb1-12"><a href="#cb1-12"></a>        elapsed_time <span class="op">=</span> time.time() <span class="op">-</span> last_invoked</span>
+<span id="cb1-13"><a href="#cb1-13"></a>        <span class="cf">if</span> elapsed_time <span class="op">&lt;</span> <span class="dv">60</span>:</span>
+<span id="cb1-14"><a href="#cb1-14"></a>            <span class="cf">raise</span> CalledTooOftenError(<span class="ss">f&quot;Only </span><span class="sc">{</span>elapsed_time<span class="sc">}</span><span class="ss"> has passed&quot;</span>)</span>
+<span id="cb1-15"><a href="#cb1-15"></a>        last_invoked <span class="op">=</span> time.time()</span>
+<span id="cb1-16"><a href="#cb1-16"></a></span>
+<span id="cb1-17"><a href="#cb1-17"></a>        <span class="cf">return</span> func(<span class="op">*</span>args, <span class="op">**</span>kwargs)</span>
+<span id="cb1-18"><a href="#cb1-18"></a></span>
+<span id="cb1-19"><a href="#cb1-19"></a>    <span class="cf">return</span> wrapper</span>
+<span id="cb1-20"><a href="#cb1-20"></a></span>
+<span id="cb1-21"><a href="#cb1-21"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&#39;__main__&#39;</span>:</span>
+<span id="cb1-22"><a href="#cb1-22"></a>    <span class="at">@once_per_minute</span></span>
+<span id="cb1-23"><a href="#cb1-23"></a>    <span class="kw">def</span> add(a, b):</span>
+<span id="cb1-24"><a href="#cb1-24"></a>        <span class="cf">return</span> a <span class="op">+</span> b</span>
+<span id="cb1-25"><a href="#cb1-25"></a></span>
+<span id="cb1-26"><a href="#cb1-26"></a>    <span class="bu">print</span>(add(<span class="dv">2</span>, <span class="dv">2</span>))</span>
+<span id="cb1-27"><a href="#cb1-27"></a>    <span class="bu">print</span>(add(<span class="dv">3</span>, <span class="dv">3</span>))</span></code></pre></div>
+<ul>
+<li><p><code>nonlocal</code> updates the variable in the enclosing scope, without having to make global variables. You only need to use <code>nonlocal</code> if you are assigning to the variable in the inner scope; if you’re accessing it follows LEGB scope.</p></li>
+<li><p>Adding a decorator to a function passes the function as the first argument to the decorator. If arguments need to be passed to a decorator, you need to define an additional wrapper function that receives those arguments:</p></li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">def</span> some_decorator(n):</span>
+<span id="cb2-2"><a href="#cb2-2"></a>    <span class="kw">def</span> middle(func): <span class="co"># func is function being decorated</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a>        function_specific_local <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb2-4"><a href="#cb2-4"></a></span>
+<span id="cb2-5"><a href="#cb2-5"></a>        <span class="kw">def</span> wrapper(<span class="op">*</span>args, <span class="op">**</span>kwargs):</span>
+<span id="cb2-6"><a href="#cb2-6"></a>            <span class="kw">nonlocal</span> function_specific_local</span>
+<span id="cb2-7"><a href="#cb2-7"></a></span>
+<span id="cb2-8"><a href="#cb2-8"></a>            function_specific_local <span class="op">+=</span> n</span>
+<span id="cb2-9"><a href="#cb2-9"></a>            <span class="cf">return</span> func(<span class="op">*</span>args, <span class="op">**</span>kwargs)</span>
+<span id="cb2-10"><a href="#cb2-10"></a>        <span class="cf">return</span> wrapper</span>
+<span id="cb2-11"><a href="#cb2-11"></a>    <span class="cf">return</span> middle</span></code></pre></div>
+<ul>
+<li>This also increases the number of callables to 4. Applying this to a function manually would look like:</li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">def</span> my_function():</span>
+<span id="cb3-2"><a href="#cb3-2"></a>    ...</span>
+<span id="cb3-3"><a href="#cb3-3"></a>my_function <span class="op">=</span> some_decorator(n<span class="op">=</span><span class="dv">5</span>)(my_function)</span></code></pre></div>
+<p>With a decorator:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="at">@some_decorator</span>(n<span class="op">=</span><span class="dv">5</span>)</span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="kw">def</span> my_function()</span>
+<span id="cb4-3"><a href="#cb4-3"></a>  ...</span></code></pre></div>
+<ul>
+<li>Memoization wrappers: <code>args</code> in wrapper functions are defined as a tuple. As tuples are hashable, you can check if the same <code>args</code> have been passed before to memoize. If some of the arguments aren’t hashable, you can <code>pickle</code> <code>args</code> and <code>kwargs</code> before comparing it against your cache:</li>
+</ul>
+<p><code>key = (pickle.dumps(args), pickle.dump(kwargs))</code></p>
+<ul>
+<li>If you have distinct classes, but want similar behavior, instead of using inheritance/multiple inheritance, or setting class attributes after the fact, you can use a decorator. Since classes are callables, this is no different.</li>
+</ul>
+<p>Snippet from Lecture:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="kw">def</span> fancy_repr(<span class="va">self</span>):</span>
+<span id="cb5-2"><a href="#cb5-2"></a>    <span class="cf">return</span> <span class="ss">f&quot;I&#39;m a </span><span class="sc">{</span><span class="bu">type</span>(<span class="va">self</span>)<span class="sc">.</span><span class="va">__name__</span><span class="sc">}</span><span class="ss">, with vars </span><span class="sc">{</span><span class="bu">vars</span>(<span class="va">self</span>)<span class="sc">}</span><span class="ss">&quot;</span></span>
+<span id="cb5-3"><a href="#cb5-3"></a></span>
+<span id="cb5-4"><a href="#cb5-4"></a><span class="kw">def</span> repr_and_birthday(c):</span>
+<span id="cb5-5"><a href="#cb5-5"></a>    c.<span class="fu">__repr__</span> <span class="op">=</span> fancy_repr</span>
+<span id="cb5-6"><a href="#cb5-6"></a></span>
+<span id="cb5-7"><a href="#cb5-7"></a>    <span class="kw">def</span> wrapper(<span class="op">*</span>args, <span class="op">**</span>kwargs):</span>
+<span id="cb5-8"><a href="#cb5-8"></a>        o <span class="op">=</span> c(<span class="op">*</span>args, <span class="op">**</span>kwargs)</span>
+<span id="cb5-9"><a href="#cb5-9"></a>        o._created_at <span class="op">=</span> time.time()</span>
+<span id="cb5-10"><a href="#cb5-10"></a>        <span class="cf">return</span> o</span>
+<span id="cb5-11"><a href="#cb5-11"></a>    <span class="cf">return</span> wrapper</span>
+<span id="cb5-12"><a href="#cb5-12"></a></span>
+<span id="cb5-13"><a href="#cb5-13"></a></span>
+<span id="cb5-14"><a href="#cb5-14"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&#39;__main__&#39;</span>:</span>
+<span id="cb5-15"><a href="#cb5-15"></a>    <span class="at">@repr_and_birthday</span></span>
+<span id="cb5-16"><a href="#cb5-16"></a>    <span class="kw">class</span> Foo():</span>
+<span id="cb5-17"><a href="#cb5-17"></a>        <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, x, y):</span>
+<span id="cb5-18"><a href="#cb5-18"></a>            <span class="va">self</span>.x <span class="op">=</span> x</span>
+<span id="cb5-19"><a href="#cb5-19"></a>            <span class="va">self</span>.y <span class="op">=</span> y</span>
+<span id="cb5-20"><a href="#cb5-20"></a></span>
+<span id="cb5-21"><a href="#cb5-21"></a>    f <span class="op">=</span> Foo(<span class="dv">10</span>, [<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>])</span>
+<span id="cb5-22"><a href="#cb5-22"></a>    <span class="bu">print</span>(f)</span>
+<span id="cb5-23"><a href="#cb5-23"></a>    <span class="bu">print</span>(f._created_at)</span></code></pre></div>
+<ul>
+<li><p>Use decorators instead of metaclasses if possible.</p></li>
+<li><p>Wrapping your inner wrapper function (the one with <code>*args</code> and <code>**kwargs</code>) with <code>functools.wraps</code> allows you to keep attributes of a function (e.g. <code>__name__</code>, <code>__doc__</code>)</p></li>
+<li><p><code>functools.partials</code> acts as a wrapper function that passes <code>*args</code> or <code>**kwargs</code> to a function</p></li>
+</ul>
+<p><a href="https://www.pydanny.com/python-partials-are-fun.html">Source</a>:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="im">from</span> functools <span class="im">import</span> partial</span>
+<span id="cb6-2"><a href="#cb6-2"></a></span>
+<span id="cb6-3"><a href="#cb6-3"></a><span class="kw">def</span> power(base, exponent):</span>
+<span id="cb6-4"><a href="#cb6-4"></a>    <span class="cf">return</span> base <span class="op">**</span> exponent</span>
+<span id="cb6-5"><a href="#cb6-5"></a></span>
+<span id="cb6-6"><a href="#cb6-6"></a>square <span class="op">=</span> partial(power, exponent<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb6-7"><a href="#cb6-7"></a></span>
+<span id="cb6-8"><a href="#cb6-8"></a><span class="cf">assert</span> square(<span class="dv">2</span>) <span class="op">==</span> <span class="dv">4</span></span></code></pre></div>
+</div>
+</main>
+<footer>
+  <p><a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" id=copyright>© 2020 Sean Breckenridge. Licensed under Creative Commons Attribution-ShareAlike.</a>
+  </p>
+</footer>
+<script src="/assets/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+:root, a {
+  color: var(--medhigh);
+}
+
+h2 {
+  color: var(--fgcolor);
+}
+
+a:hover {
+  color: var(--fgcolor);
+}
+
+main {
+  max-width: unset;
+  margin: 0;
+  text-align: center;
+}
+
+.container {
+  display: inline-block;
+  font-family: var(--sans-font);
+  font-size: 1em;
+  line-height: 1.5em;
+  max-width: 600px;
+  text-align: left;
+}
+
+.biggest { font-size: 2.0rem; }
+.bigger { font-size: 1.35em; line-height: 1.4em; }
+.big { font-size: 1.02em; }
+.small { font-size: .9em; }
+.smaller { font-size: .8em; }
+.smallest { font-size: .7em;line-height:0.8; }
+.tiny {color: #444;border: none; font-size: .6em; line-height: 0.5;}
+
+h2:hover {
+  margin-left:0;
+  cursor: default;
+}
+
+footer, footer p {
+  margin-top: 0;
+}
