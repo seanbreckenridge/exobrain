@@ -8,19 +8,20 @@ History Lesson (taken from a youtube comment):
 
 Alan Turing:
 
-* "We shall need a great number of mathematicians of ability" because "there will probably be a good deal of work of this kind to be done"
-* "One of our difficulties will be the maintenance of an appropriate discipline, so that we do not lose track of what we are doing"
+- "We shall need a great number of mathematicians of ability" because "there will probably be a good deal of work of this kind to be done"
+- "One of our difficulties will be the maintenance of an appropriate discipline, so that we do not lose track of what we are doing"
 
 Timeline:
-* 53 - Fortran, penciled coding forms -> punch cards
-* 58 - Lisp, functional programming
-* 60 - O(1E2) computers in the world, O(1E3) programmers that are 30yo mathematicians, scientists, accountants and the like. No OS, libraries, etc.
-* transistors
-* 65 - 10'000 1401 / O(1E4) computers (rent $2500/mo $20k/day), 4000 bytes memory. O(1E5) programmers, still learned adult trusted and disciplined people if not mathematicians, not 22 yo people out of school :)
-* 68 - Dijkstra says goto bad, enter structured programming
-* C - [K&R](https://en.wikipedia.org/wiki/The_C_Programming_Language), mathematicians
-* 70 - 1E5 computers / 1E6 programmers, 25 years from 1 to 1'000'00 programmers. Now CS courses, new are mostly male students (due to university limitations) in early 20s
-* Hardware has evolved rapidly and at exponential pace but software has remained the same since then. We have wrappers and generics and transcompilers, and nice syntax, but its essentially the same.
+
+- 53 - Fortran, penciled coding forms -> punch cards
+- 58 - Lisp, functional programming
+- 60 - O(1E2) computers in the world, O(1E3) programmers that are 30yo mathematicians, scientists, accountants and the like. No OS, libraries, etc.
+- transistors
+- 65 - 10'000 1401 / O(1E4) computers (rent $2500/mo $20k/day), 4000 bytes memory. O(1E5) programmers, still learned adult trusted and disciplined people if not mathematicians, not 22 yo people out of school :)
+- 68 - Dijkstra says goto bad, enter structured programming
+- C - [K&R](https://en.wikipedia.org/wiki/The_C_Programming_Language), mathematicians
+- 70 - 1E5 computers / 1E6 programmers, 25 years from 1 to 1'000'00 programmers. Now CS courses, new are mostly male students (due to university limitations) in early 20s
+- Hardware has evolved rapidly and at exponential pace but software has remained the same since then. We have wrappers and generics and transcompilers, and nice syntax, but its essentially the same.
 
 51:42 - Number of programmers doubles every 5 years. Tens of Millions of Programmers. Half of whom have less than five years experience. If we're doubling every 5 years, we always have half the programmers with less than 5 years experience, which leaves you with perpetual inexperience with not enough teachers to teach, which leads you to repeat the same mistakes.
 
