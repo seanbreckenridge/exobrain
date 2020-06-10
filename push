@@ -3,4 +3,6 @@
 cd "$(dirname "${BASH_SOURCE[0]}")" || exit
 
 ./build
+git add .
+git commit
 git push

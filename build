@@ -37,7 +37,7 @@ echo >> ./sitemap/README.md
   printf "]("
   echo -n "$indexdir" | cut -c 2- | tr -d "\n"
   #echo ")"
-  printf ") ("
+  printf ") ( "
   echo -n "$indexdir" | cut -c 2- | tr -d "\n"
   echo " )"
 done } >> ./sitemap/README.md
