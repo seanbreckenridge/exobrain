@@ -15,5 +15,5 @@ TODO:
 - Still to to implement the searching feature, planning on periodically caching the rendered MD files in a genserver on my elixir server to fuzzy match against the pages here :)
 - write some JS to add little 'link' icons to each heading tag `h1 - h4`
 
-Inspired by [beepb00p](https://beepb00p.xyz/exobrain/exobrain.html), Structure/build tooling modified from [here](https://gitlab.com/rwx.gg/README).
+Inspired by [beepb00p](https://beepb00p.xyz/exobrain/exobrain.html), structure/build tooling modified from [rwx.gg](https://gitlab.com/rwx.gg/README).
 
