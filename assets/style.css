@@ -437,9 +437,13 @@ nav {
   font-weight: normal;
 }
 
-.main-title {
+#main-title {
   margin-bottom: 2rem;
 }
+#main-title:hover {
+  pointer: cursor;
+}
+
 main, footer {
   max-width: 36rem;
 }

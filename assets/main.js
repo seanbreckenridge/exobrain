@@ -12,15 +12,16 @@ let subtitle = D.querySelector('h1+h2')
 let copied = D.createElement('div')
 copied.style.position = 'fixed'
 copied.style.top = '0'
-copied.style.left = '0'
+copied.style.right = '0'
 copied.style.textAlign = 'center'
-copied.style.zIndex = '30'
-copied.style.padding = '200%'
+copied.style.borderRadius = '0.25rem'
+copied.style.zIndex = '200'
+copied.style.margin = '0.5rem'
+copied.style.padding = '0.25rem 1rem'
+copied.innerHTML = ""
 copied.style.background = 'black'
 copied.style.color = 'white'
 //copied.style.width = '200%'
-copied.style.height = '100%'
-copied.style.width = '100%'
 copied.style.display = 'none'
 body.appendChild(copied)
 
@@ -62,15 +63,11 @@ setInterval(updateAges, 1000)
 
 const showCopied = e => {
   copied.style.display = 'block'
-  copied.style.transition = ''
-  copied.style.opacity = '.3'
-  let y = e.pageY - copied.offsetHeight/2
-  let x = e.pageX - copied.offsetWidth/2
+  copied.style.opacity = '0.85'
   setTimeout(_=>{
-    copied.style.transition = 'opacity .1s'
     copied.style.opacity = '0'
     copied.style.display = 'none'
-  },100)
+  },1500)
 }
 
 addEventListener('click', e => {
@@ -81,12 +78,15 @@ addEventListener('click', e => {
     copyToClipboard(t.innerText)
     if (t.classList.contains('zoomed')) {
       showCopied(e)
+      copied.innerHTML = "copied code snippet to clipboard"
     }
     return
   }
 
+  // if item is not a header of subtitle
   if (t.nodeName[0] !== 'H' || t === subtitle) return
 
+  // copy link for 
   let base = t.baseURI.split('#')[0]
   let basea = base.split('/')
   let node=basea[basea.length-2]
@@ -96,6 +96,7 @@ addEventListener('click', e => {
   let link = `${base}#${t.id}`
   copyToClipboard('')
   copyToClipboard(link)
+  copied.innerHTML = "copied link to clipboard"
   showCopied(e)
 })
 
