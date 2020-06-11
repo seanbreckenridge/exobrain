@@ -133,9 +133,9 @@ Values that result from lower expressions on the tree "percolate upwards", which
 
 Normal-Order can be thought of as "fully expand and reduce", in contrast to Applicative-Order "evaluate the arguments and then apply".
 
-For the example: (+ (* 5 3) (* 5 3))
+For the example: `(+ (* 5 3) (* 5 3))`
 
-Applicative-Order would evaluate (* 5 3) twice, separately, and then evaluate the resulting (+ 15 15), while Applicative-Order would evaluate the first (* 5 3) and then substitute the result from the first to the second. This avoids multiple evaluations of the same expression, and is what Lisp uses.
+Applicative-Order would evaluate `(* 5 3)` twice, separately, and then evaluate the resulting (+ 15 15), while Applicative-Order would evaluate the first `(* 5 3)` and then substitute the result from the first to the second. This avoids multiple evaluations of the same expression, and is what Lisp uses.
 
 The difference between normal and applicative order doesn't make a lot of difference when youre  procedure is a function (always give the same result), but the "expanding" means that argument expressions are substituted in subexpressions instead of the resulting value.
 

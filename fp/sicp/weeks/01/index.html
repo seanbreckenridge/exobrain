@@ -119,8 +119,8 @@
 <p>Values that result from lower expressions on the tree “percolate upwards”, which is very similar to a general process called <a href="https://en.wikipedia.org/wiki/Tree_accumulation"><em>tree accumulation</em></a></p>
 <h4 id="normal-order-execution-vs-applicative-order-execution">Normal-Order Execution vs Applicative-Order Execution</h4>
 <p>Normal-Order can be thought of as “fully expand and reduce”, in contrast to Applicative-Order “evaluate the arguments and then apply”.</p>
-<p>For the example: (+ (* 5 3) (* 5 3))</p>
-<p>Applicative-Order would evaluate (* 5 3) twice, separately, and then evaluate the resulting (+ 15 15), while Applicative-Order would evaluate the first (* 5 3) and then substitute the result from the first to the second. This avoids multiple evaluations of the same expression, and is what Lisp uses.</p>
+<p>For the example: <code>(+ (* 5 3) (* 5 3))</code></p>
+<p>Applicative-Order would evaluate <code>(* 5 3)</code> twice, separately, and then evaluate the resulting (+ 15 15), while Applicative-Order would evaluate the first <code>(* 5 3)</code> and then substitute the result from the first to the second. This avoids multiple evaluations of the same expression, and is what Lisp uses.</p>
 <p>The difference between normal and applicative order doesn’t make a lot of difference when youre procedure is a function (always give the same result), but the “expanding” means that argument expressions are substituted in subexpressions instead of the resulting value.</p>
 <p>For example, if you had:</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb6-1"><a href="#cb6-1"></a>STk&gt; (<span class="ex">define</span><span class="fu"> </span>(zero z) (<span class="op">-</span> z z))</span>
