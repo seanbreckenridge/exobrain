@@ -22,7 +22,6 @@ copied.style.color = 'white'
 copied.style.height = '100%'
 copied.style.width = '100%'
 copied.style.display = 'none'
-copied.style.fontFamily = 'SpyAgency'
 body.appendChild(copied)
 
 D.onreadystatechange = e => {
