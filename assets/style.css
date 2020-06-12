@@ -200,18 +200,19 @@ li {
   margin-left: 1.5rem;
 }
 
-h1:first-of-type {
+h1:first-of-type, .h1:first-of-type {
   padding-top: 1rem;
 }
-h1 {
-  font-size: 1.4rem;
+h1, .h1 {
+  font-size: 1.6rem;
+  font-weight: bold;
   line-height: 1.5rem;
   margin: 0;
 }
-h1 a {
+h1 a, .h1 a {
   border: none;
 }
-h1 + h2 {
+h1 + h2, .h1 + h2 {
   font-weight: normal;
   padding: 0;
   margin: 0;
@@ -220,11 +221,11 @@ h1 + h2 {
   border: 0;
   color: var(--medhigh);
 }
-h1 + h2:hover {
+h1 + h2:hover, .h1 + h2:hover {
   cursor: inherit;
   content: '';
 }
-h1 + h2:hover:before {
+h1 + h2:hover:before, .h1 + h2:hover:before {
   content: '' !important;
   padding: 0;
   vertical-align: top;
@@ -402,6 +403,7 @@ nav {
   }
   .nav-right {
     flex-direction: column !important;
+    align-items: center;
   }
   .nav-item {
     padding: 0;
@@ -437,8 +439,18 @@ nav {
   font-weight: normal;
 }
 
+.title-date {
+  font-size: 75%;
+}
+
+#main-header {
+  display: flex;
+  box-sizing: border-box;
+  justify-content: space-between;
+}
+
 #main-title {
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 #main-title:hover {
   pointer: cursor;

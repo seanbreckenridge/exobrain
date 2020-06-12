@@ -1,10 +1,14 @@
 <!doctype html>
 <html lang="en">
 <head>
-  ${if(Title)}
-  <title>seans exobrain | ${Title}</title>
+  ${if(Blog)}
+    <title>blog | ${Title}</title>
   ${else}
-  <title>seans exobrain</title>
+    ${if(Title)}
+      <title>exobrain | ${Title}</title>
+    ${else}
+      <title>exobrain</title>
+    ${endif}
   ${endif}
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,18 +23,27 @@
 <body>
 <header class=nav-bar>
   <nav>
-    <!--div id=bwtoggle></div-->
-    <a class="homelink spy" href="/">seans exobrain</a>
+    ${if(Blog)}
+      <a class="homelink" href="/">blog</a>
+    ${else}
+      <a class="homelink" href="/">exobrain</a>
+    ${endif}
     <div class="nav-right">
-        <div class=nav-item><a class="nav-link" href="/sitemap">exobrain sitemap</a></div>
-        <div class=nav-item><a class="nav-link" href="https://sean.fish">Back to My Site</a></div>
+      <div class=nav-item><a class="nav-link" href="/feed">blog feed</a></div>
+      <div class=nav-item><a class="nav-link" href="/sitemap">exobrain sitemap</a></div>
+      <div class=nav-item><a class="nav-link" href="https://sean.fish">Back to My Site</a></div>
     </div>
   </nav>
 </header>
 <main>
 <a id=top></a><div class=container>
 ${if(Title)}
-<h1 id="main-title">${Title}</h1>
+<div id="main-header">
+  <div class="h1" id="main-title">${Title}</div>
+  ${if(Date)}
+    <div class="title-date">${Date}</div>
+  ${endif}
+</div>
 ${endif}
 ${if(Subtitle)}
 <h2>${Subtitle}</h2>

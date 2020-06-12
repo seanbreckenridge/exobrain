@@ -27,20 +27,26 @@ cat ./sitemap/BASE.md > ./sitemap/README.md
 echo >> ./sitemap/README.md
 
 # generate markdown that displays the sitemap
-# feels like Im writing PHP T_T
-# TODO: replace this with something nicer
-# that generates a tree-like structure
-{ find . -name "index.html" | grep -vE "^(./sitemap|./index)" | sed "s/index.html$//g" | while read -r indexdir; do
-  printf "* ["
-  # get the name of this from the Title metadata in the README.md file
-  grep Title "$indexdir/README.md" | cut -d" " -f2- | xargs echo -n
-  printf "]("
-  echo -n "$indexdir" | cut -c 2- | tr -d "\n"
-  #echo ")"
-  printf ") ( "
-  echo -n "$indexdir" | cut -c 2- | tr -d "\n"
-  echo " )"
-done } >> ./sitemap/README.md
+{ find . -name "index.html" | grep -vE "^(./sitemap|./index.html|./post|./feed)" | sed "s/index.html$//g" | while read -r indexdir; do
+  full_dir=$(echo -n "$indexdir" | cut -c 2- | tr -d "\n")
+  without_last_dir=$(dirname "$full_dir")
+  page_title=$(grep Title "$indexdir/README.md" | head -n 1 | cut -d" " -f2- | xargs echo -n)
+  absolute_path=$(echo -n "$indexdir" | cut -c 2- | tr -d "\n")
+  printf "* %s/ [%s](%s)\n" "${without_last_dir#/}" "$page_title" "$absolute_path"
+  # sort by columns (directory name and then name of post
+done } | sort -k2,2 -k3,3 >> ./sitemap/README.md
+
+# create feed feed
+cat ./feed/BASE.md > ./feed/README.md
+echo >> ./feed/README.md
+
+# generate markdown that displays blog feed
+{ find ./post -name "index.html" | sed "s/index.html$//g" | while read -r indexdir; do
+  # grab title and date from yaml at top
+  blog_title=$(grep Title "$indexdir/README.md" | head -n 1 | cut -d" " -f2- | xargs echo -n)
+  blog_date=$(grep Date "$indexdir/README.md" | head -n 1 | cut -d" " -f2- | xargs echo -n)
+  printf "* [%s](%s) %s\n" "$blog_title" "$indexdir" "$blog_date"
+done } | sort -k 2 >> ./feed/README.md
 
 
 #if [[ -n "$*" ]];then

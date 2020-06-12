@@ -1,8 +1,10 @@
 community/future_of_programming
-crypt/sp_networks
+cryptography/sp_networks
+feed
 fp/sicp
 fp/sicp/weeks/01
 html_css/resource_list
 html_css/ui_ux
+post/server_setup
 python/decorators
 sitemap
