@@ -321,7 +321,7 @@ pre code {
   background-image: var(--scissors-image);
   background-repeat: no-repeat;
   background-position: 99.2% 4px;
-  font-size: 12px;
+  font-size: 14px;
   page-break-inside: avoid;
   line-height: 1.2rem;
   word-wrap: break-word;
