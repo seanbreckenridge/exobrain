@@ -31,7 +31,7 @@ echo >> ./sitemap/README.md
   full_dir=$(echo -n "$indexdir" | cut -c 2- | tr -d "\n")
   without_last_dir=$(dirname "$full_dir")
   page_title=$(grep Title "$indexdir/README.md" | head -n 1 | cut -d" " -f2- | xargs echo -n)
-  absolute_path=$(echo -n "$indexdir" | cut -c 2- | tr -d "\n")
+  absolute_path=$(cut -c 2- <<<"$indexdir")
   printf "* %s/ [%s](%s)\n" "${without_last_dir#/}" "$page_title" "$absolute_path"
   # sort by columns (directory name and then name of post
 done } | sort -k2,2 -k3,3 >> ./sitemap/README.md
@@ -45,7 +45,8 @@ echo >> ./feed/README.md
   # grab title and date from yaml at top
   blog_title=$(grep Title "$indexdir/README.md" | head -n 1 | cut -d" " -f2- | xargs echo -n)
   blog_date=$(grep Date "$indexdir/README.md" | head -n 1 | cut -d" " -f2- | xargs echo -n)
-  printf "* [%s](%s) %s\n" "$blog_title" "$indexdir" "$blog_date"
+  absolute_path=$(cut -c 2- <<<"$indexdir")
+  printf "* [%s](%s) %s\n" "$blog_title" "$absolute_path" "$blog_date"
 done } | sort -k 2 >> ./feed/README.md
 
 
