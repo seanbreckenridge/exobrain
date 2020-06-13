@@ -68,6 +68,22 @@ export MPVF_PICKER=rofi
 pgrep -x chatterino &gt;/dev/null || chatterino &amp;
 setsid mpvf &quot;https://www.twitch.tv/${STREAMER}&quot; &amp;</code></pre>
 <p>The <code>setsid</code> is to run <code>mpv</code> in a new session, to make sure that I don’t have to leave the terminal which I ran <code>twitch &lt;username&gt;</code> from open, that can be closed once <code>mpv</code> starts running. Run <code>man setsid</code> for more info.</p>
+<p>All of this streaming from command line is sort of useless if I still have to open the Twitch website to see if someone is online, so I wrote <a href="https://gitlab.com/seanbreckenridge/twitchlive/">twitchlive</a> to be able to see which streamers I’m following are online. Its a bit annoying to set up due to how the twitch API is aimed towards web and not CLI applications, but it works well:</p>
+<pre><code>twitchlive -output-format=table
++---------------+--------+--------------+-------------------------------------+
+|     USER      | UPTIME | VIEWER COUNT |            STREAM TITLE             |
++---------------+--------+--------------+-------------------------------------+
+| nl_Kripp      | 05:27  |        14683 | Chill BG Night | Twitter            |
+|               |        |              | @Kripparrian                        |
+| sodapoppin    | 06:42  |        14003 | serkfgjhlbnlsebfoldtghnodilurngudrg |
+| LilyPichu     | 04:01  |         7676 | hhiiiii                             |
+| Mizkif        | 08:47  |         6742 | YO GET IN HERE                      |
+| Trainwreckstv | 00:49  |         3337 | recap + ban appeals | !twitter      |
+|               |        |              | | !podcast                          |
+| Greekgodx     | 07:34  |         2868 | @Greekgodx on Twitter               |
+| SirhcEz       | 01:44  |         1430 | SINGEEDDDDDD | SirhcEz cafe &amp;       |
+|               |        |              | chill | #LeaguePartner              |
++---------------+--------+--------------+-------------------------------------+</code></pre>
 </div>
 </main>
 <footer>

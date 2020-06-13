@@ -60,3 +60,23 @@ setsid mpvf "https://www.twitch.tv/${STREAMER}" &
 ```
 
 The `setsid` is to run `mpv` in a new session, to make sure that I don't have to leave the terminal which I ran `twitch <username>` from open, that can be closed once `mpv` starts running. Run `man setsid` for more info.
+
+All of this streaming from command line is sort of useless if I still have to open the Twitch website to see if someone is online, so I wrote [twitchlive](https://gitlab.com/seanbreckenridge/twitchlive/) to be able to see which streamers I'm following are online. Its a bit annoying to set up due to how the twitch API is aimed towards web and not CLI applications, but it works well:
+
+```
+twitchlive -output-format=table
++---------------+--------+--------------+-------------------------------------+
+|     USER      | UPTIME | VIEWER COUNT |            STREAM TITLE             |
++---------------+--------+--------------+-------------------------------------+
+| nl_Kripp      | 05:27  |        14683 | Chill BG Night | Twitter            |
+|               |        |              | @Kripparrian                        |
+| sodapoppin    | 06:42  |        14003 | serkfgjhlbnlsebfoldtghnodilurngudrg |
+| LilyPichu     | 04:01  |         7676 | hhiiiii                             |
+| Mizkif        | 08:47  |         6742 | YO GET IN HERE                      |
+| Trainwreckstv | 00:49  |         3337 | recap + ban appeals | !twitter      |
+|               |        |              | | !podcast                          |
+| Greekgodx     | 07:34  |         2868 | @Greekgodx on Twitter               |
+| SirhcEz       | 01:44  |         1430 | SINGEEDDDDDD | SirhcEz cafe &       |
+|               |        |              | chill | #LeaguePartner              |
++---------------+--------+--------------+-------------------------------------+
+```
