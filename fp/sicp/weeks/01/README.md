@@ -227,3 +227,7 @@ Examples:
 ```scheme
 (or (x < 5) (x > 10))` == `(and (x >= 5) (x <= 10))
 ```
+
+Procedures `bind` their variables to locally scoped `bound variables`. Globally bound variables that arent bound by a procedure definition are known as `free` variables (lots of keywords and other procedure names are `free`).
+
+

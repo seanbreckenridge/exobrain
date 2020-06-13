@@ -21,4 +21,4 @@ This requires X11, so; on Mac:
 
 You can now run `stk`, or `stk-simply` (the version with extra functions used in the lectures)
 
-[Other OSs](https://inst.eecs.berkeley.edu/~scheme/source/)
+On ArchLinux, this can be installed with `pacman -S mit-scheme`

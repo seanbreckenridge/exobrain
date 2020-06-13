@@ -19,7 +19,7 @@
         <div class="nav-right">
       <div class=nav-item><a class="nav-link" href="/feed">blog feed</a></div>
       <div class=nav-item><a class="nav-link" href="/sitemap">exobrain sitemap</a></div>
-      <div class=nav-item><a class="nav-link" href="https://sean.fish">Back to My Site</a></div>
+      <div class=nav-item><a class="nav-link" href="https://sean.fish">Back to Main Site</a></div>
     </div>
   </nav>
 </header>
@@ -173,6 +173,7 @@
 <div class="sourceCode" id="cb12"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb12-1"><a href="#cb12-1"></a>(<span class="ex">define</span><span class="fu"> </span>(<span class="op">&gt;=</span> x y) (<span class="kw">or</span> (<span class="op">&gt;</span> x y) (<span class="op">=</span> x y)))</span>
 <span id="cb12-2"><a href="#cb12-2"></a>(<span class="ex">define</span><span class="fu"> </span>(<span class="op">&lt;=</span> x y) (<span class="kw">or</span> (<span class="op">&lt;</span> x  y) (<span class="op">=</span> x y)))</span></code></pre></div>
 <div class="sourceCode" id="cb13"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb13-1"><a href="#cb13-1"></a>(<span class="kw">or</span> (x <span class="op">&lt;</span> <span class="dv">5</span>) (x <span class="op">&gt;</span> <span class="dv">10</span>))` == `(<span class="kw">and</span> (x <span class="op">&gt;=</span> <span class="dv">5</span>) (x <span class="op">&lt;=</span> <span class="dv">10</span>))</span></code></pre></div>
+<p>Procedures <code>bind</code> their variables to locally scoped <code>bound variables</code>. Globally bound variables that arent bound by a procedure definition are known as <code>free</code> variables (lots of keywords and other procedure names are <code>free</code>).</p>
 </div>
 </main>
 <footer>
