@@ -1,5 +1,5 @@
 ---
-Title: Reuven M. Lerner - Practical decorators
+Title: Decorators Pycon
 ---
 
 <https://www.youtube.com/watch?v=MjHpMCIvwsY>

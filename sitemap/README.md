@@ -15,7 +15,7 @@ More 'complete' blog-like posts at [feed](/feed).
 * fp/sicp/weeks/ [SICP Week 1 - Functional Programming](/fp/sicp/weeks/01/)
 * media/ [Movies to Watch](/media/to_watch/)
 * media/ [Music to Listen to](/media/to_listen_to/)
-* python/ [Reuven M. Lerner - Practical decorators](/python/decorators/)
+* python/ [Decorators Pycon](/python/decorators/)
 * shell/ [Imagemagick commands](/shell/imagemagick/)
 * shell/ [Shell Tools](/shell/tools/)
 * web/ [General UI/UX Notes](/web/ui_ux/)
