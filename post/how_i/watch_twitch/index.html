@@ -31,7 +31,7 @@
   </div>
 <p>Running the heavy <a href="https://twitch.tv">Twitch</a> Web UI lags my computer considerably, so I prefer not to use it.</p>
 <p>For interacting with chat, I use <a href="https://chatterino.com/">chatterino</a>, which handles that part completely.</p>
-<p>At the core of it, streaming twitch streams all depends on <a href="https://github.com/ytdl-org/youtube-dl/"><code>youtube-dl</code></a>, which handles grabbing the URLs to stream from. <a href="https://mpv.io"><code>mpv</code></a> has a good interop and can make calls out to <code>youtube-dl</code>. So the easiest way to do this - with no configuration - would be to install <code>mpv</code> and <code>youtube-dl</code>, and then run:</p>
+<p>For streaming video, the core of it all depends on <a href="https://github.com/ytdl-org/youtube-dl/"><code>youtube-dl</code></a>, which handles grabbing the URLs to stream from. <a href="https://mpv.io"><code>mpv</code></a> has a good interop and can make calls out to <code>youtube-dl</code>. So the easiest way to do this - with no configuration - would be to install <code>mpv</code> and <code>youtube-dl</code>, and then run:</p>
 <p><code>mpv https://twitch.tv/&lt;username&gt;</code></p>
 <p>However, that gives you no control over the quality of the stream.</p>
 <p>To get the format codes, you pass the <code>-F</code> flag to <code>youtube-dl</code>:</p>

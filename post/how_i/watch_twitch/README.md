@@ -8,7 +8,7 @@ Running the heavy [Twitch](https://twitch.tv) Web UI lags my computer considerab
 
 For interacting with chat, I use [chatterino](https://chatterino.com/), which handles that part completely.
 
-At the core of it, streaming twitch streams all depends on [`youtube-dl`](https://github.com/ytdl-org/youtube-dl/), which handles grabbing the URLs to stream from. [`mpv`](https://mpv.io) has a good interop and can make calls out to `youtube-dl`. So the easiest way to do this - with no configuration - would be to install `mpv` and `youtube-dl`, and then run:
+For streaming video, the core of it all depends on [`youtube-dl`](https://github.com/ytdl-org/youtube-dl/), which handles grabbing the URLs to stream from. [`mpv`](https://mpv.io) has a good interop and can make calls out to `youtube-dl`. So the easiest way to do this - with no configuration - would be to install `mpv` and `youtube-dl`, and then run:
 
 `mpv https://twitch.tv/<username>`
 
