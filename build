@@ -2,63 +2,53 @@
 
 cd "$(dirname "${BASH_SOURCE[0]}")" || exit
 
-mkmanifest () {
-  declare line
-  while IFS= read -r line; do
-    line=${line#./}
-    [[ "$line" == . ]] && continue
-    echo "$line"
-  done <<< "$(find . -name 'README.md' -printf "%h\n"| sort -d)" > MANIFEST
+mkmanifest() {
+	declare line
+	while IFS= read -r line; do
+		line=${line#./}
+		[[ "$line" == . ]] && continue
+		echo "$line"
+	done <<<"$(find . -name 'README.md' -printf "%h\n" | sort -d)" >MANIFEST
 }
 
 # converts $1 to $2 using pandoc
 pandoc_generate() {
-  pandoc -s -o "$2" --quiet --template=assets/template.html "$1"
+	pandoc -s -o "$2" --quiet --template=assets/template.html "$1"
 }
 
-render () {
-  declare dir="$1"
-  echo Building "'$dir'"
-  pandoc_generate "$dir/README.md" "$dir/index.html"
+render() {
+	declare dir="$1"
+	echo Building "'$dir'"
+	pandoc_generate "$dir/README.md" "$dir/index.html"
 }
 
 # create sitemap-like index page
-cat ./sitemap/BASE.md > ./sitemap/README.md
-echo >> ./sitemap/README.md
+cat ./sitemap/BASE.md >./sitemap/README.md
+echo >>./sitemap/README.md
 
 # generate markdown that displays the sitemap
 { find . -name "index.html" | grep -vE "^(./sitemap|./index.html|./post|./feed)" | sed "s/index.html$//g" | while read -r indexdir; do
-  full_dir=$(echo -n "$indexdir" | cut -c 2- | tr -d "\n")
-  without_last_dir=$(dirname "$full_dir")
-  page_title=$(grep Title "$indexdir/README.md" | head -n 1 | cut -d" " -f2- | xargs echo -n)
-  absolute_path=$(cut -c 2- <<<"$indexdir")
-  printf "* %s/ [%s](%s)\n" "${without_last_dir#/}" "$page_title" "$absolute_path"
-  # sort by columns (directory name and then name of post
-done } | sort -k2,2 -k3,3 >> ./sitemap/README.md
+	full_dir=$(echo -n "$indexdir" | cut -c 2- | tr -d "\n")
+	without_last_dir=$(dirname "$full_dir")
+	page_title=$(grep Title "$indexdir/README.md" | head -n 1 | cut -d" " -f2- | xargs echo -n)
+	absolute_path=$(cut -c 2- <<<"$indexdir")
+	printf "* %s/ [%s](%s)\n" "${without_last_dir#/}" "$page_title" "$absolute_path"
+	# sort by columns (directory name and then name of post
+done; } | sort -k2,2 -k3,3 >>./sitemap/README.md
 
 # create feed feed
-cat ./feed/BASE.md > ./feed/README.md
-echo >> ./feed/README.md
+cat ./feed/BASE.md >./feed/README.md
+echo >>./feed/README.md
 
 # generate markdown that displays blog feed
 { find ./post -name "index.html" | sed "s/index.html$//g" | while read -r indexdir; do
-  # grab title and date from yaml at top
-  blog_title=$(grep Title "$indexdir/README.md" | head -n 1 | cut -d" " -f2- | xargs echo -n)
-  blog_date=$(grep Date "$indexdir/README.md" | head -n 1 | cut -d" " -f2- | xargs echo -n)
-  absolute_path=$(cut -c 2- <<<"$indexdir")
-  printf "* [%s](%s) %s\n" "$blog_title" "$absolute_path" "$blog_date"
-done } | perl -e "print sort {(split ' ', $a)[-1] <=> (split ' ', $b)[-1]} <>" >> ./feed/README.md
+	# grab title and date from yaml at top
+	blog_title=$(grep Title "$indexdir/README.md" | head -n 1 | cut -d" " -f2- | xargs echo -n)
+	blog_date=$(grep Date "$indexdir/README.md" | head -n 1 | cut -d" " -f2- | xargs echo -n)
+	absolute_path=$(cut -c 2- <<<"$indexdir")
+	printf "* [%s](%s) %s\n" "$blog_title" "$absolute_path" "$blog_date"
+done; } | perl -e "print sort {(split ' ', $a)[-1] <=> (split ' ', $b)[-1]} <>" >>./feed/README.md
 # perl expression sorts lines by last column
-
-
-#if [[ -n "$*" ]];then
-  #for i in "$@"; do
-    #i=${i%/README.md}
-    #render $i
-  #done
-  #exit
-#fi
-
 
 # make manifest
 mkmanifest
@@ -69,10 +59,10 @@ pandoc_generate "./404.md" "./404.html"
 
 declare -a pids
 while IFS= read -r node; do
-  render "$node" &
-  pids+=($!)
-done < ./MANIFEST
+	render "$node" &
+	pids+=($!)
+done <./MANIFEST
 
 for pid in ${pids[*]}; do
-  wait $pid
+	wait $pid
 done
