@@ -1,7 +1,7 @@
 ---
 Title: Personal Server Setup
 Blog: true
-Date: 20/06/12
+Date: 2020/06/12
 ---
 
 Recently I've been playing with VMs/VPSs as web servers, so I've been setting up lots of servers. This is both to self-document what I've been doing, and maybe it gives someone a new tool to use.

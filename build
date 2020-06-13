@@ -47,7 +47,8 @@ echo >> ./feed/README.md
   blog_date=$(grep Date "$indexdir/README.md" | head -n 1 | cut -d" " -f2- | xargs echo -n)
   absolute_path=$(cut -c 2- <<<"$indexdir")
   printf "* [%s](%s) %s\n" "$blog_title" "$absolute_path" "$blog_date"
-done } | sort -k 2 >> ./feed/README.md
+done } | perl -e "print sort {(split ' ', $a)[-1] <=> (split '/', $b)[-1]} <>" >> ./feed/README.md
+# perl expression sorts lines by last column
 
 
 #if [[ -n "$*" ]];then
