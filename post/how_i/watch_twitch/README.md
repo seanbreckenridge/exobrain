@@ -40,7 +40,7 @@ mpv "https://twitch.tv/<username>" --ytdl-format="480p"
 
 Thats the basics. I have a couple wrapper scripts I use, so if you're interested in those, keep reading.
 
-I do this so often, picking a format code and using mpv to stream something, that I wrote [`mpvf`](https://gitlab.com/seanbreckenridge/mpvf/), which takes a link, calls `youtube-dl -F` on it, prompting you to select one, then streaming that with `mpv`.
+I do this so often - picking a format code and using mpv to stream something, that I wrote [`mpvf`](https://gitlab.com/seanbreckenridge/mpvf/), which takes a link, calls `youtube-dl -F` on it, prompting you to select one, then streaming that with `mpv`.
 
 ![example using fzf to prompt](images/demo.gif)
 
