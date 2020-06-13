@@ -80,3 +80,12 @@ twitchlive -output-format=table
 |               |        |              | chill | #LeaguePartner              |
 +---------------+--------+--------------+-------------------------------------+
 ```
+
+The two commands could even be combined like: 
+
+```
+twitchlive -output-format json | jq -r '.channels | .[] | .username' | fzf | xargs twitch
+```
+
+... which uses `twitchlive` to get a list of currently live channels, prompting me to select one with `fzf`, and then passing that on to the `twitch` script to start watching them.
+
