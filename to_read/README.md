@@ -14,4 +14,5 @@ Title: Stuff to read
 * The Visual Display of Quantitative Information
 * CS theory: <https://steshaw.org/plt/>
 * Gang of Four OO Patterns (for historical reasons, not to actually use)
+* <https://www.programming-books.io/>
 
