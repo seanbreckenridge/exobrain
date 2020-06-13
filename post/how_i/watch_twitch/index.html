@@ -51,7 +51,7 @@ audio_only        mp4        audio only  165k , mp4a.40.2
 <p>The format code is the first column, so if you wanted to stream in <code>480p</code> to conserve bandwidth, you’d use <code>480p</code>, and pass that to <code>mpv</code> like:</p>
 <pre><code>mpv &quot;https://twitch.tv/&lt;username&gt;&quot; --ytdl-format=&quot;480p&quot;</code></pre>
 <p>Thats the basics. I have a couple wrapper scripts I use, so if you’re interested in those, keep reading.</p>
-<p>I do this so often - picking a format code and using mpv to stream something, that I wrote <a href="https://gitlab.com/seanbreckenridge/mpvf/"><code>mpvf</code></a>. That takes a link, calls <code>youtube-dl -F</code> on it, prompts you to select one, and thens streams that with <code>mpv</code>.</p>
+<p>I do this so often - picking a format code and using mpv to stream something, that I wrote <a href="https://gitlab.com/seanbreckenridge/mpvf/"><code>mpvf</code></a>. That takes a link, calls <code>youtube-dl -F</code> on it, prompts you to select one, and then streams that with <code>mpv</code>.</p>
 <figure>
 <img src="images/demo.gif" alt="" /><figcaption>example using fzf to prompt</figcaption>
 </figure>
