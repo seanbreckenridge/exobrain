@@ -36,7 +36,7 @@ echo >>./sitemap/README.md
 	# sort by columns (directory name and then name of post
 done; } | sort -k2,2 -k3,3 >>./sitemap/README.md
 
-# create feed feed
+# create feed (blog) page
 cat ./feed/BASE.md >./feed/README.md
 echo >>./feed/README.md
 
