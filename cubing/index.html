@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-            <title>exobrain | exobrain sitemap</title>
+            <title>exobrain | Cubing</title>
         <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -26,27 +26,35 @@
 <main>
 <a id=top></a><div class=container>
 <div id="main-header">
-  <div class="h1" id="main-title">exobrain sitemap</div>
+  <div class="h1" id="main-title">Cubing</div>
   </div>
-<p>More ‘complete’ blog-like posts at <a href="/feed">feed</a>.</p>
+<h2 id="x3">3x3</h2>
+<h3 id="roux">Roux</h3>
+<p>F2B algorithms for Roux: &lt;tinyurl.com/f2balgs&gt;</p>
+<h2 id="x4-parity-algs">4x4 Parity algs</h2>
 <ul>
-<li>/ <a href="/cubing/">Cubing</a></li>
-<li>/ <a href="/gamedev/">Gamedev Notes</a></li>
-<li>/ <a href="/japanese/">Japanese</a></li>
-<li>/ <a href="/to_read/">Stuff to read</a></li>
-<li>anime/ <a href="/anime/pixiv/">Searching on pixiv</a></li>
-<li>community/ <a href="/community/future_of_programming/">Uncle Bob Martin - The Future of Programming</a></li>
-<li>cryptography/ <a href="/cryptography/sp_networks/">SP Networks - Computerphile</a></li>
-<li>fp/ <a href="/fp/sicp/">Structure and Interpretation of Computer Programs</a></li>
-<li>fp/sicp/weeks/ <a href="/fp/sicp/weeks/01/">SICP Week 1 - Functional Programming</a></li>
-<li>media/ <a href="/media/to_watch/">Movies to Watch</a></li>
-<li>media/ <a href="/media/to_listen_to/">Music to Listen to</a></li>
-<li>python/ <a href="/python/decorators/">Reuven M. Lerner - Practical decorators</a></li>
-<li>shell/ <a href="/shell/imagemagick/">Imagemagick commands</a></li>
-<li>shell/ <a href="/shell/tools/">Shell Tools</a></li>
-<li>web/ <a href="/web/ui_ux/">General UI/UX Notes</a></li>
-<li>web/ <a href="/web/html_resources/">HTML and CSS resources</a></li>
-<li>web/ <a href="/web/tools/">Web Tools</a></li>
+<li>4x4 adjacent center swap: u’ R2 u d R2 d’</li>
+<li>4x4 opposite center swap: Rw2 U2 D2 Rw2</li>
+<li>4x4 OLL parity &lt;[ r U2 x r U2 r U2 r’ U2 l U2 r’ U2 r U2 r’ U2 r’ ]&gt;</li>
+</ul>
+<h2 id="x2-algs">2x2 algs</h2>
+<p>2x2 OLL</p>
+<ul>
+<li>R U R’ U R U2 R’</li>
+<li>R U2 R’ U’ R U’ R’</li>
+<li>F (R U R’ U’) (R U R’ U’) F’</li>
+<li>F (R U R’ U’) F’</li>
+<li>F (R U’ R’ U’) (R U R’) F’</li>
+<li>(R U R’ U’) (R’ F R F’)</li>
+<li>R2 U2’ R’ U2’ R2</li>
+</ul>
+<p>2x2 PBL</p>
+<ul>
+<li>Use PLL if one side is solved</li>
+<li>R2 F2 R2 swap both diagnols</li>
+<li>R2 U’ B2 U2 R2 U’ R2 swap both back adjacents</li>
+<li>R’ U R’ F2 R F’ R swap top adjacent (put bar on back), bottom diagnols</li>
+<li>R2 U R2 U’ R2 U R2 U’ R2 swap bottom adjacent (put bar on left), top diagnols</li>
 </ul>
 </div>
 </main>
