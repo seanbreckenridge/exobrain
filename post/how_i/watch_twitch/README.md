@@ -8,7 +8,7 @@ Running the heavy [Twitch](https://twitch.tv) Web UI lags my computer considerab
 
 For interacting with chat, I use [chatterino](https://chatterino.com/), which handles that part completely.
 
-At the core of it, streaming twitch streams all depends on [`youtube-dl`](https://github.com/ytdl-org/youtube-dl/), which handles grabbing the URLs to stream from. [`mpv`](https://mpv.io) has a good interop and can make calls out to `youtube-dl`. So the easiest way to do this, without any configuration, would be to install `mpv` and `youtube-dl`, and then run:
+At the core of it, streaming twitch streams all depends on [`youtube-dl`](https://github.com/ytdl-org/youtube-dl/), which handles grabbing the URLs to stream from. [`mpv`](https://mpv.io) has a good interop and can make calls out to `youtube-dl`. So the easiest way to do this - with no configuration - would be to install `mpv` and `youtube-dl`, and then run:
 
 `mpv https://twitch.tv/<username>`
 
@@ -40,7 +40,7 @@ mpv "https://twitch.tv/<username>" --ytdl-format="480p"
 
 Thats the basics. I have a couple wrapper scripts I use, so if you're interested in those, keep reading.
 
-I do this so often - picking a format code and using mpv to stream something, that I wrote [`mpvf`](https://gitlab.com/seanbreckenridge/mpvf/), which takes a link, calls `youtube-dl -F` on it, prompting you to select one, then streaming that with `mpv`.
+I do this so often - picking a format code and using mpv to stream something, that I wrote [`mpvf`](https://gitlab.com/seanbreckenridge/mpvf/). That takes a link, calls `youtube-dl -F` on it, prompts you to select one, and thens streams that with `mpv`.
 
 ![example using fzf to prompt](images/demo.gif)
 
