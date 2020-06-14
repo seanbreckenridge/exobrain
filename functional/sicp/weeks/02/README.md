@@ -44,10 +44,12 @@ A data type is first class in a language if things of that type can be:
 * can be a member of an aggregate (e.g. array)
 * (sometimes included in the definition) can be anonymous - not bound to a `name` (i.e. lambads)
 
+Widespread use of first class types:
+
 * Basically every language supports numbers as first class.
 * Character/Strings are sometimes first class (e.g. not in C).
 * Data aggregates are rarely first class (you typically get a pointer to the data structure)
-* Not a lot of any language gives you functions as first class, though thats changing with newer languages.
+* Not many languages gives you functions as first class, though thats changing with newer languages.
 
 ### Procedures as Returned values:
 

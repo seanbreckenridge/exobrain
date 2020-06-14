@@ -6,6 +6,8 @@ Read Section 1.2-1.2.4: Procedures and the Processes They Generate
 
 Encompasses Lecture 5 & 6
 
+(Went over Time Complexity, don't think I need to take notes on that for the 5th time)
+
 Different types of recursion:
 
 ### Linear Recursive Process
@@ -30,7 +32,7 @@ This is done with an accumulator. Instead of using the return value of the recur
 ```
 (define (fac n)
   (define (fachelp acc n)
-    if (= n 1)
+    (if (= n 1)
       acc
       (fachelp (* acc n) (- n 1)))
   ;; call initial helper function call
@@ -49,6 +51,8 @@ In the iterative process, there is no need for a language to keep values from ol
 
 This reason is why languages like C's recursive calls cause memory to grow larger and larger, because they don't optimize for Linear Iterative Processes. Optimizing for that is called `tail-recursion`, and is very often done in functional languages, as its the performant replacement for loops.
 
+In the Iterative code above, `fachelp` is tail-recursive, because the last thing to do is just a function call to itself. The `if` doesn't interfere with that because its a special form, and it in a sense 'dissapears', leaving one of the arguments after being evaluated.
+
 ### Tree recursion
 
 Recursion in which a call does multiple-recursive calls, often doing the same work twice. Fibonacci is an obvious example.
@@ -56,5 +60,4 @@ Recursion in which a call does multiple-recursive calls, often doing the same wo
 For computational/numeric tasks, tree recursion can typically be drastically improved by using an accumulator. In procedural languages, one might use memoization (hash the inputs to an output), or just a loop.
 
 However, in operating on data structures (e.g. graphs algorithms), Tree Recursion can often be the solution.
-
 
