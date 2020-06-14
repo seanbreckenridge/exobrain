@@ -5,8 +5,8 @@
 # the 'Title' attribute from each page to generate markdown
 # and putting those in ./sitemap/README.md and ./feed/README.md
 # before running pandoc against them
-# This runs pandoc by searching for a README.md file
-# in each directory, and then
+# This runs pandoc by searching for README.md files recursively
+# and running pandoc against that with the assets/template.html as a base
 
 cd "$(dirname "${BASH_SOURCE[0]}")" || exit
 
