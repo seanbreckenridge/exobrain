@@ -1,5 +1,5 @@
 ---
-Title: SICP Week 05 - Hierarchical data/Scheme Interpreter
+Title: SICP 05 - Hierarchical data/Scheme Interpreter
 ---
 
 Read Section 2.2.2, 2.2.3, 2.3.1

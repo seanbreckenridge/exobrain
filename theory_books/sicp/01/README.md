@@ -1,5 +1,5 @@
 ---
-Title: SICP Week 01 - Functional Programming
+Title: SICP 01 - Functional Programming
 ---
 
 Read Section 1.1: The Elements of Programming

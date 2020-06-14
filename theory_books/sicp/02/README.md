@@ -1,5 +1,5 @@
 ---
-Title: SICP Week 02 - Abstraction
+Title: SICP 02 - Abstraction
 ---
 
 Read Section 1.3: Formulating Abstractions with Higher-Order Functions

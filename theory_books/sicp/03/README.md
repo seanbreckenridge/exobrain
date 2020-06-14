@@ -1,5 +1,5 @@
 ---
-Title: SICP Week 03 - Recursion and Iteration
+Title: SICP 03 - Recursion and Iteration
 ---
 
 Read Section 1.2-1.2.4: Procedures and the Processes They Generate

@@ -1,5 +1,5 @@
 ---
-Title: SICP Week 06 - Generic Operators
+Title: SICP 06 - Generic Operators
 ---
 
 Read Section 2.4 - 2.5.2

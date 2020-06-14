@@ -1,5 +1,5 @@
 ---
-Title: SICP Week 04 - Data Abstraction, sequences
+Title: SICP 04 - Data Abstraction, sequences
 ---
 
 Read Section 2.1

@@ -5,6 +5,7 @@ feed
 gamedev
 japanese
 media/to_listen_to
+media/to_read
 media/to_watch
 post/how_i/watch_twitch
 post/server_setup
@@ -14,14 +15,14 @@ shell/tools
 sitemap
 theory_books/alan_kay_user_interface
 theory_books/future_of_programming
-theory_books/sicp
 theory_books/sicp/01
 theory_books/sicp/02
 theory_books/sicp/03
 theory_books/sicp/04
 theory_books/sicp/05
 theory_books/sicp/06
-to_read
+theory_books/sicp/07
+theory_books/sicp/overview
 web/html_resources
 web/tools
 web/ui_ux

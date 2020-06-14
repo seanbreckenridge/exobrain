@@ -1,13 +1,10 @@
 ---
-Title: Structure and Interpretation of Computer Programs
+Title: Overview: Structure and Interpretation of Computer Programs
 ---
 
 This is following the book [here](https://github.com/sarabander/sicp-pdf), and the lecture series [here](https://archive.org/details/ucberkeley-webcast-PL3E89002AA9B9879E?sort=titleSorter), for which I wrote a script to download all of them [here](https://gist.github.com/seanbreckenridge/44854575b03e7f643b19bf40cf7e21bd).
 
 Thanks to [creactiviti/scip-course](https://github.com/creactiviti/sicp-course) for a nice overview.
-
-* [Homework](http://wla.berkeley.edu/~cs61a/reader/nodate-hw.pdf)
-* [Projects](http://wla.berkeley.edu/~cs61a/reader/vol1.html)
 
 ### Install STk for Mac
 

@@ -235,7 +235,7 @@ Restart the system, and check that `nginx`'s file limit has increased:
 
 15. Setup some server monitoring.
 
-Install [`netdata`](https://www.netdata.cloud/) and [my fork of `superhooks`](https://github.com/seanbreckenridge/superhooks) (in my `supervisord.conf` in my [vps repo](https://github.com/seanbreckenridge/vps)) for server and [`supervisor`](http://supervisord.org/) process monitoring respectively:
+Install [`netdata`](https://www.netdata.cloud/) and [my fork of `superhooks`](https://github.com/seanbreckenridge/superhooks) (in my `supervisord.conf` in my [vps repo](https://github.com/seanbreckenridge/vps)) for server and [`supervisor`](https://github.com/Supervisor/supervisor) process monitoring respectively:
 
 ```
 bash <(curl -Ss https://my-netdata.io/kickstart.sh)

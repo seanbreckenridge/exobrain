@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+            <title>exobrain | SICP 07 - Object Oriented Programming</title>
+        <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+  <link rel="shortcut icon" href="/assets/img/logo.png" type="image/png">
+  <meta http-equiv="Pragma" content="no-cache"/>
+  <meta http-equiv="Expires" content="0"/>
+  <!-- link rel="shortcut icon" href="/assets/img/logo.png" type="image/png"-->
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<header class=nav-bar>
+  <nav>
+          <a class="homelink" href="/">exobrain</a>
+        <div class="nav-right">
+      <div class=nav-item><a class="nav-link" href="/feed">blog feed</a></div>
+      <div class=nav-item><a class="nav-link" href="/sitemap">exobrain sitemap</a></div>
+      <div class=nav-item><a class="nav-link" href="https://sean.fish">Back to Main Site</a></div>
+    </div>
+  </nav>
+</header>
+<main>
+<a id=top></a><div class=container>
+<div id="main-header">
+  <div class="h1" id="main-title">SICP 07 - Object Oriented Programming</div>
+  </div>
+<p>Read <a href="http://inst.eecs.berkeley.edu/~cs61a/reader/aboveline.pdf">Object Oriented Programming | Above the line view</a></p>
+<p>Encompasses Lecture 18, 19, 20</p>
+<p>OOP is a metaphor for multiple, independent, intelligent agents.</p>
+<p>It describes some component as as an <em>instance</em> of a <em>class</em>, which has interactions with other classes.</p>
+<p>The metaphor is that an object (<em>instance</em> of a class) “knows how” to do certain things, when passed messages (method names).</p>
+<p>Objects have state, which defies all the functional stuff we’ve been doing previously. When classes are instantiated, you pass parameters to initialize the local state variables.</p>
+<p>OO can be done in Scheme with <code>set!</code> and <code>method</code> to <code>define-class</code>es and their behaviour.</p>
+<p>Its common to define a base class with implements some common functionality between components, and then <em>inherit</em> from that class to subclasses.</p>
+<p>Smalltalk, which started OOP, had multiple inheritance, but lots of programming languages have decided that was a bad idea and don’t include.</p>
+<p>Note: Pythons Method Resolution Order for Multiple Inheritance is confusing, and complicated, but it has theory behind it and I think it works. See <a href="https://www.youtube.com/watch?v=EiOglTERPEo">Raymond Hettingers</a> talk for context.</p>
+<h3 id="scheme-specific">Scheme-Specific:</h3>
+<p>The <code>instance-vars</code> function can be used to define instance variables which you don’t want to provide when instantiating a class.</p>
+<p><em>class variables</em> are shared across all classes. Defined in scheme with <code>class-vars</code>.</p>
+<p>Classes can define a <code>default-method</code>, which can receive any <code>message</code>, and then decide to do something with it.</p>
+<p><code>usual</code> is used to call super class methods.</p>
+<p>When you define something as a child class, the <code>parent</code> instance of that class re-defines <code>self</code> as the child instance’s <code>self</code>. Since this is all done through message passing, even while using methods from the parent class, calling methods on <code>self</code> sends messages to possibly re-defined methods in the child class, defaulting up the inheritance chain if they don’t exist.</p>
+<h2 id="smalltalk-lecture">SmallTalk Lecture</h2>
+<p><em>Object-Oriented Programming Dan Ingalls</em></p>
+<p>If any part of a system depends on the internals of another part, then complexity increases as the square of the size of the system.</p>
+<p>The mindset with which people developing smalltalk went at creating a system was trying to find a way to avoid the conventional style of dispatching on types when faced with the issue of generalizing procedures.</p>
+<p>The Message Paradigm for smalltalk was inspired by Simula, which had solved this problem in a similar way.</p>
+<p>In smalltalk:</p>
+<pre><code>&lt;recevier&gt; &lt;message&gt;
+a size
+a size + 5</code></pre>
+<p>send message <code>size</code> to <code>a</code>, get the resulting value, and then send <code>+ 5</code> to the resulting value.</p>
+<p>You can also send blocks to objects, which languages like ruby inherited.</p>
+<figure>
+<img src="images/class_structure.jpg" alt="" /><figcaption>class definition/structure</figcaption>
+</figure>
+<p>Inheritance/Polymorphism were standard in smalltalk, which made code more reusable across their implementations.</p>
+<p>OS is just a collection of objects: directories, files, display, mouse, keyboard, primitive types. With that mindset, methods are primitive, but failure is handled in normal code.</p>
+<h4 id="essential-characteristics">Essential Characteristics</h4>
+<ul>
+<li>Uniform refernce (everything is an object)</li>
+<li>Uniform access (only messages)</li>
+<li>These guarantee “Simulation” - since everything is handled by passing messages to another object, a new user-defined object acts in a similar way and can extend functionality without messing with existing code.</li>
+</ul>
+<h5 id="language-design">Language Design:</h5>
+<p>Comment on Javascript/Ruby:</p>
+<p>These languages are rather hideous, they’re based on every good idea at once.</p>
+<p>When you program in scheme (or more generally, lisp), the big organizing idea is ‘first class procedures’. Every problem is solved in that framework, and everything is uniform and semantics are simple (there aren’t lots of rules/special forms).</p>
+<p>When you program in smalltalk, everything is done by sending messages to objects.</p>
+<p>In ‘Industrial Languages’, they just take all the good ideas and cram the features into a language, even when it doesn’t make the most sense to do so.</p>
+</div>
+</main>
+<footer>
+  <p><a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" id=copyright>© 2020 Sean Breckenridge. Licensed under Creative Commons Attribution-ShareAlike.</a>
+    <br /><a href="https://github.com/seanbreckenridge/exobrain">Source Code</a>
+  </p>
+</footer>
+<script src="/assets/main.js"></script>
+</body>
+</html>
