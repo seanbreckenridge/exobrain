@@ -9,8 +9,6 @@ Thanks to [creactiviti/scip-course](https://github.com/creactiviti/sicp-course) 
 * [Homework](http://wla.berkeley.edu/~cs61a/reader/nodate-hw.pdf)
 * [Projects](http://wla.berkeley.edu/~cs61a/reader/vol1.html)
 
-Only gone through the first week so far, [here](./weeks/01)
-
 ### Install STk for Mac
 
 You can install STk (REPL for [Scheme](https://en.wikipedia.org/wiki/Scheme_(programming_language))) from [here](https://inst.eecs.berkeley.edu/~scheme/precompiled/OSX/).

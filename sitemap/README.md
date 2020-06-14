@@ -16,6 +16,8 @@ More 'complete' blog-like posts at [feed](/feed).
 * functional/sicp/weeks/ [SICP Week 01 - Functional Programming](/functional/sicp/weeks/01/)
 * functional/sicp/weeks/ [SICP Week 02 - Abstraction](/functional/sicp/weeks/02/)
 * functional/sicp/weeks/ [SICP Week 03 - Recursion and Iteration](/functional/sicp/weeks/03/)
+* functional/sicp/weeks/ [SICP Week 04 - Data Abstraction, sequences](/functional/sicp/weeks/04/)
+* functional/sicp/weeks/ [SICP Week 05 - Hierarchical data/Scheme Interpreter](/functional/sicp/weeks/05/)
 * media/ [Movies to Watch](/media/to_watch/)
 * media/ [Music to Listen to](/media/to_listen_to/)
 * python/ [Decorators Pycon](/python/decorators/)
