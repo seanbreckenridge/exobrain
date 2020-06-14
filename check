@@ -14,11 +14,11 @@ serve . &
 # capture PID so server can be killed later
 SERVER_PID=$!
 
-until curl -s "$LOCAL_URL"; do
+until curl -s "$LOCAL_URL" 2>/dev/null 1>&2; do
   echo "Waiting for server to be up..."
   sleep 1
 done
 
-linkcheck -e --debug "$LOCAL_URL"
+linkcheck -e "$LOCAL_URL"
 
 kill "$SERVER_PID"
