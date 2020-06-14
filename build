@@ -1,4 +1,12 @@
 #!/bin/bash
+# This builds the markdown files into HTML files.
+# It also dymanically generates the sitemap and blog feed pages
+# by using the post directory for blogposts, and parsing
+# the 'Title' attribute from each page to generate markdown
+# and putting those in ./sitemap/README.md and ./feed/README.md
+# before running pandoc against them
+# This runs pandoc by searching for a README.md file
+# in each directory, and then
 
 cd "$(dirname "${BASH_SOURCE[0]}")" || exit
 
@@ -27,7 +35,7 @@ cat ./sitemap/BASE.md >./sitemap/README.md
 echo >>./sitemap/README.md
 
 # generate markdown that displays the sitemap
-{ find . -name "index.html" | grep -vE "^(./sitemap|./index.html|./post|./feed)" | sed "s/index.html$//g" | while read -r indexdir; do
+{ find . -name "README.md" | grep -vE "^(./sitemap|./post|./feed|./README.md)" | sed "s/README.md$//g" | while read -r indexdir; do
 	full_dir=$(echo -n "$indexdir" | cut -c 2- | tr -d "\n")
 	without_last_dir=$(dirname "$full_dir")
 	page_title=$(grep -m1 Title "$indexdir/README.md" | cut -d" " -f2- | tr -d "\n")
@@ -41,7 +49,7 @@ cat ./feed/BASE.md >./feed/README.md
 echo >>./feed/README.md
 
 # generate markdown that displays blog feed
-{ find ./post -name "index.html" | sed "s/index.html$//g" | while read -r indexdir; do
+{ find ./post -name "README.md" | sed "s/README.md$//g" | while read -r indexdir; do
 	# grab title and date from yaml at top
 	blog_title=$(grep -m1 Title "$indexdir/README.md" | cut -d" " -f2- | tr -d "\n")
 	blog_date=$(grep -m1 Date "$indexdir/README.md" | cut -d" " -f2- | tr -d "\n")
