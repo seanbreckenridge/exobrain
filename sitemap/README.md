@@ -23,6 +23,7 @@ More 'complete' blog-like posts at [feed](/feed).
 * theory_books/sicp/weeks/ [SICP Week 03 - Recursion and Iteration](/theory_books/sicp/weeks/03/)
 * theory_books/sicp/weeks/ [SICP Week 04 - Data Abstraction, sequences](/theory_books/sicp/weeks/04/)
 * theory_books/sicp/weeks/ [SICP Week 05 - Hierarchical data/Scheme Interpreter](/theory_books/sicp/weeks/05/)
+* theory_books/sicp/weeks/ [SICP Week 06 - Generic Operators](/theory_books/sicp/weeks/06/)
 * web/ [General UI/UX Notes](/web/ui_ux/)
 * web/ [HTML and CSS resources](/web/html_resources/)
 * web/ [Web Tools](/web/tools/)

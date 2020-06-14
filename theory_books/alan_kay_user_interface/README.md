@@ -57,7 +57,7 @@ The challenge is to make a system thats easy to use for anyone, but easy to exte
 
 In older systems like Unix/MS-DOS, to be able to accomplish anything, you had to read a manual, and figure out how the prompt worked, and theres lots of internal details one has to be aware of. As you start to do things that aren't anticipated, the amount of things you have to know increases gradually. If you already known the syntax of a command at the prompt, writing a shell script to put tasks after one another isn't that complicated.
 
-![y-axis: wizardlyness x-axis: complexity of task](images/unix.png)
+![y-axis: wizardlyness; x-axis: complexity of task](images/unix.png)
 
 In newer, GUI-based systems (MacOS (pre-Unix) and Windows), you can do *a lot* of things without knowing anything about computers. The windowing systems and buttons make it so that the built-in applications have the complexity to let you pick what you want to do in a graphical way. However, as soon as you want to do something that someone didn't anticipate, you have to learn an entire programming language and windowing system to do anything to extend your system.
 

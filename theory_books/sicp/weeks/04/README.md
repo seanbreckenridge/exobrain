@@ -40,4 +40,7 @@ There are other helper methods (e.g. `list` or `append`)
 
 `At the heart of each programming langauge theres a lisp interpreter trying to get out`
 
+* Syntax - how your language is written, e.g. semicolons, parens, brackets
+* Semantics - what the semicolons/brackets mean
 
+The term 'Syntatic Sugar' can be understood from those terms, in that it only changes how something looks, not the semantics.

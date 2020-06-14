@@ -2,6 +2,6 @@
 Title: Web Tools
 ---
 
-<https://wasabi.com/> for file storage>
+<https://wasabi.com/> for file storage
 
 
