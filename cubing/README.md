@@ -6,7 +6,7 @@ Title: Cubing
 
 ### Roux
 
-F2B algorithms for Roux: <tinyurl.com/f2balgs>
+F2B algorithms for Roux: <https://tinyurl.com/f2balgs>
 
 ## 4x4 Parity algs
 

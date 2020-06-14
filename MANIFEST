@@ -1,10 +1,13 @@
 anime/pixiv
+community/alan_kay_user_interface
 community/future_of_programming
 cryptography/sp_networks
 cubing
 feed
-fp/sicp
-fp/sicp/weeks/01
+functional/sicp
+functional/sicp/weeks/01
+functional/sicp/weeks/02
+functional/sicp/weeks/03
 gamedev
 japanese
 media/to_listen_to

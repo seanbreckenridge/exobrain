@@ -1,5 +1,5 @@
 ---
-Title: SICP Week 1 - Functional Programming
+Title: SICP Week 01 - Functional Programming
 ---
 
 Read Section 1.1: The Elements of Programming
@@ -229,5 +229,4 @@ Examples:
 ```
 
 Procedures `bind` their variables to locally scoped `bound variables`. Globally bound variables that arent bound by a procedure definition are known as `free` variables (lots of keywords and other procedure names are `free`).
-
 
