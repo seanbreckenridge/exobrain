@@ -7,6 +7,7 @@ Title: Stuff to read
 * <http://alvaro-videla.com/archive.html>
 * <http://prize.hutter1.net>
 * <https://dl.acm.org/toc/pacmpl/2020/4/HOPL>
+* <https://google.github.io/styleguide/A>
 
 ### Books
 
