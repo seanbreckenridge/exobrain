@@ -13,6 +13,7 @@ More 'complete' blog-like posts at [feed](/feed).
 * media/ [Music to Listen to](/media/to_listen_to/)
 * media/ [Stuff to read](/media/to_read/)
 * python/ [Decorators Pycon](/python/decorators/)
+* shell/ [Bash Notes](/shell/bash_notes/)
 * shell/ [Imagemagick commands](/shell/imagemagick/)
 * shell/ [Shell Tools](/shell/tools/)
 * theory_books/ [Alan Kay, User Interface Design](/theory_books/alan_kay_user_interface/)

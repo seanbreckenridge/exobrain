@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+            <title>exobrain | Bash Notes</title>
+        <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+  <link rel="shortcut icon" href="/assets/img/logo.png" type="image/png">
+  <meta http-equiv="Pragma" content="no-cache"/>
+  <meta http-equiv="Expires" content="0"/>
+  <!-- link rel="shortcut icon" href="/assets/img/logo.png" type="image/png"-->
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<header class=nav-bar>
+  <nav>
+          <a class="homelink" href="/">exobrain</a>
+        <div class="nav-right">
+      <div class=nav-item><a class="nav-link" href="/feed">blog feed</a></div>
+      <div class=nav-item><a class="nav-link" href="/sitemap">exobrain sitemap</a></div>
+      <div class=nav-item><a class="nav-link" href="https://sean.fish">Back to Main Site</a></div>
+    </div>
+  </nav>
+</header>
+<main>
+<a id=top></a><div class=container>
+<div id="main-header">
+  <div class="h1" id="main-title">Bash Notes</div>
+  </div>
+<p>Read the bash man page! Bashisms can be pad if youre trying to be posix compliant, but bashisms also save lots of time.</p>
+<p>Print message to STDERR if value is unset and exit:</p>
+<pre><code># if $1 is unset/empty
+USER_INPUT=&quot;${1:?must provide something as first argument}&quot;</code></pre>
+<p><code>.sh</code> at the end of scripts is only necessary for windows compliance/if you’re creating a library that requires you to include bash files. Otherwise you’re only making yourself do more typing.</p>
+<p>Use bash substitutions when possible instead of <code>sed</code>/<code>awk</code>.</p>
+<p>Maybe look into perl instead of <code>sed</code>/<code>awk</code>/<code>tr</code>/<code>cut</code>, look at perlre and perlrun pages.</p>
+</div>
+</main>
+<footer>
+  <p><a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" id=copyright>© 2020 Sean Breckenridge. Licensed under Creative Commons Attribution-ShareAlike.</a>
+    <br /><a href="https://github.com/seanbreckenridge/exobrain">Source Code</a>
+  </p>
+</footer>
+<script src="/assets/main.js"></script>
+</body>
+</html>
