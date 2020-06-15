@@ -1,5 +1,5 @@
 ---
-Title: exobrain sitemap
+blog: false
 ---
 
 More 'complete' blog-like posts at [feed](/feed).

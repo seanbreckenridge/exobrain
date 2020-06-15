@@ -1,7 +1,3 @@
----
-Title: exobrain
----
-
 As described by `beepb00p`:
 
 Exobrain, or "second brain", or "brain dump" is something like public wiki where you can keep your notes, ideas and thoughts. Other people can search in your exobrain without having to physically interact with you.

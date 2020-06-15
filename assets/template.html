@@ -2,7 +2,11 @@
 <html lang="en">
 <head>
   ${if(Blog)}
-    <title>blog | ${Title}</title>
+    ${if(Title)}
+      <title>blog | ${Title}</title>
+    ${else}
+      <title>blog | feed</title>
+    ${endif}
   ${else}
     ${if(Title)}
       <title>exobrain | ${Title}</title>
