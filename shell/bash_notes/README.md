@@ -21,9 +21,9 @@ printf "%s" "$name"
 
 ---
 
-Maybe look into perl instead of `sed`/`awk`/`tr`/`cut`, look at perlre and perlrun man pages.
+Maybe look into `perl` instead of `sed`/`awk`/`tr`/`cut`, look at perlre and perlrun man pages.
 
-Read the bash man page! Bashisms can be pad if youre trying to be posix compliant, but bashisms also save lots of time.
+Read the bash man page! Bashisms can be pad if youre trying to be POSIX compliant, but bashisms also save lots of time.
 
 You may need to use POSIX complaint code for something like Solaris SVR4 packages which requires Bourne shell for any scripts.
 
