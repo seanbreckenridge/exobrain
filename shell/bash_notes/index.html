@@ -41,8 +41,8 @@ printf &quot;%s %s&quot; $name # printf receives two arguments
 # safest is to quote your variables
 printf &quot;%s&quot; &quot;$name&quot; </code></pre>
 <hr />
-<p>Maybe look into <code>perl</code> instead of <code>sed</code>/<code>awk</code>/<code>tr</code>/<code>cut</code>, look at perlre and perlrun man pages.</p>
-<p>Read the bash man page! Bashisms can be pad if youre trying to be POSIX compliant, but bashisms also save lots of time.</p>
+<p>Maybe look into <code>perl</code> instead of <code>sed</code>/<code>awk</code>/<code>tr</code>/<code>cut</code>, look at <code>perlre</code> and <code>perlrun</code> man pages.</p>
+<p>Read the bash man page! Bashisms can be bad if you’re trying to be POSIX compliant, but bashisms also save lots of time.</p>
 <p>You may need to use POSIX complaint code for something like Solaris SVR4 packages which requires Bourne shell for any scripts.</p>
 <h5 id="early-exit">Early Exit</h5>
 <p>Print message to STDERR if value is unset and exit:</p>
@@ -51,21 +51,21 @@ USER_INPUT=&quot;${1:?must provide something as first argument}&quot;</code></pr
 <hr />
 <p>To remind myself, <code>2&gt;/dev/null 1&gt;&amp;2</code> to completely silence a script, <code>echo something &gt;&amp;2</code> (or <code>1&gt;&amp;2</code>) to print an error.</p>
 <h5 id="extensions">Extensions</h5>
-<p><code>.sh</code> at the end of scripts is only necessary if youre creating libraries, or if you’re for some reason in windows land. Otherwise you’re only making yourself do more typing. If youre making libraries, there is no shebang line and there shouldn’t be - its meant to be <code>source</code>d into some other script. If its a library, it should have a <code>.sh</code> or <code>.bash</code> extension and the file shouldn’t be executable.</p>
+<p><code>.sh</code> at the end of scripts is only necessary if you’re creating libraries, or if you’re for some reason in windows land. Otherwise you’re only making yourself do more typing. If you’re making libraries, there is no shebang line and there shouldn’t be - its meant to be <code>source</code>d into some other script. If its a library, it should have a <code>.sh</code> or <code>.bash</code> extension and the file shouldn’t be executable.</p>
 <hr />
-<p><a href="https://rwx.gg/stupid/env/">Dont use <code>/usr/bin/env</code></a></p>
-<p>Use short curcuiting when doing simple tests, case statements for basic subcommands, and getopts if you want to have short and long (<code>-h</code>, <code>--help</code>) options for consistency/larger programs.</p>
+<p><a href="https://rwx.gg/stupid/env/">Don’t use <code>/usr/bin/env</code></a></p>
+<p>Use short circuiting when doing simple tests, case statements for basic subcommands, and getopts if you want to have short and long (<code>-h</code>, <code>--help</code>) options for consistency/larger programs.</p>
 <p>SUID/SGID are forbidden on shell scripts (running as owner as script instead of person executing the script). Too many security risks that come along with using that, use <code>sudo</code> if you need elevated access.</p>
 <h4 id="stylingformatting">Styling/Formatting</h4>
 <p>The rest of these notes are from the <a href="https://google.github.io/styleguide/shellguide.html">Google StyleGuide</a>, which is fantastic.</p>
-<p>Dont need to use the <code>function</code> keyword, as its optional. Also, there aren’t really functions, they’re procedures/methods. No reason to break POSIX compliance and using <code>function</code>.</p>
+<p>Don’t need to use the <code>function</code> keyword, as its optional. Also, there aren’t really functions, they’re procedures/methods. No reason to break POSIX compliance and using <code>function</code>.</p>
 <p>Using hyphens (or nothing) instead of underscores for variable/script names.</p>
 <p>I tend to just use <a href="https://github.com/mvdan/sh"><code>shfmt</code></a> for everything.</p>
 <p>HEREDOCs that have indentation need tabs, so it can make formatting confusing - so they need to left justified. You can use a dash to chomp tabs, but then it removes <em>all</em> surrounded tabs.</p>
 <p>One can use embedded newlines:</p>
 <pre><code>some_string=&quot;I am a string
 with multiple lines&quot;</code></pre>
-<p>Dont but <code>do</code> and <code>then</code> on their own line when using <code>for</code>/<code>if</code> loops:</p>
+<p>Don’t but <code>do</code> and <code>then</code> on their own line when using <code>for</code>/<code>if</code> loops:</p>
 <pre><code>for ....; do
   expression
 done
@@ -88,19 +88,19 @@ done</code></pre>
 <p><code>readonly</code> is a synonym for <code>declare -r</code>, which makes a variable constant.</p>
 <pre><code>FLAGS=( --foo --bar=&#39;baz&#39; )
 readonly FLAGS</code></pre>
-<p>Dont need to quote variables in arithmetic subshells</p>
+<p>Don’t need to quote variables in arithmetic subshells</p>
 <pre><code>if (( $# &gt; 3 )); then
   echo &quot;too many arguments&quot;
 fi</code></pre>
-<p>Dont need to quote literal integers, but you may want to single quote words:</p>
+<p>Don’t need to quote literal integers, but you may want to single quote words:</p>
 <pre><code>exit_code=3
 some_value=&#39;true&#39;</code></pre>
-<p>Use <code>$(command)</code> instea of backticks. Nested backticks require escaping the inner ones. <code>$(command)</code> doesnt change and is easier to read:</p>
+<p>Use <code>$(command)</code> instead of back ticks. Nested back ticks require escaping the inner ones. <code>$(command)</code> doesn’t change and is easier to read:</p>
 <pre><code># Do:
 var=&quot;$(command &quot;$(command)&quot;)&quot;
 # instead of:
 var=&quot;`command \`command\``&quot;</code></pre>
-<p>Use <code>[[ ... ]]</code> instead of <code>[ ... ]</code>, <code>test</code> and <code>/usr/bin/[</code> to avoid POSIX issues. <code>[[ ]]</code> is <strong>buit-in</strong> to bash, doing <code>[</code> causes you to do a subshell out to the <code>[</code> command, and offers you the advantage that:</p>
+<p>Use <code>[[ ... ]]</code> instead of <code>[ ... ]</code>, <code>test</code> and <code>/usr/bin/[</code> to avoid POSIX issues. <code>[[ ]]</code> is <strong>built-in</strong> to bash, doing <code>[</code> causes you to do a subshell out to the <code>[</code> command, and offers you the advantage that:</p>
 <p><code>[[ ... ]]</code> reduces errors as no pathname expansion or word splitting takes place. To exemplify what that means, you can do <code>[[ $VAR == test ]]</code>, without worrying about <code>$VAR</code> expanding to multiple words. You can still do <code>"$VAR"</code>, but its not required.</p>
 <p>This also means when you’re doing regex, you can splat a variable into a regex to test against a string:</p>
 <pre><code>[[ $filename =~ ^[[:alnum:]]+$pattern ]]</code></pre>
@@ -119,7 +119,7 @@ var=&quot;`command \`command\``&quot;</code></pre>
 fi</code></pre>
 <p>Use an explicit <code>./</code> path when doing wildcard expansion of filenames:</p>
 <pre><code>find . -name &quot;./*.txt&quot;</code></pre>
-<p><strong>Dont use <code>eval</code></strong>.</p>
+<p><strong>Don’t use <code>eval</code></strong>.</p>
 <h3 id="arrays">Arrays</h3>
 <p>Arrays should be used for lists of items, to avoid complications with quoting.</p>
 <p>Using a single string to multiple command arguments to another command should be avoided, as it leads to having to either doing an eval or parameter expansion.</p>
@@ -153,7 +153,7 @@ command_output=&quot;$(command)&quot;
 while read -r line; do
   my_variable+=&quot;${line}\n&quot;
 done &lt;&lt;&lt;&quot;$command_output&quot;</code></pre>
-<p>which sends the string into <code>STDIN</code>.</p>
+<p>… which sends the string into <code>STDIN</code>.</p>
 <p>Another alternative with <code>readarray</code>:</p>
 <pre><code>my_variable=&#39;something&#39;
 readarray -t lines &lt; &lt;(command)
@@ -162,7 +162,7 @@ for line in &quot;${lines[@]}; do
 done</code></pre>
 <hr />
 <p>Should be careful about using a for-loop to iterate over output using <code>for something in $(...)</code>, since the output is split by whitespace, not by line. This can be safe, if you’re sure the subshell output can’t contain whitespace, but <code>while</code> with <code>readarray</code> is often safer.</p>
-<p><code>&lt;</code> and <code>&gt;</code> in <code>[[ ... ]]</code> perform <strong>lexographic</strong>, not numerical comparisons.</p>
+<p><code>&lt;</code> and <code>&gt;</code> in <code>[[ ... ]]</code> perform <strong>lexicographic</strong>, not numerical comparisons.</p>
 <h3 id="math-subshells">Math subshells:</h3>
 <pre><code># do some simple arithmetic and print it
 echo &quot;$(( 2 + 2)) is 4&quot;
@@ -205,7 +205,7 @@ my_var=&quot;$(command)&quot;
 }
 
 main &quot;$@&quot; || exit $?</code></pre>
-<p>For short scripts that just once from top to bottom, that’s slight overkill, but once youre doing lots of <code>getopts</code>/<code>validation</code> or have a sufficient amount of functionality, it makes sense to do that.</p>
+<p>For short scripts that just once from top to bottom, that’s slight overkill, but once you’re doing lots of <code>getopts</code>/<code>validation</code> or have a sufficient amount of functionality, it makes sense to do that.</p>
 <h3 id="checking-return-values">Checking Return Values</h3>
 <p>Instead of explicitly checking <code>$?</code> to check the error code, you can use an if statement, or just a <code>||</code> with curly brackets:</p>
 <pre><code>if ! mv &quot;$something&quot; &quot;$somewhere&quot;; then

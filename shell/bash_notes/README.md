@@ -21,9 +21,9 @@ printf "%s" "$name"
 
 ---
 
-Maybe look into `perl` instead of `sed`/`awk`/`tr`/`cut`, look at perlre and perlrun man pages.
+Maybe look into `perl` instead of `sed`/`awk`/`tr`/`cut`, look at `perlre` and `perlrun` man pages.
 
-Read the bash man page! Bashisms can be pad if youre trying to be POSIX compliant, but bashisms also save lots of time.
+Read the bash man page! Bashisms can be bad if you're trying to be POSIX compliant, but bashisms also save lots of time.
 
 You may need to use POSIX complaint code for something like Solaris SVR4 packages which requires Bourne shell for any scripts.
 
@@ -42,13 +42,13 @@ To remind myself, `2>/dev/null 1>&2` to completely silence a script, `echo somet
 
 ##### Extensions
 
-`.sh` at the end of scripts is only necessary if youre creating libraries, or if you're for some reason in windows land. Otherwise you're only making yourself do more typing. If youre making libraries, there is no shebang line and there shouldn't be - its meant to be `source`d into some other script. If its a library, it should have a `.sh` or `.bash` extension and the file shouldn't be executable.
+`.sh` at the end of scripts is only necessary if you're creating libraries, or if you're for some reason in windows land. Otherwise you're only making yourself do more typing. If you're making libraries, there is no shebang line and there shouldn't be - its meant to be `source`d into some other script. If its a library, it should have a `.sh` or `.bash` extension and the file shouldn't be executable.
 
 ---
 
-[Dont use `/usr/bin/env`](https://rwx.gg/stupid/env/)
+[Don't use `/usr/bin/env`](https://rwx.gg/stupid/env/)
 
-Use short curcuiting when doing simple tests, case statements for basic subcommands, and getopts if you want to have short and long (`-h`, `--help`) options for consistency/larger programs.
+Use short circuiting when doing simple tests, case statements for basic subcommands, and getopts if you want to have short and long (`-h`, `--help`) options for consistency/larger programs.
 
 SUID/SGID are forbidden on shell scripts (running as owner as script instead of person executing the script). Too many security risks that come along with using that, use `sudo` if you need elevated access.
 
@@ -56,7 +56,7 @@ SUID/SGID are forbidden on shell scripts (running as owner as script instead of 
 
 The rest of these notes are from the [Google StyleGuide](https://google.github.io/styleguide/shellguide.html), which is fantastic.
 
-Dont need to use the `function` keyword, as its optional. Also, there aren't really functions, they're procedures/methods. No reason to break POSIX compliance and using `function`.
+Don't need to use the `function` keyword, as its optional. Also, there aren't really functions, they're procedures/methods. No reason to break POSIX compliance and using `function`.
 
 Using hyphens (or nothing) instead of underscores for variable/script names.
 
@@ -71,7 +71,7 @@ some_string="I am a string
 with multiple lines"
 ```
 
-Dont but `do` and `then` on their own line when using `for`/`if` loops:
+Don't but `do` and `then` on their own line when using `for`/`if` loops:
 
 ```
 for ....; do
@@ -111,7 +111,7 @@ FLAGS=( --foo --bar='baz' )
 readonly FLAGS
 ```
 
-Dont need to quote variables in arithmetic subshells
+Don't need to quote variables in arithmetic subshells
 
 ```
 if (( $# > 3 )); then
@@ -119,14 +119,14 @@ if (( $# > 3 )); then
 fi
 ```
 
-Dont need to quote literal integers, but you may want to single quote words:
+Don't need to quote literal integers, but you may want to single quote words:
 
 ```
 exit_code=3
 some_value='true'
 ```
 
-Use `$(command)` instea of backticks. Nested backticks require escaping the inner ones. `$(command)` doesnt change and is easier to read:
+Use `$(command)` instead of back ticks. Nested back ticks require escaping the inner ones. `$(command)` doesn't change and is easier to read:
 
 ```
 # Do:
@@ -135,7 +135,7 @@ var="$(command "$(command)")"
 var="`command \`command\``"
 ```
 
-Use `[[ ... ]]` instead of `[ ... ]`, `test` and `/usr/bin/[` to avoid POSIX issues. `[[ ]]` is **buit-in** to bash, doing `[` causes you to do a subshell out to the `[` command, and offers you the advantage that:
+Use `[[ ... ]]` instead of `[ ... ]`, `test` and `/usr/bin/[` to avoid POSIX issues. `[[ ]]` is **built-in** to bash, doing `[` causes you to do a subshell out to the `[` command, and offers you the advantage that:
 
 `[[ ... ]]` reduces errors as no pathname expansion or word splitting takes place. To exemplify what that means, you can do `[[ $VAR == test ]]`, without worrying about `$VAR` expanding to multiple words. You can still do `"$VAR"`, but its not required.
 
@@ -177,7 +177,7 @@ Use an explicit `./` path when doing wildcard expansion of filenames:
 find . -name "./*.txt"
 ```
 
-**Dont use `eval`**.
+**Don't use `eval`**.
 
 ### Arrays
 
@@ -234,7 +234,7 @@ while read -r line; do
 done <<<"$command_output"
 ```
 
-which sends the string into `STDIN`.
+... which sends the string into `STDIN`.
 
 Another alternative with `readarray`:
 
@@ -251,7 +251,7 @@ done
 Should be careful about using a for-loop to iterate over output using `for something in $(...)`, since the output is split by whitespace, not by line. This can be safe, if you're sure the subshell output can't contain whitespace, but `while` with `readarray` is often safer.
 
 
-`<` and `>` in `[[ ... ]]` perform **lexographic**, not numerical comparisons.
+`<` and `>` in `[[ ... ]]` perform **lexicographic**, not numerical comparisons.
 
 ### Math subshells:
 
@@ -328,7 +328,7 @@ main() {
 main "$@" || exit $?
 ```
 
-For short scripts that just once from top to bottom, that's slight overkill, but once youre doing lots of `getopts`/`validation` or have a sufficient amount of functionality, it makes sense to do that.
+For short scripts that just once from top to bottom, that's slight overkill, but once you're doing lots of `getopts`/`validation` or have a sufficient amount of functionality, it makes sense to do that.
 
 ### Checking Return Values
 
