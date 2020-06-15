@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-            <title>exobrain | Bash Notes</title>
+            <title>exobrain</title>
         <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -25,16 +25,221 @@
 </header>
 <main>
 <a id=top></a><div class=container>
-<div id="main-header">
-  <div class="h1" id="main-title">Bash Notes</div>
-  </div>
+<table>
+<tbody>
+<tr class="odd">
+<td>Title: Bash Notes</td>
+</tr>
+</tbody>
+</table>
+<p>Use bash substitutions when possible instead of <code>sed</code>/<code>awk</code>.</p>
+<h4 id="auto-expanding-variable-contents">Auto expanding variable contents:</h4>
+<pre><code># special syntax to expand \n to actual newline in string
+name=$&#39;Sean\nBreckenridge&#39;
+echo &quot;$name&quot; # recieves one argument
+
+# weird printf trickery
+printf &quot;%s&quot; $name # auto expands to two arguments, only prints &#39;Sean&#39;
+printf &quot;%s %s&quot; $name # printf receives two arguments
+
+# safest is to quote your variables
+printf &quot;%s&quot; &quot;$name&quot; </code></pre>
+<hr />
+<p>Maybe look into perl instead of <code>sed</code>/<code>awk</code>/<code>tr</code>/<code>cut</code>, look at perlre and perlrun man pages.</p>
 <p>Read the bash man page! Bashisms can be pad if youre trying to be posix compliant, but bashisms also save lots of time.</p>
+<p>You may need to use POSIX complaint code for something like Solaris SVR4 packages which requires Bourne shell for any scripts.</p>
+<h5 id="early-exit">Early Exit</h5>
 <p>Print message to STDERR if value is unset and exit:</p>
 <pre><code># if $1 is unset/empty
 USER_INPUT=&quot;${1:?must provide something as first argument}&quot;</code></pre>
-<p><code>.sh</code> at the end of scripts is only necessary for windows compliance/if you’re creating a library that requires you to include bash files. Otherwise you’re only making yourself do more typing.</p>
-<p>Use bash substitutions when possible instead of <code>sed</code>/<code>awk</code>.</p>
-<p>Maybe look into perl instead of <code>sed</code>/<code>awk</code>/<code>tr</code>/<code>cut</code>, look at perlre and perlrun pages.</p>
+<hr />
+<p>To remind myself, <code>2&gt;/dev/null 1&gt;&amp;2</code> to completely silence a script, <code>echo something &gt;&amp;2</code> (or <code>1&gt;&amp;2</code>) to print an error.</p>
+<h5 id="extensions">Extensions</h5>
+<p><code>.sh</code> at the end of scripts is only necessary if youre creating libraries, or if you’re for some reason in windows land. Otherwise you’re only making yourself do more typing. If youre making libraries, there is no shebang line and there shouldn’t be - its meant to be <code>source</code>d into some other script. If its a library, it should have a <code>.sh</code> or <code>.bash</code> extension and the file shouldn’t be executable.</p>
+<hr />
+<p><a href="https://rwx.gg/stupid/env/">Dont use <code>/usr/bin/env</code></a></p>
+<p>Use short curcuiting when doing simple tests, case statements for basic subcommands, and getopts if you want to have short and long (<code>-h</code>, <code>--help</code>) options for consistency/larger programs.</p>
+<p>SUID/SGID are forbidden on shell scripts (running as owner as script instead of person executing the script). Too many security risks that come along with using that, use <code>sudo</code> if you need elevated access.</p>
+<h4 id="stylingformatting">Styling/Formatting</h4>
+<p>The rest of these notes are from the <a href="https://google.github.io/styleguide/shellguide.html">Google StyleGuide</a>, which is fantastic.</p>
+<p>Dont need to use the <code>function</code> keyword, as its optional. Also, there aren’t really functions, they’re procedures/methods. No reason to break POSIX compliance and using <code>function</code>.</p>
+<p>Using hyphens (or nothing) instead of underscores for variable/script names.</p>
+<p>I tend to just use <a href="https://github.com/mvdan/sh"><code>shfmt</code></a> for everything.</p>
+<p>HEREDOCs that have indentation need tabs, so it can make formatting confusing - so they need to left justified. You can use a dash to chomp tabs, but then it removes <em>all</em> surrounded tabs.</p>
+<p>One can use embedded newlines:</p>
+<pre><code>some_string=&quot;I am a string
+with multiple lines&quot;</code></pre>
+<p>Dont but <code>do</code> and <code>then</code> on their own line when using <code>for</code>/<code>if</code> loops:</p>
+<pre><code>for ....; do
+  expression
+done
+if ....; then
+  expression
+done</code></pre>
+<p>Using semicolons makes the indent more obvious.</p>
+<p>When doing <em>lots</em> of parameter expansion when doing an echo, would make more sense to separate that into another variable, or use <code>printf</code>. Avoid stuff like:</p>
+<pre><code>echo &quot;${1}0${2}0${3}&quot;</code></pre>
+<p>Quoting:</p>
+<ul>
+<li><em>Always quote your strings!</em> Often better to ‘over-quote’ than to get an error with shell expansion.</li>
+<li>Never quote literal integers</li>
+<li>Use <code>"$@"</code> unless you have a specific reason to use <code>$*</code>, like splatting in the individual elements into a string: <code>"search?q=$*"</code></li>
+<li>Single quotes doesn’t do any shell substitution.</li>
+<li>Always do shell expansion</li>
+</ul>
+<p>It may not be necessary, but always quote your command substitutions to be safe:</p>
+<pre><code>some_val=&quot;$(subshell command &quot;$@&quot;)&quot;</code></pre>
+<p><code>readonly</code> is a synonym for <code>declare -r</code>, which makes a variable constant.</p>
+<pre><code>FLAGS=( --foo --bar=&#39;baz&#39; )
+readonly FLAGS</code></pre>
+<p>Dont need to quote variables in arithmetic subshells</p>
+<pre><code>if (( $# &gt; 3 )); then
+  echo &quot;too many arguments&quot;
+fi</code></pre>
+<p>Dont need to quote literal integers, but you may want to single quote words:</p>
+<pre><code>exit_code=3
+some_value=&#39;true&#39;</code></pre>
+<p>Use <code>$(command)</code> instea of backticks. Nested backticks require escaping the inner ones. <code>$(command)</code> doesnt change and is easier to read:</p>
+<pre><code># Do:
+var=&quot;$(command &quot;$(command)&quot;)&quot;
+# instead of:
+var=&quot;`command \`command\``&quot;</code></pre>
+<p>Use <code>[[ ... ]]</code> instead of <code>[ ... ]</code>, <code>test</code> and <code>/usr/bin/[</code> to avoid POSIX issues. <code>[[ ]]</code> is <strong>buit-in</strong> to bash, doing <code>[</code> causes you to do a subshell out to the <code>[</code> command, and offers you the advantage that:</p>
+<p><code>[[ ... ]]</code> reduces errors as no pathname expansion or word splitting takes place. To exemplify what that means, you can do <code>[[ $VAR == test ]]</code>, without worrying about <code>$VAR</code> expanding to multiple words. You can still do <code>"$VAR"</code>, but its not required.</p>
+<p>This also means when you’re doing regex, you can splat a variable into a regex to test against a string:</p>
+<pre><code>[[ $filename =~ ^[[:alnum:]]+$pattern ]]</code></pre>
+<p>For regex:</p>
+<pre><code># this matches
+[[ &quot;filename&quot; == f* ]]
+# this doesnt
+[[ &quot;filename&quot; == &quot;f*&quot; ]]</code></pre>
+<p>Bash is smart enough to deal with empty strings in test. (<code>/usr/bin/[</code> is not!)</p>
+<p>Use <code>-z</code> to empty strings, and <code>-n</code> to test if strings has value:</p>
+<pre><code>[[ -z &quot;$1&quot; ]] &amp;&amp; echo &quot;argument is empty&quot;
+[[ -n &quot;$1&quot; ]] &amp;&amp; echo &quot;argument has value: ${1}&quot;</code></pre>
+<p>Using <code>(( ... ))</code> makes sure that the values are integers, don’t have to use <code>$</code> and means you don’t have to use <code>-gt</code> or <code>-lt</code> in <code>[[ .. ]]</code>:</p>
+<pre><code>if (( some_var &gt; 3 )); then
+
+fi</code></pre>
+<p>Use an explicit <code>./</code> path when doing wildcard expansion of filenames:</p>
+<pre><code>find . -name &quot;./*.txt&quot;</code></pre>
+<p><strong>Dont use <code>eval</code></strong>.</p>
+<h3 id="arrays">Arrays</h3>
+<p>Arrays should be used for lists of items, to avoid complications with quoting.</p>
+<p>Using a single string to multiple command arguments to another command should be avoided, as it leads to having to either doing an eval or parameter expansion.</p>
+<pre><code># Do this:
+declare -a flags
+flags=(--foo --bar=&#39;baz&#39;)
+flags+=(--greeting=&quot;Hello ${name}&quot;)
+binary_command &quot;${flags[@]}&quot;
+# Instead of:
+flags=&#39;--foo --bar=baz&#39;
+flags+=&#39; --greeting=&quot;Hello world&quot;&#39; # not trivial to do variable expansion
+binary_command &quot;${flags}&quot;</code></pre>
+<p>Command expansions return single strings, not arrays. Avoid trying to capture subshell into array assignments since it won’t work if the command contains special characters or whitespace. Better to read into a string and then use <code>readarray</code></p>
+<h4 id="piping-to-while">Piping to While</h4>
+<p>Use process substitution or <code>readarray</code> instead of directly piping into while. Pipes create subshells, so the block in the while loop doesn’t have access to un-exported variables in the script, and can’t change anything in the parent shell.</p>
+<p><em>Don’t do this:</em></p>
+<pre><code>my_variable=&#39;something&#39;
+command | while read -r line; do
+  my_variable+=&quot;${line}\n&quot;
+done
+echo &quot;$my_variable&quot;  # prints &#39;something&#39;, wasnt modified in loop</code></pre>
+<p><em>Do this instead:</em></p>
+<pre><code>my_variable=&#39;something&#39;
+while read -r line; do
+  my_variable+=&quot;${line}\n&quot;
+done &lt; &lt;(command)</code></pre>
+<p>That leaves the while loop in the parent process, but still runs the command in a subshell.</p>
+<p>You can also:</p>
+<pre><code>my_variable=&#39;something&#39;
+command_output=&quot;$(command)&quot;
+while read -r line; do
+  my_variable+=&quot;${line}\n&quot;
+done &lt;&lt;&lt;&quot;$command_output&quot;</code></pre>
+<p>which sends the string into <code>STDIN</code>.</p>
+<p>Another alternative with <code>readarray</code>:</p>
+<pre><code>my_variable=&#39;something&#39;
+readarray -t lines &lt; &lt;(command)
+for line in &quot;${lines[@]}; do
+  my_variable+=&quot;${line}\n&quot;
+done</code></pre>
+<hr />
+<p>Should be careful about using a for-loop to iterate over output using <code>for something in $(...)</code>, since the output is split by whitespace, not by line. This can be safe, if you’re sure the subshell output can’t contain whitespace, but <code>while</code> with <code>readarray</code> is often safer.</p>
+<p><code>&lt;</code> and <code>&gt;</code> in <code>[[ ... ]]</code> perform <strong>lexographic</strong>, not numerical comparisons.</p>
+<h3 id="math-subshells">Math subshells:</h3>
+<pre><code># do some simple arithmetic and print it
+echo &quot;$(( 2 + 2)) is 4&quot;
+# assign to variable
+(( i = 10 * j + 400))
+echo &quot;$i&quot;</code></pre>
+<p><code>let</code> isn’t <code>declare</code> or <code>local</code> - just avoid it.</p>
+<p>Stylistic considerations aside, shell built-in arithmetic is way faster than a subshell out to <code>expr</code> - avoid it.</p>
+<h3 id="localdeclare">Local/Declare</h3>
+<p><code>local</code> and <code>declare</code> have the same flags. <code>declare</code> works a global level and <code>local</code> works in functions.</p>
+<p>same thing:</p>
+<pre><code>readonly SOME_PATH=&#39;/some/path&#39;
+declare -r SOMEPATH=&#39;/some/path&#39;</code></pre>
+<pre><code># makes constant and exports variable:
+declare -rx SOMEPATH=&#39;/some/path&#39;</code></pre>
+<p>Can set a variable to be readonly after checking opts:</p>
+<pre><code>VERBOSE=&#39;false&#39;
+while getopts &#39;v&#39; flag; do
+  case &quot;${flag}&quot; in
+    v) VERBOSE=&#39;true&#39; ;;
+  esac
+done
+readonly VERBOSE</code></pre>
+<h3 id="clobbering-exit-codes">Clobbering Exit Codes</h3>
+<p>You should separate the declaration of <code>declare</code> and <code>local</code> from its <code>RHS</code> value if that includes a call to a subshell which could fail. For example:</p>
+<pre><code>declare my_var=&quot;$(command)&quot;
+(( $? == 0 )) || return</code></pre>
+<p>will <em>always</em> succeed, since the <code>declare</code> returns a 0 exit code.</p>
+<p>Should instead do:</p>
+<pre><code>declare my_var
+my_var=&quot;$(command)&quot;
+(( $? == 0))</code></pre>
+<p>When a script gets large enough, you may start separating parts into functions. That means that an <code>exit</code> that may have previously existed wouldn’t exit the script, but instead the function. Those should be converted to <code>return</code> and then the main invocation to the function should be <code>||</code>’d or <code>(( $? == 0))</code>d against. This also leads itself well to exporting functions in <code>bash</code> for interactive use.</p>
+<p>So, it makes more sense to create a <code>main</code> or top-level function that includes your entire script, like:</p>
+<pre><code>main() {
+  [ -z &quot;$1&quot; ] &amp;&amp; {
+    echo &quot;error&quot; &gt;&amp;2
+    return 1
+  }
+}
+
+main &quot;$@&quot; || exit $?</code></pre>
+<p>For short scripts that just once from top to bottom, that’s slight overkill, but once youre doing lots of <code>getopts</code>/<code>validation</code> or have a sufficient amount of functionality, it makes sense to do that.</p>
+<h3 id="checking-return-values">Checking Return Values</h3>
+<p>Instead of explicitly checking <code>$?</code> to check the error code, you can use an if statement, or just a <code>||</code> with curly brackets:</p>
+<pre><code>if ! mv &quot;$something&quot; &quot;$somewhere&quot;; then
+  echo &quot;Error, couldnt move ${something}&quot;
+  exit 1
+fi
+
+# or...
+if ! some_error=&quot;$(mv &quot;$something&quot; &quot;$somewhere&quot;)&quot;; then
+  echo &quot;$some_error&quot;
+  exit 1
+fi
+
+# or...
+mv &quot;$something&quot; &quot;$somewhere&quot; || {
+  echo &quot;Error, couldn&#39;t move ${something}&quot;
+  exit 1
+}</code></pre>
+<p>Bash also has <code>PIPESTATUS</code> that lets you check the return code from every part of a pipe.</p>
+<pre><code>tar -cf - ./* | ( cd &quot;${dir}&quot; &amp;&amp; tar -xf - )
+if (( PIPESTATUS[0] != 0 || PIPESTATUS[1] != 0 )); then
+  echo &quot;Unable to tar files to ${dir}&quot; &gt;&amp;2
+fi</code></pre>
+<p>Another alternative if you’re pipelining text is to use <code>xargs -r</code>, which doesn’t run if the STDIN is empty, which is typically the case if a command failed:</p>
+<pre><code>some_command_that_might_print_nothing | xargs -r -I &quot;{}&quot; echo &quot;{}&quot;</code></pre>
+<p>References:</p>
+<ul>
+<li><a href="https://google.github.io/styleguide/shellguide.html" class="uri">https://google.github.io/styleguide/shellguide.html</a></li>
+<li>bash man page</li>
+</ul>
 </div>
 </main>
 <footer>
