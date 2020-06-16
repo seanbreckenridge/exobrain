@@ -241,7 +241,7 @@ Another alternative with `readarray`:
 ```
 my_variable='something'
 readarray -t lines < <(command)
-for line in "${lines[@]}; do
+for line in "${lines[@]}"; do
   my_variable+="${line}\n"
 done
 ```

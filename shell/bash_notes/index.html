@@ -157,7 +157,7 @@ done &lt;&lt;&lt;&quot;$command_output&quot;</code></pre>
 <p>Another alternative with <code>readarray</code>:</p>
 <pre><code>my_variable=&#39;something&#39;
 readarray -t lines &lt; &lt;(command)
-for line in &quot;${lines[@]}; do
+for line in &quot;${lines[@]}&quot;; do
   my_variable+=&quot;${line}\n&quot;
 done</code></pre>
 <hr />
