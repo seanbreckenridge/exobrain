@@ -69,11 +69,11 @@ addEventListener('click', e => {
   if (t.id === node) return
 
   // TODO add better target validation
-  let link = `${base}#${t.id}`
-  copyToClipboard('')
-  copyToClipboard(link)
-  copied.innerHTML = "copied link to clipboard"
-  showCopied(e)
+  // let link = `${base}#${t.id}`
+  // copyToClipboard('')
+  // copyToClipboard(link)
+  // copied.innerHTML = "copied link to clipboard"
+  // showCopied(e)
 })
 
 // convert all heading tags to links
