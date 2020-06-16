@@ -11,6 +11,7 @@ Head to the [sitemap](./sitemap) or [blog feed](./feed) for whats on here.
 TODO:
 
 - Still to to implement the searching feature, planning on periodically caching the rendered MD files in a genserver on my elixir server to fuzzy match against the pages here :)
+- write some JS to converts to links so theyre clickable through vimium
 
 Inspired by [beepb00p](https://beepb00p.xyz/exobrain/exobrain.html), structure/build tooling modified from [rwx.gg](https://gitlab.com/rwx.gg/README)
 
