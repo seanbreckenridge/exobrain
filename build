@@ -35,27 +35,30 @@ cat ./sitemap/BASE.md >./sitemap/README.md
 echo >>./sitemap/README.md
 
 # generate markdown that displays the sitemap
-{ find . -name "README.md" | grep -vE "^(./sitemap|./post|./feed|./README.md)" | sed "s/README.md$//g" | while read -r indexdir; do
+{ while read -r indexdir; do
 	full_dir=$(echo -n "$indexdir" | cut -c 2- | tr -d "\n")
 	without_last_dir=$(dirname "$full_dir")
 	page_title=$(grep -m1 Title "$indexdir/README.md" | cut -d" " -f2- | tr -d "\n")
 	absolute_path=$(cut -c 2- <<<"$indexdir")
 	printf "* %s/ [%s](%s)\n" "${without_last_dir#/}" "$page_title" "$absolute_path"
 	# sort by columns (directory name and then name of post
-done; } | sort -k2,2 -k3,3 >>./sitemap/README.md
+done < <(find . -name "README.md" | grep -vE "^(./sitemap|./post|./feed|./README.md)" | sed "s/README.md$//g"); } \
+  | sort -k2,2 -k3,3 >>./sitemap/README.md
 
 # create feed (blog) page
 cat ./feed/BASE.md >./feed/README.md
 echo >>./feed/README.md
 
 # generate markdown that displays blog feed
-{ find ./post -name "README.md" | sed "s/README.md$//g" | while read -r indexdir; do
+{ while read -r indexdir; do
 	# grab title and date from yaml at top
 	blog_title=$(grep -m1 Title "$indexdir/README.md" | cut -d" " -f2- | tr -d "\n")
 	blog_date=$(grep -m1 Date "$indexdir/README.md" | cut -d" " -f2- | tr -d "\n")
 	absolute_path=$(cut -c 2- <<<"$indexdir")
 	printf "* [%s](%s) %s\n" "$blog_title" "$absolute_path" "$blog_date"
-done; } | perl -e "print sort {(split ' ', $a)[-1] <=> (split ' ', $b)[-1]} <>" | tac >>./feed/README.md
+done< <(find ./post -name "README.md" | sed "s/README.md$//g" ); } \
+  | perl -e "print sort {(split ' ', $a)[-1] <=> (split ' ', $b)[-1]} <>" \
+  | tac >>./feed/README.md
 # perl expression sorts lines by last column
 
 # make manifest
