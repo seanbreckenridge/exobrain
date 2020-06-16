@@ -51,7 +51,7 @@ In the iterative process, there is no need for a language to keep values from ol
 
 This reason is why languages like C's recursive calls cause memory to grow larger and larger, because they don't optimize for Linear Iterative Processes. Optimizing for that is called `tail-recursion`, and is very often done in functional languages, as its the performant replacement for loops.
 
-In the Iterative code above, `fachelp` is tail-recursive, because the last thing to do is just a function call to itself. The `if` doesn't interfere with that because its a special form, and it in a sense 'dissapears', leaving one of the arguments after being evaluated.
+In the Iterative code above, `fachelp` is tail-recursive, because the last thing to do is just a function call to itself. The `if` doesn't interfere with that because its a special form, and it in a sense 'disappears', leaving one of the arguments after being evaluated.
 
 ### Tree recursion
 

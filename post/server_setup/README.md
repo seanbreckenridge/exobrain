@@ -9,7 +9,7 @@ Recently I've been playing with VMs/VPSs as web servers, so I've been setting up
 Setup the VM however with whatever you'd like. I've been a fan of debian on the server recently.
 
 1. `ssh root@<ip-addr>`
-2. create a user for me and give me sudo privileges
+2. create a user for me and give me `sudo` privileges
 
 ```
 # my terminal doesn't have the best terminfo support out of the box; default to xterm-256color

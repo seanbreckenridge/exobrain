@@ -15,7 +15,7 @@ Title: Decorators Pycon
 
   - Global(G): Defined at the uppermost level
 
-  - Built-in(B): Reserved names in Python builtin modules
+  - Built-in(B): Reserved names in Python built-in modules
 
 - The decorator function (the one that you apply to others with e.g. `@decorator`) executes once, when you decorate a function, but the inner wrapper function gets executed every time function is called.
 

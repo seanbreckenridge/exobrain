@@ -64,7 +64,7 @@ OS is just a collection of objects: directories, files, display, mouse, keyboard
 
 #### Essential Characteristics
 
-* Uniform refernce (everything is an object)
+* Uniform reference (everything is an object)
 * Uniform access (only messages)
 * These guarantee "Simulation" - since everything is handled by passing messages to another object, a new user-defined object acts in a similar way and can extend functionality without messing with existing code.
 

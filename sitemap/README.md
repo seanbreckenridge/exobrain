@@ -5,7 +5,7 @@ blog: false
 More 'complete' blog-like posts at [feed](/feed).
 
 * / [Cubing](/cubing/)
-* / [Gamedev Notes](/gamedev/)
+* / [Game Dev Notes](/gamedev/)
 * / [Japanese](/japanese/)
 * anime/ [Searching on pixiv](/anime/pixiv/)
 * cryptography/ [SP Networks - Computerphile](/cryptography/sp_networks/)

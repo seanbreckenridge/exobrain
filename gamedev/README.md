@@ -1,5 +1,5 @@
 ---
-Title: Gamedev Notes
+Title: Game Dev Notes
 ---
 
 <https://www.puzzlescript.net/>

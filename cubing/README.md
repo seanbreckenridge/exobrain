@@ -29,7 +29,7 @@ F2B algorithms for Roux: <https://tinyurl.com/f2balgs>
 2x2 PBL
 
 * Use PLL if one side is solved
-* R2 F2 R2 swap both diagnols
-* R2 U' B2 U2 R2 U' R2 swap both back adjacents
-* R' U R' F2 R F' R swap top adjacent (put bar on back), bottom diagnols
-* R2 U R2 U' R2 U R2 U' R2 swap bottom adjacent (put bar on left), top diagnols
+* R2 F2 R2 swap both diagonals
+* R2 U' B2 U2 R2 U' R2 swap both back adjacent
+* R' U R' F2 R F' R swap top adjacent (put bar on back), bottom diagonals
+* R2 U R2 U' R2 U R2 U' R2 swap bottom adjacent (put bar on left), top diagonals

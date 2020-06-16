@@ -2,11 +2,11 @@
 Title: Searching on pixiv
 ---
 
-Wierd hack to sorta sort by populairty on [pixiv](https://www.pixiv.net/en/) without a membership.
+Weird hack to sorta sort by popularity on [pixiv](https://www.pixiv.net/en/) without a membership.
 
 It sorts it by the number of stars (like likes)
 
-Search for something like 10000users入りor 5000users入り and then the japanese name of the show:
+Search for something like 10000users入りor 5000users入り and then the Japanese name of the show:
 
 ユーリ!!! on ICE
 

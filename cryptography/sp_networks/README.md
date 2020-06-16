@@ -4,7 +4,7 @@ Title: SP Networks - Computerphile
 
 <https://www.youtube.com/watch?v=DLjzI5dX8jc>
 
-Old Encyption:
+Old Encryption:
 
 e.g. Caesar Cipher/Enigma Machine (substitution cipher)
 
@@ -15,7 +15,7 @@ e.g. Caesar Cipher/Enigma Machine (substitution cipher)
 4 -> C4
 ```
 
-Since the ciphertext is a has a block size of one (one to one; encrypts one character into exactly one other), its easy to reverse by anaylzing letter frequencies or brute force. If someone knows what your mapping function is, its very easy to reverse.
+Since the cipher text is a has a block size of one (one to one; encrypts one character into exactly one other), its easy to reverse by analyzing letter frequencies or brute force. If someone knows what your mapping function is, its very easy to reverse.
 
 Modern Encryption uses more block sizes. A block cipher takes a block size of 'n' and turns it into an output of size 'n' (e.g. 128-bits.)
 
@@ -33,7 +33,7 @@ One Substitution/Permutation through an SP-box is called a **round**.
 
 If someone knows what substitutions and permutations your SP-box does (which is typically included in the algorithm), they can easily reverse it.
 
-In order to make the ciphertext harder to reverse, you introduce a secret key:
+In order to make the cipher text harder to reverse, you introduce a secret key:
 
 Expand the key (using a *key schedule*) so that its size `M*n`, and split it up into chunks that are the same size as `M`.
 
