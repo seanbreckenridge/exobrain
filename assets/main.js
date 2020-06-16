@@ -76,7 +76,7 @@ addEventListener('click', e => {
   showCopied(e)
 })
 
-// convert all h2-h6 tags to links
+// convert all heading tags to links
 D.querySelectorAll("h1,h2,h3,h4,h5,h6").forEach((h) => {
 
   // create URL
