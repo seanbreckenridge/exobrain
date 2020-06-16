@@ -77,7 +77,8 @@ addEventListener('click', e => {
 })
 
 // convert all h2-h6 tags to links
-D.querySelectorAll("h2,h3,h4,h5,h6").forEach((h) => {
+D.querySelectorAll("h1,h2,h3,h4,h5,h6").forEach((h) => {
+
   // create URL
   let base = h.baseURI.split('#')[0]
   let basea = base.split('/')

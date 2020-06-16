@@ -10,12 +10,6 @@ a:hover {
   color: var(--fgcolor);
 }
 
-main {
-  max-width: unset;
-  margin: 0;
-  text-align: center;
-}
-
 .container {
   display: inline-block;
   font-family: var(--sans-font);
