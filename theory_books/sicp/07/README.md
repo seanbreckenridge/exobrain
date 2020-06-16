@@ -52,7 +52,7 @@ a size
 a size + 5
 ```
 
-send message `size` to `a`, get the resulting value, and then send `+ 5` to the resulting value.
+Send message `size` to `a`, get the resulting value, and then send `+ 5` to the resulting value.
 
 You can also send blocks to objects, which languages like ruby inherited.
 

@@ -16,7 +16,7 @@ From Child to Adult: Doing (under 5yrs) -> Images (under 12yrs) -> Facts/Logic, 
 
 Once people age out of the initial doing/images phase, they often don't interact with interfaces in the same way. Creative people are somehow able to live in all 3 paradigms at once.
 
-Sadly teenagers after often taught math/physics through the Facts/Logic paradigm, which isn't how Mathematicians/Physicists actually do their work.
+Sadly teenagers after often taught Math/physics through the Facts/Logic paradigm, which isn't how Mathematicians/Physicists actually do their work.
 
 ### Tim Galleway - Inner Game of Tennis
 
