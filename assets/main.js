@@ -25,9 +25,9 @@ copied.style.color = 'white'
 copied.style.display = 'none'
 body.appendChild(copied)
 
-D.onreadystatechange = e => {
-  D.readyState === "complete" && location.hash && scrollBy(0,-70)
-}
+// D.onreadystatechange = e => {
+//  D.readyState === "complete" && location.hash && scrollBy(0,-20)
+// }
 
 // force *all* external links to open new tab
 D.querySelectorAll('a[href^="http"]')
@@ -37,37 +37,13 @@ D.querySelectorAll('a[href^="http"]')
 D.querySelectorAll('a[href*="lite"]')
   .forEach(l=>l.setAttribute('href',l.getAttribute('href').replace('lite','')))
 
-const secs2dur = secs => {
-  let days = Math.floor(secs / 86400)
-  let hours = Math.floor((secs % 86400) / 3600)
-  let mins = Math.floor(((secs % 86400) % 3600) / 60)
-  let dur
-  if (days >=1 ) return `${days}d ${hours}h ${mins}m`
-  if (hours >=1 ) return `${hours}h ${mins}m`
-  if (mins >=1 ) return `${mins}m`
-  return 'now'
-}
-
-const age = secs => secs2dur( Math.floor(Date.now()/1000) - secs )
-
-const updateAges = () => {
-  let nodes = document.getElementsByClassName('age')
-  for (let i = nodes.length; i; i--) {
-    let n = nodes[i-1]
-    n.innerText = age(n.dataset.secs)
-  }
-}
-
-onload = updateAges 
-setInterval(updateAges, 1000)
-
 const showCopied = e => {
   copied.style.display = 'block'
   copied.style.opacity = '0.85'
   setTimeout(_=>{
     copied.style.opacity = '0'
     copied.style.display = 'none'
-  },1500)
+  },1000)
 }
 
 addEventListener('click', e => {
@@ -83,7 +59,7 @@ addEventListener('click', e => {
     return
   }
 
-  // if item is not a header of subtitle
+  // if item is not a header or subtitle, exit
   if (t.nodeName[0] !== 'H' || t === subtitle) return
 
   // copy link for 
@@ -100,8 +76,26 @@ addEventListener('click', e => {
   showCopied(e)
 })
 
+// convert all h2-h6 tags to links
+D.querySelectorAll("h2,h3,h4,h5,h6").forEach((h) => {
+  // create URL
+  let base = h.baseURI.split('#')[0]
+  let basea = base.split('/')
+  let node=basea[basea.length-2]
+  if (h.id === node) return
+  let link = `${base}#${h.id}`
+
+  // create link element to replace into header
+  let linkel = D.createElement("a")
+  linkel.appendChild(D.createTextNode(h.innerHTML))
+  linkel.title = h.innerHTML
+  linkel.href = link
+  h.innerHTML = ""
+  h.appendChild(linkel)
+})
+
 // positions links to headers properly
-onhashchange = e => scrollBy(0,-50)
+// onhashchange = e => scrollBy(0,-10)
 
 const copyToClipboard = str => {
   const el = D.createElement('textarea')

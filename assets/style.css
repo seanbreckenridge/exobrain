@@ -1,3 +1,46 @@
+:root, a {
+  color: var(--medhigh);
+}
+
+h2 {
+  color: var(--fgcolor);
+}
+
+a:hover {
+  color: var(--fgcolor);
+}
+
+main {
+  max-width: unset;
+  margin: 0;
+  text-align: center;
+}
+
+.container {
+  display: inline-block;
+  font-family: var(--sans-font);
+  font-size: 1em;
+  line-height: 1.5em;
+  text-align: left;
+}
+
+.biggest { font-size: 2.0rem; }
+.bigger { font-size: 1.35em; line-height: 1.4em; }
+.big { font-size: 1.02em; }
+.small { font-size: .9em; }
+.smaller { font-size: .8em; }
+.smallest { font-size: .7em;line-height:0.8; }
+.tiny {color: #444;border: none; font-size: .6em; line-height: 0.5;}
+
+h2:hover {
+  margin-left:0;
+  cursor: default;
+}
+
+footer, footer p {
+  margin-top: 0;
+}
+
 /* lora-regular - latin */
 @font-face {
   font-family: 'Lora';
@@ -242,13 +285,6 @@ h3 {
 }
 h2, h3, h4, h5, h6 {
   font-family: var(--sans-font);
-}
-h2:hover,
-h3:hover,
-h4:hover,
-h5:hover,
-h6:hover {
-  cursor: pointer;
 }
 h2:not(.nolink):hover:before,
 h3:not(.nolink):hover:before,
@@ -519,4 +555,3 @@ span.hideable {
 /* ----------------------------------------------- */
 /* don't forget to change the onresize js as well to
  * match the px value */
-
