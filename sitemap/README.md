@@ -6,6 +6,7 @@ More 'complete' blog-like posts at [feed](/feed).
 
 * / [Cubing](/cubing/)
 * / [Game Dev Notes](/gamedev/)
+* / [Internet Superhighway](/superhighway/)
 * / [Japanese](/japanese/)
 * / [Meta; about my exobrain](/meta/)
 * anime/ [Searching on pixiv](/anime/pixiv/)
