@@ -8,7 +8,7 @@ Some of the more complete notes are converted to blog posts eventually.
 
 Head to the [sitemap](./sitemap) or [blog feed](./feed) for whats on here.
 
-See [meta](./meta) for info on how this site is built.
+See [meta](./meta) for more information about this site.
 
 TODO:
 
