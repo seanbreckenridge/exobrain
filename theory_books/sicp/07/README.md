@@ -70,7 +70,9 @@ OS is just a collection of objects: directories, files, display, mouse, keyboard
 
 ##### Language Design:
 
-Comment on Javascript/Ruby:
+Comment from professor on Javascript/Ruby:
+
+:::co-mad
 
 These languages are rather hideous, they're based on every good idea at once.
 
@@ -79,3 +81,5 @@ When you program in scheme (or more generally, lisp), the big organizing idea is
 When you program in smalltalk, everything is done by sending messages to objects.
 
 In 'Industrial Languages', they just take all the good ideas and cram the features into a language, even when it doesn't make the most sense to do so.
+
+::::
