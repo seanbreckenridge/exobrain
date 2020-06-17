@@ -18,6 +18,6 @@ These are other sites/blogs/things I'm a fan of. Inspired by [superhighway98](ht
 
 ### Media/Entertainment
 
-* <http://programming-motherfucker.com/>
-* <https://www.comicsanscriminal.com/>
+* [comic sans criminal](https://www.comicsanscriminal.com/)
 * [xkcd](https://xkcd.com/)
+* <http://programming-motherfucker.com/>
