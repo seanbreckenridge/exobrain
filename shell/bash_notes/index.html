@@ -42,6 +42,7 @@ printf &quot;%s %s&quot; $name # printf receives two arguments
 printf &quot;%s&quot; &quot;$name&quot; </code></pre>
 <hr />
 <p>Maybe look into <code>perl</code> instead of <code>sed</code>/<code>awk</code>/<code>tr</code>/<code>cut</code>, look at <code>perlre</code> and <code>perlrun</code> man pages.</p>
+<p>Startup time for running a script is much more than using an exported function or alias, but it also makes it less portable. Despite there being a huge difference, to the human eye its typically not noticeable.</p>
 <p>Read the bash man page! Bashisms can be bad if you’re trying to be POSIX compliant, but bashisms also save lots of time.</p>
 <p>You may need to use POSIX complaint code for something like Solaris SVR4 packages which requires Bourne shell for any scripts.</p>
 <h5 id="early-exit">Early Exit</h5>
@@ -49,7 +50,7 @@ printf &quot;%s&quot; &quot;$name&quot; </code></pre>
 <pre><code># if $1 is unset/empty
 USER_INPUT=&quot;${1:?must provide something as first argument}&quot;</code></pre>
 <hr />
-<p>To remind myself, <code>2&gt;/dev/null 1&gt;&amp;2</code> to completely silence a script, <code>echo something &gt;&amp;2</code> (or <code>1&gt;&amp;2</code>) to print an error.</p>
+<p><code>2&gt;/dev/null 1&gt;&amp;2</code> to completely silence a script, <code>echo something &gt;&amp;2</code> (or <code>1&gt;&amp;2</code>) to print an error.</p>
 <h5 id="extensions">Extensions</h5>
 <p><code>.sh</code> at the end of scripts is only necessary if you’re creating libraries, or if you’re for some reason in windows land. Otherwise you’re only making yourself do more typing. If you’re making libraries, there is no shebang line and there shouldn’t be - its meant to be <code>source</code>d into some other script. If its a library, it should have a <code>.sh</code> or <code>.bash</code> extension and the file shouldn’t be executable.</p>
 <hr />

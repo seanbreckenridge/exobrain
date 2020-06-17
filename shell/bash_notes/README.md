@@ -23,6 +23,8 @@ printf "%s" "$name"
 
 Maybe look into `perl` instead of `sed`/`awk`/`tr`/`cut`, look at `perlre` and `perlrun` man pages.
 
+Startup time for running a script is much more than using an exported function or alias, but it also makes it less portable. Despite there being a huge difference, to the human eye its typically not noticeable.
+
 Read the bash man page! Bashisms can be bad if you're trying to be POSIX compliant, but bashisms also save lots of time.
 
 You may need to use POSIX complaint code for something like Solaris SVR4 packages which requires Bourne shell for any scripts.
@@ -38,7 +40,7 @@ USER_INPUT="${1:?must provide something as first argument}"
 
 ---
 
-To remind myself, `2>/dev/null 1>&2` to completely silence a script, `echo something >&2` (or `1>&2`) to print an error.
+`2>/dev/null 1>&2` to completely silence a script, `echo something >&2` (or `1>&2`) to print an error.
 
 ##### Extensions
 
