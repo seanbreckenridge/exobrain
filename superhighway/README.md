@@ -16,7 +16,8 @@ These are other sites/blogs/things I'm a fan of. Inspired by [superhighway98](ht
 
 * [HaveIBeenPwned](https://haveibeenpwned.com/) - also see [my tool](https://github.com/seanbreckenridge/keepassxc-pwned) for keepassxc.
 
-#### Media
+#### Media/Entertainment
 
 * <http://programming-motherfucker.com/>
+* <https://www.comicsanscriminal.com/>
 * [xkcd](https://xkcd.com/)
