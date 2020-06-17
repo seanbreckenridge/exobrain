@@ -2,7 +2,7 @@
 Title: Tools, or how I do everything
 ---
 
-An extension of my [dotfiles](https://github.com/seanbreckenridge/dotfiles), i.e. how I do everything.
+This is an extension of my [dotfiles](https://github.com/seanbreckenridge/dotfiles)
 
 This is an ever evolving list of tools I use and recommend, or combinations of tools I use to optimize my workflow. Some of these might be obvious to you, but it might not be to everyone!
 
