@@ -6,13 +6,16 @@ I use mine to store notes from books, videos, list resources, along with anythin
 
 Some of the more complete notes are converted to blog posts eventually.
 
-Head to the [sitemap](./sitemap) or [blog feed](./feed) for whats on here.
+Head to the [sitemap](/sitemap) or [blog feed](/feed) for whats on here.
 
-See [meta](./meta) for more information about this site.
+Other Notable Pages:
+
+  - [Tools, or how I do everything](/tools)
+  - [meta](/meta), for more information about this site.
 
 TODO:
 
 - Still to to implement the searching feature, planning on periodically caching the rendered MD files in a genserver on my elixir server to fuzzy match against the pages here :)
 
-Inspired by [beepb00p](https://beepb00p.xyz/exobrain/exobrain.html), structure/build tooling modified from [rwx.gg](https://gitlab.com/rwx.gg/README)
+Inspired by [`beepb00p`](https://beepb00p.xyz/exobrain/exobrain.html), structure/build tooling modified from [`rwx.gg`](https://gitlab.com/rwx.gg/README)
 

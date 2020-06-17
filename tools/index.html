@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+            <title>exobrain | Tools, or how I do everything</title>
+        <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+  <link rel="shortcut icon" href="/assets/img/logo.png" type="image/png">
+  <meta http-equiv="Pragma" content="no-cache"/>
+  <meta http-equiv="Expires" content="0"/>
+  <!-- link rel="shortcut icon" href="/assets/img/logo.png" type="image/png"-->
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<header class=nav-bar>
+  <nav>
+          <a class="homelink" href="/">exobrain</a>
+        <div class="nav-right">
+      <div class=nav-item><a class="nav-link" href="/feed">blog feed</a></div>
+      <div class=nav-item><a class="nav-link" href="/sitemap">exobrain sitemap</a></div>
+      <div class=nav-item><a class="nav-link" href="https://sean.fish">back to my site</a></div>
+    </div>
+  </nav>
+</header>
+<main>
+<a id=top></a><div class=container>
+<div id="main-header">
+  <div class="h1" id="main-title">Tools, or how I do everything</div>
+  </div>
+<p>An extension of my <a href="https://github.com/seanbreckenridge/dotfiles">dotfiles</a>, i.e. how I do everything.</p>
+<p>This is an ever evolving list of tools I use and recommend, or combinations of tools I use to optimize my workflow. Some of these might be obvious to you, but it might not be to everyone!</p>
+<ul>
+<li>Shells
+<ul>
+<li><a href="http://zsh.sourceforge.net/">zsh</a> - for the <a href="https://fishshell.com/"><code>fish</code></a>-like highlighting and auto completion, while still being <em>somewhat</em> posix compliant. Manually configuring everything makes this much faster than the monstrous <code>oh-my-zsh</code>.</li>
+<li>bash/<a href="https://wiki.archlinux.org/index.php/Dash">dash</a> - for shell scripting. My <code>zsh</code> setup is also much more dependent on external plugins, so I don’t use that on servers, I just stick to bash there. My <a href="https://github.com/seanbreckenridge/bootstrap/">bootstrap</a> script sets up new bash servers for me nicely, see <a href="/post/server_setup">this post</a> for more info.</li>
+</ul></li>
+<li>Terminal
+<ul>
+<li><a href="https://github.com/alacritty/alacritty">alacritty</a>, with pretty basic defaults</li>
+</ul></li>
+<li>OS-stuff
+<ul>
+<li>Linux Distrobution (though I’m forced to use Mac for work sometimes)
+<ul>
+<li><a href="https://wiki.archlinux.org/index.php/">Arch</a></li>
+</ul></li>
+<li>Window Managers
+<ul>
+<li><code>qtile</code> - One could probably argue me into using another tiling window manager, but I’m super comfortable in python, and being able to configure and hack on it is easy for me.</li>
+<li><code>i3-gaps</code> - at this point, i3-gaps is just a fallback in case I mess up modifying <code>qtile</code> in-place and have to boot into a GUI to fix it.</li>
+</ul></li>
+<li><a href="https://i3wm.org/i3lock/">i3lock</a> for screen lock; <a href="https://sean.fish/d/lock-screen?dark">daemon process</a> caches pixelated version of screen to speed up start time. <a href="https://sean.fish/d/lockscreen@.service?dark">Corresponding service file</a> to lock my screen whenever my laptop suspends.</li>
+<li><a href="https://github.com/davatorium/rofi">rofi</a> for launching applications and switching windows</li>
+<li><a href="https://dunst-project.org/">dunst</a> for notifications, pretty normal configuration</li>
+<li><a href="https://wiki.archlinux.org/index.php/LightDM">lightdm</a> - display manager, some basic configuration using <a href="https://www.archlinux.org/packages/community/any/lightdm-gtk-greeter-settings/">lightdm-gtk-greeter-settings</a></li>
+</ul></li>
+<li>Editors
+<ul>
+<li>(doom) emacs</li>
+<li>nvim</li>
+</ul></li>
+<li>to-do list - <a href="http://todotxt.org/">todotxt</a> for todos, with a <a href="https://sean.fish/d/todo-prompt?dark">rofi interface</a> as GUI, and <a href="https://gitlab.com/seanbreckenridge/full_todotxt">TUI</a> for adding todos. The TUI I wrote forces me to specify a <code>deadline</code> for each todo, which I then get notified by <a href="https://github.com/seanbreckenridge/todotxt_deadline_notify">this</a>, which runs on my server.</li>
+<li><a href="https://github.com/ranger/ranger">ranger</a> - file manager</li>
+<li><a href="https://yadm.io">yadm</a> to manage dotfiles, see <a href="https://sean.fish/d/yadm-with-README.md?dark">yadm-with-README.md</a>. Once I have a terminal running, my <a href="https://sean.fish/d/bootstrap?dark">bootstrap</a> script sets up my system entirely.</li>
+<li>Browsers
+<ul>
+<li><a href="https://www.mozilla.org/en-US/firefox/developer/">firefox-developer-edition</a>, with extensions:
+<ul>
+<li>Productivity
+<ul>
+<li><a href="https://addons.mozilla.org/en-US/firefox/addon/vimium-ff/">vimium-ff</a>. Learning vimium has virtually killed the mouse for me. Especially the <code>f</code> binding (see the image below). I now sit feet away from my laptop with mechanical keyboard in hand, reaching over only for horrible sites which don’t comply to the HTML standard (looking at you, clicking the <code>next episode</code> button on <code>Netflix</code>)</li>
+<li><a href="https://addons.mozilla.org/en-US/firefox/addon/reddit-enhancement-suite/">RES</a>, to make reddit manageable, though I don’t go to reddit much these days.</li>
+<li><a href="https://addons.mozilla.org/en-US/firefox/addon/violentmonkey/">Violentmonkey</a> so I can add bits of JS to sites I want to fix.</li>
+<li><a href="https://addons.mozilla.org/en-US/firefox/addon/refined-github-/">Refined Github</a> for general Github improvements.</li>
+<li><a href="https://addons.mozilla.org/en-US/firefox/addon/styl-us/">Stylus</a>, so I can dark mode common websites.</li>
+<li><a href="https://addons.mozilla.org/en-US/firefox/addon/darkreader">Dark Reader</a>, so I can dark mode every website I visit. Does have considerable overhead, so I prefer finding CSS through stylus for websites I visit often.</li>
+</ul></li>
+<li>Privacy
+<ul>
+<li><a href="https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/">uBlock Origin</a> to block ads.</li>
+<li><a href="https://addons.mozilla.org/en-US/firefox/addon/duckduckgo-for-firefox/">DuckDuckGo Privacy Essentials</a></li>
+</ul></li>
+</ul></li>
+<li>I use <a href="https://www.lynxproject.org/"><code>lynx</code></a> to do quick <code>duckduckgo</code> searches without leaving the terminal (TODO: write a post showing how to do this)</li>
+<li>I’m somewhat required to test websites in chrome, so I use <code>chromium</code> to do that. <img src="images/vimium.png" alt="vimium selecting links for me to visit purely with the keyboard" /></li>
+</ul></li>
+</ul>
+<p>TODO: look at my shortcuts/bin dirs and grab tools to mention</p>
+</div>
+</main>
+<footer>
+  <p><a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" id=copyright>© 2020 Sean Breckenridge. Licensed under Creative Commons Attribution-ShareAlike.</a>
+    <br /><a href="https://github.com/seanbreckenridge/exobrain">Source Code</a>
+  </p>
+</footer>
+<script src="/assets/main.js"></script>
+</body>
+</html>
