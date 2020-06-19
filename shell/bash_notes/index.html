@@ -41,6 +41,15 @@ printf &quot;%s %s&quot; $name # printf receives two arguments
 # safest is to quote your variables
 printf &quot;%s&quot; &quot;$name&quot; </code></pre>
 <hr />
+<h3 id="modifying-ifs-to-read-into-arrays">Modifying IFS to read into arrays:</h3>
+<p>You can use <code>$'\n'</code> to expand an actual newline into the internal field separator, and then use a subshell to split lines into an array:</p>
+<pre><code>declare -a dircontents
+IFS=$&#39;\n&#39; dircontents=($(ls -1))
+for val in &quot;${dircontents[@]}&quot;; do
+  echo &quot;value: ${val}&quot;
+done</code></pre>
+<p>The default value for <code>IFS</code> is whitespace.</p>
+<hr />
 <p>Maybe look into <code>perl</code> instead of <code>sed</code>/<code>awk</code>/<code>tr</code>/<code>cut</code>, look at <code>perlre</code> and <code>perlrun</code> man pages.</p>
 <p>Startup time for running a script is much more than using an exported function or alias, but it also makes it less portable. Despite there being a huge difference, to the human eye its typically not noticeable.</p>
 <p>Read the bash man page! Bashisms can be bad if you’re trying to be POSIX compliant, but bashisms also save lots of time.</p>

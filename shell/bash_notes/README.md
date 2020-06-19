@@ -21,6 +21,21 @@ printf "%s" "$name"
 
 ---
 
+### Modifying IFS to read into arrays:
+
+You can use `$'\n'` to expand an actual newline into the internal field separator, and then use a subshell to split lines into an array:
+```
+declare -a dircontents
+IFS=$'\n' dircontents=($(ls -1))
+for val in "${dircontents[@]}"; do
+  echo "value: ${val}"
+done
+```
+
+The default value for `IFS` is whitespace.
+
+---
+
 Maybe look into `perl` instead of `sed`/`awk`/`tr`/`cut`, look at `perlre` and `perlrun` man pages.
 
 Startup time for running a script is much more than using an exported function or alias, but it also makes it less portable. Despite there being a huge difference, to the human eye its typically not noticeable.
