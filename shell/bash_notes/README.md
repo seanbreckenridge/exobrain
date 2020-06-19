@@ -21,7 +21,7 @@ printf "%s" "$name"
 
 ---
 
-### Modifying IFS to read into arrays:
+#### Modifying IFS to read into arrays:
 
 You can use `$'\n'` to expand an actual newline into the internal field separator, and then use a subshell to split lines into an array:
 ```
@@ -44,7 +44,7 @@ Read the bash man page! Bashisms can be bad if you're trying to be POSIX complia
 
 You may need to use POSIX complaint code for something like Solaris SVR4 packages which requires Bourne shell for any scripts.
 
-##### Early Exit
+#### Early Exit
 
 Print message to STDERR if value is unset and exit:
 
@@ -57,7 +57,7 @@ USER_INPUT="${1:?must provide something as first argument}"
 
 `2>/dev/null 1>&2` to completely silence a script, `echo something >&2` (or `1>&2`) to print an error.
 
-##### Extensions
+#### Extensions
 
 `.sh` at the end of scripts is only necessary if you're creating libraries, or if you're for some reason in windows land. Otherwise you're only making yourself do more typing. If you're making libraries, there is no shebang line and there shouldn't be - its meant to be `source`d into some other script. If its a library, it should have a `.sh` or `.bash` extension and the file shouldn't be executable.
 

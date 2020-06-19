@@ -41,7 +41,7 @@ printf &quot;%s %s&quot; $name # printf receives two arguments
 # safest is to quote your variables
 printf &quot;%s&quot; &quot;$name&quot; </code></pre>
 <hr />
-<h3 id="modifying-ifs-to-read-into-arrays">Modifying IFS to read into arrays:</h3>
+<h4 id="modifying-ifs-to-read-into-arrays">Modifying IFS to read into arrays:</h4>
 <p>You can use <code>$'\n'</code> to expand an actual newline into the internal field separator, and then use a subshell to split lines into an array:</p>
 <pre><code>declare -a dircontents
 IFS=$&#39;\n&#39; dircontents=($(ls -1))
@@ -54,13 +54,13 @@ done</code></pre>
 <p>Startup time for running a script is much more than using an exported function or alias, but it also makes it less portable. Despite there being a huge difference, to the human eye its typically not noticeable.</p>
 <p>Read the bash man page! Bashisms can be bad if you’re trying to be POSIX compliant, but bashisms also save lots of time.</p>
 <p>You may need to use POSIX complaint code for something like Solaris SVR4 packages which requires Bourne shell for any scripts.</p>
-<h5 id="early-exit">Early Exit</h5>
+<h4 id="early-exit">Early Exit</h4>
 <p>Print message to STDERR if value is unset and exit:</p>
 <pre><code># if $1 is unset/empty
 USER_INPUT=&quot;${1:?must provide something as first argument}&quot;</code></pre>
 <hr />
 <p><code>2&gt;/dev/null 1&gt;&amp;2</code> to completely silence a script, <code>echo something &gt;&amp;2</code> (or <code>1&gt;&amp;2</code>) to print an error.</p>
-<h5 id="extensions">Extensions</h5>
+<h4 id="extensions">Extensions</h4>
 <p><code>.sh</code> at the end of scripts is only necessary if you’re creating libraries, or if you’re for some reason in windows land. Otherwise you’re only making yourself do more typing. If you’re making libraries, there is no shebang line and there shouldn’t be - its meant to be <code>source</code>d into some other script. If its a library, it should have a <code>.sh</code> or <code>.bash</code> extension and the file shouldn’t be executable.</p>
 <hr />
 <p><a href="https://rwx.gg/stupid/env/">Don’t use <code>/usr/bin/env</code></a></p>
