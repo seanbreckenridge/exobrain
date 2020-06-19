@@ -2,7 +2,7 @@
 Title: Projects
 ---
 
-This is kept up to date by some code [here](https://github.com/seanbreckenridge/projects).
+This is kept up to date by some code [here](https://github.com/seanbreckenridge/projects)
 
 ### keepassxc-pwned
 
@@ -74,7 +74,7 @@ Converts a `toml` file into shell scripts. I use this to convert short/one-liner
 
 [GitHub](https://github.com/seanbreckenridge/subpath-serve) | [GitLab](https://gitlab.com/seanbreckenridge/subpath-serve) | Go
 
-Serves text files from a directory by matching subpaths. I use this to serve my dotfiles [here](https://sean.fish/d/?dark). It also allows me to quickly send someone one of my scripts/configuration files from my dotfiles using [this script](https://sean.fish/d/give).
+Serves text files from a directory by matching subpaths. I use this to serve my dotfiles [here](https://sean.fish/d/?dark). It also allows me to quickly send someone one of my scripts/configuration files from my dotfiles using [this script](https://sean.fish/d/give)
 
 ### no-db-static-shorturl
 
@@ -94,9 +94,9 @@ Interactive terminal playlist manager, storing contents in readable text files. 
 
 An amalgamation of acclaimed album lists. This is my replacement for [RateYourMusic](https://rateyourmusic.com/).
 
-This was started years ago, before I knew how databases worked, so my database is a [google sheet](https://sean.fish/s/albums). I then learnt SQL, so it also has code to [convert the google sheet to a `MySQL` schema](https://github.com/seanbreckenridge/albums/tree/master/SQL).
+This was started years ago, before I knew how databases worked, so my database is a [google sheet](https://sean.fish/s/albums). I then learnt SQL, so it also has code to [convert the google sheet to a `MySQL` schema](https://github.com/seanbreckenridge/albums/tree/master/SQL)
 
-Also includes an API that lets me list recently listened albums on my [media feed](https://sean.fish/feed).
+Also includes an API that lets me list recently listened albums on my [media feed](https://sean.fish/feed)
 
 ### wca_userinfo
 
@@ -108,13 +108,13 @@ A tiny web server that scrapes information for a user from `worldcubeassosiation
 
 [GitHub](https://github.com/seanbreckenridge/xkcd-favorites) | [GitLab](https://gitlab.com/seanbreckenridge/xkcd-favorites) | HTML
 
-A list of my favorite [xkcd](https://xkcd.com/)'s. Was initially rendered client-side with some JS, but I now use a [bash script](https://github.com/seanbreckenridge/xkcd-favorites/blob/master/ssg) to convert it to a static site. Hosted [here](https://sean.fish/xkcd).
+A list of my favorite [xkcd](https://xkcd.com/)'s. Was initially rendered client-side with some JS, but I now use a [bash script](https://github.com/seanbreckenridge/xkcd-favorites/blob/master/ssg) to convert it to a static site. Hosted [here](https://sean.fish/xkcd)
 
 ### xqc-dvd
 
 [GitHub](https://github.com/seanbreckenridge/xqc-dvd) | [GitLab](https://gitlab.com/seanbreckenridge/xqc-dvd) | Elm
 
-A browser DVD logo animation/game. Was a project for learning Elm; Hosted [here](https://sean.fish/dvd/).
+A browser DVD logo animation/game. Was a project for learning Elm; Hosted [here](https://sean.fish/dvd/)
 
 ### animeshorts
 
@@ -180,7 +180,7 @@ An interactive terminal interface for `pamixer`/`pactl` to control system volume
 
 [GitHub](https://github.com/seanbreckenridge/largechar) | [GitLab](https://gitlab.com/seanbreckenridge/largechar) | JavaScript
 
-Displays large characters on your screen. Was a replacement for [this alfred feature](https://www.alfredapp.com/help/features/large-type/), and an excuse to do some GUI programming with electron (if one can call it that).
+Displays large characters on your screen. Was a replacement for [this alfred feature](https://www.alfredapp.com/help/features/large-type/), and an excuse to do some GUI programming with electron (if one can call it that)
 
 ### mal-notify-bot
 
@@ -270,4 +270,4 @@ cookiecutter template for my new projects, using `pipenv`, `pytest`, and `travis
 
 [GitHub](https://github.com/seanbreckenridge/vimbuffer) | [GitLab](https://gitlab.com/seanbreckenridge/vimbuffer) | [PyPi](https://pypi.org/project/vimbuffer/) | Python
 
-Lets me edit files and strings in temporary vim (or some other console editor) buffers. I've mostly replaced this with my heavy use of a customized [ranger](https://github.com/ranger/ranger).
+Lets me edit files and strings in temporary vim (or some other console editor) buffers. I've mostly replaced this with my heavy use of a customized [ranger](https://github.com/ranger/ranger)
