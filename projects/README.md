@@ -79,7 +79,7 @@ Serves text files from a directory by matching subpaths. I use this to serve my 
 
 [GitHub](https://github.com/seanbreckenridge/no-db-static-shorturl) | [GitLab](https://gitlab.com/seanbreckenridge/no-db-static-shorturl) | *Go*
 
-File based single-binary URL shortener server. Has no dependencies/doesn't require you to setup a database.
+File based single-binary URL shortener server. Has no dependencies; doesn't require you to setup a database.
 
 ### plaintext-playlist
 

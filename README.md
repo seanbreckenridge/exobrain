@@ -13,7 +13,7 @@ Other Notable Pages:
   - [Tools](/tools), or how I do everything.
   - [Projects](/projects), for a list of all of my programming projects.
   - [Internet Superhighway](/superhighway), other sites/blogs I recommend.
-  - [meta](/meta), for more information about this site.
+  - [Meta](/meta), for more information about this site.
 
 TODO:
 

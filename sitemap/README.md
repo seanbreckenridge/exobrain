@@ -9,7 +9,7 @@ More 'complete' blog-like posts at [feed](/feed).
 * / [Internet Superhighway](/superhighway/)
 * / [Japanese](/japanese/)
 * / [Meta; about my exobrain](/meta/)
-* / [](/projects/)
+* / [Projects](/projects/)
 * / [Tools, or how I do everything](/tools/)
 * anime/ [Searching on pixiv](/anime/pixiv/)
 * cryptography/ [SP Networks - Computerphile](/cryptography/sp_networks/)
