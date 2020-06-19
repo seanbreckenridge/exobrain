@@ -10,6 +10,11 @@
 
 cd "$(dirname "${BASH_SOURCE[0]}")" || exit
 
+# get my list of projects
+mkdir -p ./projects
+curl -s "https://raw.githubusercontent.com/seanbreckenridge/projects/master/README.md" >./projects/README.md &
+PROJECTS_PID=$!
+ 
 mkmanifest() {
 	declare line
 	while IFS= read -r line; do
@@ -61,6 +66,9 @@ done< <(find ./post -name "README.md" | sed "s/README.md$//g" ); } \
   | tac >>./feed/README.md
 # perl expression sorts lines by last column
 
+# make sure projects has finished downloading
+# before creating the manifest
+wait $PROJECTS_PID
 # make manifest
 mkmanifest
 # render home page
@@ -68,6 +76,7 @@ render "."
 # generate 404 page
 pandoc_generate "./404.md" "./404.html"
 
+# list of pids for background processes
 declare -a pids
 while IFS= read -r node; do
 	render "$node" &

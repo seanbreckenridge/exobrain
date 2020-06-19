@@ -10,7 +10,8 @@ Head to the [sitemap](/sitemap) or [blog feed](/feed) for whats on here.
 
 Other Notable Pages:
 
-  - [Tools](/tools), to  how I do everything.
+  - [Tools](/tools), or how I do everything.
+  - [Projects](/projects), for a list of all of my programming projects.
   - [Internet Superhighway](/superhighway), other sites/blogs I recommend.
   - [meta](/meta), for more information about this site.
 
