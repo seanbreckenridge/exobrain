@@ -222,7 +222,7 @@ Scrapes the top posts from wallpaper subreddits. I'm not huge into collecting wa
 
 [GitHub](https://github.com/seanbreckenridge/selenium-shutterfly-scraper) | [GitLab](https://gitlab.com/seanbreckenridge/selenium-shutterfly-scraper) | Python
 
-(At least when I did this), there was no way to download all of your images off of a `shutterfly` account. This used a combination of `selenium`, `pyautogui` to do that.
+(At least when I did this), there was no way to download all of your images off of a `shutterfly` account. This used a combination of `selenium` and `pyautogui` to do that.
 
 ### full_todotxt
 
