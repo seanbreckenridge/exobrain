@@ -6,6 +6,7 @@ Title: Music to Listen to
 * Django Reinhart
 * Jank
 * Midday Moon (secrets of the deep)
+* Eve (JP)
 * Somatoast
 * Infected Mushroom
 * <https://open.spotify.com/playlist/3aBLGy4nyMYY9fUe5IxOtC?si=z61VpcbWSwqCVSq5MAVdzw>
