@@ -14,7 +14,7 @@ More 'complete' blog-like posts at [feed](/feed).
 * / [Tools, or how I do everything](/tools/)
 * anime/ [Searching on pixiv](/anime/pixiv/)
 * cryptography/ [SP Networks - Computerphile](/cryptography/sp_networks/)
-* golang/ [Golang Notes](/golang/general/)
+* golang/ [General Golang Notes](/golang/general/)
 * golang/ [Structuring Projects](/golang/package_structure/)
 * media/ [Movies to Watch](/media/to_watch/)
 * media/ [Music to Listen to](/media/to_listen_to/)

@@ -2,7 +2,7 @@
 Title: Structuring Projects
 ---
 
-## Starting projects:
+### Starting projects:
 
 Run:
 
@@ -21,6 +21,16 @@ If:
 
 Making functions start with uppercase automatically exports the function from the package.
 
+To do both a command and a library, you typically have a `cmd/package_name/main.go` file, which can then be installed from:
+
+`go get gitlab.com/seanbreckenridge/project_name/cmd/command_name`
+
+.. and installed locally like:
+
+```
+go install ./cmd/command_name
+```
+
 ### Basic Testing
 
 For basic tests, 9 times out of 10, you want to make the package name for the test file `packagename_test`, and call it `packagename_test.go`.
@@ -34,13 +44,3 @@ func TestFunctionName(t* testing.T) {
 ```
 
 .. and then run `go test`
-
-To do both a command and a library, you typically have a `cmd/package_name/main.go` file, which can then be installed from:
-
-`go get gitlab.com/seanbreckenridge/project_name/cmd/command_name`
-
-.. and installed locally like:
-
-```
-go install ./cmd/command_name
-```
