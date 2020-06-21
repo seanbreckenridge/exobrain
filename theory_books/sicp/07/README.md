@@ -18,6 +18,8 @@ OO can be done in Scheme with `set!` and `method` to `define-class`es and their 
 
 Its common to define a base class with implements some common functionality between components, and then *inherit* from that class to subclasses.
 
+In a more modern sense: mixins/traits/etc are like a "horizontal" inheritance to adhere to DRY (don't repeat yourself), where class inheritance (which goes up multiple levels) is "vertical" 
+
 Smalltalk, which started OOP, had multiple inheritance, but lots of programming languages have decided that was a bad idea and don't include.
 
 Note: Pythons Method Resolution Order for Multiple Inheritance is confusing, and complicated, but it has theory behind it and I think it works. See [Raymond Hettingers](https://www.youtube.com/watch?v=EiOglTERPEo) talk for context.
