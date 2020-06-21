@@ -16,12 +16,8 @@ and then on that line, type `!!bash`, it'll send that to bash, and replace the c
 
 Could just as easily send some snippet of code to python or perl, or *anything*.
 
-:::co-mad
-
-:.$ to run vim commands
-:.! to run external commands
-
-::::
+* `:.$ to run vim commands`
+* `:.! to run external commands`
 
 This doesn't have to be on single lines though, you can do `6!!` to send 6 lines to some external command.
 
