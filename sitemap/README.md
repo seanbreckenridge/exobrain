@@ -7,6 +7,7 @@ More 'complete' blog-like posts at [feed](/feed).
 * / [Compliance/POSIX/Unix](/compliance_posix/)
 * / [Cubing](/cubing/)
 * / [Game Dev Notes](/gamedev/)
+* / [Golang Notes](/golang/)
 * / [Internet Superhighway](/superhighway/)
 * / [Japanese](/japanese/)
 * / [Meta; about my exobrain](/meta/)
