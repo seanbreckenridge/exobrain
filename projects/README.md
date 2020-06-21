@@ -8,7 +8,7 @@ This is kept up to date by some code [here](https://github.com/seanbreckenridge/
 
 [GitHub](https://github.com/seanbreckenridge/keepassxc-pwned) | [GitLab](https://gitlab.com/seanbreckenridge/keepassxc-pwned) | [PyPi](https://pypi.org/project/keepassxc_pwned) | Python
 
-Checks a keepassxc database against previously breached haveibeenpwned passwords.
+Checks a [keepassxc](https://keepassxc.org/) database against previously breached [haveibeenpwned](https://haveibeenpwned.com/) passwords.
 
 ### exobrain
 
@@ -56,7 +56,7 @@ An cache of MAL IDs updated whenever something is added to the database. See [he
 
 [GitHub](https://github.com/seanbreckenridge/greasyfork_archive) | [GitLab](https://gitlab.com/seanbreckenridge/greasyfork_archive) | [PyPi](https://pypi.org/project/greasyfork_archive/) | Python
 
-Scrapes data and code from a users Greasyfork account.
+Scrapes data and code from a users [Greasyfork](https://greasyfork.org/en) account.
 
 ### jikan_ex
 
@@ -102,13 +102,13 @@ Also includes an API that lets me list recently listened albums on my [media fee
 
 [GitHub](https://github.com/seanbreckenridge/wca_userinfo) | [GitLab](https://gitlab.com/seanbreckenridge/wca_userinfo) | Rust
 
-A tiny web server that scrapes information for a user from `worldcubeassosiation.org`. Web scraping in rust is a bit cumbersome, but it was some nice exposure to using `Result`s and error handling. I scrape my page from the `WCA` website once per week, and use it to generate [this page](https://sean.fish/cubing) on my website.
+A tiny web server that scrapes information for a user from [`worldcubeassosiation.org`](https://www.worldcubeassociation.org/). Web scraping in rust is a bit cumbersome, but it was some nice exposure to using `Result`s and error handling. I scrape my page from the `WCA` website once per week, and use it to generate [this page](https://sean.fish/cubing) on my website.
 
 ### xkcd-favorites
 
 [GitHub](https://github.com/seanbreckenridge/xkcd-favorites) | [GitLab](https://gitlab.com/seanbreckenridge/xkcd-favorites) | HTML
 
-A list of my favorite [xkcd](https://xkcd.com/)'s. Was initially rendered client-side with some JS, but I now use a [bash script](https://github.com/seanbreckenridge/xkcd-favorites/blob/master/ssg) to convert it to a static site. Hosted [here](https://sean.fish/xkcd)
+A list of my favorite [xkcd](https://xkcd.com/)'s. Was initially rendered client-side with some JS, but I now use a [bash script](https://github.com/seanbreckenridge/xkcd-favorites/blob/master/ssg) to convert it to a static site. Hosted [here](https://sean.fish/xkcd/)
 
 ### xqc-dvd
 
@@ -174,13 +174,13 @@ Archives a users Greasyfork account and creates a Github repo from the informati
 
 [GitHub](https://github.com/seanbreckenridge/keyvol) | [GitLab](https://gitlab.com/seanbreckenridge/keyvol) | Go
 
-An interactive terminal interface for `pamixer`/`pactl` to control system volume. I use this on my laptop when I'm using my external keyboard to change volume. Also means I don't have to leave home row to change my volume.
+An interactive terminal interface for `pamixer`/`pactl` to control system volume. I use this on my laptop when I'm using my external keyboard to change volume so I don't have to reach to the volume keys. Also means I don't have to leave home row to change my volume.
 
 ### largechar
 
 [GitHub](https://github.com/seanbreckenridge/largechar) | [GitLab](https://gitlab.com/seanbreckenridge/largechar) | JavaScript
 
-Displays large characters on your screen. Was a replacement for [this alfred feature](https://www.alfredapp.com/help/features/large-type/), and an excuse to do some GUI programming with electron (if one can call it that)
+Displays large characters on your screen. Was a replacement for [this Alfred feature](https://www.alfredapp.com/help/features/large-type/), and an excuse to do some GUI programming with electron (if one can call it that)
 
 ### mal-notify-bot
 
@@ -252,7 +252,7 @@ Scripts used for installing/managing/restarting/monitoring processes on my serve
 
 [GitHub](https://github.com/seanbreckenridge/wait-for-internet) | [GitLab](https://gitlab.com/seanbreckenridge/wait-for-internet) | Rust
 
-Command line utility that waits till you have an internet connection. I use this multiple times daily since the I have multiple routers at my house depending on whether or not I'm connecting to my NAS/am upstairs or downstairs. Often like `wait-for-internet && <some command that requires an external connection>`.
+Command line utility that waits till you have an internet connection. I use this multiple times daily since the I have multiple routers at my house depending on whether or not I'm connecting to my NAS/am upstairs or downstairs. Often like `wait-for-internet && <some command that requires an external connection>`
 
 ### fuji
 
@@ -264,7 +264,7 @@ When it was still allowed, automated the process of creating an free trial accou
 
 [GitHub](https://github.com/seanbreckenridge/cookiecutter-template) | [GitLab](https://gitlab.com/seanbreckenridge/cookiecutter-template) | Python
 
-cookiecutter template for my new projects, using `pipenv`, `pytest`, and `travis`
+cookiecutter template for new python projects, using `pipenv`, `pytest`, and `travis`
 
 ### vimbuffer
 
