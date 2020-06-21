@@ -4,7 +4,8 @@ cryptography/sp_networks
 cubing
 feed
 gamedev
-golang
+golang/general
+golang/package_structure
 japanese
 media/to_listen_to
 media/to_read

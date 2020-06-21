@@ -1,5 +1,5 @@
 ---
-Title: Golang Notes
+Title: Structuring Projects
 ---
 
 ## Starting projects:
