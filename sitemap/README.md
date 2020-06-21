@@ -4,6 +4,7 @@ blog: false
 
 More 'complete' blog-like posts at [feed](/feed).
 
+* / [Compliance/POSIX/Unix](/compliance_posix/)
 * / [Cubing](/cubing/)
 * / [Game Dev Notes](/gamedev/)
 * / [Internet Superhighway](/superhighway/)
