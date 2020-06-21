@@ -35,8 +35,9 @@
 <p>and then on that line, type <code>!!bash</code>, it’ll send that to bash, and replace the current line with the output of that command.</p>
 <p><code>/home/sean/.local/bin/docker-compose</code></p>
 <p>Could just as easily send some snippet of code to python or perl, or <em>anything</em>.</p>
-<pre><code>:.$ to run vim commands
-:.! to run external commands</code></pre>
+<div class="co-mad">
+<p>:.$ to run vim commands :.! to run external commands</p>
+</div>
 <p>This doesn’t have to be on single lines though, you can do <code>6!!</code> to send 6 lines to some external command.</p>
 <p>As an example for vim commands, the keystrokes you’d have to do to write 5 lines to another file would be:</p>
 <p><code>5!!&lt;delete&gt;$:w /tmp/output</code></p>
