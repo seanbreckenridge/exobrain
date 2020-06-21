@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+            <title>exobrain | Vim</title>
+        <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+  <link rel="shortcut icon" href="/assets/img/logo.png" type="image/png">
+  <meta http-equiv="Pragma" content="no-cache"/>
+  <meta http-equiv="Expires" content="0"/>
+  <!-- link rel="shortcut icon" href="/assets/img/logo.png" type="image/png"-->
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<header class=nav-bar>
+  <nav>
+          <a class="homelink" href="/">exobrain</a>
+        <div class="nav-right">
+      <div class=nav-item><a class="nav-link" href="/feed">blog feed</a></div>
+      <div class=nav-item><a class="nav-link" href="/sitemap">exobrain sitemap</a></div>
+      <div class=nav-item><a class="nav-link" href="https://sean.fish">back to my site</a></div>
+    </div>
+  </nav>
+</header>
+<main>
+<a id=top></a><div class=container>
+<div id="main-header">
+  <div class="h1" id="main-title">Vim</div>
+  </div>
+<h3 id="autobuf-commands"><code>autobuf</code> commands</h3>
+<p>Examples from my vim config:</p>
+<pre><code>&quot; run set spell when editing markdown
+autocmd VimEnter * if expand(&#39;%:e&#39;) == &#39;md&#39; | set spell
+&quot; or when writing a git commit
+autocmd BufRead,BufNewFile * if expand(&#39;%:t&#39;) == &#39;COMMIT_EDITMSG&#39; | set spell</code></pre>
+<p>See <a href="http://vimdoc.sourceforge.net/htmldoc/autocmd.html">here</a> for more <code>autocmd</code> events.</p>
+<p><code>VimLeavePre</code> is another useful one, to run a <code>linter</code>/<code>command</code> against a file after saving</p>
+<h3 id="magic-wands">magic wands</h3>
+<p>Use <code>magic wands</code>! They’re awesome. Learnt about them from <a href="https://rwx.gg">rwx.gg</a></p>
+<p>In command mode, you can hit <code>!!</code> twice, to bring up a prompt which’ll send the current line to some external command.</p>
+<p>For example, if you write:</p>
+<p><code>which python</code></p>
+<p>and then on that line, type <code>!!bash</code>, it’ll send that to bash, and replace the current line with the output of that command.</p>
+<p><code>/usr/bin/python</code></p>
+<p>Could just as easily send some snippet of code to python or perl, or <em>anything</em>.</p>
+<pre><code>:.$ to run vim commands
+:.! to run external commands</code></pre>
+<p>This doesn’t have to be on single lines though, you can do <code>6!!</code> to send 6 lines to some external command.</p>
+<p>For vim commands, the keystrokes you’d have to do to write 5 lines to another file would be:</p>
+<p><code>5!!&lt;delete&gt;$:w /tmp/output</code></p>
+<p>the <code>delete</code> is to replace the <code>!</code> (external vim command) to a <code>$</code>, which specifies a vim command.</p>
+<p>The line would look like:</p>
+<p><code>:.,.+4$:w /tmp/foo</code></p>
+</div>
+</main>
+<footer>
+  <p><a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" id=copyright>© 2020 Sean Breckenridge. Licensed under Creative Commons Attribution-ShareAlike.</a>
+    <br /><a href="https://github.com/seanbreckenridge/exobrain">Source Code</a>
+  </p>
+</footer>
+<script src="/assets/main.js"></script>
+</body>
+</html>
