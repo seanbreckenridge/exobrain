@@ -12,7 +12,6 @@ Title: Movies to Watch
 * Godfather trilogy
 * Raging Bull
 * Shawshank Redemption
-* Shutter Island
 * Schindler's List 
 * Shutter Island
 * American Psycho
