@@ -1,5 +1,5 @@
 ---
-Title: General Notes
+Title: Vim Notes
 ---
 
 ### autobuf commands
