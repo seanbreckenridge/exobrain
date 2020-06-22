@@ -26,7 +26,7 @@ website that displays unapproved MAL (MyAnimeList) entries. MAL doesn't provide 
 
 [GitHub](https://github.com/seanbreckenridge/discord-countdown-bot) | [GitLab](https://gitlab.com/seanbreckenridge/discord-countdown-bot) | Python
 
-Discord bot to use for countdowns. I use this as an alternative to [`syncplay`](https://syncplay.pl/) -- to make sure we're all hitting play at the same time when watching movies/TV shows together.
+Discord bot to use for countdowns. I use this as an alternative to [`syncplay`](https://syncplay.pl/) -- to make sure everyone in a discord channel are all hitting play at the same time when watching movies/TV shows together.
 
 ### dotfiles
 
