@@ -26,10 +26,8 @@ Title: Movies to Watch
 * Ferris Bueller's Day Off 
 * Aliens 
 * Kill Bill part 1 and 2 
-* Reservoir Dogs 
 * Dredd 2012
 * The Usual Suspects
-* Pan's Labyrinth(edited)
 * Silence of the Lambs
 * The Thing
 * 8½
