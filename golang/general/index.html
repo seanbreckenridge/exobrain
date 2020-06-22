@@ -29,6 +29,7 @@
   <div class="h1" id="main-title">General Golang Notes</div>
   </div>
 <p><code>func init</code> gets run before <code>main</code>. Should only really be used in <code>package main</code> for a command, else any package that imports you to use as a library <em>also</em> runs <code>init</code>, which can be messy.</p>
+<p><code>syscall.Exec</code> is analogous to the <code>exec</code>, replaces current PID/memory etc.</p>
 </div>
 </main>
 <footer>
