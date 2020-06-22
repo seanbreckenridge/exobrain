@@ -1,5 +1,4 @@
 anime/pixiv
-compliance_posix
 cryptography/sp_networks
 cubing
 feed
@@ -7,6 +6,7 @@ gamedev
 golang/general
 golang/package_structure
 japanese
+linux/compliance_posix
 media/to_listen_to
 media/to_read
 media/to_watch

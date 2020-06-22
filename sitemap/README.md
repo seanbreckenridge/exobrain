@@ -4,7 +4,6 @@ blog: false
 
 More 'complete' blog-like posts at [feed](/feed).
 
-* / [Compliance/POSIX/Unix](/compliance_posix/)
 * / [Cubing](/cubing/)
 * / [Game Dev Notes](/gamedev/)
 * / [Internet Superhighway](/superhighway/)
@@ -16,6 +15,7 @@ More 'complete' blog-like posts at [feed](/feed).
 * cryptography/ [SP Networks - Computerphile](/cryptography/sp_networks/)
 * golang/ [General Golang Notes](/golang/general/)
 * golang/ [Structuring Projects](/golang/package_structure/)
+* linux/ [Compliance/POSIX/Unix](/linux/compliance_posix/)
 * media/ [Movies to Watch](/media/to_watch/)
 * media/ [Music to Listen to](/media/to_listen_to/)
 * media/ [Stuff to read](/media/to_read/)
