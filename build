@@ -73,12 +73,7 @@ render "."
 pandoc_generate "./404.md" "./404.html"
 
 # list of pids for background processes
-declare -a pids
 while IFS= read -r node; do
 	render "$node" &
-	pids+=($!)
 done <./MANIFEST
-
-for pid in ${pids[*]}; do
-	wait $pid
-done
+wait
