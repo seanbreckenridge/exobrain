@@ -1,10 +1,10 @@
 ---
-Title: Thoughts on replacing bash/zsh and pipes
+Title: Replacing bash/zsh and pipes
 Blog: true
 Date: 2020/06/23
 ---
 
-I live in the terminal  more than any other application (see my [dotfiles](https://github.com/seanbreckenridge/dotfiles)).
+I live in the terminal  more than any other application.
 
 Lots of my personal scripts are now in `bash`, and not `python` (though they used to be be); I've become a real fan of pipes. As a somewhat basic example, this prints out my IP information, using `curl` to make a request and `jq` to parse the JSON.
 

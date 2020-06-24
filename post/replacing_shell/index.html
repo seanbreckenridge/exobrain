@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-            <title>blog | Thoughts on replacing bash/zsh and pipes</title>
+            <title>blog | Replacing bash/zsh and pipes</title>
         <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -26,10 +26,10 @@
 <main>
 <a id=top></a><div class=container>
 <div id="main-header">
-  <div class="h1" id="main-title">Thoughts on replacing bash/zsh and pipes</div>
+  <div class="h1" id="main-title">Replacing bash/zsh and pipes</div>
       <div class="title-date">2020/06/23</div>
   </div>
-<p>I live in the terminal more than any other application (see my <a href="https://github.com/seanbreckenridge/dotfiles">dotfiles</a>).</p>
+<p>I live in the terminal more than any other application.</p>
 <p>Lots of my personal scripts are now in <code>bash</code>, and not <code>python</code> (though they used to be be); I’ve become a real fan of pipes. As a somewhat basic example, this prints out my IP information, using <code>curl</code> to make a request and <code>jq</code> to parse the JSON.</p>
 <pre><code>curl -s ipinfo.io | jq -r &#39;to_entries[] | &quot;\(.key): \(.value)&quot;&#39;</code></pre>
 <p>For personal scripts/one-liners, I find satisfaction in seeing how much I can do by just pipelining commands together. This next command sends me a notification, describing key-combinations which launch applications in <code>qtile</code>:</p>
