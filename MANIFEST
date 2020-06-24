@@ -7,11 +7,13 @@ golang/general
 golang/package_structure
 japanese
 linux/compliance_posix
+linux/licenses
 media/to_listen_to
 media/to_read
 media/to_watch
 meta
 post/how_i/watch_twitch
+post/replacing_shell
 post/server_setup
 projects
 python/decorators

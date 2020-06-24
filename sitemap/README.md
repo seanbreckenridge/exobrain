@@ -16,6 +16,7 @@ More 'complete' blog-like posts at [feed](/feed).
 * golang/ [General Golang Notes](/golang/general/)
 * golang/ [Structuring Projects](/golang/package_structure/)
 * linux/ [Compliance/POSIX/Unix](/linux/compliance_posix/)
+* linux/ [Licenses](/linux/licenses/)
 * media/ [Movies to Watch](/media/to_watch/)
 * media/ [Music to Listen to](/media/to_listen_to/)
 * media/ [Stuff to read](/media/to_read/)

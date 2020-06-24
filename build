@@ -61,9 +61,8 @@ echo >>./feed/README.md
 	absolute_path=$(cut -c 2- <<<"$indexdir")
 	printf "* [%s](%s) %s\n" "$blog_title" "$absolute_path" "$blog_date"
 done< <(find ./post -name "README.md" | sed "s/README.md$//g" ); } \
-  | perl -e "print sort {(split ' ', $a)[-1] <=> (split ' ', $b)[-1]} <>" \
-  | tac >>./feed/README.md
-# perl expression sorts lines by last column
+  | python -c "import sys; print(''.join(sorted(sys.stdin.readlines(), key=lambda l: l.split()[-1], reverse=True)))" >>./feed/README.md
+  # python expression sort lines by last column
 
 # make manifest
 mkmanifest
