@@ -22,7 +22,7 @@ notify-send -t 10000 "qtile bindings:" "$(qtile-bindings --json | jq -r '[.[]|se
 
 On top of that, I find it to be a fun process, tacking on commands to iteratively modify output.
 
-I've been doing some research on other shells that exist, but I don't think I'd want to use one of the non-POSIX compliant shells as my daily shell, since I don't want to lean on an external syntax. If I was to pick one, it'd probably be [elvish](https://github.com/elves/elvish).
+I've been doing some research on other shells that exist, but I don't think I'd want to use one of the non-POSIX compliant shells as my daily shell, since I don't want to lean on an external syntax. If I was to pick one, it'd probably be [elvish](https://elv.sh/).
 
 [Oil](https://github.com/oilshell/oil) seems like an interesting project, but its more about properly parsing the POSIX/`bash` AST, and making shell code more secure. The creator was previously working on [Oil as an entirely new language](https://www.oilshell.org/blog/2017/02/05.html), but they've stopped development on that for now.
 
