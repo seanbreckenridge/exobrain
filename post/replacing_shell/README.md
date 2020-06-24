@@ -38,7 +38,7 @@ Currently, what I typically do is just write another tool/create an `alias` with
 
 On a related note, `curl | jq` to get some basic interaction with JSON APIs is great, but at some point when you're dealing with structured data and doing conditional logic based on it, trying to store individual list items in shell/`bash` variables gets to be really confusing. Associative arrays and arrays *can* work, but it gets to be very unreadable, and you have no type safety/error checking. I tend to [fall back to python](https://github.com/seanbreckenridge/projects) in situations like that.
 
-So, at some point it may make sense to fall back onto (for a script)/call out to (for command line pipelines) other interpreted languages (like `python`/`ruby`), but thats typically a *noticeable* drop in speed; I do value the speed of the shell (I'm not going to use something like [`xonsh`](https://xon.sh/index.html), though it does look cool) and using minimal tools like `curl`/`jq`.
+So, at some point it may make sense to fall back onto (for a script)/call out to (for command line pipelines) other interpreted languages (like `python`/`ruby`), but thats typically a *noticeable* drop in speed; I do value the speed of the shell (don't think I'd use [`xonsh`](https://xon.sh/index.html) interactively, though it does look cool) and using minimal tools like `curl`/`jq`.
 
 On one hand, if there was a nicer, extendible DSL like [`mario`](https://github.com/python-mario/mario) (but written in something faster than `python`, and didn't require me to use `pipx` to run it from a virtual environment) which supported:
 
