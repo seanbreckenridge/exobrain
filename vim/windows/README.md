@@ -1,5 +1,5 @@
 ---
-Title: Vim Windows/Buffers Notes
+Title: Vim Windows/Buffers
 ---
 
 ### Creating/Switching Windows
