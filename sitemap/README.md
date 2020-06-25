@@ -36,6 +36,7 @@ More 'complete' blog-like posts at [feed](/feed).
 * theory_books/sicp/ [SICP 07 - Object Oriented Programming](/theory_books/sicp/07/)
 * vim/ [Magic Wands](/vim/magic_wands/)
 * vim/ [Vim Notes](/vim/general_notes/)
+* vim/ [Vim Windows/Buffers Notes](/vim/windows/)
 * web/ [General UI/UX Notes](/web/ui_ux/)
 * web/ [HTML and CSS resources](/web/html_resources/)
 * web/ [Web Tools](/web/tools/)
