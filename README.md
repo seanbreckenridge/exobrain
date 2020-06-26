@@ -15,9 +15,5 @@ Other Notable Pages:
   - [Internet Superhighway](/superhighway), other sites/blogs I recommend.
   - [Meta](/meta), for more information about this site.
 
-TODO:
-
-- Still to to implement the searching feature, planning on periodically caching the rendered MD files in a genserver on my elixir server to fuzzy match against the pages here :)
-
 Inspired by [`beepb00p`](https://beepb00p.xyz/exobrain/exobrain.html), structure/build tooling modified from [`rwx.gg`](https://gitlab.com/rwx.gg/README)
 
