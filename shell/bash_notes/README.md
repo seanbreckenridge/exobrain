@@ -63,8 +63,6 @@ USER_INPUT="${1:?must provide something as first argument}"
 
 ---
 
-[Don't use `/usr/bin/env`](https://rwx.gg/stupid/env/)
-
 Use short circuiting when doing simple tests, case statements for basic subcommands, and getopts if you want to have short and long (`-h`, `--help`) options for consistency/larger programs.
 
 SUID/SGID are forbidden on shell scripts (running as owner as script instead of person executing the script). Too many security risks that come along with using that, use `sudo` if you need elevated access.

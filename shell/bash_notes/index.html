@@ -63,7 +63,6 @@ USER_INPUT=&quot;${1:?must provide something as first argument}&quot;</code></pr
 <h4 id="extensions">Extensions</h4>
 <p><code>.sh</code> at the end of scripts is only necessary if you’re creating libraries, or if you’re for some reason in windows land. Otherwise you’re only making yourself do more typing. If you’re making libraries, there is no shebang line and there shouldn’t be - its meant to be <code>source</code>d into some other script. If its a library, it should have a <code>.sh</code> or <code>.bash</code> extension and the file shouldn’t be executable.</p>
 <hr />
-<p><a href="https://rwx.gg/stupid/env/">Don’t use <code>/usr/bin/env</code></a></p>
 <p>Use short circuiting when doing simple tests, case statements for basic subcommands, and getopts if you want to have short and long (<code>-h</code>, <code>--help</code>) options for consistency/larger programs.</p>
 <p>SUID/SGID are forbidden on shell scripts (running as owner as script instead of person executing the script). Too many security risks that come along with using that, use <code>sudo</code> if you need elevated access.</p>
 <h4 id="stylingformatting">Styling/Formatting</h4>
