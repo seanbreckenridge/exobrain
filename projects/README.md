@@ -32,7 +32,9 @@ Discord bot to use for countdowns. I use this as an alternative to [`syncplay`](
 
 [GitHub](https://github.com/seanbreckenridge/dotfiles) | [GitLab](https://gitlab.com/seanbreckenridge/dotfiles) | Shell
 
-My Arch dotfiles; using [`yadm`](https://yadm.io/). Includes lots of my scripts, and my configuration files for everything. See [here](https://sean.fish/d/?dark) for an index.
+My dotfiles; using [`yadm`](https://yadm.io/). Includes lots of my scripts, and my configuration files for everything. See [here](https://sean.fish/d/?dark) for an index.
+
+Currently in the process of merging my `mac-dotfiles` into this to create shared cross-platform dotfiles.
 
 ### mac-dotfiles
 
