@@ -34,13 +34,7 @@ Discord bot to use for countdowns. I use this as an alternative to [`syncplay`](
 
 My dotfiles; using [`yadm`](https://yadm.io/). Includes lots of my scripts, and my configuration files for everything. See [here](https://sean.fish/d/?dark) for an index.
 
-Currently in the process of merging my `mac-dotfiles` into this to create shared cross-platform dotfiles.
-
-### mac-dotfiles
-
-[GitHub](https://github.com/seanbreckenridge/mac-dotfiles) | [GitLab](https://gitlab.com/seanbreckenridge/mac-dotfiles) | Shell
-
-Configuration files and scripts for MacOS. I don't use Mac as much right now, but I plan to combine some of the functionality here into my arch dotfiles, so I can use the same dotfiles on both systems.
+Works on both Mac/Linux(Arch)
 
 ### glue
 
@@ -207,6 +201,12 @@ Solutions to Project Euler, using distinct languages. I really like learning new
 [GitHub](https://github.com/seanbreckenridge/proxy-jikan) | [GitLab](https://gitlab.com/seanbreckenridge/proxy-jikan) | Python
 
 Self-signed (HTTPS) token-authenticated proxy for [Jikan](https://jikan.moe/). Used so I quell my paranoia of being IP banned. Can also act as a generic proxy.
+
+### mac-dotfiles
+
+[GitHub](https://github.com/seanbreckenridge/mac-dotfiles) | [GitLab](https://gitlab.com/seanbreckenridge/mac-dotfiles) | Shell
+
+My old dotfiles for Mac. Has now been combined into my single [dotfiles](https://github.com/seanbreckenridge/dotfiles) repo
 
 ### pythonanywhere-3-months
 
