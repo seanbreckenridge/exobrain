@@ -130,6 +130,12 @@ A script to setup a new bash VPS/servers with defaults I like. This is one of th
 
 A CLI for `pyTwistyScrambler`, to generate random states for twisty puzzles.
 
+### evry
+
+[GitHub](https://github.com/seanbreckenridge/evry) | [GitLab](https://gitlab.com/seanbreckenridge/evry) | Rust
+
+A tool to manually run commands -- periodically. Uses shell exit codes to determine control flow in shell scripts.
+
 ### docker-jikan
 
 [GitHub](https://github.com/seanbreckenridge/docker-jikan) | [GitLab](https://gitlab.com/seanbreckenridge/docker-jikan) | Dockerfile
