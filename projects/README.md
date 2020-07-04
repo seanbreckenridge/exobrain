@@ -54,6 +54,12 @@ An cache of MAL IDs updated whenever something is added to the database. See [he
 
 Scrapes data and code from a users [Greasyfork](https://greasyfork.org/en) account.
 
+### vps
+
+[GitHub](https://github.com/seanbreckenridge/vps) | [GitLab](https://gitlab.com/seanbreckenridge/vps) | Shell
+
+Scripts used for installing/managing/restarting/monitoring processes on my server (and my server). Wraps [supervisor](https://github.com/Supervisor/supervisor) to handle process crashing.
+
 ### jikan_ex
 
 [GitHub](https://github.com/seanbreckenridge/jikan_ex) | [GitLab](https://gitlab.com/seanbreckenridge/jikan_ex) | [Hex](https://hex.pm/packages/jikan_ex) | Elixir
@@ -160,6 +166,12 @@ Pipe to test if files exist. Got tired of doing the unreadable: `xargs -I {} sh 
 
 Express API to get information about [`forever.js`](https://github.com/foreversd/forever) processes. I used to use this to ping my server every 10 minutes to make sure my processes were still running. I use [my fork of superhooks](https://github.com/seanbreckenridge/superhooks) to do that now.
 
+### superhooks
+
+[GitHub](https://github.com/seanbreckenridge/superhooks) | [GitLab](https://gitlab.com/seanbreckenridge/superhooks) | Python
+
+Posts supervisor event data as an embed to a discord. This sends me notifications whenever some process on my server crashes/restarts.
+
 ### genpasswd
 
 [GitHub](https://github.com/seanbreckenridge/genpasswd) | [GitLab](https://gitlab.com/seanbreckenridge/genpasswd) | C++
@@ -250,12 +262,6 @@ Sends me reminders in discord when deadlines for my todos are approaching. Syncs
 
 A CLI tool to list which Twitch channels you follow are currently live.
 
-### vps
-
-[GitHub](https://github.com/seanbreckenridge/vps) | [GitLab](https://gitlab.com/seanbreckenridge/vps) | Shell
-
-Scripts used for installing/managing/restarting/monitoring processes on my server (and my server). Wraps [supervisor](https://github.com/Supervisor/supervisor) to handle process crashing.
-
 ### wait-for-internet
 
 [GitHub](https://github.com/seanbreckenridge/wait-for-internet) | [GitLab](https://gitlab.com/seanbreckenridge/wait-for-internet) | Rust
@@ -279,3 +285,4 @@ cookiecutter template for new python projects, using `pipenv`, `pytest`, and `tr
 [GitHub](https://github.com/seanbreckenridge/vimbuffer) | [GitLab](https://gitlab.com/seanbreckenridge/vimbuffer) | [PyPi](https://pypi.org/project/vimbuffer/) | Python
 
 Lets me edit files and strings in temporary vim (or some other console editor) buffers. I've mostly replaced this with my heavy use of a customized [ranger](https://github.com/ranger/ranger)
+
