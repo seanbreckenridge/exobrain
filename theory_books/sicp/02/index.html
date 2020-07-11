@@ -65,11 +65,11 @@
 <li>Not many languages gives you functions as first class, though thats changing with newer languages.</li>
 </ul>
 <h3 id="procedures-as-returned-values">Procedures as Returned values:</h3>
-<div class="sourceCode" id="cb3"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb3-1"><a href="#cb3-1"></a>(<span class="ex">define</span><span class="fu"> </span>(make-adder num)</span>
-<span id="cb3-2"><a href="#cb3-2"></a>    (<span class="kw">lambda</span> (x) (<span class="op">+</span> x num)))</span>
-<span id="cb3-3"><a href="#cb3-3"></a>make-adder</span>
-<span id="cb3-4"><a href="#cb3-4"></a><span class="op">&gt;</span> ((make-adder <span class="dv">10</span>) <span class="dv">5</span>)</span>
-<span id="cb3-5"><a href="#cb3-5"></a><span class="dv">15</span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a>(<span class="ex">define</span><span class="fu"> </span>(make-adder num)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a>    (<span class="kw">lambda</span> (x) (<span class="op">+</span> x num)))</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a>make-adder</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true"></a><span class="op">&gt;</span> ((make-adder <span class="dv">10</span>) <span class="dv">5</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true"></a><span class="dv">15</span></span></code></pre></div>
 <p>Can also define those to <code>name</code>s, like:</p>
 <pre><code>(define plus7 (make-adder 7))</code></pre>
 <p>For a compiler, its relatively easy to allow a function as an argument, but more complicated to allow a function as a return argument. e.g. Pascal allows them as arguments but not return values.</p>
