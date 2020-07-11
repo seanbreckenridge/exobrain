@@ -34,6 +34,7 @@ More 'complete' blog-like posts at [feed](/feed).
 * theory_books/sicp/ [SICP 05 - Hierarchical data/Scheme Interpreter](/theory_books/sicp/05/)
 * theory_books/sicp/ [SICP 06 - Generic Operators](/theory_books/sicp/06/)
 * theory_books/sicp/ [SICP 07 - Object Oriented Programming](/theory_books/sicp/07/)
+* theory_books/sicp/ [SICP 08 - Local state variables, environments](/theory_books/sicp/08/)
 * vim/ [Magic Wands](/vim/magic_wands/)
 * vim/ [Vim Notes](/vim/general_notes/)
 * vim/ [Vim Windows/Buffers](/vim/windows/)
