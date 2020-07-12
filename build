@@ -12,7 +12,7 @@ cd "$(dirname "${BASH_SOURCE[0]}")" || exit
 
 # get my list of projects
 mkdir -p ./projects
-curl -s "https://raw.githubusercontent.com/seanbreckenridge/projects/master/README.md" >./projects/README.md
+curl -s "https://raw.githubusercontent.com/seanbreckenridge/projects/master/README.md" >./projects/README.md &
  
 mkmanifest() {
 	declare line
@@ -37,6 +37,8 @@ render() {
 # create sitemap-like index page
 cat ./sitemap/BASE.md >./sitemap/README.md
 echo >>./sitemap/README.md
+
+wait  # wait for curl to finish
 
 # generate markdown that displays the sitemap
 { while read -r indexdir; do
