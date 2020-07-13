@@ -4,11 +4,6 @@ Title: Programming Projects
 
 This is kept up to date by some code [here](https://github.com/seanbreckenridge/projects)
 
-### keepassxc-pwned
-
-[GitHub](https://github.com/seanbreckenridge/keepassxc-pwned) | [GitLab](https://gitlab.com/seanbreckenridge/keepassxc-pwned) | [PyPi](https://pypi.org/project/keepassxc_pwned) | Python
-
-Checks a [keepassxc](https://keepassxc.org/) database against previously breached [haveibeenpwned](https://haveibeenpwned.com/) passwords.
 
 ### exobrain
 
@@ -99,6 +94,12 @@ An amalgamation of acclaimed album lists. This is my replacement for [RateYourMu
 This was started years ago, before I knew how databases worked, so my database is a [google sheet](https://sean.fish/s/albums). I then learnt SQL, so it also has code to [convert the google sheet to a `MySQL` schema](https://github.com/seanbreckenridge/albums/tree/master/SQL)
 
 Also includes an API that lets me list recently listened albums on my [media feed](https://sean.fish/feed)
+
+### keepassxc-pwned
+
+[GitHub](https://github.com/seanbreckenridge/keepassxc-pwned) | [GitLab](https://gitlab.com/seanbreckenridge/keepassxc-pwned) | [PyPi](https://pypi.org/project/keepassxc_pwned) | Python
+
+Checks a [keepassxc](https://keepassxc.org/) database against previously breached [haveibeenpwned](https://haveibeenpwned.com/) passwords.
 
 ### wca_userinfo
 

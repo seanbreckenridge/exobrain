@@ -15,7 +15,6 @@ Title: Movies to Watch
 * Schindler's List 
 * Shutter Island
 * American Psycho
-* Drive
 * In Bruges
 * Shaun of the Dead/Hot Fuzz/World's End
 * Hero (Ying xiong (2002))
@@ -23,7 +22,6 @@ Title: Movies to Watch
 * The Grandmaster 
 * The Good the Bad and the Ugly 
 * Gran Torino 
-* Ferris Bueller's Day Off 
 * Aliens 
 * Kill Bill part 1 and 2 
 * Dredd 2012
