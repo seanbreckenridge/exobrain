@@ -171,7 +171,7 @@ Express API to get information about [`forever.js`](https://github.com/foreversd
 
 [GitHub](https://github.com/seanbreckenridge/superhooks) | [GitLab](https://gitlab.com/seanbreckenridge/superhooks) | Python
 
-Posts supervisor event data as an embed to a discord. This sends me notifications whenever some process on my server crashes/restarts.
+Posts supervisor event data as an embed to a discord server. This sends me notifications whenever some process on my server crashes/restarts.
 
 ### genpasswd
 
