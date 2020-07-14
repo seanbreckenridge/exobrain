@@ -43,11 +43,13 @@ usermod -aG sudo sean</code></pre>
 </ol>
 <p><code>ssh-copy-id -i ~/.ssh/file sean@&lt;ip-addr&gt;</code></p>
 <ol start="4" type="1">
-<li>Optional, create an alias/<code>zsh</code> keybind to connect to the server:</li>
+<li>Add the block for the server to my <code>~/.ssh/config</code> file:</li>
 </ol>
-<pre><code>alias vultr=&quot;ssh -i ~/.ssh/&lt;id_file&gt; sean@&lt;ip-addr&gt;&quot;
-# Alt + Shift + v to connect to vultr server
-bindkey -s &quot;^[V&quot; &quot;vultr\n&quot;</code></pre>
+<pre><code>Host vps
+  User sean
+  Hostname &lt;server ip&gt;
+  IdentityFile ~/.ssh/private_key</code></pre>
+<p>Then I can just connect with <code>ssh vps</code></p>
 <ol start="5" type="1">
 <li><code>ssh</code> onto the server and run my <a href="https://gitlab.com/seanbreckenridge/bootstrap/"><code>bootstrap</code></a> script: That sets up some bash defaults: aliases, <code>neovim</code> configuration, installs <a href="https://github.com/junegunn/fzf"><code>fzf</code></a>, prompts me to setup Github username/email.</li>
 </ol>
@@ -62,7 +64,7 @@ UsePAM no
 PermitRootLogin no</code></pre>
 <p>Reload ssh: <code>sudo systemctl reload ssh</code></p>
 <ol start="7" type="1">
-<li>Setup a git key and start an <code>ssh-agent</code>, but dont ‘<code>eval ssh-agent</code>’ every time you log in, just the first time, by putting this in <code>~/.bash_profile</code>:</li>
+<li>Setup a gitlab/github ssh key and start an <code>ssh-agent</code>, but dont ‘<code>eval ssh-agent</code>’ every time you log in, just the first time, by putting this in <code>~/.bash_profile</code>:</li>
 </ol>
 <pre><code>if [ ! -S ~/.ssh/ssh_auth_sock ]; then
   eval `ssh-agent`
@@ -86,7 +88,7 @@ sudo add-apt-repository &quot;deb [arch=amd64] https://download.docker.com/linux
 sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io
 sudo groupadd docker
-sudo usermod -aG docker $USER
+sudo usermod -aG docker &quot;$(whoami)&quot;
 sudo systemctl restart docker
 docker run hello-world  # test connection to docker socket, may require a restart/relog
 
@@ -97,7 +99,7 @@ su -u /bin/bash postgres
 adduser glue_worker # primarily used for my elixir server
 createuser --pwprompt glue_worker
 createdb -O glue_worker glue_db
-psql -d glue_db -h localhsot -U glue_worker # test connection
+psql -d glue_db -h localhost -U glue_worker # test connection
 
 # ruby
 # setup rvm, I&#39;ve had back luck building native extensions with the binary install
@@ -132,7 +134,7 @@ npm install -g uglifycss elm html-minifier
 pip3 install --user --upgrade ranger-fm speedtest-cli
 
 # add myself to the adm group so that I have permission to view logs at /var/log/ without sudo
-sudo usermod -aG adm $USER
+sudo usermod -aG adm &quot;$(whoami)&quot;
 
 # Run my `vps_install` script to setup all of my application data/verify I have all of my packages installed: https://github.com/seanbreckenridge/vps
 # sets up logging for all my applications, centralizes that in ~/logs, sets up basic HTTPAuth for nginx using apache2-utils, sets up supervisor for process management
@@ -193,6 +195,7 @@ server {
 
 # .... location blocks continued for different servers
 }</code></pre>
+<p>Its also possible to configure this at the <code>DNS</code> level using a <code>CNAME</code>, but I like being able to see which requests are getting redirected/whose going to <code>www</code> in my nginx logs.</p>
 <ol start="13" type="1">
 <li>Configure <code>linux</code>/<code>nginx</code> for better performance/more connections/open files (especially since I use phoenix as my main server):</li>
 </ol>
