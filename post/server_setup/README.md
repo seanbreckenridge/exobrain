@@ -22,13 +22,16 @@ usermod -aG sudo sean
 
 `ssh-copy-id -i ~/.ssh/file sean@<ip-addr>`
 
-4. Optional, create an alias/`zsh` keybind to connect to the server:
+4. Add the block for the server to my `~/.ssh/config` file:
 
 ```
-alias vultr="ssh -i ~/.ssh/<id_file> sean@<ip-addr>"
-# Alt + Shift + v to connect to vultr server
-bindkey -s "^[V" "vultr\n"
+Host vps
+  User sean
+  Hostname <server ip>
+  IdentityFile ~/.ssh/private_key
 ```
+
+Then I can just connect with `ssh vps`
 
 5. `ssh` onto the server and run my [`bootstrap`](https://gitlab.com/seanbreckenridge/bootstrap/) script:
    That sets up some bash defaults: aliases, `neovim` configuration, installs [`fzf`](https://github.com/junegunn/fzf), prompts me to setup Github username/email.
@@ -49,7 +52,7 @@ PermitRootLogin no
 
 Reload ssh: `sudo systemctl reload ssh`
 
-7. Setup a git key and start an `ssh-agent`, but dont '`eval ssh-agent`' every time you log in, just the first time, by putting this in `~/.bash_profile`:
+7. Setup a gitlab/github ssh key and start an `ssh-agent`, but dont '`eval ssh-agent`' every time you log in, just the first time, by putting this in `~/.bash_profile`:
 
 ```
 if [ ! -S ~/.ssh/ssh_auth_sock ]; then
@@ -78,7 +81,7 @@ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debi
 sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io
 sudo groupadd docker
-sudo usermod -aG docker $USER
+sudo usermod -aG docker "$(whoami)"
 sudo systemctl restart docker
 docker run hello-world  # test connection to docker socket, may require a restart/relog
 
@@ -89,7 +92,7 @@ su -u /bin/bash postgres
 adduser glue_worker # primarily used for my elixir server
 createuser --pwprompt glue_worker
 createdb -O glue_worker glue_db
-psql -d glue_db -h localhsot -U glue_worker # test connection
+psql -d glue_db -h localhost -U glue_worker # test connection
 
 # ruby
 # setup rvm, I've had back luck building native extensions with the binary install
@@ -124,7 +127,7 @@ npm install -g uglifycss elm html-minifier
 pip3 install --user --upgrade ranger-fm speedtest-cli
 
 # add myself to the adm group so that I have permission to view logs at /var/log/ without sudo
-sudo usermod -aG adm $USER
+sudo usermod -aG adm "$(whoami)"
 
 # Run my `vps_install` script to setup all of my application data/verify I have all of my packages installed: https://github.com/seanbreckenridge/vps
 # sets up logging for all my applications, centralizes that in ~/logs, sets up basic HTTPAuth for nginx using apache2-utils, sets up supervisor for process management
@@ -194,6 +197,8 @@ server {
 # .... location blocks continued for different servers
 }
 ```
+
+Its also possible to configure this at the `DNS` level using a `CNAME`, but I like being able to see which requests are getting redirected/whose going to `www` in my nginx logs.
 
 13. Configure `linux`/`nginx` for better performance/more connections/open files (especially since I use phoenix as my main server):
 
