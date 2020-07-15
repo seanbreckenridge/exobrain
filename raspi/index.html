@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+            <title>exobrain | Raspberry Pi Notes</title>
+        <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+  <link rel="shortcut icon" href="/assets/img/logo.png" type="image/png">
+  <meta http-equiv="Pragma" content="no-cache"/>
+  <meta http-equiv="Expires" content="0"/>
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<header class=nav-bar>
+  <nav>
+          <a class="homelink" href="/">exobrain</a>
+        <div class="nav-right">
+      <div class=nav-item><a class="nav-link" href="/feed">blog feed</a></div>
+      <div class=nav-item><a class="nav-link" href="/sitemap">exobrain sitemap</a></div>
+      <div class=nav-item><a class="nav-link" href="https://sean.fish">back to my site</a></div>
+    </div>
+  </nav>
+</header>
+<main>
+<a id=top></a><div class=container>
+<div id="main-header">
+  <div class="h1" id="main-title">Raspberry Pi Notes</div>
+  </div>
+<p>General Notes on setting up a raspberry pi.</p>
+<h3 id="basic-install">Basic Install:</h3>
+<ul>
+<li>Download the minimal install of <code>NOOBS</code> from <a href="https://www.raspberrypi.org/downloads/noobs/">here</a></li>
+<li>Format the microSD card as FAT32, and put the files from the NOOBS download into the root directory (dont need to flash/etcher)</li>
+<li>Install the Base NOOBS Debian Image, without any of the recommended applications.</li>
+</ul>
+<h3 id="general-config">General Config</h3>
+<ul>
+<li>Run my <a href="https://gitlab.com/seanbreckenridge/bootstrap" class="uri">https://gitlab.com/seanbreckenridge/bootstrap</a> script</li>
+<li><code>sudo raspi-config</code> to setup network; enable <code>ssh</code> (Interfacing Options)</li>
+</ul>
+<h3 id="mount-a-hard-drive-automatic-mounting">Mount a Hard Drive (automatic mounting):</h3>
+<p>Pretty much just have to put the correct line into <code>/etc/fstab</code>. See <a href="https://www.raspberrypi.org/documentation/configuration/external-storage.md">here</a> for instructions.</p>
+<p>If you want to put it at <code>/home/data</code>, instead of <code>/mnt/something</code> like that page describes:</p>
+<pre><code>sudo mkdir -p /home/data
+sudo mount /dev/... /home/data
+# to get UUID
+sudo blkid
+sudo nano /etc/fstab
+UUID=&lt;blkid&gt; &lt;location&gt; &lt;FSTYPE&gt; defaults,nofail 0 0
+e.g.
+UUID=fbfb6131-f332461   /home/data  ext4 defaults,nofail 0 0</code></pre>
+<p><code>man fstab</code>: the <code>defaults</code> option: <code>rw</code>, <code>suid</code>, <code>dev</code>, <code>exec</code>, <code>auto</code>, <code>nouser</code>, and <code>async</code>.</p>
+<p><a href="https://unix.stackexchange.com/a/17726/282432">What the numbers at the end of the <code>/etc/fstab</code> mean</a></p>
+<ul>
+<li>First 0: <code>dump</code> shouldn’t make backups</li>
+<li>Second 0: <code>fsck</code> should not run a check on this drive</li>
+</ul>
+</div>
+</main>
+<footer>
+  <p><a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" id=copyright>© 2020 Sean Breckenridge. Licensed under Creative Commons Attribution-ShareAlike.</a>
+    <br /><a href="https://github.com/seanbreckenridge/exobrain">Source Code</a>
+  </p>
+</footer>
+<script src="/assets/main.js"></script>
+</body>
+</html>

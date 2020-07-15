@@ -10,6 +10,7 @@ More 'complete' blog-like posts at [feed](/feed).
 * / [Japanese](/japanese/)
 * / [Meta; about my exobrain](/meta/)
 * / [Programming Projects](/projects/)
+* / [Raspberry Pi Notes](/raspi/)
 * / [Tools, or how I do everything](/tools/)
 * anime/ [Searching on pixiv](/anime/pixiv/)
 * cryptography/ [SP Networks - Computerphile](/cryptography/sp_networks/)
