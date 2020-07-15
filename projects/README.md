@@ -49,6 +49,12 @@ An cache of MAL IDs updated whenever something is added to the database. See [he
 
 Scrapes data and code from a users [Greasyfork](https://greasyfork.org/en) account.
 
+### bgproc
+
+[GitHub](https://github.com/seanbreckenridge/bgproc) | [GitLab](https://gitlab.com/seanbreckenridge/bgproc) | Shell
+
+bash loop to run tasks in the background. I use this instead of cron. uses a lockfile to make sure duplicate processes aren't running, and [evry](https://github.com/seanbreckenridge/evry) to schedule tasks periodically.
+
 ### vps
 
 [GitHub](https://github.com/seanbreckenridge/vps) | [GitLab](https://gitlab.com/seanbreckenridge/vps) | Shell
