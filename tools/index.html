@@ -28,7 +28,8 @@
   <div class="h1" id="main-title">Tools, or how I do everything</div>
   </div>
 <p>This is an extension of my <a href="https://github.com/seanbreckenridge/dotfiles">dotfiles</a></p>
-<p>This is an ever evolving list of tools I use and recommend, or combinations of tools I use to optimize my workflow. Some of these might be obvious to you, but it might not be to everyone!</p>
+<p>This is an ever evolving list of tools and scripts I use and recommend, or combinations of tools I use to optimize my workflow. Some of these might be obvious to you, but it might not be to everyone!</p>
+<p>Most of these are command line based. The only GUI tools I use are my browser and my email client.</p>
 <ul>
 <li>Shells
 <ul>
@@ -41,15 +42,15 @@
 </ul></li>
 <li>OS-stuff
 <ul>
-<li>Linux Distrobution (though I’m forced to use Mac for work sometimes)
+<li>Linux Distribution (though I’m forced to use Mac for work sometimes)
 <ul>
 <li><a href="https://wiki.archlinux.org/index.php/">Arch</a></li>
 </ul></li>
 <li>Window Managers
 <ul>
-<li><code>qtile</code> - One could probably argue me into using another tiling window manager, but I’m super comfortable in python, and being able to configure and hack on it is easy for me.</li>
-<li><code>i3-gaps</code> - at this point, i3-gaps is just a fallback in case I mess up modifying <code>qtile</code> in-place and have to boot into a GUI to fix it.</li>
+<li><code>i3-gaps</code> - am used to it at this point, and I’m a big fan of the manual tiling, especially for multiple monitors. <code>qtile</code> had some graphical issues for bad GUI apps, and I don’t feel like messing up my <code>haskell</code> installation for <code>xmonad</code>.</li>
 </ul></li>
+<li>MacOS, I use <a href="https://github.com/ianyh/Amethyst"><code>amethyst</code></a> to tile windows, and <a href="https://github.com/koekeishiya/skhd"><code>skhd</code></a> as a hotkey daemon. My dotfiles are cross-platform, lots of scripts in</li>
 <li><a href="https://i3wm.org/i3lock/">i3lock</a> for screen lock; <a href="https://sean.fish/d/lock-screen?dark">daemon process</a> caches pixelated version of screen to speed up start time. <a href="https://sean.fish/d/lockscreen@.service?dark">Corresponding service file</a> to lock my screen whenever my laptop suspends.</li>
 <li><a href="https://github.com/davatorium/rofi">rofi</a> for launching applications and switching windows</li>
 <li><a href="https://dunst-project.org/">dunst</a> for notifications, pretty normal configuration</li>
@@ -57,19 +58,37 @@
 </ul></li>
 <li>Editors
 <ul>
+<li>nvim (primarily)</li>
 <li>(doom) emacs</li>
-<li>nvim</li>
 </ul></li>
 <li>to-do list - <a href="http://todotxt.org/">todotxt</a> for todos, with a <a href="https://sean.fish/d/todo-prompt?dark">rofi interface</a> as GUI, and <a href="https://gitlab.com/seanbreckenridge/full_todotxt">TUI</a> for adding todos. The TUI I wrote forces me to specify a <code>deadline</code> for each todo, which I then get notified by <a href="https://github.com/seanbreckenridge/todotxt_deadline_notify">this</a>, which runs on my server.</li>
-<li><a href="https://github.com/ranger/ranger">ranger</a> - file manager</li>
-<li><a href="https://yadm.io">yadm</a> to manage dotfiles, see <a href="https://sean.fish/d/yadm-with-README.md?dark">yadm-with-README.md</a>. Once I have a terminal running, my <a href="https://sean.fish/d/bootstrap?dark">bootstrap</a> script sets up my system entirely.</li>
+<li>a heavily customized <a href="https://github.com/ranger/ranger">ranger</a> as my file manager. My <code>rifle.conf</code> and <code>scope.sh</code> (file handler and previewer) have lots of customizations past the defaults.</li>
+<li><a href="https://yadm.io">yadm</a> to manage dotfiles. Once I have a terminal running, my <a href="https://sean.fish/d/bootstrap?dark">bootstrap</a> script sets up my system entirely.</li>
+<li>For basic image cropping, I use <a href="https://pinta-project.com/pintaproject/pinta/"><code>pinta</code></a>. For general image manipulation tasks I create lots of small <a href="https://imagemagick.org/index.php"><code>imagemagick</code></a> scripts to do random resizes/converts. I have a larger script to <a href="https://sean.fish/d/gifme?dark">convert videos to gifs</a>, and use <a href="https://github.com/kohler/gifsicle">gifsicle</a> for manipulating gifs.</li>
+<li>Lots of small <a href="https://ffmpeg.org/">ffmpeg</a> scripts to convert between video formats. For trimming video, I’ve pretty much got the basics of the ffmpeg command down, so I use that directly.</li>
+<li>For previewing markdown/latex while I’m editing it, I have my own <a href="https://sean.fish/d/compile?dark">compile</a> and <a href="https://sean.fish/d/live-render?dark">live-render</a> scripts</li>
+<li>Use the <code>dict://</code> protocol with <code>curl</code> at <code>dict.org</code> as a dictionary with <a href="https://sean.fish/d/dict?dark">this</a></li>
+<li>On top of all the <a href="https://sean.fish/d/git_aliases?dark">git aliases</a>, one of my scripts I use most commonly are my <a href="https://sean.fish/d/giturl?dark">giturl</a>/<a href="https://sean.fish/d/gitopen?dark">gitopen</a> scripts, which will open the current git directory I’m in in my browser.</li>
+<li><a href="https://sean.fish/d/ix?dark"><code>ix</code></a> to create pastebin links from the command line</li>
+<li><a href="https://sean.fish/d/qr?dark"><code>qr</code></a>, to create QR images from command line</li>
+<li>the <a href="https://sean.fish/d/.local/share/shortcuts/mvlast?dark"><code>mvlast</code></a>/<a href="https://sean.fish/d/mvlastpic?dark"><code>mvlastpic</code></a>/<a href="https://sean.fish/d/lastdown?dark"><code>lastdown</code></a> collection of scripts, which lets me quickly move items from my Downloads/Screenshots to my current folder. Was taken from an <a href="https://rwx.gg" class="uri">https://rwx.gg</a> stream; very basic but incredibly useful.</li>
+<li><a href="https://linux.die.net/man/1/vipe">vipe</a>, to quickly edit my clipboard in a vim buffer</li>
+<li><code>curl "https://cheat.sh/$*"</code>, to access quick cheatsheets for unix tools</li>
+<li><a href="https://github.com/mwh/dragon"><code>dragon</code></a>, to be able to dragon and drop items from/to the terminal. Have my <a href="https://sean.fish/d/dragon-sink?dark"><code>dragon-sink</code></a> script, which accepts and <code>cp</code>/<code>mv</code>’s files from applications, and bindings in <code>ranger</code> to drag files into my browser/discord.</li>
+<li><a href="https://github.com/LemonBoy/ldm"><code>ldm</code></a>, to do basic drive mounting for external drives/USBs</li>
+<li><a href="https://github.com/seanbreckenridge/genpasswd">my own password generator</a></li>
+<li>A bash script (<a href="https://github.com/seanbreckenridge/bgproc"><code>bgproc</code></a>) with an infinite loop which runs in the background instead of <code>cron</code> (uses my <a href="https://github.com/seanbreckenridge/evry"><code>evry</code></a> tool to schedule tasks).</li>
+<li>my own <a href="https://github.com/seanbreckenridge/plaintext-playlist">terminal playlist manager</a> using <code>fzf</code>/<code>mpv</code> to store playlists for local music in local text files</li>
+<li>my own <a href="https://github.com/seanbreckenridge/no-db-static-shorturl/">url shortener</a> with <a href="https://github.com/seanbreckenridge/vps/blob/master/shorten">this script</a></li>
+<li><a href="https://pypi.org/project/imgur-uploader/"><code>imgur-uploader</code></a> to quickly upload images online, with a <a href="https://sean.fish/d/screenshot-to-imgur?dark">script</a> to upload my most recent screenshot to imgur</li>
+<li><code>mpv</code>/<code>chatterino</code> to watch twitch, see <a href="/post/how_i/watch_twitch/">here</a></li>
 <li>Browsers
 <ul>
 <li><a href="https://www.mozilla.org/en-US/firefox/developer/">firefox-developer-edition</a>, with extensions:
 <ul>
 <li>Productivity
 <ul>
-<li><a href="https://addons.mozilla.org/en-US/firefox/addon/vimium-ff/">vimium-ff</a>. Learning vimium has virtually killed the mouse for me. Especially the <code>f</code> binding (see the image below). I now sit feet away from my laptop with mechanical keyboard in hand, reaching over only for horrible sites which don’t comply to the HTML standard (looking at you, clicking the <code>next episode</code> button on <code>Netflix</code>)</li>
+<li><a href="https://addons.mozilla.org/en-US/firefox/addon/vimium-ff/">vimium-ff</a>. Learning vimium has virtually killed the mouse for me. Especially the <code>f</code> binding, which highlights all clickable items and lets me click something with a keybind. I now sit feet away from my laptop with mechanical keyboard in hand, reaching over only for horrible sites which don’t comply to the HTML standard (looking at you, clicking the <code>next episode</code> button on <code>Netflix</code>)</li>
 <li><a href="https://addons.mozilla.org/en-US/firefox/addon/reddit-enhancement-suite/">RES</a>, to make reddit manageable, though I don’t go to reddit much these days.</li>
 <li><a href="https://addons.mozilla.org/en-US/firefox/addon/violentmonkey/">Violentmonkey</a> so I can add bits of JS to sites I want to fix.</li>
 <li><a href="https://addons.mozilla.org/en-US/firefox/addon/refined-github-/">Refined Github</a> for general Github improvements.</li>
@@ -82,11 +101,10 @@
 <li><a href="https://addons.mozilla.org/en-US/firefox/addon/duckduckgo-for-firefox/">DuckDuckGo Privacy Essentials</a></li>
 </ul></li>
 </ul></li>
-<li>I use <a href="https://www.lynxproject.org/"><code>lynx</code></a> to do quick <code>duckduckgo</code> searches without leaving the terminal (TODO: write a post showing how to do this)</li>
-<li>I’m somewhat required to test websites in chrome, so I use <code>chromium</code> to do that. <img src="images/vimium.png" alt="vimium selecting links for me to visit purely with the keyboard" /></li>
+<li>I use <a href="https://www.lynxproject.org/"><code>lynx</code></a> to do quick <code>duckduckgo</code> searches <a href="https://sean.fish/d/duck?dark">without leaving the terminal</a></li>
+<li>I’m somewhat required to test websites in chrome, so I use <code>chromium</code> to do that.</li>
 </ul></li>
 </ul>
-<p>TODO: look at my shortcuts/bin dirs and grab tools to mention</p>
 </div>
 </main>
 <footer>

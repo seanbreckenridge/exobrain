@@ -4,7 +4,9 @@ Title: Tools, or how I do everything
 
 This is an extension of my [dotfiles](https://github.com/seanbreckenridge/dotfiles)
 
-This is an ever evolving list of tools I use and recommend, or combinations of tools I use to optimize my workflow. Some of these might be obvious to you, but it might not be to everyone!
+This is an ever evolving list of tools and scripts I use and recommend, or combinations of tools I use to optimize my workflow. Some of these might be obvious to you, but it might not be to everyone!
+
+Most of these are command line based. The only GUI tools I use are my browser and my email client.
 
 - Shells
   - [zsh](http://zsh.sourceforge.net/) - for the [`fish`](https://fishshell.com/)-like highlighting and auto completion, while still being *somewhat* posix compliant. Manually configuring everything makes this much faster than the monstrous `oh-my-zsh`.
@@ -12,25 +14,43 @@ This is an ever evolving list of tools I use and recommend, or combinations of t
 - Terminal
   - [alacritty](https://github.com/alacritty/alacritty), with pretty basic defaults
 - OS-stuff
-  - Linux Distrobution (though I'm forced to use Mac for work sometimes)
+  - Linux Distribution (though I'm forced to use Mac for work sometimes)
     - [Arch](https://wiki.archlinux.org/index.php/)
   - Window Managers
-    - `qtile` - One could probably argue me into using another tiling window manager, but I'm super comfortable in python, and being able to configure and hack on it is easy for me.
-    - `i3-gaps` - at this point, i3-gaps is just a fallback in case I mess up modifying `qtile` in-place and have to boot into a GUI to fix it.
+    - `i3-gaps` - am used to it at this point, and I'm a big fan of the manual tiling, especially for multiple monitors. `qtile` had some graphical issues for bad GUI apps, and I don't feel like messing up my `haskell` installation for `xmonad`.
+  - MacOS, I use [`amethyst`](https://github.com/ianyh/Amethyst) to tile windows, and [`skhd`](https://github.com/koekeishiya/skhd) as a hotkey daemon. My dotfiles are cross-platform, lots of scripts in 
   - [i3lock](https://i3wm.org/i3lock/) for screen lock; [daemon process](https://sean.fish/d/lock-screen?dark) caches pixelated version of screen to speed up start time. [Corresponding service file](https://sean.fish/d/lockscreen@.service?dark) to lock my screen whenever my laptop suspends.
   - [rofi](https://github.com/davatorium/rofi) for launching applications and switching windows
   - [dunst](https://dunst-project.org/) for notifications, pretty normal configuration
   - [lightdm](https://wiki.archlinux.org/index.php/LightDM) - display manager, some basic configuration using [lightdm-gtk-greeter-settings](https://www.archlinux.org/packages/community/any/lightdm-gtk-greeter-settings/)
 - Editors
+  - nvim (primarily)
   - (doom) emacs
-  - nvim
 - to-do list - [todotxt](http://todotxt.org/) for todos, with a [rofi interface](https://sean.fish/d/todo-prompt?dark) as GUI, and [TUI](https://gitlab.com/seanbreckenridge/full_todotxt) for adding todos. The TUI I wrote forces me to specify a `deadline` for each todo, which I then get notified by [this](https://github.com/seanbreckenridge/todotxt_deadline_notify), which runs on my server.
-- [ranger](https://github.com/ranger/ranger) - file manager
-- [yadm](https://yadm.io) to manage dotfiles, see [yadm-with-README.md](https://sean.fish/d/yadm-with-README.md?dark). Once I have a terminal running, my [bootstrap](https://sean.fish/d/bootstrap?dark) script sets up my system entirely.
+- a heavily customized [ranger](https://github.com/ranger/ranger) as my file manager. My `rifle.conf` and `scope.sh` (file handler and previewer) have lots of customizations past the defaults.
+- [yadm](https://yadm.io) to manage dotfiles. Once I have a terminal running, my [bootstrap](https://sean.fish/d/bootstrap?dark) script sets up my system entirely.
+- For basic image cropping, I use [`pinta`](https://pinta-project.com/pintaproject/pinta/). For general image manipulation tasks I create lots of small [`imagemagick`](https://imagemagick.org/index.php) scripts to do random resizes/converts. I have a larger script to [convert videos to gifs](https://sean.fish/d/gifme?dark), and use [gifsicle](https://github.com/kohler/gifsicle) for manipulating gifs.
+- Lots of small [ffmpeg](https://ffmpeg.org/) scripts to convert between video formats. For trimming video, I've pretty much got the basics of the ffmpeg command down, so I use that directly.
+- For previewing markdown/latex while I'm editing it, I have my own [compile](https://sean.fish/d/compile?dark) and [live-render](https://sean.fish/d/live-render?dark) scripts
+- Use the `dict://` protocol with `curl` at `dict.org` as a dictionary with [this](https://sean.fish/d/dict?dark)
+- On top of all the [git aliases](https://sean.fish/d/git_aliases?dark), one of my scripts I use most commonly are my [giturl](https://sean.fish/d/giturl?dark)/[gitopen](https://sean.fish/d/gitopen?dark) scripts, which will open the current git directory I'm in in my browser.
+- [`ix`](https://sean.fish/d/ix?dark) to create pastebin links from the command line
+- [`qr`](https://sean.fish/d/qr?dark), to create QR images from command line
+- the [`mvlast`](https://sean.fish/d/.local/share/shortcuts/mvlast?dark)/[`mvlastpic`](https://sean.fish/d/mvlastpic?dark)/[`lastdown`](https://sean.fish/d/lastdown?dark) collection of scripts, which lets me quickly move items from my Downloads/Screenshots to my current folder. Was taken from an <https://rwx.gg> stream; very basic but incredibly useful.
+- [vipe](https://linux.die.net/man/1/vipe), to quickly edit my clipboard in a vim buffer
+- `curl "https://cheat.sh/$*"`, to access quick cheatsheets for unix tools
+- [`dragon`](https://github.com/mwh/dragon), to be able to dragon and drop items from/to the terminal. Have my [`dragon-sink`](https://sean.fish/d/dragon-sink?dark) script, which accepts and `cp`/`mv`'s files from applications, and bindings in `ranger` to drag files into my browser/discord.
+- [`ldm`](https://github.com/LemonBoy/ldm), to do basic drive mounting for external drives/USBs
+- [my own password generator](https://github.com/seanbreckenridge/genpasswd)
+- A bash script ([`bgproc`](https://github.com/seanbreckenridge/bgproc)) with an infinite loop which runs in the background instead of `cron` (uses my [`evry`](https://github.com/seanbreckenridge/evry) tool to schedule tasks).
+- my own [terminal playlist manager](https://github.com/seanbreckenridge/plaintext-playlist) using `fzf`/`mpv` to store playlists for local music in local text files
+- my own [url shortener](https://github.com/seanbreckenridge/no-db-static-shorturl/) with [this script](https://github.com/seanbreckenridge/vps/blob/master/shorten)
+- [`imgur-uploader`](https://pypi.org/project/imgur-uploader/) to quickly upload images online, with a [script](https://sean.fish/d/screenshot-to-imgur?dark) to upload my most recent screenshot to imgur
+- `mpv`/`chatterino` to watch twitch, see [here](/post/how_i/watch_twitch/)
 - Browsers
   - [firefox-developer-edition](https://www.mozilla.org/en-US/firefox/developer/), with extensions:
     - Productivity
-      - [vimium-ff](https://addons.mozilla.org/en-US/firefox/addon/vimium-ff/). Learning vimium has virtually killed the mouse for me. Especially the `f` binding (see the image below). I now sit feet away from my laptop with mechanical keyboard in hand, reaching over only for horrible sites which don't comply to the HTML standard (looking at you, clicking the `next episode` button on `Netflix`)
+      - [vimium-ff](https://addons.mozilla.org/en-US/firefox/addon/vimium-ff/). Learning vimium has virtually killed the mouse for me. Especially the `f` binding, which highlights all clickable items and lets me click something with a keybind. I now sit feet away from my laptop with mechanical keyboard in hand, reaching over only for horrible sites which don't comply to the HTML standard (looking at you, clicking the `next episode` button on `Netflix`)
       - [RES](https://addons.mozilla.org/en-US/firefox/addon/reddit-enhancement-suite/), to make reddit manageable, though I don't go to reddit much these days.
       - [Violentmonkey](https://addons.mozilla.org/en-US/firefox/addon/violentmonkey/) so I can add bits of JS to sites I want to fix.
       - [Refined Github](https://addons.mozilla.org/en-US/firefox/addon/refined-github-/) for general Github improvements.
@@ -39,9 +59,5 @@ This is an ever evolving list of tools I use and recommend, or combinations of t
     - Privacy
       - [uBlock Origin](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/) to block ads.
       - [DuckDuckGo Privacy Essentials](https://addons.mozilla.org/en-US/firefox/addon/duckduckgo-for-firefox/)
-  - I use [`lynx`](https://www.lynxproject.org/) to do quick `duckduckgo` searches without leaving the terminal (TODO: write a post showing how to do this)
+  - I use [`lynx`](https://www.lynxproject.org/) to do quick `duckduckgo` searches [without leaving the terminal](https://sean.fish/d/duck?dark)
   - I'm somewhat required to test websites in chrome, so I use `chromium` to do that.
-![vimium selecting links for me to visit purely with the keyboard](images/vimium.png)
-
-TODO: look at my shortcuts/bin dirs and grab tools to mention
-
