@@ -39,6 +39,7 @@
 <li>Run my <a href="https://gitlab.com/seanbreckenridge/bootstrap" class="uri">https://gitlab.com/seanbreckenridge/bootstrap</a> script</li>
 <li><code>sudo raspi-config</code> to setup network; enable <code>ssh</code> (Interfacing Options)</li>
 </ul>
+<p>Once everythings configured, <code>sudo raspi-config</code> &gt; Boot Options &gt; Desktop/CLI &gt; Console Autologin, to run the pi as headless.</p>
 <h3 id="mount-a-hard-drive-automatic-mounting">Mount a Hard Drive (automatic mounting):</h3>
 <p>Pretty much just have to put the correct line into <code>/etc/fstab</code>. See <a href="https://www.raspberrypi.org/documentation/configuration/external-storage.md">here</a> for instructions.</p>
 <p>If you want to put it at <code>/home/data</code>, instead of <code>/mnt/something</code> like that page describes:</p>

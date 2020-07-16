@@ -15,6 +15,8 @@ General Notes on setting up a raspberry pi.
 * Run my <https://gitlab.com/seanbreckenridge/bootstrap> script
 * `sudo raspi-config` to setup network; enable `ssh` (Interfacing Options)
 
+Once everythings configured, `sudo raspi-config` > Boot Options > Desktop/CLI > Console Autologin, to run the pi as headless.
+
 ### Mount a Hard Drive (automatic mounting):
 
 Pretty much just have to put the correct line into `/etc/fstab`. See [here](https://www.raspberrypi.org/documentation/configuration/external-storage.md) for instructions.
