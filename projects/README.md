@@ -113,6 +113,12 @@ Checks a [keepassxc](https://keepassxc.org/) database against previously breache
 
 A tiny web server that scrapes information for a user from [`worldcubeassosiation.org`](https://www.worldcubeassociation.org/). Web scraping in rust is a bit cumbersome, but it was some nice exposure to using `Result`s and error handling. I scrape my page from the `WCA` website once per week, and use it to generate [this page](https://sean.fish/cubing) on my website.
 
+### raspi-backup
+
+[GitHub](https://github.com/seanbreckenridge/raspi-backup) | [GitLab](https://gitlab.com/seanbreckenridge/raspi-backup) | Shell
+
+script to periodical back up my machine to my raspberry pi. Is pretty minimal, just uses headless raspbian with an external 4TB that gets mounted on boot.
+
 ### xkcd-favorites
 
 [GitHub](https://github.com/seanbreckenridge/xkcd-favorites) | [GitLab](https://gitlab.com/seanbreckenridge/xkcd-favorites) | HTML
