@@ -12,11 +12,11 @@ These are other sites/blogs/things I'm a fan of. Inspired by [superhighway98](ht
 
 ## Websites
 
-### Tools
+## Tools
 
 * [HaveIBeenPwned](https://haveibeenpwned.com/) - also see [my tool](https://github.com/seanbreckenridge/keepassxc-pwned) for keepassxc.
 
-### Media/Entertainment
+## Media/Entertainment
 
 * [comic sans criminal](https://www.comicsanscriminal.com/)
 * [xkcd](https://xkcd.com/)
