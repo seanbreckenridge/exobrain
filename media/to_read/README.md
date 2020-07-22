@@ -7,6 +7,7 @@ Title: Stuff to read
 * <http://alvaro-videla.com/archive.html>
 * <http://prize.hutter1.net>
 * <https://dl.acm.org/toc/pacmpl/2020/4/HOPL>
+* <http://www.melconway.com/Home/pdf/committees.pdf>
 
 ### Books
 
@@ -17,4 +18,5 @@ Title: Stuff to read
 * Gang of Four OO Patterns (for historical reasons, not to actually use)
 * <https://www.programming-books.io/>
 * [Managing Technical Debt](https://www.amazon.com/Managing-Technical-Debt-Development-Engineering/dp/013564593X)
+* Patterns of Software, Richard P. Gabriel
 
