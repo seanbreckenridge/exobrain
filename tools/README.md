@@ -6,7 +6,7 @@ This is an extension of my [dotfiles](https://github.com/seanbreckenridge/dotfil
 
 This is an ever evolving list of tools and scripts I use and recommend, or combinations of tools I use to optimize my workflow. Some of these might be obvious to you, but it might not be to everyone!
 
-Most of these are command line based. The only GUI tools I use are my browser and my email client.
+Most of these are command line based. On a regular day, the only GUI tools I use are my browser and my email client.
 
 - Shells
   - [zsh](http://zsh.sourceforge.net/) - for the [`fish`](https://fishshell.com/)-like highlighting and auto completion, while still being *somewhat* posix compliant. Manually configuring everything makes this much faster than the monstrous `oh-my-zsh`.
