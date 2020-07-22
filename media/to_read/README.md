@@ -8,6 +8,8 @@ Title: Stuff to read
 * <http://prize.hutter1.net>
 * <https://dl.acm.org/toc/pacmpl/2020/4/HOPL>
 * <http://www.melconway.com/Home/pdf/committees.pdf>
+* <https://www.lesswrong.com/posts/TxcRbCYHaeL59aY7E/meditations-on-moloch>
+* <https://yudkowsky.net/obsolete/singularity.html>
 
 ### Books
 
