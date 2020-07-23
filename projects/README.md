@@ -59,7 +59,7 @@ bash loop to run tasks in the background. I use this instead of cron. uses a loc
 
 [GitHub](https://github.com/seanbreckenridge/vps) | [GitLab](https://gitlab.com/seanbreckenridge/vps) | Shell
 
-Scripts used for installing/managing/restarting/monitoring processes on my server (and my server). Wraps [supervisor](https://github.com/Supervisor/supervisor) to handle process crashing.
+Scripts used for installing/managing/restarting/monitoring processes on my server (and my server). Wraps [supervisor](https://github.com/Supervisor/supervisor) to handle process crashing. Includes other misc scripts ([mediaproxy](https://github.com/seanbreckenridge/vps/blob/master/mediaproxy)/[remsync](https://github.com/seanbreckenridge/vps/blob/master/remsync)) to provide FTP/Proxy-like functionality.
 
 ### jikan_ex
 
