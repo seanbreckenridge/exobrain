@@ -36,6 +36,7 @@ Most of these are command line based. On a regular day, the only GUI tools I use
 - On top of all the [git aliases](https://sean.fish/d/git_aliases?dark), one of my scripts I use most commonly are my [giturl](https://sean.fish/d/giturl?dark)/[gitopen](https://sean.fish/d/gitopen?dark) scripts, which will open the current git directory I'm in in my browser.
 - [`ix`](https://sean.fish/d/ix?dark) to create pastebin links from the command line
 - [`qr`](https://sean.fish/d/qr?dark), to create QR images from command line
+- To host files publicly and mirror video/audio, I use my [`remsync`](https://github.com/seanbreckenridge/vps/blob/master/remsync) and [`mediaproxy`](https://github.com/seanbreckenridge/vps/blob/master/mediaproxy) scripts.
 - the [`mvlast`](https://sean.fish/d/.local/share/shortcuts/mvlast?dark)/[`mvlastpic`](https://sean.fish/d/mvlastpic?dark)/[`lastdown`](https://sean.fish/d/lastdown?dark) collection of scripts, which lets me quickly move items from my Downloads/Screenshots to my current folder. Was taken from an <https://rwx.gg> stream; very basic but incredibly useful.
 - [vipe](https://linux.die.net/man/1/vipe), to quickly edit my clipboard in a vim buffer
 - `curl "https://cheat.sh/$*"`, to access quick cheatsheets for unix tools
