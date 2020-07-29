@@ -38,6 +38,14 @@ autocmd VimEnter * if expand(&#39;%:e&#39;) == &#39;md&#39; | set spell
 autocmd BufRead,BufNewFile * if expand(&#39;%:t&#39;) == &#39;COMMIT_EDITMSG&#39; | set spell</code></pre>
 <p>See <a href="http://vimdoc.sourceforge.net/htmldoc/autocmd.html">here</a> for more <code>autocmd</code> events.</p>
 <p><code>VimLeavePre</code> is another useful one, to run a <code>linter</code>/<code>command</code> against a file after saving</p>
+<h3 id="scrolling">scrolling</h3>
+<p><code>Ctrl+U</code>/<code>Ctrl+D</code> scrolls up down</p>
+<p>Scrolling relative to cursor:</p>
+<ul>
+<li><code>zz</code> move current line to middle of screen</li>
+<li><code>zt</code> move current line to top of screen</li>
+<li><code>zb</code> move current line to bottom of the screen</li>
+</ul>
 </div>
 </main>
 <footer>

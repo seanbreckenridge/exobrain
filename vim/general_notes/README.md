@@ -23,4 +23,13 @@ See [here](http://vimdoc.sourceforge.net/htmldoc/autocmd.html) for more `autocmd
 
 `VimLeavePre` is another useful one, to run a `linter`/`command` against a file after saving
 
+### scrolling
+
+`Ctrl+U`/`Ctrl+D` scrolls up down
+
+Scrolling relative to cursor:
+
+* `zz` move current line to middle of screen
+* `zt` move current line to top of screen
+* `zb` move current line to bottom of the screen
 
