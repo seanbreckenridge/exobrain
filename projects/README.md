@@ -4,12 +4,61 @@ Title: Programming Projects
 
 This is kept up to date by some code [here](https://github.com/seanbreckenridge/projects)
 
-
 ### exobrain
 
 [GitHub](https://github.com/seanbreckenridge/exobrain) | [GitLab](https://gitlab.com/seanbreckenridge/exobrain) | HTML/Bash
 
 external brain -- uses [`pandoc`](https://pandoc.org/) to generate my blog/brain dump. See [here](https://exobrain.sean.fish/) for more info.
+
+### bgproc
+
+[GitHub](https://github.com/seanbreckenridge/bgproc) | [GitLab](https://gitlab.com/seanbreckenridge/bgproc) | Shell
+
+bash loop to run tasks in the background. I use this instead of cron. uses a lockfile to make sure duplicate processes aren't running, and [evry](https://github.com/seanbreckenridge/evry) to schedule tasks periodically.
+
+### subpath-serve
+
+[GitHub](https://github.com/seanbreckenridge/subpath-serve) | [GitLab](https://gitlab.com/seanbreckenridge/subpath-serve) | Go
+
+Serves text files from a directory by matching subpaths. I use this to serve my dotfiles [here](https://sean.fish/d/?dark). It also allows me to quickly send someone one of my scripts/configuration files from my dotfiles using [this script](https://sean.fish/d/give)
+
+### no-db-static-shorturl
+
+[GitHub](https://github.com/seanbreckenridge/no-db-static-shorturl) | [GitLab](https://gitlab.com/seanbreckenridge/no-db-static-shorturl) | Go
+
+File based single-binary URL shortener server. Has no dependencies; doesn't require you to setup a database.
+
+### plaintext-playlist
+
+[GitHub](https://github.com/seanbreckenridge/plaintext-playlist) | [GitLab](https://gitlab.com/seanbreckenridge/plaintext-playlist) | Bash
+
+Interactive terminal playlist manager, storing contents in readable text files. Was my first attempt at creating a relatively large bash application. Seems that most people tend to use spotify/apple music nowadays, but I still like having music locally. This lets me manage playlists locally without having to use one of the bulky GUI applications.
+
+### raspi-backup
+
+[GitHub](https://github.com/seanbreckenridge/raspi-backup) | [GitLab](https://gitlab.com/seanbreckenridge/raspi-backup) | Shell
+
+script to periodically back up my machine to my raspberry pi. Is pretty minimal, just uses headless raspbian with an external 4TB that gets mounted on boot.
+
+### mpvf
+
+[GitHub](https://github.com/seanbreckenridge/mpvf) | [GitLab](https://gitlab.com/seanbreckenridge/mpvf) | Shell
+
+Interface to select `youtube-dl` format for streaming videos with `mpv`
+
+### xkcd-favorites
+
+[GitHub](https://github.com/seanbreckenridge/xkcd-favorites) | [GitLab](https://gitlab.com/seanbreckenridge/xkcd-favorites) | HTML
+
+A list of my favorite [xkcd](https://xkcd.com/)'s. Was initially rendered client-side with some JS, but I now use a [bash script](https://github.com/seanbreckenridge/xkcd-favorites/blob/master/ssg) to convert it to a static site. Hosted [here](https://sean.fish/xkcd/)
+
+### dotfiles
+
+[GitHub](https://github.com/seanbreckenridge/dotfiles) | [GitLab](https://gitlab.com/seanbreckenridge/dotfiles) | Shell
+
+My dotfiles; using [`yadm`](https://yadm.io/). Includes lots of my scripts, and my configuration files for everything. See [here](https://sean.fish/d/?dark) for an index.
+
+Works on both Mac/Linux(Arch)
 
 ### mal-unapproved
 
@@ -22,14 +71,6 @@ website that displays unapproved MAL (MyAnimeList) entries. MAL doesn't provide 
 [GitHub](https://github.com/seanbreckenridge/discord-countdown-bot) | [GitLab](https://gitlab.com/seanbreckenridge/discord-countdown-bot) | Python
 
 Discord bot to use for countdowns. I use this as an alternative to [`syncplay`](https://syncplay.pl/) -- to make sure everyone in a discord channel are all hitting play at the same time when watching movies/TV shows together.
-
-### dotfiles
-
-[GitHub](https://github.com/seanbreckenridge/dotfiles) | [GitLab](https://gitlab.com/seanbreckenridge/dotfiles) | Shell
-
-My dotfiles; using [`yadm`](https://yadm.io/). Includes lots of my scripts, and my configuration files for everything. See [here](https://sean.fish/d/?dark) for an index.
-
-Works on both Mac/Linux(Arch)
 
 ### glue
 
@@ -49,12 +90,6 @@ An cache of MAL IDs updated whenever something is added to the database. See [he
 
 Scrapes data and code from a users [Greasyfork](https://greasyfork.org/en) account.
 
-### bgproc
-
-[GitHub](https://github.com/seanbreckenridge/bgproc) | [GitLab](https://gitlab.com/seanbreckenridge/bgproc) | Shell
-
-bash loop to run tasks in the background. I use this instead of cron. uses a lockfile to make sure duplicate processes aren't running, and [evry](https://github.com/seanbreckenridge/evry) to schedule tasks periodically.
-
 ### vps
 
 [GitHub](https://github.com/seanbreckenridge/vps) | [GitLab](https://gitlab.com/seanbreckenridge/vps) | Shell
@@ -72,24 +107,6 @@ An elixir wrapper for the [Jikan](https://jikan.moe/) API.
 [GitHub](https://github.com/seanbreckenridge/shortcuts) | [GitLab](https://gitlab.com/seanbreckenridge/shortcuts) | Ruby
 
 Converts a `toml` file into shell scripts. I use this to convert short/one-liner shell commands into individual files. This makes my scripts easier to share with others, not dependent on shell-specific syntax (e.g. `exported bash functions`), and makes scripts accessible to other scripts/launchers like `rofi`/`dmenu`.
-
-### subpath-serve
-
-[GitHub](https://github.com/seanbreckenridge/subpath-serve) | [GitLab](https://gitlab.com/seanbreckenridge/subpath-serve) | Go
-
-Serves text files from a directory by matching subpaths. I use this to serve my dotfiles [here](https://sean.fish/d/?dark). It also allows me to quickly send someone one of my scripts/configuration files from my dotfiles using [this script](https://sean.fish/d/give)
-
-### no-db-static-shorturl
-
-[GitHub](https://github.com/seanbreckenridge/no-db-static-shorturl) | [GitLab](https://gitlab.com/seanbreckenridge/no-db-static-shorturl) | Go
-
-File based single-binary URL shortener server. Has no dependencies; doesn't require you to setup a database.
-
-### plaintext-playlist
-
-[GitHub](https://github.com/seanbreckenridge/plaintext-playlist) | [GitLab](https://gitlab.com/seanbreckenridge/plaintext-playlist) | Bash
-
-Interactive terminal playlist manager, storing contents in readable text files. Was my first attempt at creating a relatively large bash application. Seems that most people tend to use spotify/apple music nowadays, but I still like having music locally. This lets me manage playlists locally without having to use one of the bulky GUI applications.
 
 ### albums
 
@@ -112,18 +129,6 @@ Checks a [keepassxc](https://keepassxc.org/) database against previously breache
 [GitHub](https://github.com/seanbreckenridge/wca_userinfo) | [GitLab](https://gitlab.com/seanbreckenridge/wca_userinfo) | Rust
 
 A tiny web server that scrapes information for a user from [`worldcubeassosiation.org`](https://www.worldcubeassociation.org/). Web scraping in rust is a bit cumbersome, but it was some nice exposure to using `Result`s and error handling. I scrape my page from the `WCA` website once per week, and use it to generate [this page](https://sean.fish/cubing) on my website.
-
-### raspi-backup
-
-[GitHub](https://github.com/seanbreckenridge/raspi-backup) | [GitLab](https://gitlab.com/seanbreckenridge/raspi-backup) | Shell
-
-script to periodically back up my machine to my raspberry pi. Is pretty minimal, just uses headless raspbian with an external 4TB that gets mounted on boot.
-
-### xkcd-favorites
-
-[GitHub](https://github.com/seanbreckenridge/xkcd-favorites) | [GitLab](https://gitlab.com/seanbreckenridge/xkcd-favorites) | HTML
-
-A list of my favorite [xkcd](https://xkcd.com/)'s. Was initially rendered client-side with some JS, but I now use a [bash script](https://github.com/seanbreckenridge/xkcd-favorites/blob/master/ssg) to convert it to a static site. Hosted [here](https://sean.fish/xkcd/)
 
 ### xqc-dvd
 
@@ -214,12 +219,6 @@ Displays large characters on your screen. Was a replacement for [this Alfred fea
 [GitHub](https://github.com/seanbreckenridge/mal-notify-bot) | [GitLab](https://gitlab.com/seanbreckenridge/mal-notify-bot) | Python
 
 Discord bot that checks the MAL (MyAnimeList) "Just Added" page, reporting newly added entries.
-
-### mpvf
-
-[GitHub](https://github.com/seanbreckenridge/mpvf) | [GitLab](https://gitlab.com/seanbreckenridge/mpvf) | Shell
-
-Interface to select `youtube-dl` format for streaming videos with `mpv`
 
 ### poly-project-euler
 
