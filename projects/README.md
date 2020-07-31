@@ -60,6 +60,12 @@ My dotfiles; using [`yadm`](https://yadm.io/). Includes lots of my scripts, and 
 
 Works on both Mac/Linux(Arch)
 
+### mpv-sockets
+
+[GitHub](https://github.com/seanbreckenridge/mpv-sockets) | [GitLab](https://gitlab.com/seanbreckenridge/mpv-sockets) | Shell
+
+A collection of scripts to allow flexible and easier interaction with mpv sockets
+
 ### mal-unapproved
 
 [GitHub](https://github.com/seanbreckenridge/mal-unapproved) | [GitLab](https://gitlab.com/seanbreckenridge/mal-unapproved) | Ruby
