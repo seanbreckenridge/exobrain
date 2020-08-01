@@ -84,7 +84,7 @@ setsid mpvf &quot;https://www.twitch.tv/${STREAMER}&quot; &amp;</code></pre>
 |               |        |              | chill | #LeaguePartner              |
 +---------------+--------+--------------+-------------------------------------+</code></pre>
 <p>The two commands could even be combined like:</p>
-<pre><code>twitchlive -output-format json | jq -r &#39;.channels | .[] | .username&#39; | fzf | xargs twitch</code></pre>
+<pre><code>twitchlive -output-format json | jq -r &#39;.[] | .username&#39; | fzf | xargs twitch</code></pre>
 <p>… which uses <code>twitchlive</code> to get a list of currently live channels, prompting me to select one with <code>fzf</code>, and then passing that on to the <code>twitch</code> script to start watching them.</p>
 </div>
 </main>
