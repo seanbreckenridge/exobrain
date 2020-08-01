@@ -40,6 +40,12 @@ Interactive terminal playlist manager, storing contents in readable text files. 
 
 script to periodically back up my machine to my raspberry pi. Is pretty minimal, just uses headless raspbian with an external 4TB that gets mounted on boot.
 
+### tts
+
+[GitHub](https://github.com/seanbreckenridge/tts) | [GitLab](https://gitlab.com/seanbreckenridge/tts) | Shell
+
+CLI tool to convert text to speech using the StreamLabs API
+
 ### mpvf
 
 [GitHub](https://github.com/seanbreckenridge/mpvf) | [GitLab](https://gitlab.com/seanbreckenridge/mpvf) | Shell
