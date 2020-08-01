@@ -21,4 +21,4 @@ Title: Stuff to read
 * <https://www.programming-books.io/>
 * [Managing Technical Debt](https://www.amazon.com/Managing-Technical-Debt-Development-Engineering/dp/013564593X)
 * Patterns of Software, Richard P. Gabriel
-
+* Infinite Jest
