@@ -8,6 +8,8 @@
 # This runs pandoc by searching for README.md files recursively
 # and running pandoc against that with the assets/template.html as a base
 
+wait-for-internet
+
 cd "$(dirname "${BASH_SOURCE[0]}")" || exit
 
 # get my list of projects
