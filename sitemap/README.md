@@ -5,6 +5,7 @@ blog: false
 More 'complete' blog-like posts at [feed](/feed).
 
 * / [Cubing](/cubing/)
+* / [FizzBuzz](/fizzbuzz/)
 * / [Game Dev Notes](/gamedev/)
 * / [Git Commands](/git/)
 * / [Internet Superhighway](/superhighway/)
@@ -13,6 +14,7 @@ More 'complete' blog-like posts at [feed](/feed).
 * / [Programming Projects](/projects/)
 * / [Raspberry Pi Notes](/raspi/)
 * / [Tools, or how I do everything](/tools/)
+* / [Words](/words/)
 * anime/ [Searching on pixiv](/anime/pixiv/)
 * cryptography/ [SP Networks - Computerphile](/cryptography/sp_networks/)
 * golang/ [General Golang Notes](/golang/general/)

@@ -2,6 +2,7 @@ anime/pixiv
 cryptography/sp_networks
 cubing
 feed
+fizzbuzz
 gamedev
 git
 golang/general
@@ -43,3 +44,4 @@ vim/windows
 web/html_resources
 web/tools
 web/ui_ux
+words
