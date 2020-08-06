@@ -90,6 +90,12 @@ Discord bot to use for countdowns. I use this as an alternative to [`syncplay`](
 
 Used to glue all of my web applications together. This is the code for my homepage at [sean.fish](https://sean.fish/), which links off to my static/other sites hosted on the same server. The elixir application also handles caching information for my [`feed`](https://sean.fish/feed) page.
 
+### pmark
+
+[GitHub](https://github.com/seanbreckenridge/pmark) | [GitLab](https://gitlab.com/seanbreckenridge/pmark) | Perl
+
+A hacky, markdown pre-processor. Uses code blocks to generate markdown, from within the markdown itself.
+
 ### mal-id-cache
 
 [GitHub](https://github.com/seanbreckenridge/mal-id-cache) | Python
