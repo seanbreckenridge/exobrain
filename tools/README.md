@@ -40,7 +40,7 @@ Most of these are command line based. On a regular day, the only GUI tools I use
 - the [`mvlast`](https://sean.fish/d/.local/share/shortcuts/mvlast?dark)/[`mvlastpic`](https://sean.fish/d/mvlastpic?dark)/[`lastdown`](https://sean.fish/d/lastdown?dark) collection of scripts, which lets me quickly move items from my Downloads/Screenshots to my current folder. Was taken from an <https://rwx.gg> stream; very basic but incredibly useful.
 - [vipe](https://linux.die.net/man/1/vipe), to quickly edit my clipboard in a vim buffer
 - `curl "https://cheat.sh/$*"`, to access quick cheatsheets for unix tools
-- [`dragon`](https://github.com/mwh/dragon), to be able to dragon and drop items from/to the terminal. Have my [`dragon-sink`](https://sean.fish/d/dragon-sink?dark) script, which accepts and `cp`/`mv`'s files from applications, and bindings in `ranger` to drag files into my browser/discord.
+- [`dragon`](https://github.com/mwh/dragon), to be able to dragon and drop items from/to the terminal. Have my [`dragon-sink`](https://sean.fish/d/dragon-sink?dark) script, which accepts and `cp`/`mv`'s files from applications, and bindings in `ranger` to drag files into my browser.
 - [`ldm`](https://github.com/LemonBoy/ldm), to do basic drive mounting for external drives/USBs
 - [my own password generator](https://github.com/seanbreckenridge/genpasswd)
 - A bash script ([`bgproc`](https://github.com/seanbreckenridge/bgproc)) with an infinite loop which runs in the background instead of `cron` (uses my [`evry`](https://github.com/seanbreckenridge/evry) tool to schedule tasks).
