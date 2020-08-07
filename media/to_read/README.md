@@ -22,3 +22,4 @@ Title: Stuff to read
 * [Managing Technical Debt](https://www.amazon.com/Managing-Technical-Debt-Development-Engineering/dp/013564593X)
 * Patterns of Software, Richard P. Gabriel
 * Infinite Jest
+* <https://www.amazon.com/Software-Requirements-Specifications-Principles-Prejudices/dp/0201877120>
