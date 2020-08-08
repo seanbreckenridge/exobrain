@@ -30,9 +30,7 @@ render() {
 # run pmark on each P_README.md file
 # builds the blog feed/sitemap and curls the project page
 # see https://github.com/seanbreckenridge/pmark
-while IFS= read -r pr; do
-	pmark "$pr"
-done < <(find . -name 'P_README.md' -type f)
+find . -name 'P_README.md' -type f -exec pmark {} \;
 
 # render home page
 render "."
