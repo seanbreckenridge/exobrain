@@ -6,7 +6,7 @@ This is following the book [here](https://github.com/sarabander/sicp-pdf), and t
 
 Thanks to [creactiviti/scip-course](https://github.com/creactiviti/sicp-course) for a nice overview.
 
-### Table of Contents:
+### Table of Contents
 
 * [SICP 01 - Functional Programming](../01)
 * [SICP 02 - Abstraction](../02)
