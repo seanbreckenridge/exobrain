@@ -6,19 +6,7 @@ This is following the book [here](https://github.com/sarabander/sicp-pdf), and t
 
 Thanks to [creactiviti/scip-course](https://github.com/creactiviti/sicp-course) for a nice overview.
 
-### Install STk for Mac
-
-You can install STk (REPL for [Scheme](https://en.wikipedia.org/wiki/Scheme_(programming_language))) from [here](https://inst.eecs.berkeley.edu/~scheme/precompiled/OSX/).
-
-This requires X11, so; on Mac:
-
-`brew cask install xquartz`
-
-You can now run `stk`, or `stk-simply` (the version with extra functions used in the lectures)
-
-On Arch Linux, this can be installed with `pacman -S mit-scheme`
-
-Table of Contents:
+### Table of Contents:
 
 ```
 >>>PMARK
@@ -33,3 +21,16 @@ for dir in sorted(os.listdir(), key=int):
         title = "".join([l for l in readme_contents.splitlines() if "Title" in l][0].split(":")[1:]).strip()
         print(f"* [{title}](../{dir})")
 ```
+
+### Install STk for Mac
+
+You can install STk (REPL for [Scheme](https://en.wikipedia.org/wiki/Scheme_(programming_language))) from [here](https://inst.eecs.berkeley.edu/~scheme/precompiled/OSX/).
+
+This requires X11, so; on Mac:
+
+`brew cask install xquartz`
+
+You can now run `stk`, or `stk-simply` (the version with extra functions used in the lectures)
+
+On Arch Linux, this can be installed with `pacman -S mit-scheme`
+

@@ -6,6 +6,17 @@ This is following the book [here](https://github.com/sarabander/sicp-pdf), and t
 
 Thanks to [creactiviti/scip-course](https://github.com/creactiviti/sicp-course) for a nice overview.
 
+### Table of Contents:
+
+* [SICP 01 - Functional Programming](../01)
+* [SICP 02 - Abstraction](../02)
+* [SICP 03 - Recursion and Iteration](../03)
+* [SICP 04 - Data Abstraction, sequences](../04)
+* [SICP 05 - Hierarchical data/Scheme Interpreter](../05)
+* [SICP 06 - Generic Operators](../06)
+* [SICP 07 - Object Oriented Programming](../07)
+* [SICP 08 - Local state variables, environments](../08)
+* [SICP 09 - Mutable data, queues, tables](../09)
 ### Install STk for Mac
 
 You can install STk (REPL for [Scheme](https://en.wikipedia.org/wiki/Scheme_(programming_language))) from [here](https://inst.eecs.berkeley.edu/~scheme/precompiled/OSX/).
@@ -18,14 +29,3 @@ You can now run `stk`, or `stk-simply` (the version with extra functions used in
 
 On Arch Linux, this can be installed with `pacman -S mit-scheme`
 
-Table of Contents:
-
-* [SICP 01 - Functional Programming](../01)
-* [SICP 02 - Abstraction](../02)
-* [SICP 03 - Recursion and Iteration](../03)
-* [SICP 04 - Data Abstraction, sequences](../04)
-* [SICP 05 - Hierarchical data/Scheme Interpreter](../05)
-* [SICP 06 - Generic Operators](../06)
-* [SICP 07 - Object Oriented Programming](../07)
-* [SICP 08 - Local state variables, environments](../08)
-* [SICP 09 - Mutable data, queues, tables](../09)
