@@ -30,7 +30,10 @@ render() {
 # run pmark on each P_README.md file
 # builds the blog feed/sitemap and curls the project page
 # see https://github.com/seanbreckenridge/pmark
-pmark $(find -name 'P_README.md' -type f)
+while IFS= read -r pr; do
+	pmark "$pr"
+done < <(find . -name 'P_README.md' -type f)
+
 # render home page
 render "."
 # generate 404 page
@@ -38,8 +41,14 @@ pandoc_generate "./404.md" "./404.html"
 # make manifest
 mkmanifest
 
-# list of pids for background processes
+i=0
 while IFS= read -r node; do
 	render "$node" &
+	# run 5 pandoc builds in the background at a time
+	((i++))
+	((i >= 5)) && {
+		wait
+		i=0
+	}
 done <./MANIFEST
 wait
