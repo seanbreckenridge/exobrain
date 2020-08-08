@@ -20,12 +20,16 @@ On Arch Linux, this can be installed with `pacman -S mit-scheme`
 
 Table of Contents:
 
-* [SICP 01 - Functional Programming](../01)
-* [SICP 02 - Abstraction](../02)
-* [SICP 03 - Recursion and Iteration](../03)
-* [SICP 04 - Data Abstraction, sequences](../04)
-* [SICP 05 - Hierarchical data/Scheme Interpreter](../05)
-* [SICP 06 - Generic Operators](../06)
-* [SICP 07 - Object Oriented Programming](../07)
-* [SICP 08 - Local state variables, environments](../08)
-* [SICP 09 - Mutable data, queues, tables](../09)
+```
+>>>PMARK
+#!/usr/bin/env python3
+import os
+os.chdir('..')
+for dir in sorted(os.listdir(), key=int):
+    if int(dir) != 0:
+        readme_file = os.path.abspath(os.path.join(dir, 'README.md'))
+        with open(readme_file, 'r') as f:
+            readme_contents = f.read().strip()
+        title = "".join([l for l in readme_contents.splitlines() if "Title" in l][0].split(":")[1:]).strip()
+        print(f"* [{title}](../{dir})")
+```

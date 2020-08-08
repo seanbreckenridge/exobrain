@@ -30,7 +30,7 @@ render() {
 # run pmark on each P_README.md file
 # builds the blog feed/sitemap and curls the project page
 # see https://github.com/seanbreckenridge/pmark
-find . -name 'P_README.md' -type f -exec pmark {} +
+find . -name 'P_README.md' -type f -exec pmark {} + || exit $?
 
 # render home page
 render "."
@@ -39,12 +39,18 @@ pandoc_generate "./404.md" "./404.html"
 # make manifest
 mkmanifest
 
+# get cpu count to use that, else run 5 pandoc builds at a time
+if command -v nproc >/dev/null 2>&1; then
+	procs="$(nproc)"
+else
+	procs=5
+fi
+
 i=0
 while IFS= read -r node; do
 	render "$node" &
-	# run 5 pandoc builds in the background at a time
 	((i++))
-	((i >= 5)) && {
+	((i >= procs)) && {
 		wait
 		i=0
 	}
