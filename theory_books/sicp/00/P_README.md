@@ -18,7 +18,7 @@ for dir in sorted(os.listdir(), key=int):
         readme_file = os.path.abspath(os.path.join(dir, 'README.md'))
         with open(readme_file, 'r') as f:
             readme_contents = f.read().strip()
-        title = "".join(next(filter(lambda x: "Title" in x, readme_contents.splitlines())).split(":")[1:]).strip()
+        title = next(filter(lambda x: "Title" in x, readme_contents.splitlines())).split(":", 1)[-1].strip()
         print(f"* [{title}](../{dir})")
 ```
 
