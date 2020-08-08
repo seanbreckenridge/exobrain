@@ -1,10 +1,5 @@
 #!/bin/bash
 # This builds the markdown files into HTML files.
-# It also dymanically generates the sitemap and blog feed pages
-# by using the post directory for blogposts, and parsing
-# the 'Title' attribute from each page to generate markdown
-# and putting those in ./sitemap/README.md and ./feed/README.md
-# before running pandoc against them
 # This runs pandoc by searching for README.md files recursively
 # and running pandoc against that with the assets/template.html as a base
 
@@ -12,9 +7,10 @@ wait-for-internet
 
 cd "$(dirname "${BASH_SOURCE[0]}")" || exit
 
-# get my list of projects
-mkdir -p ./projects
-curl -s "https://raw.githubusercontent.com/seanbreckenridge/projects/master/README.md" >./projects/README.md &
+# run pmark on each P_README.md file
+# builds the blog feed/sitemap and curls the project page
+# see https://github.com/seanbreckenridge/pmark
+pmark $(find -name 'P_README.md' -type f)
  
 mkmanifest() {
 	declare line
@@ -35,38 +31,6 @@ render() {
 	echo Building "'$dir'"
 	pandoc_generate "$dir/README.md" "$dir/index.html"
 }
-
-# create sitemap-like index page
-cat ./sitemap/BASE.md >./sitemap/README.md
-echo >>./sitemap/README.md
-
-wait  # wait for curl to finish
-
-# generate markdown that displays the sitemap
-{ while read -r indexdir; do
-	full_dir=$(echo -n "$indexdir" | cut -c 2- | tr -d "\n")
-	without_last_dir=$(dirname "$full_dir")
-	page_title=$(grep -m1 Title "$indexdir/README.md" | cut -d" " -f2- | tr -d "\n")
-	absolute_path=$(cut -c 2- <<<"$indexdir")
-	printf "* %s/ [%s](%s)\n" "${without_last_dir#/}" "$page_title" "$absolute_path"
-	# sort by columns (directory name and then name of post
-done < <(find . -name "README.md" | grep -vE "^(./sitemap|./post|./feed|./README.md)" | sed "s/README.md$//g"); } \
-  | sort -k2,2 -k3,3 >>./sitemap/README.md
-
-# create feed (blog) page
-cat ./feed/BASE.md >./feed/README.md
-echo >>./feed/README.md
-
-# generate markdown that displays blog feed
-{ while read -r indexdir; do
-	# grab title and date from yaml at top
-	blog_title=$(grep -m1 Title "$indexdir/README.md" | cut -d" " -f2- | tr -d "\n")
-	blog_date=$(grep -m1 Date "$indexdir/README.md" | cut -d" " -f2- | tr -d "\n")
-	absolute_path=$(cut -c 2- <<<"$indexdir")
-	printf "* [%s](%s) %s\n" "$blog_title" "$absolute_path" "$blog_date"
-done< <(find ./post -name "README.md" | sed "s/README.md$//g" ); } \
-  | python -c "import sys; print(''.join(sorted(sys.stdin.readlines(), key=lambda l: l.split()[-1], reverse=True)))" >>./feed/README.md
-  # python expression sort lines by last column
 
 # make manifest
 mkmanifest
