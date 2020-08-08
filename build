@@ -7,11 +7,6 @@ wait-for-internet
 
 cd "$(dirname "${BASH_SOURCE[0]}")" || exit
 
-# run pmark on each P_README.md file
-# builds the blog feed/sitemap and curls the project page
-# see https://github.com/seanbreckenridge/pmark
-pmark $(find -name 'P_README.md' -type f)
- 
 mkmanifest() {
 	declare line
 	while IFS= read -r line; do
@@ -32,12 +27,16 @@ render() {
 	pandoc_generate "$dir/README.md" "$dir/index.html"
 }
 
-# make manifest
-mkmanifest
+# run pmark on each P_README.md file
+# builds the blog feed/sitemap and curls the project page
+# see https://github.com/seanbreckenridge/pmark
+pmark $(find -name 'P_README.md' -type f)
 # render home page
 render "."
 # generate 404 page
 pandoc_generate "./404.md" "./404.html"
+# make manifest
+mkmanifest
 
 # list of pids for background processes
 while IFS= read -r node; do

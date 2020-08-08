@@ -6,7 +6,7 @@ Title: Meta; about my exobrain
 
 This is built using [`pandoc`](https://pandoc.org/) to convert markdown files to html, using `pandoc` flavored markdown, which allows you to use its template language, see the conditionals in the [`template`](https://github.com/seanbreckenridge/exobrain/blob/master/assets/template.html)
 
-The [build](https://github.com/seanbreckenridge/exobrain/blob/master/build) script finds a file named `README.md` in each directory and converts it to the corresponding `index.html`
+The [`build`](https://github.com/seanbreckenridge/exobrain/blob/master/build) script finds a file named `README.md` in each directory and converts it to the corresponding `index.html`
 
 Parts of the dynamic feed/blog/projects pages are built using my [`pmark`](https://github.com/seanbreckenridge/pmark) script, which uses code blocks to generate markdown, from within the markdown itself.
 
