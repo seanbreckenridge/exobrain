@@ -316,3 +316,4 @@ cookiecutter template for new python projects, using `pipenv`, `pytest`, and `tr
 
 Lets me edit files and strings in temporary vim (or some other console editor) buffers. I've mostly replaced this with my heavy use of a customized [ranger](https://github.com/ranger/ranger)
 
+

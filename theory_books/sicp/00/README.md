@@ -17,6 +17,7 @@ Thanks to [creactiviti/scip-course](https://github.com/creactiviti/sicp-course) 
 * [SICP 07 - Object Oriented Programming](../07)
 * [SICP 08 - Local state variables, environments](../08)
 * [SICP 09 - Mutable data, queues, tables](../09)
+
 ### Install STk for Mac
 
 You can install STk (REPL for [Scheme](https://en.wikipedia.org/wiki/Scheme_(programming_language))) from [here](https://inst.eecs.berkeley.edu/~scheme/precompiled/OSX/).
