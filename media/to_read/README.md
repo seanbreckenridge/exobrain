@@ -21,3 +21,4 @@ Title: Stuff to read
 * Patterns of Software, Richard P. Gabriel
 * Infinite Jest
 * <https://www.amazon.com/Software-Requirements-Specifications-Principles-Prejudices/dp/0201877120>
+* category theory for programmers
