@@ -26,7 +26,7 @@ Most of these are command line based. On a regular day, the only GUI tools I use
 - Editors
   - nvim (primarily)
   - (doom) emacs
-- I use [`newsboat`] RSS for youtube/news/blogs. I have a [script](https://sean.fish/d/youtube-user-id) to grab a youtube users RSS feed, since youtube doesn't list that publicly. [`linkhandler`](https://sean.fish/d/linkhandler) lets me open youtube videos from `newsboat` using [`mpvf`](https://github.com/seanbreckenridge/mpvf/) instead of visiting youtube in the browser.
+- I use [`newsboat`](https://newsboat.org/) RSS for youtube/news/blogs. I have a [script](https://sean.fish/d/youtube-user-id) to grab a youtube users RSS feed, since youtube doesn't list that publicly. [`linkhandler`](https://sean.fish/d/linkhandler) lets me open youtube videos from `newsboat` using [`mpvf`](https://github.com/seanbreckenridge/mpvf/) instead of visiting youtube in the browser.
 - to-do list - [todotxt](http://todotxt.org/) for todos, with a [rofi interface](https://sean.fish/d/todo-prompt?dark) as GUI, and [TUI](https://gitlab.com/seanbreckenridge/full_todotxt) for adding todos. The TUI I wrote forces me to specify a `deadline` for each todo, which I then get notified by [this](https://github.com/seanbreckenridge/todotxt_deadline_notify), which runs on my server.
 - a heavily customized [ranger](https://github.com/ranger/ranger) as my file manager. My `rifle.conf` and `scope.sh` (file handler and previewer) have lots of customizations past the defaults.
 - [yadm](https://yadm.io) to manage dotfiles. Once I have a terminal running, my [bootstrap](https://sean.fish/d/bootstrap?dark) script sets up my system entirely.
