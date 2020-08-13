@@ -10,6 +10,7 @@ More 'complete' blog-like posts at [feed](/feed).
 * / [Internet Superhighway](/superhighway/)
 * / [Japanese](/japanese/)
 * / [Meta; about my exobrain](/meta/)
+* / [Online Databases](/online_databases/)
 * / [Programming Projects](/projects/)
 * / [Raspberry Pi Notes](/raspi/)
 * / [Tools, or how I do everything](/tools/)

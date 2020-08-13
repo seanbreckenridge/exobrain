@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+            <title>exobrain | Online Databases</title>
+        <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+  <link rel="shortcut icon" href="/assets/img/logo.png" type="image/png">
+  <meta http-equiv="Pragma" content="no-cache"/>
+  <meta http-equiv="Expires" content="0"/>
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<header class=nav-bar>
+  <nav>
+          <a class="homelink" href="/">exobrain</a>
+        <div class="nav-right">
+      <div class=nav-item><a class="nav-link" href="/feed">blog feed</a></div>
+      <div class=nav-item><a class="nav-link" href="/sitemap">exobrain sitemap</a></div>
+      <div class=nav-item><a class="nav-link" href="https://sean.fish">back to my site</a></div>
+    </div>
+  </nav>
+</header>
+<main>
+<a id=top></a><div class=container>
+<div id="main-header">
+  <div class="h1" id="main-title">Online Databases</div>
+  </div>
+<p><em>Why use online databases?</em></p>
+<p>For example, MAL, IMDB, Letterboxd</p>
+<p>At a higher level. Its all.</p>
+<ul>
+<li>metadata</li>
+<li>community</li>
+</ul>
+<h2 id="reasons-to-use-online-databases">Reasons to use online databases:</h2>
+<p>Granularly:</p>
+<ul>
+<li>Share your list with others~ and be social!</li>
+<li>You (hopefully) get a nice interface which shows who images, descriptions, etc.</li>
+<li>Some of the benefits of a RDBMS, where you can filter/see who worked on what/search (depending on how much the website chooses to display)</li>
+<li>[IF AN API EXISTS, AND IS FREE] API access to the information, information on episodes/images (e.g. Trakt API info to TVDB)</li>
+<li>Discover new entries (in general), and based on recommendations that the system/other users give</li>
+</ul>
+<h2 id="reasons-to-not-use-online-databases">Reasons to not use online databases:</h2>
+<ul>
+<li>Downtime</li>
+<li>If no API, no way to query your list. However, your own local list/spreadsheet means without a bunch of work, no access to metadata to filter your personal list</li>
+<li>Using a website in general:
+<ul>
+<li>Not owning your information (especially since this is a personal list, and not being able to export it easily means if the site dissapears, your list/community disappears)</li>
+<li>Being advertised to</li>
+<li>Being the product</li>
+</ul></li>
+</ul>
+<h2 id="using-a-personal-system-e.g.-google">Using a personal system (e.g. google</h2>
+<ul>
+<li>If no metadata, cant do fun things like:
+<ul>
+<li>query by genre</li>
+<li>connect by people who worked on two projects</li>
+<li>anything else metadata and an RDMBS lets you do</li>
+</ul></li>
+<li>share/compare you lists to others (but how much do I care about this…. ? Could just create a SSG against local data and host that on my website instead of investing in another content silo)</li>
+</ul>
+<p>My general sentiment is, I want to move closer to what I did with my <a href="https://github.com/seanbreckenridge/albums">music/albums</a> solution, but using local CSV/Sqlite files instead of google sheets.</p>
+<h2 id="databases-do-i-use">databases do I use</h2>
+<p>Generally Good Metadata, have APIs which I use:</p>
+<ul>
+<li>Trakt - for <a href="https://sean.fish/feed" class="uri">https://sean.fish/feed</a></li>
+<li>Discogs - for <a href="https://sean.fish/s/albums" class="uri">https://sean.fish/s/albums</a> (my google sheet/SQL system using discogs metadata)</li>
+</ul>
+<p>Generally good metadata:</p>
+<ul>
+<li><a href="https://letterboxd.com" class="uri">https://letterboxd.com</a></li>
+<li><a href="https://www.grouvee.com" class="uri">https://www.grouvee.com</a></li>
+</ul>
+<p>Average metadata, tons of downtime, generally not a great experience:</p>
+<ul>
+<li><a href="https://myanimelist.net/" class="uri">https://myanimelist.net/</a> - however, im personally invested a lot and have a lot of the domain knowledge of how the site works here, and am friends with a lot of the power users. Moving away from MAL is something that Im actively working on.</li>
+</ul>
+</div>
+</main>
+<footer>
+  <p><a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" id=copyright>© 2020 Sean Breckenridge. Licensed under Creative Commons Attribution-ShareAlike.</a>
+    <br /><a href="https://github.com/seanbreckenridge/exobrain">Source Code</a>
+  </p>
+</footer>
+<script src="/assets/main.js"></script>
+</body>
+</html>
