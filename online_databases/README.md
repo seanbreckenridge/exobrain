@@ -30,7 +30,7 @@ Granularly:
   * Being advertised to
   * Being the product
 
-## Using a personal system (e.g. google 
+## Using a personal system (like CSV/google sheets)
 
 * If no metadata, cant do fun things like:
   * query by genre
