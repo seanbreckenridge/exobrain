@@ -38,9 +38,9 @@ Granularly:
   * anything else metadata and an RDMBS lets you do
 * share/compare you lists to others (but how much do I care about this.... ? Could just create a SSG against local data and host that on my website instead of investing in another content silo). Or.... get/maintain a list of entries/IDs and back-fill info into the databases based on local changes. Local First, then update remotely to maintain the community aspect.
 
-My general sentiment is, I want to move closer to what I did with my [music/albums](https://github.com/seanbreckenridge/albums) solution, but using local CSV/Sqlite files instead of google sheets.
+My general sentiment is, I want to move closer to what I did with my [music/albums](https://github.com/seanbreckenridge/albums) solution, but using local CSV/Sqlite files instead of google sheets. Create static site generators based on the local databases, and run those on my server whenever a git repo gets updated
 
-## databases do I use
+## databases I use
 
 Generally Good Metadata, have APIs which I use:
 
