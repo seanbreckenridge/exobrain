@@ -21,6 +21,8 @@ Granularly:
 * [IF AN API EXISTS, AND IS FREE] API access to the information, information on episodes/images (e.g. Trakt API info to TVDB)
 * Discover new entries (in general), and based on recommendations that the system/other users give
 
+For anyone who is serious about exploring media, online databases are impractical to avoid. You're either going to be using one (and perhaps contributing back to one), or using the metadata from one to create your local index of media to check out based on different creators/genres/rankings.
+
 ## Reasons to not use online databases:
 
 * Downtime
