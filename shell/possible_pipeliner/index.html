@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+            <title>exobrain | Possibily Pipelining</title>
+        <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+  <link rel="shortcut icon" href="/assets/img/logo.png" type="image/png">
+  <meta http-equiv="Pragma" content="no-cache"/>
+  <meta http-equiv="Expires" content="0"/>
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<header class=nav-bar>
+  <nav>
+          <a class="homelink" href="/">exobrain</a>
+        <div class="nav-right">
+      <div class=nav-item><a class="nav-link" href="/feed">blog feed</a></div>
+      <div class=nav-item><a class="nav-link" href="/sitemap">exobrain sitemap</a></div>
+      <div class=nav-item><a class="nav-link" href="https://sean.fish">back to my site</a></div>
+    </div>
+  </nav>
+</header>
+<main>
+<a id=top></a><div class=container>
+<div id="main-header">
+  <div class="h1" id="main-title">Possibily Pipelining</div>
+  </div>
+<p>Expanding a bit on the thoughts <a href="/post/replacing_shell">here</a></p>
+<p>More I think about this, more likely me writing the tool isn’t going to be a thing</p>
+<p>I think theres a possibility to write something in a fast language, like <code>rust</code> to do this.</p>
+<p>It would be similar to mario, but the ability to write ‘arbitrary’ functions wouldnt be as possible. Theres an argument to be made to use perl instead, since thats sort of what perl was made for, but <em>aesthetically</em>, I dont like the syntax of perl, and doing more complicated stream processing like jq/awk/async curl-ing isn’t possible.</p>
+<p>Things that this <em>WOULDNT</em> support, because good tools already exist:</p>
+<ul>
+<li>JSON: <code>jq</code> and <code>gron</code></li>
+<li><code>curl</code> (though argument could be made that curl isnt the best at this)</li>
+</ul>
+<p>At that point, the custom tools you’re writing are replacable by a couple <code>jq</code>/<code>awk</code>/<code>perl</code> pipelines, and it’d be more code to write some custom solution. Nice thing about <code>mario</code> is that you have access to the python stdlib, and common string manipulation functions, which is what the custom tool I write would offer over <code>awk</code>/<code>jq</code>. And nice string handling in the shell is needed, its often sort of hacky to fix strings in the shell. (though <code>-z</code>/<code>-n</code>) is nice</p>
+<p>So. the solution is: learn <code>perl</code> (which <a href="https://github.com/seanbreckenridge/pmark">I have been doing</a>), use <code>gron</code>/<code>jq</code>, all fallback to python when necessary. value getting the job done over aesthetics.</p>
+<p>TODO: Is something to be said about writing a full shell-like lisp language, because shells are hacky and writing languages is fun, but thats a whole nother project on its own :)</p>
+</div>
+</main>
+<footer>
+  <p><a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" id=copyright>© 2020 Sean Breckenridge. Licensed under Creative Commons Attribution-ShareAlike.</a>
+    <br /><a href="https://github.com/seanbreckenridge/exobrain">Source Code</a>
+  </p>
+</footer>
+<script src="/assets/main.js"></script>
+</body>
+</html>

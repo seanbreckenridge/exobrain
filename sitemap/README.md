@@ -27,6 +27,7 @@ More 'complete' blog-like posts at [feed](/feed).
 * python/ [Decorators Pycon](/python/decorators/)
 * shell/ [Bash Notes](/shell/bash_notes/)
 * shell/ [Imagemagick commands](/shell/imagemagick/)
+* shell/ [Possibily Pipelining](/shell/possible_pipeliner/)
 * shell/ [Shell Tools](/shell/tools/)
 * theory_books/ [Alan Kay, User Interface Design](/theory_books/alan_kay_user_interface/)
 * theory_books/ [How Do Committees Invent, Melvin E. Conway](/theory_books/how_do_committees_invent/)
