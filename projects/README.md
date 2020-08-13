@@ -14,7 +14,7 @@ external brain -- uses [`pandoc`](https://pandoc.org/) to generate my blog/brain
 
 [GitHub](https://github.com/seanbreckenridge/bgproc) | [GitLab](https://gitlab.com/seanbreckenridge/bgproc) | Shell
 
-bash loop to run tasks in the background. I use this instead of cron. uses a lockfile to make sure duplicate processes aren't running, and [evry](https://github.com/seanbreckenridge/evry) to schedule tasks periodically.
+bash loop to run tasks in the background. I use this instead of anacron/cron. uses a lockfile to make sure duplicate processes aren't running, and [`evry`](https://github.com/seanbreckenridge/evry) to schedule tasks periodically.
 
 ### subpath-serve
 
