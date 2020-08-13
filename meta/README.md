@@ -17,3 +17,10 @@ This is hosted straight from the git repo using [netlify](https://www.netlify.co
 ### rwx.gg
 
 A *lot* of this was taken from [rwx.gg](https://rwx.gg/), I've modified some of the CSS (particularly media queries) and JS to add bookmark links to headings, changed how the header works, along with completely modifying the content. See [the goal for readme.world](https://rwx.gg/what/knowledge/apps/), and [rwx.gg's license](https://rwx.gg/copyright/). Similarly to `rwx.gg`, the code and content on this site is licensed under [CC-SA](https://creativecommons.org/licenses/by-sa/4.0/legalcode). So you're free to take [my repo](https://github.com/seanbreckenridge/exobrain) and modify it to create your own site, as long as you keep the same license.
+
+### TODO
+
+* Find TODOs across my readme and generate a [todo.txt](http://todotxt.org/)
+* Possibly, some sorta NTLK term connection thing? Create inverted indexes for each post, filter down to terms. Find where I mention one of those terms in another document, suggest me with an interative interface to add that link to the post page, write to that file.
+
+
