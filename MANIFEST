@@ -4,7 +4,6 @@ cubing
 feed
 fizzbuzz
 gamedev
-git
 golang/general
 golang/package_structure
 japanese
@@ -21,6 +20,7 @@ projects
 python/decorators
 raspi
 shell/bash_notes
+shell/git
 shell/imagemagick
 shell/possible_pipeliner
 shell/tools
