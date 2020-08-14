@@ -510,7 +510,7 @@ Import elements from a current session directly into a new local or remote sessi
 
 ```
 sudo bash -c "
-$(decalre -p parameters;
+$(declare -p parameters;
 declare -f functions)
 code and stuff"
 ```
