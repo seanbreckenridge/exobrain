@@ -59,13 +59,14 @@ done</code></pre>
 USER_INPUT=&quot;${1:?must provide something as first argument}&quot;</code></pre>
 <hr />
 <p><code>2&gt;/dev/null 1&gt;&amp;2</code> to completely silence a script, <code>echo something &gt;&amp;2</code> (or <code>1&gt;&amp;2</code>) to print an error.</p>
+<hr />
 <h4 id="extensions">Extensions</h4>
 <p><code>.sh</code> at the end of scripts is only necessary if you’re creating libraries, or if you’re for some reason in windows land. Otherwise you’re only making yourself do more typing. If you’re making libraries, there is no shebang line and there shouldn’t be - its meant to be <code>source</code>d into some other script. If its a library, it should have a <code>.sh</code> or <code>.bash</code> extension and the file shouldn’t be executable.</p>
 <hr />
 <p>Use short circuiting when doing simple tests, case statements for basic subcommands, and getopts if you want to have short and long (<code>-h</code>, <code>--help</code>) options for consistency/larger programs.</p>
 <p>SUID/SGID are forbidden on shell scripts (running as owner as script instead of person executing the script). Too many security risks that come along with using that, use <code>sudo</code> if you need elevated access.</p>
 <h4 id="stylingformatting">Styling/Formatting</h4>
-<p>The rest of these notes are from the <a href="https://google.github.io/styleguide/shellguide.html">Google StyleGuide</a>, which is fantastic.</p>
+<p>Notes from <a href="https://google.github.io/styleguide/shellguide.html">Google StyleGuide</a>:</p>
 <p>Don’t need to use the <code>function</code> keyword, as its optional. Also, there aren’t really functions, they’re procedures/methods. No reason to break POSIX compliance and using <code>function</code>.</p>
 <p>Using hyphens (or nothing) instead of underscores for variable/script names.</p>
 <p>I tend to just use <a href="https://github.com/mvdan/sh"><code>shfmt</code></a> for everything.</p>
@@ -239,6 +240,89 @@ if (( PIPESTATUS[0] != 0 || PIPESTATUS[1] != 0 )); then
 fi</code></pre>
 <p>Another alternative if you’re pipelining text is to use <code>xargs -r</code>, which doesn’t run if the STDIN is empty, which is typically the case if a command failed:</p>
 <pre><code>some_command_that_might_print_nothing | xargs -r -I &quot;{}&quot; echo &quot;{}&quot;</code></pre>
+<p>Notes from: <a href="https://www.youtube.com/watch?v=uqHjc7hlqd0" class="uri">https://www.youtube.com/watch?v=uqHjc7hlqd0</a></p>
+<p>For help: <code>type</code>, <code>help</code>, <code>apropos</code>, <code>man</code>, <code>info</code></p>
+<p>Return value of the last command executed is captured in the special parameter <code>$?</code>.</p>
+<h4 id="loops">loops</h4>
+<p><code>while list1; do list2; done</code></p>
+<p>Execute <code>list1</code>; if success, execute list2 and repeat. Continue until list1 returns a non-zero status (fails).</p>
+<p><code>for name in words; do list; done</code></p>
+<p>Can also use an arithmetic expression, with look like C-styled for loops:</p>
+<p><code>for (( expr1; expr2; expr3 )); do list; done</code></p>
+<p><code>select name in words; do list; done</code></p>
+<p>Create a menu item for each word. Provide the user with an interactive interface to select one of them. Each time the user makes a selection from the menu, <code>name</code> is assigned the value of the selected word and <code>REPLY</code> is assigned the <code>index</code> number of the selection.</p>
+<pre><code>select result in Yes No Cancel Exit
+    do
+        if [ &quot;$result&quot; = &quot;Exit&quot; ]; then
+        echo &quot;$result&quot;
+        exit 0
+        fi
+        echo $result
+    done</code></pre>
+<p><code>[[ -t 0 ]]</code> can be used to check if <code>STDOUT</code> (file descriptor 0) refers to a terminal. It returns 0 if it is a terminal, and 1 if its being redirected input from some other command/file. This lets you choose to be interactive with the user, or assume some default value if its being called from a script.</p>
+<h3 id="command-groups">Command Groups</h3>
+<ul>
+<li>Subshell: Evaluate list of commands in a subshell, has a distinct environment and does not affect the parent environment. <code>(list)</code></li>
+<li>Group Command: Evaluate list of commands in the current shell, sharing the environment. <code>{ list; }</code> (spaces are trailing semicolon are obligatory)</li>
+</ul>
+<p>Something I never really comprehended, this is still a subshell, its just not assigning to some variable, so you don’t need to prepend the <code>$</code></p>
+<p><code>(echo b; echo a) | sort</code></p>
+<p>The <code>$(list)</code> replaces the output of the <code>list</code> in-line with the output of its subshell. Referred to as <em>command substitution</em>.</p>
+<p><code>$$</code> is a special parameter that specifies your current PID.</p>
+<h3 id="parameters">Parameters</h3>
+<p>Like <code>${param:-$HOME}</code>, <code>${param:=$HOME}</code> returns <code>$HOME</code> if <code>${param}</code> is empty or unset, but it <em>also</em> sets <code>param</code> to <code>$HOME</code>, without you having to do the assignment explicitly.</p>
+<p>Can think of these as:</p>
+<p>Removal from left edge:</p>
+<ul>
+<li><code>${param#pattern}</code></li>
+<li><code>${param##pattern}</code> ( greedy match )</li>
+</ul>
+<pre><code>[ ~ ] $ echo ${HOME}
+/home/sean
+[ ~ ] $ echo ${HOME#*/}
+home/sean
+[ ~ ] $ echo ${HOME##*/}
+sean</code></pre>
+<p>Reminder that <code>*</code> is the typical posix globbing, its matching zero or more of any character (<code>.*</code> in PCRE terms)</p>
+<p>Removal from right edge</p>
+<ul>
+<li><code>${param%pattern}</code></li>
+<li><code>${param%%pattern}</code></li>
+</ul>
+<p>Can search the env for names matching something (this parameter expansion doesnt work in <code>zsh</code>):</p>
+<pre><code>$ echo &quot;${!XDG_@}&quot;
+XDG_CACHE_HOME XDG_CONFIG_HOME XDG_CURRENT_DESKTOP XDG_DATA_HOME XDG_GREETER_DATA_DIR XDG_RUNTIME_DIR XDG_SEAT XDG_SEAT_PATH XDG_SESSION_CLASS XDG_SESSION_DESKTOP XDG_SESSION_ID XDG_SESSION_PATH XDG_SESSION_TYPE XDG_VTNR</code></pre>
+<h3 id="brace-expansion">brace expansion</h3>
+<pre><code>$ echo ba{t,r}
+bat bar</code></pre>
+<p>Can also use this to generate words for something like a nested for loop:</p>
+<pre><code>$ echo {1..5}{0,5}%
+10% 15% 20% 25% 30% 35% 40% 45% 50% 55%
+$ echo {10..55..5}%  # can also use a iterator to count by 5
+10% 15% 20% 25% 30% 35% 40% 45% 50% 55%</code></pre>
+<p>Functions receive input from STDIN, and send to STDOUT. The <code>{ }</code> is not required, its a Group Command, which often just makes things easier to read. For example:</p>
+<pre><code>words ()
+for word
+do
+  echo &quot;$word&quot;
+  echo &quot;$word&quot; &gt;&amp;2
+done 2&gt;/dev/null</code></pre>
+<p>works fine, since the command there is the <code>for</code>.</p>
+<p>A function definition is just a statement, so the <code>2&gt;/dev/null</code> means that when the function is called, all of the functions STDERR is ignored.</p>
+<pre><code>$ words one two
+one
+two</code></pre>
+<h2 id="session-portability">Session Portability</h2>
+<p>Import elements from a current session directly into a new local or remote session.</p>
+<pre><code>sudo bash -c &quot;
+$(decalre -p parameters;
+declare -f functions)
+code and stuff&quot;</code></pre>
+<p>… imports parameters and functions into the root shell, and then run <code>code and stuff</code></p>
+<p>similarly, could use this with <code>ssh</code>:</p>
+<pre><code>ssh remote@host &quot;
+$(declare -f functionname)
+functionname arguments&quot;</code></pre>
 <p>References:</p>
 <ul>
 <li><a href="https://google.github.io/styleguide/shellguide.html" class="uri">https://google.github.io/styleguide/shellguide.html</a></li>

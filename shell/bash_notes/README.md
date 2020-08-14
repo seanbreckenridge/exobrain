@@ -57,6 +57,8 @@ USER_INPUT="${1:?must provide something as first argument}"
 
 `2>/dev/null 1>&2` to completely silence a script, `echo something >&2` (or `1>&2`) to print an error.
 
+---
+
 #### Extensions
 
 `.sh` at the end of scripts is only necessary if you're creating libraries, or if you're for some reason in windows land. Otherwise you're only making yourself do more typing. If you're making libraries, there is no shebang line and there shouldn't be - its meant to be `source`d into some other script. If its a library, it should have a `.sh` or `.bash` extension and the file shouldn't be executable.
@@ -69,7 +71,7 @@ SUID/SGID are forbidden on shell scripts (running as owner as script instead of 
 
 #### Styling/Formatting
 
-The rest of these notes are from the [Google StyleGuide](https://google.github.io/styleguide/shellguide.html), which is fantastic.
+Notes from [Google StyleGuide](https://google.github.io/styleguide/shellguide.html):
 
 Don't need to use the `function` keyword, as its optional. Also, there aren't really functions, they're procedures/methods. No reason to break POSIX compliance and using `function`.
 
@@ -381,6 +383,146 @@ Another alternative if you're pipelining text is to use `xargs -r`, which doesn'
 
 ```
 some_command_that_might_print_nothing | xargs -r -I "{}" echo "{}"
+```
+
+Notes from: <https://www.youtube.com/watch?v=uqHjc7hlqd0>
+
+For help: `type`, `help`, `apropos`, `man`, `info`
+
+Return value of the last command executed is captured in the special parameter `$?`.
+
+#### loops
+
+`while list1; do list2; done`
+
+Execute `list1`; if success, execute list2 and repeat. Continue until list1 returns a non-zero status (fails).
+
+`for name in words; do list; done`
+
+Can also use an arithmetic expression, with look like C-styled for loops:
+
+`for (( expr1; expr2; expr3 )); do list; done`
+
+`select name in words; do list; done`
+
+Create a menu item for each word. Provide the user with an interactive interface to select one of them. Each time the user makes a selection from the menu, `name` is assigned the value of the selected word and `REPLY` is assigned the `index` number of the selection.
+
+```
+select result in Yes No Cancel Exit
+    do
+        if [ "$result" = "Exit" ]; then
+        echo "$result"
+        exit 0
+        fi
+        echo $result
+    done
+```
+
+`[[ -t 0 ]]` can be used to check if `STDOUT` (file descriptor 0) refers to a terminal. It returns 0 if it is a terminal, and 1 if its being redirected input from some other command/file. This lets you choose to be interactive with the user, or assume some default value if its being called from a script.
+
+### Command Groups
+
+* Subshell: Evaluate list of commands in a subshell, has a distinct environment and does not affect the parent environment. `(list)`
+* Group Command: Evaluate list of commands in the current shell, sharing the environment. `{ list; }` (spaces are trailing semicolon are obligatory)
+
+Something I never really comprehended, this is still a subshell, its just not assigning to some variable, so you don't need to prepend the `$`
+
+`(echo b; echo a) | sort`
+
+The `$(list)` replaces the output of the `list` in-line with the output of its subshell. Referred to as *command substitution*.
+
+`$$` is a special parameter that specifies your current PID.
+
+### Parameters
+
+Like `${param:-$HOME}`, `${param:=$HOME}` returns `$HOME` if `${param}` is empty or unset, but it *also* sets `param` to `$HOME`, without you having to do the assignment explicitly.
+
+Can think of these as:
+
+Removal from left edge:
+
+* `${param#pattern}`
+* `${param##pattern}` ( greedy match )
+
+```
+[ ~ ] $ echo ${HOME}
+/home/sean
+[ ~ ] $ echo ${HOME#*/}
+home/sean
+[ ~ ] $ echo ${HOME##*/}
+sean
+```
+
+Reminder that `*` is the typical posix globbing, its matching zero or more of any character (`.*` in PCRE terms)
+
+Removal from right edge
+
+* `${param%pattern}`
+* `${param%%pattern}`
+
+Can search the env for names matching something (this parameter expansion doesnt work in `zsh`):
+
+```
+$ echo "${!XDG_@}"
+XDG_CACHE_HOME XDG_CONFIG_HOME XDG_CURRENT_DESKTOP XDG_DATA_HOME XDG_GREETER_DATA_DIR XDG_RUNTIME_DIR XDG_SEAT XDG_SEAT_PATH XDG_SESSION_CLASS XDG_SESSION_DESKTOP XDG_SESSION_ID XDG_SESSION_PATH XDG_SESSION_TYPE XDG_VTNR
+```
+
+### brace expansion
+
+```
+$ echo ba{t,r}
+bat bar
+```
+
+Can also use this to generate words for something like a nested for loop:
+
+```
+$ echo {1..5}{0,5}%
+10% 15% 20% 25% 30% 35% 40% 45% 50% 55%
+$ echo {10..55..5}%  # can also use a iterator to count by 5
+10% 15% 20% 25% 30% 35% 40% 45% 50% 55%
+```
+
+Functions receive input from STDIN, and send to STDOUT. The `{ }` is not required, its a Group Command, which often just makes things easier to read. For example:
+
+```
+words ()
+for word
+do
+  echo "$word"
+  echo "$word" >&2
+done 2>/dev/null
+```
+
+works fine, since the command there is the `for`.
+
+A function definition is just a statement, so the `2>/dev/null` means that when the function is called, all of the functions STDERR is ignored.
+
+```
+$ words one two
+one
+two
+```
+
+## Session Portability
+
+Import elements from a current session directly into a new local or remote session.
+
+```
+sudo bash -c "
+$(decalre -p parameters;
+declare -f functions)
+code and stuff"
+```
+
+... imports parameters and functions into the root shell, and then run `code and stuff`
+
+similarly, could use this with `ssh`:
+
+```
+ssh remote@host "
+$(declare -f functionname)
+functionname arguments"
 ```
 
 References: 

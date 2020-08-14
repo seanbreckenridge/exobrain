@@ -2,7 +2,5 @@
 Title: Shell Tools
 ---
 
-<http://jwilk.net/software/mwic>
-
-06/15/20 - look up `perlre` and `perlrun` for `sed`/`awk` replacements
+`less +F` is sort of similar to `tail -f`. You can also do `less <filename>` and then just type `Shift+f` to go into 'tail mode'. Nicer than `tail -f` because its still `less`, so you can interrupt and scroll further back up into the file.
 
