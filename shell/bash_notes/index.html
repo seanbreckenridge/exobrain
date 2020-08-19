@@ -141,6 +141,20 @@ binary_command &quot;${flags[@]}&quot;
 flags=&#39;--foo --bar=baz&#39;
 flags+=&#39; --greeting=&quot;Hello world&quot;&#39; # not trivial to do variable expansion
 binary_command &quot;${flags}&quot;</code></pre>
+<p><code>"${flags[@]}"</code> expands the array properly into its properly quoted arguments. To demonstrate:</p>
+<p><code>testarr</code>:</p>
+<pre><code>#!/bin/bash
+declare -a arr
+arr=(&#39;1&#39; &#39;2&#39;)
+arr+=(&quot;something&quot; &#39;something else&#39;)
+python3 ./testarr.py &quot;${arr[@]}&quot;
+</code></pre>
+<p><code>testarr.py</code></p>
+<pre><code>import sys
+import pprint
+
+pprint.pprint(sys.argv)</code></pre>
+<p>Output: <code>['./testarr.py', '1', '2', 'something', 'something else']</code></p>
 <p>Command expansions return single strings, not arrays. Avoid trying to capture subshell into array assignments since it won’t work if the command contains special characters or whitespace. Better to read into a string and then use <code>readarray</code></p>
 <h4 id="piping-to-while">Piping to While</h4>
 <p>Use process substitution or <code>readarray</code> instead of directly piping into while. Pipes create subshells, so the block in the while loop doesn’t have access to un-exported variables in the script, and can’t change anything in the parent shell.</p>

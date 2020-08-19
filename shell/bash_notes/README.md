@@ -214,6 +214,30 @@ flags+=' --greeting="Hello world"' # not trivial to do variable expansion
 binary_command "${flags}"
 ```
 
+`"${flags[@]}"` expands the array properly into its properly quoted arguments. To demonstrate:
+
+`testarr`:
+
+```
+#!/bin/bash
+declare -a arr
+arr=('1' '2')
+arr+=("something" 'something else')
+python3 ./testarr.py "${arr[@]}"
+
+```
+
+`testarr.py`
+
+```
+import sys
+import pprint
+
+pprint.pprint(sys.argv)
+```
+
+Output: `['./testarr.py', '1', '2', 'something', 'something else']`
+
 Command expansions return single strings, not arrays. Avoid trying to capture subshell into array assignments since it won't work if the command contains special characters or whitespace. Better to read into a string and then use `readarray`
 
 #### Piping to While
