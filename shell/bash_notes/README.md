@@ -498,7 +498,7 @@ $ echo ba{t,r}
 bat bar
 ```
 
-Can also use this to generate words for something like a nested for loop:
+Can also use this to generate a cartesian product of any dimension:
 
 ```
 $ echo {1..5}{0,5}%
