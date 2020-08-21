@@ -18,7 +18,7 @@ Most of these are command line based. On a regular day, the only GUI tools I use
     - [Arch](https://wiki.archlinux.org/index.php/)
   - Window Managers
     - `i3-gaps` - am used to it at this point, and I'm a big fan of the manual tiling, especially for multiple monitors. `qtile` had some graphical issues for bad GUI apps, and I don't feel like messing up my `haskell` installation for `xmonad`.
-  - MacOS, I use [`amethyst`](https://github.com/ianyh/Amethyst) to tile windows, and [`skhd`](https://github.com/koekeishiya/skhd) as a hotkey daemon. My dotfiles are cross-platform, lots of scripts in 
+  - MacOS, I use [`amethyst`](https://github.com/ianyh/Amethyst) to tile windows, and [`skhd`](https://github.com/koekeishiya/skhd) as a hotkey daemon. My dotfiles are cross-platform, lots of scripts in [`cross-platform`](https://github.com/seanbreckenridge/dotfiles/tree/master/.local/scripts/cross-platform) that handle switching on the OS to call out to platform-specific behavior (sending notifications, clipboard management, asking for user input)
   - [i3lock](https://i3wm.org/i3lock/) for screen lock; [daemon process](https://sean.fish/d/lock-screen?dark) caches pixelated version of screen to speed up start time. [Corresponding service file](https://sean.fish/d/lockscreen@.service?dark) to lock my screen whenever my laptop suspends.
   - [rofi](https://github.com/davatorium/rofi) for launching applications and switching windows
   - [dunst](https://dunst-project.org/) for notifications, pretty normal configuration
@@ -26,7 +26,7 @@ Most of these are command line based. On a regular day, the only GUI tools I use
 - Editors
   - nvim (primarily)
   - (doom) emacs
-- I use [`newsboat`](https://newsboat.org/) RSS for youtube/news/blogs. I have a [script](https://sean.fish/d/youtube-user-id) to grab a youtube users RSS feed, since youtube doesn't list that publicly. [`linkhandler`](https://sean.fish/d/linkhandler) lets me open youtube videos from `newsboat` using [`mpvf`](https://github.com/seanbreckenridge/mpvf/) instead of visiting youtube in the browser.
+- I use [`newsboat`](https://newsboat.org/) RSS for youtube/news/blogs. I have a [script](https://sean.fish/d/youtube-user-id?dark) to grab a youtube users RSS feed, since youtube doesn't list that publicly. [`linkhandler`](https://sean.fish/d/linkhandler?dark) lets me open youtube videos from `newsboat` using [`mpvf`](https://github.com/seanbreckenridge/mpvf/) instead of visiting youtube in the browser.
 - to-do list - [todotxt](http://todotxt.org/) for todos, with a [rofi interface](https://sean.fish/d/todo-prompt?dark) as GUI, and [TUI](https://gitlab.com/seanbreckenridge/full_todotxt) for adding todos. The TUI I wrote forces me to specify a `deadline` for each todo, which I then get notified by [this](https://github.com/seanbreckenridge/todotxt_deadline_notify), which runs on my server.
 - a heavily customized [ranger](https://github.com/ranger/ranger) as my file manager. My `rifle.conf` and `scope.sh` (file handler and previewer) have lots of customizations past the defaults.
 - [yadm](https://yadm.io) to manage dotfiles. Once I have a terminal running, my [bootstrap](https://sean.fish/d/bootstrap?dark) script sets up my system entirely.
