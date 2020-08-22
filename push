@@ -1,8 +1,18 @@
 #!/bin/bash
+# can supply arguments to use as git commit:
+# ./push changed these files
 
 cd "$(dirname "${BASH_SOURCE[0]}")" || exit
 
+commit() {
+  if [[ -n "$1" ]]; then
+    git commit -m "$*"
+  else
+    git commit  # prompt for editor
+  fi
+}
+
 ./build &&
 	git add . &&
-	git commit &&
+	commit "$@" &&
 	git push
