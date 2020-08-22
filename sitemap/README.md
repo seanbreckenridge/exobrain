@@ -1,5 +1,5 @@
 ---
-blog: false
+Blog: false
 ---
 
 More 'complete' blog-like posts at [feed](/feed).
@@ -31,8 +31,8 @@ More 'complete' blog-like posts at [feed](/feed).
 * shell/ [Possibily Pipelining](/shell/possible_pipeliner/)
 * shell/ [Shell Tools](/shell/tools/)
 * theory_books/ [Alan Kay, User Interface Design](/theory_books/alan_kay_user_interface/)
+* theory_books/ [Concepts](/theory_books/concepts/)
 * theory_books/ [How Do Committees Invent, Melvin E. Conway](/theory_books/how_do_committees_invent/)
-* theory_books/ [](/theory_books/concepts/)
 * theory_books/ ["Uncle" Bob Martin - The Future of Programming](/theory_books/future_of_programming/)
 * theory_books/sicp/ [SICP 00 - Overview](/theory_books/sicp/00/)
 * theory_books/sicp/ [SICP 01 - Functional Programming](/theory_books/sicp/01/)

@@ -1,6 +1,6 @@
 ---
 Title: Internet Superhighway
-blog: false
+Blog: false
 ---
 
 These are other sites/blogs/things I'm a fan of. Inspired by [superhighway98](https://www.superhighway98.com/)
