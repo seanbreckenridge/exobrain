@@ -1,5 +1,6 @@
 ---
 Title: Alan Kay, User Interface Design
+Blog: false
 ---
 
 Was exposed to this through the Berkley SICP course, Lectures 5 & 6.

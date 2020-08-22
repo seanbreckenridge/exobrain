@@ -1,5 +1,6 @@
 ---
 Title: Imagemagick commands
+Blog: false
 ---
 
 ### Compress Images for Web

@@ -1,5 +1,6 @@
 ---
 Title: FizzBuzz
+Blog: false
 ---
 
 ## Accumulator Approach

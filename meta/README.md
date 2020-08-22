@@ -1,5 +1,6 @@
 ---
 Title: Meta; about my exobrain
+Blog: false
 ---
 
 ### Build Tool
@@ -9,6 +10,10 @@ This is built using [`pandoc`](https://pandoc.org/) to convert markdown files to
 The [`build`](https://github.com/seanbreckenridge/exobrain/blob/master/build) script finds a file named `README.md` in each directory and converts it to the corresponding `index.html`
 
 Parts of the dynamic feed/blog/projects pages are built using my [`pmark`](https://github.com/seanbreckenridge/pmark) script, which uses code blocks to generate markdown, from within the markdown itself.
+
+Since this is pretty unstructured, this does some tag validation on the meta pandoc tags (sometimes called 'yaml frontmatter'), using `pandoc <file.md> -t json | ./_harden_frontmatter` to make sure I'm not missing titles/dates for the markdown files.
+
+Some of those scripts have the external dependency of [`fd`](https://github.com/sharkdp/fd), [`entr`](eradman.com/entrproject/) and some python libs (reports which ones are missing)
 
 ### Hosting
 

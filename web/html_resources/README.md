@@ -1,5 +1,6 @@
 ---
 Title: HTML and CSS resources
+Blog: false
 ---
 
 * [awesome.re](https://awesome.re)

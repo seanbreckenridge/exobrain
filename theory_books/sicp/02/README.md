@@ -1,5 +1,6 @@
 ---
 Title: SICP 02 - Abstraction
+Blog: false
 ---
 
 Read Section 1.3: Formulating Abstractions with Higher-Order Functions

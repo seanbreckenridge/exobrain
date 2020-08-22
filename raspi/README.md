@@ -1,5 +1,6 @@
 ---
 Title: Raspberry Pi Notes
+Blog: false
 ---
 
 General Notes on setting up a raspberry pi.

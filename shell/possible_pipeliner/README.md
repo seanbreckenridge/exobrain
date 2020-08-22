@@ -1,5 +1,6 @@
 ---
 Title: Possibily Pipelining
+Blog: false
 ---
 
 Expanding a bit on the thoughts [here](/post/replacing_shell)

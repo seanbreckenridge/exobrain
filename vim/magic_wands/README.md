@@ -1,5 +1,6 @@
 ---
 Title: Magic Wands
+Blog: false
 ---
 
 Use `magic wands`! They're awesome. Learnt about them from [`rwx.gg`](https://rwx.gg) (the `magic wands` is his term)

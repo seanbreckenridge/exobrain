@@ -1,5 +1,6 @@
 ---
 Title: SICP 06 - Generic Operators
+Blog: false
 ---
 
 Read Section 2.4 - 2.5.2

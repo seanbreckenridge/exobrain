@@ -1,5 +1,6 @@
 ---
 Title: SICP 09 - Mutable data, queues, tables
+Blog: false
 ---
 
 Read Section 3.3.1-3.3.3

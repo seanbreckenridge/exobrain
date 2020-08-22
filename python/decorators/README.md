@@ -1,5 +1,6 @@
 ---
 Title: Decorators Pycon
+Blog: false
 ---
 
 <https://www.youtube.com/watch?v=MjHpMCIvwsY>

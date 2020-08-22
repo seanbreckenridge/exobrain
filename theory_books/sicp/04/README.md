@@ -1,5 +1,6 @@
 ---
 Title: SICP 04 - Data Abstraction, sequences
+Blog: false
 ---
 
 Read Section 2.1
