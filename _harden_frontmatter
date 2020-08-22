@@ -19,6 +19,8 @@ except:
         file=sys.stderr,
     )
 
+title_ignored_paths = set(["feed", "sitemap"])
+
 err_printer = functools.partial(click.secho, err=True, fg="red")
 
 # error helper
@@ -50,8 +52,6 @@ def check_metadata(meta_elem: panflute.elements.MetaMap):
             err(f"{relpath} doesn't have a 'Title'")
     validate_blog(relpath, meta_dict)
 
-
-title_ignored_paths = set(["feed", "sitemap"])
 
 # if an item isn't a blog, make sure its marked - Blog: false
 # if it is a blog, make sure its marked - Blog: true
