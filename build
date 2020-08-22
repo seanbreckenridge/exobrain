@@ -2,11 +2,20 @@
 # This builds the markdown files into HTML files.
 # This runs pandoc by searching for README.md files recursively
 # and running pandoc against that with the assets/template.html as a base
+#
+# additionally:
+# runs pmark scripts: https://github.com/seanbreckenridge/pmark
+# calls ./_harden_frontmatter to make sure meta tags work
+#
+# the ./harden script calls ./build in an entr loop
+# so that I can quickly find the next changes to
+# modify as I fix them
 
-wait-for-internet
+wait-for-internet >/dev/null 2>&1
 
 cd "$(dirname "${BASH_SOURCE[0]}")" || exit
 
+# creates the manifest file (directories which have posts)
 mkmanifest() {
 	declare line
 	while IFS= read -r line; do
@@ -21,38 +30,57 @@ pandoc_generate() {
 	pandoc -s -o "$2" --quiet --template=assets/template.html "$1"
 }
 
+# validate attributes in metadata (i.e. yaml frontmatter)
+harden() {
+	local readme="${1}/README.md"
+	pandoc "$readme" -t json | DIRNAME="$1" ./_harden_frontmatter || exit $?
+}
+
 render() {
-	declare dir="$1"
+	local dir="$1"
 	echo Building "'$dir'"
+	harden "$dir"
 	pandoc_generate "$dir/README.md" "$dir/index.html"
 }
 
-# run pmark on each P_README.md file
-# builds the blog feed/sitemap and curls the project page
-# see https://github.com/seanbreckenridge/pmark
-find . -name 'P_README.md' -type f -exec pmark {} + || exit $?
+run_build() {
 
-# render home page
-render "."
-# generate 404 page
-pandoc_generate "./404.md" "./404.html"
-# make manifest
-mkmanifest
+	local i procs
 
-# get cpu count to use that, else run 5 pandoc builds at a time
-if command -v nproc >/dev/null 2>&1; then
+	# make sure corresponding README files exist for P_README files
+	# so that the directories appear in the manifest
+  # (since this uses the presence of a README.md file to determine the existence of a node)
+  # this only really matters the first time pmark is run on a P_README.md file,
+  # but its not that much overhead anyways
+	fd '^P_README.md$' | sed "s/P_//g" | xargs touch
+
+	# render home page
+	render "."
+	# generate 404 page
+	pandoc_generate "./404.md" "./404.html"
+	# make manifest
+	mkmanifest
+
+	# run pmark on each P_README.md file
+	# builds the blog feed/sitemap and curls the project page
+	# see https://github.com/seanbreckenridge/pmark
+	fd '^P_README.md$' -X pmark {} || exit $?
+
+	# get cpu count to determine how many jobs to run at a time
 	procs="$(nproc)"
-else
-	procs=5
-fi
+	[[ -z "$procs" ]] && procs=4
 
-i=0
-while IFS= read -r node; do
-	render "$node" &
-	((i++))
-	((i >= procs)) && {
-		wait
-		i=0
-	}
-done <./MANIFEST
-wait
+	i=0
+	while IFS= read -r node; do
+		render "$node"
+		((i++))
+		((i >= procs)) && {
+			wait
+			i=0
+		}
+	done < <(shuf ./MANIFEST)
+	wait
+}
+
+run_build || exit $?
+echo 'Done!'

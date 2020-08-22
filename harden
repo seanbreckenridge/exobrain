@@ -1,0 +1,5 @@
+#!/bin/sh
+# requires fd (find-like) and entr (to detect file changes)
+# runs ./build (to report any broken pandoc meta tags)
+# whenever any files change
+fd -E .git | entr -c ./build
