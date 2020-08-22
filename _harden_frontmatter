@@ -32,8 +32,6 @@ def parse_metadata_from_doc(elem, doc):
     if isinstance(elem, panflute.Doc):
         check_metadata(elem.metadata)
 
-
-required_keys = set(["Title", "Blog"])
 title_ignored_paths = set(["feed", "sitemap"])
 
 # if an item isn't a blog, make sure its marked - Blog: false
@@ -61,6 +59,8 @@ def validate_blog(
 
 def check_metadata(meta_elem: panflute.elements.MetaMap):
     relpath: str = os.environ["DIRNAME"]
+    # dont check homepage, it doesnt have tags so that it renders nice on github
+    # there are conditionals in the asset.html file that default the title for this
     if relpath == ".":
         return
     # http://scorreia.com/software/panflute/code.html#panflute.containers.DictContainer
@@ -68,6 +68,7 @@ def check_metadata(meta_elem: panflute.elements.MetaMap):
     meta_dict: panflute.containers.DictContainer = meta_elem.content
     if "Blog" not in meta_dict:
         err(f"{relpath} doesn't have a 'Blog'")
+    # make sure every node (except feed/sitemap) have a title
     if relpath not in title_ignored_paths:
         if "Title" not in meta_dict:
             err(f"{relpath} doesn't have a 'Title'")
