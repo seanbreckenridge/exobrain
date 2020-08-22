@@ -28,6 +28,7 @@ More 'complete' blog-like posts at [feed](/feed).
 * shell/ [Bash Notes](/shell/bash_notes/)
 * shell/ [Git Commands](/shell/git/)
 * shell/ [Imagemagick commands](/shell/imagemagick/)
+* shell/ [Pandoc](/shell/pandoc/)
 * shell/ [Possibily Pipelining](/shell/possible_pipeliner/)
 * shell/ [Shell Tools](/shell/tools/)
 * theory_books/ [Alan Kay, User Interface Design](/theory_books/alan_kay_user_interface/)

@@ -23,6 +23,7 @@ raspi
 shell/bash_notes
 shell/git
 shell/imagemagick
+shell/pandoc
 shell/possible_pipeliner
 shell/tools
 sitemap
