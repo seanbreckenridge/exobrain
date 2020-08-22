@@ -15,6 +15,8 @@ wait-for-internet >/dev/null 2>&1
 
 cd "$(dirname "${BASH_SOURCE[0]}")" || exit
 
+command -v html-minifier >/dev/null 2>&1 && HAS_HTML_MINIFIER=1
+
 # creates the manifest file (directories which have posts)
 mkmanifest() {
 	declare line
@@ -27,7 +29,15 @@ mkmanifest() {
 
 # converts $1 to $2 using pandoc
 pandoc_generate() {
-	pandoc -s -o "$2" --quiet --template=assets/template.html "$1"
+		local html_temp="$(mktemp -p /tmp exobrain-XXXXXXXXXXXXX.html)"
+    if [[ -n "$HAS_HTML_MINIFIER" ]]; then
+		pandoc -s -o "$html_temp" --quiet --template=assets/template.html "$1" && html-minifier --collapse-boolean-attributes --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-style-link-type-attributes --remove-tag-whitespace "$html_temp" -o "$2" || {
+			printf 'Error rendering %s to %s\n' "$1" "$2" >&2
+			exit 1
+		}
+	else
+		pandoc -s -o "$2" --quiet --template=assets/template.html "$1"
+	fi
 }
 
 # validate attributes in metadata (i.e. yaml frontmatter)
@@ -49,9 +59,9 @@ run_build() {
 
 	# make sure corresponding README files exist for P_README files
 	# so that the directories appear in the manifest
-  # (since this uses the presence of a README.md file to determine the existence of a node)
-  # this only really matters the first time pmark is run on a P_README.md file,
-  # but its not that much overhead anyways
+	# (since this uses the presence of a README.md file to determine the existence of a node)
+	# this only really matters the first time pmark is run on a P_README.md file,
+	# but its not that much overhead anyways
 	fd '^P_README.md$' | sed "s/P_//g" | xargs touch
 
 	# render home page
@@ -69,6 +79,7 @@ run_build() {
 	# get cpu count to determine how many jobs to run at a time
 	procs="$(nproc)"
 	[[ -z "$procs" ]] && procs=4
+  procs=$((procs * 2))
 
 	i=0
 	while IFS= read -r node; do

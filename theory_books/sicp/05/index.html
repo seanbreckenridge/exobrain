@@ -1,56 +1,5 @@
-<!doctype html>
-<html lang="en">
-<head>
-            <title>exobrain | SICP 05 - Hierarchical data/Scheme Interpreter</title>
-        <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
-  <link rel="shortcut icon" href="/assets/img/logo.png" type="image/png">
-  <meta http-equiv="Pragma" content="no-cache"/>
-  <meta http-equiv="Expires" content="0"/>
-  <link rel="stylesheet" href="/assets/style.css">
-</head>
-<body>
-<header class=nav-bar>
-  <nav>
-          <a class="homelink" href="/">exobrain</a>
-        <div class="nav-right">
-      <div class=nav-item><a class="nav-link" href="/feed">blog feed</a></div>
-      <div class=nav-item><a class="nav-link" href="/sitemap">exobrain sitemap</a></div>
-      <div class=nav-item><a class="nav-link" href="https://sean.fish">back to my site</a></div>
-    </div>
-  </nav>
-</header>
-<main>
-<a id=top></a><div class=container>
-<div id="main-header">
-  <div class="h1" id="main-title">SICP 05 - Hierarchical data/Scheme Interpreter</div>
-  </div>
-<p>Read Section 2.2.2, 2.2.3, 2.3.1</p>
-<p>Encompasses Lecture 12, 13, 14</p>
-<p><code>pair?</code> lets you do some error checking, to check if a value is a pair before calling <code>car</code>/<code>cdr</code> on it.</p>
-<p>Quoting lets you treat symbols as data objects rather than expressions to be evaluated:</p>
-<pre><code>&gt; &#39;(&#39;a &#39;b)
-((quote a) (quote b))</code></pre>
-<h3 id="trees">Trees</h3>
-<p>Since maps’ identity function is an empty list, it can be used with recursion to express complexity without being explicit. On trees, you can call <code>map</code> on a list of children <code>nodes</code> (<code>trees</code>), and it will call some function on each of them. If it keeps calling till it reaches the leaves of the tree (nodes whose children are <code>'()</code>, and calls <code>map</code>, it will end there, and start traversing back up the tree.</p>
-<p>One should think of trees as nodes themselves. A node is just a tree without branches. That, along with the map identity makes working on lists recursively much easier.</p>
-<p>Tree Recursion, e.g. when mapping a function across a tree, often involves a call to <code>map</code>, to map the function onto the <code>datum</code> (node value), and then a recursive call to the children of the current node. The recursive call to the children and the <code>map</code>’d value and then re-combined with the <code>cons</code>tructor for the tree. e.g.:</p>
-<pre><code>(define (treemap fn tree)
+<!doctype html><html lang="en"><title>exobrain | SICP 05 - Hierarchical data/Scheme Interpreter</title><meta charset="UTF-8"><meta name="viewport"content="width=device-width,initial-scale=1"><meta http-equiv="X-UA-Compatible"content="ie=edge"><meta http-equiv="Cache-Control"content="no-cache, no-store, must-revalidate"><link rel="shortcut icon"href="/assets/img/logo.png"type="image/png"><meta http-equiv="Pragma"content="no-cache"><meta http-equiv="Expires"content="0"><link rel="stylesheet"href="/assets/style.css"><header class="nav-bar"><nav><a class="homelink"href="/">exobrain</a><div class="nav-right"><div class="nav-item"><a class="nav-link"href="/feed">blog feed</a></div><div class="nav-item"><a class="nav-link"href="/sitemap">exobrain sitemap</a></div><div class="nav-item"><a class="nav-link"href="https://sean.fish">back to my site</a></div></div></nav></header><main><a id="top"></a><div class="container"><div id="main-header"><div class="h1"id="main-title">SICP 05 - Hierarchical data/Scheme Interpreter</div></div><p>Read Section 2.2.2, 2.2.3, 2.3.1<p>Encompasses Lecture 12, 13, 14<p><code>pair?</code> lets you do some error checking, to check if a value is a pair before calling <code>car</code>/<code>cdr</code> on it.<p>Quoting lets you treat symbols as data objects rather than expressions to be evaluated:<pre><code>&gt; &#39;(&#39;a &#39;b)
+((quote a) (quote b))</code></pre><h3 id="trees">Trees</h3><p>Since maps’ identity function is an empty list, it can be used with recursion to express complexity without being explicit. On trees, you can call <code>map</code> on a list of children <code>nodes</code> (<code>trees</code>), and it will call some function on each of them. If it keeps calling till it reaches the leaves of the tree (nodes whose children are <code>'()</code>, and calls <code>map</code>, it will end there, and start traversing back up the tree.<p>One should think of trees as nodes themselves. A node is just a tree without branches. That, along with the map identity makes working on lists recursively much easier.<p>Tree Recursion, e.g. when mapping a function across a tree, often involves a call to <code>map</code>, to map the function onto the <code>datum</code> (node value), and then a recursive call to the children of the current node. The recursive call to the children and the <code>map</code>’d value and then re-combined with the <code>cons</code>tructor for the tree. e.g.:<pre><code>(define (treemap fn tree)
     (make-tree (fn (datum tree)) ;; gets current node value
         (map (lambda (child) (treemap fn child))  ;; recursive-call
-              (children tree) )))</code></pre>
-<p>Since <code>treemap</code> calls itself and also <code>map</code>, which does more recursive calls, its called <code>mutual recursion</code>. Using mutual recursion hides lots of intermediate state that would otherwise exist. Its possible to do the following iteratively, but it means you’d have to have some way to represent the ‘current state’ of the execution and objects that describe incomplete actions.</p>
-<h3 id="queue">Queue</h3>
-<p>A <code>queue</code> is a list of trees. Each tree/node is a <code>task</code> that some function has to deal with.</p>
-</div>
-</main>
-<footer>
-  <p><a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" id=copyright>© 2020 Sean Breckenridge. Licensed under Creative Commons Attribution-ShareAlike.</a>
-    <br /><a href="https://github.com/seanbreckenridge/exobrain">Source Code</a>
-  </p>
-</footer>
-<script src="/assets/main.js"></script>
-</body>
-</html>
+              (children tree) )))</code></pre><p>Since <code>treemap</code> calls itself and also <code>map</code>, which does more recursive calls, its called <code>mutual recursion</code>. Using mutual recursion hides lots of intermediate state that would otherwise exist. Its possible to do the following iteratively, but it means you’d have to have some way to represent the ‘current state’ of the execution and objects that describe incomplete actions.<h3 id="queue">Queue</h3><p>A <code>queue</code> is a list of trees. Each tree/node is a <code>task</code> that some function has to deal with.</div></main><footer><p><a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode"id="copyright">© 2020 Sean Breckenridge. Licensed under Creative Commons Attribution-ShareAlike.</a><br><a href="https://github.com/seanbreckenridge/exobrain">Source Code</a></footer><script src="/assets/main.js"></script>

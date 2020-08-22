@@ -1,34 +1,4 @@
-<!doctype html>
-<html lang="en">
-<head>
-            <title>exobrain | FizzBuzz</title>
-        <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
-  <link rel="shortcut icon" href="/assets/img/logo.png" type="image/png">
-  <meta http-equiv="Pragma" content="no-cache"/>
-  <meta http-equiv="Expires" content="0"/>
-  <link rel="stylesheet" href="/assets/style.css">
-</head>
-<body>
-<header class=nav-bar>
-  <nav>
-          <a class="homelink" href="/">exobrain</a>
-        <div class="nav-right">
-      <div class=nav-item><a class="nav-link" href="/feed">blog feed</a></div>
-      <div class=nav-item><a class="nav-link" href="/sitemap">exobrain sitemap</a></div>
-      <div class=nav-item><a class="nav-link" href="https://sean.fish">back to my site</a></div>
-    </div>
-  </nav>
-</header>
-<main>
-<a id=top></a><div class=container>
-<div id="main-header">
-  <div class="h1" id="main-title">FizzBuzz</div>
-  </div>
-<h2 id="accumulator-approach">Accumulator Approach</h2>
-<pre><code>string fizzbuzz(int n) {
+<!doctype html><html lang="en"><title>exobrain | FizzBuzz</title><meta charset="UTF-8"><meta name="viewport"content="width=device-width,initial-scale=1"><meta http-equiv="X-UA-Compatible"content="ie=edge"><meta http-equiv="Cache-Control"content="no-cache, no-store, must-revalidate"><link rel="shortcut icon"href="/assets/img/logo.png"type="image/png"><meta http-equiv="Pragma"content="no-cache"><meta http-equiv="Expires"content="0"><link rel="stylesheet"href="/assets/style.css"><header class="nav-bar"><nav><a class="homelink"href="/">exobrain</a><div class="nav-right"><div class="nav-item"><a class="nav-link"href="/feed">blog feed</a></div><div class="nav-item"><a class="nav-link"href="/sitemap">exobrain sitemap</a></div><div class="nav-item"><a class="nav-link"href="https://sean.fish">back to my site</a></div></div></nav></header><main><a id="top"></a><div class="container"><div id="main-header"><div class="h1"id="main-title">FizzBuzz</div></div><h2 id="accumulator-approach">Accumulator Approach</h2><pre><code>string fizzbuzz(int n) {
 string result;
 if (n % 3 == 0)
   result += &quot;Fizz&quot;:
@@ -37,9 +7,7 @@ if (n % 5 == 0)
 if (result.empty());
   result = to_string(n);
 return result;
-}</code></pre>
-<h2 id="checktwice">CheckTwice</h2>
-<pre><code>string fizzbuzz(int n) {
+}</code></pre><h2 id="checktwice">CheckTwice</h2><pre><code>string fizzbuzz(int n) {
 if (n % 15 == 0)
   return &quot;FizzBuzz&quot;;
 else if (n % 3) == 0)
@@ -47,16 +15,4 @@ else if (n % 3) == 0)
 else if (n % 5 == 0)
   return Fizz;
 else
-  return to_string(n);</code></pre>
-<p>In general, the <code>CheckTwice</code> approach does an additional calculation, and is harder to extend/add more cases for. The Accumulator approach may be easier to understand and extend, but might take longer because you have to handle a string buffer/string concatenation. <code>CheckTwice</code> is also functional, if that matters. The <code>Accumulator Approach</code> could be made functional, but you’d have to do some type checking.</p>
-<p>Theres also the function application approach, using a DSL to describe state, described in <a href="https://themonadreader.files.wordpress.com/2014/04/fizzbuzz.pdf">this paper</a></p>
-</div>
-</main>
-<footer>
-  <p><a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" id=copyright>© 2020 Sean Breckenridge. Licensed under Creative Commons Attribution-ShareAlike.</a>
-    <br /><a href="https://github.com/seanbreckenridge/exobrain">Source Code</a>
-  </p>
-</footer>
-<script src="/assets/main.js"></script>
-</body>
-</html>
+  return to_string(n);</code></pre><p>In general, the <code>CheckTwice</code> approach does an additional calculation, and is harder to extend/add more cases for. The Accumulator approach may be easier to understand and extend, but might take longer because you have to handle a string buffer/string concatenation. <code>CheckTwice</code> is also functional, if that matters. The <code>Accumulator Approach</code> could be made functional, but you’d have to do some type checking.<p>Theres also the function application approach, using a DSL to describe state, described in <a href="https://themonadreader.files.wordpress.com/2014/04/fizzbuzz.pdf">this paper</a></div></main><footer><p><a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode"id="copyright">© 2020 Sean Breckenridge. Licensed under Creative Commons Attribution-ShareAlike.</a><br><a href="https://github.com/seanbreckenridge/exobrain">Source Code</a></footer><script src="/assets/main.js"></script>

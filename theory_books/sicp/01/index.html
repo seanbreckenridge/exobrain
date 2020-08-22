@@ -1,113 +1,43 @@
-<!doctype html>
-<html lang="en">
-<head>
-            <title>exobrain | SICP 01 - Functional Programming</title>
-        <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
-  <link rel="shortcut icon" href="/assets/img/logo.png" type="image/png">
-  <meta http-equiv="Pragma" content="no-cache"/>
-  <meta http-equiv="Expires" content="0"/>
-  <link rel="stylesheet" href="/assets/style.css">
-</head>
-<body>
-<header class=nav-bar>
-  <nav>
-          <a class="homelink" href="/">exobrain</a>
-        <div class="nav-right">
-      <div class=nav-item><a class="nav-link" href="/feed">blog feed</a></div>
-      <div class=nav-item><a class="nav-link" href="/sitemap">exobrain sitemap</a></div>
-      <div class=nav-item><a class="nav-link" href="https://sean.fish">back to my site</a></div>
-    </div>
-  </nav>
-</header>
-<main>
-<a id=top></a><div class=container>
-<div id="main-header">
-  <div class="h1" id="main-title">SICP 01 - Functional Programming</div>
-  </div>
-<p>Read Section 1.1: The Elements of Programming</p>
-<p>Encompasses Lecture 1 &amp; 2</p>
-<p>“Lisp, whose name is an acronym for LISt Processing, was designed to provide symbol- manipulating capabilities for attacking programming problems such as the symbolic differentiation and integration of algebraic expressions. Lisp was not the product of a concerted design effort. Instead, it evolved informally in an experimental manner in response to users’ needs and to pragmatic implementation considerations.”</p>
-<p>“Lisps were used in applications where efficiency is not the primary concern. For example, for operating-system shell languages and <em>extension languages</em>.”</p>
-<p>(SICP p 3-4)</p>
-<p>“An extension language is a programming language interpreter offered by an application program, so that users can write macros or even full-fledged programs to extend the original application. Extension languages have a C interface (it is usually C, but it could be any other compiled language), and can be given access to the C data structures. Likewise, there are C routines to access the extension language data structures.” <a href="https://www.gnu.org/software/guile/docs/master/guile-tut.html/What-are-scripting-and-extension-languages.html">Source</a></p>
-<p>Means by which programming languages combine simple ideas to form more complex ones:</p>
-<ul>
-<li>primitive expressions - the most basic data types and entities the language operates on</li>
-<li>means of combination - combinations of primitives</li>
-<li>means of abstraction - where combinations can be named and manipulated</li>
-</ul>
-<p>In general, programming can be described as procedures and data; data is the stuff we want to operate on, and procedures are rules to manipulate it.</p>
-<p>In general:</p>
-<ul>
-<li>Infix Notation: <code>3+4</code></li>
-<li>Prefix Notation: <code>sin (π/2)</code></li>
-<li>Postfix Notation <code>7!</code></li>
-</ul>
-<h4 id="primitive-expressions">Primitive Expressions</h4>
-<p>STK uses Prefix notation, e.g.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a>STk&gt; (<span class="op">+</span> <span class="dv">5</span> <span class="dv">2</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="dv">7</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a>STk&gt; (* <span class="dv">5</span> <span class="dv">2</span> <span class="dv">10</span>)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a><span class="dv">100</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a>STk&gt; (<span class="op">+</span> (* <span class="dv">3</span> <span class="dv">7</span>) (* <span class="dv">10</span> <span class="dv">10</span>))</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a><span class="dv">121</span></span></code></pre></div>
-<p><code>+</code> and <code>*</code> are functions (or operators), and 3, 7, 10 are arguments (or operands). Expressions are evaluated with the inner parenthesis first, in order, then the results are used as arguments for the the next outer function.</p>
-<p>Strings are just surrounded by single quotes.</p>
-<p>String Operations:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="co">; These only work in stk-simply</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a>STk&gt; (first &#39;hello)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a>h</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true"></a>STk&gt; (last &#39;hello)</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true"></a>o</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true"></a>STk&gt; (butfirst &#39;hello)</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true"></a>ello</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true"></a>STk&gt; (butlast &#39;hello)</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true"></a>hell</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true"></a>STk&gt; (bf &#39;scheme)</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true"></a>cheme</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true"></a>STk&gt; (word &#39;now &#39;here)</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true"></a>nowhere</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true"></a>STk&gt; (sentence &#39;now &#39;here)</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true"></a>(now here)</span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true"></a>STk&gt; &#39;(magical mystery tour)&#39; <span class="co">; a sentence, quoted</span></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true"></a>(magical mystery tour)</span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true"></a>STk&gt; (first &#39;(got to get you into my life))</span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true"></a>got</span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true"></a>STk&gt; (first (bf (sentence &#39;a &#39;hard &#39;days &#39;night)))</span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true"></a>hard</span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true"></a>STk&gt; (first (first (bf &#39;(she loves you))))</span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true"></a>l</span></code></pre></div>
-<p>Define (creating variables with related object values):</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a>STk&gt; (<span class="ex">define</span><span class="fu"> pi </span><span class="fl">3.14159264</span>)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a>pi</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a>STk&gt; (* pi <span class="dv">5</span> <span class="dv">5</span>) <span class="co">; area of circle radius 5</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true"></a><span class="fl">78.539816</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true"></a>STk&gt; (<span class="ex">define</span><span class="fu"> </span>(square x)</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true"></a>    (* x x))</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true"></a>square</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true"></a>STk&gt; (square <span class="dv">5</span>)</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true"></a><span class="dv">25</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true"></a>STk&gt; (square (<span class="op">+</span> <span class="dv">2</span> <span class="dv">3</span>))</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true"></a><span class="dv">25</span></span></code></pre></div>
-<p>Scheme treats un-quoted newlines as any other separator. Therefore expressions are often split onto multiple lines to “pretty-print”.</p>
-<h4 id="procedures">Procedures</h4>
-<p>Loosely, Procedure Definition == Compound Procedure == Function == Method. This doesn’t apply when we’re concerning ourself with Execution Order, but when talking about the programming itself, these are sometimes used interchangably. When it matters, the right one is used.</p>
-<p>Procedures get called from left to right, inside out, with few exceptions. One of the exceptions is <code>define</code>; at the time the statement is run, the name (e.g. <code>pi</code>/<code>square</code>) don’t exist. Define is a keyword for a “special form”.</p>
-<p>Formally:</p>
-<ol type="1">
-<li>Evaluate the subexpressions of the combination.</li>
-<li>Apply the procedure that is the value of the leftmost subexpression (the operator) to the arguments that are the values of the other subexpressions (the operands).</li>
-</ol>
-<p>The REPL itself is recursive in nature, since step 2 enforces that subexpressions must be evaluated first.</p>
-<p><code>(define (⟨name⟩ ⟨formal parameters⟩) ⟨body⟩)</code></p>
-<p>Since LISP uses infix notation, describing expression evaluation as a tree, with each subcombination being a ‘lower’ vertex on the tree:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a>(* (<span class="op">+</span> <span class="dv">2</span> (* <span class="dv">4</span> <span class="dv">6</span>))</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a>   (<span class="op">+</span> <span class="dv">3</span> <span class="dv">5</span> <span class="dv">7</span>))</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true"></a><span class="dv">390</span></span></code></pre></div>
-<pre><code>*
+<!doctype html><html lang="en"><title>exobrain | SICP 01 - Functional Programming</title><meta charset="UTF-8"><meta name="viewport"content="width=device-width,initial-scale=1"><meta http-equiv="X-UA-Compatible"content="ie=edge"><meta http-equiv="Cache-Control"content="no-cache, no-store, must-revalidate"><link rel="shortcut icon"href="/assets/img/logo.png"type="image/png"><meta http-equiv="Pragma"content="no-cache"><meta http-equiv="Expires"content="0"><link rel="stylesheet"href="/assets/style.css"><header class="nav-bar"><nav><a class="homelink"href="/">exobrain</a><div class="nav-right"><div class="nav-item"><a class="nav-link"href="/feed">blog feed</a></div><div class="nav-item"><a class="nav-link"href="/sitemap">exobrain sitemap</a></div><div class="nav-item"><a class="nav-link"href="https://sean.fish">back to my site</a></div></div></nav></header><main><a id="top"></a><div class="container"><div id="main-header"><div class="h1"id="main-title">SICP 01 - Functional Programming</div></div><p>Read Section 1.1: The Elements of Programming<p>Encompasses Lecture 1 &amp; 2<p>“Lisp, whose name is an acronym for LISt Processing, was designed to provide symbol- manipulating capabilities for attacking programming problems such as the symbolic differentiation and integration of algebraic expressions. Lisp was not the product of a concerted design effort. Instead, it evolved informally in an experimental manner in response to users’ needs and to pragmatic implementation considerations.”<p>“Lisps were used in applications where efficiency is not the primary concern. For example, for operating-system shell languages and <em>extension languages</em>.”<p>(SICP p 3-4)<p>“An extension language is a programming language interpreter offered by an application program, so that users can write macros or even full-fledged programs to extend the original application. Extension languages have a C interface (it is usually C, but it could be any other compiled language), and can be given access to the C data structures. Likewise, there are C routines to access the extension language data structures.” <a href="https://www.gnu.org/software/guile/docs/master/guile-tut.html/What-are-scripting-and-extension-languages.html">Source</a><p>Means by which programming languages combine simple ideas to form more complex ones:<ul><li>primitive expressions - the most basic data types and entities the language operates on<li>means of combination - combinations of primitives<li>means of abstraction - where combinations can be named and manipulated</ul><p>In general, programming can be described as procedures and data; data is the stuff we want to operate on, and procedures are rules to manipulate it.<p>In general:<ul><li>Infix Notation: <code>3+4</code><li>Prefix Notation: <code>sin (π/2)</code><li>Postfix Notation <code>7!</code></ul><h4 id="primitive-expressions">Primitive Expressions</h4><p>STK uses Prefix notation, e.g.<div class="sourceCode"id="cb1"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb1-1"><a href="#cb1-1"aria-hidden="true"></a>STk&gt; (<span class="op">+</span> <span class="dv">5</span> <span class="dv">2</span>)</span>
+<span id="cb1-2"><a href="#cb1-2"aria-hidden="true"></a><span class="dv">7</span></span>
+<span id="cb1-3"><a href="#cb1-3"aria-hidden="true"></a>STk&gt; (* <span class="dv">5</span> <span class="dv">2</span> <span class="dv">10</span>)</span>
+<span id="cb1-4"><a href="#cb1-4"aria-hidden="true"></a><span class="dv">100</span></span>
+<span id="cb1-5"><a href="#cb1-5"aria-hidden="true"></a>STk&gt; (<span class="op">+</span> (* <span class="dv">3</span> <span class="dv">7</span>) (* <span class="dv">10</span> <span class="dv">10</span>))</span>
+<span id="cb1-6"><a href="#cb1-6"aria-hidden="true"></a><span class="dv">121</span></span></code></pre></div><p><code>+</code> and <code>*</code> are functions (or operators), and 3, 7, 10 are arguments (or operands). Expressions are evaluated with the inner parenthesis first, in order, then the results are used as arguments for the the next outer function.<p>Strings are just surrounded by single quotes.<p>String Operations:<div class="sourceCode"id="cb2"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb2-1"><a href="#cb2-1"aria-hidden="true"></a><span class="co">; These only work in stk-simply</span></span>
+<span id="cb2-2"><a href="#cb2-2"aria-hidden="true"></a>STk&gt; (first &#39;hello)</span>
+<span id="cb2-3"><a href="#cb2-3"aria-hidden="true"></a>h</span>
+<span id="cb2-4"><a href="#cb2-4"aria-hidden="true"></a>STk&gt; (last &#39;hello)</span>
+<span id="cb2-5"><a href="#cb2-5"aria-hidden="true"></a>o</span>
+<span id="cb2-6"><a href="#cb2-6"aria-hidden="true"></a>STk&gt; (butfirst &#39;hello)</span>
+<span id="cb2-7"><a href="#cb2-7"aria-hidden="true"></a>ello</span>
+<span id="cb2-8"><a href="#cb2-8"aria-hidden="true"></a>STk&gt; (butlast &#39;hello)</span>
+<span id="cb2-9"><a href="#cb2-9"aria-hidden="true"></a>hell</span>
+<span id="cb2-10"><a href="#cb2-10"aria-hidden="true"></a>STk&gt; (bf &#39;scheme)</span>
+<span id="cb2-11"><a href="#cb2-11"aria-hidden="true"></a>cheme</span>
+<span id="cb2-12"><a href="#cb2-12"aria-hidden="true"></a>STk&gt; (word &#39;now &#39;here)</span>
+<span id="cb2-13"><a href="#cb2-13"aria-hidden="true"></a>nowhere</span>
+<span id="cb2-14"><a href="#cb2-14"aria-hidden="true"></a>STk&gt; (sentence &#39;now &#39;here)</span>
+<span id="cb2-15"><a href="#cb2-15"aria-hidden="true"></a>(now here)</span>
+<span id="cb2-16"><a href="#cb2-16"aria-hidden="true"></a>STk&gt; &#39;(magical mystery tour)&#39; <span class="co">; a sentence, quoted</span></span>
+<span id="cb2-17"><a href="#cb2-17"aria-hidden="true"></a>(magical mystery tour)</span>
+<span id="cb2-18"><a href="#cb2-18"aria-hidden="true"></a>STk&gt; (first &#39;(got to get you into my life))</span>
+<span id="cb2-19"><a href="#cb2-19"aria-hidden="true"></a>got</span>
+<span id="cb2-20"><a href="#cb2-20"aria-hidden="true"></a>STk&gt; (first (bf (sentence &#39;a &#39;hard &#39;days &#39;night)))</span>
+<span id="cb2-21"><a href="#cb2-21"aria-hidden="true"></a>hard</span>
+<span id="cb2-22"><a href="#cb2-22"aria-hidden="true"></a>STk&gt; (first (first (bf &#39;(she loves you))))</span>
+<span id="cb2-23"><a href="#cb2-23"aria-hidden="true"></a>l</span></code></pre></div><p>Define (creating variables with related object values):<div class="sourceCode"id="cb3"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb3-1"><a href="#cb3-1"aria-hidden="true"></a>STk&gt; (<span class="ex">define</span><span class="fu"> pi </span><span class="fl">3.14159264</span>)</span>
+<span id="cb3-2"><a href="#cb3-2"aria-hidden="true"></a>pi</span>
+<span id="cb3-3"><a href="#cb3-3"aria-hidden="true"></a>STk&gt; (* pi <span class="dv">5</span> <span class="dv">5</span>) <span class="co">; area of circle radius 5</span></span>
+<span id="cb3-4"><a href="#cb3-4"aria-hidden="true"></a><span class="fl">78.539816</span></span>
+<span id="cb3-5"><a href="#cb3-5"aria-hidden="true"></a>STk&gt; (<span class="ex">define</span><span class="fu"> </span>(square x)</span>
+<span id="cb3-6"><a href="#cb3-6"aria-hidden="true"></a>    (* x x))</span>
+<span id="cb3-7"><a href="#cb3-7"aria-hidden="true"></a>square</span>
+<span id="cb3-8"><a href="#cb3-8"aria-hidden="true"></a>STk&gt; (square <span class="dv">5</span>)</span>
+<span id="cb3-9"><a href="#cb3-9"aria-hidden="true"></a><span class="dv">25</span></span>
+<span id="cb3-10"><a href="#cb3-10"aria-hidden="true"></a>STk&gt; (square (<span class="op">+</span> <span class="dv">2</span> <span class="dv">3</span>))</span>
+<span id="cb3-11"><a href="#cb3-11"aria-hidden="true"></a><span class="dv">25</span></span></code></pre></div><p>Scheme treats un-quoted newlines as any other separator. Therefore expressions are often split onto multiple lines to “pretty-print”.<h4 id="procedures">Procedures</h4><p>Loosely, Procedure Definition == Compound Procedure == Function == Method. This doesn’t apply when we’re concerning ourself with Execution Order, but when talking about the programming itself, these are sometimes used interchangably. When it matters, the right one is used.<p>Procedures get called from left to right, inside out, with few exceptions. One of the exceptions is <code>define</code>; at the time the statement is run, the name (e.g. <code>pi</code>/<code>square</code>) don’t exist. Define is a keyword for a “special form”.<p>Formally:<ol type="1"><li>Evaluate the subexpressions of the combination.<li>Apply the procedure that is the value of the leftmost subexpression (the operator) to the arguments that are the values of the other subexpressions (the operands).</ol><p>The REPL itself is recursive in nature, since step 2 enforces that subexpressions must be evaluated first.<p><code>(define (⟨name⟩ ⟨formal parameters⟩) ⟨body⟩)</code><p>Since LISP uses infix notation, describing expression evaluation as a tree, with each subcombination being a ‘lower’ vertex on the tree:<div class="sourceCode"id="cb4"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb4-1"><a href="#cb4-1"aria-hidden="true"></a>(* (<span class="op">+</span> <span class="dv">2</span> (* <span class="dv">4</span> <span class="dv">6</span>))</span>
+<span id="cb4-2"><a href="#cb4-2"aria-hidden="true"></a>   (<span class="op">+</span> <span class="dv">3</span> <span class="dv">5</span> <span class="dv">7</span>))</span>
+<span id="cb4-3"><a href="#cb4-3"aria-hidden="true"></a><span class="dv">390</span></span></code></pre></div><pre><code>*
 ├── +
 │   ├── *
 │   │   ├── 4
@@ -116,70 +46,20 @@
 └── +
     ├── 3
     ├── 5
-    └── 7</code></pre>
-<p>Values that result from lower expressions on the tree “percolate upwards”, which is very similar to a general process called <a href="https://en.wikipedia.org/wiki/Tree_accumulation"><em>tree accumulation</em></a></p>
-<h4 id="normal-order-execution-vs-applicative-order-execution">Normal-Order Execution vs Applicative-Order Execution</h4>
-<p>Normal-Order can be thought of as “fully expand and reduce”, in contrast to Applicative-Order “evaluate the arguments and then apply”.</p>
-<p>For the example: <code>(+ (* 5 3) (* 5 3))</code></p>
-<p>Applicative-Order would evaluate <code>(* 5 3)</code> twice, separately, and then evaluate the resulting (+ 15 15), while Applicative-Order would evaluate the first <code>(* 5 3)</code> and then substitute the result from the first to the second. This avoids multiple evaluations of the same expression, and is what Lisp uses.</p>
-<p>The difference between normal and applicative order doesn’t make a lot of difference when youre procedure is a function (always give the same result), but the “expanding” means that argument expressions are substituted in subexpressions instead of the resulting value.</p>
-<p>For example, if you had:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a>STk&gt; (<span class="ex">define</span><span class="fu"> </span>(zero z) (<span class="op">-</span> z z))</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true"></a>zero</span></code></pre></div>
-<p>And called something like <code>(zero (random 10))</code></p>
-<p>In Applicative-Order, the result from <code>random 10</code> (PRNG) would be passed to zero, so the expression would always result in <code>(- n n)</code> -&gt; 0. In Normal-Order, the <code>random 10</code> would “expand”, and the entire expression would be passed to <code>zero</code> before evaluation, which would result in:</p>
-<p><code>(zero (random 10)) (- random(10) random(10))</code></p>
-<p>…and then evaluate; the two random(10)’s will most of the time generate different numbers, making <code>zero</code> return something that isn’t <code>zero</code>, making <code>zero</code> not a function (but still a procedure).</p>
-<p>Once your procedures aren’t functional, Normal vs. Applicative matters.</p>
-<h4 id="conditionals">Conditionals</h4>
-<pre><code>|x| = {
+    └── 7</code></pre><p>Values that result from lower expressions on the tree “percolate upwards”, which is very similar to a general process called <a href="https://en.wikipedia.org/wiki/Tree_accumulation"><em>tree accumulation</em></a><h4 id="normal-order-execution-vs-applicative-order-execution">Normal-Order Execution vs Applicative-Order Execution</h4><p>Normal-Order can be thought of as “fully expand and reduce”, in contrast to Applicative-Order “evaluate the arguments and then apply”.<p>For the example: <code>(+ (* 5 3) (* 5 3))</code><p>Applicative-Order would evaluate <code>(* 5 3)</code> twice, separately, and then evaluate the resulting (+ 15 15), while Applicative-Order would evaluate the first <code>(* 5 3)</code> and then substitute the result from the first to the second. This avoids multiple evaluations of the same expression, and is what Lisp uses.<p>The difference between normal and applicative order doesn’t make a lot of difference when youre procedure is a function (always give the same result), but the “expanding” means that argument expressions are substituted in subexpressions instead of the resulting value.<p>For example, if you had:<div class="sourceCode"id="cb6"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb6-1"><a href="#cb6-1"aria-hidden="true"></a>STk&gt; (<span class="ex">define</span><span class="fu"> </span>(zero z) (<span class="op">-</span> z z))</span>
+<span id="cb6-2"><a href="#cb6-2"aria-hidden="true"></a>zero</span></code></pre></div><p>And called something like <code>(zero (random 10))</code><p>In Applicative-Order, the result from <code>random 10</code> (PRNG) would be passed to zero, so the expression would always result in <code>(- n n)</code> -&gt; 0. In Normal-Order, the <code>random 10</code> would “expand”, and the entire expression would be passed to <code>zero</code> before evaluation, which would result in:<p><code>(zero (random 10)) (- random(10) random(10))</code><p>…and then evaluate; the two random(10)’s will most of the time generate different numbers, making <code>zero</code> return something that isn’t <code>zero</code>, making <code>zero</code> not a function (but still a procedure).<p>Once your procedures aren’t functional, Normal vs. Applicative matters.<h4 id="conditionals">Conditionals</h4><pre><code>|x| = {
     x if x &gt; 0
     0 if x = 0
     -x if x &lt; 0
-}</code></pre>
-<p>aka <em>case analysis</em> can be represented in Lisp like:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true"></a>(<span class="ex">define</span><span class="fu"> </span>(<span class="kw">abs</span> x)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true"></a>    (<span class="kw">cond</span> ((<span class="op">&gt;</span> x <span class="dv">0</span>) x)</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true"></a>                ((<span class="op">=</span> x <span class="dv">0</span>) <span class="dv">0</span>)</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true"></a>                ((<span class="op">&lt;</span> x <span class="dv">0</span>) (<span class="op">-</span> x))))</span></code></pre></div>
-<p>In general, conditionals can be represented like:</p>
-<pre><code>(cond (⟨p1⟩ ⟨e1⟩)
+}</code></pre><p>aka <em>case analysis</em> can be represented in Lisp like:<div class="sourceCode"id="cb8"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb8-1"><a href="#cb8-1"aria-hidden="true"></a>(<span class="ex">define</span><span class="fu"> </span>(<span class="kw">abs</span> x)</span>
+<span id="cb8-2"><a href="#cb8-2"aria-hidden="true"></a>    (<span class="kw">cond</span> ((<span class="op">&gt;</span> x <span class="dv">0</span>) x)</span>
+<span id="cb8-3"><a href="#cb8-3"aria-hidden="true"></a>                ((<span class="op">=</span> x <span class="dv">0</span>) <span class="dv">0</span>)</span>
+<span id="cb8-4"><a href="#cb8-4"aria-hidden="true"></a>                ((<span class="op">&lt;</span> x <span class="dv">0</span>) (<span class="op">-</span> x))))</span></code></pre></div><p>In general, conditionals can be represented like:<pre><code>(cond (⟨p1⟩ ⟨e1⟩)
             (⟨p2⟩ ⟨e2⟩)
             ...
-            (⟨pn⟩ ⟨en⟩))</code></pre>
-<p>which have <code>n</code> <em>clauses</em>, each with a <em>predicate</em> <code>p</code> and expression <em>e</em>.</p>
-<p>Predicates are evaluated in order, and short circuit. If none of the predicates evaluate to true, the value of <code>cond</code> is undefined.</p>
-<p>Its convention to end defined predicates (helper functions that evaluate truthy-ness) in a question mark</p>
-<p>Another way to write the <code>abs</code> function:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true"></a>(<span class="ex">define</span><span class="fu"> </span>(<span class="kw">abs</span> x)</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true"></a>    (<span class="kw">cond</span> ((<span class="op">&lt;</span> x <span class="dv">0</span>) (<span class="op">-</span> x))</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true"></a>                (<span class="kw">else</span> x)))</span></code></pre></div>
-<p><code>else</code> is a symbol used in place of a predicate, which describes what happens when all previous clauses evaluate to false</p>
-<p>You can also use <code>if</code></p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true"></a>(<span class="ex">define</span><span class="fu"> </span>(<span class="kw">abs</span> x)</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true"></a>    (<span class="kw">if</span> (<span class="op">&lt;</span> x <span class="dv">0</span>)</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true"></a>            (<span class="op">-</span> x) x))</span></code></pre></div>
-<p>whose general form looks like:</p>
-<p><code>(if ⟨predicate⟩ ⟨consequent⟩ ⟨alternative⟩)</code></p>
-<p>You can also use the logical operations:</p>
-<ul>
-<li><code>(and &lt;e1&gt; &lt;e2&gt; ... &lt;en&gt;)</code></li>
-<li><code>(or &lt;e1&gt; &lt;e2&gt; ... &lt;en&gt;)</code></li>
-<li><code>(not &lt;e&gt;)</code></li>
-</ul>
-<p>Similar to <code>cond</code>, <code>and</code> and <code>or</code> short circuit.</p>
-<p>Examples:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true"></a>(<span class="ex">define</span><span class="fu"> </span>(<span class="op">&gt;=</span> x y) (<span class="kw">or</span> (<span class="op">&gt;</span> x y) (<span class="op">=</span> x y)))</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true"></a>(<span class="ex">define</span><span class="fu"> </span>(<span class="op">&lt;=</span> x y) (<span class="kw">or</span> (<span class="op">&lt;</span> x  y) (<span class="op">=</span> x y)))</span></code></pre></div>
-<div class="sourceCode" id="cb13"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true"></a>(<span class="kw">or</span> (x <span class="op">&lt;</span> <span class="dv">5</span>) (x <span class="op">&gt;</span> <span class="dv">10</span>))` == `(<span class="kw">and</span> (x <span class="op">&gt;=</span> <span class="dv">5</span>) (x <span class="op">&lt;=</span> <span class="dv">10</span>))</span></code></pre></div>
-<p>Procedures <code>bind</code> their variables to locally scoped <code>bound variables</code>. Globally bound variables that arent bound by a procedure definition are known as <code>free</code> variables (lots of keywords and other procedure names are <code>free</code>).</p>
-</div>
-</main>
-<footer>
-  <p><a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" id=copyright>© 2020 Sean Breckenridge. Licensed under Creative Commons Attribution-ShareAlike.</a>
-    <br /><a href="https://github.com/seanbreckenridge/exobrain">Source Code</a>
-  </p>
-</footer>
-<script src="/assets/main.js"></script>
-</body>
-</html>
+            (⟨pn⟩ ⟨en⟩))</code></pre><p>which have <code>n</code> <em>clauses</em>, each with a <em>predicate</em> <code>p</code> and expression <em>e</em>.<p>Predicates are evaluated in order, and short circuit. If none of the predicates evaluate to true, the value of <code>cond</code> is undefined.<p>Its convention to end defined predicates (helper functions that evaluate truthy-ness) in a question mark<p>Another way to write the <code>abs</code> function:<div class="sourceCode"id="cb10"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb10-1"><a href="#cb10-1"aria-hidden="true"></a>(<span class="ex">define</span><span class="fu"> </span>(<span class="kw">abs</span> x)</span>
+<span id="cb10-2"><a href="#cb10-2"aria-hidden="true"></a>    (<span class="kw">cond</span> ((<span class="op">&lt;</span> x <span class="dv">0</span>) (<span class="op">-</span> x))</span>
+<span id="cb10-3"><a href="#cb10-3"aria-hidden="true"></a>                (<span class="kw">else</span> x)))</span></code></pre></div><p><code>else</code> is a symbol used in place of a predicate, which describes what happens when all previous clauses evaluate to false<p>You can also use <code>if</code><div class="sourceCode"id="cb11"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb11-1"><a href="#cb11-1"aria-hidden="true"></a>(<span class="ex">define</span><span class="fu"> </span>(<span class="kw">abs</span> x)</span>
+<span id="cb11-2"><a href="#cb11-2"aria-hidden="true"></a>    (<span class="kw">if</span> (<span class="op">&lt;</span> x <span class="dv">0</span>)</span>
+<span id="cb11-3"><a href="#cb11-3"aria-hidden="true"></a>            (<span class="op">-</span> x) x))</span></code></pre></div><p>whose general form looks like:<p><code>(if ⟨predicate⟩ ⟨consequent⟩ ⟨alternative⟩)</code><p>You can also use the logical operations:<ul><li><code>(and &lt;e1&gt; &lt;e2&gt; ... &lt;en&gt;)</code><li><code>(or &lt;e1&gt; &lt;e2&gt; ... &lt;en&gt;)</code><li><code>(not &lt;e&gt;)</code></ul><p>Similar to <code>cond</code>, <code>and</code> and <code>or</code> short circuit.<p>Examples:<div class="sourceCode"id="cb12"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb12-1"><a href="#cb12-1"aria-hidden="true"></a>(<span class="ex">define</span><span class="fu"> </span>(<span class="op">&gt;=</span> x y) (<span class="kw">or</span> (<span class="op">&gt;</span> x y) (<span class="op">=</span> x y)))</span>
+<span id="cb12-2"><a href="#cb12-2"aria-hidden="true"></a>(<span class="ex">define</span><span class="fu"> </span>(<span class="op">&lt;=</span> x y) (<span class="kw">or</span> (<span class="op">&lt;</span> x  y) (<span class="op">=</span> x y)))</span></code></pre></div><div class="sourceCode"id="cb13"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb13-1"><a href="#cb13-1"aria-hidden="true"></a>(<span class="kw">or</span> (x <span class="op">&lt;</span> <span class="dv">5</span>) (x <span class="op">&gt;</span> <span class="dv">10</span>))` == `(<span class="kw">and</span> (x <span class="op">&gt;=</span> <span class="dv">5</span>) (x <span class="op">&lt;=</span> <span class="dv">10</span>))</span></code></pre></div><p>Procedures <code>bind</code> their variables to locally scoped <code>bound variables</code>. Globally bound variables that arent bound by a procedure definition are known as <code>free</code> variables (lots of keywords and other procedure names are <code>free</code>).</div></main><footer><p><a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode"id="copyright">© 2020 Sean Breckenridge. Licensed under Creative Commons Attribution-ShareAlike.</a><br><a href="https://github.com/seanbreckenridge/exobrain">Source Code</a></footer><script src="/assets/main.js"></script>

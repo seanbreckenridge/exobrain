@@ -1,87 +1,19 @@
-<!doctype html>
-<html lang="en">
-<head>
-            <title>blog | Personal Server Setup</title>
-        <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
-  <link rel="shortcut icon" href="/assets/img/logo.png" type="image/png">
-  <meta http-equiv="Pragma" content="no-cache"/>
-  <meta http-equiv="Expires" content="0"/>
-  <link rel="stylesheet" href="/assets/style.css">
-</head>
-<body>
-<header class=nav-bar>
-  <nav>
-          <a class="homelink" href="/">blog</a>
-        <div class="nav-right">
-      <div class=nav-item><a class="nav-link" href="/feed">blog feed</a></div>
-      <div class=nav-item><a class="nav-link" href="/sitemap">exobrain sitemap</a></div>
-      <div class=nav-item><a class="nav-link" href="https://sean.fish">back to my site</a></div>
-    </div>
-  </nav>
-</header>
-<main>
-<a id=top></a><div class=container>
-<div id="main-header">
-  <div class="h1" id="main-title">Personal Server Setup</div>
-      <div class="title-date">2020/06/12</div>
-  </div>
-<p>Recently I’ve been playing with VMs/VPSs as web servers, so I’ve been setting up lots of servers. This is both to self-document what I’ve been doing, and maybe it gives someone a new tool to use.</p>
-<p>Setup the VM however with whatever you’d like. I’ve been a fan of debian on the server recently.</p>
-<ol type="1">
-<li><code>ssh root@&lt;ip-addr&gt;</code></li>
-<li>create a user for me and give me <code>sudo</code> privileges</li>
-</ol>
-<pre><code># my terminal doesn&#39;t have the best terminfo support out of the box; default to xterm-256color
+<!doctype html><html lang="en"><title>blog | Personal Server Setup</title><meta charset="UTF-8"><meta name="viewport"content="width=device-width,initial-scale=1"><meta http-equiv="X-UA-Compatible"content="ie=edge"><meta http-equiv="Cache-Control"content="no-cache, no-store, must-revalidate"><link rel="shortcut icon"href="/assets/img/logo.png"type="image/png"><meta http-equiv="Pragma"content="no-cache"><meta http-equiv="Expires"content="0"><link rel="stylesheet"href="/assets/style.css"><header class="nav-bar"><nav><a class="homelink"href="/">blog</a><div class="nav-right"><div class="nav-item"><a class="nav-link"href="/feed">blog feed</a></div><div class="nav-item"><a class="nav-link"href="/sitemap">exobrain sitemap</a></div><div class="nav-item"><a class="nav-link"href="https://sean.fish">back to my site</a></div></div></nav></header><main><a id="top"></a><div class="container"><div id="main-header"><div class="h1"id="main-title">Personal Server Setup</div><div class="title-date">2020/06/12</div></div><p>Recently I’ve been playing with VMs/VPSs as web servers, so I’ve been setting up lots of servers. This is both to self-document what I’ve been doing, and maybe it gives someone a new tool to use.<p>Setup the VM however with whatever you’d like. I’ve been a fan of debian on the server recently.<ol type="1"><li><code>ssh root@&lt;ip-addr&gt;</code><li>create a user for me and give me <code>sudo</code> privileges</ol><pre><code># my terminal doesn&#39;t have the best terminfo support out of the box; default to xterm-256color
 export TERM=xterm-256color
 adduser sean
-usermod -aG sudo sean</code></pre>
-<ol start="3" type="1">
-<li>create a ssh key (<code>ssh-keygen -t rsa -b 4096 -o -a 100</code>) for connecting to the server, <code>ssh-copy-id</code> it up to the server</li>
-</ol>
-<p><code>ssh-copy-id -i ~/.ssh/file sean@&lt;ip-addr&gt;</code></p>
-<ol start="4" type="1">
-<li>Add the block for the server to my <code>~/.ssh/config</code> file:</li>
-</ol>
-<pre><code>Host vps
+usermod -aG sudo sean</code></pre><ol start="3"type="1"><li>create a ssh key (<code>ssh-keygen -t rsa -b 4096 -o -a 100</code>) for connecting to the server, <code>ssh-copy-id</code> it up to the server</ol><p><code>ssh-copy-id -i ~/.ssh/file sean@&lt;ip-addr&gt;</code><ol start="4"type="1"><li>Add the block for the server to my <code>~/.ssh/config</code> file:</ol><pre><code>Host vps
   User sean
   Hostname &lt;server ip&gt;
-  IdentityFile ~/.ssh/private_key</code></pre>
-<p>Then I can just connect with <code>ssh vps</code></p>
-<ol start="5" type="1">
-<li><code>ssh</code> onto the server and run my <a href="https://gitlab.com/seanbreckenridge/bootstrap/"><code>bootstrap</code></a> script: That sets up some bash defaults: aliases, <code>neovim</code> configuration, installs <a href="https://github.com/junegunn/fzf"><code>fzf</code></a>, prompts me to setup Github username/email.</li>
-</ol>
-<pre><code>sudo apt install neovim git curl
-bash -c &quot;$(curl -fsSL https://gitlab.com/seanbreckenridge/bootstrap/-/raw/master/bootstrap)&quot;</code></pre>
-<ol start="6" type="1">
-<li>Strengthen <code>ssh</code> configuration: disable root login, password authentication (have to use ssh-key). Make sure the following lines exist and are uncommented in <code>/etc/ssh/sshd_config</code>:</li>
-</ol>
-<pre><code>ChallengeResponseAuthentication no
+  IdentityFile ~/.ssh/private_key</code></pre><p>Then I can just connect with <code>ssh vps</code><ol start="5"type="1"><li><code>ssh</code> onto the server and run my <a href="https://gitlab.com/seanbreckenridge/bootstrap/"><code>bootstrap</code></a> script: That sets up some bash defaults: aliases, <code>neovim</code> configuration, installs <a href="https://github.com/junegunn/fzf"><code>fzf</code></a>, prompts me to setup Github username/email.</ol><pre><code>sudo apt install neovim git curl
+bash -c &quot;$(curl -fsSL https://gitlab.com/seanbreckenridge/bootstrap/-/raw/master/bootstrap)&quot;</code></pre><ol start="6"type="1"><li>Strengthen <code>ssh</code> configuration: disable root login, password authentication (have to use ssh-key). Make sure the following lines exist and are uncommented in <code>/etc/ssh/sshd_config</code>:</ol><pre><code>ChallengeResponseAuthentication no
 PasswordAuthentication no
 UsePAM no
-PermitRootLogin no</code></pre>
-<p>Reload ssh: <code>sudo systemctl reload ssh</code></p>
-<ol start="7" type="1">
-<li>Setup a gitlab/github ssh key and start an <code>ssh-agent</code>, but dont ‘<code>eval ssh-agent</code>’ every time you log in, just the first time, by putting this in <code>~/.bash_profile</code>:</li>
-</ol>
-<pre><code>if [ ! -S ~/.ssh/ssh_auth_sock ]; then
+PermitRootLogin no</code></pre><p>Reload ssh: <code>sudo systemctl reload ssh</code><ol start="7"type="1"><li>Setup a gitlab/github ssh key and start an <code>ssh-agent</code>, but dont ‘<code>eval ssh-agent</code>’ every time you log in, just the first time, by putting this in <code>~/.bash_profile</code>:</ol><pre><code>if [ ! -S ~/.ssh/ssh_auth_sock ]; then
   eval `ssh-agent`
   ln -sf &quot;$SSH_AUTH_SOCK&quot; ~/.ssh/ssh_auth_sock
 fi
 export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
-ssh-add -l &gt; /dev/null || ssh-add ~/.ssh/github</code></pre>
-<ol start="8" type="1">
-<li>Install <code>nginx</code>:</li>
-</ol>
-<p>Just the base installation for now, test it by going to the IP address in the browser to make sure firewall is properly configured.</p>
-<p><code>sudo apt install nginx</code></p>
-<p>This is heavily modified after my applications are set up, see below.</p>
-<ol start="9" type="1">
-<li>Install lots of things to configure my applications/webapps, see <a href="https://github.com/seanbreckenridge/vps">vps</a>:</li>
-</ol>
-<pre><code># setup docker
+ssh-add -l &gt; /dev/null || ssh-add ~/.ssh/github</code></pre><ol start="8"type="1"><li>Install <code>nginx</code>:</ol><p>Just the base installation for now, test it by going to the IP address in the browser to make sure firewall is properly configured.<p><code>sudo apt install nginx</code><p>This is heavily modified after my applications are set up, see below.<ol start="9"type="1"><li>Install lots of things to configure my applications/webapps, see <a href="https://github.com/seanbreckenridge/vps">vps</a>:</ol><pre><code># setup docker
 sudo apt-get install apt-transport-https ca-certificates curl gnupg2 software-properties-common
 curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add –
 sudo add-apt-repository &quot;deb [arch=amd64] https://download.docker.com/linux/debian buster stable&quot;
@@ -141,26 +73,12 @@ sudo usermod -aG adm &quot;$(whoami)&quot;
 git clone git@github.com:seanbreckenridge/vps ~/vps
 cd ~/vps
 ./vps_install  # clone/setup all my applications
-./generate_static_sites  # clone/generate all my static sites</code></pre>
-<ol start="10" type="1">
-<li>Setup my DNS info on my domain name registrar, point it to the IP address of the VPS, follow instructions to set up <a href="https://certbot.eff.org/lets-encrypt/debianbuster-nginx"><code>certbot</code></a> for <code>HTTPS</code>:</li>
-</ol>
-<p>Make sure the <code>server_name</code> directive exists in the <code>server</code> block running on port 80 in <code>/etc/nginx/sites-available/default</code> before trying to do <code>certbot</code>, so it can grab the domain name from there.</p>
-<pre><code>sudo apt install certbot python-certbot-nginx
+./generate_static_sites  # clone/generate all my static sites</code></pre><ol start="10"type="1"><li>Setup my DNS info on my domain name registrar, point it to the IP address of the VPS, follow instructions to set up <a href="https://certbot.eff.org/lets-encrypt/debianbuster-nginx"><code>certbot</code></a> for <code>HTTPS</code>:</ol><p>Make sure the <code>server_name</code> directive exists in the <code>server</code> block running on port 80 in <code>/etc/nginx/sites-available/default</code> before trying to do <code>certbot</code>, so it can grab the domain name from there.<pre><code>sudo apt install certbot python-certbot-nginx
 sudo certbot --nginx
-sudo certbot renew --dry-run # test renewal</code></pre>
-<ol start="11" type="1">
-<li>Disable <code>logrotate</code> for certain logs. I’m not a fan of it rotating to the <code>.tar.gz</code> files, I prefer to have the one giant log file to I can parse/script with it easier.</li>
-</ol>
-<p>I do this for <code>/var/log/auth.log</code>, <code>nginx</code> and <code>fail2ban</code>:</p>
-<pre><code>cd /etc/logrotate.d/
+sudo certbot renew --dry-run # test renewal</code></pre><ol start="11"type="1"><li>Disable <code>logrotate</code> for certain logs. I’m not a fan of it rotating to the <code>.tar.gz</code> files, I prefer to have the one giant log file to I can parse/script with it easier.</ol><p>I do this for <code>/var/log/auth.log</code>, <code>nginx</code> and <code>fail2ban</code>:<pre><code>cd /etc/logrotate.d/
 sudoedit rsyslog  # remove auth
 sudo mv nginx nginx.disabled
-sudo mv fail2ban fail2ban.disabled</code></pre>
-<ol start="12" type="1">
-<li>Setup the basic nginx server blocks to have nginx redirect from HTTP to HTTPS and from my <a href="https://www.sean.fish">https://www.sean.fish</a> to just <a href="https://sean.fish">https://sean.fish</a>. In <code>/etc/nginx/sites-available/default</code>:</li>
-</ol>
-<pre><code># redirect from HTTP to HTTPS
+sudo mv fail2ban fail2ban.disabled</code></pre><ol start="12"type="1"><li>Setup the basic nginx server blocks to have nginx redirect from HTTP to HTTPS and from my <a href="https://www.sean.fish">https://www.sean.fish</a> to just <a href="https://sean.fish">https://sean.fish</a>. In <code>/etc/nginx/sites-available/default</code>:</ol><pre><code># redirect from HTTP to HTTPS
 server {
     listen 80 default_server;
     listen [::]:80 default_server;
@@ -194,12 +112,7 @@ server {
     server_name sean.fish;
 
 # .... location blocks continued for different servers
-}</code></pre>
-<p>Its also possible to configure this at the <code>DNS</code> level using a <code>CNAME</code>, but I like being able to see which requests are getting redirected/whose going to <code>www</code> in my nginx logs.</p>
-<ol start="13" type="1">
-<li>Configure <code>linux</code>/<code>nginx</code> for better performance/more connections/open files (especially since I use phoenix as my main server):</li>
-</ol>
-<pre><code>## /etc/nginx/nginx.conf
+}</code></pre><p>Its also possible to configure this at the <code>DNS</code> level using a <code>CNAME</code>, but I like being able to see which requests are getting redirected/whose going to <code>www</code> in my nginx logs.<ol start="13"type="1"><li>Configure <code>linux</code>/<code>nginx</code> for better performance/more connections/open files (especially since I use phoenix as my main server):</ol><pre><code>## /etc/nginx/nginx.conf
 # at the top
 worker_rlimit_nofile 37268;
 events {
@@ -221,23 +134,7 @@ DefaultLimitNOFILE=37268
 ## /etc/pam.d/common-session
 ## /etc/pam.d/common-session-noninteractive
 # at the bottom, add:
-session required pam_limits.so</code></pre>
-<p>Restart the system, and check that <code>nginx</code>’s file limit has increased:</p>
-<p><code>ps -ef | grep nginx</code></p>
-<p><code>cat /proc/&lt;nginx_pid&gt;/limits</code></p>
-<ol start="14" type="1">
-<li>Setup <code>fail2ban</code> to stop unauthorized ssh attempts/temporarily banning suspicious behavior. I pretty much followed <a href="https://www.digitalocean.com/community/tutorials/how-to-protect-an-nginx-server-with-fail2ban-on-ubuntu-14-04">this tutorial</a>, and enabled <a href="https://gist.github.com/dale3h/660fe549df8232d1902f338e6d3b39ed">this badbots filter</a>. Remember to whitelist your own IP:</li>
-</ol>
-<p><code>ignoreip = 127.0.0.1 ::1 &lt;your public ipv4 address&gt;</code></p>
-<ol start="15" type="1">
-<li>Setup some server monitoring.</li>
-</ol>
-<p>Install <a href="https://www.netdata.cloud/"><code>netdata</code></a> and <a href="https://github.com/seanbreckenridge/superhooks">my fork of <code>superhooks</code></a> (in my <code>supervisord.conf</code> in my <a href="https://github.com/seanbreckenridge/vps">vps repo</a>) for server and <a href="https://github.com/Supervisor/supervisor"><code>supervisor</code></a> process monitoring respectively:</p>
-<pre><code>bash &lt;(curl -Ss https://my-netdata.io/kickstart.sh)</code></pre>
-<p>I use the <a href="https://learn.netdata.cloud/docs/agent/tutorials/collect-apache-nginx-web-logs/"><code>go</code> module for nginx</a>, and use webhooks for discord (<a href="https://learn.netdata.cloud/docs/agent/health/notifications/discord/">netdata docs</a>), to get notifications whenever something goes wrong on my server (e.g. high CPU usage, too many 300x/400x requests, an application using too much ram, lots of other alerts that come default with netdata…), and whenever one of my supervisor processes unexpectedly crashes.</p>
-<p>Both <code>netdata</code> and <a href="https://goaccess.io/"><code>goaccess</code></a> (nginx log parser) are password protected with <code>apache2-utils</code>’s <code>htpasswd</code>, which is setup in <code>vps_install</code>. To set it up:</p>
-<p><code>sudo htpasswd -c /etc/nginx/.htpasswd sean</code>, and then on the routes:</p>
-<pre><code>  location /logs {
+session required pam_limits.so</code></pre><p>Restart the system, and check that <code>nginx</code>’s file limit has increased:<p><code>ps -ef | grep nginx</code><p><code>cat /proc/&lt;nginx_pid&gt;/limits</code><ol start="14"type="1"><li>Setup <code>fail2ban</code> to stop unauthorized ssh attempts/temporarily banning suspicious behavior. I pretty much followed <a href="https://www.digitalocean.com/community/tutorials/how-to-protect-an-nginx-server-with-fail2ban-on-ubuntu-14-04">this tutorial</a>, and enabled <a href="https://gist.github.com/dale3h/660fe549df8232d1902f338e6d3b39ed">this badbots filter</a>. Remember to whitelist your own IP:</ol><p><code>ignoreip = 127.0.0.1 ::1 &lt;your public ipv4 address&gt;</code><ol start="15"type="1"><li>Setup some server monitoring.</ol><p>Install <a href="https://www.netdata.cloud/"><code>netdata</code></a> and <a href="https://github.com/seanbreckenridge/superhooks">my fork of <code>superhooks</code></a> (in my <code>supervisord.conf</code> in my <a href="https://github.com/seanbreckenridge/vps">vps repo</a>) for server and <a href="https://github.com/Supervisor/supervisor"><code>supervisor</code></a> process monitoring respectively:<pre><code>bash &lt;(curl -Ss https://my-netdata.io/kickstart.sh)</code></pre><p>I use the <a href="https://learn.netdata.cloud/docs/agent/tutorials/collect-apache-nginx-web-logs/"><code>go</code> module for nginx</a>, and use webhooks for discord (<a href="https://learn.netdata.cloud/docs/agent/health/notifications/discord/">netdata docs</a>), to get notifications whenever something goes wrong on my server (e.g. high CPU usage, too many 300x/400x requests, an application using too much ram, lots of other alerts that come default with netdata…), and whenever one of my supervisor processes unexpectedly crashes.<p>Both <code>netdata</code> and <a href="https://goaccess.io/"><code>goaccess</code></a> (nginx log parser) are password protected with <code>apache2-utils</code>’s <code>htpasswd</code>, which is setup in <code>vps_install</code>. To set it up:<p><code>sudo htpasswd -c /etc/nginx/.htpasswd sean</code>, and then on the routes:<pre><code>  location /logs {
     alias /home/sean/.goaccess_html;
     try_files $uri $uri/ =404;
     auth_basic &quot;for logs!&quot;;
@@ -248,27 +145,4 @@ session required pam_limits.so</code></pre>
     proxy_pass http://127.0.0.1:19999/;
     auth_basic &quot;for netdata!&quot;;
     auth_basic_user_file /etc/nginx/.htpasswd;
-  }</code></pre>
-<p>References:</p>
-<ul>
-<li><a href="https://www.cyberciti.biz/faq/how-to-disable-ssh-password-login-on-linux/">https://www.cyberciti.biz/faq/how-to-disable-ssh-password-login-on-linux/</a></li>
-<li><a href="https://github.com/junegunn/fzf">https://github.com/junegunn/fzf</a></li>
-<li><a href="https://unix.stackexchange.com/questions/90853/how-can-i-run-ssh-add-automatically-without-a-password-prompt">https://unix.stackexchange.com/questions/90853/how-can-i-run-ssh-add-automatically-without-a-password-prompt</a></li>
-<li><a href="https://phoenixnap.com/kb/how-to-install-docker-on-debian-10">https://phoenixnap.com/kb/how-to-install-docker-on-debian-10</a></li>
-<li><a href="https://linuxize.com/post/how-to-install-node-js-on-debian-10/">https://linuxize.com/post/how-to-install-node-js-on-debian-10/</a></li>
-<li><a href="https://certbot.eff.org/lets-encrypt/debianbuster-nginx">https://certbot.eff.org/lets-encrypt/debianbuster-nginx</a></li>
-<li><a href="https://www.youtube.com/watch?v=Vrzug5IcuKg">https://www.youtube.com/watch?v=Vrzug5IcuKg</a></li>
-<li><a href="https://www.digitalocean.com/community/tutorials/how-to-protect-an-nginx-server-with-fail2ban-on-ubuntu-14-04">https://www.digitalocean.com/community/tutorials/how-to-protect-an-nginx-server-with-fail2ban-on-ubuntu-14-04</a></li>
-<li><a href="https://gist.github.com/dale3h/660fe549df8232d1902f338e6d3b39ed">https://gist.github.com/dale3h/660fe549df8232d1902f338e6d3b39ed</a></li>
-<li><a href="https://docs.nginx.com/nginx/admin-guide/security-controls/configuring-http-basic-authentication/">https://docs.nginx.com/nginx/admin-guide/security-controls/configuring-http-basic-authentication/</a></li>
-</ul>
-</div>
-</main>
-<footer>
-  <p><a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" id=copyright>© 2020 Sean Breckenridge. Licensed under Creative Commons Attribution-ShareAlike.</a>
-    <br /><a href="https://github.com/seanbreckenridge/exobrain">Source Code</a>
-  </p>
-</footer>
-<script src="/assets/main.js"></script>
-</body>
-</html>
+  }</code></pre><p>References:<ul><li><a href="https://www.cyberciti.biz/faq/how-to-disable-ssh-password-login-on-linux/">https://www.cyberciti.biz/faq/how-to-disable-ssh-password-login-on-linux/</a><li><a href="https://github.com/junegunn/fzf">https://github.com/junegunn/fzf</a><li><a href="https://unix.stackexchange.com/questions/90853/how-can-i-run-ssh-add-automatically-without-a-password-prompt">https://unix.stackexchange.com/questions/90853/how-can-i-run-ssh-add-automatically-without-a-password-prompt</a><li><a href="https://phoenixnap.com/kb/how-to-install-docker-on-debian-10">https://phoenixnap.com/kb/how-to-install-docker-on-debian-10</a><li><a href="https://linuxize.com/post/how-to-install-node-js-on-debian-10/">https://linuxize.com/post/how-to-install-node-js-on-debian-10/</a><li><a href="https://certbot.eff.org/lets-encrypt/debianbuster-nginx">https://certbot.eff.org/lets-encrypt/debianbuster-nginx</a><li><a href="https://www.youtube.com/watch?v=Vrzug5IcuKg">https://www.youtube.com/watch?v=Vrzug5IcuKg</a><li><a href="https://www.digitalocean.com/community/tutorials/how-to-protect-an-nginx-server-with-fail2ban-on-ubuntu-14-04">https://www.digitalocean.com/community/tutorials/how-to-protect-an-nginx-server-with-fail2ban-on-ubuntu-14-04</a><li><a href="https://gist.github.com/dale3h/660fe549df8232d1902f338e6d3b39ed">https://gist.github.com/dale3h/660fe549df8232d1902f338e6d3b39ed</a><li><a href="https://docs.nginx.com/nginx/admin-guide/security-controls/configuring-http-basic-authentication/">https://docs.nginx.com/nginx/admin-guide/security-controls/configuring-http-basic-authentication/</a></ul></div></main><footer><p><a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode"id="copyright">© 2020 Sean Breckenridge. Licensed under Creative Commons Attribution-ShareAlike.</a><br><a href="https://github.com/seanbreckenridge/exobrain">Source Code</a></footer><script src="/assets/main.js"></script>

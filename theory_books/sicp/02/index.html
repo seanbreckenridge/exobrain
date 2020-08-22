@@ -1,84 +1,12 @@
-<!doctype html>
-<html lang="en">
-<head>
-            <title>exobrain | SICP 02 - Abstraction</title>
-        <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
-  <link rel="shortcut icon" href="/assets/img/logo.png" type="image/png">
-  <meta http-equiv="Pragma" content="no-cache"/>
-  <meta http-equiv="Expires" content="0"/>
-  <link rel="stylesheet" href="/assets/style.css">
-</head>
-<body>
-<header class=nav-bar>
-  <nav>
-          <a class="homelink" href="/">exobrain</a>
-        <div class="nav-right">
-      <div class=nav-item><a class="nav-link" href="/feed">blog feed</a></div>
-      <div class=nav-item><a class="nav-link" href="/sitemap">exobrain sitemap</a></div>
-      <div class=nav-item><a class="nav-link" href="https://sean.fish">back to my site</a></div>
-    </div>
-  </nav>
-</header>
-<main>
-<a id=top></a><div class=container>
-<div id="main-header">
-  <div class="h1" id="main-title">SICP 02 - Abstraction</div>
-  </div>
-<p>Read Section 1.3: Formulating Abstractions with Higher-Order Functions</p>
-<p>Encompasses Lecture 3 &amp; 4</p>
-<p>Lambdas exist in scheme (obviously):</p>
-<pre><code>(define (plus4 x) (+ x 4))
+<!doctype html><html lang="en"><title>exobrain | SICP 02 - Abstraction</title><meta charset="UTF-8"><meta name="viewport"content="width=device-width,initial-scale=1"><meta http-equiv="X-UA-Compatible"content="ie=edge"><meta http-equiv="Cache-Control"content="no-cache, no-store, must-revalidate"><link rel="shortcut icon"href="/assets/img/logo.png"type="image/png"><meta http-equiv="Pragma"content="no-cache"><meta http-equiv="Expires"content="0"><link rel="stylesheet"href="/assets/style.css"><header class="nav-bar"><nav><a class="homelink"href="/">exobrain</a><div class="nav-right"><div class="nav-item"><a class="nav-link"href="/feed">blog feed</a></div><div class="nav-item"><a class="nav-link"href="/sitemap">exobrain sitemap</a></div><div class="nav-item"><a class="nav-link"href="https://sean.fish">back to my site</a></div></div></nav></header><main><a id="top"></a><div class="container"><div id="main-header"><div class="h1"id="main-title">SICP 02 - Abstraction</div></div><p>Read Section 1.3: Formulating Abstractions with Higher-Order Functions<p>Encompasses Lecture 3 &amp; 4<p>Lambdas exist in scheme (obviously):<pre><code>(define (plus4 x) (+ x 4))
 ;; is the same as
-(define plus4 (lambda (x) (+ x 4)))</code></pre>
-<p><code>let</code> can be used to bind expressions to names in. Scoping rules apply, so you could create multiple scopes which use the same <code>name</code>. As usual, LEGB scope applies.</p>
-<p><code>let</code> simply replaces the values of the bindings into the body of the function (using applicative order), so bindings can’t refer to other bindings made in the let, since those names aren’t defined while the <code>let</code> is being evaluated. <code>let*</code> nests multiple <code>let</code> definitions to do that:</p>
-<pre><code>(let* ((a 3) (b (+ a 5)))
+(define plus4 (lambda (x) (+ x 4)))</code></pre><p><code>let</code> can be used to bind expressions to names in. Scoping rules apply, so you could create multiple scopes which use the same <code>name</code>. As usual, LEGB scope applies.<p><code>let</code> simply replaces the values of the bindings into the body of the function (using applicative order), so bindings can’t refer to other bindings made in the let, since those names aren’t defined while the <code>let</code> is being evaluated. <code>let*</code> nests multiple <code>let</code> definitions to do that:<pre><code>(let* ((a 3) (b (+ a 5)))
   (* a b))
 ;; becomes
 (let ((a 3))
   (let ((b (+a 5)))
-      (* a b)))</code></pre>
-<p>That way, <code>a</code> is defined in the body of <code>b</code>.</p>
-<p>Since you typically can’t refer to the names of procedures in the body in <code>let</code> statements, that makes recursive function definitions not possible. Theres another variant of <code>let</code> called <code>letrect</code>, which lets you do that.</p>
-<p>‘Higher Order’ means:</p>
-<ul>
-<li>Takes procedure as argument or</li>
-<li>Returns procedure as its value</li>
-</ul>
-<p>A data type is first class in a language if things of that type can be:</p>
-<ul>
-<li>the value of a variable</li>
-<li>the argument to a procedure</li>
-<li>can be the value returned by a procedure</li>
-<li>can be a member of an aggregate (e.g. array)</li>
-<li>(sometimes included in the definition) can be anonymous - not bound to a <code>name</code> (i.e. lambads)</li>
-</ul>
-<p>Widespread use of first class types:</p>
-<ul>
-<li>Basically every language supports numbers as first class.</li>
-<li>Character/Strings are sometimes first class (e.g. not in C).</li>
-<li>Data aggregates are rarely first class (you typically get a pointer to the data structure)</li>
-<li>Not many languages gives you functions as first class, though thats changing with newer languages.</li>
-</ul>
-<h3 id="procedures-as-returned-values">Procedures as Returned values:</h3>
-<div class="sourceCode" id="cb3"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a>(<span class="ex">define</span><span class="fu"> </span>(make-adder num)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a>    (<span class="kw">lambda</span> (x) (<span class="op">+</span> x num)))</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a>make-adder</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true"></a><span class="op">&gt;</span> ((make-adder <span class="dv">10</span>) <span class="dv">5</span>)</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true"></a><span class="dv">15</span></span></code></pre></div>
-<p>Can also define those to <code>name</code>s, like:</p>
-<pre><code>(define plus7 (make-adder 7))</code></pre>
-<p>For a compiler, its relatively easy to allow a function as an argument, but more complicated to allow a function as a return argument. e.g. Pascal allows them as arguments but not return values.</p>
-</div>
-</main>
-<footer>
-  <p><a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" id=copyright>© 2020 Sean Breckenridge. Licensed under Creative Commons Attribution-ShareAlike.</a>
-    <br /><a href="https://github.com/seanbreckenridge/exobrain">Source Code</a>
-  </p>
-</footer>
-<script src="/assets/main.js"></script>
-</body>
-</html>
+      (* a b)))</code></pre><p>That way, <code>a</code> is defined in the body of <code>b</code>.<p>Since you typically can’t refer to the names of procedures in the body in <code>let</code> statements, that makes recursive function definitions not possible. Theres another variant of <code>let</code> called <code>letrect</code>, which lets you do that.<p>‘Higher Order’ means:<ul><li>Takes procedure as argument or<li>Returns procedure as its value</ul><p>A data type is first class in a language if things of that type can be:<ul><li>the value of a variable<li>the argument to a procedure<li>can be the value returned by a procedure<li>can be a member of an aggregate (e.g. array)<li>(sometimes included in the definition) can be anonymous - not bound to a <code>name</code> (i.e. lambads)</ul><p>Widespread use of first class types:<ul><li>Basically every language supports numbers as first class.<li>Character/Strings are sometimes first class (e.g. not in C).<li>Data aggregates are rarely first class (you typically get a pointer to the data structure)<li>Not many languages gives you functions as first class, though thats changing with newer languages.</ul><h3 id="procedures-as-returned-values">Procedures as Returned values:</h3><div class="sourceCode"id="cb3"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb3-1"><a href="#cb3-1"aria-hidden="true"></a>(<span class="ex">define</span><span class="fu"> </span>(make-adder num)</span>
+<span id="cb3-2"><a href="#cb3-2"aria-hidden="true"></a>    (<span class="kw">lambda</span> (x) (<span class="op">+</span> x num)))</span>
+<span id="cb3-3"><a href="#cb3-3"aria-hidden="true"></a>make-adder</span>
+<span id="cb3-4"><a href="#cb3-4"aria-hidden="true"></a><span class="op">&gt;</span> ((make-adder <span class="dv">10</span>) <span class="dv">5</span>)</span>
+<span id="cb3-5"><a href="#cb3-5"aria-hidden="true"></a><span class="dv">15</span></span></code></pre></div><p>Can also define those to <code>name</code>s, like:<pre><code>(define plus7 (make-adder 7))</code></pre><p>For a compiler, its relatively easy to allow a function as an argument, but more complicated to allow a function as a return argument. e.g. Pascal allows them as arguments but not return values.</div></main><footer><p><a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode"id="copyright">© 2020 Sean Breckenridge. Licensed under Creative Commons Attribution-ShareAlike.</a><br><a href="https://github.com/seanbreckenridge/exobrain">Source Code</a></footer><script src="/assets/main.js"></script>
