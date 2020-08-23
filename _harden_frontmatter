@@ -13,11 +13,12 @@ import functools
 try:
     import click
     import panflute
-except:
+except ImportError as e:
     print(
         "External Dependencies not satisfied. Install with:\npip3 install --user panflute click",
         file=sys.stderr,
     )
+    raise e
 
 title_ignored_paths = set(["feed", "sitemap"])
 
