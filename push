@@ -7,8 +7,10 @@ cd "$(dirname "${BASH_SOURCE[0]}")" || exit
 commit() {
   if [[ -n "$1" ]]; then
     git commit -m "$*"
+    return $?
   else
-    git commit  # prompt for editor
+    git commit # prompt for editor
+    return $?
   fi
 }
 
