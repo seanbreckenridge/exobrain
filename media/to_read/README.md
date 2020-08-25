@@ -9,6 +9,7 @@ Blog: false
 * <http://www.melconway.com/Home/pdf/committees.pdf>
 * <https://www.lesswrong.com/posts/TxcRbCYHaeL59aY7E/meditations-on-moloch>
 * <https://yudkowsky.net/obsolete/singularity.html>
+* go tutorial <https://github.com/betty200744/ultimate-go>
 
 ### Books
 
