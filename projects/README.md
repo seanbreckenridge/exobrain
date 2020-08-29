@@ -17,11 +17,17 @@ external brain -- uses [`pandoc`](https://pandoc.org/) to generate my blog/brain
 
 bash loop to run tasks in the background. I use this instead of anacron/cron. uses a lockfile to make sure duplicate processes aren't running, and [`evry`](https://github.com/seanbreckenridge/evry) to schedule tasks periodically.
 
-### subpath-serve
+### ffexport
 
-[GitHub](https://github.com/seanbreckenridge/subpath-serve) | [GitLab](https://gitlab.com/seanbreckenridge/subpath-serve) | Go
+[GitHub](https://github.com/seanbreckenridge/ffexport) | [GitLab](https://gitlab.com/seanbreckenridge/ffexport) | [PyPi](https://pypi.org/project/ffexport/) | Python
 
-Serves text files from a directory by matching subpaths. I use this to serve my dotfiles [here](https://sean.fish/d/?dark). It also allows me to quickly send someone one of my scripts/configuration files from my dotfiles using [this script](https://sean.fish/d/give)
+export and interface with firefox history/visits and site metadata. Ensures I don't ever lose any of my browsing history, and lets me do larger analysis on my behaviours, though [`HPI`](https://github.com/seanbreckenridge/HPI).
+
+### HPI
+
+[GitHub](https://github.com/seanbreckenridge/HPI) | Python
+
+Human Programming Interface. A way to unify, access and interact with all my personal data.
 
 ### no-db-static-shorturl
 
@@ -41,17 +47,17 @@ Interactive terminal playlist manager, storing contents in readable text files. 
 
 script to periodically back up my machine to my raspberry pi. Is pretty minimal, just uses headless raspbian with an external 4TB that gets mounted on boot.
 
-### tts
-
-[GitHub](https://github.com/seanbreckenridge/tts) | [GitLab](https://gitlab.com/seanbreckenridge/tts) | Shell
-
-CLI tool to convert text to speech using the StreamLabs API
-
 ### mpvf
 
 [GitHub](https://github.com/seanbreckenridge/mpvf) | [GitLab](https://gitlab.com/seanbreckenridge/mpvf) | Shell
 
 Interface to select `youtube-dl` format for streaming videos with `mpv`
+
+### subpath-serve
+
+[GitHub](https://github.com/seanbreckenridge/subpath-serve) | [GitLab](https://gitlab.com/seanbreckenridge/subpath-serve) | Go
+
+Serves text files from a directory by matching subpaths. I use this to serve my dotfiles [here](https://sean.fish/d/?dark). It also allows me to quickly send someone one of my scripts/configuration files from my dotfiles using [this script](https://sean.fish/d/give)
 
 ### xkcd-favorites
 
@@ -96,6 +102,12 @@ Used to glue all of my web applications together. This is the code for my homepa
 [GitHub](https://github.com/seanbreckenridge/pmark) | [GitLab](https://gitlab.com/seanbreckenridge/pmark) | Perl
 
 A hacky, markdown pre-processor. Uses code blocks to generate markdown, from within the markdown itself.
+
+### tts
+
+[GitHub](https://github.com/seanbreckenridge/tts) | [GitLab](https://gitlab.com/seanbreckenridge/tts) | Shell
+
+CLI tool to convert text to speech using the StreamLabs API
 
 ### mal-id-cache
 
