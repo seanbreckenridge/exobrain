@@ -23,6 +23,12 @@ bash loop to run tasks in the background. I use this instead of anacron/cron. us
 
 export and interface with firefox history/visits and site metadata. Ensures I don't ever lose any of my browsing history, and lets me do larger analysis on my behaviours, though [`HPI`](https://github.com/seanbreckenridge/HPI).
 
+### autotui
+
+[GitHub](https://github.com/seanbreckenridge/autotui) | [GitLab](https://gitlab.com/seanbreckenridge/autotui) | [PyPi](https://pypi.org/project/autotui/) Python
+
+helpers to create prompt, validate, and persist python objects to and from disk using type hints
+
 ### HPI
 
 [GitHub](https://github.com/seanbreckenridge/HPI) | Python
@@ -334,5 +340,6 @@ cookiecutter template for new python projects, using `pipenv`, `pytest`, and `tr
 [GitHub](https://github.com/seanbreckenridge/vimbuffer) | [GitLab](https://gitlab.com/seanbreckenridge/vimbuffer) | [PyPi](https://pypi.org/project/vimbuffer/) | Python
 
 Lets me edit files and strings in temporary vim (or some other console editor) buffers. I've mostly replaced this with my heavy use of a customized [ranger](https://github.com/ranger/ranger)
+
 
 
