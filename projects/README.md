@@ -11,12 +11,6 @@ This is kept up to date by some code [here](https://github.com/seanbreckenridge/
 
 external brain -- uses [`pandoc`](https://pandoc.org/) to generate my blog/brain dump. See [here](https://exobrain.sean.fish/) for more info.
 
-### bgproc
-
-[GitHub](https://github.com/seanbreckenridge/bgproc) | [GitLab](https://gitlab.com/seanbreckenridge/bgproc) | Shell
-
-bash loop to run tasks in the background. I use this instead of anacron/cron. uses a lockfile to make sure duplicate processes aren't running, and [`evry`](https://github.com/seanbreckenridge/evry) to schedule tasks periodically.
-
 ### ffexport
 
 [GitHub](https://github.com/seanbreckenridge/ffexport) | [GitLab](https://gitlab.com/seanbreckenridge/ffexport) | [PyPi](https://pypi.org/project/ffexport/) | Python
@@ -25,7 +19,7 @@ export and interface with firefox history/visits and site metadata. Ensures I do
 
 ### autotui
 
-[GitHub](https://github.com/seanbreckenridge/autotui) | [GitLab](https://gitlab.com/seanbreckenridge/autotui) | [PyPi](https://pypi.org/project/autotui/) Python
+[GitHub](https://github.com/seanbreckenridge/autotui) | [GitLab](https://gitlab.com/seanbreckenridge/autotui) | [PyPi](https://pypi.org/project/autotui/) | Python
 
 helpers to create prompt, validate, and persist python objects to and from disk using type hints
 
@@ -46,6 +40,12 @@ File based single-binary URL shortener server. Has no dependencies; doesn't requ
 [GitHub](https://github.com/seanbreckenridge/plaintext-playlist) | [GitLab](https://gitlab.com/seanbreckenridge/plaintext-playlist) | Bash
 
 Interactive terminal playlist manager, storing contents in readable text files. Was my first attempt at creating a relatively large bash application. Seems that most people tend to use spotify/apple music nowadays, but I still like having music locally. This lets me manage playlists locally without having to use one of the bulky GUI applications.
+
+### bgproc
+
+[GitHub](https://github.com/seanbreckenridge/bgproc) | [GitLab](https://gitlab.com/seanbreckenridge/bgproc) | Shell
+
+bash loop to run tasks in the background. I use this instead of anacron/cron. uses a lockfile to make sure duplicate processes aren't running, and [`evry`](https://github.com/seanbreckenridge/evry) to schedule tasks periodically.
 
 ### raspi-backup
 
