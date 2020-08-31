@@ -21,7 +21,7 @@ export and interface with firefox history/visits and site metadata. Ensures I do
 
 [GitHub](https://github.com/seanbreckenridge/autotui) | [GitLab](https://gitlab.com/seanbreckenridge/autotui) | [PyPi](https://pypi.org/project/autotui/) | Python
 
-helpers to create prompt, validate, and persist python objects to and from disk using type hints
+helpers to prompt, validate, and persist python objects to and from disk using type hints
 
 ### HPI
 
