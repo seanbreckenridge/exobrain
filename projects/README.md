@@ -81,9 +81,9 @@ Works on both Mac/Linux(Arch)
 
 ### mpv-sockets
 
-[GitHub](https://github.com/seanbreckenridge/mpv-sockets) | [GitLab](https://gitlab.com/seanbreckenridge/mpv-sockets) | Shell
+[GitHub](https://github.com/seanbreckenridge/mpv-sockets) | [GitLab](https://gitlab.com/seanbreckenridge/mpv-sockets) | Shell/Python
 
-A collection of scripts to allow flexible and easier interaction with mpv sockets
+A collection of scripts to allow flexible and easier interaction with mpv sockets. Also contains a daemon, which connects to any active mpv instances, collecting metadata so I have a history of what movies/music I'm watching.
 
 ### mal-unapproved
 
