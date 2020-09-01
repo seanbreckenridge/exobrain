@@ -335,6 +335,12 @@ When it was still allowed, automated the process of creating an free trial accou
 
 cookiecutter template for new python projects, using `pipenv`, `pytest`, and `travis`
 
+### cookiecutter-lib
+
+[GitHub](https://github.com/seanbreckenridge/cookiecutter-lib) | [GitLab](https://gitlab.com/seanbreckenridge/cookiecutter-lib) | Python
+
+Cookiecutter template for a basic python library. Is meant for packages I don't intend to push to pypi, includes seutptools to install some python code I want to have globally installed, and basic installation method to install from my github.
+
 ### vimbuffer
 
 [GitHub](https://github.com/seanbreckenridge/vimbuffer) | [GitLab](https://gitlab.com/seanbreckenridge/vimbuffer) | [PyPi](https://pypi.org/project/vimbuffer/) | Python
