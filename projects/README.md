@@ -121,6 +121,12 @@ CLI tool to convert text to speech using the StreamLabs API
 
 An cache of MAL IDs updated whenever something is added to the database. See [here](https://github.com/seanbreckenridge/mal-id-cache#raison-d%C3%AAtre) for more info.
 
+### lolexport
+
+[GitHub](https://github.com/seanbreckenridge/lolexport) | [GitLab](https://gitlab.com/seanbreckenridge/lolexport) | Python
+
+Exports League of Legends Match History metadata using the RiotGames API. I don't play league of legends that often anymore, this is to export my entire match history so I can do some analysis as part of [`HPI`](https://github.com/seanbreckenridge/HPI).
+
 ### greasyfork_archive
 
 [GitHub](https://github.com/seanbreckenridge/greasyfork_archive) | [GitLab](https://gitlab.com/seanbreckenridge/greasyfork_archive) | [PyPi](https://pypi.org/project/greasyfork_archive/) | Python
