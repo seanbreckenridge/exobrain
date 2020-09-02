@@ -5,6 +5,7 @@ Blog: false
 More 'complete' blog-like posts at [feed](/feed).
 
 * / [Cubing](/cubing/)
+* / [Email Protocols](/email/)
 * / [FizzBuzz](/fizzbuzz/)
 * / [Game Dev Notes](/gamedev/)
 * / [Internet Superhighway](/superhighway/)
