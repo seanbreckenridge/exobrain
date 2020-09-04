@@ -97,6 +97,12 @@ website that displays unapproved MAL (MyAnimeList) entries. MAL doesn't provide 
 
 Discord bot to use for countdowns. I use this as an alternative to [`syncplay`](https://syncplay.pl/) -- to make sure everyone in a discord channel are all hitting play at the same time when watching movies/TV shows together.
 
+### pushshift_comment_export
+
+[GitHub](https://github.com/seanbreckenridge/pushshift_comment_export) | [GitLab](https://gitlab.com/seanbreckenridge/pushshift_comment_export) | Python
+
+Exports all accessible reddit comments for an account using pushshift.
+
 ### glue
 
 [GitHub](https://github.com/seanbreckenridge/glue) | [GitLab](https://gitlab.com/seanbreckenridge/glue) | Elixir
@@ -190,6 +196,24 @@ programs I wrote on my ti-nspire cx back in the day
 [GitHub](https://github.com/seanbreckenridge/animeshorts) | [GitLab](https://gitlab.com/seanbreckenridge/animeshorts) | Python
 
 Code for generating and maintaining my (static) site for anime short films/series. Generates the html with the generic [`yattag`](https://www.yattag.org/) package, doesn't use a full SSG framework.
+
+### steamscraper
+
+[GitHub](https://github.com/seanbreckenridge/steamscraper) | [GitLab](https://gitlab.com/seanbreckenridge/steamscraper) | Python
+
+Scrapes personal game/achievement data from steams website.
+
+### blizzard_gdpr_parser
+
+[GitHub](https://github.com/seanbreckenridge/blizzard_gdpr_parser) | [GitLab](https://gitlab.com/seanbreckenridge/blizzard_gdpr_parser) | Python
+
+Parses date-related information from my blizzard GDPR export.
+
+### forum_parser
+
+[GitHub](https://github.com/seanbreckenridge/forum_parser) | [GitLab](https://gitlab.com/seanbreckenridge/forum_parser) | Python
+
+Parses post/metadata from random forums I used in the past
 
 ### bootstrap
 
