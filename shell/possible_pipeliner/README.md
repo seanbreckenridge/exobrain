@@ -1,5 +1,5 @@
 ---
-Title: Possibily Pipelining
+Title: Possibility Pipelining
 Blog: false
 ---
 

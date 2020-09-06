@@ -32,7 +32,7 @@ int x
 
 Type tagging worsens runtime since for each operation, the interpreter has to find out what types its looking at and do some comparisons, while the compiler takes care of that at compile time for a compiled language.
 
-In your functions, you can then do a `cond` against the first element in the list, and `dispatching on the type`. This may improve readability/debugging. However, this also requires that everyone working on a system tag their data, and tags/function names for different types can't conflict. Book calls this `convential` style, grouping verbs (e.g. `area` for `n-gons`) and `cond`ing against the data type.
+In your functions, you can then do a `cond` against the first element in the list, and `dispatching on the type`. This may improve readability/debugging. However, this also requires that everyone working on a system tag their data, and tags/function names for different types can't conflict. Book calls this `conventional` style, grouping verbs (e.g. `area` for `n-gons`) and `cond`ing against the data type.
 
 However, `Implementing generic interfaces is not additive`. A person creating the selectors/generic procedures can't know what type of ADT will be passed into it/how to deal with it, so it couldn't dispatch. To modularize this further to allow that, we use:
 

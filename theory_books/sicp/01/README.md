@@ -94,7 +94,7 @@ Scheme treats un-quoted newlines as any other separator. Therefore expressions a
 
 #### Procedures
 
-Loosely, Procedure Definition == Compound Procedure == Function == Method. This doesn't apply when we're concerning ourself with Execution Order, but when talking about the programming itself, these are sometimes used interchangably. When it matters, the right one is used.
+Loosely, Procedure Definition == Compound Procedure == Function == Method. This doesn't apply when we're concerning ourself with Execution Order, but when talking about the programming itself, these are sometimes used interchangeably. When it matters, the right one is used.
 
 Procedures get called from left to right, inside out, with few exceptions. One of the exceptions is `define`; at the time the statement is run, the name (e.g. `pi`/`square`) don't exist. Define is a keyword for a "special form".
 

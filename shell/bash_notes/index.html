@@ -1,6 +1,6 @@
 <!doctype html><html lang="en"><title>exobrain | Bash Notes</title><meta charset="UTF-8"><meta name="viewport"content="width=device-width,initial-scale=1"><meta http-equiv="X-UA-Compatible"content="ie=edge"><meta http-equiv="Cache-Control"content="no-cache, no-store, must-revalidate"><link rel="shortcut icon"href="/assets/img/logo.png"type="image/png"><meta http-equiv="Pragma"content="no-cache"><meta http-equiv="Expires"content="0"><link rel="stylesheet"href="/assets/style.css"><header class="nav-bar"><nav><a class="homelink"href="/">exobrain</a><div class="nav-right"><div class="nav-item"><a class="nav-link"href="/feed">blog feed</a></div><div class="nav-item"><a class="nav-link"href="/sitemap">exobrain sitemap</a></div><div class="nav-item"><a class="nav-link"href="https://sean.fish">back to my site</a></div></div></nav></header><main><a id="top"></a><div class="container"><div id="main-header"><div class="h1"id="main-title">Bash Notes</div></div><p>Use bash substitutions when possible instead of <code>sed</code>/<code>awk</code>.<h4 id="auto-expanding-variable-contents">Auto expanding variable contents:</h4><pre><code># special syntax to expand \n to actual newline in string
 name=$&#39;Sean\nBreckenridge&#39;
-echo &quot;$name&quot; # recieves one argument
+echo &quot;$name&quot; # receives one argument
 
 # weird printf trickery
 printf &quot;%s&quot; $name # auto expands to two arguments, only prints &#39;Sean&#39;

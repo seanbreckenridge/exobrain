@@ -31,7 +31,7 @@ Unfortunately, databases by the nature catalogue a specific thing, and there wil
 * Downtime
 * If no API, no way to query your list. However, your own local list/spreadsheet means without a bunch of work, no access to metadata to filter your personal list
 * Using a website in general:
-  * Not owning your information (especially since this is a personal list, and not being able to export it easily means if the site dissapears, your list/community disappears)
+  * Not owning your information (especially since this is a personal list, and not being able to export it easily means if the site disappears, your list/community disappears)
   * Being advertised to
   * Being the product
 

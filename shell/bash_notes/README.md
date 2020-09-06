@@ -10,7 +10,7 @@ Use bash substitutions when possible instead of `sed`/`awk`.
 ```
 # special syntax to expand \n to actual newline in string
 name=$'Sean\nBreckenridge'
-echo "$name" # recieves one argument
+echo "$name" # receives one argument
 
 # weird printf trickery
 printf "%s" $name # auto expands to two arguments, only prints 'Sean'
