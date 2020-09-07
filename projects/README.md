@@ -79,6 +79,12 @@ My dotfiles; using [`yadm`](https://yadm.io/). Includes lots of my scripts, and 
 
 Works on both Mac/Linux(Arch)
 
+### ipgeocache
+
+[GitHub](https://github.com/seanbreckenridge/ipgeocache) | [GitLab](https://gitlab.com/seanbreckenridge/ipgeocache) | Python
+
+A small cache layer for IP geolocation info
+
 ### mpv-sockets
 
 [GitHub](https://github.com/seanbreckenridge/mpv-sockets) | [GitLab](https://gitlab.com/seanbreckenridge/mpv-sockets) | Shell/Python
@@ -376,6 +382,13 @@ Cookiecutter template for a basic python library. Is meant for packages I don't 
 [GitHub](https://github.com/seanbreckenridge/vimbuffer) | [GitLab](https://gitlab.com/seanbreckenridge/vimbuffer) | [PyPi](https://pypi.org/project/vimbuffer/) | Python
 
 Lets me edit files and strings in temporary vim (or some other console editor) buffers. I've mostly replaced this with my heavy use of a customized [ranger](https://github.com/ranger/ranger)
+
+
+### HPI-1
+
+[GitHub](https://github.com/seanbreckenridge/HPI-1) | [GitLab](https://gitlab.com/seanbreckenridge/HPI-1) | None
+
+(This repo is an actual fork. My HPI repo has diverged so much that I doubt I could contribute changes back, so plan is to patch items back into this fork and contribute back)
 
 
 
