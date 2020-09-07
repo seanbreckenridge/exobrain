@@ -97,6 +97,12 @@ A small cache layer for IP geolocation info
 
 A collection of scripts to allow flexible and easier interaction with mpv sockets. Also contains a daemon, which connects to any active mpv instances, collecting metadata so I have a history of what movies/music I'm watching.
 
+### ttt
+
+[GitHub](https://github.com/seanbreckenridge/ttt) | [GitLab](https://gitlab.com/seanbreckenridge/ttt) | Go
+
+Logs metadata for shell commands; an extension to my shell history.
+
 ### mal-unapproved
 
 [GitHub](https://github.com/seanbreckenridge/mal-unapproved) | [GitLab](https://gitlab.com/seanbreckenridge/mal-unapproved) | Ruby
