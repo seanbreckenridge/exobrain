@@ -237,7 +237,7 @@ A CLI for `pyTwistyScrambler`, to generate random states for twisty puzzles.
 
 [GitHub](https://github.com/seanbreckenridge/evry) | [GitLab](https://gitlab.com/seanbreckenridge/evry) | Rust
 
-A tool to manually run commands -- periodically. Uses shell exit codes to determine control flow in shell scripts.
+A shell-script-centric task scheduler; uses exit codes to determine control flow.
 
 ### docker-jikan
 
