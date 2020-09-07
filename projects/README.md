@@ -71,6 +71,12 @@ Serves text files from a directory by matching subpaths. I use this to serve my 
 
 A list of my favorite [xkcd](https://xkcd.com/)'s. Was initially rendered client-side with some JS, but I now use a [bash script](https://github.com/seanbreckenridge/xkcd-favorites/blob/master/ssg) to convert it to a static site. Hosted [here](https://sean.fish/xkcd/)
 
+### evry
+
+[GitHub](https://github.com/seanbreckenridge/evry) | [GitLab](https://gitlab.com/seanbreckenridge/evry) | [crates.io](https://crates.io/crates/evry) | Rust
+
+A shell-script-centric task scheduler; uses exit codes to determine control flow.
+
 ### dotfiles
 
 [GitHub](https://github.com/seanbreckenridge/dotfiles) | [GitLab](https://gitlab.com/seanbreckenridge/dotfiles) | Shell
@@ -232,12 +238,6 @@ A script to setup a new bash VPS/servers with defaults I like. This is one of th
 [GitHub](https://github.com/seanbreckenridge/cube-scramble-cli) | [GitLab](https://gitlab.com/seanbreckenridge/cube-scramble-cli) | [PyPi](https://pypi.org/project/cube-scramble-cli/) | Python
 
 A CLI for `pyTwistyScrambler`, to generate random states for twisty puzzles.
-
-### evry
-
-[GitHub](https://github.com/seanbreckenridge/evry) | [GitLab](https://gitlab.com/seanbreckenridge/evry) | Rust
-
-A shell-script-centric task scheduler; uses exit codes to determine control flow.
 
 ### docker-jikan
 
