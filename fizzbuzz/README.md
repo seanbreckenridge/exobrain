@@ -27,7 +27,7 @@ if (n % 15 == 0)
 else if (n % 3) == 0)
   return "Fizz";
 else if (n % 5 == 0)
-  return Fizz;
+  return "Buzz";
 else
   return to_string(n);
 ```
