@@ -14,7 +14,11 @@ These are other sites/blogs/things I'm a fan of. Inspired by [superhighway98](ht
 
 ## Tools
 
-* [HaveIBeenPwned](https://haveibeenpwned.com/) - also see [my tool](https://github.com/seanbreckenridge/keepassxc-pwned) for keepassxc.
+* [HaveIBeenPwned](https://haveibeenpwned.com/)
+
+## Podcasts
+
+* [Coder Radio](https://coder.show/)
 
 ## Media/Entertainment
 
