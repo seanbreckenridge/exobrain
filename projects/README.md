@@ -97,6 +97,12 @@ A small cache layer for IP geolocation info
 
 A collection of scripts to allow flexible and easier interaction with mpv sockets. Also contains a daemon, which connects to any active mpv instances, collecting metadata so I have a history of what movies/music I'm watching.
 
+### window_watcher
+
+[GitHub](https://github.com/seanbreckenridge/aw-watcher-window) | [GitLab](https://gitlab.com/seanbreckenridge/aw-watcher-window) | Python
+
+Cross-platform window watcher. This is a daemon that sits in the background, and lots what window I'm currently using, and for how long. Forked from ActivityWatch to log to a file instead
+
 ### ttt
 
 [GitHub](https://github.com/seanbreckenridge/ttt) | [GitLab](https://gitlab.com/seanbreckenridge/ttt) | Go
@@ -388,13 +394,5 @@ Cookiecutter template for a basic python library. Is meant for packages I don't 
 [GitHub](https://github.com/seanbreckenridge/vimbuffer) | [GitLab](https://gitlab.com/seanbreckenridge/vimbuffer) | [PyPi](https://pypi.org/project/vimbuffer/) | Python
 
 Lets me edit files and strings in temporary vim (or some other console editor) buffers. I've mostly replaced this with my heavy use of a customized [ranger](https://github.com/ranger/ranger)
-
-
-### HPI-1
-
-[GitHub](https://github.com/seanbreckenridge/HPI-1) | [GitLab](https://gitlab.com/seanbreckenridge/HPI-1) | None
-
-(This repo is an actual fork. My HPI repo has diverged so much that I doubt I could contribute changes back, so plan is to patch items back into this fork and contribute back)
-
 
 
