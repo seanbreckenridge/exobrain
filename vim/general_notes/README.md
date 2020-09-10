@@ -34,3 +34,6 @@ Scrolling relative to cursor:
 * `zt` move current line to top of screen
 * `zb` move current line to bottom of the screen
 
+### Integer increment/decrement
+
+Ctrl+A and Ctrl+X increment/decrement integers, very useful for automating things with macros.
