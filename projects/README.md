@@ -97,7 +97,7 @@ A small cache layer for IP geolocation info
 
 A collection of scripts to allow flexible and easier interaction with mpv sockets. Also contains a daemon, which connects to any active mpv instances, collecting metadata so I have a history of what movies/music I'm watching.
 
-### window_watcher
+### aw-watcher-window
 
 [GitHub](https://github.com/seanbreckenridge/aw-watcher-window) | Python
 
@@ -108,6 +108,12 @@ Cross-platform window watcher. This is a daemon that sits in the background, and
 [GitHub](https://github.com/seanbreckenridge/ttt) | [GitLab](https://gitlab.com/seanbreckenridge/ttt) | Go
 
 Logs metadata for shell commands; an extension to my shell history.
+
+### mint
+
+[GitHub](https://github.com/seanbreckenridge/mint) | [GitLab](https://gitlab.com/seanbreckenridge/mint) | Python/Shell
+
+Wrapper script/code to interact with mintable; to keep track of my accounts/transactions and create a personal budget.
 
 ### mal-unapproved
 
@@ -156,6 +162,13 @@ An cache of MAL IDs updated whenever something is added to the database. See [he
 [GitHub](https://github.com/seanbreckenridge/lolexport) | [GitLab](https://gitlab.com/seanbreckenridge/lolexport) | Python
 
 Exports League of Legends Match History metadata using the RiotGames API. I don't play league of legends that often anymore, this is to export my entire match history so I can do some analysis as part of [`HPI`](https://github.com/seanbreckenridge/HPI).
+
+
+### calcurse-load
+
+[GitHub](https://github.com/seanbreckenridge/calcurse-load) | [GitLab](https://gitlab.com/seanbreckenridge/calcurse-load) | Python
+
+Personal hooks/scripts for calcurse. Sources events for calcurse from Google Calendar and todo.txt
 
 ### greasyfork_archive
 
