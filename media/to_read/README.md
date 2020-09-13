@@ -25,3 +25,4 @@ Blog: false
 * Infinite Jest
 * <https://www.amazon.com/Software-Requirements-Specifications-Principles-Prejudices/dp/0201877120>
 * category theory for programmers
+* Good Enough software by Ed Yourdon
