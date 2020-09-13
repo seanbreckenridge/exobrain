@@ -27,3 +27,54 @@ Blog: false
 * final fantasy 14 - <https://www.youtube.com/watch?v=P-6XLTnqcBY>
 * Haru Nemuri
 * sugiyama kiyotaka
+
+----
+
+Other stuff to try/rip locally:
+
+- Barbra Streisand
+- Bee Gees
+- Buddy Holly & The Picks
+- Punk
+- Caesar
+- Darren Korb
+- Dr Dre
+- Driftless Pony Club
+- FINNEAS
+- Flight Facilities
+- Frank Ocean
+- Franz Ferdinand
+- Freddie Gibbs
+- George The Poet & Maverick Sabre
+- Hanson
+- Jackie Wilson
+- Jakubi
+- Mayer
+- West
+- Kevin McHale
+- King Crimson
+- Lewberger
+- Linkin Park
+- Loyle Carner
+- Ludwig GÃ¶ransson
+- Mariya Takeuchi
+- Marvin Gaye
+- Mike Posner
+- Nate Smith
+- Nirvana
+- Paramore
+- Portugal. The Man
+- Procol Harum
+- Ray Charles
+- Red Hot Chili Peppers
+- Refused
+- Rich Brian
+- Stewart
+- Ruel
+- Savior
+- Seatbelts
+- Simply Red
+- The Temper Trap
+- Vanessa Williams
+- Wallows
+- Yes
