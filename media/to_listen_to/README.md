@@ -78,3 +78,26 @@ Other stuff to try/rip locally:
 - Vanessa Williams
 - Wallows
 - Yes
+- Ellie Goulding
+- Rihanna
+- Twenty One Pilots
+- Akon
+- Post Malone
+- fun.
+- Coldplay
+- Snoop Dogg
+- Usher
+- Avicii
+- Nelly Furtado
+- Train
+- Taio Cruz
+- Beyonce
+- Ciara
+- Alicia Keys
+- 50 Cent
+- Taylor Swift
+- The Weeknd
+- Sunflower (Post Malone Swae Lee)
+- Flo Rida
+- Android52
+- Machine Girl - WLFGRL
