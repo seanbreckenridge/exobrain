@@ -14,6 +14,7 @@ Most of these are command line based. On a regular day, the only GUI tools I use
   - bash/[dash](https://wiki.archlinux.org/index.php/Dash) - for shell scripting. My `zsh` setup is also much more dependent on external plugins, so I don't use that on servers, I just stick to bash there. My [bootstrap](https://github.com/seanbreckenridge/bootstrap/) script sets up new bash servers for me nicely, see [this post](/post/server_setup) for more info.
 - Terminal
   - [alacritty](https://github.com/alacritty/alacritty), with pretty basic defaults
+  - I also use [tmux](https://github.com/tmux/tmux) to handle terminal sessions, use [tmuxp](https://github.com/tmux-python/tmuxp/) to handle [common background tasks](https://sean.fish/d/config.yaml?dark)
 - OS-stuff
   - Linux Distribution (though I'm forced to use Mac for work sometimes)
     - [Arch](https://wiki.archlinux.org/index.php/)
