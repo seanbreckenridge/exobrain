@@ -5,7 +5,7 @@ Blog: false
 
 This is an extension of my [dotfiles](https://github.com/seanbreckenridge/dotfiles)
 
-This is an ever evolving list of tools and scripts I use and recommend, or combinations of tools I use to optimize my workflow. Some of these might be obvious to you, but it might not be to everyone!
+This is an ever evolving list of tools and scripts I use and recommend, or combinations of tools I use to optimize my workflow.
 
 Most of these are command line based. On a regular day, the only GUI tools I use are my browser and my email client.
 
@@ -36,7 +36,7 @@ Most of these are command line based. On a regular day, the only GUI tools I use
 - For basic image cropping, I use [`pinta`](https://www.pinta-project.com/). For general image manipulation tasks I create lots of small [`imagemagick`](https://imagemagick.org/index.php) scripts to do random resizes/converts. I have a larger script to [convert videos to gifs](https://sean.fish/d/gifme?dark), and use [gifsicle](https://github.com/kohler/gifsicle) for manipulating gifs.
 - Lots of small [ffmpeg](https://ffmpeg.org/) scripts to convert between video formats. For trimming video, I've pretty much got the basics of the ffmpeg command down, so I use that directly.
 - For previewing markdown/latex while I'm editing it, I have my own [compile](https://sean.fish/d/compile?dark) and [live-render](https://sean.fish/d/live-render?dark) scripts
-- Use the `dict://` protocol with `curl` at `dict.org` as a dictionary with [this](https://sean.fish/d/dict?dark)
+- Use the `dict://` protocol with `curl` at `dict.org` as a dictionary with [this](https://sean.fish/d/dict?dark). [moby](https://github.com/words/moby) as a thesaurus.
 - On top of all the [git aliases](https://sean.fish/d/git_aliases?dark), one of my scripts I use most commonly are my [giturl](https://sean.fish/d/giturl?dark)/[gitopen](https://sean.fish/d/gitopen?dark) scripts, which will open the current git directory I'm in in my browser.
 - [`ix`](https://sean.fish/d/ix?dark) to create pastebin links from the command line
 - [`qr`](https://sean.fish/d/qr?dark), to create QR images from command line
