@@ -14,6 +14,7 @@ More 'complete' blog-like posts at [feed](/feed).
 * / [Online Databases](/online_databases/)
 * / [Programming Projects](/projects/)
 * / [Raspberry Pi Notes](/raspi/)
+* / [Tmux Notes](/tmux/)
 * / [Tools, or how I do everything](/tools/)
 * / [Words](/words/)
 * anime/ [Searching on pixiv](/anime/pixiv/)
