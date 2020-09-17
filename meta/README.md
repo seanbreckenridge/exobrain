@@ -25,7 +25,5 @@ A *lot* of this was taken from [rwx.gg](https://rwx.gg/), I've modified some of 
 
 ### TODO
 
-* Find TODOs across my readme and generate a [todo.txt](http://todotxt.org/)
 * Possibly, some sorta NTLK term connection thing? Create inverted indexes for each post, filter down to terms. Find where I mention one of those terms in another document, suggest me with an interative interface to add that link to the post page, write to that file.
-
 

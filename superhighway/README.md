@@ -12,6 +12,8 @@ These are other sites/blogs/things I'm a fan of. Inspired by [superhighway98](ht
 
 ## Websites
 
+* [learn-anything.xyz](https://learn-anything.xyz/)
+
 ## Tools
 
 * [HaveIBeenPwned](https://haveibeenpwned.com/)
@@ -24,4 +26,3 @@ These are other sites/blogs/things I'm a fan of. Inspired by [superhighway98](ht
 
 * [comic sans criminal](https://www.comicsanscriminal.com/)
 * [xkcd](https://xkcd.com/)
-* <http://programming-motherfucker.com/>
