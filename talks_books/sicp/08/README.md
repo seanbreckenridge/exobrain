@@ -101,7 +101,7 @@ Very simply:
 * Substitution Model: `(eval expr)`
 * Environment Model: `(eval expr environ)`
 
-In scheme, `define` lets create bindings, and `set!` allow us to modify bindings. In the substitution model, theres often an implicit third `eviron` argument, which would be `theglobalenv` (the global frame)
+In scheme, `define` lets you create bindings, and `set!` allow us to modify bindings. In the substitution model, theres often an implicit third `eviron` argument, which would be `theglobalenv` (the global frame)
 
 ![make-withdraw environment](images/balance.png)
 
