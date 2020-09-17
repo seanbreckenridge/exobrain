@@ -29,8 +29,8 @@ mkmanifest() {
 
 # converts $1 to $2 using pandoc
 pandoc_generate() {
-		local html_temp="$(mktemp -p /tmp exobrain-XXXXXXXXXXXXX.html)"
-    if [[ -n "$HAS_HTML_MINIFIER" ]]; then
+	local html_temp="$(mktemp -p /tmp exobrain-XXXXXXXXXXXXX.html)"
+	if [[ -n "$HAS_HTML_MINIFIER" ]]; then
 		pandoc -s -o "$html_temp" --quiet --template=assets/template.html "$1" && html-minifier --collapse-boolean-attributes --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-style-link-type-attributes --remove-tag-whitespace "$html_temp" -o "$2" || {
 			printf 'Error rendering %s to %s\n' "$1" "$2" >&2
 			exit 1
@@ -79,7 +79,7 @@ run_build() {
 	# get cpu count to determine how many jobs to run at a time
 	procs="$(nproc)"
 	[[ -z "$procs" ]] && procs=4
-  procs=$((procs * 2))
+	procs=$((procs * 2))
 
 	i=0
 	while IFS= read -r node; do
