@@ -74,3 +74,7 @@ But! I'm not totally satisfied with that, and I wish there was a better way!
 
 * Find something that works like `mario`, but not in python and is extendible, or go through the arduous task of writing something myself in `go`/`rust`.
 * Hope for an interactive shell which is a superset of the POSIX standard while providing convenience functions like `elvish` to become semi-popular.
+
+---
+
+More thoughts on this [here](/shell/alternative_shells/)

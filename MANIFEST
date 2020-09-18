@@ -22,11 +22,11 @@ post/server_setup
 projects
 python/decorators
 raspi
+shell/alternative_shells
 shell/bash_notes
 shell/git
 shell/imagemagick
 shell/pandoc
-shell/possible_pipeliner
 shell/tools
 sitemap
 superhighway
