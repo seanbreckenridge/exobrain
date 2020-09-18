@@ -56,13 +56,16 @@ pandoc_generate() {
 	local html_temp
 	html_temp="$(mktemp -p /tmp exobrain-XXXXXXXXXXXXX.html)"
 	if [[ -n "$HAS_HTML_MINIFIER" ]]; then
-		pandoc -s -o "$html_temp" --quiet --template=assets/template.html "$1" && html-minifier --collapse-boolean-attributes --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-style-link-type-attributes --remove-tag-whitespace "$html_temp" -o "$2" || {
-			printf 'Error rendering %s to %s\n' "$1" "$2" >&2
-			exit 1
-		}
-	else
-		pandoc -s -o "$2" --quiet --template=assets/template.html "$1"
+		if pandoc -s -o "$html_temp" --quiet --template=assets/template.html "$1"; then
+			if html-minifier --collapse-boolean-attributes --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-style-link-type-attributes --remove-tag-whitespace "$html_temp" -o "$2"; then
+				return  # succeeded, exit early
+			else
+				printf 'Error rendering %s to %s\n' "$1" "$2" >&2
+				# drop through and do default render
+			fi
+		fi
 	fi
+	pandoc -s -o "$2" --quiet --template=assets/template.html "$1"
 }
 
 # validate attributes in metadata (i.e. yaml frontmatter)
@@ -99,7 +102,7 @@ run_build() {
 	# run pmark on each P_README.md file
 	# builds the blog feed/sitemap and curls the project page
 	# see https://github.com/seanbreckenridge/pmark
-	fd '^P_README.md$' -X pmark {} || exit $?
+	fd '^P_README.md$' -X pmark || exit $?
 
 	# get cpu count to determine how many jobs to run at a time
 	procs="$(nproc)"
