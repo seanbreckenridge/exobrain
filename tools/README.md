@@ -28,6 +28,16 @@ Most of these are command line based. On a regular day, the only GUI tools I use
 - Editors
   - nvim (primarily)
   - (doom) emacs
+- Browsers
+  - [firefox-developer-edition](https://www.mozilla.org/en-US/firefox/developer/), with extensions:
+    - [vimium-ff](https://addons.mozilla.org/en-US/firefox/addon/vimium-ff/). Learning vimium has virtually killed the mouse for me. Especially the `f` binding, which highlights all clickable items and lets me click something with a keybind. I now sit feet away from my laptop with mechanical keyboard in hand, reaching over only for horrible sites which don't comply to the HTML standard (looking at you, clicking the `next episode` button on `Netflix`)
+    - [RES](https://addons.mozilla.org/en-US/firefox/addon/reddit-enhancement-suite/), to make reddit manageable, though I don't go to reddit much these days.
+    - [Violentmonkey](https://addons.mozilla.org/en-US/firefox/addon/violentmonkey/) so I can add bits of JS to sites I want to fix.
+    - [Refined Github](https://addons.mozilla.org/en-US/firefox/addon/refined-github-/) for general Github improvements.
+    - [Stylus](https://addons.mozilla.org/en-US/firefox/addon/styl-us/), so I can dark mode common websites.
+    - [Dark Reader](https://addons.mozilla.org/en-US/firefox/addon/darkreader), so I can dark mode every website I visit. Does have considerable overhead, so I prefer finding CSS through stylus for websites I visit often.
+    - [uBlock Origin](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/) to block ads.
+  - I use [`lynx`](https://www.lynxproject.org/) to do quick `duckduckgo` searches [without leaving the terminal](https://sean.fish/d/duck?dark)
 - I use [`newsboat`](https://newsboat.org/) RSS for youtube/news/blogs. I have a [script](https://sean.fish/d/youtube-user-id?dark) to grab a youtube users RSS feed, since youtube doesn't list that publicly. [`linkhandler`](https://sean.fish/d/linkhandler?dark) lets me open youtube videos from `newsboat` using [`mpvf`](https://github.com/seanbreckenridge/mpvf/) instead of visiting youtube in the browser.
 - to-do list - [todotxt](http://todotxt.org/) for todos, with a [rofi interface](https://sean.fish/d/todo-prompt?dark) as GUI, and [TUI](https://gitlab.com/seanbreckenridge/full_todotxt) for adding todos. The TUI I wrote forces me to specify a `deadline` for each todo, which I then get notified by [this](https://github.com/seanbreckenridge/todotxt_deadline_notify), which runs on my server.
 - [`calcurse`](https://github.com/lfos/calcurse) as a calendar, with my [`calcurse-load`](https://github.com/seanbreckenridge/calcurse-load) hooks to add Google Calendar and `todo.txt` to calcurse automatically.
@@ -39,7 +49,6 @@ Most of these are command line based. On a regular day, the only GUI tools I use
 - Use the `dict://` protocol with `curl` at `dict.org` as a dictionary with [this](https://sean.fish/d/dict?dark). [moby](https://github.com/words/moby) as a thesaurus.
 - On top of all the [git aliases](https://sean.fish/d/git_aliases?dark), one of my scripts I use most commonly are my [giturl](https://sean.fish/d/giturl?dark)/[gitopen](https://sean.fish/d/gitopen?dark) scripts, which will open the current git directory I'm in in my browser.
 - [`ix`](https://sean.fish/d/ix?dark) to create pastebin links from the command line
-- [`qr`](https://sean.fish/d/qr?dark), to create QR images from command line
 - To host files publicly and mirror video/audio, I use my [`remsync`](https://github.com/seanbreckenridge/vps/blob/master/remsync) and [`mediaproxy`](https://github.com/seanbreckenridge/vps/blob/master/mediaproxy) scripts.
 - the [`mvlast`](https://sean.fish/d/mvlast?dark)/[`mvlastpic`](https://sean.fish/d/mvlastpic?dark)/[`lastdown`](https://sean.fish/d/lastdown?dark) collection of scripts, which lets me quickly move items from my Downloads/Screenshots to my current folder. Was taken from an <https://rwx.gg> stream; very basic but incredibly useful.
 - [vipe](https://linux.die.net/man/1/vipe), to quickly edit my clipboard in a vim buffer
@@ -52,17 +61,50 @@ Most of these are command line based. On a regular day, the only GUI tools I use
 - my own [url shortener](https://github.com/seanbreckenridge/no-db-static-shorturl/) with [this script](https://github.com/seanbreckenridge/vps/blob/master/shorten)
 - [`imgur-uploader`](https://pypi.org/project/imgur-uploader/) to quickly upload images online, with a [script](https://sean.fish/d/screenshot-to-imgur?dark) to upload my most recent screenshot to imgur
 - `mpv`/`chatterino` to watch twitch, see [here](/post/how_i/watch_twitch/)
-- Browsers
-  - [firefox-developer-edition](https://www.mozilla.org/en-US/firefox/developer/), with extensions:
-    - Productivity
-      - [vimium-ff](https://addons.mozilla.org/en-US/firefox/addon/vimium-ff/). Learning vimium has virtually killed the mouse for me. Especially the `f` binding, which highlights all clickable items and lets me click something with a keybind. I now sit feet away from my laptop with mechanical keyboard in hand, reaching over only for horrible sites which don't comply to the HTML standard (looking at you, clicking the `next episode` button on `Netflix`)
-      - [RES](https://addons.mozilla.org/en-US/firefox/addon/reddit-enhancement-suite/), to make reddit manageable, though I don't go to reddit much these days.
-      - [Violentmonkey](https://addons.mozilla.org/en-US/firefox/addon/violentmonkey/) so I can add bits of JS to sites I want to fix.
-      - [Refined Github](https://addons.mozilla.org/en-US/firefox/addon/refined-github-/) for general Github improvements.
-      - [Stylus](https://addons.mozilla.org/en-US/firefox/addon/styl-us/), so I can dark mode common websites.
-      - [Dark Reader](https://addons.mozilla.org/en-US/firefox/addon/darkreader), so I can dark mode every website I visit. Does have considerable overhead, so I prefer finding CSS through stylus for websites I visit often.
-    - Privacy
-      - [uBlock Origin](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/) to block ads.
-      - [DuckDuckGo Privacy Essentials](https://addons.mozilla.org/en-US/firefox/addon/duckduckgo-for-firefox/)
-  - I use [`lynx`](https://www.lynxproject.org/) to do quick `duckduckgo` searches [without leaving the terminal](https://sean.fish/d/duck?dark)
-  - I'm somewhat required to test websites in chrome, so I use `chromium` to do that.
+- [fzf](https://github.com/junegunn/fzf) everywhere, to fuzzy match in shell pipelines
+- [youtube-dl](https://youtube-dl.org/) to download video/audio from hundreds of websites
+
+---
+
+### Other CLI Tools I use less often
+
+- [checkbashisms](https://linux.die.net/man/1/checkbashisms) - check for bashisms in /bin/sh scripts
+- [bat](https://github.com/sharkdp/bat); a fancy cat clone
+- [boxes](https://boxes.thomasjensen.com/) to print fancy boxes in the terminal
+- [figlet](http://www.figlet.org/) to print large letters
+- [chafa](https://github.com/hpjansson/chafa/) to print gifs in terminal
+- [datamash](https://www.gnu.org/software/datamash/) to perform basic statistics on text files
+- [dex](https://github.com/jceb/dex) to open `.desktop` files
+- [dust](https://github.com/bootandy/dust); a fancy du clone
+- [entr](https://eradman.com/entrproject/) for lots of small build scripts
+- [fd](https://github.com/sharkdp/fd); a fancy find clone
+- [glow](https://github.com/charmbracelet/glow) to render markdown in the terminal
+- [jq](https://stedolan.github.io/jq/)/[gron](https://github.com/tomnomnom/gron) to process json streams
+- [hyperfine](https://github.com/sharkdp/hyperfine) to do benchmarks
+- [ncdu](https://dev.yorhel.nl/ncdu) to preview disk space interactively
+- [pastel](https://github.com/sharkdp/pastel) to generate/pick color schemes/hex codes from the terminal
+- [pup](https://github.com/ericchiang/pup) to parse HTML on the command line
+- [qr](https://sean.fish/d/qr?dark) ([qrencode](https://fukuchi.org/works/qrencode/)), to create QR images from command line
+- [screenkey](https://gitlab.com/screenkey/screenkey) when recording demonstrations to display keys
+- [shellcheck](https://shellcheck.net) to check shell scripts for syntax errors
+- [sxiv](https://github.com/muennich/sxiv) as an image viewer for more complicated/macro-like tasks
+- [toilet](https://github.com/cacalabs/toilet) is another implementation of figlet, gives fancy colors in the terminal
+- [whiptail](https://en.wikibooks.org/wiki/Bash_Shell_Scripting/Whiptail) (libnewt) for fancy dialog prompts in scripts
+- [linkcheck](https://github.com/filiph/linkcheck) to check for broken links on websites
+- [wuzz](https://github.com/asciimoo/wuzz), a postman-like CLI application
+- [misspell](https://github.com/client9/misspell) corrects commonly misspelled words; my [misspell-context](https://sean.fish/d/misspell-context?dark) script to give mistakes in context
+- [imgur-uploader](https://pypi.org/project/imgur-uploader/) to push images to imgur
+- [oh-my-stars](https://github.com/wolfg1969/oh-my-stars) to search github stars offline
+- [speedtest-cli](https://pypi.org/project/speedtest-cli/) to test internet bandwidth
+- [termdown](https://github.com/trehn/termdown) to countdown in the terminal
+- [sqleton](https://github.com/inukshuk/sqleton) to visualize sqlite databases
+- [lorem](https://github.com/jamen/lorem) to create a bunch of lorem-ipsum
+- [readability](https://gitlab.com/gardenappl/readability-cli); cli tool for Mozilla's readability library, for parsing contents out of HTML
+
+---
+
+### Other GUI Applications I use less often
+
+- [robomongo](https://robomongo.org/) to explore mongoDB databases
+- [sqlitebrowser](https://sqlitebrowser.org/) to explore sqlite databases
+
