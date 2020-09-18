@@ -109,6 +109,12 @@ Cross-platform window watcher. This is a daemon that sits in the background, and
 
 Logs metadata for shell commands; an extension to my shell history.
 
+### havecmd
+
+[GitHub](https://github.com/seanbreckenridge/havecmd) | [GitLab](https://gitlab.com/seanbreckenridge/havecmd) | Shell
+
+A template for my bash scripts, to provide a nicer interface to check for the presence of external commands on the users `$PATH`.
+
 ### mint
 
 [GitHub](https://github.com/seanbreckenridge/mint) | [GitLab](https://gitlab.com/seanbreckenridge/mint) | Python/Shell

@@ -11,17 +11,19 @@
 # so that I can quickly find the next changes to
 # modify as I fix them
 
+script_name="$(basename "${BASH_SOURCE[0]}")"
+
 havecmd() {
 	local BINARY ERRMSG
 	BINARY="${1:?Must provide command to check}"
 	if command -v "$BINARY" >/dev/null 2>&1; then
 		return 0
 	else
-		ERRMSG="Could not find '$BINARY' on your \$PATH"
+		ERRMSG="'$script_name' requires '$BINARY', could not find that on your \$PATH"
 		if [[ -n "$2" ]]; then
 			ERRMSG="$ERRMSG. $2"
 		fi
-		printf '%s\n' "$ERRMSG"
+		printf '%s\n' "$ERRMSG" 1>&2
 		return 1
 	fi
 }
