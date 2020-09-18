@@ -32,9 +32,9 @@ havecmd pandoc
 havecmd perl
 havecmd python
 havecmd wait-for-internet "Install it from https://github.com/seanbreckenridge/wait-for-internet (or just remove it from the ./build script)"
-havecmd html-minifier "Install with 'npm install -g html-minifier'"
 havecmd pmark "Install it from 'https://github.com/seanbreckenridge/pmark'"
 set +e
+havecmd html-minifier "Install with 'npm install -g html-minifier'"
 
 wait-for-internet >/dev/null 2>&1
 
