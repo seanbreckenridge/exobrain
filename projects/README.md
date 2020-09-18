@@ -113,7 +113,7 @@ Logs metadata for shell commands; an extension to my shell history.
 
 [GitHub](https://github.com/seanbreckenridge/havecmd) | [GitLab](https://gitlab.com/seanbreckenridge/havecmd) | Shell
 
-A template for my bash scripts, to provide a nicer interface to check for the presence of external commands on the users `$PATH`.
+A template for my bash scripts, to provide a nicer interface to check for the presence of external commands on the users `$PATH`
 
 ### mint
 
