@@ -13,7 +13,7 @@ Parts of the dynamic feed/blog/projects pages are built using my [`pmark`](https
 
 Since this is pretty unstructured, this does some tag validation on the meta pandoc tags (sometimes called 'yaml frontmatter'), using `pandoc <file.md> -t json | ./_harden_frontmatter` to make sure I'm not missing titles/dates for the markdown files.
 
-Some of those scripts have the external dependency of [`fd`](https://github.com/sharkdp/fd), [`entr`](https://eradman.com/entrproject/) and some python libs (reports which ones are missing)
+Some of those scripts have the external dependency of [`fd`](https://github.com/sharkdp/fd), [`entr`](https://eradman.com/entrproject/) and some python libs. Code at the top of `build` reports if any of the commands are missing, and `_harden_formatter` does the same for the python libraries.
 
 ### Hosting
 

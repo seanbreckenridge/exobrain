@@ -11,6 +11,30 @@
 # so that I can quickly find the next changes to
 # modify as I fix them
 
+havecmd() {
+	local BINARY ERRMSG
+	BINARY="${1:?Must provide command to check}"
+	if command -v "$BINARY" >/dev/null 2>&1; then
+		return 0
+	else
+		ERRMSG="Could not find '$BINARY' on your \$PATH"
+		if [[ -n "$2" ]]; then
+			ERRMSG="$ERRMSG. $2"
+		fi
+		printf '%s\n' "$ERRMSG"
+		return 1
+	fi
+}
+
+set -e
+havecmd fd
+havecmd entr
+havecmd pandoc
+havecmd wait-for-internet "Install it from https://github.com/seanbreckenridge/wait-for-internet"
+havecmd html-minifier "Install with 'npm install html-minifier'"
+havecmd pmark "Install it from 'https://github.com/seanbreckenridge/pmark'"
+set +e
+
 wait-for-internet >/dev/null 2>&1
 
 cd "$(dirname "${BASH_SOURCE[0]}")" || exit
@@ -29,7 +53,8 @@ mkmanifest() {
 
 # converts $1 to $2 using pandoc
 pandoc_generate() {
-	local html_temp="$(mktemp -p /tmp exobrain-XXXXXXXXXXXXX.html)"
+	local html_temp
+	html_temp="$(mktemp -p /tmp exobrain-XXXXXXXXXXXXX.html)"
 	if [[ -n "$HAS_HTML_MINIFIER" ]]; then
 		pandoc -s -o "$html_temp" --quiet --template=assets/template.html "$1" && html-minifier --collapse-boolean-attributes --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-style-link-type-attributes --remove-tag-whitespace "$html_temp" -o "$2" || {
 			printf 'Error rendering %s to %s\n' "$1" "$2" >&2
