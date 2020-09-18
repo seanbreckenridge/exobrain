@@ -1,4 +1,4 @@
-Exobrain, is something like public wiki where you keep your notes, ideas and thoughts.
+Exobrain is something like a public wiki where I keep notes, ideas and thoughts.
 
 I use mine to store notes from books, videos, list resources, along with anything else I don't want to forget. 
 
