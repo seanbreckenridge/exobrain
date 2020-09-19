@@ -360,6 +360,12 @@ Clicks the 'Run until 3 months from today' button on [pythonanywhere](https://ww
 
 Scrapes the top posts from wallpaper subreddits. I'm not huge into collecting wallpapers, but I wanted to have a couple hundred in my rotation. This scraped and classified ~7500 images in about 15 hours.
 
+### random_shmup
+
+[GitHub](https://github.com/seanbreckenridge/random_shmup) | [GitLab](https://gitlab.com/seanbreckenridge/random_shmup) | Python
+
+An old pygame shoot 'em up space game
+
 ### selenium-shutterfly-scraper
 
 [GitHub](https://github.com/seanbreckenridge/selenium-shutterfly-scraper) | [GitLab](https://gitlab.com/seanbreckenridge/selenium-shutterfly-scraper) | Python
