@@ -63,7 +63,7 @@ could not open driver .so '/usr/lib/jack/jack_net.so': libcelt0.so.2: cannot ope
 could not open driver .so '/usr/lib/jack/jack_firewire.so': libffado.so.2: cannot open shared object file: No such file or directory
 ```
 
-Should be noted I use `pulseaudio` instead of `alsa`. Seems that `JACK` works better with `alsa` (i.e. it has a backend for it, see `man jackd`).
+I use `pulseaudio` instead of `alsa`. Seems that `JACK` works better with `alsa` (i.e. it has a backend for it, see `man jackd`).
 
 Doesn't seem that theres a jack daemon running in the background, not sure if there should be:
 
