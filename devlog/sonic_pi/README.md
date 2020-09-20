@@ -112,7 +112,7 @@ Downsides:
 
 References:
 
-<https://github.com/sonic-pi-net/sonic-pi/issues/849>
-<https://www.miskatonic.org/2015/01/17/setting-up-sonic-pi-on-ubuntu/>
-<https://github.com/sonic-pi-net/sonic-pi/issues/1908>
+- <https://github.com/sonic-pi-net/sonic-pi/issues/849>
+- <https://www.miskatonic.org/2015/01/17/setting-up-sonic-pi-on-ubuntu/>
+- <https://github.com/sonic-pi-net/sonic-pi/issues/1908>
 
