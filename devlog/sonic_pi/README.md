@@ -5,6 +5,10 @@ Blog: false
 
 Me documenting my issues installing [`sonic-pi`](https://github.com/sonic-pi-net/sonic-pi/blob/main/INSTALL-LINUX.md) on arch.
 
+For context, I use pulseaudio, not alsa.
+
+After running: `yay -S sonic-pi`
+
 The default `sonic-pi` package from community failed to launch because of JACK errors; [errorlog](https://gist.github.com/seanbreckenridge/99fa2e3d94d30b3193a903634990f06f)
 
 ```
@@ -59,7 +63,7 @@ could not open driver .so '/usr/lib/jack/jack_net.so': libcelt0.so.2: cannot ope
 could not open driver .so '/usr/lib/jack/jack_firewire.so': libffado.so.2: cannot open shared object file: No such file or directory
 ```
 
-Should be noted I use `pulseaudio` instead of `alsa`. Seems that `JACK` works better with `alsa` (i.e. it has a backend for it, see `man jackd`.
+Should be noted I use `pulseaudio` instead of `alsa`. Seems that `JACK` works better with `alsa` (i.e. it has a backend for it, see `man jackd`).
 
 Doesn't seem that theres a jack daemon running in the background, not sure if there should be:
 
@@ -68,7 +72,7 @@ Doesn't seem that theres a jack daemon running in the background, not sure if th
 sean        1959    1934  0 11:14 pts/9    00:00:00 grep jack
 ```
 
-I found the solution to this on [this](https://github.com/sonic-pi-net/sonic-pi/issues/1908) issue; which is to run:
+I found the solution to this on [this](https://github.com/sonic-pi-net/sonic-pi/issues/1908) issue; which is to run `jackd` and `qjackctl` manually:
 
 ```
 $ cat "$(which sonic-pi-run)"
@@ -76,7 +80,7 @@ $ cat "$(which sonic-pi-run)"
 #!/bin/bash
 
 jackd -R -d alsa -d hw:1 &
-qjackctl &
+qjackctl &  # (yay -S qjackctl)
 # wait for jackd and qjackctl to be up
 sleep 5
 sonic-pi # block
@@ -103,8 +107,8 @@ Success!
 
 Downsides:
 
-* Have to be a bit careful about mistakenly opening multiple instances of `sonic-pi`. If I open it and then quit quickly, something may have been acquired but not released, which causes pulseaudio to become 'dummy output', or jack to fail to acquire `hw:1`.
-* 'breaks' pulseaudio while sonic-pi is open, so its the only thing that can use audio
+* Have to be a bit careful about mistakenly opening multiple instances of `sonic-pi`. If I open it and then quit quickly, something may have been acquired but not released, which causes `pulseaudio` to become 'dummy output', or jack to fail to acquire `hw:1`.
+* 'breaks' system audio/`pulseaudio` while sonic-pi is open, so its the only thing that can use audio
 
 References:
 
