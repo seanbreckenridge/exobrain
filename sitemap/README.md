@@ -36,6 +36,7 @@ More 'complete' blog-like posts at [feed](/feed).
 * shell/ [Shell Tools](/shell/tools/)
 * talks_books/ [Alan Kay, User Interface Design](/talks_books/alan_kay_user_interface/)
 * talks_books/ [How Do Committees Invent, Melvin E. Conway](/talks_books/how_do_committees_invent/)
+* talks_books/ [The Scribe's Oath • Robert "Uncle Bob" Martin](/talks_books/programmers_oath/)
 * talks_books/ [Uncle Bob Martin - The Future of Programming](/talks_books/future_of_programming/)
 * talks_books/sicp/ [SICP 00 - Overview](/talks_books/sicp/00/)
 * talks_books/sicp/ [SICP 01 - Functional Programming](/talks_books/sicp/01/)
