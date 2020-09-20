@@ -3,8 +3,7 @@ Title: Sonic-Pi
 Blog: false
 ---
 
-Issues installing [`sonic-pi`](https://github.com/sonic-pi-net/sonic-pi/blob/main/INSTALL-LINUX.md) on arch.
-
+Me documenting my issues installing [`sonic-pi`](https://github.com/sonic-pi-net/sonic-pi/blob/main/INSTALL-LINUX.md) on arch.
 
 The default `sonic-pi` package from community failed to launch because of JACK errors; [errorlog](https://gist.github.com/seanbreckenridge/99fa2e3d94d30b3193a903634990f06f)
 
@@ -62,61 +61,50 @@ could not open driver .so '/usr/lib/jack/jack_firewire.so': libffado.so.2: canno
 
 Should be noted I use `pulseaudio` instead of `alsa`. Seems that `JACK` works better with `alsa` (i.e. it has a backend for it, see `man jackd`.
 
+Doesn't seem that theres a jack daemon running in the background, not sure if there should be:
+
+```
+[ ~ ] $ ps -ef | grep jack
+sean        1959    1934  0 11:14 pts/9    00:00:00 grep jack
+```
+
 I found the solution to this on [this](https://github.com/sonic-pi-net/sonic-pi/issues/1908) issue; which is to run:
 
 ```
-jackd -R -d alsa -d hw:1  # in another terminal
-sonic-pi
-```
+$ cat "$(which sonic-pi-run)"
 
-Made this into a script:
-
-```
 #!/bin/bash
 
 jackd -R -d alsa -d hw:1 &
+qjackctl &
+# wait for jackd and qjackctl to be up
+sleep 5
 sonic-pi # block
 
-kill $(jobs -p)
+# kill background jobs
+kill -15 $(jobs -p)
 ```
 
-I'm not totally clear on *why* this works, because I do believe I'm using `pulseaudio` and not `alsa`, but it does. The output still has the error from above, but it seems the `jackd` that is run manually communicates with `sonic-pi` instead of a daemon running in the background:
+If something is already using `hw:1` (e.g. you have `mpv` playing some audio), this causes `jackd` to not be able to use `hw:1`, so it fails to squire that, and `sonic-pi` fails with an error again.
 
-```
-$ ./sonic-pi-run
-jackd 0.125.0
-Copyright 2001-2009 Paul Davis, Stephane Letz, Jack O'Quinn, Torben Hohn and others.
-jackd comes with ABSOLUTELY NO WARRANTY
-This is free software, and you are welcome to redistribute it
-under certain conditions; see the file COPYING for details
+Without `qjackctl`, it seems that this causes `pulseaudio` to break... ? and it becomes 'dummy output':
 
-could not open driver .so '/usr/lib/jack/jack_net.so': libcelt0.so.2: cannot open shared object file: No such file or directory
+![](https://i.imgur.com/bnRQ8aQ.png)
 
-could not open driver .so '/usr/lib/jack/jack_firewire.so': libffado.so.2: cannot open shared object file: No such file or directory
+So, what I typically do is:
 
-JACK compiled with System V SHM support.
-cannot lock down memory for jackd (Cannot allocate memory)
-loading driver ..
-creating alsa driver ... hw:1|hw:1|1024|2|48000|0|0|nomon|swmeter|-|32bit
-configuring for 48000Hz, period = 1024 frames (21.3 ms), buffer = 2 periods
-ALSA: final selected sample format for capture: 32bit integer little-endian
-ALSA: use 2 periods for capture
-ALSA: final selected sample format for playback: 32bit integer little-endian
-ALSA: use 2 periods for playback
-JACK: unable to mlock() port buffers: Cannot allocate memory
-Attribute Qt::AA_EnableHighDpiScaling must be set before QCoreApplication is created.
-[GUI] - reading settings
+* make sure I've used `pulseaudio` at least once since the computer has started (just play some song in `mpv` and then quit)
+* quit everything that is using `pulseaudio` actively
+* run `sonic-pi-run` (the script above)
 
-<I EXITED SONIC PI HERE>
+And then, when I exit, `pulseaudio` takes back over.
 
-Shutting down audio thread
-subgraph starting at SuperCollider timed out (subgraph_wait_fd=9, status = 0, state = Triggered, pollret = 0 revents = 0x0)
+Success!
 
-**** alsa_pcm: xrun of at least 31682.032 msecs
+Downsides:
 
-jack main caught signal 15
-```
-
+* Have to be a bit careful about mistakenly opening multiple instances of `sonic-pi`. If I open it and then quit quickly, something may have been acquired but not released, which causes pulseaudio to become 'dummy output', or jack to fail to acquire `hw:1`.
+* 'breaks' pulseaudio while sonic-pi is open, so its the only thing that can use audio
 
 References:
 

@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><title>exobrain | Sonic-Pi</title><meta charset="UTF-8"><meta name="viewport"content="width=device-width,initial-scale=1"><meta http-equiv="X-UA-Compatible"content="ie=edge"><meta http-equiv="Cache-Control"content="no-cache, no-store, must-revalidate"><link rel="shortcut icon"href="/assets/img/logo.png"type="image/png"><meta http-equiv="Pragma"content="no-cache"><meta http-equiv="Expires"content="0"><link rel="stylesheet"href="/assets/style.css"><header class="nav-bar"><nav><a class="homelink"href="/">exobrain</a><div class="nav-right"><div class="nav-item"><a class="nav-link"href="/feed">blog feed</a></div><div class="nav-item"><a class="nav-link"href="/sitemap">exobrain sitemap</a></div><div class="nav-item"><a class="nav-link"href="https://sean.fish">back to my site</a></div></div></nav></header><main><a id="top"></a><div class="container"><div id="main-header"><div class="h1"id="main-title">Sonic-Pi</div></div><p>Issues installing <a href="https://github.com/sonic-pi-net/sonic-pi/blob/main/INSTALL-LINUX.md"><code>sonic-pi</code></a> on arch.<p>The default <code>sonic-pi</code> package from community failed to launch because of JACK errors; <a href="https://gist.github.com/seanbreckenridge/99fa2e3d94d30b3193a903634990f06f">errorlog</a><pre><code>JACK is running in realtime mode, but you are not allowed to use realtime scheduling.
+<!doctype html><html lang="en"><title>exobrain | Sonic-Pi</title><meta charset="UTF-8"><meta name="viewport"content="width=device-width,initial-scale=1"><meta http-equiv="X-UA-Compatible"content="ie=edge"><meta http-equiv="Cache-Control"content="no-cache, no-store, must-revalidate"><link rel="shortcut icon"href="/assets/img/logo.png"type="image/png"><meta http-equiv="Pragma"content="no-cache"><meta http-equiv="Expires"content="0"><link rel="stylesheet"href="/assets/style.css"><header class="nav-bar"><nav><a class="homelink"href="/">exobrain</a><div class="nav-right"><div class="nav-item"><a class="nav-link"href="/feed">blog feed</a></div><div class="nav-item"><a class="nav-link"href="/sitemap">exobrain sitemap</a></div><div class="nav-item"><a class="nav-link"href="https://sean.fish">back to my site</a></div></div></nav></header><main><a id="top"></a><div class="container"><div id="main-header"><div class="h1"id="main-title">Sonic-Pi</div></div><p>Me documenting my issues installing <a href="https://github.com/sonic-pi-net/sonic-pi/blob/main/INSTALL-LINUX.md"><code>sonic-pi</code></a> on arch.<p>The default <code>sonic-pi</code> package from community failed to launch because of JACK errors; <a href="https://gist.github.com/seanbreckenridge/99fa2e3d94d30b3193a903634990f06f">errorlog</a><pre><code>JACK is running in realtime mode, but you are not allowed to use realtime scheduling.
 Please check your /etc/security/limits.conf for the following line
 and correct/add it if necessary:
 
@@ -24,41 +24,16 @@ Please add yourself to the audio group by executing (as root):
 docker users video audio wheel</code></pre><p>After that, running <code>sonic-pi</code> causes this error:<pre><code>connect(2) call to /dev/shm/jack-1000/default/jack_0 failed (err=No such file or directory)
 could not open driver .so &#39;/usr/lib/jack/jack_net.so&#39;: libcelt0.so.2: cannot open shared object file: No such file or directory
 
-could not open driver .so &#39;/usr/lib/jack/jack_firewire.so&#39;: libffado.so.2: cannot open shared object file: No such file or directory</code></pre><p>Should be noted I use <code>pulseaudio</code> instead of <code>alsa</code>. Seems that <code>JACK</code> works better with <code>alsa</code> (i.e. it has a backend for it, see <code>man jackd</code>.<p>I found the solution to this on <a href="https://github.com/sonic-pi-net/sonic-pi/issues/1908">this</a> issue; which is to run:<pre><code>jackd -R -d alsa -d hw:1  # in another terminal
-sonic-pi</code></pre><p>Made this into a script:<pre><code>#!/bin/bash
+could not open driver .so &#39;/usr/lib/jack/jack_firewire.so&#39;: libffado.so.2: cannot open shared object file: No such file or directory</code></pre><p>Should be noted I use <code>pulseaudio</code> instead of <code>alsa</code>. Seems that <code>JACK</code> works better with <code>alsa</code> (i.e. it has a backend for it, see <code>man jackd</code>.<p>Doesn’t seem that theres a jack daemon running in the background, not sure if there should be:<pre><code>[ ~ ] $ ps -ef | grep jack
+sean        1959    1934  0 11:14 pts/9    00:00:00 grep jack</code></pre><p>I found the solution to this on <a href="https://github.com/sonic-pi-net/sonic-pi/issues/1908">this</a> issue; which is to run:<pre><code>$ cat &quot;$(which sonic-pi-run)&quot;
+
+#!/bin/bash
 
 jackd -R -d alsa -d hw:1 &amp;
+qjackctl &amp;
+# wait for jackd and qjackctl to be up
+sleep 5
 sonic-pi # block
 
-kill $(jobs -p)</code></pre><p>I’m not totally clear on <em>why</em> this works, because I do believe I’m using <code>pulseaudio</code> and not <code>alsa</code>, but it does. The output still has the error from above, but it seems the <code>jackd</code> that is run manually communicates with <code>sonic-pi</code> instead of a daemon running in the background:<pre><code>$ ./sonic-pi-run
-jackd 0.125.0
-Copyright 2001-2009 Paul Davis, Stephane Letz, Jack O&#39;Quinn, Torben Hohn and others.
-jackd comes with ABSOLUTELY NO WARRANTY
-This is free software, and you are welcome to redistribute it
-under certain conditions; see the file COPYING for details
-
-could not open driver .so &#39;/usr/lib/jack/jack_net.so&#39;: libcelt0.so.2: cannot open shared object file: No such file or directory
-
-could not open driver .so &#39;/usr/lib/jack/jack_firewire.so&#39;: libffado.so.2: cannot open shared object file: No such file or directory
-
-JACK compiled with System V SHM support.
-cannot lock down memory for jackd (Cannot allocate memory)
-loading driver ..
-creating alsa driver ... hw:1|hw:1|1024|2|48000|0|0|nomon|swmeter|-|32bit
-configuring for 48000Hz, period = 1024 frames (21.3 ms), buffer = 2 periods
-ALSA: final selected sample format for capture: 32bit integer little-endian
-ALSA: use 2 periods for capture
-ALSA: final selected sample format for playback: 32bit integer little-endian
-ALSA: use 2 periods for playback
-JACK: unable to mlock() port buffers: Cannot allocate memory
-Attribute Qt::AA_EnableHighDpiScaling must be set before QCoreApplication is created.
-[GUI] - reading settings
-
-&lt;I EXITED SONIC PI HERE&gt;
-
-Shutting down audio thread
-subgraph starting at SuperCollider timed out (subgraph_wait_fd=9, status = 0, state = Triggered, pollret = 0 revents = 0x0)
-
-**** alsa_pcm: xrun of at least 31682.032 msecs
-
-jack main caught signal 15</code></pre><p>References:<p><a href="https://github.com/sonic-pi-net/sonic-pi/issues/849"class="uri">https://github.com/sonic-pi-net/sonic-pi/issues/849</a> <a href="https://www.miskatonic.org/2015/01/17/setting-up-sonic-pi-on-ubuntu/"class="uri">https://www.miskatonic.org/2015/01/17/setting-up-sonic-pi-on-ubuntu/</a> <a href="https://github.com/sonic-pi-net/sonic-pi/issues/1908"class="uri">https://github.com/sonic-pi-net/sonic-pi/issues/1908</a></div></main><footer><p><a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode"id="copyright">© 2020 Sean Breckenridge. Licensed under Creative Commons Attribution-ShareAlike.</a><br><a href="https://github.com/seanbreckenridge/exobrain">Source Code</a></footer><script src="/assets/main.js"></script>
+# kill background jobs
+kill -15 $(jobs -p)</code></pre><p>If something is already using <code>hw:1</code> (e.g. you have <code>mpv</code> playing some audio), this causes <code>jackd</code> to not be able to use <code>hw:1</code>, so it fails to squire that, and <code>sonic-pi</code> fails with an error again.<p>Without <code>qjackctl</code>, it seems that this causes <code>pulseaudio</code> to break… ? and it becomes ‘dummy output’:<p><img src="https://i.imgur.com/bnRQ8aQ.png"><p>So, what I typically do is:<ul><li>make sure I’ve used <code>pulseaudio</code> at least once since the computer has started (just play some song in <code>mpv</code> and then quit)<li>quit everything that is using <code>pulseaudio</code> actively<li>run <code>sonic-pi-run</code> (the script above)</ul><p>And then, when I exit, <code>pulseaudio</code> takes back over.<p>Success!<p>Downsides:<ul><li>Have to be a bit careful about mistakenly opening multiple instances of <code>sonic-pi</code>. If I open it and then quit quickly, something may have been acquired but not released, which causes pulseaudio to become ‘dummy output’, or jack to fail to acquire <code>hw:1</code>.<li>‘breaks’ pulseaudio while sonic-pi is open, so its the only thing that can use audio</ul><p>References:<p><a href="https://github.com/sonic-pi-net/sonic-pi/issues/849"class="uri">https://github.com/sonic-pi-net/sonic-pi/issues/849</a> <a href="https://www.miskatonic.org/2015/01/17/setting-up-sonic-pi-on-ubuntu/"class="uri">https://www.miskatonic.org/2015/01/17/setting-up-sonic-pi-on-ubuntu/</a> <a href="https://github.com/sonic-pi-net/sonic-pi/issues/1908"class="uri">https://github.com/sonic-pi-net/sonic-pi/issues/1908</a></div></main><footer><p><a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode"id="copyright">© 2020 Sean Breckenridge. Licensed under Creative Commons Attribution-ShareAlike.</a><br><a href="https://github.com/seanbreckenridge/exobrain">Source Code</a></footer><script src="/assets/main.js"></script>
