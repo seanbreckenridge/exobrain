@@ -20,6 +20,7 @@ More 'complete' blog-like posts at [feed](/feed).
 * / [Words](/words/)
 * anime/ [Searching on pixiv](/anime/pixiv/)
 * cryptography/ [SP Networks - Computerphile](/cryptography/sp_networks/)
+* devlog/ [Sonic-Pi](/devlog/sonic_pi/)
 * golang/ [General Golang Notes](/golang/general/)
 * golang/ [Structuring Projects](/golang/package_structure/)
 * linux/ [Compliance/POSIX/Unix](/linux/compliance_posix/)
