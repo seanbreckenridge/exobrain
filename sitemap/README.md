@@ -2,7 +2,7 @@
 * / [Cubing](/cubing/)
 * / [Email Protocols](/email/)
 * / [FizzBuzz](/fizzbuzz/)
-* / [Game Dev](/gamedev/)
+* / [GameDev](/gamedev/)
 * / [Internet Superhighway](/superhighway/)
 * / [Japanese](/japanese/)
 * / [Meta; about my exobrain](/meta/)

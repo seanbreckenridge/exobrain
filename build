@@ -102,6 +102,9 @@ run_build() {
 	# but its not that much overhead anyways
 	fd '^P_README.md$' | sed "s/P_//g" | xargs touch
 
+	# remove old metadata files
+	find . -name 'meta.json' -delete
+
 	# render home page
 	render "."
 	# generate 404 page
