@@ -76,4 +76,4 @@ But! I'm not totally satisfied with that, and I wish there was a better way!
 
 ---
 
-More thoughts on this [here](/shell/alternative_shells/)
+More thoughts on this [here](/programming_languages/shell/alternative_shells/)

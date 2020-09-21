@@ -1,5 +1,5 @@
 ---
-Title: The Scribe's Oath • Robert "Uncle Bob" Martin
+Title: The Programmers's Oath
 ---
 
 <https://www.youtube.com/watch?v=Tng6Fox8EfI>

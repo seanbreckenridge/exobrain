@@ -19,6 +19,6 @@ until curl -s "$LOCAL_URL" 2>/dev/null 1>&2; do
 	sleep 1
 done
 
-linkcheck -e "$LOCAL_URL"
+linkcheck "$@" "$LOCAL_URL"
 
 kill "$SERVER_PID"
