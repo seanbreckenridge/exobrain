@@ -18,6 +18,7 @@ More 'complete' blog-like posts at [feed](/feed).
 * / [Tmux Notes](/tmux/)
 * / [Tools, or how I do everything](/tools/)
 * / [Words](/words/)
+* anime/ [MAL and Anime Databases](/anime/databases/)
 * anime/ [Searching on pixiv](/anime/pixiv/)
 * cryptography/ [SP Networks - Computerphile](/cryptography/sp_networks/)
 * devlog/ [Sonic-Pi](/devlog/sonic_pi/)
