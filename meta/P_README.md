@@ -20,7 +20,7 @@ This uses a variety of shell tools to build this, listed in `build`:
 >>>PMARK
 #!/bin/sh
 cd "$RUN_FROM"
-grep '^havecmd ' build | cut -d" " -f2- | sed -e 's/^/- /' -e '/html-minifier/d' -e 's/"/(/' -e 's/"/)/'
+grep '^havecmd ' build | cut -d" " -f2- | sed -e 's/^/- /' -e '/html-minifier/d' -e '/wait-for/d' -e 's/"/(/' -e 's/"/)/'
 ```
 
 ### Hosting

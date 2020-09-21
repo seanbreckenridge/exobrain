@@ -25,7 +25,6 @@ This uses a variety of shell tools to build this, listed in `build`:
 - jq
 - python
 - figlet
-- wait-for-internet (Install from <https://github.com/seanbreckenridge/wait-for-internet> (or just remove the line from the ./build script))
 - pmark (Install from <https://github.com/seanbreckenridge/pmark>)
 
 ### Hosting
