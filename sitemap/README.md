@@ -1,10 +1,8 @@
-More 'complete' blog-like posts at [feed](/feed).
-
 * / [Concepts](/concepts/)
 * / [Cubing](/cubing/)
 * / [Email Protocols](/email/)
 * / [FizzBuzz](/fizzbuzz/)
-* / [Game Dev Notes](/gamedev/)
+* / [Game Dev](/gamedev/)
 * / [Internet Superhighway](/superhighway/)
 * / [Japanese](/japanese/)
 * / [Meta; about my exobrain](/meta/)

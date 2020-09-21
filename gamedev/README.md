@@ -1,5 +1,5 @@
 ---
-Title: Game Dev Notes
+Title: GameDev
 ---
 
 <https://www.puzzlescript.net/> for quick prototyping

@@ -34,6 +34,8 @@ havecmd entr
 havecmd pandoc
 havecmd perl
 havecmd go
+havecmd jq
+havecmd python
 havecmd figlet
 havecmd wait-for-internet "Install it from https://github.com/seanbreckenridge/wait-for-internet (or just remove the line from the ./build script)"
 havecmd pmark "Install it from 'https://github.com/seanbreckenridge/pmark'"
@@ -81,9 +83,13 @@ metadata_generate() {
 render() {
 	local dir
 	dir="$1"
-	echo Building "'$dir'"
-	metadata_generate "$dir" &
-	pandoc_generate "$dir/README.md" "$dir/index.html"
+	if [[ "$2" == "meta" ]]; then
+		metadata_generate "$dir"
+		printf "."
+	else
+		echo Building "'$dir'"
+		pandoc_generate "$dir/README.md" "$dir/index.html"
+	fi
 }
 
 run_build() {
@@ -97,23 +103,28 @@ run_build() {
 	fd '^P_README.md$' | sed "s/P_//g" | xargs touch
 
 	# render home page
-	render "." &
+	render "."
 	# generate 404 page
-	pandoc_generate "./404.md" "./404.html" &
+	pandoc_generate "./404.md" "./404.html"
 	# make manifest
 	mkmanifest
-
-	# run pmark on each P_README.md file
-	# builds the blog feed/sitemap and curls the project page
-	# see https://github.com/seanbreckenridge/pmark
-	fd '^P_README.md$' -X pmark || exit $?
 
 	# get cpu count to determine how many jobs to run at a time
 	procs="$(nproc)"
 	[[ -z "$procs" ]] && procs=4
 	procs=$((procs * 2))
 
-	wait # just incase, wait for home/404 page to generate
+	printf "Building metadata..."
+	while IFS= read -r node; do
+		render "$node" meta &
+	done <MANIFEST
+	wait
+	printf '\n'
+
+	# run pmark on each P_README.md file
+	# builds the blog feed/sitemap and curls the project page
+	# see https://github.com/seanbreckenridge/pmark
+	fd '^P_README.md$' -X pmark || exit $?
 
 	i=0
 	while IFS= read -r node; do
