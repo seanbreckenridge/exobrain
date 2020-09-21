@@ -83,7 +83,7 @@ render() {
 	local dir
 	dir="$1"
 	echo Building "'$dir'"
-	metadata_generate "$dir"
+	metadata_generate "$dir" &
 	pandoc_generate "$dir/README.md" "$dir/index.html"
 }
 
@@ -98,9 +98,9 @@ run_build() {
 	fd '^P_README.md$' | sed "s/P_//g" | xargs touch
 
 	# render home page
-	render "."
+	render "." &
 	# generate 404 page
-	pandoc_generate "./404.md" "./404.html"
+	pandoc_generate "./404.md" "./404.html" &
 	# make manifest
 	mkmanifest
 
@@ -113,6 +113,8 @@ run_build() {
 	procs="$(nproc)"
 	[[ -z "$procs" ]] && procs=4
 	procs=$((procs * 2))
+
+	wait  # just incase, wait for home/404 page to generate
 
 	i=0
 	while IFS= read -r node; do
