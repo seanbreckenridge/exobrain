@@ -5,7 +5,7 @@
 #
 # additionally:
 # runs pmark scripts: https://github.com/seanbreckenridge/pmark
-# calls ./_harden_frontmatter to make sure meta tags work
+# checks the yaml frontmatter to validate meta tags
 
 script_name="$(basename "${BASH_SOURCE[0]}")"
 
@@ -30,7 +30,7 @@ havecmd curl
 havecmd entr
 havecmd pandoc
 havecmd perl
-havecmd python
+havecmd go
 havecmd wait-for-internet "Install it from https://github.com/seanbreckenridge/wait-for-internet (or just remove it from the ./build script)"
 havecmd pmark "Install it from 'https://github.com/seanbreckenridge/pmark'"
 set +e
@@ -69,21 +69,23 @@ pandoc_generate() {
 	pandoc -s -o "$2" --quiet --template=assets/template.html "$1"
 }
 
-# validate attributes in metadata (i.e. yaml frontmatter)
-harden() {
-	local readme="${1}/README.md"
-	pandoc "$readme" -t json | DIRNAME="$1" ./_harden_frontmatter || exit $?
+# generate JSON to validate attributes in metadata (i.e. yaml frontmatter)
+metadata_generate() {
+	local readme json_frontmatter
+	readme="${1}/README.md"
+	json_frontmatter="${1}/meta.json"
+	pandoc --from=markdown-smart --to=plain --template=./assets/meta.template "$readme" >"$json_frontmatter"
 }
 
 render() {
-	local dir="$1"
+	local dir
+	dir="$1"
 	echo Building "'$dir'"
-	harden "$dir"
+	metadata_generate "$dir" &
 	pandoc_generate "$dir/README.md" "$dir/index.html"
 }
 
 run_build() {
-
 	local i procs
 
 	# make sure corresponding README files exist for P_README files
@@ -122,6 +124,10 @@ run_build() {
 	wait
 	# remove temp exobrain files
 	printf 'Removed %d temporary /tmp/exobrain-* files\n' "$(rm -fv /tmp/exobrain-* | wc -l)"
+	# check for yaml frontmatter errors
+	if go run ./harden.go; then
+		echo "No formatting errors found."
+	fi
 }
 
 run_build || exit $?
