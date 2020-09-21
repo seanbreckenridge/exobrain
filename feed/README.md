@@ -1,5 +1,5 @@
 ---
-Blog: true
+Blog: no
 ---
 
 * [Replacing bash/zsh and pipes](/post/replacing_shell/) 2020/06/23

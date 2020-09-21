@@ -1,5 +1,5 @@
 ---
-Blog: true
+Blog: no
 ---
 
 ```
