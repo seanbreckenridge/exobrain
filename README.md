@@ -1,6 +1,6 @@
-Exobrain is something like a public wiki where I keep notes, ideas and thoughts.
+An *exobrain* is something like a public wiki to store notes, ideas and thoughts.
 
-I use mine to store notes from books, videos, list resources, along with anything else I don't want to forget. 
+I use this to store notes from books, videos, list resources, along with anything else I don't want to forget.
 
 Head to the [sitemap](/sitemap) or [blog feed](/feed) for whats on here.
 
@@ -11,5 +11,4 @@ Other Notable Pages:
   - [Internet Superhighway](/superhighway), other sites/blogs I recommend.
   - [Meta](/meta), for more information about this site.
 
-Originally inspired by [`beepb00p`](https://beepb00p.xyz/exobrain/exobrain.html).
 

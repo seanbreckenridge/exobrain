@@ -2,6 +2,8 @@
 Title: Meta; about my exobrain
 ---
 
+The concept of an exobrain was originally inspired by [`beepb00p`](https://beepb00p.xyz/exobrain/exobrain.html)
+
 ### Build Tool
 
 This is built using [`pandoc`](https://pandoc.org/) to convert markdown files to html, using `pandoc` flavored markdown, which allows you to use its template language, see the conditionals in the [`template`](https://github.com/seanbreckenridge/exobrain/blob/master/assets/template.html)
