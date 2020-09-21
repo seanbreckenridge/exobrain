@@ -137,7 +137,7 @@ run_build() {
 			wait
 			i=0
 		}
-	done < <(shuf ./MANIFEST)
+	done <MANIFEST
 	wait
 	# remove temp exobrain files
 	printf 'Removed %d temporary /tmp/exobrain-* files\n' "$(rm -fv /tmp/exobrain-* | wc -l)"
