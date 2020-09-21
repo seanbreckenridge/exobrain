@@ -16,16 +16,16 @@ Since this is pretty unstructured, this does some tag validation on the meta pan
 
 This uses a variety of shell tools to build this, listed in `build`:
 
-- fd
-- curl
-- entr
-- pandoc
-- perl
-- go
-- jq
-- python
-- figlet
-- pmark (Install from <https://github.com/seanbreckenridge/pmark>)
+- `fd`
+- `curl`
+- `entr`
+- `pandoc`
+- `perl`
+- `go`
+- `jq`
+- `python`
+- `figlet`
+- `pmark` (Install from <https://github.com/seanbreckenridge/pmark>)
 
 ### Hosting
 
