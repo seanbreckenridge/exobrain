@@ -14,6 +14,7 @@
 * media/ [Stuff to read](/media/to_read/)
 * media/anime/ [MAL and Anime Databases](/media/anime/databases/)
 * media/anime/ [Searching on pixiv](/media/anime/pixiv/)
+* programming/ [Culture](/programming/culture/)
 * programming/ [FizzBuzz](/programming/fizzbuzz/)
 * programming/ [GameDev](/programming/gamedev/)
 * programming/culture/ [Bob Martin - The Future of Programming](/programming/culture/future_of_programming/)
