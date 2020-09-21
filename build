@@ -54,14 +54,20 @@ mkmanifest() {
 	done <<<"$(find . -name 'README.md' -printf "%h\n" | sort -d)" >MANIFEST
 }
 
+# minify HTML, from $1 to $2
+minify_html() {
+	html-minifier --collapse-boolean-attributes --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-style-link-type-attributes --remove-tag-whitespace "$1" -o "$2"
+	return $?
+}
+
 # converts $1 to $2 using pandoc
 pandoc_generate() {
 	local html_temp
-	html_temp="$(mktemp -p /tmp exobrain-XXXXXXXXXXXXX.html)"
 	if [[ -n "$HAS_HTML_MINIFIER" ]]; then
+		html_temp="$(mktemp -p /tmp exobrain-XXXXXXXXXXXXX.html)"
 		if pandoc -s -o "$html_temp" --quiet --template=assets/template.html "$1"; then
-			if html-minifier --collapse-boolean-attributes --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-style-link-type-attributes --remove-tag-whitespace "$html_temp" -o "$2"; then
-				return $? # succeeded, exit early
+			if minify_html "$html_temp" "$2"; then
+				return 0 # succeeded, exit early
 			else
 				printf 'Error rendering %s to %s\n' "$1" "$2" >&2
 				# drop through and do default render
@@ -74,21 +80,18 @@ pandoc_generate() {
 
 # generate JSON to validate attributes in metadata (i.e. yaml frontmatter)
 metadata_generate() {
-	local readme json_frontmatter
-	readme="${1}/README.md"
-	json_frontmatter="${1}/meta.json"
-	pandoc --from=markdown-smart --to=plain --template=./assets/meta.template "$readme" >"$json_frontmatter"
+	pandoc --from=markdown-smart --to=plain --template=./assets/meta.template "$1" >"$2"
 }
 
 render() {
 	local dir
-	dir="$1"
+	readonly dir="$1"
 	if [[ "$2" == "meta" ]]; then
-		metadata_generate "$dir"
+		metadata_generate "${dir}/README.md" "${dir}/meta.json"
 		printf "."
 	else
 		echo Building "'$dir'"
-		pandoc_generate "$dir/README.md" "$dir/index.html"
+		pandoc_generate "${dir}/README.md" "${dir}/index.html"
 	fi
 }
 
