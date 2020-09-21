@@ -6,22 +6,26 @@ These are other sites/blogs/things I'm a fan of. Inspired by [superhighway98](ht
 
 ## Blogs
 
-* [beepb00p](https://beepb00p.xyz/)
-* [Alvaro Videla](https://alvaro-videla.com/archive.html)
+- [beepb00p](https://beepb00p.xyz/)
+- [Alvaro Videla](https://alvaro-videla.com/archive.html)
+
+## Other Wikis
+
+- [Everything I know](https://wiki.nikitavoloboev.xyz/) (Nikita Voloboev)
 
 ## Websites
 
-* [learn-anything.xyz](https://learn-anything.xyz/)
+- [learn-anything.xyz](https://learn-anything.xyz/)
 
 ## Tools
 
-* [HaveIBeenPwned](https://haveibeenpwned.com/)
+- [HaveIBeenPwned](https://haveibeenpwned.com/)
 
 ## Podcasts
 
-* [Coder Radio](https://coder.show/)
+- [Coder Radio](https://coder.show/)
 
 ## Media/Entertainment
 
-* [comic sans criminal](https://www.comicsanscriminal.com/)
-* [xkcd](https://xkcd.com/)
+- [comic sans criminal](https://www.comicsanscriminal.com/)
+- [xkcd](https://xkcd.com/)
