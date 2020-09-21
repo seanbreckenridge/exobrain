@@ -11,9 +11,9 @@ The [`build`](https://github.com/seanbreckenridge/exobrain/blob/master/build) sc
 
 Parts of the dynamic feed/blog/projects pages are built using my [`pmark`](https://github.com/seanbreckenridge/pmark) script, which uses code blocks to generate markdown, from within the markdown itself.
 
-Since this is pretty unstructured, this does some tag validation on the meta pandoc tags (sometimes called 'yaml frontmatter'), using `$meta-json$` to make sure I'm not missing titles/dates for the markdown files. (See [pandoc notes](/shell/pandoc) and the `harden.go` file)
+Since this is pretty unstructured, this does some tag validation on the meta pandoc tags (sometimes called 'yaml frontmatter'), using `$meta-json$` to make sure I'm not missing titles/dates for the markdown files. (See [pandoc notes](/shell/pandoc) and the [`harden.go`](https://github.com/seanbreckenridge/exobrain/blob/master/harden.go) file)
 
-Some of those scripts have the external dependency of [`fd`](https://github.com/sharkdp/fd), [`entr`](https://eradman.com/entrproject/) and some python libs. Code at the top of `build` reports if any of the commands are missing, and `_harden_formatter` does the same for the python libraries.
+Some of those scripts have the external dependency of [`fd`](https://github.com/sharkdp/fd), [`entr`](https://eradman.com/entrproject/) and some python libs. Code at the top of `build` reports if any of the commands are missing.
 
 ### Hosting
 
