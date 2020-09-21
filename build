@@ -60,7 +60,7 @@ pandoc_generate() {
 	if [[ -n "$HAS_HTML_MINIFIER" ]]; then
 		if pandoc -s -o "$html_temp" --quiet --template=assets/template.html "$1"; then
 			if html-minifier --collapse-boolean-attributes --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-style-link-type-attributes --remove-tag-whitespace "$html_temp" -o "$2"; then
-				return # succeeded, exit early
+				return $? # succeeded, exit early
 			else
 				printf 'Error rendering %s to %s\n' "$1" "$2" >&2
 				# drop through and do default render
@@ -68,6 +68,7 @@ pandoc_generate() {
 		fi
 	fi
 	pandoc -s -o "$2" --quiet --template=assets/template.html "$1"
+	return $?
 }
 
 # generate JSON to validate attributes in metadata (i.e. yaml frontmatter)
@@ -82,7 +83,7 @@ render() {
 	local dir
 	dir="$1"
 	echo Building "'$dir'"
-	metadata_generate "$dir" &
+	metadata_generate "$dir"
 	pandoc_generate "$dir/README.md" "$dir/index.html"
 }
 

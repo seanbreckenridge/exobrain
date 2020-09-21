@@ -1,6 +1,5 @@
 ---
 Title: Replacing bash/zsh and pipes
-Blog: yes
 Date: 2020/06/23
 ---
 

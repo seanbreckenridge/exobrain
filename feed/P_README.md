@@ -1,7 +1,3 @@
----
-Blog: no
----
-
 ```
 >>>PMARK
 #!/bin/bash

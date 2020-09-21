@@ -1,6 +1,5 @@
 ---
 Title: The Scribe's Oath • Robert "Uncle Bob" Martin
-Blog: no
 ---
 
 <https://www.youtube.com/watch?v=Tng6Fox8EfI>

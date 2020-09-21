@@ -1,6 +1,5 @@
 ---
 Title: Uncle Bob Martin - The Future of Programming
-Blog: no
 ---
 
 <https://www.youtube.com/watch?v=ecIWPzGEbFc>

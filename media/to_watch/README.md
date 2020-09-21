@@ -1,6 +1,5 @@
 ---
 Title: Movies to Watch
-Blog: no
 ---
 
 * Fight Club

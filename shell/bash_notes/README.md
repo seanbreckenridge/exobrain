@@ -1,6 +1,5 @@
 ---
 Title: Bash Notes
-Blog: no
 ---
 
 Use bash substitutions when possible instead of `sed`/`awk`. 

@@ -1,6 +1,5 @@
 ---
 Title: SICP 07 - Object Oriented Programming
-Blog: no
 ---
 
 Read [Object Oriented Programming | Above the line view](http://inst.eecs.berkeley.edu/~cs61a/reader/aboveline.pdf)

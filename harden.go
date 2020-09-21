@@ -13,7 +13,6 @@ import (
 )
 
 type FrontMatter struct {
-	Blog  string `json:"Blog"`
 	Title string `json:"Title"`
 	Date  string `json:"Date"`
 }
@@ -60,10 +59,6 @@ func main() {
 				}
 				// check for blog metadata
 				if strings.HasPrefix(path, "post/") {
-					if data.Blog != "yes" {
-						fmt.Printf("'%s' is in the post/ directory, but it isn't marked as 'Blog: yes'\n", dir)
-						ret = 1
-					}
 					if strings.Trim(data.Date, " ") == "" {
 						fmt.Printf("'%s' should have a 'Date', but it is empty.\n", dir)
 						ret = 1

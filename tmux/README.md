@@ -1,6 +1,5 @@
 ---
 Title: Tmux Notes
-Blog: no
 ---
 
 See <https://sean.fish/d/.tmux.conf> for my config

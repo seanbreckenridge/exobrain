@@ -1,6 +1,5 @@
 ---
 Title: Personal Server Setup
-Blog: yes
 Date: 2020/06/12
 ---
 

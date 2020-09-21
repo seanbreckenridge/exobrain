@@ -1,6 +1,5 @@
 ---
 Title: Git Commands
-Blog: no
 ---
 
 `git commit -p` lets you do hunk-based commits, sort of like running lots of `--patch`es.

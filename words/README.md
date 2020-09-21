@@ -1,6 +1,5 @@
 ---
 Title: Words
-Blog: no
 ---
 
 ## Snowclone:

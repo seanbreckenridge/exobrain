@@ -1,6 +1,5 @@
 ---
 Title: Music to Listen to
-Blog: no
 ---
 
 * Chon

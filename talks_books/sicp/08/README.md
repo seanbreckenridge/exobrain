@@ -1,6 +1,5 @@
 ---
 Title: SICP 08 - Local state variables, environments
-Blog: no
 ---
 
 Read Section 3.1, 3.2

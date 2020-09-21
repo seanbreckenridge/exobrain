@@ -1,6 +1,5 @@
 ---
 Title: Email Protocols
-Blog: no
 ---
 
 <https://www.youtube.com/watch?v=GDajvxusBDg>

@@ -1,6 +1,5 @@
 ---
 Title: Cubing
-Blog: no
 ---
 
 ## 3x3

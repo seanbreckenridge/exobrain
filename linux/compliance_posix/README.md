@@ -1,6 +1,5 @@
 ---
 Title: Compliance/POSIX/Unix
-Blog: no
 ---
 
 [Unix](https://en.wikipedia.org/wiki/Unix) when it was released was made for business and was incredibly expensive, its `minix`, and later `linux`/`bsd`-variants that made this free.

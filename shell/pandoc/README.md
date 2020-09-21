@@ -1,6 +1,5 @@
 ---
 Title: Pandoc
-Blog: no
 ---
 
 [Filters](https://pandoc.org/filters.html) are nice to modify the AST as its being created.

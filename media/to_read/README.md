@@ -1,6 +1,5 @@
 ---
 Title: Stuff to read
-Blog: no
 ---
 
 ### Blogs/Articles

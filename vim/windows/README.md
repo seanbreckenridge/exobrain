@@ -1,6 +1,5 @@
 ---
 Title: Vim Windows/Buffers
-Blog: no
 ---
 
 ### Creating/Switching Windows

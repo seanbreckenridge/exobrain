@@ -1,6 +1,5 @@
 ---
 Title: Meta; about my exobrain
-Blog: no
 ---
 
 ### Build Tool

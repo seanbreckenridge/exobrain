@@ -1,6 +1,5 @@
 ---
 Title: SICP 01 - Functional Programming
-Blog: no
 ---
 
 Read Section 1.1: The Elements of Programming
