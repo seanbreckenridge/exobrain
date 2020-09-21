@@ -7,6 +7,9 @@
 # runs pmark scripts: https://github.com/seanbreckenridge/pmark
 # checks the yaml frontmatter to validate meta tags
 
+# cd to this dir
+cd "$(dirname "${BASH_SOURCE[0]}")" || exit
+
 script_name="$(basename "${BASH_SOURCE[0]}")"
 
 havecmd() {
@@ -32,16 +35,12 @@ havecmd pandoc
 havecmd perl
 havecmd go
 havecmd figlet
-havecmd wait-for-internet "Install it from https://github.com/seanbreckenridge/wait-for-internet (or just remove it from the ./build script)"
+havecmd wait-for-internet "Install it from https://github.com/seanbreckenridge/wait-for-internet (or just remove the line from the ./build script)"
 havecmd pmark "Install it from 'https://github.com/seanbreckenridge/pmark'"
 set +e
-havecmd html-minifier "Install with 'npm install -g html-minifier'"
+havecmd html-minifier "Install with 'npm install -g html-minifier'" && HAS_HTML_MINIFIER=1
 
 wait-for-internet >/dev/null 2>&1
-
-cd "$(dirname "${BASH_SOURCE[0]}")" || exit
-
-command -v html-minifier >/dev/null 2>&1 && HAS_HTML_MINIFIER=1
 
 # creates the manifest file (directories which have posts)
 mkmanifest() {
