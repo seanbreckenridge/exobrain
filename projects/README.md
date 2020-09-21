@@ -1,6 +1,6 @@
 ---
 Title: Programming Projects
-Blog: false
+Blog: no
 ---
 
 This is kept up to date by some code [here](https://github.com/seanbreckenridge/projects)

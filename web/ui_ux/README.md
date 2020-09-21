@@ -1,6 +1,6 @@
 ---
 Title: General UI/UX Notes
-Blog: false
+Blog: no
 ---
 
 ## Fitts's Law

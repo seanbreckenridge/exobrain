@@ -1,6 +1,6 @@
 ---
 Title: Sonic-Pi
-Blog: false
+Blog: no
 ---
 
 Me documenting my issues installing [`sonic-pi`](https://github.com/sonic-pi-net/sonic-pi/blob/main/INSTALL-LINUX.md) on arch.

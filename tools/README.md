@@ -1,6 +1,6 @@
 ---
 Title: Tools, or how I do everything
-Blog: false
+Blog: no
 ---
 
 This is an extension of my [`dotfiles`](https://github.com/seanbreckenridge/dotfiles)

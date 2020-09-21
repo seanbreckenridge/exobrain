@@ -1,18 +1,10 @@
 <!doctype html>
 <html lang="en">
 <head>
-  ${if(Blog)}
-    ${if(Title)}
-      <title>blog | ${Title}</title>
-    ${else}
-      <title>blog | feed</title>
-    ${endif}
+  ${if(Title)}
+    <title>exobrain | ${Title}</title>
   ${else}
-    ${if(Title)}
-      <title>exobrain | ${Title}</title>
-    ${else}
-      <title>exobrain</title>
-    ${endif}
+    <title>exobrain</title>
   ${endif}
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,11 +18,7 @@
 <body>
 <header class=nav-bar>
   <nav>
-    ${if(Blog)}
-      <a class="homelink" href="/">blog</a>
-    ${else}
-      <a class="homelink" href="/">exobrain</a>
-    ${endif}
+    <a class="homelink" href="/">exobrain</a>
     <div class="nav-right">
       <div class=nav-item><a class="nav-link" href="/feed">blog feed</a></div>
       <div class=nav-item><a class="nav-link" href="/sitemap">exobrain sitemap</a></div>

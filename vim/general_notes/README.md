@@ -1,6 +1,6 @@
 ---
 Title: Vim Notes
-Blog: false
+Blog: no
 ---
 
 ### visual block

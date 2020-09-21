@@ -1,6 +1,6 @@
 ---
 Title: Web Tools
-Blog: false
+Blog: no
 ---
 
 <https://wasabi.com/> for file storage

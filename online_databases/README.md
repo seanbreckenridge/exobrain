@@ -1,6 +1,6 @@
 ---
 Title: Online Databases
-Blog: false
+Blog: no
 ---
 
 *Why use online databases?*

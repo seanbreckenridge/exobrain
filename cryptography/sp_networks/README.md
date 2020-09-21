@@ -1,6 +1,6 @@
 ---
 Title: SP Networks - Computerphile
-Blog: false
+Blog: no
 ---
 
 <https://www.youtube.com/watch?v=DLjzI5dX8jc>

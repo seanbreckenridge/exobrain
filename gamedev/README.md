@@ -1,6 +1,6 @@
 ---
 Title: Game Dev Notes
-Blog: false
+Blog: no
 ---
 
 <https://www.puzzlescript.net/> for quick prototyping

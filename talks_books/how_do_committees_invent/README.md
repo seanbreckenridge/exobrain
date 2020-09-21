@@ -1,6 +1,6 @@
 ---
 Title: How Do Committees Invent, Melvin E. Conway
-Blog: false
+Blog: no
 ---
 
 Quote:

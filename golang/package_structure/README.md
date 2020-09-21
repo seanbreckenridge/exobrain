@@ -1,6 +1,6 @@
 ---
 Title: Structuring Projects
-Blog: false
+Blog: no
 ---
 
 ### Starting projects:

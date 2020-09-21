@@ -1,6 +1,6 @@
 ---
 Title: Searching on pixiv
-Blog: false
+Blog: no
 ---
 
 Weird hack to sorta sort by popularity on [pixiv](https://www.pixiv.net/en/) without a membership.

@@ -1,6 +1,6 @@
 ---
 Title: MAL and Anime Databases
-Blog: false
+Blog: no
 ---
 
 For general thoughts on online databases, see [online databases](/online_databases/).

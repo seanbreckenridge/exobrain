@@ -1,6 +1,6 @@
 ---
 Title: How I watch Twitch
-Blog: true
+Blog: yes
 Date: 2020/06/13
 ---
 

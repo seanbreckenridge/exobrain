@@ -1,6 +1,6 @@
 ---
 Title: Alternative Shells
-Blog: false
+Blog: no
 ---
 
 Expanding a bit on the thoughts [here](/post/replacing_shell)

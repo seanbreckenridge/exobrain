@@ -1,6 +1,6 @@
 ---
 Title: SICP 05 - Hierarchical data/Scheme Interpreter
-Blog: false
+Blog: no
 ---
 
 Read Section 2.2.2, 2.2.3, 2.3.1
