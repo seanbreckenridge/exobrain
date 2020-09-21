@@ -31,7 +31,7 @@ havecmd entr
 havecmd pandoc
 havecmd perl
 havecmd go
-havecmd done
+havecmd figlet
 havecmd wait-for-internet "Install it from https://github.com/seanbreckenridge/wait-for-internet (or just remove it from the ./build script)"
 havecmd pmark "Install it from 'https://github.com/seanbreckenridge/pmark'"
 set +e
