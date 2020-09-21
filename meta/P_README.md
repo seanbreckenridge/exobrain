@@ -16,17 +16,12 @@ Since this is pretty unstructured, this does some tag validation on the meta pan
 
 This uses a variety of shell tools to build this, listed in `build`:
 
-- fd
-- curl
-- entr
-- pandoc
-- perl
-- go
-- jq
-- python
-- figlet
-- wait-for-internet (Install from <https://github.com/seanbreckenridge/wait-for-internet> (or just remove the line from the ./build script))
-- pmark (Install from <https://github.com/seanbreckenridge/pmark>)
+```
+>>>PMARK
+#!/bin/sh
+cd "$RUN_FROM"
+grep '^havecmd ' build | cut -d" " -f2- | sed -e 's/^/- /' -e '/html-minifier/d' -e 's/"/(/' -e 's/"/)/'
+```
 
 ### Hosting
 

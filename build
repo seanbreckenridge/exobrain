@@ -37,8 +37,8 @@ havecmd go
 havecmd jq
 havecmd python
 havecmd figlet
-havecmd wait-for-internet "Install it from https://github.com/seanbreckenridge/wait-for-internet (or just remove the line from the ./build script)"
-havecmd pmark "Install it from 'https://github.com/seanbreckenridge/pmark'"
+havecmd wait-for-internet "Install from <https://github.com/seanbreckenridge/wait-for-internet> (or just remove the line from the ./build script)"
+havecmd pmark "Install from <https://github.com/seanbreckenridge/pmark>"
 set +e
 havecmd html-minifier "Install with 'npm install -g html-minifier'" && HAS_HTML_MINIFIER=1
 
