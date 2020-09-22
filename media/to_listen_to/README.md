@@ -26,6 +26,7 @@ Title: Music to Listen to
 * final fantasy 14 - <https://www.youtube.com/watch?v=P-6XLTnqcBY>
 * Haru Nemuri
 * sugiyama kiyotaka
+* [T-Square](https://www.discogs.com/artist/1249160-T-Square)
 
 ----
 
