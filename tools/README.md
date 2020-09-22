@@ -67,7 +67,6 @@ Most of these are command line based. On a regular day, the only GUI tools I use
 
 ### Other CLI Tools I use less often
 
-- [`checkbashisms`](https://linux.die.net/man/1/checkbashisms) - check for bashisms in /bin/sh scripts
 - [`bat`](https://github.com/sharkdp/bat); a fancy cat clone
 - [`boxes`](https://boxes.thomasjensen.com/) to print fancy boxes in the terminal
 - [`figlet`](http://www.figlet.org/) to print large letters
