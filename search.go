@@ -181,7 +181,7 @@ func main() {
 		// extract info from the chosen fzf line
 		fields := strings.Split(chosen, ":")
 		if len(fields) < 2 {
-			log.Fatalf("Couldn't extract filepath and line number from line: %s", chosen)
+			log.Fatalf("Couldn't extract filepath and line number from line: %s\n", chosen)
 		}
 		chosenFile := fields[0]
 		lineNo := fields[1]
