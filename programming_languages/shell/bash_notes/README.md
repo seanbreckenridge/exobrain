@@ -4,6 +4,33 @@ Title: Bash Notes
 
 Use bash substitutions when possible instead of `sed`/`awk`. 
 
+#### tty/scripting
+
+Its useful to check the response of the `tty` command when doing interactive scripts. I use it for my [`launch`](https://sean.fish/d/cross-platform/launch?dark) script. If I run `launch htop`. If I'm already in a terminal, it just launches `htop`, but if its being run from a keybind/in the background, it opens a new terminal and runs that as an argument.
+
+As an example, to prompt me to select something:
+
+```bash
+pick='fzf'
+# if run from rofi/i3, use picker instead
+if [[ "$(tty)" = "not a tty" ]]; then
+	# cross platform GUI picker https://sean.fish/d/picker?dark
+	pick='picker'
+fi
+
+# run some command, use the picker chosen, and copy what I chose to my clipboard
+something | "$pick" | clipcopy
+```
+
+If I'm running using a keybind in the background, that would use [`rofi`](https://github.com/davatorium/rofi) (`picker`), If I'm running from a terminal, it'd use [`fzf`](https://github.com/junegunn/fzf)
+
+The `[[ "$(tty)" = "not a tty" ]]` is the important bit; that means this isn't being run from a terminal. If it is, the result is something like:
+
+```
+$ tty
+/dev/pts/9
+```
+
 #### Auto expanding variable contents:
 
 ```
