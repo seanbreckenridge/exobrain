@@ -76,7 +76,7 @@ func fzf(input func(in io.WriteCloser)) string {
 		in.Close()
 	}()
 	result, _ := cmd.Output()
-	return strings.Trim(string(result), "\n")
+	return strings.TrimSpace(string(result))
 }
 
 // read a file, write each line 'relpath:line no:contents/url' to the fzf buffer
@@ -122,7 +122,7 @@ func consumeFile(fpath string, userFlags *flags, fzfBuf io.WriteCloser) error {
 func openLocalFile(fpath string, lineNumber string, userFlags *flags) error {
 	fullPath := path.Join(userFlags.location, fpath)
 	editor := os.Getenv("EDITOR")
-	if editor == "" {
+	if len(editor) == 0 {
 		editor = "vim" // probably okay to default to this
 	}
 	var cmd *exec.Cmd
@@ -176,7 +176,7 @@ func main() {
 	})
 
 	// if the user chose something
-	if chosen != "" {
+	if len(chosen) > 0 {
 
 		// extract info from the chosen fzf line
 		fields := strings.Split(chosen, ":")
@@ -190,7 +190,7 @@ func main() {
 		if userFlags.printUrl {
 			// get directory, exobrain automatically converts README.md to index.html, which is
 			// served by the web server
-			fmt.Printf("%s%s\n", userFlags.baseurl, filepath.Dir(chosenFile))
+			fmt.Println(path.Join(userFlags.baseurl, filepath.Dir(chosenFile)))
 		} else {
 			err := openLocalFile(chosenFile, lineNo, userFlags)
 			if err != nil {
