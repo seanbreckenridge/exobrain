@@ -46,6 +46,7 @@ if ((OPEN_URL)); then
 	# https://sean.fish/d/openurl?dark
 	# https://sean.fish/d/clipcopy?dark
 	URL="$(run_search)" || exit $?
+	[[ -z "$URL" ]] && exit 1
 	printf '%s' "$URL" | clipcopy
 	printf '%s' "$URL" | openurl
 else
