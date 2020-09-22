@@ -131,7 +131,7 @@ func openLocalFile(fpath string, lineNumber string, userFlags *flags) error {
 	if editor == "nvim" || editor == "vim" || editor == "editor" { // (my editor is literally called editor, a wrapper for nvim)
 		lineNum, err := strconv.Atoi(lineNumber)
 		if err != nil {
-			lineNum = 0
+			lineNum = 1
 		} else {
 			lineNum += 1 // vim is not zero indexed
 		}
