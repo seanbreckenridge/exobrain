@@ -18,6 +18,8 @@ When I pick some text, that opens my text editor to that line in the file. Once 
 
 `exosearch` uses [`fzf`](https://github.com/junegunn/fzf). By default, it searches text and opens the chosen line in my editor. The `-o` flag instead searches for links, and open the corresponding URL in my browser.
 
+`alias exoo='cd "${REPOS}/exobrain"; ranger --cmd="shell ./exosearch -o"'`
+
 ```
 (flags for the underlying search.go)
 Search my exobrain for something!
