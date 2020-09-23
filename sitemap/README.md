@@ -18,6 +18,7 @@
 * programming/ [Culture](/programming/culture/)
 * programming/ [FizzBuzz](/programming/fizzbuzz/)
 * programming/ [GameDev](/programming/gamedev/)
+* programming/ [Programming Courses](/programming/courses/)
 * programming/culture/ [Bob Martin - The Future of Programming](/programming/culture/future_of_programming/)
 * programming/culture/ [How Do Committees Invent, Melvin E. Conway](/programming/culture/how_do_committees_invent/)
 * programming/culture/ [The Programmers's Oath](/programming/culture/programmers_oath/)
