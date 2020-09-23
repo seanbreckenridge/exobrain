@@ -1,5 +1,5 @@
 ---
-Title: Beginner-Friendly Programming Resources
+Title: Beginner-Friendly Resources
 ---
 
 Its much better to try and have a project you want to do, and then try and do that project.
