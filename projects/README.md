@@ -419,4 +419,10 @@ Cookiecutter template for a basic python library. Is meant for packages I don't 
 
 Lets me edit files and strings in temporary vim (or some other console editor) buffers. I've mostly replaced this with my heavy use of a customized [ranger](https://github.com/ranger/ranger)
 
+### oh-my-stars
+
+[GitHub](https://github.com/seanbreckenridge/oh-my-stars) | Python
+
+An offline CLI tool to search your GitHub Stars. Forked from [here](https://github.com/wolfg1969/oh-my-stars) to have a simpler interface and also index all of my repositories, in addition to any stars.
+
 
