@@ -1,5 +1,5 @@
 ---
-Title: Beginner-Friendly Resources
+Title: Advice for Beginners
 ---
 
 Its much better to try and have a project you want to do, and then try and do that project.
