@@ -10,7 +10,7 @@ Setup the VM however with whatever you'd like. I've been a fan of debian on the 
 1. `ssh root@<ip-addr>`
 2. create a user for me and give me `sudo` privileges
 
-```
+```shell
 # my terminal doesn't have the best terminfo support out of the box; default to xterm-256color
 export TERM=xterm-256color
 adduser sean
@@ -49,11 +49,23 @@ UsePAM no
 PermitRootLogin no
 ```
 
+6b. May have to setup `ufw`, to setup ports
+
+```shell
+# apt install ufw
+ufw allow 22
+ufw allow 80
+ufw allow 443
+ufw enable
+ufw status
+ufw reload
+```
+
 Reload ssh: `sudo systemctl reload ssh`
 
 7. Setup a gitlab/github ssh key and start an `ssh-agent`, but dont '`eval ssh-agent`' every time you log in, just the first time, by putting this in `~/.bash_profile`:
 
-```
+```shell
 if [ ! -S ~/.ssh/ssh_auth_sock ]; then
   eval `ssh-agent`
   ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
@@ -72,7 +84,7 @@ This is heavily modified after my applications are set up, see below.
 
 9. Install lots of things to configure my applications/webapps, see [vps](https://github.com/seanbreckenridge/vps):
 
-```
+```shell
 # setup docker
 sudo apt-get install apt-transport-https ca-certificates curl gnupg2 software-properties-common
 curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add –
@@ -140,7 +152,7 @@ cd ~/vps
 
 Make sure the `server_name` directive exists in the `server` block running on port 80 in `/etc/nginx/sites-available/default` before trying to do `certbot`, so it can grab the domain name from there.
 
-```
+```shell
 sudo apt install certbot python-certbot-nginx
 sudo certbot --nginx
 sudo certbot renew --dry-run # test renewal
@@ -150,7 +162,7 @@ sudo certbot renew --dry-run # test renewal
 
 I do this for `/var/log/auth.log`, `nginx` and `fail2ban`:
 
-```
+```shell
 cd /etc/logrotate.d/
 sudoedit rsyslog  # remove auth
 sudo mv nginx nginx.disabled
@@ -159,7 +171,7 @@ sudo mv fail2ban fail2ban.disabled
 
 12. Setup the basic nginx server blocks to have nginx redirect from HTTP to HTTPS and from my [https://www.sean.fish](https://www.sean.fish) to just [https://sean.fish](https://sean.fish). In `/etc/nginx/sites-available/default`:
 
-```
+```shell
 # redirect from HTTP to HTTPS
 server {
     listen 80 default_server;
@@ -201,7 +213,7 @@ Its also possible to configure this at the `DNS` level using a `CNAME`, but I li
 
 13. Configure `linux`/`nginx` for better performance/more connections/open files (especially since I use phoenix as my main server):
 
-```
+```shell
 ## /etc/nginx/nginx.conf
 # at the top
 worker_rlimit_nofile 37268;
