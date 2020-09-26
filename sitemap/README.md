@@ -16,6 +16,7 @@
 * media/anime/ [Searching on pixiv](/media/anime/pixiv/)
 * programming/ [Advice for Beginners](/programming/beginner_advice/)
 * programming/ [Culture](/programming/culture/)
+* programming/ [Dotfiles](/programming/dotfiles/)
 * programming/ [FizzBuzz](/programming/fizzbuzz/)
 * programming/ [GameDev](/programming/gamedev/)
 * programming/ [Programming Courses](/programming/courses/)
