@@ -120,6 +120,12 @@ A template for my bash scripts, to provide a nicer interface to check for the pr
 
 Wrapper script/code to interact with mintable; to keep track of my accounts/transactions and create a personal budget.
 
+### calories-fzf
+
+[GitHub](https://github.com/seanbreckenridge/calories-fzf) | [GitLab](https://gitlab.com/seanbreckenridge/calories-fzf) | Shell
+
+A fzf interface to [calories](https://github.com/zupzup/calories), to add something you've eaten in the past again.
+
 ### mal-unapproved
 
 [GitHub](https://github.com/seanbreckenridge/mal-unapproved) | [GitLab](https://gitlab.com/seanbreckenridge/mal-unapproved) | Ruby
@@ -430,5 +436,6 @@ Lets me edit files and strings in temporary vim (or some other console editor) b
 [GitHub](https://github.com/seanbreckenridge/oh-my-stars) | Python
 
 An offline CLI tool to search your GitHub Stars. Forked from [here](https://github.com/wolfg1969/oh-my-stars) to have a simpler interface and also index all of my repositories, in addition to any stars.
+
 
 
