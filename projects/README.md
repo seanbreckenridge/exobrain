@@ -353,6 +353,12 @@ My old dotfiles for Mac. Has now been combined into my single [dotfiles](https:/
 
 Clicks the 'Run until 3 months from today' button on [pythonanywhere](https://www.pythonanywhere.com/), so your website doesn't deactivate automatically.
 
+### MALUserVsAverage
+
+[GitHub](https://github.com/seanbreckenridge/MALUserVsAverage) | [GitLab](https://gitlab.com/seanbreckenridge/MALUserVsAverage) | Python
+
+generate a graph that shows correlation between the user and average score on MyAnimeList
+
 ### reddit-wallpaper-scraper
 
 [GitHub](https://github.com/seanbreckenridge/reddit-wallpaper-scraper) | [GitLab](https://gitlab.com/seanbreckenridge/reddit-wallpaper-scraper) | Python
