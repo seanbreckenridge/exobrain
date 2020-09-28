@@ -26,14 +26,14 @@ If I'm running using a keybind in the background, that would use [`rofi`](https:
 
 The `[[ "$(tty)" = "not a tty" ]]` is the important bit; that means this isn't being run from a terminal. If it is, the result is something like:
 
-```
+```bash
 $ tty
 /dev/pts/9
 ```
 
 #### Auto expanding variable contents:
 
-```
+```bash
 # special syntax to expand \n to actual newline in string
 name=$'Sean\nBreckenridge'
 echo "$name" # receives one argument
@@ -51,7 +51,7 @@ printf "%s" "$name"
 #### Modifying IFS to read into arrays:
 
 You can use `$'\n'` to expand an actual newline into the internal field separator, and then use a subshell to split lines into an array:
-```
+```bash
 declare -a dircontents
 IFS=$'\n' dircontents=($(ls -1))
 for val in "${dircontents[@]}"; do
@@ -75,7 +75,7 @@ You may need to use POSIX complaint code for something like Solaris SVR4 package
 
 Print message to STDERR if value is unset and exit:
 
-```
+```bash
 # if $1 is unset/empty
 USER_INPUT="${1:?must provide something as first argument}"
 ```
@@ -110,14 +110,14 @@ HEREDOCs that have indentation need tabs, so it can make formatting confusing - 
 
 One can use embedded newlines:
 
-```
+```bash
 some_string="I am a string
 with multiple lines"
 ```
 
 Don't but `do` and `then` on their own line when using `for`/`if` loops:
 
-```
+```bash
 for ....; do
   expression
 done
@@ -130,7 +130,7 @@ Using semicolons makes the indent more obvious.
 
 When doing *lots* of parameter expansion when doing an echo, would make more sense to separate that into another variable, or use `printf`. Avoid stuff like:
 
-```
+```bash
 echo "${1}0${2}0${3}"
 ```
 
@@ -144,20 +144,20 @@ Quoting:
 
 It may not be necessary, but always quote your command substitutions to be safe:
 
-```
+```bash
 some_val="$(subshell command "$@")"
 ```
 
 `readonly` is a synonym for `declare -r`, which makes a variable constant.
 
-```
+```bash
 FLAGS=( --foo --bar='baz' )
 readonly FLAGS
 ```
 
 Don't need to quote variables in arithmetic subshells
 
-```
+```bash
 if (( $# > 3 )); then
   echo "too many arguments"
 fi
@@ -165,14 +165,14 @@ fi
 
 Don't need to quote literal integers, but you may want to single quote words:
 
-```
+```bash
 exit_code=3
 some_value='true'
 ```
 
 Use `$(command)` instead of back ticks. Nested back ticks require escaping the inner ones. `$(command)` doesn't change and is easier to read:
 
-```
+```bash
 # Do:
 var="$(command "$(command)")"
 # instead of:
@@ -191,7 +191,7 @@ This also means when you're doing regex, you can splat a variable into a regex t
 
 For regex:
 
-```
+```bash
 # this matches
 [[ "filename" == f* ]]
 # this doesnt
@@ -202,14 +202,14 @@ Bash is smart enough to deal with empty strings in test. (`/usr/bin/[` is not!)
 
 Use `-z` to empty strings, and `-n` to test if strings has value:
 
-```
+```bash
 [[ -z "$1" ]] && echo "argument is empty"
 [[ -n "$1" ]] && echo "argument has value: ${1}"
 ```
 
 Using `(( ... ))` makes sure that the values are integers, don't have to use `$` and means you don't have to use `-gt` or `-lt` in `[[ .. ]]`:
 
-```
+```bash
 if (( some_var > 3 )); then
 
 fi
@@ -217,7 +217,7 @@ fi
 
 Use an explicit `./` path when doing wildcard expansion of filenames:
 
-```
+```bash
 find . -name "./*.txt"
 ```
 
@@ -229,7 +229,7 @@ Arrays should be used for lists of items, to avoid complications with quoting.
 
 Using a single string to multiple command arguments to another command should be avoided, as it leads to having to either doing an eval or parameter expansion.
 
-```
+```bash
 # Do this:
 declare -a flags
 flags=(--foo --bar='baz')
@@ -245,7 +245,7 @@ binary_command "${flags}"
 
 `testarr`:
 
-```
+```bash
 #!/bin/bash
 declare -a arr
 arr=('1' '2')
@@ -256,7 +256,7 @@ python3 ./testarr.py "${arr[@]}"
 
 `testarr.py`
 
-```
+```python
 import sys
 import pprint
 
@@ -273,7 +273,7 @@ Use process substitution or `readarray` instead of directly piping into while. P
 
 *Don't do this:*
 
-```
+```bash
 my_variable='something'
 command | while read -r line; do
   my_variable+="${line}\n"
@@ -283,7 +283,7 @@ echo "$my_variable"  # prints 'something', wasnt modified in loop
 
 *Do this instead:*
 
-```
+```bash
 my_variable='something'
 while read -r line; do
   my_variable+="${line}\n"
@@ -294,7 +294,7 @@ That leaves the while loop in the parent process, but still runs the command in 
 
 You can also:
 
-```
+```bash
 my_variable='something'
 command_output="$(command)"
 while read -r line; do
@@ -306,7 +306,7 @@ done <<<"$command_output"
 
 Another alternative with `readarray`:
 
-```
+```bash
 my_variable='something'
 readarray -t lines < <(command)
 for line in "${lines[@]}"; do
@@ -323,12 +323,26 @@ Should be careful about using a for-loop to iterate over output using `for somet
 
 ### Math subshells:
 
-```
+```bash
 # do some simple arithmetic and print it
 echo "$(( 2 + 2)) is 4"
 # assign to variable
 (( i = 10 * j + 400))
 echo "$i"
+```
+
+In a math subshell, `0` is false and anything else is true. As an example to check external commands:
+
+```bash
+COND=1
+command -v "command_name" >/dev/null || COND=0
+command -v "some_other_command" >/dev/null || COND=0
+if ((COND)); then
+	command_name "something"
+	some_other_command "something"
+else
+	echo "you don't have command"
+fi
 ```
 
 `let` isn't `declare` or `local` - just avoid it.
@@ -340,19 +354,20 @@ Stylistic considerations aside, shell built-in arithmetic is way faster than a s
 `local` and `declare` have the same flags. `declare` works a global level and `local` works in functions.
 
 same thing:
-```
+
+```bash
 readonly SOME_PATH='/some/path'
 declare -r SOMEPATH='/some/path'
 ```
 
-```
+```bash
 # makes constant and exports variable:
 declare -rx SOMEPATH='/some/path'
 ```
 
 Can set a variable to be readonly after checking opts:
 
-```
+```bash
 VERBOSE='false'
 while getopts 'v' flag; do
   case "${flag}" in
@@ -366,7 +381,7 @@ readonly VERBOSE
 
 You should separate the declaration of `declare` and `local` from its `RHS` value if that includes a call to a subshell which could fail. For example:
 
-```
+```bash
 declare my_var="$(command)"
 (( $? == 0 )) || return
 ```
@@ -375,7 +390,7 @@ will *always* succeed, since the `declare` returns a 0 exit code.
 
 Should instead do:
 
-```
+```bash
 declare my_var
 my_var="$(command)"
 (( $? == 0))
@@ -385,7 +400,7 @@ When a script gets large enough, you may start separating parts into functions. 
 
 So, it makes more sense to create a `main` or top-level function that includes your entire script, like:
 
-```
+```bash
 main() {
   [ -z "$1" ] && {
     echo "error" >&2
@@ -402,7 +417,7 @@ For short scripts that just once from top to bottom, that's slight overkill, but
 
 Instead of explicitly checking `$?` to check the error code, you can use an if statement, or just a `||` with curly brackets:
 
-```
+```bash
 if ! mv "$something" "$somewhere"; then
   echo "Error, couldnt move ${something}"
   exit 1
@@ -423,7 +438,7 @@ mv "$something" "$somewhere" || {
 
 Bash also has `PIPESTATUS` that lets you check the return code from every part of a pipe.
 
-```
+```bash
 tar -cf - ./* | ( cd "${dir}" && tar -xf - )
 if (( PIPESTATUS[0] != 0 || PIPESTATUS[1] != 0 )); then
   echo "Unable to tar files to ${dir}" >&2
@@ -432,7 +447,7 @@ fi
 
 Another alternative if you're pipelining text is to use `xargs -r`, which doesn't run if the STDIN is empty, which is typically the case if a command failed:
 
-```
+```bash
 some_command_that_might_print_nothing | xargs -r -I "{}" echo "{}"
 ```
 
@@ -458,7 +473,7 @@ Can also use an arithmetic expression, with look like C-styled for loops:
 
 Create a menu item for each word. Provide the user with an interactive interface to select one of them. Each time the user makes a selection from the menu, `name` is assigned the value of the selected word and `REPLY` is assigned the `index` number of the selection.
 
-```
+```bash
 select result in Yes No Cancel Exit
     do
         if [ "$result" = "Exit" ]; then
@@ -495,7 +510,7 @@ Removal from left edge:
 * `${param#pattern}`
 * `${param##pattern}` ( greedy match )
 
-```
+```bash
 [ ~ ] $ echo ${HOME}
 /home/sean
 [ ~ ] $ echo ${HOME#*/}
@@ -513,21 +528,21 @@ Removal from right edge
 
 Can search the env for names matching something (this parameter expansion doesnt work in `zsh`):
 
-```
+```bash
 $ echo "${!XDG_@}"
 XDG_CACHE_HOME XDG_CONFIG_HOME XDG_CURRENT_DESKTOP XDG_DATA_HOME XDG_GREETER_DATA_DIR XDG_RUNTIME_DIR XDG_SEAT XDG_SEAT_PATH XDG_SESSION_CLASS XDG_SESSION_DESKTOP XDG_SESSION_ID XDG_SESSION_PATH XDG_SESSION_TYPE XDG_VTNR
 ```
 
 ### brace expansion
 
-```
+```bash
 $ echo ba{t,r}
 bat bar
 ```
 
 Can also use this to generate a cartesian product of any dimension:
 
-```
+```bash
 $ echo {1..5}{0,5}%
 10% 15% 20% 25% 30% 35% 40% 45% 50% 55%
 $ echo {10..55..5}%  # can also use a iterator to count by 5
@@ -536,7 +551,7 @@ $ echo {10..55..5}%  # can also use a iterator to count by 5
 
 Functions receive input from STDIN, and send to STDOUT. The `{ }` is not required, its a Group Command, which often just makes things easier to read. For example:
 
-```
+```bash
 words ()
 for word
 do
@@ -549,7 +564,7 @@ works fine, since the command there is the `for`.
 
 A function definition is just a statement, so the `2>/dev/null` means that when the function is called, all of the functions STDERR is ignored.
 
-```
+```bash
 $ words one two
 one
 two
@@ -559,7 +574,7 @@ two
 
 Import elements from a current session directly into a new local or remote session.
 
-```
+```bash
 sudo bash -c "
 $(declare -p parameters;
 declare -f functions)
@@ -570,7 +585,7 @@ code and stuff"
 
 similarly, could use this with `ssh`:
 
-```
+```bash
 ssh remote@host "
 $(declare -f functionname)
 functionname arguments"

@@ -16,9 +16,7 @@ That alias changes my directory to the root exobrain directory, opens ranger (my
 
 When I pick some text, that opens my text editor to that line in the file. Once I'm done, I have key binds set up in `ranger` that allow me to call the [`push`](https://github.com/seanbreckenridge/exobrain/blob/master/push) command and update the remote website with any changes made.
 
-`exosearch` uses [`fzf`](https://github.com/junegunn/fzf). By default, it searches text and opens the chosen line in my editor.
-
-The `-o` flag instead searches for links, copies the link I select (e.g. to some resource/other website) to my clipboard, and open the corresponding remote exobrain URL in my browser.
+`exosearch` uses [`fzf`](https://github.com/junegunn/fzf). By default, it searches text and opens the chosen line in my editor. The `-o` flag instead searches for links, and open the corresponding URL in my browser.
 
 `alias exoo='cd "${REPOS}/exobrain"; ranger --cmd="shell ./exosearch -o"'`
 
