@@ -12,9 +12,6 @@ Title: HTML and CSS resources
 
 * Resources
 
-  * CSS Frameworks
-    * [Tailwind](https://tailwindcss.com/) - more utility focused
-    * Obvious mention of [Bootstrap](https://getbootstrap.com/)
   * Images/Icons
     * CC0 Images: <https://unsplash.com/>
     * [HeroIcons](https://heroicons.com/) (MIT Licensed; by Tailwind)
