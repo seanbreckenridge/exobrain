@@ -10,6 +10,7 @@ Title: Resume/Jobs
   - For CS projects, include links to code and live demos/gifs if possible. No one is actually going to download code and run it.
   - Paragraphs should be limited to one or two sentences, or removed and replaced with bullets. **No one reads paragraphs** Bullets for descriptions be facts or provable/quantifiable statements, and preferably only be one line starting with verbs/actions. If you have numbers or percentages, put them there.
   - Put most relevant experience first. Most of the time it'll be Statement, then Experience/Skills (i.e. what the company values more), then Education/Other sections.
+- For Skills, organize into categories if there are lots (Languages, Technologies, Frameworks/Other)
 - Don't put hobbies/what you do outside of work on resume; is not relevant - that should probably be filler for the interview.
 - Don't list information that could cause someone to discriminate against you (picture, ethnicity, possibly languages?, address (look up your location)). Also Age; You can list end dates for degree, but don't for age because that could cause some ageism.
 - Don't list GPA, they'll ask for it in a background check if they want it.
@@ -24,6 +25,7 @@ Title: Resume/Jobs
 - Don't need to list high school after you have some experience.
 - Could do 2 columns, but top-bottom left-right is how people read most pages, so might be better from a behavioural standpoint; don't want to confuse people from the beginning.
 - 3 personal projects is the minimum, may want to go further than that.
+- Usually, 7 years or 3 roles is about the maximum for how long you should list job experience. After that you can just put company name/role/date.
 - May not be a good idea to give out client names, since HR may interpret that as 'they may give away ours'. If you can use it for outcomes, cool; else don't. If you're under NDA, mention that.
 - If you want to list something that isn't completely true (e.g. extending a job gap) to get past the HR filtering stage, should probably bring a 'corrected' resume with you an interview, since they'd want one on file for the background check. In any case, the reasons aren't verifiable, so you should have a reason. This is also true in general if your Resume is more than one page. Limit it to one page/bullet points for the screening HR/process, then bring an extended resume for the hiring manager/interview.
 - For Location if you worked remote, can put Remote/Location. If you're looking to relocate without compensation, probably don't put your current location (since they may not want to relocate you). If you're in the same area as the job, fine to list your location
