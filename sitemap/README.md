@@ -54,4 +54,5 @@
 * tech_hardware/linux/ [Compliance/POSIX/Unix](/tech_hardware/linux/compliance_posix/)
 * tech_hardware/linux/ [Licenses](/tech_hardware/linux/licenses/)
 * user_interfaces/ [Alan Kay, User Interface Design](/user_interfaces/alan_kay_user_interface/)
+* work/ [Resume/Jobs](/work/resume/)
 
