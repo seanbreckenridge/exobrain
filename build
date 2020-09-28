@@ -121,7 +121,13 @@ run_build() {
 	procs=$((procs * 2))
 
 	printf "Building metadata..."
+	i=0
 	while IFS= read -r node; do
+		((i++))
+		((i >= procs * 2)) && {
+			wait
+			i=0
+		}
 		render "$node" meta &
 	done <MANIFEST
 	wait
