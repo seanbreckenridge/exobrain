@@ -11,21 +11,25 @@ Title: HTML and CSS resources
   * [HTML5 Reset](http://html5doctor.com/html-5-reset-stylesheet/)
 
 * Resources
-  * UI/UX Inspiration
-    * [awwards](https://www.awwwards.com/)
-    * [lapa](https://www.lapa.ninja/)
-    * [dribble](https://dribbble.com/)
-    * [behance](https://www.behance.net/)
 
+  * CSS Frameworks
+    * [Tailwind](https://tailwindcss.com/) - more utility focused
+    * Obvious mention of [Bootstrap](https://getbootstrap.com/)
+  * Images/Icons
+    * CC0 Images: <https://unsplash.com/>
+    * [HeroIcons](https://heroicons.com/) (MIT Licensed; by Tailwind)
   * Colors
     * [pattleon](https://paletton.com)
     * [htmlcolorcodes](https://htmlcolorcodes.com/)
     * [coloors](https://coolors.co/)
-
+    * use [pastel](https://github.com/sharkdp/pastel) for development
   * Reference
     * [MDN](https://developer.mozilla.org/en-US/)
     * [w3cschools](https://www.w3schools.com/)
     * [jsfiddle](https://jsfiddle.net/)
     * [devdocs](https://devdocs.io/)
-  * Images
-    * CC0 Images: <https://unsplash.com/>
+  * UI/UX Inspiration
+    * [awwards](https://www.awwwards.com/)
+    * [lapa](https://www.lapa.ninja/)
+    * [dribble](https://dribbble.com/)
+    * [behance](https://www.behance.net/)
