@@ -26,3 +26,7 @@ Title: Stuff to read
 * <https://www.amazon.com/Software-Requirements-Specifications-Principles-Prejudices/dp/0201877120>
 * category theory for programmers
 * Good Enough software by Ed Yourdon
+* see <https://ethanevansvp.com/recommended-books/>
+* Unscripted - M.J. demarko
+* The War of Art - steven pressfield
+
