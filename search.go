@@ -38,7 +38,7 @@ type flags struct {
 }
 
 func parseFlags() *flags {
-	printUrl := flag.Bool("url", false, "Print the URL instead of opening the file")
+	printUrl := flag.Bool("url", false, "Print the remote and matched URL instead of opening the file")
 	searchLinks := flag.Bool("links", false, "Search links instead of text")
 	// just use my default location
 	exoLoc := flag.String("exobrain-dir", path.Join(os.Getenv("HOME"), "Repos", "exobrain"), "root exobrain directory")
@@ -149,6 +149,11 @@ func openLocalFile(fpath string, lineNumber string, userFlags *flags) error {
 	return nil
 }
 
+// extracts a URL from the file, returns empty string if no url found
+func extractUrl(chosen string) string {
+	return xurls.Relaxed().FindString(chosen)
+}
+
 func main() {
 	// parse user input
 	userFlags := parseFlags()
@@ -186,11 +191,14 @@ func main() {
 		}
 		chosenFile := fields[0]
 		lineNo := fields[1]
-		// rest := strings.Join(fields[2:], ":")
+		rest := strings.Join(fields[2:], ":")
 
 		if userFlags.printUrl {
-			// get directory, exobrain automatically converts README.md to index.html, which is
-			// served by the web server
+			// get directory, exobrain automatically converts README.md to index.html,
+			// which is served by the web server
+			//
+			// print the url the user chose (else empty string), and the remote URL
+			fmt.Println(extractUrl(rest))
 			fmt.Println(path.Join(userFlags.baseurl, filepath.Dir(chosenFile)))
 		} else {
 			err := openLocalFile(chosenFile, lineNo, userFlags)
