@@ -100,7 +100,7 @@ A collection of scripts to allow flexible and easier interaction with mpv socket
 
 [GitHub](https://github.com/seanbreckenridge/aw-watcher-window) | Python
 
-Cross-platform window watcher. This is a daemon that sits in the background, and lots what window I'm currently using, and for how long. Forked from ActivityWatch to log to a file instead
+Cross-platform window watcher. This is a daemon that sits in the background, and logs what window I'm currently using, and for how long. Forked from ActivityWatch to log to a file instead
 
 ### ttt
 
