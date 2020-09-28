@@ -128,6 +128,7 @@ func openLocalFile(fpath string, lineNumber string, userFlags *flags) error {
 	var cmd *exec.Cmd
 
 	// if vim based, use the +linenumber flag
+	// https://sean.fish/d/.local/scripts/cross-platform/editor?dark
 	if editor == "nvim" || editor == "vim" || editor == "editor" { // (my editor is literally called editor, a wrapper for nvim)
 		lineNum, err := strconv.Atoi(lineNumber)
 		if err != nil {
