@@ -26,7 +26,7 @@ helpers to prompt, validate, and persist python objects to and from disk using t
 
 [GitHub](https://github.com/seanbreckenridge/HPI) | Python
 
-Human Programming Interface. A way to unify, access and interact with all my personal data.
+Human Programming Interface. A way to unify, access and interact with all my personal data. It hides the [gory details](https://beepb00p.xyz/sad-infra.html#exports_are_hard) of locating data, parsing, error handling and caching. You simply 'import' your data and get to work with familiar Python types and data structures.
 
 ### no-db-static-shorturl
 
