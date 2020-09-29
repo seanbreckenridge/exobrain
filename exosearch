@@ -74,11 +74,16 @@ if ((OPEN_URL)); then
 		# if two lines, copy the first and open the second
 		if [[ "$(wc -l <<<"$URLS")" == 2 ]]; then
 			SITE_URL="$(head -n1 <<<"$URLS" | tr -d '\n')"
-			if [[ -n "$SITE_URL" ]]; then
-				printf '%s' "${SITE_URL}" | clipcopy
-				notify "Copied ${SITE_URL} to your clipboard"
+			REMOTE_EXOBRAIN_URL="$(tail -n1 <<<"$URLS")"
+			# if there was no site URL (no URL was parsed)
+			# default to the remote exobrain URL; copy
+			# that to my clipboard instead
+			if [[ -z "$SITE_URL" ]]; then
+				SITE_URL="$REMOTE_EXOBRAIN_URL"
 			fi
-			tail -n1 <<<"$URLS" | openurl
+			printf '%s' "${SITE_URL}" | clipcopy
+			notify "Copied ${SITE_URL} to your clipboard"
+			openurl <<<"$REMOTE_EXOBRAIN_URL"
 		else
 			printf '%s' "$URLS" | clipcopy
 			printf '%s' "$URLS" | openurl
