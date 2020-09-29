@@ -63,6 +63,7 @@ if ((OPEN_URL)); then
 	# my cross-platform open url/clipboard/notification scripts
 	# https://sean.fish/d/openurl?dark
 	# https://sean.fish/d/clipcopy?dark
+	# https://sean.fish/d/clp-args?dark
 	# https://sean.fish/d/notify?dark
 	HAS_SCRIPTS=1
 	havecmd openurl && havecmd clipcopy && havecmd notify || {
@@ -81,8 +82,7 @@ if ((OPEN_URL)); then
 			if [[ -z "$SITE_URL" ]]; then
 				SITE_URL="$REMOTE_EXOBRAIN_URL"
 			fi
-			printf '%s' "${SITE_URL}" | clipcopy
-			notify "Copied ${SITE_URL} to your clipboard"
+			APP='exobrain' clp-args "$SITE_URL" >/dev/null
 			openurl <<<"$REMOTE_EXOBRAIN_URL"
 		else
 			printf '%s' "$URLS" | clipcopy
