@@ -4,7 +4,7 @@ I use this to store notes from books, videos, list resources, along with anythin
 
 Head to the [sitemap](/sitemap) or [blog feed](/feed) for whats on here.
 
-Other Notable Pages:
+---
 
 - [Tools](/tools), or how I do everything.
 - [Projects](/projects), for a list of all of my programming projects.
