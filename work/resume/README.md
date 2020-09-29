@@ -8,7 +8,7 @@ Title: Resume/Jobs
   - Statement/Summary at the top is typically best if 1-2 sentences. _I am blah, hoping to do blah_
   - For CS, maybe link to Github, LinkedIn and portfolio at the top.
   - For CS projects, include links to code and live demos/gifs if possible. No one is actually going to download code and run it.
-  - Paragraphs should be limited to one or two sentences, or removed and replaced with bullets. **No one reads paragraphs** Bullets for descriptions be facts or provable/quantifiable statements, and preferably only be one line starting with verbs/actions. If you have numbers or percentages, put them there.
+  - Paragraphs should be limited to one or two sentences, or removed and replaced with bullets. **No one reads paragraphs**. Bullets for descriptions be facts or provable/quantifiable statements, and preferably only be one line starting with verbs/actions. If you have numbers or percentages, put them there.
   - Put most relevant experience first. Most of the time it'll be Statement, then Experience/Skills (i.e. what the company values more), then Education/Other sections.
 - For Skills, organize into categories if there are lots (Languages, Technologies, Frameworks/Other)
 - Don't put hobbies/what you do outside of work on resume; is not relevant - that should probably be filler for the interview.
