@@ -53,7 +53,7 @@ This uses a variety of shell tools to build this, listed in `build`:
 >>>PMARK
 #!/bin/sh
 cd "$RUN_FROM"
-grep '^havecmd ' build | cut -d" " -f2- | sed -e 's/^/- /' -e '/html-minifier/d' -e '/wait-for/d' -e 's/"/(/' -e 's/"/)/' | sed -E -e 's/([[:alpha:]]+)/`\1`/'
+grep '^havecmd ' build | cut -d" " -f2- | sed -e 's/^/- /' -e '/wait-for/d' -e '/html-minifier/d' -e '/prettier/d' -e 's/"/(/' -e 's/"/)/' -e 's/\\`/`/g' -e 's/&.*$//g' | sed -E -e 's/([[:alpha:]]+)/`\1`/'
 ```
 
 ### Hosting

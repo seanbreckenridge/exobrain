@@ -27,20 +27,33 @@ havecmd() {
 	fi
 }
 
+# if external commands exist; defualt to false
+declare HAS_HTML_MINIFIER HAS_PRETTIER
+HAS_HTML_MINIFIER=0
+HAS_PRETTIER=0
+
 set -e
-havecmd fd
 havecmd curl
-havecmd entr
-havecmd pandoc
 havecmd perl
 havecmd go
-havecmd jq
 havecmd python
-havecmd figlet
+havecmd tput
+havecmd fd "Install from <https://github.com/sharkdp/fd#installation>"
+havecmd entr "Install from <https://eradman.com/entrproject/>"
+havecmd pandoc "Install from <https://pandoc.org/installing.html>"
+havecmd jq "Install from <https://stedolan.github.io/jq/download>"
 havecmd wait-for-internet "Install from <https://github.com/seanbreckenridge/wait-for-internet> (or just remove the line from the ./build script)"
 havecmd pmark "Install from <https://github.com/seanbreckenridge/pmark>"
 set +e
-havecmd html-minifier "Install with 'npm install -g html-minifier'" && HAS_HTML_MINIFIER=1
+# optional, for formatting
+havecmd html-minifier "Install with \`npm install -g html-minifier\`" && HAS_HTML_MINIFIER=1
+havecmd prettier "Install with \`npm install -g prettier\`" && HAS_PRETTIER=1
+
+# colors
+declare GREEN RESET
+GREEN="$(tput setaf 2)"
+RESET="$(tput sgr0)"
+readonly GREEN RESET
 
 wait-for-internet >/dev/null 2>&1
 
@@ -63,7 +76,7 @@ minify_html() {
 # converts $1 to $2 using pandoc
 pandoc_generate() {
 	local html_temp
-	if [[ -n "$HAS_HTML_MINIFIER" ]]; then
+	if ((HAS_HTML_MINIFIER)); then
 		html_temp="$(mktemp -p /tmp exobrain-XXXXXXXXXXXXX.html)"
 		if pandoc -s -o "$html_temp" --quiet --template=assets/template.html "$1"; then
 			if minify_html "$html_temp" "$2"; then
@@ -88,15 +101,13 @@ render() {
 	readonly dir="$1"
 	if [[ "$2" == "meta" ]]; then
 		metadata_generate "${dir}/README.md" "${dir}/meta.json"
-		printf "."
 	else
-		echo Building "'$dir'"
 		pandoc_generate "${dir}/README.md" "${dir}/index.html"
 	fi
 }
 
 run_build() {
-	local i procs
+	local i n procs manifest_length
 
 	# make sure corresponding README files exist for P_README files
 	# so that the directories appear in the manifest
@@ -104,6 +115,21 @@ run_build() {
 	# this only really matters the first time pmark is run on a P_README.md file,
 	# but its not that much overhead anyways
 	fd '^P_README.md$' | sed "s/P_//g" | xargs touch
+
+	# autoformat markdown in place, if possible
+	((HAS_PRETTIER)) && {
+		local MD_FILE_COUNT
+		MD_FILE_COUNT="$(fd '\.md$' | wc -l)"
+		# use a coproc to create a progress bar of sorts
+		coproc prettier_coproc { fd '\.md$' -X prettier -w; } 2>&1
+		n=0
+		while IFS=$'\n' read -ru "${prettier_coproc[0]}"; do
+			((n++))
+			printf '\r%s[%02d%%]%s Autoformatting markdown files...' "$GREEN" "$((100 * n / MD_FILE_COUNT))" "$RESET"
+		done
+		wait
+		printf '\n'
+	}
 
 	# remove old metadata files
 	find . -name 'meta.json' -delete
@@ -114,21 +140,24 @@ run_build() {
 	pandoc_generate "./404.md" "./404.html"
 	# make manifest
 	mkmanifest
+	manifest_length="$(wc -l <MANIFEST)"
 
 	# get cpu count to determine how many jobs to run at a time
 	procs="$(nproc)"
 	[[ -z "$procs" ]] && procs=4
-	procs=$((procs * 2))
+	procs="$((procs * 2))"
 
-	printf "Building metadata..."
-	i=0
+	i=0 # to handle parallelism
+	n=0 # to print current % done
 	while IFS= read -r node; do
 		((i++))
+		((n++))
 		((i >= procs * 2)) && {
 			wait
 			i=0
 		}
 		render "$node" meta &
+		printf '\r%s[%d%%]%s Building metadata...' "$GREEN" "$((100 * n / manifest_length))" "$RESET"
 	done <MANIFEST
 	wait
 	printf '\n'
@@ -136,27 +165,44 @@ run_build() {
 	# run pmark on each P_README.md file
 	# builds the blog feed/sitemap and curls the project page
 	# see https://github.com/seanbreckenridge/pmark
-	fd '^P_README.md$' -X pmark || exit $?
+	# run this 'manually' instead of with a coproc so that errors are handled nicely
+	local PMARK_FILES PMARK_COUNT
+	n=0 # to print current % done
+	PMARK_FILES="$(fd '^P_README.md$')"
+	PMARK_COUNT="$(wc -l <<<"$PMARK_FILES")"
+	while IFS= read -r preadme_md; do
+		((n++))
+		# capture just stderr
+		PMARK_ERR="$(pmark "$preadme_md" 2>&1 >/dev/null)" || {
+			printf '%s\n' "$PMARK_ERR"
+			return 1
+		}
+		printf '\r%s[%d%%]%s Running pmark...' "$GREEN" "$((100 * n / PMARK_COUNT))" "$RESET"
+	done <<<"$PMARK_FILES"
+	printf '\n'
 
 	i=0
+	n=0
 	while IFS= read -r node; do
 		render "$node" &
+		((n++))
 		((i++))
 		((i >= procs)) && {
 			wait
 			i=0
 		}
+		printf '\r%s[%d%%]%s Building html files...' "$GREEN" "$((100 * n / manifest_length))" "$RESET"
 	done <MANIFEST
 	wait
+	printf '\n'
 	# remove temp exobrain files
-	printf 'Removed %d temporary /tmp/exobrain-* files\n' "$(rm -fv /tmp/exobrain-* | wc -l)"
+	rm -fv /tmp/exobrain-* >/dev/null
 	# check for yaml frontmatter errors
 	if go run ./harden.go; then
-		echo "No formatting errors found."
+		echo "${GREEN}✅${RESET} No yaml frontmatter formatting errors found!"
 	else
 		return 1
 	fi
 }
 
 run_build || exit $?
-figlet -f 'script' 'done!'

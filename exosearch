@@ -70,7 +70,7 @@ if ((OPEN_URL)); then
 	}
 	URLS="$(run_search)" || exit $?
 	[[ -z "$URLS" ]] && exit 1
-	if ((HAS_SCRIPTS)); then  # if my personal scripts are available, use those
+	if ((HAS_SCRIPTS)); then # if my personal scripts are available, use those
 		# if two lines, copy the first and open the second
 		if [[ "$(wc -l <<<"$URLS")" == 2 ]]; then
 			SITE_URL="$(head -n1 <<<"$URLS" | tr -d '\n')"

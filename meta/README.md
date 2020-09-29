@@ -49,17 +49,16 @@ Since this is pretty unstructured, this does some tag validation on the meta pan
 
 This uses a variety of shell tools to build this, listed in `build`:
 
-- `fd` 'See https://github.com/sharkdp/fd#installation'
 - `curl`
-- `entr` 'See https://eradman.com/entrproject/'
-- `pandoc` 'See https://pandoc.org/installing.html'
 - `perl`
 - `go`
-- `jq` 'See https://stedolan.github.io/jq/download/'
 - `python`
-- `figlet`
+- `tput`
+- `fd` (Install from <https://github.com/sharkdp/fd#installation>)
+- `entr` (Install from <https://eradman.com/entrproject/>)
+- `pandoc` (Install from <https://pandoc.org/installing.html>)
+- `jq` (Install from <https://stedolan.github.io/jq/download>)
 - `pmark` (Install from <https://github.com/seanbreckenridge/pmark>)
-- `prettier` (Install with 'npm install -g prettier') && HAS_PRETTIER=1
 
 ### Hosting
 
