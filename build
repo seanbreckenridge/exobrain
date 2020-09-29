@@ -63,7 +63,7 @@ mkmanifest() {
 	while IFS= read -r line; do
 		line=${line#./}
 		[[ "$line" == . ]] && continue
-		echo "$line"
+		printf '%s\n' "$line"
 	done <<<"$(find . -name 'README.md' -printf "%h\n" | sort -d)" >MANIFEST
 }
 
@@ -199,7 +199,7 @@ run_build() {
 	rm -fv /tmp/exobrain-* >/dev/null
 	# check for yaml frontmatter errors
 	if go run ./harden.go; then
-		echo "${GREEN}✅${RESET} No yaml frontmatter formatting errors found!"
+		printf ' %s✅%s No yaml frontmatter formatting errors found!\n' "$GREEN" "$RESET"
 	else
 		return 1
 	fi
