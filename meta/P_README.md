@@ -21,7 +21,7 @@ When I pick some text, that opens my text editor to that line in the file. Once 
 `alias exoo='cd "${REPOS}/exobrain"; ranger --cmd="shell ./exosearch -o"'`
 
 ```
-(flags for the underlying search.go)
+(flags for the underlying exosearch_cmd.go)
 Search my exobrain for something!
 By default, This searches text and opens the chosen line in your editor.
   -exobrain-dir string
@@ -33,7 +33,7 @@ By default, This searches text and opens the chosen line in your editor.
   -url
         Print the URL instead of opening the file
 
-This wrapper script handles/wraps the 'internal' search.go flags
+This wrapper script handles/wraps the 'internal' go flags
 Pass the -o flag to search for links instead
 ```
 

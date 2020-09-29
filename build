@@ -49,6 +49,9 @@ set +e
 havecmd html-minifier "Install with \`npm install -g html-minifier\`" && HAS_HTML_MINIFIER=1
 havecmd prettier "Install with \`npm install -g prettier\`" && HAS_PRETTIER=1
 
+# compile exosearch_cmd.go into $GOBIN
+go install ./exosearch_cmd.go
+
 # colors
 declare GREEN RESET
 GREEN="$(tput setaf 2)"
