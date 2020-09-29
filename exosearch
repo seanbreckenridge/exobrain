@@ -74,8 +74,10 @@ if ((OPEN_URL)); then
 		# if two lines, copy the first and open the second
 		if [[ "$(wc -l <<<"$URLS")" == 2 ]]; then
 			SITE_URL="$(head -n1 <<<"$URLS" | tr -d '\n')"
-			printf '%s' "${SITE_URL}" | clipcopy
-			notify "Copied ${SITE_URL} to your clipboard"
+			if [[ -n "$SITE_URL" ]]; then
+				printf '%s' "${SITE_URL}" | clipcopy
+				notify "Copied ${SITE_URL} to your clipboard"
+			fi
 			tail -n1 <<<"$URLS" | openurl
 		else
 			printf '%s' "$URLS" | clipcopy

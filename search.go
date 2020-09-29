@@ -100,10 +100,19 @@ func consumeFile(fpath string, userFlags *flags, fzfBuf io.WriteCloser) error {
 	if userFlags.searchLinks {
 		// extract links and write to fzfBuf
 		r := xurls.Relaxed()
+		// keep track of whether or not we found a url at all
+		// if we didn't, include at least one line of the file (the first),
+		// so it can be used with the 'exoo' alias to open
+		// the remote exobrain url in the browser
+		foundUrl := false
 		for lineNo, line := range fileLines {
 			for _, url := range r.FindAllString(line, -1) {
 				fmt.Fprintf(fzfBuf, "%s:%d:%s\n", relpath, lineNo, url)
+				foundUrl = true
 			}
+		}
+		if !foundUrl {
+			fmt.Fprintf(fzfBuf, "%s:%d:%s\n", relpath, 0, "")
 		}
 	} else {
 		// use each line and fzf against that
