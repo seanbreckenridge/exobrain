@@ -47,7 +47,7 @@ The [`build`](https://github.com/seanbreckenridge/exobrain/blob/master/build) sc
 
 Parts of the dynamic feed/blog/projects pages are built using my [`pmark`](https://github.com/seanbreckenridge/pmark) script, which uses code blocks to generate markdown, from within the markdown itself.
 
-Since this is pretty unstructured, this does some tag validation on the meta pandoc tags (sometimes called 'yaml frontmatter'), using `$meta-json$` to make sure I'm not missing titles/dates for the markdown files. (See [pandoc notes](/programming_languages/shell_tools/pandoc) and the [`harden.go`](https://github.com/seanbreckenridge/exobrain/blob/master/harden.go) file)
+Since this is pretty unstructured, this does some tag validation on the meta pandoc tags (sometimes called 'yaml frontmatter'), using `$meta-json$` to make sure I'm not missing titles/dates for the markdown files. (See [pandoc notes](/programming_languages/shell_tools/pandoc) and the [`exoharden_cmd.go`](https://github.com/seanbreckenridge/exobrain/blob/master/exoharden_cmd.go) file)
 
 This uses a variety of shell tools to build this, listed in `build`:
 
