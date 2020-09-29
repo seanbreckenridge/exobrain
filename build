@@ -42,7 +42,7 @@ havecmd fd "Install from <https://github.com/sharkdp/fd#installation>"
 havecmd entr "Install from <https://eradman.com/entrproject/>"
 havecmd pandoc "Install from <https://pandoc.org/installing.html>"
 havecmd jq "Install from <https://stedolan.github.io/jq/download>"
-havecmd wait-for-internet "Install from <https://github.com/seanbreckenridge/wait-for-internet> (or just remove the line from the ./build script)"
+havecmd wait-for-internet "Install from <https://github.com/seanbreckenridge/wait-for-internet> (or just remove the line from the \`./build\` script)"
 havecmd pmark "Install from <https://github.com/seanbreckenridge/pmark>"
 set +e
 # optional, for formatting

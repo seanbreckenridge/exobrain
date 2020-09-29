@@ -60,7 +60,10 @@ This uses a variety of shell tools to build this, listed in `build`:
 - `entr` (Install from <https://eradman.com/entrproject/>)
 - `pandoc` (Install from <https://pandoc.org/installing.html>)
 - `jq` (Install from <https://stedolan.github.io/jq/download>)
+- `wait-for-internet` (Install from <https://github.com/seanbreckenridge/wait-for-internet> (or just remove the line from the `./build` script))
 - `pmark` (Install from <https://github.com/seanbreckenridge/pmark>)
+- `html-minifier` (Install with `npm install -g html-minifier`)
+- `prettier` (Install with `npm install -g prettier`)
 
 ### Hosting
 
