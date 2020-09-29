@@ -83,6 +83,7 @@ Most of these are command line based. On a regular day, the only GUI tools I use
 - [`pastel`](https://github.com/sharkdp/pastel) to generate/pick color schemes/hex codes from the terminal
 - [`pup`](https://github.com/ericchiang/pup) to parse HTML on the command line
 - [`qr`](https://sean.fish/d/qr?dark) ([qrencode](https://fukuchi.org/works/qrencode/)), to create QR images from command line
+- [`qrc`](https://github.com/fumiyas/qrc) to create QR codes in the terminal.
 - [`screenkey`](https://gitlab.com/screenkey/screenkey) when recording demonstrations to display keys
 - [`shellcheck`](https://shellcheck.net) to check shell scripts for syntax errors
 - [`sxiv`](https://github.com/muennich/sxiv) as an image viewer for more complicated/macro-like tasks

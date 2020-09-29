@@ -19,6 +19,16 @@ At that point, the custom tools you're writing are replacable by a couple `jq`/`
 
 So. the solution is: learn `perl` (which [I have been doing](https://github.com/seanbreckenridge/pmark)), use `gron`/`jq`, all fallback to python when necessary.
 
+[`yq`](https://github.com/kislyuk/yq) (analogous to `jq` for `yaml`/`XML`)
+
+[`pyp`](https://github.com/hauntsaninja/pyp) is a nice replacement for basic `awk`/`sed` tasks, instead of `mario`. It providing python syntax to pipes. Not portable, but its very light and good for quick scripts.
+
+For CSV/TSV, [`q`](https://github.com/harelba/q) is sort of interesting, lets you run SQL like statements:
+
+`q "SELECT COUNT(*) FROM ./clicks_file.csv WHERE c3 > 32.3"`
+
+For larger pipelines, [`riko`](https://github.com/nerevu/riko) tries to model Yahoo! Pipes
+
 TODO: Is something to be said about writing a full shell-like lisp language, because shells are hacky and writing languages is fun, but thats a whole nother project on its own :)
 
 <https://ngs-lang.org/> looks interesting: `One way to think about NGS is bash plus data structures plus better syntax and error handling.` It has lots of utility functions and is fast at dealing with streams of data. Looks like an `awk` for the modern times. [Examples](https://ngs-lang.org/doc/latest/man/ngstut.1.html). Might be nice to use instead of a complex `jq`/`gron`/`grep`/`cut`. Agree with a lot of the problems laid out in [this blog post](https://ilya-sher.org/2017/07/07/why-next-generation-shell/). Of all the tools on this page, highest chance of me using this.
