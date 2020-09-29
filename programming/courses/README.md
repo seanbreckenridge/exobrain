@@ -15,4 +15,3 @@ Very nice introduction and possibly refresher to lots of relevant computer scien
 <https://missing.csail.mit.edu/>
 
 Covers proficiency with programming tools. That means shell, editor, data wrangling, and your tooling. If you've never invested time in this, this is a great course. If you've invested some time, you'll probably pick up a couple tools and tricks.
-

@@ -2,7 +2,7 @@
 Title: Bash Notes
 ---
 
-Use bash substitutions when possible instead of `sed`/`awk`. 
+Use bash substitutions when possible instead of `sed`/`awk`.
 
 #### tty/scripting
 
@@ -43,7 +43,7 @@ printf "%s" $name # auto expands to two arguments, only prints 'Sean'
 printf "%s %s" $name # printf receives two arguments
 
 # safest is to quote your variables
-printf "%s" "$name" 
+printf "%s" "$name"
 ```
 
 ---
@@ -51,6 +51,7 @@ printf "%s" "$name"
 #### Modifying IFS to read into arrays:
 
 You can use `$'\n'` to expand an actual newline into the internal field separator, and then use a subshell to split lines into an array:
+
 ```bash
 declare -a dircontents
 IFS=$'\n' dircontents=($(ls -1))
@@ -106,7 +107,7 @@ Using hyphens (or nothing) instead of underscores for variable/script names.
 
 I tend to just use [`shfmt`](https://github.com/mvdan/sh) for everything.
 
-HEREDOCs that have indentation need tabs, so it can make formatting confusing - so they need to left justified. You can use a dash to chomp tabs, but then it removes *all* surrounded tabs.
+HEREDOCs that have indentation need tabs, so it can make formatting confusing - so they need to left justified. You can use a dash to chomp tabs, but then it removes _all_ surrounded tabs.
 
 One can use embedded newlines:
 
@@ -128,7 +129,7 @@ done
 
 Using semicolons makes the indent more obvious.
 
-When doing *lots* of parameter expansion when doing an echo, would make more sense to separate that into another variable, or use `printf`. Avoid stuff like:
+When doing _lots_ of parameter expansion when doing an echo, would make more sense to separate that into another variable, or use `printf`. Avoid stuff like:
 
 ```bash
 echo "${1}0${2}0${3}"
@@ -136,11 +137,11 @@ echo "${1}0${2}0${3}"
 
 Quoting:
 
-* *Always quote your strings!* Often better to 'over-quote' than to get an error with shell expansion.
-* Never quote literal integers
-* Use `"$@"` unless you have a specific reason to use `$*`, like splatting in the individual elements into a string: `"search?q=$*"`
-* Single quotes doesn't do any shell substitution.
-* Always do shell expansion 
+- _Always quote your strings!_ Often better to 'over-quote' than to get an error with shell expansion.
+- Never quote literal integers
+- Use `"$@"` unless you have a specific reason to use `$*`, like splatting in the individual elements into a string: `"search?q=$*"`
+- Single quotes doesn't do any shell substitution.
+- Always do shell expansion
 
 It may not be necessary, but always quote your command substitutions to be safe:
 
@@ -271,7 +272,7 @@ Command expansions return single strings, not arrays. Avoid trying to capture su
 
 Use process substitution or `readarray` instead of directly piping into while. Pipes create subshells, so the block in the while loop doesn't have access to un-exported variables in the script, and can't change anything in the parent shell.
 
-*Don't do this:*
+_Don't do this:_
 
 ```bash
 my_variable='something'
@@ -281,7 +282,7 @@ done
 echo "$my_variable"  # prints 'something', wasnt modified in loop
 ```
 
-*Do this instead:*
+_Do this instead:_
 
 ```bash
 my_variable='something'
@@ -317,7 +318,6 @@ done
 ---
 
 Should be careful about using a for-loop to iterate over output using `for something in $(...)`, since the output is split by whitespace, not by line. This can be safe, if you're sure the subshell output can't contain whitespace, but `while` with `readarray` is often safer.
-
 
 `<` and `>` in `[[ ... ]]` perform **lexicographic**, not numerical comparisons.
 
@@ -386,7 +386,7 @@ declare my_var="$(command)"
 (( $? == 0 )) || return
 ```
 
-will *always* succeed, since the `declare` returns a 0 exit code.
+will _always_ succeed, since the `declare` returns a 0 exit code.
 
 Should instead do:
 
@@ -488,27 +488,27 @@ select result in Yes No Cancel Exit
 
 ### Command Groups
 
-* Subshell: Evaluate list of commands in a subshell, has a distinct environment and does not affect the parent environment. `(list)`
-* Group Command: Evaluate list of commands in the current shell, sharing the environment. `{ list; }` (spaces are trailing semicolon are obligatory)
+- Subshell: Evaluate list of commands in a subshell, has a distinct environment and does not affect the parent environment. `(list)`
+- Group Command: Evaluate list of commands in the current shell, sharing the environment. `{ list; }` (spaces are trailing semicolon are obligatory)
 
 Something I never really comprehended, this is still a subshell, its just not assigning to some variable, so you don't need to prepend the `$`
 
 `(echo b; echo a) | sort`
 
-The `$(list)` replaces the output of the `list` in-line with the output of its subshell. Referred to as *command substitution*.
+The `$(list)` replaces the output of the `list` in-line with the output of its subshell. Referred to as _command substitution_.
 
 `$$` is a special parameter that specifies your current PID.
 
 ### Parameters
 
-Like `${param:-$HOME}`, `${param:=$HOME}` returns `$HOME` if `${param}` is empty or unset, but it *also* sets `param` to `$HOME`, without you having to do the assignment explicitly.
+Like `${param:-$HOME}`, `${param:=$HOME}` returns `$HOME` if `${param}` is empty or unset, but it _also_ sets `param` to `$HOME`, without you having to do the assignment explicitly.
 
 Can think of these as:
 
 Removal from left edge:
 
-* `${param#pattern}`
-* `${param##pattern}` ( greedy match )
+- `${param#pattern}`
+- `${param##pattern}` ( greedy match )
 
 ```bash
 [ ~ ] $ echo ${HOME}
@@ -523,8 +523,8 @@ Reminder that `*` is the typical posix globbing, its matching zero or more of an
 
 Removal from right edge
 
-* `${param%pattern}`
-* `${param%%pattern}`
+- `${param%pattern}`
+- `${param%%pattern}`
 
 Can search the env for names matching something (this parameter expansion doesnt work in `zsh`):
 
@@ -591,7 +591,7 @@ $(declare -f functionname)
 functionname arguments"
 ```
 
-References: 
+References:
 
-* <https://google.github.io/styleguide/shellguide.html>
-* bash man page
+- <https://google.github.io/styleguide/shellguide.html>
+- bash man page

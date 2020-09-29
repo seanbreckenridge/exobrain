@@ -8,7 +8,7 @@ Encompasses Lecture 1 & 2
 
 "Lisp, whose name is an acronym for LISt Processing, was designed to provide symbol- manipulating capabilities for attacking programming problems such as the symbolic differentiation and integration of algebraic expressions. Lisp was not the product of a concerted design effort. Instead, it evolved informally in an experimental manner in response to users’ needs and to pragmatic implementation considerations."
 
-"Lisps were used in applications where efficiency is not the primary concern. For example, for operating-system shell languages and *extension languages*."
+"Lisps were used in applications where efficiency is not the primary concern. For example, for operating-system shell languages and _extension languages_."
 
 (SICP p 3-4)
 
@@ -16,9 +16,9 @@ Encompasses Lecture 1 & 2
 
 Means by which programming languages combine simple ideas to form more complex ones:
 
-* primitive expressions - the most basic data types and entities the language operates on
-* means of combination - combinations of primitives
-* means of abstraction - where combinations can be named and manipulated
+- primitive expressions - the most basic data types and entities the language operates on
+- means of combination - combinations of primitives
+- means of abstraction - where combinations can be named and manipulated
 
 In general, programming can be described as procedures and data; data is the stuff we want to operate on, and procedures are rules to manipulate it.
 
@@ -127,7 +127,7 @@ Since LISP uses infix notation, describing expression evaluation as a tree, with
     └── 7
 ```
 
-Values that result from lower expressions on the tree "percolate upwards", which is very similar to a general process called [*tree accumulation*](https://en.wikipedia.org/wiki/Tree_accumulation)
+Values that result from lower expressions on the tree "percolate upwards", which is very similar to a general process called [_tree accumulation_](https://en.wikipedia.org/wiki/Tree_accumulation)
 
 #### Normal-Order Execution vs Applicative-Order Execution
 
@@ -137,7 +137,7 @@ For the example: `(+ (* 5 3) (* 5 3))`
 
 Applicative-Order would evaluate `(* 5 3)` twice, separately, and then evaluate the resulting (+ 15 15), while Applicative-Order would evaluate the first `(* 5 3)` and then substitute the result from the first to the second. This avoids multiple evaluations of the same expression, and is what Lisp uses.
 
-The difference between normal and applicative order doesn't make a lot of difference when youre  procedure is a function (always give the same result), but the "expanding" means that argument expressions are substituted in subexpressions instead of the resulting value.
+The difference between normal and applicative order doesn't make a lot of difference when youre procedure is a function (always give the same result), but the "expanding" means that argument expressions are substituted in subexpressions instead of the resulting value.
 
 For example, if you had:
 
@@ -166,7 +166,7 @@ Once your procedures aren't functional, Normal vs. Applicative matters.
 }
 ```
 
-aka *case analysis* can be represented in Lisp like:
+aka _case analysis_ can be represented in Lisp like:
 
 ```scheme
 (define (abs x)
@@ -183,7 +183,8 @@ In general, conditionals can be represented like:
 			...
 			(⟨pn⟩ ⟨en⟩))
 ```
-which have `n` *clauses*, each with a *predicate* `p` and expression *e*.
+
+which have `n` _clauses_, each with a _predicate_ `p` and expression _e_.
 
 Predicates are evaluated in order, and short circuit. If none of the predicates evaluate to true, the value of `cond` is undefined.
 
@@ -213,20 +214,21 @@ whose general form looks like:
 
 You can also use the logical operations:
 
-* `(and <e1> <e2> ... <en>)`
-* `(or <e1> <e2> ... <en>)`
-* `(not <e>)`
+- `(and <e1> <e2> ... <en>)`
+- `(or <e1> <e2> ... <en>)`
+- `(not <e>)`
 
 Similar to `cond`, `and` and `or` short circuit.
 
 Examples:
+
 ```scheme
 (define (>= x y) (or (> x y) (= x y)))
 (define (<= x y) (or (< x  y) (= x y)))
 ```
+
 ```scheme
 (or (x < 5) (x > 10))` == `(and (x >= 5) (x <= 10))
 ```
 
 Procedures `bind` their variables to locally scoped `bound variables`. Globally bound variables that arent bound by a procedure definition are known as `free` variables (lots of keywords and other procedure names are `free`).
-

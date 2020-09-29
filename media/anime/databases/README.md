@@ -8,7 +8,7 @@ For general thoughts on online databases, see [online databases](/media/online_d
 
 Though theres downtime, the site/API was down for months and due to the owners changing, always feels like third party developers aren't a priority, [MyAnimeList](https://myanimelist.net) (MAL) has the most history, experienced users and entries (most entries is a big factor for me). Some of the more recent sites (e.g. [AniList](https://anilist.co/)) started off by taking MALs data, often mapping IDs one-to-one. Having lots of users also means sources for obscure entries might be listed in the forums for each entry.
 
-Since 2015, I've spent *a lot* of time watching anime. Less recently, because I've somewhat exhausted all the things I'm interested in. I used [`MAL`](https://myanimelist.net) as a database of sorts:
+Since 2015, I've spent _a lot_ of time watching anime. Less recently, because I've somewhat exhausted all the things I'm interested in. I used [`MAL`](https://myanimelist.net) as a database of sorts:
 
 - sort entries into short films, TV shows, lost media, things I'm interested in using tags
 - watch some of each entry, to see if I like it. On MAL, I use categories like:
@@ -26,9 +26,9 @@ There was a point in early 2017 where I had watched every music video/short film
 
 Ended up writing [lots of userscripts](https://myanimelist.net) for MAL, because it isn't the best out of the box. ([Github Repo](http://github.com/seanbreckenridge/greasyfork))
 
-In the past, and somewhat now, I've used the MAL database to discover new interesting short films/music videos to watch. 
+In the past, and somewhat now, I've used the MAL database to discover new interesting short films/music videos to watch.
 
-The approval process for MAL entries isn't transparent, and as someone who has most of the entries on their list, looking if any new ones have been approved, it can be annoying to manually look at recently approved entries every day. So, I have a [process](https://github.com/seanbreckenridge/mal-id-cache) that runs on my server to check if new entries have been approved, which updates a couple json files, a [website](https://github.com/seanbreckenridge/mal-unapproved) to list unapproved entries, and a [discord bot](https://github.com/seanbreckenridge/mal-notify-bot) to notify me whenever new ones are added. 
+The approval process for MAL entries isn't transparent, and as someone who has most of the entries on their list, looking if any new ones have been approved, it can be annoying to manually look at recently approved entries every day. So, I have a [process](https://github.com/seanbreckenridge/mal-id-cache) that runs on my server to check if new entries have been approved, which updates a couple json files, a [website](https://github.com/seanbreckenridge/mal-unapproved) to list unapproved entries, and a [discord bot](https://github.com/seanbreckenridge/mal-notify-bot) to notify me whenever new ones are added.
 
 ![list of unapproved MAL entries](https://i.imgur.com/uW96EBY.png)
 
@@ -38,7 +38,7 @@ MALs API was dead for a while, so I use [Jikan](https://github.com/jikan-me/jika
 
 Currently, its quite frustrating to maintain projects that depend on Jikan/MAL, MALs recently been blocking scrapers since their official API has been released (though its not well documented, and I'm not a fan of how they handled OAuth). I'm quite entrenched in the MAL community, but I may switch to AniList at some point, in addition to maintaining a local cache of my MAL list using Hiyori.
 
-Though, If one is submitting new entries to one of the databases, though the site isn't the best, you're better off submitting entries to MAL, because the other sites *know* that MAL has the most entries and they all copy data/source entries from it. You improve most of sites by submitting to MAL, while it can sometimes feel like you're wasting time submitting entries to other sites that might not have as much reach.
+Though, If one is submitting new entries to one of the databases, though the site isn't the best, you're better off submitting entries to MAL, because the other sites _know_ that MAL has the most entries and they all copy data/source entries from it. You improve most of sites by submitting to MAL, while it can sometimes feel like you're wasting time submitting entries to other sites that might not have as much reach.
 
 [AniList](https://anilist.co/)/[Kitsu](https://kitsu.io) look much nicer from a developers point of view, being graphql APIs, with owners/leads who communicate much more frequently.
 

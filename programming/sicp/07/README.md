@@ -8,17 +8,17 @@ Encompasses Lecture 18, 19, 20
 
 OOP is a metaphor for multiple, independent, intelligent agents.
 
-It describes some component as as an *instance* of a *class*, which has interactions with other classes.
+It describes some component as as an _instance_ of a _class_, which has interactions with other classes.
 
-The metaphor is that an object (*instance* of a class) "knows how" to do certain things, when passed messages (method names).
+The metaphor is that an object (_instance_ of a class) "knows how" to do certain things, when passed messages (method names).
 
 Objects have state, which defies all the functional stuff we've been doing previously. When classes are instantiated, you pass parameters to initialize the local state variables.
 
 OO can be done in Scheme with `set!` and `method` to `define-class`es and their behaviour.
 
-Its common to define a base class with implements some common functionality between components, and then *inherit* from that class to subclasses.
+Its common to define a base class with implements some common functionality between components, and then _inherit_ from that class to subclasses.
 
-In a more modern sense: mixins/traits/etc are like a "horizontal" inheritance to adhere to DRY (don't repeat yourself), where class inheritance (which goes up multiple levels) is "vertical" 
+In a more modern sense: mixins/traits/etc are like a "horizontal" inheritance to adhere to DRY (don't repeat yourself), where class inheritance (which goes up multiple levels) is "vertical"
 
 Smalltalk, which started OOP, had multiple inheritance, but lots of programming languages have decided that was a bad idea and don't include.
 
@@ -28,7 +28,7 @@ Note: Pythons Method Resolution Order for Multiple Inheritance is confusing, and
 
 The `instance-vars` function can be used to define instance variables which you don't want to provide when instantiating a class.
 
-*class variables* are shared across all classes. Defined in scheme with `class-vars`.
+_class variables_ are shared across all classes. Defined in scheme with `class-vars`.
 
 Classes can define a `default-method`, which can receive any `message`, and then decide to do something with it.
 
@@ -38,7 +38,7 @@ When you define something as a child class, the `parent` instance of that class 
 
 ## SmallTalk Lecture
 
-*Object-Oriented Programming Dan Ingalls*
+_Object-Oriented Programming Dan Ingalls_
 
 If any part of a system depends on the internals of another part, then complexity increases as the square of the size of the system.
 
@@ -66,9 +66,9 @@ OS is just a collection of objects: directories, files, display, mouse, keyboard
 
 #### Essential Characteristics
 
-* Uniform reference (everything is an object)
-* Uniform access (only messages)
-* These guarantee "Simulation" - since everything is handled by passing messages to another object, a new user-defined object acts in a similar way and can extend functionality without messing with existing code.
+- Uniform reference (everything is an object)
+- Uniform access (only messages)
+- These guarantee "Simulation" - since everything is handled by passing messages to another object, a new user-defined object acts in a similar way and can extend functionality without messing with existing code.
 
 ##### Language Design:
 
@@ -78,7 +78,7 @@ Comment from professor on Javascript/Ruby:
 
 These languages are rather hideous, they're based on every good idea at once.
 
-When you program in scheme (or more generally, lisp), the big organizing idea is 'first class procedures'. Every problem is solved in that framework, and everything is uniform and semantics are simple (there aren't lots of rules/special forms). 
+When you program in scheme (or more generally, lisp), the big organizing idea is 'first class procedures'. Every problem is solved in that framework, and everything is uniform and semantics are simple (there aren't lots of rules/special forms).
 
 When you program in smalltalk, everything is done by sending messages to objects.
 

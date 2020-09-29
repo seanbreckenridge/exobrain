@@ -35,7 +35,6 @@ In your functions, you can then do a `cond` against the first element in the lis
 
 However, `Implementing generic interfaces is not additive`. A person creating the selectors/generic procedures can't know what type of ADT will be passed into it/how to deal with it, so it couldn't dispatch. To modularize this further to allow that, we use:
 
-
 ### Data-Directed Programming
 
 Instead of changing functions to dispatch to specific functions based on types, the actions and types of data are built into a global lookup table that can be modified at runtime.
@@ -46,7 +45,7 @@ In order to create a new '`package`', one would the functions which act on your 
 
 The table returns `false` if it couldn't find a method for that data type in the global lookup table.
 
-Data Directed programming isn't *just* this lookup table pattern, its the general pattern of describing functionality in your program by storing some procedure/value somewhere. Same thing is done by any program nowadays with a config file.
+Data Directed programming isn't _just_ this lookup table pattern, its the general pattern of describing functionality in your program by storing some procedure/value somewhere. Same thing is done by any program nowadays with a config file.
 
 ### Message Passing
 

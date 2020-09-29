@@ -20,7 +20,7 @@ Thanks to [creactiviti/scip-course](https://github.com/creactiviti/sicp-course) 
 
 ### Install STk for Mac
 
-You can install STk (REPL for [Scheme](https://en.wikipedia.org/wiki/Scheme_(programming_language))) from [here](https://inst.eecs.berkeley.edu/~scheme/precompiled/OSX/).
+You can install STk (REPL for [Scheme](<https://en.wikipedia.org/wiki/Scheme_(programming_language)>)) from [here](https://inst.eecs.berkeley.edu/~scheme/precompiled/OSX/).
 
 This requires X11, so; on Mac:
 
@@ -29,4 +29,3 @@ This requires X11, so; on Mac:
 You can now run `stk`, or `stk-simply` (the version with extra functions used in the lectures)
 
 On Arch Linux, this can be installed with `pacman -S mit-scheme`
-

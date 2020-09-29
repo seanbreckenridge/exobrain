@@ -21,4 +21,3 @@ where `meta.template` is:
 The pandoc command prints something like:
 
 `{"Blog":"true","Date":"2020/06/12","Title":"Personal Server Setup"}`
-

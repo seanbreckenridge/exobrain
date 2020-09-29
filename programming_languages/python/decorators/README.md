@@ -53,7 +53,7 @@ if __name__ == '__main__':
     print(add(3, 3))
 ```
 
- - `nonlocal` updates the variable in the enclosing scope, without having to make global variables. You only need to use `nonlocal` if you are assigning to the variable in the inner scope; if you're accessing it follows LEGB scope.
+- `nonlocal` updates the variable in the enclosing scope, without having to make global variables. You only need to use `nonlocal` if you are assigning to the variable in the inner scope; if you're accessing it follows LEGB scope.
 
 - Adding a decorator to a function passes the function as the first argument to the decorator. If arguments need to be passed to a decorator, you need to define an additional wrapper function that receives those arguments:
 

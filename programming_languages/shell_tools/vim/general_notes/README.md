@@ -29,9 +29,9 @@ See [here](http://vimdoc.sourceforge.net/htmldoc/autocmd.html) for more `autocmd
 
 Scrolling relative to cursor:
 
-* `zz` move current line to middle of screen
-* `zt` move current line to top of screen
-* `zb` move current line to bottom of the screen
+- `zz` move current line to middle of screen
+- `zt` move current line to top of screen
+- `zb` move current line to bottom of the screen
 
 ### Integer increment/decrement
 

@@ -35,4 +35,3 @@ Since `treemap` calls itself and also `map`, which does more recursive calls, it
 ### Queue
 
 A `queue` is a list of trees. Each tree/node is a `task` that some function has to deal with.
-

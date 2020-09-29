@@ -20,7 +20,7 @@ Sadly teenagers after often taught Math/physics through the Facts/Logic paradigm
 
 ### Tim Galleway - Inner Game of Tennis
 
-If you don't have a good theory of learning, you can still help people learn by making them focus, by removing interference. Thats often done through by something not in the Facts/Logic part of your brain. By giving someone something physical to do or say, you remove the barrier of thinking about how to do something. 
+If you don't have a good theory of learning, you can still help people learn by making them focus, by removing interference. Thats often done through by something not in the Facts/Logic part of your brain. By giving someone something physical to do or say, you remove the barrier of thinking about how to do something.
 
 The part of the body that you want to have learn don't understand English, they are visceral and understand by muscle memory.
 
@@ -30,18 +30,18 @@ Problem with being a beginner is you have a lot of practice staying a beginner. 
 
 Actions based on Facts/Logic depend on you knowing lots of previous knowledge and making inferences and conclusions based on that. If drawing a circle and all you can think of is `x^2 + y^2 = r^2`, you'll never start drawing the circle, when all you really had to do was:
 
-* go forwards some
-* turn some
+- go forwards some
+- turn some
 
 Same sort of concept can be brought over to computer science, in which knowing which is the right data structure to use often solves 80% of the problem for you.
 
 The three ways of thinking can be formalized into:
 
-* Kinesthetic (Doing)
-* Visual (Images)
-* Symbolic (Thinking)
+- Kinesthetic (Doing)
+- Visual (Images)
+- Symbolic (Thinking)
 
-The mouse involves kinesthetic, which locates you in space. Visual helps recognition and recall. 
+The mouse involves kinesthetic, which locates you in space. Visual helps recognition and recall.
 
 The Symbolic lets you abstract on top of the Kinesthetic/Visual actions, when they're not enough to solve a problem.
 
@@ -59,11 +59,10 @@ In older systems like Unix/MS-DOS, to be able to accomplish anything, you had to
 
 ![y-axis: wizardlyness; x-axis: complexity of task](images/unix.png)
 
-In newer, GUI-based systems (MacOS (pre-Unix) and Windows), you can do *a lot* of things without knowing anything about computers. The windowing systems and buttons make it so that the built-in applications have the complexity to let you pick what you want to do in a graphical way. However, as soon as you want to do something that someone didn't anticipate, you have to learn an entire programming language and windowing system to do anything to extend your system.
+In newer, GUI-based systems (MacOS (pre-Unix) and Windows), you can do _a lot_ of things without knowing anything about computers. The windowing systems and buttons make it so that the built-in applications have the complexity to let you pick what you want to do in a graphical way. However, as soon as you want to do something that someone didn't anticipate, you have to learn an entire programming language and windowing system to do anything to extend your system.
 
 ![you hit a wall eventually](images/windows.png)
 
 What you really want is like in the Xerox Parc systems, in where the GUI and developers provide you with an initial set of tools, which you can interact with and accomplish many tasks with. But if you want to be able to extend something, it shouldn't take you weeks of studying, you should be able to add a chunk of code to built in applications, which then the OS interprets and creates custom interaction. Has been achieved twice (Xerox Alto, MIT Lisp Machine)
 
 !['holy grail' of interface design](images/xerox.png)
-

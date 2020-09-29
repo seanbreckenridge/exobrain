@@ -3,7 +3,7 @@ Title: Replacing bash/zsh and pipes
 Date: 2020/06/23
 ---
 
-I live in the terminal  more than any other application.
+I live in the terminal more than any other application.
 
 Lots of my personal scripts are now in `bash`, and not `python` (though they used to be be); I've become a real fan of pipes. As a somewhat basic example, this prints out my IP information, using `curl` to make a request and `jq` to parse the JSON.
 
@@ -33,17 +33,17 @@ Unless something like `Oil` comes about which has full POSIX support, but also a
 
 Disregarding portability, I still think there could be tools to make shell-like code better. `bash` isn't great at processing text, so thats why tools like `awk`/`sed` are used. Learning how `IFS`, arrays and loops (word/line splitting) work in `bash` does help a lot, but theres still times where things feels like a hack (e.g. using [`curl` and checking HTTP codes](https://superuser.com/questions/272265/getting-curl-to-output-http-status-code)).
 
-Currently, what I typically do is just write another tool/create an `alias` with 5 pipelines, with heavy use of `sed`/`awk`/`xargs`. Thats *okay* for me, but it isn't readable, and it's not great to debug/modify.
+Currently, what I typically do is just write another tool/create an `alias` with 5 pipelines, with heavy use of `sed`/`awk`/`xargs`. Thats _okay_ for me, but it isn't readable, and it's not great to debug/modify.
 
-On a related note, `curl | jq` to get some basic interaction with JSON APIs is great, but at some point when you're dealing with structured data and doing conditional logic based on it, trying to store individual list items in shell/`bash` variables gets to be really confusing. Associative arrays and arrays *can* work, but it gets to be very unreadable, and you have no type safety/error checking. I tend to [fall back to python](https://github.com/seanbreckenridge/projects) in situations like that.
+On a related note, `curl | jq` to get some basic interaction with JSON APIs is great, but at some point when you're dealing with structured data and doing conditional logic based on it, trying to store individual list items in shell/`bash` variables gets to be really confusing. Associative arrays and arrays _can_ work, but it gets to be very unreadable, and you have no type safety/error checking. I tend to [fall back to python](https://github.com/seanbreckenridge/projects) in situations like that.
 
-So, at some point it may make sense to fall back onto (for a script)/call out to (for command line pipelines) other interpreted languages (like `python`/`ruby`), but thats typically a *noticeable* drop in speed; I do value the speed of the shell (don't think I'd use [`xonsh`](https://xon.sh/index.html) interactively, though it does look cool) and using minimal tools like `curl`/`jq`.
+So, at some point it may make sense to fall back onto (for a script)/call out to (for command line pipelines) other interpreted languages (like `python`/`ruby`), but thats typically a _noticeable_ drop in speed; I do value the speed of the shell (don't think I'd use [`xonsh`](https://xon.sh/index.html) interactively, though it does look cool) and using minimal tools like `curl`/`jq`.
 
 On one hand, if there was a nicer, extendible DSL like [`mario`](https://github.com/python-mario/mario) (but written in something faster than `python`, and didn't require me to use `pipx` to run it from a virtual environment) which supported:
 
-  * processing text (with convenience functions for typical string operations)
-  * complex operations currently handled by `curl`/`jq`, like making HTTP requests, parsing JSON/XML
-  * maintain a shell like DSL/syntax, so you could construct pipelines and receive text from STDIN and do `map`/`filter`/`reduce` across lines
+- processing text (with convenience functions for typical string operations)
+- complex operations currently handled by `curl`/`jq`, like making HTTP requests, parsing JSON/XML
+- maintain a shell like DSL/syntax, so you could construct pipelines and receive text from STDIN and do `map`/`filter`/`reduce` across lines
 
 ... I could totally see myself using it for personal/throwaway scripts.
 
@@ -71,8 +71,8 @@ But! I'm not totally satisfied with that, and I wish there was a better way!
 
 ### Possible Solutions
 
-* Find something that works like `mario`, but not in python and is extendible, or go through the arduous task of writing something myself in `go`/`rust`.
-* Hope for an interactive shell which is a superset of the POSIX standard while providing convenience functions like `elvish` to become semi-popular.
+- Find something that works like `mario`, but not in python and is extendible, or go through the arduous task of writing something myself in `go`/`rust`.
+- Hope for an interactive shell which is a superset of the POSIX standard while providing convenience functions like `elvish` to become semi-popular.
 
 ---
 

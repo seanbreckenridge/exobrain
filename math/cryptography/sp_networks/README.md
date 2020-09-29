@@ -21,7 +21,7 @@ Modern Encryption uses more block sizes. A block cipher takes a block size of 'n
 
 SP networks combine a Substitution and a Permutation (swapping/xor-ing).
 
-S-box - takes n bits of input, and outputs n bits of output. It maps inputs to outputs, in *hopefully* a random way.
+S-box - takes n bits of input, and outputs n bits of output. It maps inputs to outputs, in _hopefully_ a random way.
 
 S-box(4) would take 4 bits of input and output 4, giving it 2^4 combinations. (0-15)
 
@@ -35,7 +35,7 @@ If someone knows what substitutions and permutations your SP-box does (which is 
 
 In order to make the cipher text harder to reverse, you introduce a secret key:
 
-Expand the key (using a *key schedule*) so that its size `M*n`, and split it up into chunks that are the same size as `M`.
+Expand the key (using a _key schedule_) so that its size `M*n`, and split it up into chunks that are the same size as `M`.
 
 In between each round, XOR the `MESSAGE` with the chunk of the `KEY`. That way, once the key is removed, its not possible to reverse the message even if one knows the algorithm.
 

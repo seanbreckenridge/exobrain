@@ -19,13 +19,13 @@ As an example:
 ```
 (define (fac n)
   (if (= n 1)
-      1 
+      1
       (* n (fac (- n 1)))))
 ```
 
 You can think of the final call as being expanded to `n * (n - 1) * (n - 2) * .... 1` across function calls, once you hit the base case.
 
-### Linear Iterative Process 
+### Linear Iterative Process
 
 This is done with an accumulator. Instead of using the return value of the recursive process as the value for the recursive call, the state is kept in its own variable, and not as some 'expression' on the stack that grows with each recursive call.
 
@@ -60,4 +60,3 @@ Recursion in which a call does multiple-recursive calls, often doing the same wo
 For computational/numeric tasks, tree recursion can typically be drastically improved by using an accumulator. In procedural languages, one might use memoization (hash the inputs to an output), or just a loop.
 
 However, in operating on data structures (e.g. graphs algorithms), Tree Recursion can often be the solution.
-

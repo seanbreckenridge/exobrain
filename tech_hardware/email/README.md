@@ -10,7 +10,7 @@ Simplified explanations of these so I can reference the acronyms
 
 Simple Message Transfer Protocol. Allows you to send a message to your email (providers) server, which then routes it to wherever it has to go, and then stores it on their providers server, till the other person email client grabs that.
 
-Well, *how do clients grab email?*
+Well, _how do clients grab email?_
 
 ### IMAP
 

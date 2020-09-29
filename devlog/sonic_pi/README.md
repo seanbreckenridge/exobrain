@@ -97,9 +97,9 @@ Without `qjackctl`, it seems that this causes `pulseaudio` to break... ? and it 
 
 So, what I typically do is:
 
-* make sure I've used `pulseaudio` at least once since the computer has started (just play some song in `mpv` and then quit)
-* quit everything that is using `pulseaudio` actively
-* run `sonic-pi-run` (the script above)
+- make sure I've used `pulseaudio` at least once since the computer has started (just play some song in `mpv` and then quit)
+- quit everything that is using `pulseaudio` actively
+- run `sonic-pi-run` (the script above)
 
 And then, when I exit, `pulseaudio` takes back over.
 
@@ -107,12 +107,11 @@ Success!
 
 Downsides:
 
-* Have to be a bit careful about mistakenly opening multiple instances of `sonic-pi`. If I open it and then quit quickly, something may have been acquired but not released, which causes `pulseaudio` to become 'dummy output', or jack to fail to acquire `hw:1`.
-* 'breaks' system audio/`pulseaudio` while sonic-pi is open, so its the only thing that can use audio
+- Have to be a bit careful about mistakenly opening multiple instances of `sonic-pi`. If I open it and then quit quickly, something may have been acquired but not released, which causes `pulseaudio` to become 'dummy output', or jack to fail to acquire `hw:1`.
+- 'breaks' system audio/`pulseaudio` while sonic-pi is open, so its the only thing that can use audio
 
 References:
 
 - <https://github.com/sonic-pi-net/sonic-pi/issues/849>
 - <https://www.miskatonic.org/2015/01/17/setting-up-sonic-pi-on-ubuntu/>
 - <https://github.com/sonic-pi-net/sonic-pi/issues/1908>
-

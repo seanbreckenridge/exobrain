@@ -33,23 +33,23 @@ Since you typically can't refer to the names of procedures in the body in `let` 
 
 'Higher Order' means:
 
-* Takes procedure as argument or
-* Returns procedure as its value
+- Takes procedure as argument or
+- Returns procedure as its value
 
 A data type is first class in a language if things of that type can be:
 
-* the value of a variable
-* the argument to a procedure
-* can be the value returned by a procedure
-* can be a member of an aggregate (e.g. array)
-* (sometimes included in the definition) can be anonymous - not bound to a `name` (i.e. lambads)
+- the value of a variable
+- the argument to a procedure
+- can be the value returned by a procedure
+- can be a member of an aggregate (e.g. array)
+- (sometimes included in the definition) can be anonymous - not bound to a `name` (i.e. lambads)
 
 Widespread use of first class types:
 
-* Basically every language supports numbers as first class.
-* Character/Strings are sometimes first class (e.g. not in C).
-* Data aggregates are rarely first class (you typically get a pointer to the data structure)
-* Not many languages gives you functions as first class, though thats changing with newer languages.
+- Basically every language supports numbers as first class.
+- Character/Strings are sometimes first class (e.g. not in C).
+- Data aggregates are rarely first class (you typically get a pointer to the data structure)
+- Not many languages gives you functions as first class, though thats changing with newer languages.
 
 ### Procedures as Returned values:
 
@@ -68,4 +68,3 @@ Can also define those to `name`s, like:
 ```
 
 For a compiler, its relatively easy to allow a function as an argument, but more complicated to allow a function as a return argument. e.g. Pascal allows them as arguments but not return values.
-

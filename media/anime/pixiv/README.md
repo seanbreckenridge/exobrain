@@ -6,8 +6,8 @@ Weird hack to sorta sort by popularity on [pixiv](https://www.pixiv.net/en/) wit
 
 It sorts it by the number of stars (like likes)
 
-Search for something like 10000users入りor 5000users入り and then the Japanese name of the show:
+Search for something like 10000users 入り or 5000users 入り and then the Japanese name of the show:
 
 ユーリ!!! on ICE
 
-Which you can find on MAL if you don't know its best to go 10000users入り ユーリ!!! on ICE, then 5000users入り ユーリ!!! on ICE, then 1000users入り ユーリ!!! on ICE, as you usually find the best stuff.
+Which you can find on MAL if you don't know its best to go 10000users 入り ユーリ!!! on ICE, then 5000users 入り ユーリ!!! on ICE, then 1000users 入り ユーリ!!! on ICE, as you usually find the best stuff.

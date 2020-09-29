@@ -12,8 +12,8 @@ Modularity - can be divided "naturally" into coherent parts that can be separate
 
 Organizational Strategies:
 
-* Objects - views a large system as a collection of distinct objects whose behaviours may change over time. Have to be concerned with how objects can change but still maintain its identity.
-* Streams - information flows by applying operations onto data. Can be exploited to apply operations lazily (delayed evaluation)
+- Objects - views a large system as a collection of distinct objects whose behaviours may change over time. Have to be concerned with how objects can change but still maintain its identity.
+- Streams - information flows by applying operations onto data. Can be exploited to apply operations lazily (delayed evaluation)
 
 ### Assignment and Local State
 
@@ -39,7 +39,7 @@ Introducing state/local variables causes lots of confusion and problems, but it 
 
 Introducing assignment means that you can no longer use the substitution model. It becomes harder to read code whose results can depend on multiple mutable global variables. "No simple model with 'nice' mathematical properties can be an adequate framework for dealing with objects and assignment in programming languages".
 
-'A language that supports the concept that "equals can be substituted for equals" in an expression without changing the value of the expression is said to be *referentially transparent*'. Once you include `set!`, you've violated referential transparency. The meaning of 'same' becomes much harder to model.
+'A language that supports the concept that "equals can be substituted for equals" in an expression without changing the value of the expression is said to be _referentially transparent_'. Once you include `set!`, you've violated referential transparency. The meaning of 'same' becomes much harder to model.
 
 Compare:
 
@@ -63,13 +63,13 @@ In imperative programming, since were not following the substitution model, the 
 
 ### Environment Model of Evaluation
 
-An environment is a sequence of *frames*. Each frame is a table (possibly empty) of bindings, which associate variable bindings with values. Each frame points to a higher enclosing environment (except the global frame).
+An environment is a sequence of _frames_. Each frame is a table (possibly empty) of bindings, which associate variable bindings with values. Each frame points to a higher enclosing environment (except the global frame).
 
-The value of a variable refers to the closest frame which include a binding to the symbol. If no frames include a binding, its said to be *unbound*.
+The value of a variable refers to the closest frame which include a binding to the symbol. If no frames include a binding, its said to be _unbound_.
 
 ![Simple environment structure](images/scope.png)
 
-If in scope `II`, `x`'s value would be 7. The binding in `II` is said to *shadow* the binding of `x` to `3` in `I`.
+If in scope `II`, `x`'s value would be 7. The binding in `II` is said to _shadow_ the binding of `x` to `3` in `I`.
 
 For simplicity, you can think of the global environment as the highest scope, which includes bindings like `+` or `*`, which represent built-in symbols.
 
@@ -92,13 +92,13 @@ To apply a procedure to arguments, create a new environment containing a frame t
 
 The Environment Model can be summarized by two rules:
 
-* A procedure object is applied to a set of arguments by constructing a frame, binding the formal parameters of the procedure to the arguments of the call, and then evaluating the body of the procedure in the context of the new environment constructed. The new frame has as its enclosing environment the environment part of the procedure object being applied.
-* A procedure is created by evaluating a sexpr (lambda) relative to a given environment. The resulting procedure object is a pair consistent of the text of the sexpr and a pointer to the environment in which the procedure was created.
+- A procedure object is applied to a set of arguments by constructing a frame, binding the formal parameters of the procedure to the arguments of the call, and then evaluating the body of the procedure in the context of the new environment constructed. The new frame has as its enclosing environment the environment part of the procedure object being applied.
+- A procedure is created by evaluating a sexpr (lambda) relative to a given environment. The resulting procedure object is a pair consistent of the text of the sexpr and a pointer to the environment in which the procedure was created.
 
 Very simply:
 
-* Substitution Model: `(eval expr)`
-* Environment Model: `(eval expr environ)`
+- Substitution Model: `(eval expr)`
+- Environment Model: `(eval expr environ)`
 
 In scheme, `define` lets you create bindings, and `set!` allow us to modify bindings. In the substitution model, theres often an implicit third `eviron` argument, which would be `theglobalenv` (the global frame)
 
@@ -118,8 +118,8 @@ This method of symbol lookup is called lexical scoping. An alternative would be 
 
 Two key properties that make local procedure definitions a useful technique for modularizing programs:
 
-* The names of local procedures do not interfere with names external to the enclosing procedure, because the local procedure names will be bound in the frame that the procedure creates when it is run, rather than being bound in the global environment.
-* The local procedure can access the arguments of the enclosing procedure, simply by using the parameter names as free variables (variables not defined as a formal parameter to a procedure). This is because the body of the local procedure is evaluated in an environment that is subordinate to the environment for the enclosing procedure.
+- The names of local procedures do not interfere with names external to the enclosing procedure, because the local procedure names will be bound in the frame that the procedure creates when it is run, rather than being bound in the global environment.
+- The local procedure can access the arguments of the enclosing procedure, simply by using the parameter names as free variables (variables not defined as a formal parameter to a procedure). This is because the body of the local procedure is evaluated in an environment that is subordinate to the environment for the enclosing procedure.
 
 This often means that local procedure definitions which deal with state are easier to read and work how you expect them to, since they're pointing at the 'correct' frames.
 
@@ -139,9 +139,8 @@ If we are treating objects as an ADT, programs that use objects shouldn't know t
 
 ### Inheritance and Delegation
 
-It may make sense that all parent methods would just be copied into the child when a class is created, but it typically isn't done that way. Its done through *delegation* - each object contains only the methods for its own class, and then a instance variable of the parent class. If the methods aren't found in the child class, it passes a message to the parent class, which then passes to its parent if it can't find the symbol.
+It may make sense that all parent methods would just be copied into the child when a class is created, but it typically isn't done that way. Its done through _delegation_ - each object contains only the methods for its own class, and then a instance variable of the parent class. If the methods aren't found in the child class, it passes a message to the parent class, which then passes to its parent if it can't find the symbol.
 
 Typically, the parent class instance variable is created when the class is defined, and would be shared across instances.
 
 A downside of the delegation approach (at least in MIT-Scheme's basic implementation) is a parent class doesn't have access to local state defined in a child class.
-

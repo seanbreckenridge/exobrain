@@ -14,10 +14,10 @@ and then on that line, type `!!bash`, it'll send that to bash, and replace the c
 
 `/home/sean/.local/bin/docker-compose`
 
-Could just as easily send some snippet of code to python or perl, or *anything*.
+Could just as easily send some snippet of code to python or perl, or _anything_.
 
-* `:.$ to run vim commands`
-* `:.! to run external commands`
+- `:.$ to run vim commands`
+- `:.! to run external commands`
 
 This doesn't have to be on single lines though, you can do `6!!` to send 6 lines to some external command.
 

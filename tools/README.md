@@ -9,7 +9,7 @@ This is an ever evolving list of tools and scripts I use and recommend, or combi
 Most of these are command line based. On a regular day, the only GUI tools I use are my browser and my email client.
 
 - Shells
-  - [`zsh`](http://zsh.sourceforge.net/) - for the [`fish`](https://fishshell.com/)-like highlighting and auto completion, while still being *somewhat* posix compliant. Manually configuring everything makes this much faster than the monstrous `oh-my-zsh`.
+  - [`zsh`](http://zsh.sourceforge.net/) - for the [`fish`](https://fishshell.com/)-like highlighting and auto completion, while still being _somewhat_ posix compliant. Manually configuring everything makes this much faster than the monstrous `oh-my-zsh`.
   - bash/[`dash`](https://wiki.archlinux.org/index.php/Dash) - for shell scripting. My `zsh` setup is also much more dependent on external plugins, so I don't use that on servers, I just stick to bash there. My [`bootstrap`](https://github.com/seanbreckenridge/bootstrap/) script sets up new bash servers for me nicely, see [this post](/post/server_setup) for more info.
 - Terminal
   - [`alacritty`](https://github.com/alacritty/alacritty), with pretty basic defaults
@@ -105,4 +105,3 @@ Most of these are command line based. On a regular day, the only GUI tools I use
 
 - [`robomongo`](https://robomongo.org/) to explore mongoDB databases
 - [`sqlitebrowser`](https://sqlitebrowser.org/) to explore sqlite databases
-

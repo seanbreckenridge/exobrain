@@ -10,10 +10,10 @@ Title: Git Commands
 
 ### Status of File according to git:
 
-* untracked: the file is not tracked by the Git repository. This means that the file never staged nor committed.
-* tracked: committed and not staged
-* staged: staged to be included in the next commit
-* dirty / modified: the file has changed but the change is not staged
+- untracked: the file is not tracked by the Git repository. This means that the file never staged nor committed.
+- tracked: committed and not staged
+- staged: staged to be included in the next commit
+- dirty / modified: the file has changed but the change is not staged
 
 ![adding files in bulk](images/git_add.png)
 
@@ -33,10 +33,10 @@ Title: Git Commands
 
 `git diff` using `HEAD`:
 
-* `git diff HEAD~1 HEAD`
-* `dit diff HEAD^ HEAD`
-* `git diff HEAD^^ HEAD`
-* `git diff HEAD~3 HEAD file`
+- `git diff HEAD~1 HEAD`
+- `dit diff HEAD^ HEAD`
+- `git diff HEAD^^ HEAD`
+- `git diff HEAD~3 HEAD file`
 
 ### Resetting
 
@@ -44,7 +44,7 @@ Title: Git Commands
 
 For example:
 
-  moving remote back a commit. If you have force push access to origin
+moving remote back a commit. If you have force push access to origin
 
 ```
 git reset --hard HEAD~1
@@ -61,9 +61,9 @@ If you want to add something to a previous commit, you can use `git reset --soft
 
 Works as a stack:
 
-* third stashed changes
-* second stashed changes
-* first stashed changes
+- third stashed changes
+- second stashed changes
+- first stashed changes
 
 `git stash pop` would remove 'third stashed changes', and apply the changes to the current index. Then, `git stash pop` again would apply the second stashed index. `git stash apply` is like pop, it applies whats at the top of the stack to the index, but it doesnt remove the item from the top of the stack.
 
@@ -85,6 +85,5 @@ To apply your changes on top of the remote changes. Its possible that you'll sti
 
 Can use dots to show diffs between branches/tags/commit hashes
 
-* `git diff master..featurex`
-* `git diff HEAD..featurex`
-
+- `git diff master..featurex`
+- `git diff HEAD..featurex`
