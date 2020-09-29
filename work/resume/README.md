@@ -1,5 +1,5 @@
 ---
-Title: Resume/Jobs
+Title: Resume
 ---
 
 ### Resume
