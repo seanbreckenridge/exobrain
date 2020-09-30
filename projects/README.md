@@ -437,4 +437,10 @@ Lets me edit files and strings in temporary vim (or some other console editor) b
 
 An offline CLI tool to search your GitHub Stars. Forked from [here](https://github.com/wolfg1969/oh-my-stars) to have a simpler interface and also index all of my repositories, in addition to any stars.
 
+### sonic_pi_music
+
+[GitHub](https://github.com/seanbreckenridge/sonic_pi_music) | Ruby
+
+some music created using sonic pi
+
 

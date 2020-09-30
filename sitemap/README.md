@@ -4,6 +4,7 @@
 * / [Tools, or how I do everything](/tools/)
 * devlog/ [Sonic-Pi](/devlog/sonic_pi/)
 * hobbies/ [Cubing](/hobbies/cubing/)
+* hobbies/ [SonicPi](/hobbies/sonic_pi/)
 * language/ [Concepts](/language/concepts/)
 * language/ [English Words](/language/english_words/)
 * language/ [Japanese](/language/japanese/)
