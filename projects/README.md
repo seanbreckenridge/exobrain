@@ -90,6 +90,12 @@ Works on both Mac/Linux(Arch)
 
 A small cache layer for IP geolocation info
 
+### url_metadata
+
+[GitHub](https://github.com/seanbreckenridge/url_metadata) | [GitLab](https://gitlab.com/seanbreckenridge/url_metadata) | Python
+
+A cache which saves URL metadata and content. Acts as an abstraction layer for fetching youtube subtitles, a summary of the HTML, opengraph information, links to images/videos.
+
 ### mpv-sockets
 
 [GitHub](https://github.com/seanbreckenridge/mpv-sockets) | [GitLab](https://gitlab.com/seanbreckenridge/mpv-sockets) | Shell/Python
@@ -442,5 +448,6 @@ An offline CLI tool to search your GitHub Stars. Forked from [here](https://gith
 [GitHub](https://github.com/seanbreckenridge/sonic_pi_music) | Ruby
 
 some music created using sonic pi
+
 
 
