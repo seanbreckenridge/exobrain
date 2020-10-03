@@ -94,7 +94,7 @@ A small cache layer for IP geolocation info
 
 [GitHub](https://github.com/seanbreckenridge/url_metadata) | [GitLab](https://gitlab.com/seanbreckenridge/url_metadata) | [PyPi](https://pypi.org/project/url_metadata/) | Python
 
-A cache which saves URL metadata and content. Acts as an abstraction layer for fetching youtube subtitles, a summary of the HTML, opengraph information, links to images/videos.
+A cache which saves URL metadata and summarizes content. Acts as an abstraction layer for fetching youtube subtitles, a summary of the HTML, opengraph information, links to images/videos.
 
 ### mpv-sockets
 
