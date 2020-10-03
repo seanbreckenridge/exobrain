@@ -92,7 +92,7 @@ A small cache layer for IP geolocation info
 
 ### url_metadata
 
-[GitHub](https://github.com/seanbreckenridge/url_metadata) | [GitLab](https://gitlab.com/seanbreckenridge/url_metadata) | Python
+[GitHub](https://github.com/seanbreckenridge/url_metadata) | [GitLab](https://gitlab.com/seanbreckenridge/url_metadata) | [PyPi](https://pypi.org/project/url_metadata/) | Python
 
 A cache which saves URL metadata and content. Acts as an abstraction layer for fetching youtube subtitles, a summary of the HTML, opengraph information, links to images/videos.
 
