@@ -12,6 +12,7 @@ Title: Stuff to read
 - plugins/dynamic code-loading <https://docs.openstack.org/stevedore/latest/user/essays/pycon2013.html>
 - Maybe some practice with abnf, then PEG spec: <https://bford.info/pub/lang/peg.pdf>
 - <http://www.pl-enthusiast.net/2014/07/21/memory-safety/>
+- <https://www.inkandswitch.com/cambria.html>
 
 ### Books
 
