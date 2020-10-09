@@ -27,7 +27,7 @@ havecmd() {
 	fi
 }
 
-# if external commands exist; defualt to false
+# if external commands exist; default to false
 declare HAS_HTML_MINIFIER HAS_PRETTIER
 HAS_HTML_MINIFIER=0
 HAS_PRETTIER=0
