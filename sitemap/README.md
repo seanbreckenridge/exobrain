@@ -39,6 +39,7 @@
 * programming_languages/shell_tools/vim/ [Vim Windows/Buffers](/programming_languages/shell_tools/vim/windows/)
 * programming_languages/web/ [Backend Tools](/programming_languages/web/backend_tools/)
 * programming_languages/web/ [CSS/JS Frameworks](/programming_languages/web/frameworks/)
+* programming_languages/web/ [Font Support](/programming_languages/web/fonts/)
 * programming_languages/web/ [Frontend/Design Tools](/programming_languages/web/design/)
 * programming_languages/web/ [HTML and CSS resources](/programming_languages/web/resources/)
 * programming_languages/web/design/ [General UI/UX Notes](/programming_languages/web/design/ui_ux/)
