@@ -24,7 +24,7 @@ Since 2015, I've spent _a lot_ of time watching anime. Less recently, because I'
 
 There was a point in early 2017 where I had watched every music video/short film on MAL, and there wasn't what I considered to be a comprehensive list, so I ended up creating [a list of my favorites](https://sean.fish/animeshorts/).
 
-Ended up writing [lots of userscripts](https://myanimelist.net) for MAL, because it isn't the best out of the box. ([Github Repo](http://github.com/seanbreckenridge/greasyfork))
+Ended up writing [lots of userscripts](https://greasyfork.org/en/scripts?set=22083) for MAL, because it isn't the best out of the box. ([Github Repo](http://github.com/seanbreckenridge/greasyfork))
 
 In the past, and somewhat now, I've used the MAL database to discover new interesting short films/music videos to watch.
 
