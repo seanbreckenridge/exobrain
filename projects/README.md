@@ -86,7 +86,7 @@ Works on both Mac/Linux(Arch)
 
 ### ipgeocache
 
-[GitHub](https://github.com/seanbreckenridge/ipgeocache) | [GitLab](https://gitlab.com/seanbreckenridge/ipgeocache) | Python
+[GitHub](https://github.com/seanbreckenridge/ipgeocache) | [GitLab](https://gitlab.com/seanbreckenridge/ipgeocache) | [PyPi](https://pypi.org/project/ipgeocache/) | Python
 
 A small cache layer for IP geolocation info
 
