@@ -99,7 +99,7 @@ docker run hello-world  # test connection to docker socket, may require a restar
 # setup postgresql
 sudo apt install postgresql postgresql-client
 sudo su
-su -u /bin/bash postgres
+su postgres
 adduser glue_worker # primarily used for my elixir server
 createuser --pwprompt glue_worker
 createdb -O glue_worker glue_db
