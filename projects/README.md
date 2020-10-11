@@ -146,7 +146,7 @@ Discord bot to use for countdowns. I use this as an alternative to [`syncplay`](
 
 ### pushshift_comment_export
 
-[GitHub](https://github.com/seanbreckenridge/pushshift_comment_export) | [GitLab](https://gitlab.com/seanbreckenridge/pushshift_comment_export) | Python
+[GitHub](https://github.com/seanbreckenridge/pushshift_comment_export) | [GitLab](https://gitlab.com/seanbreckenridge/pushshift_comment_export) | [PyPi](https://pypi.org/project/pushshift-comment-export/) | Python
 
 Exports all accessible reddit comments for an account using pushshift.
 
