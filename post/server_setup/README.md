@@ -115,14 +115,14 @@ curl -sSL https://get.rvm.io | bash -s stable --ruby
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 # node/npm
-curl -sL https://deb.nodesource.com/setup_12.x | sudo bash -
+curl -sL 'https://deb.nodesource.com/setup_14.x' | sudo bash -
 sudo apt install nodejs
 
 # lots of other apt installs
 sudo apt update
 sudo apt install python3.7 docker-compose pipenv supervisor jq elixir erlang-inets erlang-dev \
     erlang-parsetools erlang-xmerl rsync goaccess apache2-utils fail2ban libssl-dev \
-    htop tree
+    htop tree unzip
 
 # Set up environment (put this in ~/.bash_profile):
 # NPM global packages are put in ~/.local/share/npm-packages to avoid permission errors/requiring sudo to install npm packages
@@ -174,10 +174,10 @@ sudo mv fail2ban fail2ban.disabled
 ```shell
 # redirect from HTTP to HTTPS
 server {
-    listen 80 default_server;
-    listen [::]:80 default_server;
-    server_name _;
-    return 301 https://$host$request_uri;
+  listen 80 default_server;
+  listen [::]:80 default_server;
+  server_name _;
+  return 301 https://$host$request_uri;
 }
 
 # redirect from www to non-www URL
@@ -194,12 +194,12 @@ server {
 
 server {
 
-    listen [::]:443 ssl http2 ipv6only=on;
-    listen 443 ssl;
-    ssl_certificate /etc/letsencrypt/live/sean.fish/fullchain.pem; # managed by Certbot
-    ssl_certificate_key /etc/letsencrypt/live/sean.fish/privkey.pem; # managed by Certbot
-    include /etc/letsencrypt/options-ssl-nginx.conf;
-    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
+  listen [::]:443 ssl http2 ipv6only=on;
+  listen 443 ssl;
+  ssl_certificate /etc/letsencrypt/live/sean.fish/fullchain.pem; # managed by Certbot
+  ssl_certificate_key /etc/letsencrypt/live/sean.fish/privkey.pem; # managed by Certbot
+  include /etc/letsencrypt/options-ssl-nginx.conf;
+  ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
 
 	root /var/www/html;
 	index index.html;
@@ -264,18 +264,18 @@ Both `netdata` and [`goaccess`](https://goaccess.io/) (nginx log parser) are pas
 `sudo htpasswd -c /etc/nginx/.htpasswd sean`, and then on the routes:
 
 ```
-  location /logs {
-    alias /home/sean/.goaccess_html;
-    try_files $uri $uri/ =404;
-    auth_basic "for logs!";
-    auth_basic_user_file /etc/nginx/.htpasswd;
-  }
+location /logs {
+  alias /home/sean/.goaccess_html;
+  try_files $uri $uri/ =404;
+  auth_basic "for logs!";
+  auth_basic_user_file /etc/nginx/.htpasswd;
+}
 
-  location /netdata/ {
-    proxy_pass http://127.0.0.1:19999/;
-    auth_basic "for netdata!";
-    auth_basic_user_file /etc/nginx/.htpasswd;
-  }
+location /netdata/ {
+  proxy_pass http://127.0.0.1:19999/;
+  auth_basic "for netdata!";
+  auth_basic_user_file /etc/nginx/.htpasswd;
+}
 ```
 
 References:
