@@ -22,6 +22,12 @@ export and interface with firefox history/visits and site metadata. Ensures I do
 
 helpers to prompt, validate, and persist python objects to and from disk using type hints
 
+### glue
+
+[GitHub](https://github.com/seanbreckenridge/glue) | [GitLab](https://gitlab.com/seanbreckenridge/glue) | Elixir/TypeScript
+
+Used to glue all of my web applications together. Simulates an old GUI interface, with desktop icons and draggable windows. Located at [sean.fish](https://sean.fish/).
+
 ### HPI
 
 [GitHub](https://github.com/seanbreckenridge/HPI) | Python
@@ -149,12 +155,6 @@ Discord bot to use for countdowns. I use this as an alternative to [`syncplay`](
 [GitHub](https://github.com/seanbreckenridge/pushshift_comment_export) | [GitLab](https://gitlab.com/seanbreckenridge/pushshift_comment_export) | [PyPi](https://pypi.org/project/pushshift-comment-export/) | Python
 
 Exports all accessible reddit comments for an account using pushshift.
-
-### glue
-
-[GitHub](https://github.com/seanbreckenridge/glue) | [GitLab](https://gitlab.com/seanbreckenridge/glue) | Elixir
-
-Used to glue all of my web applications together. This is the code for my homepage at [sean.fish](https://sean.fish/), which links off to my static/other sites hosted on the same server. The elixir application also handles caching information for my [`feed`](https://sean.fish/feed) page.
 
 ### pmark
 
