@@ -21,6 +21,9 @@ Theres a similar command in bash; `complete -F _longopt my_command`
 For basic completion which doesn't need state, to autocomplete a command as the first argument, and then some filename as the second argument:
 
 ```bash
+# for something named 'command'; if your command was 'hello', the function would be '_hello'
+# you can always manually invoke a function to complete something with compdef as well:
+# compdef _command command
 function _command() {
 	# typically this would be done with the built-in _path_files
 	local files="$(command ls)"
@@ -31,7 +34,7 @@ function _command() {
 }
 ```
 
-If you want to have 2 commands and complete multiple arguments, you can use a glob:
+If you want to have 2 commands and complete multiple file arguments, you can use a glob:
 
 ```bash
 function _command() {
