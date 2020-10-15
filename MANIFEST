@@ -38,6 +38,7 @@ programming_languages/shell_tools/tmux
 programming_languages/shell_tools/vim/general_notes
 programming_languages/shell_tools/vim/magic_wands
 programming_languages/shell_tools/vim/windows
+programming_languages/shell/zsh_completion
 programming_languages/web/backend_tools
 programming_languages/web/design
 programming_languages/web/design/ui_ux

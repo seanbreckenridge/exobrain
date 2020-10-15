@@ -30,6 +30,7 @@
 * programming_languages/python/ [Decorators Pycon](/programming_languages/python/decorators/)
 * programming_languages/shell/ [Alternative Shells](/programming_languages/shell/alternative_shells/)
 * programming_languages/shell/ [Bash Notes](/programming_languages/shell/bash_notes/)
+* programming_languages/shell/ [zsh completion](/programming_languages/shell/zsh_completion/)
 * programming_languages/shell_tools/ [Git Commands](/programming_languages/shell_tools/git/)
 * programming_languages/shell_tools/ [Imagemagick commands](/programming_languages/shell_tools/imagemagick/)
 * programming_languages/shell_tools/ [Pandoc](/programming_languages/shell_tools/pandoc/)
