@@ -13,6 +13,7 @@ Title: Stuff to read
 - Maybe some practice with abnf, then PEG spec: <https://bford.info/pub/lang/peg.pdf>
 - <http://www.pl-enthusiast.net/2014/07/21/memory-safety/>
 - <https://www.inkandswitch.com/cambria.html>
+- An Incremental approach to Compiler Construction
 
 ### Books
 
@@ -31,3 +32,7 @@ Title: Stuff to read
 - see <https://ethanevansvp.com/recommended-books/>
 - Unscripted - M.J. demarko
 - The War of Art - steven pressfield
+
+### Courses
+
+- [Quantified Self Brown University Course](http://cs.brown.edu/courses/csci2951-r/)

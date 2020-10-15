@@ -2,6 +2,8 @@
 Title: HTML and CSS resources
 ---
 
+- [lighthouse](https://developers.google.com/web/tools/lighthouse/) for testing accessibility/SEO etc.
+
 - [awesome.re](https://awesome.re)
 
   - [HTML5](https://github.com/diegocard/awesome-html5#readme)

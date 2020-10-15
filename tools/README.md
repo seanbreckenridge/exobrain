@@ -107,3 +107,4 @@ Most of these are command line based. On a regular day, the only GUI tools I use
 
 - [`robomongo`](https://robomongo.org/) to explore mongoDB databases
 - [`sqlitebrowser`](https://sqlitebrowser.org/) to explore sqlite databases
+- [`simplescreenrecorder`](https://github.com/MaartenBaert/ssr) to do simple screen recordings
