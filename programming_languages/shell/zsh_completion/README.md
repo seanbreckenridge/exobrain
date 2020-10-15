@@ -26,8 +26,8 @@ function _command() {
 	local files="$(command ls)"
 	# 'files' and 'command' are just descriptions
 	_arguments \
-		"$(printf '1:command:(%s)' "create remove")" \
-		"$(printf '2:files:(%s)' "$files")"
+		'1:command:(create remove)' \
+		"2:files:(${files})"
 }
 ```
 
@@ -37,9 +37,9 @@ If you want to have 2 commands and complete multiple arguments, you can use a gl
 function _command() {
 	local files="$(command ls)"
 	_arguments \
-		"$(printf '1:command:(%s)' "create remove")" \
-		"$(printf '2:command:(%s)' "force quiet")" \
-		"$(printf '*:files:(%s)' "$files")"
+		'1:command:(create remove)' \
+		'2:command:(force quiet)' \
+		"*:files:(${files})"
 }
 ```
 
