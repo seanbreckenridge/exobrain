@@ -34,6 +34,12 @@ Used to glue all of my web applications together. Simulates an old GUI interface
 
 Human Programming Interface. A way to unify, access and interact with all my personal data. It hides the [gory details](https://beepb00p.xyz/sad-infra.html#exports_are_hard) of locating data, parsing, error handling and caching. You simply 'import' your data and get to work with familiar Python types and data structures.
 
+### darker_errors
+
+[GitHub](https://github.com/seanbreckenridge/darker_errors) | [GitLab](https://gitlab.com/seanbreckenridge/darker_errors) | Go
+
+A minimal dark-themed HTTP error page generator. Implements a basic template language, to allow interpolation based on HTTP status codes.
+
 ### no-db-static-shorturl
 
 [GitHub](https://github.com/seanbreckenridge/no-db-static-shorturl) | [GitLab](https://gitlab.com/seanbreckenridge/no-db-static-shorturl) | Go
@@ -448,6 +454,7 @@ An offline CLI tool to search your GitHub Stars. Forked from [here](https://gith
 [GitHub](https://github.com/seanbreckenridge/sonic_pi_music) | Ruby
 
 some music created using sonic pi
+
 
 
 
