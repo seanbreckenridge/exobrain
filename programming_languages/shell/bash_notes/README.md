@@ -72,6 +72,26 @@ Read the bash man page! Bashisms can be bad if you're trying to be POSIX complia
 
 You may need to use POSIX complaint code for something like Solaris SVR4 packages which requires Bourne shell for any scripts.
 
+#### Function return values
+
+The last statement in a functions' return value is the return value of the function.
+
+```
+#!/bin/bash
+
+setup() {
+  ls kdsajfksajfda
+}
+
+if setup; then
+  echo worked
+else
+  echo didnt work
+fi
+```
+
+The above prints `didnt work`
+
 #### Early Exit
 
 Print message to STDERR if value is unset and exit:
