@@ -162,6 +162,12 @@ Discord bot to use for countdowns. I use this as an alternative to [`syncplay`](
 
 Exports all accessible reddit comments for an account using pushshift.
 
+### spkglist
+
+[GitHub](https://github.com/seanbreckenridge/spkglist) | [GitLab](https://gitlab.com/seanbreckenridge/spkglist) | Go
+
+A simple package list parser. Used to clean up comments/newlines/spaces from a list of packages when installing packages in shell scripts.
+
 ### pmark
 
 [GitHub](https://github.com/seanbreckenridge/pmark) | [GitLab](https://gitlab.com/seanbreckenridge/pmark) | Perl
@@ -454,7 +460,5 @@ An offline CLI tool to search your GitHub Stars. Forked from [here](https://gith
 [GitHub](https://github.com/seanbreckenridge/sonic_pi_music) | Ruby
 
 some music created using sonic pi
-
-
 
 
