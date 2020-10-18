@@ -70,36 +70,37 @@ Most of these are command line based. On a regular day, the only GUI tools I use
 
 - [`bat`](https://github.com/sharkdp/bat); a fancy cat clone
 - [`boxes`](https://boxes.thomasjensen.com/) to print fancy boxes in the terminal
-- [`figlet`](http://www.figlet.org/) to print large letters
 - [`chafa`](https://github.com/hpjansson/chafa/) to print gifs in terminal
 - [`datamash`](https://www.gnu.org/software/datamash/) to perform basic statistics on text files
 - [`dex`](https://github.com/jceb/dex) to open `.desktop` files
 - [`dust`](https://github.com/bootandy/dust); a fancy du clone
 - [`entr`](https://eradman.com/entrproject/) for lots of small build scripts
 - [`fd`](https://github.com/sharkdp/fd); a fancy find clone
+- [`figlet`](http://www.figlet.org/) to print large letters
 - [`glow`](https://github.com/charmbracelet/glow) to render markdown in the terminal
-- [`jq`](https://stedolan.github.io/jq/)/[`gron`](https://github.com/tomnomnom/gron) to process json streams
 - [`hyperfine`](https://github.com/sharkdp/hyperfine) to do benchmarks
+- [`imgur-uploader`](https://pypi.org/project/imgur-uploader/) to push images to imgur
+- [`jq`](https://stedolan.github.io/jq/)/[`gron`](https://github.com/tomnomnom/gron) to process json streams
+- [`linkcheck`](https://github.com/filiph/linkcheck) to check for broken links on websites
+- [`lorem`](https://github.com/jamen/lorem) to create a bunch of lorem-ipsum
+- [`misspell`](https://github.com/client9/misspell) corrects commonly misspelled words; my [`misspell-context`](https://sean.fish/d/misspell-context?dark) script to give mistakes in context
 - [`ncdu`](https://dev.yorhel.nl/ncdu) to preview disk space interactively
+- [`oh-my-stars`](https://github.com/wolfg1969/oh-my-stars) to search github stars offline
 - [`pastel`](https://github.com/sharkdp/pastel) to generate/pick color schemes/hex codes from the terminal
 - [`pup`](https://github.com/ericchiang/pup) to parse HTML on the command line
-- [`qr`](https://sean.fish/d/qr?dark) ([qrencode](https://fukuchi.org/works/qrencode/)), to create QR images from command line
+- [`qr`](https://sean.fish/d/qr?dark) ([`qrencode`](https://fukuchi.org/works/qrencode/)), to create QR images from command line
 - [`qrc`](https://github.com/fumiyas/qrc) to create QR codes in the terminal.
+- [`readability`](https://gitlab.com/gardenappl/readability-cli); cli tool for Mozilla's readability library, for parsing contents out of HTML
 - [`screenkey`](https://gitlab.com/screenkey/screenkey) when recording demonstrations to display keys
 - [`shellcheck`](https://shellcheck.net) to check shell scripts for syntax errors
-- [`sxiv`](https://github.com/muennich/sxiv) as an image viewer for more complicated/macro-like tasks
-- [`toilet`](https://github.com/cacalabs/toilet) is another implementation of figlet, gives fancy colors in the terminal
-- [`whiptail`](https://en.wikibooks.org/wiki/Bash_Shell_Scripting/Whiptail) (libnewt) for fancy dialog prompts in scripts
-- [`linkcheck`](https://github.com/filiph/linkcheck) to check for broken links on websites
-- [`wuzz`](https://github.com/asciimoo/wuzz), a postman-like CLI application
-- [`misspell`](https://github.com/client9/misspell) corrects commonly misspelled words; my [`misspell-context`](https://sean.fish/d/misspell-context?dark) script to give mistakes in context
-- [`imgur-uploader`](https://pypi.org/project/imgur-uploader/) to push images to imgur
-- [`oh-my-stars`](https://github.com/wolfg1969/oh-my-stars) to search github stars offline
 - [`speedtest-cli`](https://pypi.org/project/speedtest-cli/) to test internet bandwidth
-- [`termdown`](https://github.com/trehn/termdown) to countdown in the terminal
 - [`sqleton`](https://github.com/inukshuk/sqleton) to visualize sqlite databases
-- [`lorem`](https://github.com/jamen/lorem) to create a bunch of lorem-ipsum
-- [`readability`](https://gitlab.com/gardenappl/readability-cli); cli tool for Mozilla's readability library, for parsing contents out of HTML
+- [`sxiv`](https://github.com/muennich/sxiv) as an image viewer for more complicated/macro-like tasks
+- [`termdown`](https://github.com/trehn/termdown) to countdown in the terminal
+- [`toilet`](https://github.com/cacalabs/toilet) is another implementation of figlet, gives fancy colors in the terminal
+- [`up`](https://github.com/akavel/up) - to interactively explore/pipe text data. Especially useful when doing data wrangling, like when using tools like `jq`/`grep`/`cut` to extract some information from a data source.
+- [`whiptail`](https://en.wikibooks.org/wiki/Bash_Shell_Scripting/Whiptail) (libnewt) for fancy dialog prompts in scripts
+- [`wuzz`](https://github.com/asciimoo/wuzz), a postman-like CLI application
 
 ---
 
