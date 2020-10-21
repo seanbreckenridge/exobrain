@@ -6,7 +6,7 @@ _Why use online databases?_
 
 For example, MAL, IMDB, Letterboxd
 
-At a higher level. Its all.
+At a higher level. Its all:
 
 - metadata
 - community
