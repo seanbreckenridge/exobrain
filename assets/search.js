@@ -62,10 +62,6 @@
     ]
   }
 
-  let fuse = null;
-
-  // return fuse.search(pattern)
-
   // globla references
   let searchField = document.getElementById("search");
   let searchDiv = document.getElementById("searchresults");
@@ -73,6 +69,7 @@
   // initialize data
   searchDiv.innerHTML = "Loading Search Index..."
   let jsonData = null;
+  let fuse = null;
 
   // send request to load index
   // use XHR for compability, since I'm not using babel
