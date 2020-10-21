@@ -115,7 +115,7 @@ generate_search_json() {
 
 generate_search_index() {
 	printf '       Generating search index...\n'
-	generate_search_json >search_index.json
+	generate_search_json >./search_index.json
 }
 
 render() {
