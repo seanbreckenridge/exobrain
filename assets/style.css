@@ -549,3 +549,31 @@ span.hideable {
 /* ----------------------------------------------- */
 /* don't forget to change the onresize js as well to
  * match the px value */
+
+/* search */
+input#search {
+  margin: 0;
+  max-width: 15rem;
+  width: 20rem;
+  display: block;
+  line-height: 2rem;
+}
+
+
+#searchresults {
+  overflow: hidden;
+}
+
+.searchresult-row {
+  overflow: hidden;
+}
+
+.searchresult-row {
+  max-width: 36rem;
+  white-space: pre-wrap; /* css-3 */
+  white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+  white-space: -pre-wrap; /* Opera 4-6 */
+  white-space: -o-pre-wrap; /* Opera 7 */
+  word-wrap: break-word; /* Internet Explorer 5.5+ */
+}
+

@@ -56,6 +56,7 @@ This uses a variety of shell tools to build this, listed in `build`:
 - `go`
 - `python`
 - `tput`
+- `tr`
 - `fd` (Install from <https://github.com/sharkdp/fd#installation>)
 - `entr` (Install from <https://eradman.com/entrproject/>)
 - `pandoc` (Install from <https://pandoc.org/installing.html>)
@@ -64,6 +65,10 @@ This uses a variety of shell tools to build this, listed in `build`:
 - `pmark` (Install from <https://github.com/seanbreckenridge/pmark>)
 - `html-minifier` (Install with `npm install -g html-minifier`)
 - `prettier` (Install with `npm install -g prettier`)
+
+---
+
+At build time, this creates a basic search index, using `pandoc README.md -t plain` to get the text from each entry, converting that to one big JSON file. The [search](/search) page uses [`fuse`](https://fusejs.io/demo.html) to fuzzy-search over that in the browser.
 
 ### Hosting
 

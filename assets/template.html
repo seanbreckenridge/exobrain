@@ -19,6 +19,7 @@
   <nav>
     <a class="homelink" href="/">exobrain</a>
     <div class="nav-right">
+      <div class=nav-item><a class="nav-link" href="/search">[search]</a></div>
       <div class=nav-item><a class="nav-link" href="/feed">[feed]</a></div>
       <div class=nav-item><a class="nav-link" href="/sitemap">[sitemap]</a></div>
       <div class=nav-item><a class="nav-link" href="https://sean.fish">back to my site</a></div>
@@ -35,7 +36,14 @@ ${if(Title)}
   ${endif}
 </div>
 ${endif}
+${if(Search)}
+<input id="search" placeholder="search for..." autofocus autocomplete="off">
+<div id="searchresults" />
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.2"></script>
+<script src="/assets/search.js"></script>
+${else}
 ${body}
+${endif}
 </div>
 </main>
 <footer>

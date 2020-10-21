@@ -41,7 +41,7 @@ func main() {
 				return err
 			}
 			// if full path is ./meta.json (for the home README), or this is the feed/sitemap, ignore this
-			if path == "meta.json" || strings.HasPrefix(path, "feed/") || strings.HasPrefix(path, "sitemap/") {
+			if path == "meta.json" || strings.HasPrefix(path, "feed/") || strings.HasPrefix(path, "sitemap/") || strings.HasPrefix(path, "search") {
 				return nil
 			}
 			// else if we're looking at a meta.json, do some checks

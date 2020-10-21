@@ -10,7 +10,7 @@ cd "$RUN_FROM"
 	without_last_dir="${without_last_dir#.}"
 	page_title="$(jq -r '.Title' <"${indexdir}/meta.json")"
 	printf "* %s/ [%s](/%s/)\n" "${without_last_dir#/}" "$page_title" "$indexdir"
-done < <(fd '^README.md$' --type file -E sitemap -E post -E feed --min-depth 2 -x printf '%s\n' '{//}'); } |
+done < <(fd '^README.md$' --type file -E search -E sitemap -E post -E feed --min-depth 2 -x printf '%s\n' '{//}'); } |
 	sort -k2,2 -k3,3
 # sort by columns (directory name and then name of post
 ```

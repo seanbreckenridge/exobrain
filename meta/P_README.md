@@ -58,6 +58,10 @@ cd "$RUN_FROM"
 grep '^havecmd ' build | cut -d" " -f2- | sed -e 's/^/- /' -e 's/"/(/' -e 's/"/)/' -e 's/\\`/`/g' -e 's/\s*&.*$//g' | sed -E -e 's/([A-Za-z\-]{2,})/`\1`/'
 ```
 
+---
+
+At build time, this creates a basic search index, using `pandoc README.md -t plain` to get the text from each entry, converting that to one big JSON file. The [search](/search) page uses [`fuse`](https://fusejs.io/demo.html) to fuzzy-search over that in the browser.
+
 ### Hosting
 
 This is hosted straight from the git repo using [netlify](https://www.netlify.com/) with little customization. I followed [these](https://docs.netlify.com/domains-https/custom-domains/configure-external-dns/#configure-a-subdomain) steps from the netlify docs to set that up, required me to remove the subdomain info and re-add it at `netlify.com`; worked after about 30 minutes or so.

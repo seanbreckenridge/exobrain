@@ -38,6 +38,7 @@ havecmd perl
 havecmd go
 havecmd python
 havecmd tput
+havecmd tr
 havecmd fd "Install from <https://github.com/sharkdp/fd#installation>"
 havecmd entr "Install from <https://eradman.com/entrproject/>"
 havecmd pandoc "Install from <https://pandoc.org/installing.html>"
@@ -100,6 +101,21 @@ pandoc_generate() {
 # generate JSON to validate attributes in metadata (i.e. yaml frontmatter)
 metadata_generate() {
 	pandoc --from=markdown-smart --to=plain --template=./assets/meta.template "$1" >"$2"
+}
+
+# use pandoc to convert each post to plaintext, convert that to JSON w/ a URL
+generate_search_json() {
+	local plaintext_out
+	{ while IFS= read -r node; do
+		plaintext_out="$(pandoc "${node}/README.md" -t plain | tr -cd ' [:alnum:]')"
+		# generate JSON output
+		jq -r -n --arg URL "/${node}" --arg TEXT "$plaintext_out" '{"url":$URL,"text":$TEXT}'
+	done; } <MANIFEST | jq --slurp
+}
+
+generate_search_index() {
+	printf '       Generating search index...\n'
+	generate_search_json >search_index.json
 }
 
 render() {
@@ -209,6 +225,8 @@ run_build() {
 	else
 		return 1
 	fi
+
+	generate_search_index || return $?
 }
 
 run_build || exit $?
