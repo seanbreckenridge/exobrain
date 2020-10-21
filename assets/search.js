@@ -30,6 +30,16 @@
     resultDiv.append(resultTitle)
     resultDiv.append(resultContents)
 
+    resultDiv.onmouseup = function (a) {
+      if (a.ctrlKey || a.metaKey || a.button == 4) {
+        a.preventDefault(); // prevent middle click from opening tab, so it doesnt open twice.
+        window.open(url, "_blank"); // new tab
+      } else {
+        window.location = url
+      }
+
+    }
+
     return resultDiv
   }
 

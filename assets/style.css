@@ -566,6 +566,7 @@ input#search {
 
 .searchresult-row {
   overflow: hidden;
+  cursor: pointer;
 }
 
 .searchresult-row {
