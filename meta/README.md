@@ -49,7 +49,9 @@ Parts of the dynamic feed/blog/projects pages are built using my [`pmark`](https
 
 Since this is pretty unstructured, this does some tag validation on the meta pandoc tags (sometimes called 'yaml frontmatter'), using `$meta-json$` to make sure I'm not missing titles/dates for the markdown files. (See [pandoc notes](/programming_languages/shell_tools/pandoc) and the [`exoharden_cmd.go`](https://github.com/seanbreckenridge/exobrain/blob/master/exoharden_cmd.go) file)
 
-This uses a variety of shell tools to build this, listed in `build`:
+At build time, this creates a basic search index, using `pandoc README.md -t plain` to get the text from each entry, converting that to one big JSON file. The [search](/search) page uses [`fuse`](https://fusejs.io/demo.html) to fuzzy-search over that in the browser.
+
+This uses lots of shell tools to build this, listed in `build`:
 
 - `curl`
 - `perl`
@@ -57,6 +59,7 @@ This uses a variety of shell tools to build this, listed in `build`:
 - `python`
 - `tput`
 - `tr`
+- `fzf` (See https://github.com/junegunn/fzf)
 - `fd` (Install from <https://github.com/sharkdp/fd#installation>)
 - `entr` (Install from <https://eradman.com/entrproject/>)
 - `pandoc` (Install from <https://pandoc.org/installing.html>)
@@ -65,10 +68,6 @@ This uses a variety of shell tools to build this, listed in `build`:
 - `pmark` (Install from <https://github.com/seanbreckenridge/pmark>)
 - `html-minifier` (Install with `npm install -g html-minifier`)
 - `prettier` (Install with `npm install -g prettier`)
-
----
-
-At build time, this creates a basic search index, using `pandoc README.md -t plain` to get the text from each entry, converting that to one big JSON file. The [search](/search) page uses [`fuse`](https://fusejs.io/demo.html) to fuzzy-search over that in the browser.
 
 ### Hosting
 

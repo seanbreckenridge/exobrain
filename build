@@ -39,6 +39,7 @@ havecmd go
 havecmd python
 havecmd tput
 havecmd tr
+havecmd fzf "See https://github.com/junegunn/fzf"
 havecmd fd "Install from <https://github.com/sharkdp/fd#installation>"
 havecmd entr "Install from <https://eradman.com/entrproject/>"
 havecmd pandoc "Install from <https://pandoc.org/installing.html>"
