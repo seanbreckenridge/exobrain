@@ -441,7 +441,7 @@ cookiecutter template for new python projects, using `pipenv`, `pytest`, and `my
 
 [GitHub](https://github.com/seanbreckenridge/cookiecutter-lib) | [GitLab](https://gitlab.com/seanbreckenridge/cookiecutter-lib) | Python
 
-Cookiecutter template for a basic python library. Is meant for packages I don't intend to push to pypi, includes seutptools to install some python code I want to have globally installed, and basic installation method to install from my github.
+Cookiecutter template for a basic python library. Is meant for packages I don't intend to push to pypi, includes setuptools to install some python code I want to have globally installed, and basic installation method to install from my github.
 
 ### vimbuffer
 
