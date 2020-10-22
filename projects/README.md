@@ -345,7 +345,7 @@ An interactive terminal interface for `pamixer`/`pactl` to control system volume
 
 [GitHub](https://github.com/seanbreckenridge/largechar) | [GitLab](https://gitlab.com/seanbreckenridge/largechar) | JavaScript
 
-Displays large characters on your screen. Was a replacement for [this Alfred feature](https://www.alfredapp.com/help/features/large-type/), and an excuse to do some GUI programming with electron (if one can call it that)
+Displays large characters on your screen. Was a replacement for [this Alfred feature](https://www.alfredapp.com/help/features/large-type/), and an excuse to do some GUI programming with electron
 
 ### mal-notify-bot
 
