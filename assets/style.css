@@ -211,8 +211,7 @@ a.homelink {
   margin-bottom: .5rem;
 }
 a.nav-link, 
-a[href^="http"].nav-link:hover,
-{
+a[href^="http"].nav-link:hover {
   font-style: normal;
   content: "";
 }
@@ -460,7 +459,6 @@ nav {
 }
 
 .nav-item {
-  padding-left .5rem;
   padding-right: .5rem;
   line-height: 2rem;
   font-size: var(--nav-font-size);
@@ -480,9 +478,6 @@ nav {
 
 #main-title {
   margin-bottom: 1.5rem;
-}
-#main-title:hover {
-  pointer: cursor;
 }
 
 main, footer {
