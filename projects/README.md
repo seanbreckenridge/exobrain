@@ -84,7 +84,7 @@ A list of my favorite [xkcd](https://xkcd.com/)'s. Was initially rendered client
 
 ### rifleman
 
-[GitHub](https://github.com/seanbreckenridge/rifleman) | [GitLab](https://gitlab.com/seanbreckenridge/rifleman) | Python
+[GitHub](https://github.com/seanbreckenridge/rifleman) | [GitLab](https://gitlab.com/seanbreckenridge/rifleman) | [PyPi](https://pypi.org/project/rifleman/) | Python
 
 An extendible dispatcher to lint/format code, based on [rifle](https://github.com/ranger/ranger). This lets you run one command over lots of files/directories which could be in different languages - it classifies them by inspecting the mime type, extension, name or shebang, and then runs a command on those files
 
@@ -198,7 +198,6 @@ An cache of MAL IDs updated whenever something is added to the database. See [he
 
 Exports League of Legends Match History metadata using the RiotGames API. I don't play league of legends that often anymore, this is to export my entire match history so I can do some analysis as part of [`HPI`](https://github.com/seanbreckenridge/HPI).
 
-
 ### calcurse-load
 
 [GitHub](https://github.com/seanbreckenridge/calcurse-load) | [GitLab](https://gitlab.com/seanbreckenridge/calcurse-load) | Python
@@ -303,7 +302,7 @@ A CLI for `pyTwistyScrambler`, to generate random states for twisty puzzles.
 
 [GitHub](https://github.com/seanbreckenridge/docker-jikan) | [GitLab](https://gitlab.com/seanbreckenridge/docker-jikan) | Dockerfile
 
-  Personal [Jikan](https://jikan.moe/) setup; so I don't have to compile PHP 7.3 on new servers.
+Personal [Jikan](https://jikan.moe/) setup; so I don't have to compile PHP 7.3 on new servers.
 
 ### dotfiles-index
 
@@ -466,5 +465,4 @@ An offline CLI tool to search your GitHub Stars. Forked from [here](https://gith
 [GitHub](https://github.com/seanbreckenridge/sonic_pi_music) | Ruby
 
 some music created using sonic pi
-
 
