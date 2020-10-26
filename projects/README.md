@@ -82,6 +82,12 @@ Serves text files from a directory by matching subpaths. I use this to serve my 
 
 A list of my favorite [xkcd](https://xkcd.com/)'s. Was initially rendered client-side with some JS, but I now use a [bash script](https://github.com/seanbreckenridge/xkcd-favorites/blob/master/ssg) to convert it to a static site. Hosted [here](https://sean.fish/xkcd/)
 
+### rifleman
+
+[GitHub](https://github.com/seanbreckenridge/rifleman) | [GitLab](https://gitlab.com/seanbreckenridge/rifleman) | Python
+
+An extendible dispatcher to lint/format code, based on [rifle](https://github.com/ranger/ranger). This lets you run one command over lots of files/directories which could be in different languages - it classifies them by inspecting the mime type, extension, name or shebang, and then runs a command on those files
+
 ### evry
 
 [GitHub](https://github.com/seanbreckenridge/evry) | [GitLab](https://gitlab.com/seanbreckenridge/evry) | [crates.io](https://crates.io/crates/evry) | Rust
