@@ -262,6 +262,12 @@ A tiny web server that scrapes information for a user from [`worldcubeassosiatio
 
 A browser DVD logo animation/game. Was a project for learning Elm; Hosted [here](https://sean.fish/dvd/)
 
+### dashboard
+
+[GitHub](https://github.com/seanbreckenridge/dashboard) | Jupyter Notebook/Python
+
+analysis/visualizations done using data from my HPI
+
 ### tinspire
 
 [GitHub](https://github.com/seanbreckenridge/tinspire) | [GitLab](https://gitlab.com/seanbreckenridge/tinspire) | TI-BASIC
