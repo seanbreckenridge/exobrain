@@ -186,6 +186,12 @@ A hacky, markdown pre-processor. Uses code blocks to generate markdown, from wit
 
 CLI tool to convert text to speech using the StreamLabs API
 
+### discord_data
+
+[GitHub](https://github.com/seanbreckenridge/discord_data) | [GitLab](https://gitlab.com/seanbreckenridge/discord_data) | Python
+
+Library to parse information from the discord data export; used as part of [HPI](https://github.com/seanbreckenridge/HPI)
+
 ### mal-id-cache
 
 [GitHub](https://github.com/seanbreckenridge/mal-id-cache) | Python
