@@ -286,6 +286,12 @@ Code for generating and maintaining my (static) site for anime short films/serie
 
 Scrapes personal game/achievement data from steams website.
 
+### mnu_gsheets
+
+[GitHub](https://github.com/seanbreckenridge/mnu_gsheets) | [GitLab](https://gitlab.com/seanbreckenridge/mnu_gsheets) | Python
+
+This indexes existing [_minna no uta_](https://en.wikipedia.org/wiki/Minna_no_Uta) entries every couple days, adding rows for ones that don't exist to the spreadsheet, so that they can be added to online databases
+
 ### blizzard_gdpr_parser
 
 [GitHub](https://github.com/seanbreckenridge/blizzard_gdpr_parser) | [GitLab](https://gitlab.com/seanbreckenridge/blizzard_gdpr_parser) | Python
