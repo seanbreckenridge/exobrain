@@ -142,7 +142,7 @@ A template for my bash scripts, to provide a nicer interface to check for the pr
 
 [GitHub](https://github.com/seanbreckenridge/mint) | [GitLab](https://gitlab.com/seanbreckenridge/mint) | Python/Shell
 
-Wrapper script/code to interact with mintable; to keep track of my accounts/transactions and create a personal budget.
+Wrapper script/code to interact with mintable; to keep track of my accounts/transactions
 
 ### calories-fzf
 
