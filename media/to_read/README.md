@@ -14,6 +14,7 @@ Title: Stuff to read
 - <http://www.pl-enthusiast.net/2014/07/21/memory-safety/>
 - <https://www.inkandswitch.com/cambria.html>
 - An Incremental approach to Compiler Construction
+- MANIFEST.in <https://www.remarkablyrestrained.com/python-setuptools-manifest-in/>
 
 ### Books
 
