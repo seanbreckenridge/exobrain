@@ -66,7 +66,7 @@ if ((OPEN_URL)); then
 	# https://sean.fish/d/clp-args?dark
 	# https://sean.fish/d/notify?dark
 	HAS_SCRIPTS=1
-	havecmd openurl && havecmd clipcopy && havecmd notify || {
+	havecmd openurl && havecmd clp-args && havecmd notify || {
 		HAS_SCRIPTS=0
 	}
 	URLS="$(run_search)" || exit $?
