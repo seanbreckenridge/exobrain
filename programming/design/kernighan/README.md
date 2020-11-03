@@ -52,7 +52,7 @@ AMPL is a DSL for describing optimization problems and then compiling descriptio
 
 It optimizing some problem given constraints, and data.
 
-![](images/ampl.png)
+![](images/command.png)
 
 The data is modeled with a data specification language, which looks a lot like sparse matrices.
 
