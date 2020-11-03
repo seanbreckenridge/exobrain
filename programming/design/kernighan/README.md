@@ -119,7 +119,7 @@ E.g. C had good luck (timing, came about the time of mini computers, then got a 
 
 ## Why languages fail to thrive
 
-- niche or domain disappears
+- niche or domain disappears (what happened with Pic when troff died)
 - poor engineering
   - too big, too complex, too slow, too late
   - incompatible with environments
