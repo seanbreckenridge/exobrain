@@ -135,8 +135,6 @@ E.g. C had good luck (timing, came about the time of mini computers, then got a 
 
 ---
 
-"There will always be things we wish to say in our programs that in all known languages can only be said poorly."
-
-- Alan Perlis
+"There will always be things we wish to say in our programs that in all known languages can only be said poorly." - _Alan Perlis_
 
 (So go make a DSL!)
