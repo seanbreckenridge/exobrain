@@ -13,17 +13,15 @@ These are other sites/blogs/things I'm a fan of. Inspired by [superhighway98](ht
 
 - [Everything I know](https://wiki.nikitavoloboev.xyz/) (Nikita Voloboev)
 
-## Websites
-
-- [learn-anything.xyz](https://learn-anything.xyz/)
-
 ## Tools
 
 - [HaveIBeenPwned](https://haveibeenpwned.com/)
+- [learn-anything.xyz](https://learn-anything.xyz/)
 
-## Podcasts
+## Podcasts/Broadcasts
 
 - [Coder Radio](https://coder.show/)
+- [Computerphile](https://www.youtube.com/channel/UC9-y-6csu5WGm29I7JiwpnA)
 
 ## Media/Entertainment
 
