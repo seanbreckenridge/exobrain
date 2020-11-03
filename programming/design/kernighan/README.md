@@ -62,7 +62,11 @@ The last part of AMPL was how you'd run it, the command language (i.e. the CLI i
 
 ![Command](images/command.png)
 
-Whether or not a DSL needs all of these (or how complicated/strict they should be) should be considered. If something doesnt need a way to describe a problem (the model), and just data and the CLI, it shouldnt have a command interface. If you can re-use an existing data specification (e.g. JSON/CSV for structured/tabular data), that cuts down on the barrier to entry (Though, this shouldnt always be done, as you may be trying to squish a data specification into a place it doesn't belong). Maybe that command interface could be replaced with a couple CLI flags/arguments, like many unix tools are.
+Whether or not a DSL needs all of these (or how complicated/strict they should be) should be considered.
+
+- If something doesn't need a way to describe a problem (the model), and just data and the CLI, it shouldn't have an unnecessary model that adds to familiarization time.
+- If you can re-use an existing data specification (e.g. JSON/CSV for structured/tabular data), that cuts down on the barrier to entry. Though, this shouldn't always be done, as you may be trying to squish an already existing data specification into a place it doesn't belong.
+- Maybe that command interface could be replaced/simplified into a couple CLI flags/arguments, instead of REPL/command language, like many unix tools are (like grep/sed)
 
 ---
 
@@ -126,7 +130,7 @@ E.g. C had good luck (timing, came about the time of mini computers, then got a 
 - poor philosophical choices
   - ideology over functionality
   - single programming paradigm
-  - too "mathematical"/"theoretical" (maybe FP falls into here for most people?)
+  - too "mathematical"/"theoretical" (maybe Functional Programming falls into here for most people?)
   - too different, too incompatible
 
 ---
