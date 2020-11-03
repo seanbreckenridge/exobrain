@@ -122,4 +122,4 @@ I generally understand most of the pifalls in POSIX at this point, so switching 
 
 ## Create a DSL?
 
-If some task is done over and over in the shell, maybe I should instead write a DSL to handle that task? See [Brian Kernighan lecture notes](/programming/design/kernighan/) on designing languages, focusing on DSL usability.
+If some task is done over and over in the shell, maybe I should instead write a DSL to handle that task? See [Brian Kernighan lecture notes](/programming/design/kernighan/dsl) on designing languages, focusing on DSL usability.

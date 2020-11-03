@@ -21,7 +21,8 @@ programming/culture
 programming/culture/future_of_programming
 programming/culture/how_do_committees_invent
 programming/culture/programmers_oath
-programming/design/kernighan
+programming/design/kernighan/dsl
+programming/design/kernighan/style
 programming/dotfiles
 programming/encoding
 programming/fizzbuzz
