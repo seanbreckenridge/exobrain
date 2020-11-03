@@ -33,6 +33,7 @@ Title: Stuff to read
 - see <https://ethanevansvp.com/recommended-books/>
 - Unscripted - M.J. demarko
 - The War of Art - steven pressfield
+- Epigrams on Programming - Alan Perlis
 
 ### Courses
 
