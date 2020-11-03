@@ -52,17 +52,17 @@ AMPL is a DSL for describing optimization problems and then compiling descriptio
 
 It optimizing some problem given constraints, and data.
 
-![](images/command.png)
+![Model](images/model.png)
 
 The data is modeled with a data specification language, which looks a lot like sparse matrices.
 
-![](images/data.png)
+![Data Specification](images/data.png)
 
 The last part of AMPL was how you'd run it, the command language (i.e. the CLI interface)
 
-![](images/command.png)
+![Command](images/command.png)
 
-Whether or not a DSL needs all of these (or how complicated/strict they should be) should be considered. If something doesnt need a way to describe a problem, and just data and the CLI, it shouldnt have a command interface. Maybe that command interface could be replaced with a couple CLI flags, like many unix tools are.
+Whether or not a DSL needs all of these (or how complicated/strict they should be) should be considered. If something doesnt need a way to describe a problem (the model), and just data and the CLI, it shouldnt have a command interface. If you can re-use an existing data specification (e.g. JSON/CSV for structured/tabular data), that cuts down on the barrier to entry (Though, this shouldnt always be done, as you may be trying to squish a data specification into a place it doesn't belong). Maybe that command interface could be replaced with a couple CLI flags/arguments, like many unix tools are.
 
 ---
 
