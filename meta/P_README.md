@@ -47,7 +47,7 @@ The [`build`](https://github.com/seanbreckenridge/exobrain/blob/master/build) sc
 
 Parts of the dynamic feed/blog/projects pages are built using my [`pmark`](https://github.com/seanbreckenridge/pmark) script, which uses code blocks to generate markdown, from within the markdown itself.
 
-Since this is pretty unstructured, this does some tag validation on the meta pandoc tags (sometimes called 'yaml frontmatter'), using `$meta-json$` to make sure I'm not missing titles/dates for the markdown files. (See [pandoc notes](/programming_languages/shell_tools/pandoc) and the [`exoharden_cmd.go`](https://github.com/seanbreckenridge/exobrain/blob/master/exoharden_cmd.go) file)
+Since this is pretty unstructured, this does some tag validation on the meta pandoc tags (sometimes called 'yaml frontmatter'), using `$meta-json$` to make sure I'm not missing titles/dates for the markdown files. (See [pandoc notes](/programming/languages/shell_tools/pandoc) and the [`exoharden_cmd.go`](https://github.com/seanbreckenridge/exobrain/blob/master/exoharden_cmd.go) file)
 
 At build time, this creates a basic search index, using `pandoc README.md -t plain` to get the text from each entry, converting that to one big JSON file. The [search](/search) page uses [`fuse`](https://fusejs.io/demo.html) to fuzzy-search over that in the browser.
 
