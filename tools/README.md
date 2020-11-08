@@ -92,8 +92,8 @@ Most of these are command line based. On a regular day, the only GUI tools I use
 - [`qrc`](https://github.com/fumiyas/qrc) to create QR codes in the terminal
 - [`readability`](https://gitlab.com/gardenappl/readability-cli); cli tool for Mozilla's readability library, for parsing contents out of HTML
 - [`screenkey`](https://gitlab.com/screenkey/screenkey) when recording demonstrations to display keys
-- [`shellcheck`](https://shellcheck.net) to check shell scripts for syntax errors
-- [`speedtest-cli`](https://pypi.org/project/speedtest-cli/) to test internet bandwidth
+- [`shellcheck`](https://github.com/koalaman/shellcheck) to check shell scripts for syntax errors
+- [`speedtest-cli`](https://github.com/sivel/speedtest-cli) to test internet bandwidth
 - [`sqleton`](https://github.com/inukshuk/sqleton) to visualize sqlite databases
 - [`sxiv`](https://github.com/muennich/sxiv) as an image viewer for more complicated/macro-like tasks
 - [`termdown`](https://github.com/trehn/termdown) to countdown in the terminal
