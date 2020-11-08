@@ -5,7 +5,6 @@ hobbies/sonic_pi
 language/concepts
 language/english_words
 language/japanese
-math/cryptography/sp_networks
 media/anime/databases
 media/anime/pixiv
 media/online_databases
@@ -17,6 +16,7 @@ post/how_i/watch_twitch
 post/server_setup
 programming/beginner_advice
 programming/courses
+programming/cryptography/sp_networks
 programming/culture
 programming/culture/future_of_programming
 programming/culture/how_do_committees_invent
