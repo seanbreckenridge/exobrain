@@ -105,12 +105,6 @@ createuser --pwprompt glue_worker
 createdb -O glue_worker glue_db
 psql -d glue_db -h localhost -U glue_worker # test connection
 
-# ruby
-# setup rvm, I've had back luck building native extensions with the binary install
-# (event-machine for sinatra (web server)), so use rvm to compile from source
-sudo apt install gpg # required for rvm, it will error with a gpg key to add
-curl -sSL https://get.rvm.io | bash -s stable --ruby
-
 # rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
