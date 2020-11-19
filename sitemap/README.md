@@ -20,6 +20,7 @@
 * programming/ [Encoding](/programming/encoding/)
 * programming/ [FizzBuzz](/programming/fizzbuzz/)
 * programming/ [GameDev](/programming/gamedev/)
+* programming/ [Linux Distributions](/programming/distros/)
 * programming/ [Programming Courses](/programming/courses/)
 * programming/cryptography/ [SP Networks - Computerphile](/programming/cryptography/sp_networks/)
 * programming/culture/ [Bob Martin - The Future of Programming](/programming/culture/future_of_programming/)
