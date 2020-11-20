@@ -24,6 +24,7 @@ programming/culture/programmers_oath
 programming/design/fonts
 programming/design/kernighan/dsl
 programming/design/kernighan/style
+programming/design/user_interfaces/alan_kay_user_interface
 programming/distros
 programming/dotfiles
 programming/encoding
@@ -68,6 +69,5 @@ tech_hardware/linux/compliance_posix
 tech_hardware/linux/licenses
 tech_hardware/raspi
 tools
-user_interfaces/alan_kay_user_interface
 work/jobs
 work/resume

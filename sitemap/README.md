@@ -29,6 +29,7 @@
 * programming/design/ [Fonts](/programming/design/fonts/)
 * programming/design/kernighan/ [Designing Programming Languages](/programming/design/kernighan/dsl/)
 * programming/design/kernighan/ [Elements of Programming Style](/programming/design/kernighan/style/)
+* programming/design/user_interfaces/ [Alan Kay, User Interface Design](/programming/design/user_interfaces/alan_kay_user_interface/)
 * programming/languages/ [Shell Tools](/programming/languages/shell/)
 * programming/languages/golang/ [General Golang Notes](/programming/languages/golang/general/)
 * programming/languages/golang/ [Structuring Projects](/programming/languages/golang/package_structure/)
@@ -63,7 +64,6 @@
 * tech_hardware/ [Raspberry Pi Notes](/tech_hardware/raspi/)
 * tech_hardware/linux/ [Compliance/POSIX/Unix](/tech_hardware/linux/compliance_posix/)
 * tech_hardware/linux/ [Licenses](/tech_hardware/linux/licenses/)
-* user_interfaces/ [Alan Kay, User Interface Design](/user_interfaces/alan_kay_user_interface/)
 * work/ [Jobs](/work/jobs/)
 * work/ [Resume](/work/resume/)
 
