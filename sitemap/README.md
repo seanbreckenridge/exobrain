@@ -26,6 +26,7 @@
 * programming/culture/ [Bob Martin - The Future of Programming](/programming/culture/future_of_programming/)
 * programming/culture/ [How Do Committees Invent, Melvin E. Conway](/programming/culture/how_do_committees_invent/)
 * programming/culture/ [The Programmers's Oath](/programming/culture/programmers_oath/)
+* programming/design/ [Fonts](/programming/design/fonts/)
 * programming/design/kernighan/ [Designing Programming Languages](/programming/design/kernighan/dsl/)
 * programming/design/kernighan/ [Elements of Programming Style](/programming/design/kernighan/style/)
 * programming/languages/ [Shell Tools](/programming/languages/shell/)
