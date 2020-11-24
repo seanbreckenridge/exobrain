@@ -1,6 +1,5 @@
 * / [Internet Superhighway](/superhighway/)
 * / [Meta; about my exobrain](/meta/)
-* / [Programming Projects](/projects/)
 * / [Tools, or how I do everything](/tools/)
 * devlog/ [Sonic-Pi](/devlog/sonic_pi/)
 * hobbies/ [Cubing](/hobbies/cubing/)
