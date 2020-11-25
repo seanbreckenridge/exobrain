@@ -34,6 +34,7 @@ Title: Stuff to read
 - Unscripted - M.J. demarko
 - The War of Art - steven pressfield
 - Epigrams on Programming - Alan Perlis
+- Only the Paranoid Survive - Andrew Grove
 
 ### Courses
 
