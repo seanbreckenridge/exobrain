@@ -80,12 +80,14 @@ Most of these are command line based. On a regular day, the only GUI tools I use
 - [`glow`](https://github.com/charmbracelet/glow) to render markdown in the terminal
 - [`hyperfine`](https://github.com/sharkdp/hyperfine) to do benchmarks
 - [`imgur-uploader`](https://pypi.org/project/imgur-uploader/) to push images to imgur
+- [`jpegtran`](http://jpegclub.org/jpegtran/) to compress JPEG files
 - [`jq`](https://stedolan.github.io/jq/)/[`gron`](https://github.com/tomnomnom/gron) to process json streams
 - [`linkcheck`](https://github.com/filiph/linkcheck) to check for broken links on websites
 - [`lorem`](https://github.com/jamen/lorem) to create a bunch of lorem-ipsum
 - [`misspell`](https://github.com/client9/misspell) corrects commonly misspelled words; my [`misspell-context`](https://sean.fish/d/misspell-context?dark) script to give mistakes in context
 - [`ncdu`](https://dev.yorhel.nl/ncdu) to preview disk space interactively
 - [`oh-my-stars`](https://github.com/wolfg1969/oh-my-stars) to search github stars offline
+- [`optipng`](http://optipng.sourceforge.net/) to compress PNG files
 - [`pastel`](https://github.com/sharkdp/pastel) to generate/pick color schemes/hex codes from the terminal
 - [`pup`](https://github.com/ericchiang/pup) to parse HTML on the command line
 - [`qr`](https://sean.fish/d/qr?dark) ([`qrencode`](https://fukuchi.org/works/qrencode/)), to create QR images from command line
