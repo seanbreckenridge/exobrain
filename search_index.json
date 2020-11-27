@@ -141,7 +141,7 @@
   },
   {
     "url": "/programming/languages/python/metaprogramming",
-    "text": "Great talk on decorators metaclasses descriptors signatures etchttpswwwyoutubecomwatchvsPiWg5jSoZI"
+    "text": "Great talk on decorators metaclasses descriptors signatures etchttpswwwyoutubecomwatchvsPiWg5jSoZISlides available hereMetaclasses and customized type Descriptors is how ORMDjango doescustomizedtyped fields likeKeywordonly arguments can be used to compose some method call upthrough the MROSome cooler stuff later in the talk that talks about implementingimportlib loaders to be able to import XML files that describe classesand create them at runtime using exec Probably not something youd everdo maybe to implement some sort of DSL though but is good to knowthe possibilities"
   },
   {
     "url": "/programming/languages/shell",
