@@ -33,6 +33,7 @@ programming/gamedev
 programming/languages/golang/general
 programming/languages/golang/package_structure
 programming/languages/python/decorators
+programming/languages/python/metaprogramming
 programming/languages/shell
 programming/languages/shell/alternative_shells
 programming/languages/shell/bash_notes

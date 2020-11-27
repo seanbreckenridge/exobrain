@@ -33,6 +33,7 @@
 * programming/languages/golang/ [General Golang Notes](/programming/languages/golang/general/)
 * programming/languages/golang/ [Structuring Projects](/programming/languages/golang/package_structure/)
 * programming/languages/python/ [Decorators Pycon](/programming/languages/python/decorators/)
+* programming/languages/python/ [Python Metaprogramming](/programming/languages/python/metaprogramming/)
 * programming/languages/shell/ [Alternative Shells](/programming/languages/shell/alternative_shells/)
 * programming/languages/shell/ [Bash Notes](/programming/languages/shell/bash_notes/)
 * programming/languages/shell/ [zsh completion](/programming/languages/shell/zsh_completion/)
