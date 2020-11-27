@@ -15,6 +15,7 @@ Title: Stuff to read
 - <https://www.inkandswitch.com/cambria.html>
 - An Incremental approach to Compiler Construction
 - MANIFEST.in <https://www.remarkablyrestrained.com/python-setuptools-manifest-in/>
+- Talks by <http://dabeaz.com/> - for complex/in-depth python talks
 
 ### Books
 
