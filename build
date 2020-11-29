@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # This builds the markdown files into HTML files.
 # This runs pandoc by searching for README.md files recursively
 # and running pandoc against that with the assets/template.html as a base
