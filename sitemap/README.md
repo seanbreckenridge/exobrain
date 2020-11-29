@@ -9,6 +9,7 @@
 * language/ [Japanese](/language/japanese/)
 * media/ [Movies to Watch](/media/to_watch/)
 * media/ [Music to Listen to](/media/to_listen_to/)
+* media/ [Music](/media/music/)
 * media/ [Online Databases](/media/online_databases/)
 * media/ [Stuff to read](/media/to_read/)
 * media/anime/ [MAL and Anime Databases](/media/anime/databases/)
