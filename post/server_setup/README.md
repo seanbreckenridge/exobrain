@@ -32,12 +32,12 @@ Host vps
 
 Then I can just connect with `ssh vps`
 
-5. `ssh` onto the server and run my [`bootstrap`](https://gitlab.com/seanbreckenridge/bootstrap/) script:
+5. `ssh` onto the server and run my [`bootstrap`](https://github.com/seanbreckenridge/bootstrap/) script:
    That sets up some bash defaults: aliases, `neovim` configuration, installs [`fzf`](https://github.com/junegunn/fzf), prompts me to setup Github username/email.
 
 ```
 sudo apt install neovim git curl
-bash -c "$(curl -fsSL https://gitlab.com/seanbreckenridge/bootstrap/-/raw/master/bootstrap)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/seanbreckenridge/bootstrap/master/bootstrap)"
 ```
 
 6. Strengthen `ssh` configuration: disable root login, password authentication (have to use ssh-key). Make sure the following lines exist and are uncommented in `/etc/ssh/sshd_config`:

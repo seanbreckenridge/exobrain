@@ -12,7 +12,7 @@ General Notes on setting up a raspberry pi.
 
 ### General Config
 
-- Run my <https://gitlab.com/seanbreckenridge/bootstrap> script
+- Run my <https://github.com/seanbreckenridge/bootstrap> script
 - `sudo raspi-config` to setup network; enable `ssh` (Interfacing Options)
 
 Once everythings configured, `sudo raspi-config` > Boot Options > Desktop/CLI > Console Autologin, to run the pi as headless.

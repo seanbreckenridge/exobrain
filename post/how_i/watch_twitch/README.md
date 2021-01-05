@@ -39,7 +39,7 @@ mpv "https://twitch.tv/<username>" --ytdl-format="480p"
 
 Thats the basics. I have a couple wrapper scripts I use, so if you're interested in those, keep reading.
 
-I do this so often - picking a format code and using mpv to stream something, that I wrote [`mpvf`](https://gitlab.com/seanbreckenridge/mpvf/). That takes a link, calls `youtube-dl -F` on it, prompts you to select one, and then streams that with `mpv`.
+I do this so often - picking a format code and using mpv to stream something, that I wrote [`mpvf`](https://github.com/seanbreckenridge/mpvf/). That takes a link, calls `youtube-dl -F` on it, prompts you to select one, and then streams that with `mpv`.
 
 ![example using fzf to prompt](images/demo.gif)
 
@@ -60,7 +60,7 @@ setsid mpvf "https://www.twitch.tv/${STREAMER}" &
 
 The `setsid` is to run `mpv` in a new session, to make sure that I don't have to leave the terminal which I ran `twitch <username>` from open, that can be closed once `mpv` starts running. Run `man setsid` for more info.
 
-All of this streaming from command line is sort of useless if I still have to open the Twitch website to see if someone is online, so I wrote [twitchlive](https://gitlab.com/seanbreckenridge/twitchlive/) to be able to see which streamers I'm following are online. Its a bit annoying to set up due to how the twitch API is aimed towards web and not CLI applications, but it works well:
+All of this streaming from command line is sort of useless if I still have to open the Twitch website to see if someone is online, so I wrote [twitchlive](https://github.com/seanbreckenridge/twitchlive/) to be able to see which streamers I'm following are online. Its a bit annoying to set up due to how the twitch API is aimed towards web and not CLI applications, but it works well:
 
 ```
 twitchlive -output-format=table

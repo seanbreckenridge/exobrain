@@ -39,7 +39,7 @@ Most of these are command line based. On a regular day, the only GUI tools I use
   - I use [`lynx`](https://www.lynxproject.org/) to do quick `duckduckgo` searches [without leaving the terminal](https://sean.fish/d/duck?dark)
 - I use [`newsboat`](https://newsboat.org/) RSS for youtube/news/blogs. I have a [script](https://sean.fish/d/youtube-user-id?dark) to grab a youtube users RSS feed, since youtube doesn't list that publicly. [`linkhandler`](https://sean.fish/d/linkhandler?dark) lets me open youtube videos from `newsboat` using [`mpvf`](https://github.com/seanbreckenridge/mpvf/) instead of visiting youtube in the browser
 - For system backups, I use [`a script`](https://github.com/seanbreckenridge/raspi-backup) which `rsync`'s a bunch of directories to my raspberry pi
-- to-do list - [`todotxt`](http://todotxt.org/) for todos, with a [rofi interface](https://sean.fish/d/todo-prompt?dark) as GUI, and [TUI](https://gitlab.com/seanbreckenridge/full_todotxt) for adding todos. The TUI I wrote forces me to specify a `deadline` for each todo, which I then get notified by [this](https://github.com/seanbreckenridge/todotxt_deadline_notify), which runs on my server
+- to-do list - [`todotxt`](http://todotxt.org/) for todos, with a [rofi interface](https://sean.fish/d/todo-prompt?dark) as GUI, and [TUI](https://github.com/seanbreckenridge/full_todotxt) for adding todos. The TUI I wrote forces me to specify a `deadline` for each todo, which I then get notified by [this](https://github.com/seanbreckenridge/todotxt_deadline_notify), which runs on my server
 - [`calcurse`](https://github.com/lfos/calcurse) as a calendar, with my [`calcurse-load`](https://github.com/seanbreckenridge/calcurse-load) hooks to add Google Calendar and `todo.txt` to calcurse automatically
 - a heavily customized [`ranger`](https://github.com/ranger/ranger) as my file manager. See [`rifle.conf`](https://sean.fish/d/rifle.conf?dark) (file handler) and [`scope.sh`](https://sean.fish/d/scope.sh?dark) (previewer)
 - [`yadm`](https://yadm.io) to manage dotfiles. Once I have a terminal running, my [`bootstrap`](https://sean.fish/d/bootstrap?dark) script sets up my system entirely
@@ -63,7 +63,7 @@ Most of these are command line based. On a regular day, the only GUI tools I use
 - `mpv`/`chatterino` to watch twitch, see [here](/post/how_i/watch_twitch/)
 - [`fzf`](https://github.com/junegunn/fzf) everywhere, to fuzzy match in shell pipelines
 - [`youtube-dl`](https://youtube-dl.org/) to download video/audio from hundreds of websites
-- my `cat` is aliased to [`bat`](https://github.com/sharkdp/bat), a fancy cat clone which highlights text based on extension/mimetype.
+- my `cat` is aliased to [`bat`](https://github.com/sharkdp/bat), a fancy cat clone which highlights text based on extension/mimetype
 
 ---
 
