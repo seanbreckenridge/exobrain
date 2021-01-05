@@ -63,7 +63,7 @@ Most of these are command line based. On a regular day, the only GUI tools I use
 - `mpv`/`chatterino` to watch twitch, see [here](/post/how_i/watch_twitch/)
 - [`fzf`](https://github.com/junegunn/fzf) everywhere, to fuzzy match in shell pipelines
 - [`youtube-dl`](https://youtube-dl.org/) to download video/audio from hundreds of websites
-- `cat` is aliased to [`bat`](https://github.com/sharkdp/bat), a fancy cat clone which drops back to the 'default' when piping
+- my `cat` is aliased to [`bat`](https://github.com/sharkdp/bat), a fancy cat clone which highlights text based on extension/mimetype.
 
 ---
 
