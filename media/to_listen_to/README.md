@@ -29,6 +29,7 @@ Title: Music to Listen to
 - [T-Square](https://www.discogs.com/artist/1249160-T-Square)
 - Wolf's Rain, Death Note, Sakamichi, Darker Than Black, Jin-Roh OSTs
 - EGO-WRAPPIN'
+- solid state survivor
 
 ---
 
