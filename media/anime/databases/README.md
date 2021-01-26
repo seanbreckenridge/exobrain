@@ -28,7 +28,7 @@ Ended up writing [lots of userscripts](https://greasyfork.org/en/scripts?set=220
 
 In the past, and somewhat now, I've used the MAL database to discover new interesting short films/music videos to watch.
 
-The approval process for MAL entries isn't transparent, and as someone who has most of the entries on their list, looking if any new ones have been approved, it can be annoying to manually look at recently approved entries every day. So, I have a [process](https://github.com/seanbreckenridge/mal-id-cache) that runs on my server to check if new entries have been approved, which updates a couple json files, a [website](https://github.com/seanbreckenridge/mal-unapproved) to list unapproved entries, and a [discord bot](https://github.com/seanbreckenridge/mal-notify-bot) to notify me whenever new ones are added.
+The approval process for MAL entries isn't transparent, and as someone who has most of the entries on their list, looking if any new ones have been approved, it can be annoying to manually look at recently approved entries every day. So, I have a [process](https://github.com/Hiyori-API/checker_mal) that runs on my server to check if new entries have been approved, which updates a couple json files, a [website](https://github.com/seanbreckenridge/mal-unapproved) to list unapproved entries, and a [discord bot](https://github.com/seanbreckenridge/mal-notify-bot) to notify me whenever new ones are added.
 
 ![list of unapproved MAL entries](https://i.imgur.com/uW96EBY.png)
 
