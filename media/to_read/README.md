@@ -2,22 +2,6 @@
 Title: Stuff to read
 ---
 
-### Blogs/Articles
-
-- <http://alvaro-videla.com/archive.html>
-- <http://www.melconway.com/Home/pdf/committees.pdf>
-- <https://www.lesswrong.com/posts/TxcRbCYHaeL59aY7E/meditations-on-moloch>
-- <https://yudkowsky.net/obsolete/singularity.html>
-- go tutorial <https://github.com/betty200744/ultimate-go>
-- plugins/dynamic code-loading <https://docs.openstack.org/stevedore/latest/user/essays/pycon2013.html>
-- Maybe some practice with abnf, then PEG spec: <https://bford.info/pub/lang/peg.pdf>
-- <http://www.pl-enthusiast.net/2014/07/21/memory-safety/>
-- <https://www.inkandswitch.com/cambria.html>
-- An Incremental approach to Compiler Construction
-- MANIFEST.in <https://www.remarkablyrestrained.com/python-setuptools-manifest-in/>
-- Talks by <http://dabeaz.com/> - for complex/in-depth python talks
-- <https://www.scaledagileframework.com/wsjf/>
-
 ### Books
 
 - <https://martinfowler.com/articles/enterprisePatterns.html>
