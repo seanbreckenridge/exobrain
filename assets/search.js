@@ -66,7 +66,7 @@
   let fuse = null;
 
   // send request to load index
-  // use XHR for compability, since I'm not using babel
+  // use XHR for compatibility, since I'm not using babel
   let xhr = new XMLHttpRequest();
   xhr.open("GET", "/search_index.json");
   xhr.onreadystatechange = function () {
