@@ -12,7 +12,7 @@ Since 2015, I've spent _a lot_ of time watching anime. Less recently, because I'
 
 - sort entries into short films, TV shows, lost media, things I'm interested in using tags
 - watch some of each entry, to see if I like it. On MAL, I use categories like:
-  - `watching`: things I haven't/tried watched yet
+  - `watching`: things I haven't tried yet
   - `completed`: things I've watched/finished
   - `on-hold`: things I've watched some of/am interested in continuing
   - `dropped`: things I've dropped, or sequels of things I've dropped (since I'm not interested in continuing those)
