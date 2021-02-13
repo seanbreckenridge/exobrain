@@ -89,7 +89,7 @@ sonic-pi # block
 kill -15 $(jobs -p)
 ```
 
-If something is already using `hw:1` (e.g. you have `mpv` playing some audio), this causes `jackd` to not be able to use `hw:1`, so it fails to squire that, and `sonic-pi` fails with an error again.
+If something is already using `hw:1` (e.g. you have `mpv` playing some audio), this causes `jackd` to not be able to use `hw:1`, so it fails to acquire that, and `sonic-pi` fails with an error again.
 
 Without `qjackctl`, it seems that this causes `pulseaudio` to break... ? and it becomes 'dummy output':
 
