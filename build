@@ -52,10 +52,8 @@ havecmd html-minifier "Install with \`npm install -g html-minifier\`" && HAS_HTM
 havecmd prettier "Install with \`npm install -g prettier\`" && HAS_PRETTIER=1
 
 # compile go commands
-set -e
-go install ./exosearch_cmd.go
-go install ./exoharden_cmd.go
-set +e
+havecmd exosearch_cmd || go install ./exosearch_cmd.go
+havecmd exoharden_cmd || go install ./exoharden_cmd.go
 
 # colors
 declare GREEN RESET
