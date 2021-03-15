@@ -16,15 +16,12 @@ Downsides:
 - Requires quite a bit of domain knowledge on python packaging and troubleshooting to get work
 - How name conflicts (i.e. if my HPI fork had a `my.location` subpackage and so did the upstream HPI, which are both installed as a namespace package) are handled are by the order of the paths in the `easy-install.pth`, e.g.:
 
-  ```bash
-  cat ~/.local/lib/python3.9/site-packages/easy-install.pth
-  /home/sean/Repos/HPI
-  /home/sean/Repos/HPI-to-master
-  ```
-
+```bash
+cat ~/.local/lib/python3.9/site-packages/easy-install.pth
+/home/sean/Repos/HPI
+/home/sean/Repos/HPI-to-master
 ```
 
 means that `HPI` overrides any namespace packages in `HPI-to-master`.
 
 The fact that it overrides is great! Since it means I can overwrite files in the upstream repo without having to maintain a fork and having to deal with merging changes back and forth. But, sometimes when re-installing (or for some reason I can't seem to find) `easy-install.pth` gets messed with, and I have to manually fix it. Perhaps a tool should be written to handle this...
-```
