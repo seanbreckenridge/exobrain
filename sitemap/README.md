@@ -8,7 +8,6 @@
 * language/ [English Words](/language/english_words/)
 * language/ [Japanese](/language/japanese/)
 * media/ [Movies to Watch](/media/to_watch/)
-* media/ [Music to Listen to](/media/to_listen_to/)
 * media/ [Music](/media/music/)
 * media/ [Online Databases](/media/online_databases/)
 * media/ [Stuff to read](/media/to_read/)
