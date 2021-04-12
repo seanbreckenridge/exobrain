@@ -68,8 +68,6 @@ This uses lots of shell tools to build this, listed in `build`:
 - `pmark` (Install from <https://github.com/seanbreckenridge/pmark>)
 - `html-minifier` (Install with `npm install -g html-minifier`)
 - `prettier` (Install with `npm install -g prettier`)
-- `exosearch`_cmd || go install ./exosearch_cmd.go
-- `exoharden`_cmd || go install ./exoharden_cmd.go
 
 ### Hosting
 

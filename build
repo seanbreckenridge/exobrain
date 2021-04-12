@@ -51,10 +51,6 @@ set +e
 havecmd html-minifier "Install with \`npm install -g html-minifier\`" && HAS_HTML_MINIFIER=1
 havecmd prettier "Install with \`npm install -g prettier\`" && HAS_PRETTIER=1
 
-# compile go commands
-havecmd exosearch_cmd || go install ./exosearch_cmd.go
-havecmd exoharden_cmd || go install ./exoharden_cmd.go
-
 # colors
 declare GREEN RESET
 GREEN="$(tput setaf 2)"
@@ -219,7 +215,7 @@ run_build() {
 	# remove temp exobrain files
 	rm -fv /tmp/exobrain-* >/dev/null
 	# check for yaml frontmatter errors
-	if exoharden_cmd; then
+	if go run exoharden_cmd.go; then
 		printf ' %s✅%s No yaml frontmatter formatting errors found!\n' "$GREEN" "$RESET"
 	else
 		return 1

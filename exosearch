@@ -35,7 +35,7 @@ while getopts "oh" opt; do
 		LINKS_SEARCH=1
 		;;
 	h)
-		exosearch_cmd -help
+		go run ./exosearch_cmd.go -help
 		printf "\nThis wrapper script handles/wraps the 'internal' go flags\n"
 		printf "Pass the -o flag to search for links instead\n"
 		exit 0
@@ -55,7 +55,7 @@ run_search() {
 	local -a search_flags=()
 	search_flags=(-exobrain-dir "$THIS_DIR")
 	((LINKS_SEARCH)) && search_flags+=(-links -url)
-	exosearch_cmd "${search_flags[@]}"
+	go run ./exosearch_cmd.go "${search_flags[@]}"
 	return $?
 }
 

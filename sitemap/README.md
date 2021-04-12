@@ -2,6 +2,7 @@
 * / [Meta; about my exobrain](/meta/)
 * / [Tools, or how I do everything](/tools/)
 * devlog/ [Sonic-Pi](/devlog/sonic_pi/)
+* food/ [Tea](/food/tea/)
 * hobbies/ [Cubing](/hobbies/cubing/)
 * hobbies/ [SonicPi](/hobbies/sonic_pi/)
 * language/ [Concepts](/language/concepts/)
