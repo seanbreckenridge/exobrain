@@ -351,7 +351,7 @@ echo "$(( 2 + 2)) is 4"
 echo "$i"
 ```
 
-In a math subshell, `0` is false and anything else is true. As an example to check external commands:
+In a math subshell, `0` is false and anything else is true. Can be treated as a boolean. As an example to check external commands:
 
 ```bash
 COND=1
