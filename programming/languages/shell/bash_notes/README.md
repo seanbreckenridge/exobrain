@@ -31,6 +31,8 @@ $ tty
 /dev/pts/9
 ```
 
+Note: may be some issues depending on how you've started your display server, see comments in my [`attached-to-terminal`](https://sean.fish/d/attached-to-terminal) script
+
 #### Auto expanding variable contents:
 
 ```bash
