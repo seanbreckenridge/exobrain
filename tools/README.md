@@ -22,7 +22,6 @@ Most of these are command line based. On a regular day, the only GUI tools I use
   - [`i3lock`](https://i3wm.org/i3lock/) for screen lock; [daemon process](https://sean.fish/d/lock-screen?dark) caches pixelated version of screen to speed up start time. [Corresponding service file](https://sean.fish/d/lockscreen@.service?dark) to lock my screen whenever my laptop suspends
   - [`rofi`](https://github.com/davatorium/rofi) for launching applications and switching windows
   - [`dunst`](https://dunst-project.org/) for notifications, pretty normal configuration
-  - [`lightdm`](https://wiki.archlinux.org/index.php/LightDM) as display manager, just so I don't have to fiddle with xprofile
 - Editors
   - nvim (primarily)
   - (doom) emacs
