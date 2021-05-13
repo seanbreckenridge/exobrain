@@ -24,4 +24,4 @@ cat ~/.local/lib/python3.9/site-packages/easy-install.pth
 
 means that `HPI` overrides any namespace packages in `HPI-to-master`.
 
-The fact that it overrides is great! Since it means I can overwrite files in the upstream repo without having to maintain a fork and having to deal with merging changes back and forth. But, sometimes when re-installing (or for some reason I can't seem to find) `easy-install.pth` gets messed with, and I have to manually fix it. Perhaps a tool should be written to handle this...
+The fact that it overrides is great! Since it means I can overwrite files in the upstream repo without having to maintain a fork and having to deal with merging changes back and forth. But, sometimes when re-installing (or for some reason I can't seem to find) `easy-install.pth` gets messed with. To fix that, created [reorder_editable](https://github.com/seanbreckenridge/reorder_editable), which naively reorders my `easy-install.pth`.
