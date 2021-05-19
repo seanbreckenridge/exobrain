@@ -99,7 +99,7 @@ func consumeFile(fpath string, userFlags *flags, fzfBuf io.WriteCloser) error {
 
 	if userFlags.searchLinks {
 		// extract links and write to fzfBuf
-		r := xurls.Relaxed()
+		r := xurls.Relaxed
 		// keep track of whether or not we found a url at all
 		// if we didn't, include at least one line of the file (the first),
 		// so it can be used with the 'exoo' alias to open
@@ -160,7 +160,7 @@ func openLocalFile(fpath string, lineNumber string, userFlags *flags) error {
 
 // extracts a URL from the file, returns empty string if no url found
 func extractUrl(chosen string) string {
-	return xurls.Relaxed().FindString(chosen)
+	return xurls.Relaxed.FindString(chosen)
 }
 
 func main() {
