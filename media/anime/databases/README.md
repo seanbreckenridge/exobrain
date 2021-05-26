@@ -40,9 +40,13 @@ Currently, its quite frustrating to maintain projects that depend on Jikan/MAL, 
 
 Though, If one is submitting new entries to one of the databases, though the site isn't the best, you're better off submitting entries to MAL, because the other sites _know_ that MAL has the most entries and they all copy data/source entries from it. You improve most of sites by submitting to MAL, while it can sometimes feel like you're wasting time submitting entries to other sites that might not have as much reach.
 
-[AniList](https://anilist.co/)/[Kitsu](https://kitsu.io) look much nicer from a developers point of view, being graphql APIs, with owners/leads who communicate much more frequently.
+[AniList](https://anilist.co/)/ look much nicer from a developers point of view, being Graphql APIs, with owners/leads who communicate much more frequently. However, there are concerns with managing a large list with their API; theres a limit to how many can be shown on their web interface, and I [cant really import my list](https://anilist.co/forum/thread/33798)
+
+[Kitsu](https://kitsu.io) is another option but its just not as complete/also suffers from occasional downtime
 
 The [AniDB Title Dump](https://wiki.anidb.net/API#Anime_Titles) may be useful for particular projects.
+
+May be worth to move to AniDB or AnimePlanet, but those have smaller communities.
 
 ---
 
