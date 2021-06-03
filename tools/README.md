@@ -36,7 +36,7 @@ Most of these are command line based. On a regular day, the only GUI tool I use 
     - [uBlock Origin](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/) to block ads
   - I use [`lynx`](https://www.lynxproject.org/) to do quick `duckduckgo` searches [without leaving the terminal](https://sean.fish/d/duck?dark)
 - I use [`newsboat`](https://newsboat.org/) RSS for youtube/news/blogs. I have a [script](https://sean.fish/d/youtube-user-id?dark) to grab a youtube users RSS feed, since youtube doesn't list that publicly. [`linkhandler`](https://sean.fish/d/linkhandler?dark) lets me open youtube videos from `newsboat` using [`mpvf`](https://github.com/seanbreckenridge/mpvf/) instead of visiting youtube in the browser
-- For system backups, I use [`a script`](https://github.com/seanbreckenridge/raspi-backup) which `rsync`'s a bunch of directories to my raspberry pi
+- For system backups, I use [SyncThing](https://github.com/syncthing/syncthing) to Sync important directories across all my computers, and to my NAS
 - to-do list - [`todotxt`](http://todotxt.org/) for todos, with a [rofi interface](https://sean.fish/d/todo-prompt?dark) as GUI, and [TUI](https://github.com/seanbreckenridge/full_todotxt) for adding todos. The TUI I wrote forces me to specify a `deadline` for each todo, which I then get notified by [this](https://github.com/seanbreckenridge/todotxt_deadline_notify), which runs on my server
 - [`calcurse`](https://github.com/lfos/calcurse) as a calendar, with my [`calcurse-load`](https://github.com/seanbreckenridge/calcurse-load) hooks to add Google Calendar and `todo.txt` to calcurse automatically
 - a heavily customized [`ranger`](https://github.com/ranger/ranger) as my file manager. See [`rifle.conf`](https://sean.fish/d/rifle.conf?dark) (file handler) and [`scope.sh`](https://sean.fish/d/scope.sh?dark) (previewer)
@@ -60,10 +60,8 @@ Most of these are command line based. On a regular day, the only GUI tool I use 
 - [`imgur-uploader`](https://pypi.org/project/imgur-uploader/) to quickly upload images online, with a [script](https://sean.fish/d/screenshot-to-imgur?dark) to upload my most recent screenshot to imgur
 - `mpv`/`chatterino` to watch twitch, see [here](/post/how_i/watch_twitch/)
 - [`fzf`](https://github.com/junegunn/fzf) everywhere, to fuzzy match in shell pipelines
-- [`youtube-dl`](https://youtube-dl.org/) to download video/audio from hundreds of websites
+- [`youtube-dl`](https://youtube-dl.org/) to download video/audio from [tons of places](https://ytdl-org.github.io/youtube-dl/supportedsites.html)
 - my `cat` is aliased to [`bat`](https://github.com/sharkdp/bat), a fancy cat clone which highlights text based on extension/mimetype
-
----
 
 ### Other CLI Tools I use less often
 
@@ -73,6 +71,7 @@ Most of these are command line based. On a regular day, the only GUI tool I use 
 - [`dex`](https://github.com/jceb/dex) to open `.desktop` files
 - [`dust`](https://github.com/bootandy/dust); a fancy du clone
 - [`entr`](https://eradman.com/entrproject/) for lots of small build scripts
+- [`exa`](https://github.com/ogham/exa) aliased to `ls`
 - [`fd`](https://github.com/sharkdp/fd); a fancy find clone
 - [`figlet`](http://www.figlet.org/) to print large letters
 - [`glow`](https://github.com/charmbracelet/glow) to render markdown in the terminal
@@ -101,8 +100,6 @@ Most of these are command line based. On a regular day, the only GUI tool I use 
 - [`up`](https://github.com/akavel/up) - to interactively explore/pipe text data. Especially useful when doing data wrangling, like when using tools like `jq`/`grep`/`cut` to extract some information from a data source
 - [`whiptail`](https://en.wikibooks.org/wiki/Bash_Shell_Scripting/Whiptail) (libnewt) for fancy dialog prompts in scripts
 - [`wuzz`](https://github.com/asciimoo/wuzz), a postman-like CLI application
-
----
 
 ### Other GUI Applications I use less often
 
