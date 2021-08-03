@@ -12,11 +12,12 @@ These are other sites/blogs/things I'm a fan of. Inspired by [superhighway98](ht
 ## Other Wikis
 
 - [Everything I know](https://wiki.nikitavoloboev.xyz/) (Nikita Voloboev)
+- [learn-anything.xyz](https://learn-anything.xyz/)
 
-## Tools
+## Tools/Security
 
 - [HaveIBeenPwned](https://haveibeenpwned.com/)
-- [learn-anything.xyz](https://learn-anything.xyz/)
+- [Home Router Security](https://comparite.ch/routerstudy)
 
 ## Podcasts/Broadcasts
 
