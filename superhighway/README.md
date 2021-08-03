@@ -17,7 +17,7 @@ These are other sites/blogs/things I'm a fan of. Inspired by [superhighway98](ht
 ## Tools/Security
 
 - [HaveIBeenPwned](https://haveibeenpwned.com/)
-- [Home Router Security](https://comparite.ch/routerstudy)
+- [Comparitech] in general, but you should probably look at [home router security](https://comparite.ch/routerstudy)
 
 ## Podcasts/Broadcasts
 
