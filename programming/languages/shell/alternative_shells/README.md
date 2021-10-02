@@ -32,7 +32,7 @@ Disregarding portability, I still think there could be tools to make shell-like 
 
 Currently, what I typically do is just write another tool/create an `alias` with 5 pipelines, with heavy use of `sed`/`awk`/`xargs`. Thats _okay_ for me, but it isn't readable, and it's not great to debug/modify.
 
-On a related note, `curl | jq` to get some basic interaction with JSON APIs is great, but at some point when you're dealing with structured data and doing conditional logic based on it, trying to store individual list items in shell/`bash` variables gets to be really confusing. Associative arrays and arrays _can_ work, but it gets to be very unreadable, and you have no type safety/error checking. I tend to [fall back to python](https://github.com/seanbreckenridge/projects) in situations like that.
+On a related note, `curl | jq` to get some basic interaction with JSON APIs is great, but at some point when you're dealing with structured data and doing conditional logic based on it, trying to store individual list items in shell/`bash` variables gets to be really confusing. Associative arrays and arrays _can_ work, but it gets to be very unreadable, and you have no type safety/error checking. I tend to fall back to python in situations like that.
 
 So, at some point it may make sense to fall back onto (for a script)/call out to (for command line pipelines) other interpreted languages (like `python`/`ruby`), but thats typically a _noticeable_ drop in speed; I do value the speed of the shell (don't think I'd use [`xonsh`](https://xon.sh/index.html) interactively, though it does look cool) and using minimal tools like `curl`/`jq`.
 
