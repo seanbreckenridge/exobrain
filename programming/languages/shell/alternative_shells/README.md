@@ -123,3 +123,5 @@ I generally understand most of the pifalls in POSIX at this point, so switching 
 ## Create a DSL?
 
 If some task is done over and over in the shell, maybe I should instead write a DSL to handle that task? See [Brian Kernighan lecture notes](/programming/design/kernighan/dsl) on designing languages, focusing on DSL usability.
+
+Related to the JSON processing here; could possibly create some sort of script which generates `jq` commands to do more complicated things like filters/modifying nested attributes, since it gets to be quite verbose for longer pipelines
