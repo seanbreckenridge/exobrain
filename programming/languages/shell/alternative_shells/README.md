@@ -56,7 +56,7 @@ $ hyperfine -S sh 'perl' -S sh 'python' -S sh 'ruby'
    27.57 ± 15.38 times faster than 'ruby'
 ```
 
-`python` in particular has tons of great libraries, so it can often be the solution ([see my `giturl` script](https://sean.fish/d/giturl) (for [`gitopen`](https://sean.fish/d/gitopen)))
+`python` in particular has tons of great libraries, so it can often be the solution
 
 But otherwise, I'm in this middle ground of having to make a decision between funky looking `bash` pipelines and flawed data structures, and decreasing performance by calling out to a larger library in `python`/some other language.
 
