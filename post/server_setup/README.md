@@ -152,7 +152,7 @@ cd ~/vps
 ./generate_static_sites  # clone/generate all my static sites
 ```
 
-10. Setup my DNS info on my domain name registrar, point it to the IP address of the VPS, follow instructions to set up [`certbot`](https://certbot.eff.org/lets-encrypt/debianbuster-nginx) for `HTTPS`:
+10. Setup my DNS info on my domain name registrar, point it to the IP address of the VPS, follow instructions to set up [`certbot`](https://certbot.eff.org/instructions) for `HTTPS`:
 
 Make sure the `server_name` directive exists in the `server` block running on port 80 in `/etc/nginx/sites-available/default` before trying to do `certbot`, so it can grab the domain name from there.
 
