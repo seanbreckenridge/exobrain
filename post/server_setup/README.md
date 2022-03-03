@@ -17,6 +17,16 @@ adduser sean
 usermod -aG sudo sean
 ```
 
+If needed, create the `.ssh` directory with perms
+
+```
+su - sean  # switch to user
+cd
+chmod go-w ~/
+chmod 700 ~/.ssh
+chmod 600 ~/.ssh/authorized_keys
+```
+
 3. create a ssh key (`ssh-keygen -t rsa -b 4096 -o -a 100`) for connecting to the server, `ssh-copy-id` it up to the server
 
 `ssh-copy-id -i ~/.ssh/file sean@<ip-addr>`
