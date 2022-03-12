@@ -4,6 +4,10 @@ Title: Magic Wands
 
 Use `magic wands`! They're awesome. Learnt about them from [`rwx.gg`](https://rwx.gg) (the `magic wands` is his term)
 
+The vi term is `cmdline-ranges`, see `:help cmdline-ranges`
+
+See <https://rwx.gg/tools/editors/vi/how/magic/>
+
 In command mode, you can hit `!!` twice, to bring up a prompt which will send the current line to some external command.
 
 For example, if you write:
@@ -38,3 +42,29 @@ I have a script called `ix` [here](https://sean.fish/d/ix?dark) which accepts so
 `5!!ix -v` (which becomes `:.,.+4!ix -v`)
 
 .. which takes those 5 lines and uploads them to `ix`, copying a link to that paste to my clipboard, without ever leaving `vim`!
+
+While not a feature in `vi`, in `vim` and `neovim`, this also works with visual mode, so say you had two commands:
+
+```
+date
+cal
+```
+
+If you go into visual line mode (`V`) and select both lines, then hit `!`, the become
+
+`'<,'>!` -- which represents your selection
+
+By sending that to bash:
+
+`<,'>!bash`
+
+```
+Sat Mar 12 02:19:04 PM PST 2022
+     March 2022
+Su Mo Tu We Th Fr Sa
+       1  2  3  4  5
+ 6  7  8  9 10 11 12
+13 14 15 16 17 18 19
+20 21 22 23 24 25 26
+27 28 29 30 31
+```
