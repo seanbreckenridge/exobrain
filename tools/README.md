@@ -95,7 +95,7 @@ Most of these are command line based. On a regular day, the only GUI tool I use 
 - [`shellcheck`](https://github.com/koalaman/shellcheck) to check shell scripts for syntax errors
 - [`speedtest-cli`](https://github.com/sivel/speedtest-cli) to test internet bandwidth
 - [`sqleton`](https://github.com/inukshuk/sqleton) to visualize sqlite databases
-- [`sxiv`](https://github.com/muennich/sxiv) as an image viewer for more complicated/macro-like tasks
+- [`nsxiv`](https://github.com/nsxiv/nsxiv) as an image viewer for more complicated/macro-like tasks
 - [`termdown`](https://github.com/trehn/termdown) to countdown in the terminal
 - [`toilet`](https://github.com/cacalabs/toilet) is another implementation of figlet, gives fancy colors in the terminal
 - [`up`](https://github.com/akavel/up) - to interactively explore/pipe text data. Especially useful when doing data wrangling, like when using tools like `jq`/`grep`/`cut` to extract some information from a data source
