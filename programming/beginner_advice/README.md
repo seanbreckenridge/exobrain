@@ -8,7 +8,7 @@ Its very easy to just get stuck in the so called 'tutorial hell' - watching codi
 
 This really depends on what you want to do. As is the case with most difficult problems, the answer is 'It depends'.
 
-Nowadays, if you don't want to go straight to `C` to learn the fundamentals (which is probably what I would recommend), `JavaScript` is a good first language; there are lots of CLI tools written in it, it teaches you lots of the basics and you can transition to web if you want.
+Nowadays, if you don't want to go straight to `C` or `golang` to learn the fundamentals (which is probably what I would recommend), `JavaScript` is a good first language; there are lots of CLI tools written in it, it teaches you lots of the basics and you can transition to web if you want
 
 [Eloquent JavaScript](https://eloquentjavascript.net/) is free, and offers nice context.
 
