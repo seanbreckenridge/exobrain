@@ -8,16 +8,18 @@ These are other sites/blogs/things I'm a fan of. Inspired by [superhighway98](ht
 
 - [beepb00p](https://beepb00p.xyz/)
 - [Alvaro Videla](https://alvaro-videla.com/archive.html)
+- [Domenic](https://blog.domenic.me/)
 
 ## Other Wikis
 
 - [Everything I know](https://wiki.nikitavoloboev.xyz/) (Nikita Voloboev)
 - [learn-anything.xyz](https://learn-anything.xyz/)
 
+Theres also a few lists of these personal wikis, see [here](https://github.com/lyz-code/best-of-digital-gardens)
+
 ## Tools/Security
 
 - [HaveIBeenPwned](https://haveibeenpwned.com/)
-- [Comparitech] in general, but you should probably look at [home router security](https://comparite.ch/routerstudy)
 
 ## Podcasts/Broadcasts
 
