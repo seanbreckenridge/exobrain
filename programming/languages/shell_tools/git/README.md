@@ -57,7 +57,7 @@ git push -f
 
 If you want to add something to a previous commit, you can use `git reset --soft` and `git commit --amend`
 
-### Merging using `stash`
+### Merging using stash
 
 `git stash` records the current state of the working directory and the index, but resets you back to `HEAD`.
 
