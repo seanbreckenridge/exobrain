@@ -2,7 +2,7 @@
 Title: Internet Superhighway
 ---
 
-These are other sites/blogs/things I'm a fan of. Inspired by [superhighway98](https://www.superhighway98.com/)
+These are other sites/blogs/things I'm a fan of. Inspired by [superhighway98](https://www.johnwdefeo.com/my-work/superhighway-98)
 
 ## Blogs
 
