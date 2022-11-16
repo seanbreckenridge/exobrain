@@ -69,6 +69,16 @@ For more, see [my github stars](https://github.com/seanbreckenridge?direction=de
 - [`yt-dlp`](https://github.com/yt-dlp/yt-dlp) to download video/audio from [tons of places](https://ytdl-org.github.io/youtube-dl/supportedsites.html). `yt-dlp` is a fork which downloads faster and has more features
 - my `cat` is aliased to [`bat`](https://github.com/sharkdp/bat), a fancy cat clone which highlights text based on extension/mimetype
 
+### Android Apps
+
+- [termux](https://termux.dev/en/) - terminal
+- [F-droid](https://f-droid.org/) to download applications not on the play store
+- [Pano-Scobbler](https://play.google.com/store/apps/details?id=com.arn.scrobble&hl=en_US&gl=US&pli=1) to scrobble to last.fm/listenbrainz
+- [gpslogger](https://gpslogger.app/) to save my location
+- [syncthing](https://f-droid.org/packages/com.nutomic.syncthingandroid/) to sync music/data from my computer to my phone
+- [keepass2android](https://play.google.com/store/apps/details?id=keepass2android.keepass2android&hl=en_US&gl=US) to use my password database on my phone (synced using syncthing)
+- [sms backup & restore](https://play.google.com/store/apps/details?id=com.riteshsahu.SMSBackupRestore&hl=en_US) to save my call logs/sms messages
+
 ### Other CLI Tools I use less often
 
 - [`boxes`](https://boxes.thomasjensen.com/) to print fancy boxes in the terminal
