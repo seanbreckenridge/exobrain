@@ -22,6 +22,8 @@ For more, see [my github stars](https://github.com/seanbreckenridge?direction=de
     - [`i3lock`](https://i3wm.org/i3lock/) for screen lock; [daemon process](https://sean.fish/d/lock-screen?redirect) caches pixelated version of screen to speed up start time. [Corresponding service file](https://sean.fish/d/lockscreen@.service?redirect) to lock my screen whenever my laptop suspends
     - [`rofi`](https://github.com/davatorium/rofi) for launching applications and switching windows
     - [`dunst`](https://dunst-project.org/) for notifications, pretty normal configuration
+    - [`autotiling`](https://github.com/nwg-piotr/autotiling) for automatic tiling
+    - [`redshift`](http://jonls.dk/redshift/) to adjust color temperature
   - Mac
     - I use [`skhd`](https://github.com/koekeishiya/skhd) as a hotkey daemon. My dotfiles are cross-platform, lots of scripts in [`cross-platform`](https://github.com/seanbreckenridge/dotfiles/tree/master/.local/scripts/cross-platform) that handle switching on the OS to call out to platform-specific behavior (sending notifications, clipboard management, asking for user input)
   - Android (using [termux](https://termux.dev/en/)
