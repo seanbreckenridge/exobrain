@@ -75,7 +75,7 @@ For more, see [my github stars](https://github.com/seanbreckenridge?direction=de
 
 ### CLI tools I use all the time
 
-- [`datamash`](https://www.gnu.org/software/datamash/) to perform basic statistics on text files
+- [`datamash`](https://www.gnu.org/software/datamash/) to perform basic statistics on text files/STDIN
 - [`dragon`](https://github.com/mwh/dragon), to be able to dragon and drop items from/to the terminal. Have my [`dragon-sink`](https://sean.fish/d/dragon-sink?redirect) script, which accepts and `cp`/`mv`'s files from applications, and bindings in `ranger` to drag files into my browser. Also use [`draglastpic`](https://sean.fish/d/draglastpic) very often, which lets me drag the latest screenshot to some application
 - [`dust`](https://github.com/bootandy/dust); a fancy du clone
 - [`entr`](https://eradman.com/entrproject/) for lots of small build scripts
