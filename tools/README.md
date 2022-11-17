@@ -100,7 +100,7 @@ For more, see [my github stars](https://github.com/seanbreckenridge?direction=de
 - [`lorem`](https://github.com/jamen/lorem) to create a bunch of lorem-ipsum
 - [`misspell`](https://github.com/client9/misspell) corrects commonly misspelled words; my [`misspell-context`](https://sean.fish/d/misspell-context?redirect) script to give mistakes in context
 - [`ncdu`](https://dev.yorhel.nl/ncdu) to preview disk space interactively
-- [`oh-my-stars`](https://github.com/wolfg1969/oh-my-stars) to search github stars offline
+- [`oh-my-stars`](https://github.com/seanbreckenridge/oh-my-stars) (my fork) to search github stars offline
 - [`optipng`](http://optipng.sourceforge.net/) to compress PNG files
 - [`pastel`](https://github.com/sharkdp/pastel) to generate/pick color schemes/hex codes from the terminal
 - [`pup`](https://github.com/ericchiang/pup) to parse HTML on the command line
