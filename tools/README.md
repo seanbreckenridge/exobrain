@@ -26,7 +26,7 @@ For more, see [my github stars](https://github.com/seanbreckenridge?direction=de
     - [`redshift`](http://jonls.dk/redshift/) to adjust color temperature
   - Mac
     - I use [`skhd`](https://github.com/koekeishiya/skhd) as a hotkey daemon. My dotfiles are cross-platform, lots of scripts in [`cross-platform`](https://github.com/seanbreckenridge/dotfiles/tree/master/.local/scripts/cross-platform) that handle switching on the OS to call out to platform-specific behavior (sending notifications, clipboard management, asking for user input)
-  - Android (using [termux](https://termux.dev/en/)
+  - Android (using [termux](https://termux.dev/en/))
 - Editors
   - nvim using [nvim-cmp](https://github.com/hrsh7th/nvim-cmp) for completion, [configured here](https://github.com/seanbreckenridge/dotfiles/tree/master/.config/nvim), mostly in lua
 - Browsers
