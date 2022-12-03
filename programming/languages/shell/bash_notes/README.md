@@ -14,7 +14,7 @@ As an example, to prompt me to select something:
 pick='fzf'
 # if run from rofi/i3, use picker instead
 if [[ "$(tty)" = "not a tty" ]]; then
-	# cross platform GUI picker https://sean.fish/d/picker?dark
+    # https://github.com/seanbreckenridge/core/blob/main/shellscripts/picker
 	pick='picker'
 fi
 
