@@ -54,7 +54,6 @@ For more, see [my github stars](https://github.com/seanbreckenridge?direction=de
   - On top of all the [git aliases](https://sean.fish/d/git_aliases?redirect), one of my scripts I use most commonly are my [`giturl`](https://sean.fish/d/giturl?redirect)/[`gitopen`](https://sean.fish/d/gitopen?redirect) scripts, which will open the current git directory I'm in in my browser
   - [`ix`](https://github.com/seanbreckenridge/core/blob/main/shellscripts/ix) to create pastebin links from the command line
   - To host files publicly and mirror video/audio, I use my [`remsync`](https://github.com/seanbreckenridge/vps/blob/master/remsync) and [`mediaproxy`](https://github.com/seanbreckenridge/vps/blob/master/mediaproxy) scripts. [`croc`](https://github.com/schollz/croc) is nice, but that assumes the other person has terminal literacy
-  - the [`mvlast`](https://sean.fish/d/mvlast?redirect)/[`mvlastpic`](https://sean.fish/d/mvlastpic?redirect)/[`lastdown`](https://sean.fish/d/lastdown?redirect) collection of scripts, which lets me quickly move items from my Downloads/Screenshots to my current folder. Was taken from an <https://rwx.gg> stream; very basic but incredibly useful
   - `curl "https://cheat.sh/$*"`, to access quick cheatsheets for unix tools
   - [my own password generator](https://github.com/seanbreckenridge/genpasswd)
   - A bash script ([`bgproc`](https://github.com/seanbreckenridge/bgproc)) with an infinite loop which runs in the background instead of `cron` (uses my [`evry`](https://github.com/seanbreckenridge/evry) tool to schedule tasks)
