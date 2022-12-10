@@ -58,7 +58,7 @@ For more, see [my github stars](https://github.com/seanbreckenridge?direction=de
   - [my own password generator](https://github.com/seanbreckenridge/genpasswd)
   - A bash script ([`bgproc`](https://github.com/seanbreckenridge/bgproc)) with an infinite loop which runs in the background instead of `cron` (uses my [`evry`](https://github.com/seanbreckenridge/evry) tool to schedule tasks)
   - my `bash` [terminal playlist manager](https://github.com/seanbreckenridge/plaintext-playlist) using `fzf`/`mpv` to store playlists for local music in local text files
-  - my own [url shortener](https://github.com/seanbreckenridge/no-db-static-shorturl/) with [this script](https://github.com/seanbreckenridge/vps/blob/master/shorten)
+  - my own [url shortener](https://github.com/seanbreckenridge/no-db-shorturl/) with [this script](https://github.com/seanbreckenridge/vps/blob/master/shorten)
   - `mpv`/`chatterino` to watch twitch, see [here](/post/how_i/watch_twitch/)
 
 ### Android Apps
@@ -82,6 +82,8 @@ For more, see [my github stars](https://github.com/seanbreckenridge?direction=de
 - [`fzf`](https://github.com/junegunn/fzf) everywhere, to fuzzy match in shell pipelines
 - [`glow`](https://github.com/charmbracelet/glow) to render markdown in the terminal
 - [`hyperfine`](https://github.com/sharkdp/hyperfine) to do benchmarks
+- [`pandoc`](https://pandoc.org/) to convert formats (lots of markdown -> html)
+- [`pygmentize`](https://pygments.org/docs/cmdline/) to convert text to HTML - [`text2html`](https://sean.fish/d/text2html?redirect)
 - [`imgur-uploader`](https://pypi.org/project/imgur-uploader/) to quickly upload images online, with a [script](https://sean.fish/d/screenshot-to-imgur?redirect) to upload my most recent screenshot to imgur
 - [`jq`](https://stedolan.github.io/jq/) to process json streams
 - [`oh-my-stars`](https://github.com/seanbreckenridge/oh-my-stars) (my fork) to search github stars offline
