@@ -99,7 +99,6 @@ For more, see [my github stars](https://github.com/seanbreckenridge?direction=de
 - [`dunk`](https://github.com/darrenburns/dunk), for nicer git diffs in the terminal
 - [`figlet`](http://www.figlet.org/) to print large letters
 - [`gron`](https://github.com/tomnomnom/gron) when I cant be bothered to use `jq`
-- [`imgur-uploader`](https://pypi.org/project/imgur-uploader/) to push images to imgur
 - [`jpegtran`](http://jpegclub.org/jpegtran/) to compress JPEG files
 - [`ldm`](https://github.com/LemonBoy/ldm), to do basic drive mounting for external drives/USBs
 - [`linkcheck`](https://github.com/filiph/linkcheck) to check for broken links on websites
