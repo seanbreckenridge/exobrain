@@ -88,7 +88,7 @@ For more, see [my github stars](https://github.com/seanbreckenridge?direction=de
 - [`jq`](https://stedolan.github.io/jq/) to process json streams
 - [`oh-my-stars`](https://github.com/seanbreckenridge/oh-my-stars) (my fork) to search github stars offline
 - [`vipe`](https://linux.die.net/man/1/vipe), to quickly edit my clipboard in a vim buffer
-- [`yt-dlp`](https://github.com/yt-dlp/yt-dlp) to download video/audio from [tons of places](https://ytdl-org.github.io/youtube-dl/supportedsites.html). `yt-dlp` is a fork which downloads faster and has more features
+- [`yt-dlp`](https://github.com/yt-dlp/yt-dlp) to download video/audio from [tons of places](https://ytdl-org.github.io/youtube-dl/supportedsites.html). `yt-dlp` is a `youtube-dl` fork which downloads faster and has more features
 - my `cat` is aliased to [`bat`](https://github.com/sharkdp/bat), a fancy cat clone which highlights text based on extension/mimetype
 
 ### Other CLI Tools I use less often
