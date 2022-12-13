@@ -56,13 +56,15 @@ For more, see [my github stars](https://github.com/seanbreckenridge?direction=de
 
 ### Media
 
+- `mpv` to listen/watch media in general, integrated with my file manager ([ranger](https://github.com/ranger/ranger))/playlist manager and just through a basic [`list-music`](https://github.com/seanbreckenridge/core/blob/main/shellscripts/list-music)/[`play-music`](https://sean.fish/d/play-music?dark) script from the terminal
 - Music:
   - [`beets`](https://github.com/beetbox/beets) to organize/tag my music; [config file](https://sean.fish/d/.config/beets/config.yaml?redirect)
   - my `bash` [terminal playlist manager](https://github.com/seanbreckenridge/plaintext-playlist) using `fzf`/`mpv` to store playlists for local music in local text files
-- `mpv` to listen/watch media in general, integrated with my file manager ([ranger](https://github.com/ranger/ranger))/playlist manager and just through a basic [`list-music`](https://github.com/seanbreckenridge/core/blob/main/shellscripts/list-music)/[`play-music`](https://sean.fish/d/play-music?dark) script from the terminal
-  Images/Video:
-  - For basic image cropping, I use [`pinta`](https://www.pinta-project.com/) (should probably learn gimp but Ive never had the need). For general image manipulation tasks I create lots of small [`imagemagick`](https://imagemagick.org/index.php) scripts to do random resizes/converts. I have a larger script to [convert videos to gifs](https://github.com/seanbreckenridge/core/blob/main/shellscripts/gifme), and use [`gifsicle`](https://github.com/kohler/gifsicle) for manipulating gifs
-  - Lots of small [`ffmpeg`](https://ffmpeg.org/) scripts to convert between video formats. For trimming video, I use an [edited version](https://sean.fish/d/slicing.lua?redirect) of [this](https://github.com/Kagami/mpv_slicing) mpv plugin
+- Images/Video:
+  - For basic image cropping, I use [`pinta`](https://www.pinta-project.com/) (should probably learn gimp but Ive never had the need).
+  - For general image manipulation tasks I create lots of small [`imagemagick`](https://imagemagick.org/index.php) scripts to do random resizes/converts. I have a larger script to [convert videos to gifs](https://github.com/seanbreckenridge/core/blob/main/shellscripts/gifme), and use [`gifsicle`](https://github.com/kohler/gifsicle) for manipulating gifs
+  - Lots of small [`ffmpeg`](https://ffmpeg.org/) scripts to convert between video formats.
+  - For trimming video, I use an [edited version](https://sean.fish/d/slicing.lua?redirect) of [this](https://github.com/Kagami/mpv_slicing) mpv plugin
 
 ### Android Apps
 
