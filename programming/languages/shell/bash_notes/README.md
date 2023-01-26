@@ -2,6 +2,11 @@
 Title: Bash Notes
 ---
 
+Useful resources:
+
+- [bash hackers wiki](https://wiki.bash-hackers.org/start)
+- [devhints](https://devhints.io/bash) for a quick reference on syntax
+
 Use bash substitutions when possible instead of `sed`/`awk`.
 
 #### tty/scripting
