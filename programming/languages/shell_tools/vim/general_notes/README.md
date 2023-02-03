@@ -39,4 +39,4 @@ Ctrl+A and Ctrl+X increment/decrement integers, very useful for automating thing
 
 ### Jumping
 
-Other than the typical `Ctrl+O`, `Ctrl+I` to jump foward/back in your tag stack, can also use `*` and `#` to jump forward/backward against the word currently under the cursor, which is useful for variable names/constants
+Other than the typical `Ctrl+O`, `Ctrl+I` to jump forward/back in your tag stack, can also use `*` and `#` to jump forward/backward against the word currently under the cursor, which is useful for variable names/constants
