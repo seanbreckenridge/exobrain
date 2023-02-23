@@ -50,4 +50,4 @@ May be worth to move to AniDB or AnimePlanet, but those have smaller communities
 
 ---
 
-At this point (late 2020), I'm a bit less invested. I watch anime sometimes, I have lots of discord/communities I'm in because of anime, and friends I've made because of it. I still collect rare sources/track down short films, and maintain my couple live projects for the other dozen or so power users. I'm more focused on moving away from the databases, and trying to maintain/create data dumps, to improve the consistency/quality of the data, so its easier to archive and do analysis on.
+At this point (late 2020), I'm a bit less invested. I watch anime sometimes, I have lots of discord/communities I'm in because of anime, and friends I've made because of it. I still collect rare sources/track down short films, and maintain my couple live projects for the other dozen or so power users. I'm more focused on moving away from the databases, and trying to maintain/create data dumps (resulting in <https://dbsentinel.sean.fish/>) to improve the consistency/quality of the data, so its easier to archive and do analysis on.
