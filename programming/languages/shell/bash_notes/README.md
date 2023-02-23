@@ -9,6 +9,17 @@ Useful resources:
 
 Use bash substitutions when possible instead of `sed`/`awk`.
 
+#### temporary file
+
+to create a (single) temporary file, removing it when the script exits:
+
+```bash
+tf="$(mktemp)"
+trap 'rm -f "$tf"' EXIT
+
+# do stuff ...
+```
+
 #### tty/scripting
 
 Its useful to check the response of the `tty` command when doing interactive scripts. I use it for my [`launch`](https://sean.fish/d/cross-platform/launch?dark) script. If I run `launch htop`. If I'm already in a terminal, it just launches `htop`, but if its being run from a keybind/in the background, it opens a new terminal and runs that as an argument.
