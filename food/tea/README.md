@@ -8,6 +8,7 @@ Good:
 
 - English Breafast
 - Earl Grey, cool be good with citrus/spices
+- Samovar Tea (this is the tea I grew up with, drinking iced tea)
 
 Meh:
 
