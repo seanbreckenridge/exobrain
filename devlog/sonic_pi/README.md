@@ -5,6 +5,8 @@ Date: 2020/09/21
 
 Me documenting my issues installing [`sonic-pi`](https://github.com/sonic-pi-net/sonic-pi/blob/main/INSTALL-LINUX.md) on arch.
 
+<https://github.com/seanbreckenridge/sonic_pi_music>
+
 For context, I use pulseaudio, not alsa.
 
 After running: `yay -S sonic-pi`
