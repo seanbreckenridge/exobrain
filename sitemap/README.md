@@ -37,6 +37,7 @@
 * programming/languages/ [Shell Tools](/programming/languages/shell/)
 * programming/languages/golang/ [General Golang Notes](/programming/languages/golang/general/)
 * programming/languages/golang/ [Structuring Projects](/programming/languages/golang/package_structure/)
+* programming/languages/python/ [anthonydoescode](/programming/languages/python/anthonynotes/)
 * programming/languages/python/ [Decorators Pycon](/programming/languages/python/decorators/)
 * programming/languages/python/ [Python Metaprogramming](/programming/languages/python/metaprogramming/)
 * programming/languages/python/ [Python Plugins/Namespace Packages](/programming/languages/python/plugins_namespace_packages/)
