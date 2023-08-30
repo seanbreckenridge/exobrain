@@ -16,9 +16,7 @@ Dont use `urlparse`, use `urlsplit` as it is doesnt use the archaic params field
 
 Sqlite stuff, but `.schema` is a good command to show the schema, `.headers on` shows column names along with results so is nice
 
-Also, he shows an example of sqlite not being able to handle concurrent writes, which makes sense since he was just spawning a bunch of bash to hit it with unique cursors at the same time
-
-I wonder if the same issue happens with pythons sqlite module, or with Session's in sqlalchemy (I tried looking into it but theres so many damn layers of indirection). Same with sqlite_echo in elixir, does the database pooling do anything here for writes? I know it can handle multiple reads at the same time, but what if two requests tried to write at the same time, does it just error one of them?
+Also, he shows an example of sqlite not being able to handle concurrent writes, which makes sense since he was just spawning a bunch of bash to hit it with unique cursors at the same time, ended up doing some testing [here](/programming/databases/checkpoints)
 
 <https://www.youtube.com/watch?v=98SYTvNw1kw>
 
