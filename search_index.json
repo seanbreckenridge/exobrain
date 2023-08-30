@@ -109,7 +109,7 @@
   },
   {
     "url": "/programming/databases/checkpoints",
-    "text": "safaridb wal fileHad lots of trouble absorbing the wal file I thought I was running acheckpoint through sqlitebrowser but apparently it wasnt doinganythingRunning sqlite Historydb through terminal and PRAGMA walcheckpointand then CtrlD like described in the comment here finally ended upworking"
+    "text": "safaridb wal fileHad lots of trouble absorbing the wal file I thought I was running acheckpoint through sqlitebrowser but apparently it wasnt doinganythingRunning sqlite Historydb through terminal and PRAGMA walcheckpointand then CtrlD like described in the comment here finally ended upworkingconcurrent writesSee httpsgithubcomseanbreckenridgesqliteconcurrentwrites forsome code I used to test concurrent writeslockingtimeouts with sqliteconcurrent readshttpsnewsycombinatorcomitemid32579866 has some cool notes aboutenabling WAL mode to get better concurrent reads main articlehttpsflyioblogsqliteinternalswal"
   },
   {
     "url": "/programming/design/fonts",
