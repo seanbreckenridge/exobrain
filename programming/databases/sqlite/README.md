@@ -10,7 +10,7 @@ Running `sqlite History.db` through terminal and `PRAGMA wal_checkpoint;` and th
 
 ## concurrent writes
 
-See <https://sean.fish/s/OYbh> for some code I used to test concurrent writes/locking/timeouts with sqlite
+See [here](https://sean.fish/s/OYbh) for some code I used to test concurrent writes/locking/timeouts with sqlite
 
 ## concurrent reads
 
