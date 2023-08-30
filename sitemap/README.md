@@ -29,7 +29,7 @@
 * programming/culture/ [How Do Committees Invent, Melvin E. Conway](/programming/culture/how_do_committees_invent/)
 * programming/culture/ [Inner Source](/programming/culture/inner_source/)
 * programming/culture/ [The Programmers's Oath](/programming/culture/programmers_oath/)
-* programming/databases/ [Sqlite](/programming/databases/checkpoints/)
+* programming/databases/ [Sqlite](/programming/databases/sqlite/)
 * programming/design/ [Fonts](/programming/design/fonts/)
 * programming/design/kernighan/ [Designing Programming Languages](/programming/design/kernighan/dsl/)
 * programming/design/kernighan/ [Elements of Programming Style](/programming/design/kernighan/style/)
