@@ -10,10 +10,10 @@ Running `sqlite History.db` through terminal and `PRAGMA wal_checkpoint;` and th
 
 ## concurrent writes
 
-See [here](https://github.com/seanbreckenridge/sqlite_concurrent_writes) for some code I used to test concurrent writes/locking/timeouts with sqlite
+See <https://sean.fish/s/OYbh> for some code I used to test concurrent writes/locking/timeouts with sqlite
 
 ## concurrent reads
 
-[yc post](((((((((https://news.ycombinator.com/item?id=32579866) has some cool notes about enabling WAL mode to get better concurrent reads, main article:
+[yc post](https://news.ycombinator.com/item?id=32579866) has some cool notes about enabling WAL mode to get better concurrent reads, main article:
 
 <https://fly.io/blog/sqlite-internals-wal/>
