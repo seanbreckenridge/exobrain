@@ -14,6 +14,4 @@ See [here](https://sean.fish/s/OYbh) for some code I used to test concurrent wri
 
 ## concurrent reads
 
-[yc post](https://news.ycombinator.com/item?id=32579866) has some cool notes about enabling WAL mode to get better concurrent reads, main article:
-
-<https://fly.io/blog/sqlite-internals-wal/>
+[yc post](https://news.ycombinator.com/item?id=32579866) has some cool notes about enabling WAL mode to get better concurrent reads
