@@ -140,3 +140,23 @@ square = partial(power, exponent=2)
 
 assert square(2) == 4
 ```
+
+<https://www.youtube.com/watch?v=0LPuG825eAk>
+
+pdb notes
+
+- up - goes up a frame
+- down - goes down a frame
+- p - prints a variable
+- pp - pretty prints a variable
+- useful to use `locals()` to see all variables in a frame
+- `list` or `ll` - lists the code around the current line
+- `n` - next line
+- `s` - step into function, if theres a function call on the current line
+- `return` or `r` - returns from the current function, useful in case you just stepped into a function and want to return to the caller
+
+can set `PYTHONBREAKPOINT=0` to disable all breakpoints
+
+If you want to breakpoint when a crash happens in your program, you can use `python3 -m pdb file.py`, then hit `c` to continue. When a fatal error happens, you'll be dropped into the debugger.
+
+If the exception that causes the crash is caught/pretty-printed, you can use `import pdb; pdb.post_mortem()` to drop into the debugger in some higher stack frame.
