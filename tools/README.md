@@ -91,7 +91,7 @@ Others:
 - [`dragon`](https://github.com/mwh/dragon), to be able to dragon and drop items from/to the terminal. Have my [`dragon-sink`](https://sean.fish/d/dragon-sink?redirect) script, which accepts and `cp`/`mv`'s files from applications, and bindings in `ranger` to drag files into my browser. Also use [`draglastpic`](https://sean.fish/d/draglastpic) very often, which lets me drag the latest screenshot to some application
 - [`dust`](https://github.com/bootandy/dust); a fancy du clone
 - [`entr`](https://eradman.com/entrproject/) for lots of small build scripts
-- [`exa`](https://github.com/ogham/exa) aliased to `ls`
+- [`eza`](https://github.com/eza-community/eza) aliased to `ls`
 - [`fd`](https://github.com/sharkdp/fd); a fancy find clone
 - [`fzf`](https://github.com/junegunn/fzf) everywhere, to fuzzy match in shell pipelines
 - [`glow`](https://github.com/charmbracelet/glow) to render markdown in the terminal
