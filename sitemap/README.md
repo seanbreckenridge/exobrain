@@ -2,6 +2,7 @@
 * / [Meta; about my exobrain](/meta/)
 * / [Tools, or how I do everything](/tools/)
 * data/ [Data Exports/GDPR](/data/exports_gdpr/)
+* devlog/ [Opam on Android](/devlog/ocaml_android/)
 * devlog/ [Sonic-Pi](/devlog/sonic_pi/)
 * food/ [Tea](/food/tea/)
 * hobbies/ [Cubing](/hobbies/cubing/)
