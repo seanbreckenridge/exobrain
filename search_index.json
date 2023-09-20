@@ -29,7 +29,7 @@
   },
   {
     "url": "/language/concepts",
-    "text": "Progressive Enhancement  This strategy involves separating thepresentation semantics from the content with presentation beingimplemented in one or more optional layers activated based on aspectsof the browser or Internet connection of the user Could also be appliedto having some base program that has optional dependencies to improveusabilityParkinsons Law is the adage that work expands so as to fill the timeavailable for its completion"
+    "text": "Progressive Enhancement  This strategy involves separating thepresentation semantics from the content with presentation beingimplemented in one or more optional layers activated based on aspectsof the browser or Internet connection of the user Could also be appliedto having some base program that has optional dependencies to improveusabilityParkinsons Law is the adage that work expands so as to fill the timeavailable for its completionfunction coloring  useful concept for describing how syncasyncfunctions infect others In javascript making one async often means youhave to make all of em or use a callback to get around it Somethinglike go with its goroutines completely avoids this  you can call a syncfunction from async or async from sync"
   },
   {
     "url": "/language/english_words",
