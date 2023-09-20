@@ -3,6 +3,8 @@ Title: Opam on Android
 Date: 2023/09/17
 ---
 
+[Related issue on dune](https://github.com/ocaml/dune/issues/8676)
+
 Prereqs:
 
 ```
