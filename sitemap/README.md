@@ -23,6 +23,7 @@
 * programming/ [Encoding](/programming/encoding/)
 * programming/ [FizzBuzz](/programming/fizzbuzz/)
 * programming/ [GameDev](/programming/gamedev/)
+* programming/ [Large Language Models](/programming/llms/)
 * programming/ [Linux Distributions](/programming/distros/)
 * programming/ [Programming Courses](/programming/courses/)
 * programming/cryptography/ [SP Networks - Computerphile](/programming/cryptography/sp_networks/)
