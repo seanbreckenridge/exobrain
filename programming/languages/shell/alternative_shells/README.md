@@ -98,6 +98,8 @@ For CSV/TSV, [`q`](https://github.com/harelba/q) is sort of interesting, lets yo
 
 For larger pipelines, [`riko`](https://github.com/nerevu/riko) tries to model Yahoo! Pipes
 
+[babashka](https://github.com/babashka/babashka) (native, fast starting clojure interpreter) could be nice, has a whole ecosystem for common problems and is meant for scripts. Is also functional, which is nice for pipes etc...
+
 TODO: Is something to be said about writing a full shell-like lisp language, because shells are hacky and writing languages is fun, but thats a whole nother project on its own :)
 
 <https://ngs-lang.org/> looks interesting: `One way to think about NGS is bash plus data structures plus better syntax and error handling.` It has lots of utility functions and is fast at dealing with streams of data. Looks like an `awk` for the modern times. [Examples](https://ngs-lang.org/doc/latest/man/ngstut.1.html). Might be nice to use instead of a complex `jq`/`gron`/`grep`/`cut`. Agree with a lot of the problems laid out in [this blog post](https://ilya-sher.org/2017/07/07/why-next-generation-shell/). Of all the tools on this page, highest chance of me using this.
