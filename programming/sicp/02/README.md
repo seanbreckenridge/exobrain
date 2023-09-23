@@ -29,7 +29,7 @@ Lambdas exist in scheme (obviously):
 
 That way, `a` is defined in the body of `b`.
 
-Since you typically can't refer to the names of procedures in the body in `let` statements, that makes recursive function definitions not possible. Theres another variant of `let` called `letrect`, which lets you do that.
+Since you typically can't refer to the names of procedures in the body in `let` statements, that makes recursive function definitions not possible. There's another variant of `let` called `letrect`, which lets you do that.
 
 'Higher Order' means:
 
@@ -49,7 +49,7 @@ Widespread use of first class types:
 - Basically every language supports numbers as first class.
 - Character/Strings are sometimes first class (e.g. not in C).
 - Data aggregates are rarely first class (you typically get a pointer to the data structure)
-- Not many languages gives you functions as first class, though thats changing with newer languages.
+- Not many languages gives you functions as first class, though that's changing with newer languages.
 
 ### Procedures as Returned values:
 

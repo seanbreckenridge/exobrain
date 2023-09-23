@@ -6,7 +6,7 @@ To learn branching, see [learngitbranching.com](https://learngitbranching.js.org
 
 `git commit -p` lets you do hunk-based commits, sort of like running lots of `--patch`es.
 
-`git stash` acts like a stack, `apply` applies changes from the top of the stack but doesnt remove, `pop` applies and removes.
+`git stash` acts like a stack, `apply` applies changes from the top of the stack but doesn't remove, `pop` applies and removes.
 
 # Git
 
@@ -27,7 +27,7 @@ To learn branching, see [learngitbranching.com](https://learngitbranching.js.org
 
 `git rm <filename>` -- this also removes the file
 
-`git rm --cached <filename>` -- doesnt remove file
+`git rm --cached <filename>` -- doesn't remove file
 
 ### HEAD
 
@@ -67,7 +67,7 @@ Works as a stack:
 - second stashed changes
 - first stashed changes
 
-`git stash pop` would remove 'third stashed changes', and apply the changes to the current index. Then, `git stash pop` again would apply the second stashed index. `git stash apply` is like pop, it applies whats at the top of the stack to the index, but it doesnt remove the item from the top of the stack.
+`git stash pop` would remove 'third stashed changes', and apply the changes to the current index. Then, `git stash pop` again would apply the second stashed index. `git stash apply` is like pop, it applies what's at the top of the stack to the index, but it doesn't remove the item from the top of the stack.
 
 `git stash branch` creates a new branch from the context of when you did `git stash`
 

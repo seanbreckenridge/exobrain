@@ -38,7 +38,7 @@ There are other helper methods (e.g. `list` or `append`)
 (1 3)
 ```
 
-`At the heart of each programming language theres a lisp interpreter trying to get out`
+`At the heart of each programming language there's a lisp interpreter trying to get out`
 
 - Syntax - how your language is written, e.g. semicolons, parenthesis, brackets
 - Semantics - what the semicolons/brackets mean

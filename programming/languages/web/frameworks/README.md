@@ -9,7 +9,7 @@ Title: CSS/JS Frameworks
   - Bundling:
     - [`babel`](https://babeljs.io/) - transcompile JS to older version of JS. (ES6 -> back)
     - [`webpack`](https://webpack.js.org/) - bundler
-    - [`parcel`](https://parceljs.org/) - fatser, webpack alternative (less supported though)
+    - [`parcel`](https://parceljs.org/) - faster, webpack alternative (less supported though)
   - Frameworks
     - [`React`](https://reactjs.org/) (Largest community support, which is nice)
       - [`Next.js`](https://nextjs.org/) - React based, (can handle frontend/backend). Isn't as mature, but nice for basic routing on SSGs.

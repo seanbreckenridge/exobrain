@@ -23,7 +23,7 @@ Granularly:
 
 For anyone who is serious about exploring media, online databases are impractical to avoid. You're either going to be using one (and perhaps contributing back to one), or using the metadata from one to create your local index of media to check out based on different creators/genres/rankings.
 
-Unfortunately, databases by the nature catalogue a specific thing, and there will always be media that lie in the between the focus of those databases. Exclusively using one site means you miss out on media, using multiple sites means theres overlap and its not clear whether to log entries on one place/everywhere (possibly to gain recommendations on one site). Using your own local system means theres no restrictions on what is allowed, but that means _theres no restrictions on what is allowed_. You have to personally impose rules, else you risk your system becoming too disorganized to function.
+Unfortunately, databases by the nature catalogue a specific thing, and there will always be media that lie in the between the focus of those databases. Exclusively using one site means you miss out on media, using multiple sites means there's overlap and its not clear whether to log entries on one place/everywhere (possibly to gain recommendations on one site). Using your own local system means there's no restrictions on what is allowed, but that means _theres no restrictions on what is allowed_. You have to personally impose rules, else you risk your system becoming too disorganized to function.
 
 ## Reasons to not use online databases:
 
@@ -36,7 +36,7 @@ Unfortunately, databases by the nature catalogue a specific thing, and there wil
 
 ## Using a personal system (like CSV/google sheets)
 
-- If no metadata, cant do fun things like:
+- If no metadata, can't do fun things like:
   - query by genre
   - connect by people who worked on two projects
   - anything else metadata and an RDMBS lets you do

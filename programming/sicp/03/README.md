@@ -12,7 +12,7 @@ Different types of recursion:
 
 ### Linear Recursive Process
 
-The type of recursion often used in math definitions is done by expanding a bunch of 'deferred operations'. Then, once you hit the base case, values start to be returned, and you pop values off the stack applying some function to the value thats getting accumulated and calculated in the expression that is the return value.
+The type of recursion often used in math definitions is done by expanding a bunch of 'deferred operations'. Then, once you hit the base case, values start to be returned, and you pop values off the stack applying some function to the value that's getting accumulated and calculated in the expression that is the return value.
 
 As an example:
 

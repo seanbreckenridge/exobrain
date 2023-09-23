@@ -95,4 +95,4 @@ Specifying types as towers reduces the amount of type coercions you have to defi
 
 #### Inadequacies of hierarchies
 
-If your type system isn't a tower, but rather is a `graph`, where types are much more complex, a type might have multiple super types. So theres multiple ways to "raise" a type. How to implement a type system which can resolve raising types while allowing modularity is still an area of research.
+If your type system isn't a tower, but rather is a `graph`, where types are much more complex, a type might have multiple super types. So there's multiple ways to "raise" a type. How to implement a type system which can resolve raising types while allowing modularity is still an area of research.

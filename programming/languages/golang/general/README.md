@@ -6,4 +6,4 @@ Title: General Golang Notes
 
 `syscall.Exec` is analogous to the `exec`, replaces current PID/memory etc.
 
-Theres almost no reason to use arrays over slices. Slices are very low cost and they let you have more flexible types, and switch on types at runtime using interfaces.
+There's almost no reason to use arrays over slices. Slices are very low cost and they let you have more flexible types, and switch on types at runtime using interfaces.

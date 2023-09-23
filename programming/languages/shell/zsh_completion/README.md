@@ -10,7 +10,7 @@ compdef _gnu_generic my_command ls youtube-dl
 
 Sometimes if the `--help` description is multiple lines, it doesn't include the entire description or may break.
 
-Theres a similar command in bash; `complete -F _longopt my_command`
+There's a similar command in bash; `complete -F _longopt my_command`
 
 [This Tutorial](https://github.com/zsh-users/zsh-completions/blob/master/zsh-completions-howto.org), and the corresponding [zsh-completions](https://github.com/zsh-users/zsh-completions) is great for learning how to do zsh completion.
 

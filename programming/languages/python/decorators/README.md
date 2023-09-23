@@ -152,7 +152,7 @@ pdb notes
 - useful to use `locals()` to see all variables in a frame
 - `list` or `ll` - lists the code around the current line
 - `n` - next line
-- `s` - step into function, if theres a function call on the current line
+- `s` - step into function, if there's a function call on the current line
 - `return` or `r` - returns from the current function, useful in case you just stepped into a function and want to return to the caller
 
 can set `PYTHONBREAKPOINT=0` to disable all breakpoints

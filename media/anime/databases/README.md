@@ -6,7 +6,7 @@ For general thoughts on online databases, see [online databases](/media/online_d
 
 ### MAL?
 
-Though theres downtime, the site/API was down for months and due to the owners changing, always feels like third party developers aren't a priority, [MyAnimeList](https://myanimelist.net) (MAL) has the most history, experienced users and entries (most entries is a big factor for me). Some of the more recent sites (e.g. [AniList](https://anilist.co/)) started off by taking MALs data, often mapping IDs one-to-one. Having lots of users also means sources for obscure entries might be listed in the forums for each entry.
+Though there's downtime, the site/API was down for months and due to the owners changing, always feels like third party developers aren't a priority, [MyAnimeList](https://myanimelist.net) (MAL) has the most history, experienced users and entries (most entries is a big factor for me). Some of the more recent sites (e.g. [AniList](https://anilist.co/)) started off by taking MALs data, often mapping IDs one-to-one. Having lots of users also means sources for obscure entries might be listed in the forums for each entry.
 
 Since 2015, I've spent _a lot_ of time watching anime. Less recently, because I've somewhat exhausted all the things I'm interested in. I used [`MAL`](https://myanimelist.net) as a database of sorts:
 
@@ -20,7 +20,7 @@ Since 2015, I've spent _a lot_ of time watching anime. Less recently, because I'
 
 ![Stats on MAL](https://i.imgur.com/Ra4w9qH.png)
 
-(So, at the time of writing this, theres 12286 entries that I've tried and dropped, or otherwise categorized into 'not interested in')
+(So, at the time of writing this, there's 12286 entries that I've tried and dropped, or otherwise categorized into 'not interested in')
 
 There was a point in early 2017 where I had watched every music video/short film on MAL, and there wasn't what I considered to be a comprehensive list, so I ended up creating [a list of my favorites](https://sean.fish/animeshorts/).
 
@@ -40,7 +40,7 @@ Currently, its quite frustrating to maintain projects that depend on Jikan/MAL, 
 
 Though, If one is submitting new entries to one of the databases, though the site isn't the best, you're better off submitting entries to MAL, because the other sites _know_ that MAL has the most entries and they all copy data/source entries from it. You improve most of sites by submitting to MAL, while it can sometimes feel like you're wasting time submitting entries to other sites that might not have as much reach.
 
-[AniList](https://anilist.co/) looks much nicer from a developers point of view, being Graphql, with owners/leads who communicate much more frequently. However, there are concerns with managing a large list with their API; theres a limit to how many can be shown on their web interface, and I [cant really import my list](https://anilist.co/forum/thread/33798)
+[AniList](https://anilist.co/) looks much nicer from a developers point of view, being Graphql, with owners/leads who communicate much more frequently. However, there are concerns with managing a large list with their API; there's a limit to how many can be shown on their web interface, and I [can't really import my list](https://anilist.co/forum/thread/33798)
 
 [Kitsu](https://kitsu.io) is another option but its just not as complete/also suffers from occasional downtime
 

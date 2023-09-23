@@ -33,5 +33,5 @@ Title: Resume
 ### Job Hopping
 
 - In general, in CS, if you want more money, get a new job.
-- Should probably job hop early in career because thats how you increase salary. After you get to a certain age should probably look for a more established company that you plan to retire with. Maybe this won't be an issue when I'm older, since 'new generation' HR may not care as much about this.
+- Should probably job hop early in career because that's how you increase salary. After you get to a certain age should probably look for a more established company that you plan to retire with. Maybe this won't be an issue when I'm older, since 'new generation' HR may not care as much about this.
 - Should probably stay at a job for at least a year before leaving, else it looks sort of bad.

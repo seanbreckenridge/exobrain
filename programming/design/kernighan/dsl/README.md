@@ -65,7 +65,7 @@ The last part of AMPL was how you'd run it, the command language (i.e. the CLI i
 Whether or not a DSL needs all of these (or how complicated/strict they should be) should be considered.
 
 - If something doesn't need a way to describe a problem (the model), and just data and the CLI, it shouldn't have an unnecessary model that adds to familiarization time.
-- If you can re-use an existing data specification (e.g. JSON/CSV for structured/tabular data), that cuts down on the barrier to entry. Though, this shouldn't always be done, as you may be trying to squish an already existing data specification into a place it doesn't belong.
+- If you can reuse an existing data specification (e.g. JSON/CSV for structured/tabular data), that cuts down on the barrier to entry. Though, this shouldn't always be done, as you may be trying to squish an already existing data specification into a place it doesn't belong.
 - Maybe that command interface could be replaced/simplified into a couple CLI flags/arguments, instead of REPL/command language, like many unix tools are (like grep/sed)
 
 ---

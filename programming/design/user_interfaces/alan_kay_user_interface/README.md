@@ -2,7 +2,7 @@
 Title: Alan Kay, User Interface Design
 ---
 
-Was exposed to this through the Berkley SICP course, Lectures 5 & 6.
+Was exposed to this through the Berkeley SICP course, Lectures 5 & 6.
 
 Alan Kay was one of the researchers at Xerox Parc, who helped develop the GUI windowing system that every OS uses today.
 
@@ -20,7 +20,7 @@ Sadly teenagers after often taught Math/physics through the Facts/Logic paradigm
 
 ### Tim Galleway - Inner Game of Tennis
 
-If you don't have a good theory of learning, you can still help people learn by making them focus, by removing interference. Thats often done through by something not in the Facts/Logic part of your brain. By giving someone something physical to do or say, you remove the barrier of thinking about how to do something.
+If you don't have a good theory of learning, you can still help people learn by making them focus, by removing interference. That's often done through by something not in the Facts/Logic part of your brain. By giving someone something physical to do or say, you remove the barrier of thinking about how to do something.
 
 The part of the body that you want to have learn don't understand English, they are visceral and understand by muscle memory.
 
@@ -51,11 +51,11 @@ The Ideal is 'what would a computer be like if it was a pencil'. Getting a user 
 
 The windowing system came and was solidified from lots of iteration and studying how children `<5` would try and interact with systems like these.
 
-The challenge is to make a system thats easy to use for anyone, but easy to extend for people who want to.
+The challenge is to make a system that's easy to use for anyone, but easy to extend for people who want to.
 
 ### Complexity Scaling
 
-In older systems like Unix/MS-DOS, to be able to accomplish anything, you had to read a manual, and figure out how the prompt worked, and theres lots of internal details one has to be aware of. As you start to do things that aren't anticipated, the amount of things you have to know increases gradually. If you already known the syntax of a command at the prompt, writing a shell script to put tasks after one another isn't that complicated.
+In older systems like Unix/MS-DOS, to be able to accomplish anything, you had to read a manual, and figure out how the prompt worked, and there's lots of internal details one has to be aware of. As you start to do things that aren't anticipated, the amount of things you have to know increases gradually. If you already known the syntax of a command at the prompt, writing a shell script to put tasks after one another isn't that complicated.
 
 ![y-axis: wizardlyness; x-axis: complexity of task](images/unix.png)
 

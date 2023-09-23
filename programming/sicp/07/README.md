@@ -49,7 +49,7 @@ The Message Paradigm for smalltalk was inspired by Simula, which had solved this
 In smalltalk:
 
 ```
-<recevier> <message>
+<receiver> <message>
 a size
 a size + 5
 ```

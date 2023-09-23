@@ -137,7 +137,7 @@ For the example: `(+ (* 5 3) (* 5 3))`
 
 Applicative-Order would evaluate `(* 5 3)` twice, separately, and then evaluate the resulting (+ 15 15), while Applicative-Order would evaluate the first `(* 5 3)` and then substitute the result from the first to the second. This avoids multiple evaluations of the same expression, and is what Lisp uses.
 
-The difference between normal and applicative order doesn't make a lot of difference when youre procedure is a function (always give the same result), but the "expanding" means that argument expressions are substituted in subexpressions instead of the resulting value.
+The difference between normal and applicative order doesn't make a lot of difference when your procedure is a function (always give the same result), but the "expanding" means that argument expressions are substituted in subexpressions instead of the resulting value.
 
 For example, if you had:
 
@@ -231,4 +231,4 @@ Examples:
 (or (x < 5) (x > 10))` == `(and (x >= 5) (x <= 10))
 ```
 
-Procedures `bind` their variables to locally scoped `bound variables`. Globally bound variables that arent bound by a procedure definition are known as `free` variables (lots of keywords and other procedure names are `free`).
+Procedures `bind` their variables to locally scoped `bound variables`. Globally bound variables that aren't bound by a procedure definition are known as `free` variables (lots of keywords and other procedure names are `free`).

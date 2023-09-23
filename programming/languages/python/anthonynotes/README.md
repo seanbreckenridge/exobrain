@@ -10,7 +10,7 @@ Use `python3 -m a.main` when invoking scripts as it handles `PYTHONPATH` better
 
 <https://www.youtube.com/watch?v=ABJvdsIANds>
 
-Dont use `urlparse`, use `urlsplit` as it is doesnt use the archaic params field (so it has a splight perf cost)
+Dont use `urlparse`, use `urlsplit` as it is doesn't use the archaic params field (so it has a splight perf cost)
 
 <https://www.youtube.com/watch?v=jH39c5-y6kg>
 
@@ -24,7 +24,7 @@ Dont use `localhost`, use `127.0.0.1`. It prevents the `/etc/hosts` lookup, and 
 
 <https://www.youtube.com/watch?v=eF6qpdIY7Ko>
 
-More interesting but I dont know If Id have a usecase for pushd/popd. It is cool to know theres a stack behind `cd`, but if I ever want to change directories, I'll do a subshell instead:
+More interesting but I dont know If Id have a usecase for pushd/popd. It is cool to know there's a stack behind `cd`, but if I ever want to change directories, I'll do a subshell instead:
 
 ```
 # stuff in one directory

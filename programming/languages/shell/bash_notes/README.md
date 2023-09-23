@@ -104,11 +104,11 @@ setup() {
 if setup; then
   echo worked
 else
-  echo didnt work
+  echo didn't work
 fi
 ```
 
-The above prints `didnt work`
+The above prints `didn't work`
 
 #### Early Exit
 
@@ -233,7 +233,7 @@ For regex:
 ```bash
 # this matches
 [[ "filename" == f* ]]
-# this doesnt
+# this doesn't
 [[ "filename" == "f*" ]]
 ```
 
@@ -317,7 +317,7 @@ my_variable='something'
 command | while read -r line; do
   my_variable+="${line}\n"
 done
-echo "$my_variable"  # prints 'something', wasnt modified in loop
+echo "$my_variable"  # prints 'something', wasn't modified in loop
 ```
 
 _Do this instead:_
@@ -457,7 +457,7 @@ Instead of explicitly checking `$?` to check the error code, you can use an if s
 
 ```bash
 if ! mv "$something" "$somewhere"; then
-  echo "Error, couldnt move ${something}"
+  echo "Error, couldn't move ${something}"
   exit 1
 fi
 
@@ -564,7 +564,7 @@ Removal from right edge
 - `${param%pattern}`
 - `${param%%pattern}`
 
-Can search the env for names matching something (this parameter expansion doesnt work in `zsh`):
+Can search the env for names matching something (this parameter expansion doesn't work in `zsh`):
 
 ```bash
 $ echo "${!XDG_@}"

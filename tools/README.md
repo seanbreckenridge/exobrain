@@ -51,7 +51,7 @@ For more, see [my github stars](https://github.com/seanbreckenridge?direction=de
 - Backups: [SyncThing](https://github.com/syncthing/syncthing) to Sync important directories across all my computers, and to my NAS
 - Todo list: [`todotxt`](http://todotxt.org/) for todos, with a [rofi interface](https://sean.fish/d/todo-prompt?redirect) as GUI, and [TUI](https://github.com/seanbreckenridge/full_todotxt) for adding todos. The TUI I wrote forces me to specify a `deadline` for each todo, which I then get notified by [a process that runs on my server](https://github.com/seanbreckenridge/todotxt_deadline_notify)
 - Calendar: [`calcurse`](https://github.com/lfos/calcurse) as a calendar, with my [`calcurse-load`](https://github.com/seanbreckenridge/calcurse-load) hooks to add Google Calendar and `todo.txt` to calcurse automatically
-- File Manger: a heavily customized [`ranger`](https://github.com/ranger/ranger) . See [`rifle.conf`](https://sean.fish/d/rifle.conf?redirect) (file handler) and [`scope.sh`](https://sean.fish/d/scope.sh?redirect) (previewer)
+- File Manager: a heavily customized [`ranger`](https://github.com/ranger/ranger) . See [`rifle.conf`](https://sean.fish/d/rifle.conf?redirect) (file handler) and [`scope.sh`](https://sean.fish/d/scope.sh?redirect) (previewer)
 - Task Scheduler: bash script ([`bgproc`](https://github.com/seanbreckenridge/bgproc)) with an infinite loop which runs in the background instead of `cron` (uses my [`evry`](https://github.com/seanbreckenridge/evry) tool to schedule tasks)
 
 ### Media
@@ -114,7 +114,7 @@ Others:
 - [`dex`](https://github.com/jceb/dex) to open `.desktop` files
 - [`dunk`](https://github.com/darrenburns/dunk), for nicer git diffs in the terminal
 - [`figlet`](http://www.figlet.org/) to print large letters
-- [`gron`](https://github.com/tomnomnom/gron) when I cant be bothered to use `jq`
+- [`gron`](https://github.com/tomnomnom/gron) when I can't be bothered to use `jq`
 - [`jpegtran`](http://jpegclub.org/jpegtran/) to compress JPEG files
 - [`ldm`](https://github.com/LemonBoy/ldm), to do basic drive mounting for external drives/USBs
 - [`linkcheck`](https://github.com/filiph/linkcheck) to check for broken links on websites

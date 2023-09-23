@@ -28,13 +28,13 @@ Unless something like `Oil` comes about which has full POSIX support, but also a
 
 ### Improving Pipelines
 
-Disregarding portability, I still think there could be tools to make shell-like code better. `bash` isn't great at processing text, so thats why tools like `awk`/`sed` are used. Learning how `IFS`, arrays and loops (word/line splitting) work in `bash` does help a lot, but theres still times where things feels like a hack (e.g. using [`curl` and checking HTTP codes](https://superuser.com/questions/272265/getting-curl-to-output-http-status-code)).
+Disregarding portability, I still think there could be tools to make shell-like code better. `bash` isn't great at processing text, so that's why tools like `awk`/`sed` are used. Learning how `IFS`, arrays and loops (word/line splitting) work in `bash` does help a lot, but there's still times where things feels like a hack (e.g. using [`curl` and checking HTTP codes](https://superuser.com/questions/272265/getting-curl-to-output-http-status-code)).
 
-Currently, what I typically do is just write another tool/create an `alias` with 5 pipelines, with heavy use of `sed`/`awk`/`xargs`. Thats _okay_ for me, but it isn't readable, and it's not great to debug/modify.
+Currently, what I typically do is just write another tool/create an `alias` with 5 pipelines, with heavy use of `sed`/`awk`/`xargs`. That's _okay_ for me, but it isn't readable, and it's not great to debug/modify.
 
 On a related note, `curl | jq` to get some basic interaction with JSON APIs is great, but at some point when you're dealing with structured data and doing conditional logic based on it, trying to store individual list items in shell/`bash` variables gets to be really confusing. Associative arrays and arrays _can_ work, but it gets to be very unreadable, and you have no type safety/error checking. I tend to fall back to python in situations like that.
 
-So, at some point it may make sense to fall back onto (for a script)/call out to (for command line pipelines) other interpreted languages (like `python`/`ruby`), but thats typically a _noticeable_ drop in speed; I do value the speed of the shell (don't think I'd use [`xonsh`](https://xon.sh/index.html) interactively, though it does look cool) and using minimal tools like `curl`/`jq`.
+So, at some point it may make sense to fall back onto (for a script)/call out to (for command line pipelines) other interpreted languages (like `python`/`ruby`), but that's typically a _noticeable_ drop in speed; I do value the speed of the shell (don't think I'd use [`xonsh`](https://xon.sh/index.html) interactively, though it does look cool) and using minimal tools like `curl`/`jq`.
 
 On one hand, if there was a nicer, extendible DSL like [`mario`](https://github.com/python-mario/mario) (but written in something faster than `python`, and didn't require me to use `pipx` to run it from a virtual environment) which supported:
 
@@ -75,9 +75,9 @@ But! I'm not totally satisfied with that, and I wish there was a better way!
 
 The More I think about this, more likely me writing the tool isn't going to be a thing
 
-I think theres a possibility to write something in a fast language, like `rust` to do this.
+I think there's a possibility to write something in a fast language, like `rust` to do this.
 
-It would be similar to mario, but the ability to write 'arbitrary' functions wouldn't be as possible. Theres an argument to be made to use perl instead, since thats sort of what perl was made for, but _aesthetically_, I don't like the syntax of perl, and doing more complicated stream processing like jq/awk/async curl-ing isn't possible.
+It would be similar to mario, but the ability to write 'arbitrary' functions wouldn't be as possible. There's an argument to be made to use perl instead, since that's sort of what perl was made for, but _aesthetically_, I don't like the syntax of perl, and doing more complicated stream processing like jq/awk/async curl-ing isn't possible.
 
 Things that this _WOULDNT_ support, because good tools already exist:
 
@@ -98,9 +98,9 @@ For CSV/TSV, [`q`](https://github.com/harelba/q) is sort of interesting, lets yo
 
 For larger pipelines, [`riko`](https://github.com/nerevu/riko) tries to model Yahoo! Pipes
 
-[babashka](https://github.com/babashka/babashka) (native, fast starting clojure interpreter) could be nice, has a whole ecosystem for common problems and is meant for scripts. Is also functional, which is nice for pipes etc. Only thing thats really stopping me from using it is not sure how to get it to work on termux, and if I was gonna invest time I'd want to be able to use all my scripts on my phone. could [see here](https://github.com/babashka/babashka/issues/241#issuecomment-763976749)?
+[babashka](https://github.com/babashka/babashka) (native, fast starting clojure interpreter) could be nice, has a whole ecosystem for common problems and is meant for scripts. Is also functional, which is nice for pipes etc. Only thing that's really stopping me from using it is not sure how to get it to work on termux, and if I was gonna invest time I'd want to be able to use all my scripts on my phone. could [see here](https://github.com/babashka/babashka/issues/241#issuecomment-763976749)?
 
-TODO: Is something to be said about writing a full shell-like lisp language, because shells are hacky and writing languages is fun, but thats a whole nother project on its own :)
+TODO: Is something to be said about writing a full shell-like lisp language, because shells are hacky and writing languages is fun, but that's a whole nother project on its own :)
 
 <https://ngs-lang.org/> looks interesting: `One way to think about NGS is bash plus data structures plus better syntax and error handling.` It has lots of utility functions and is fast at dealing with streams of data. Looks like an `awk` for the modern times. [Examples](https://ngs-lang.org/doc/latest/man/ngstut.1.html). Might be nice to use instead of a complex `jq`/`gron`/`grep`/`cut`. Agree with a lot of the problems laid out in [this blog post](https://ilya-sher.org/2017/07/07/why-next-generation-shell/). Of all the tools on this page, highest chance of me using this.
 

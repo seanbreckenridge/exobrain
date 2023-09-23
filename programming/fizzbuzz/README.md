@@ -33,4 +33,4 @@ else
 
 In general, the `CheckTwice` approach does an additional calculation, and is harder to extend/add more cases for. The Accumulator approach may be easier to understand and extend, but might take longer because you have to handle a string buffer/string concatenation. `CheckTwice` is also functional, if that matters. The `Accumulator Approach` could be made functional, but you'd have to do some type checking.
 
-Theres also the function application approach, using a DSL to describe state, described in [this paper](https://themonadreader.files.wordpress.com/2014/04/fizzbuzz.pdf)
+There's also the function application approach, using a DSL to describe state, described in [this paper](https://themonadreader.files.wordpress.com/2014/04/fizzbuzz.pdf)

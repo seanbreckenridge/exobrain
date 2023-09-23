@@ -15,7 +15,7 @@ These are other sites/blogs/things I'm a fan of. Inspired by [superhighway98](ht
 - [Everything I know](https://wiki.nikitavoloboev.xyz/) (Nikita Voloboev)
 - [learn-anything.xyz](https://learn-anything.xyz/)
 
-Theres also a few lists of these personal wikis, see [here](https://github.com/lyz-code/best-of-digital-gardens)
+There's also a few lists of these personal wikis, see [here](https://github.com/lyz-code/best-of-digital-gardens)
 
 ## Tools/Security
 
