@@ -30,7 +30,7 @@
 
     resultDiv.onmouseup = function (a) {
       if (a.ctrlKey || a.metaKey || a.button == 4) {
-        a.preventDefault(); // prevent middle click from opening tab, so it doesnt open twice.
+        a.preventDefault(); // prevent middle click from opening tab, so it doesn't open twice.
         window.open(url, "_blank"); // new tab
       } else {
         window.location = url;
@@ -56,7 +56,7 @@
     keys: ["url", "text"],
   };
 
-  // globla references
+  // global references
   let searchField = document.getElementById("search");
   let searchDiv = document.getElementById("searchresults");
 
