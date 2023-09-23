@@ -109,6 +109,7 @@ Others:
 ### Other CLI Tools I use less often
 
 - [`boxes`](https://boxes.thomasjensen.com/) to print fancy boxes in the terminal
+- [`codepsell`](https://github.com/codespell-project/codespell) to correct common misspellings in code
 - [`chafa`](https://github.com/hpjansson/chafa/) to print gifs in terminal
 - [`dex`](https://github.com/jceb/dex) to open `.desktop` files
 - [`dunk`](https://github.com/darrenburns/dunk), for nicer git diffs in the terminal
@@ -118,7 +119,6 @@ Others:
 - [`ldm`](https://github.com/LemonBoy/ldm), to do basic drive mounting for external drives/USBs
 - [`linkcheck`](https://github.com/filiph/linkcheck) to check for broken links on websites
 - [`lorem`](https://github.com/jamen/lorem) to create a bunch of lorem-ipsum
-- [`misspell`](https://github.com/client9/misspell) corrects commonly misspelled words; my [`misspell-context`](https://sean.fish/d/misspell-context?redirect) script to give mistakes in context
 - [`ncdu`](https://dev.yorhel.nl/ncdu) to preview disk space interactively
 - [`optipng`](http://optipng.sourceforge.net/) to compress PNG files
 - [`pastel`](https://github.com/sharkdp/pastel) to generate/pick color schemes/hex codes from the terminal
