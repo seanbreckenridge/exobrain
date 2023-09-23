@@ -98,7 +98,7 @@ For CSV/TSV, [`q`](https://github.com/harelba/q) is sort of interesting, lets yo
 
 For larger pipelines, [`riko`](https://github.com/nerevu/riko) tries to model Yahoo! Pipes
 
-[babashka](https://github.com/babashka/babashka) (native, fast starting clojure interpreter) could be nice, has a whole ecosystem for common problems and is meant for scripts. Is also functional, which is nice for pipes etc. Only thing thats really stopping me from using it is not sure how to get it to work on termux, and if I was gonna invest time I'd want to be able to use all my scripts on my phone
+[babashka](https://github.com/babashka/babashka) (native, fast starting clojure interpreter) could be nice, has a whole ecosystem for common problems and is meant for scripts. Is also functional, which is nice for pipes etc. Only thing thats really stopping me from using it is not sure how to get it to work on termux, and if I was gonna invest time I'd want to be able to use all my scripts on my phone. could [see here](https://github.com/babashka/babashka/issues/241#issuecomment-763976749)?
 
 TODO: Is something to be said about writing a full shell-like lisp language, because shells are hacky and writing languages is fun, but thats a whole nother project on its own :)
 
