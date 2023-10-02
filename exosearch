@@ -61,7 +61,7 @@ run_search() {
 
 if ((OPEN_URL)); then
 	# my cross-platform open url/clipboard/notification scripts
-	# https://github.com/seanbreckenridge/core
+	# https://github.com/seanbreckenridge/seanb-utils
 	# https://sean.fish/d/clp-args?dark
 	HAS_SCRIPTS=1
 	havecmd openurl && havecmd clp-args && havecmd notify || {

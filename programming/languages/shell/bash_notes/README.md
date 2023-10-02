@@ -30,7 +30,7 @@ As an example, to prompt me to select something:
 pick='fzf'
 # if run from rofi/i3, use picker instead
 if [[ "$(tty)" = "not a tty" ]]; then
-    # https://github.com/seanbreckenridge/core/blob/main/shellscripts/picker
+    # https://github.com/seanbreckenridge/seanb-utils/blob/main/shellscripts/picker
 	pick='picker'
 fi
 

@@ -6,7 +6,7 @@ This is an extension of my [`dotfiles`](https://github.com/seanbreckenridge/dotf
 
 This is an ever evolving list of tools and scripts I use and recommend, or combinations of tools I use to optimize my workflow.
 
-Most of these are command line based, I wrap a lot of them in scripts [here](https://github.com/seanbreckenridge/dotfiles/tree/master/.local/scripts) and in my [`core`](https://github.com/seanbreckenridge/core) scripts repo
+Most of these are command line based, I wrap a lot of them in scripts [here](https://github.com/seanbreckenridge/dotfiles/tree/master/.local/scripts) and in my [`seanb-utils`](https://github.com/seanbreckenridge/seanb-utils) scripts repo
 
 For more, see [my github stars](https://github.com/seanbreckenridge?direction=desc&sort=stars&tab=stars)
 
@@ -27,7 +27,7 @@ For more, see [my github stars](https://github.com/seanbreckenridge?direction=de
   - [`autotiling`](https://github.com/nwg-piotr/autotiling) for automatic tiling
   - [`redshift`](http://jonls.dk/redshift/) to adjust color temperature
 - Mac
-  - I use [`skhd`](https://github.com/koekeishiya/skhd) as a hotkey daemon. My dotfiles are cross-platform, lots of scripts in [`cross-platform`](https://github.com/seanbreckenridge/core#script-index) that handle switching on the OS to call out to platform-specific behavior (sending notifications, clipboard management, asking for user input)
+  - I use [`skhd`](https://github.com/koekeishiya/skhd) as a hotkey daemon. My dotfiles are cross-platform, lots of scripts in [`cross-platform`](https://github.com/seanbreckenridge/seanb-utils#script-index) that handle switching on the OS to call out to platform-specific behavior (sending notifications, clipboard management, asking for user input)
 - Android (using [termux](https://termux.dev/en/))
 
 ### Browsers
@@ -56,13 +56,13 @@ For more, see [my github stars](https://github.com/seanbreckenridge?direction=de
 
 ### Media
 
-- `mpv` to listen/watch media in general, integrated with my file manager ([ranger](https://github.com/ranger/ranger))/playlist manager and just through a basic [`list-music`](https://github.com/seanbreckenridge/core/blob/main/shellscripts/list-music)/[`play-music`](https://sean.fish/d/play-music?dark) script from the terminal
+- `mpv` to listen/watch media in general, integrated with my file manager ([ranger](https://github.com/ranger/ranger))/playlist manager and just through a basic [`list-music`](https://github.com/seanbreckenridge/seanb-utils/blob/main/shellscripts/list-music)/[`play-music`](https://sean.fish/d/play-music?dark) script from the terminal
 - Music:
   - [`beets`](https://github.com/beetbox/beets) to organize/tag my music; [config file](https://sean.fish/d/.config/beets/config.yaml?redirect)
   - my `bash` [terminal playlist manager](https://github.com/seanbreckenridge/plaintext-playlist) using `fzf`/`mpv` to store playlists for local music in local text files
 - Images/Video:
   - For basic image cropping, I use [`pinta`](https://www.pinta-project.com/) (should probably learn gimp but Ive never had the need).
-  - For general image manipulation tasks I create lots of small [`imagemagick`](https://imagemagick.org/index.php) scripts to do random resizes/converts. I have a larger script to [convert videos to gifs](https://github.com/seanbreckenridge/core/blob/main/shellscripts/gifme), and use [`gifsicle`](https://github.com/kohler/gifsicle) for manipulating gifs
+  - For general image manipulation tasks I create lots of small [`imagemagick`](https://imagemagick.org/index.php) scripts to do random resizes/converts. I have a larger script to [convert videos to gifs](https://github.com/seanbreckenridge/seanb-utils/blob/main/shellscripts/gifme), and use [`gifsicle`](https://github.com/kohler/gifsicle) for manipulating gifs
   - Lots of small [`ffmpeg`](https://ffmpeg.org/) scripts to convert between video formats.
   - For trimming video, I use an [edited version](https://sean.fish/d/slicing.lua?redirect) of [this](https://github.com/Kagami/mpv_slicing) mpv plugin
 
@@ -135,7 +135,7 @@ Others:
 - [`up`](https://github.com/akavel/up) - to interactively explore/pipe text data. Especially useful when doing data wrangling, like when using tools like `jq`/`grep`/`cut` to extract some information from a data source
 - [`whiptail`](https://en.wikibooks.org/wiki/Bash_Shell_Scripting/Whiptail) (libnewt) for fancy dialog prompts in scripts
 - [`moby`](https://github.com/words/moby) as a thesaurus
-- [`ix`](https://github.com/seanbreckenridge/core/blob/main/shellscripts/ix) to create pastebin links from the command line
+- [`ix`](https://github.com/seanbreckenridge/seanb-utils/blob/main/shellscripts/ix) to create pastebin links from the command line
 - [`wuzz`](https://github.com/asciimoo/wuzz), a postman-like CLI application
 
 ### Other GUI Applications I use less often
