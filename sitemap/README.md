@@ -18,6 +18,7 @@
 * media/anime/ [Searching on pixiv](/media/anime/pixiv/)
 * process/ [First Order Retreivability](/process/first_order_retreivability/)
 * programming/ [Advice for Beginners](/programming/beginner_advice/)
+* programming/ [After Beginner Advice](/programming/after_beginner_advice/)
 * programming/ [Culture](/programming/culture/)
 * programming/ [Dotfiles](/programming/dotfiles/)
 * programming/ [Encoding](/programming/encoding/)
