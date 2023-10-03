@@ -18,6 +18,6 @@ Is easy to say 'pick the correct language for the tool', but its not easy to kno
 
 ### Frameworks
 
-I could repeat the entire article here, but I think [this is good advice](https://webcache.googleusercontent.com/search?q=cache:https://johndanielraines.medium.com/be-an-engineer-not-a-frameworker-c58fe28d0c88). The only thing I don't really vibe with is the distinction between frameworker/programmer/engineer. There's no point in separating all these words that mean the same thing, but it makes for good narrative in the article.
-
 I am not against framework or against `<insert programming language here>`, I am against the idea that you have to use one language or framework to solve every problem. If you're lucky, [your code will survive long enough to be technical debt to someone else](https://blog.visionarycto.com/p/my-20-year-career-is-technical-debt)
+
+Frameworks are useful, but its also useful to know how to do stuff yourself. Its the same as programming languages - try lots of them, try building things or reimplementing small parts of frameworks so you understand the problems they're trying to solve.
