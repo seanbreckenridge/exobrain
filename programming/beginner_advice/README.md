@@ -18,6 +18,6 @@ For webdev, the quality may vary from project to project, but [freecodecamp](htt
 
 For giant lists of resources, check out [project-based-learning](https://github.com/tuvtran/project-based-learning) and [awesome.re](https://github.com/sindresorhus/awesome#contents).
 
-I will stress this again. I'm listing tutorials here, but the best way to learn is application - make something. You need tutorials to get started and have some context, but your loop should be: Learn something, take notes, apply it, and perhaps to keep yourself accountable - put it out there somewhere (e.g. on [Github](https://github.com/)). Else, you risk just watching tutorials and feeling this sense of accomplishment copying code down without gaining the underlying problem solving skills.
+I will stress this again. I'm listing tutorials here, but the best way to learn is application - make something. You need tutorials to get started and have some context, but your loop should be: Learn something, take notes, apply it, and perhaps to keep yourself accountable - put it out there somewhere (e.g. on [Github](https://github.com/), you can always make these private later!). Else, you risk just watching tutorials and feeling this sense of accomplishment copying code down without gaining the underlying problem solving skills.
 
 I know me saying "just make something" isn't really good direction, but I don't know what youre passionate about. You have to pick something you want to make, and go do it.

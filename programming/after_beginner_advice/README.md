@@ -2,11 +2,11 @@
 Title: After Beginner Advice
 ---
 
-These are a couple thoughts about what to do after you've been programming for a bit.
+These are a couple thoughts about what to do after you've been programming for a bit/me looking back on my relatively brief experience with programming in general.
 
 As a bit of context, when I was starting out, I pretty much used Python for most things. I don't think I was ever an evangelist, but if I had to do something I would reach for Python, even if (now, in hindsight) it wasn't really the best choice. I have been bit by a lot of the stereotypes people complain about ([dealing with the GIL](https://wiki.python.org/moin/GlobalInterpreterLock), multi threading (though, this is [not as terrible](https://docs.python.org/3/library/concurrent.futures.html#module-concurrent.futures) as it once was), memory usage on long running processes, dealing with python environments/versions/packages..., I could go on)
 
-And yes, those are all still downsides, but for prototyping, doing some quick data transformation, dealing with the mess that is CSV files, python is still great. This is probably half familiarity and half python actually being decent to just get stuff done in.
+And yes, those are all still downsides, but for prototyping, doing some quick data transformation, dealing with the _mess_ that is CSV files, python is still great. This is probably half familiarity and half python actually being decent to just get stuff done in.
 
 In my experience, anyone who says there are no downsides or trade-offs in a language has not been using it long enough, or they're abstracted away from the true problems by frameworks. To quote the classic: "There are only two kinds of languages: the ones people complain about and the ones nobody uses." - Bjarne Stroustrup
 
