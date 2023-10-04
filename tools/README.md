@@ -133,10 +133,8 @@ Others:
 - [`termdown`](https://github.com/trehn/termdown) to countdown in the terminal
 - [`toilet`](https://github.com/cacalabs/toilet) is another implementation of figlet, gives fancy colors in the terminal
 - [`up`](https://github.com/akavel/up) - to interactively explore/pipe text data. Especially useful when doing data wrangling, like when using tools like `jq`/`grep`/`cut` to extract some information from a data source
-- [`whiptail`](https://en.wikibooks.org/wiki/Bash_Shell_Scripting/Whiptail) (libnewt) for fancy dialog prompts in scripts
 - [`moby`](https://github.com/words/moby) as a thesaurus
 - [`ix`](https://github.com/seanbreckenridge/seanb-utils/blob/main/shellscripts/ix) to create pastebin links from the command line
-- [`wuzz`](https://github.com/asciimoo/wuzz), a postman-like CLI application
 
 ### Other GUI Applications I use less often
 
