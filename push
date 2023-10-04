@@ -15,6 +15,7 @@ commit() {
 }
 
 ./build &&
+	spell-list README.md &&
 	git add . &&
 	commit "$@" &&
 	git push

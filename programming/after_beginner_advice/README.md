@@ -24,6 +24,6 @@ There's also some benefit to doing different types of programming. If all you've
 
 ### Frameworks
 
-I am not against framework or against `<insert programming language here>`, I am against the idea that you have to use one language or framework to solve every problem. All frameworks eventually die, if you're lucky, [your code will survive long enough to be technical debt to someone else](https://blog.visionarycto.com/p/my-20-year-career-is-technical-debt)
+I am not against frameworks or against a particular language, I am generally against the idea that you have to use one language or framework to solve every problem. All frameworks eventually die, languages fall out of favor. If you're lucky, [your code will survive long enough to be technical debt to someone else](https://blog.visionarycto.com/p/my-20-year-career-is-technical-debt)
 
 Frameworks are very useful, but its also useful to know what's going on so when things break you sort of understand why. Its the same as programming languages - try lots of frameworks, try building things or reimplementing small parts of frameworks so you understand the problems they're trying to solve. Eventually, you start to see similar sorts of patterns or ways frameworks solve problems, and you get an intuition about things instead of just falling into the hype cycle once every 4 years
