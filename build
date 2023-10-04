@@ -61,12 +61,7 @@ wait-for-internet >/dev/null 2>&1
 
 # creates the manifest file (directories which have posts)
 mkmanifest() {
-	declare line
-	while IFS= read -r line; do
-		line=${line#./}
-		[[ "$line" == . ]] && continue
-		printf '%s\n' "$line"
-	done <<<"$(find . -name 'README.md' -printf "%h\n" | sort -d)" >MANIFEST
+	fd 'README.md' --strip-cwd-prefix --min-depth=2 -x echo '{//}' | unique | sort -d >MANIFEST
 }
 
 # minify HTML, from $1 to $2

@@ -67,7 +67,7 @@ An environment is a sequence of _frames_. Each frame is a table (possibly empty)
 
 The value of a variable refers to the closest frame which include a binding to the symbol. If no frames include a binding, its said to be _unbound_.
 
-![Simple environment structure](images/scope.png)
+![Simple environment structure](./images/scope.png)
 
 If in scope `II`, `x`'s value would be 7. The binding in `II` is said to _shadow_ the binding of `x` to `3` in `I`.
 
@@ -84,7 +84,7 @@ For a procedure like:
 
 ... the `square` symbol is then defined globally. Calling a `lambda` body creates a frame, which then has a pointer to the environment it was defined in.
 
-![Function Scope](images/function.png)
+![Function Scope](./images/function.png)
 
 In general, `define` creates definitions by adding bindings to frames.
 
@@ -102,17 +102,17 @@ Very simply:
 
 In scheme, `define` lets you create bindings, and `set!` allow us to modify bindings. In the substitution model, there's often an implicit third `eviron` argument, which would be `theglobalenv` (the global frame)
 
-![make-withdraw environment](images/balance.png)
+![make-withdraw environment](./images/balance.png)
 
 Running `make-withdraw` multiple times would create separate environments, so the `balance` binding would use its own frame.
 
-![scope while executing](images/execution_balance.png)
+![scope while executing](./images/execution_balance.png)
 
 The `amount` is the formal parameter to the method, which is created each time the function is called. It points to the `E1` frame, which includes the `balance` binding, which points to the global frame.
 
 The symbols/code that describe the `parameters` and `body` do not depend or change when the values in each account do, so they can be kept separately and shared across instances. Whether or not they actually are is an implementation detail, since it wouldn't change the result, it would be an optimization that reduces memory usage.
 
-![W1 and W2 share parameters/body](images/shared.png)
+![W1 and W2 share parameters/body](./images/shared.png)
 
 This method of symbol lookup is called lexical scoping. An alternative would be dynamic, where the lookup is determined by the most recent environment on the stack in a specific procedure call which has a formal parameter with the same symbol name. Dynamic scoping is much harder to optimize since lookups are done at runtime. Lexical scoping can allow you to do some optimizations, it allows you to know the offsets for binding lookups relative to the memory address of their environment at compile time.
 

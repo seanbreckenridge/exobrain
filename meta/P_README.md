@@ -39,7 +39,7 @@ Pass the -o flag to search for links instead
 
 ### Build Tool
 
-![build demo](build_demo.gif)
+![build demo](./build_demo.gif)
 
 This is built using [`pandoc`](https://pandoc.org/) to convert markdown files to html, using `pandoc` flavored markdown, which allows you to use its template language, see the conditionals in the [`template`](https://github.com/seanbreckenridge/exobrain/blob/master/assets/template.html)
 

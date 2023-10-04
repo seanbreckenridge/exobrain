@@ -58,7 +58,7 @@ Send message `size` to `a`, get the resulting value, and then send `+ 5` to the 
 
 You can also send blocks to objects, which languages like ruby inherited.
 
-![class definition/structure](images/class_structure.jpg)
+![class definition/structure](./images/class_structure.jpg)
 
 Inheritance/Polymorphism were standard in smalltalk, which made code more reusable across their implementations.
 
