@@ -8,7 +8,7 @@ Date: 2023/09/17
 Prereqs:
 
 ```
-pkg install rsync clang coreutils dash diffutils make nc
+pkg install rsync clang coreutils dash diffutils make nmap-ncat proot
 ```
 
 - Install the [its-pointless community repo](https://wiki.termux.com/wiki/Package_Management)
@@ -24,7 +24,16 @@ bash setup-pointless-repo.sh
 pkg install opam
 ```
 
-I just ran `opam init --bypass-checks --disable-sandboxing` which sets up the basic `~/.opam` directory (but eventually fails). That asks you to clean up the broken switch (version), so I did.
+Then:
+
+```
+unset LD_PRELOAD
+termux-chroot
+export LD_LIBRARY_PATH=/data/data/com.termux/files/usr/lib
+opam init --bypass-checks --disable-sandboxing
+```
+
+ That which sets up the basic `~/.opam` directory (but eventually fails). That asks you to clean up the broken switch (version), so I did.
 
 Then, following the debugging [here](https://github.com/ocaml/opam-repository/issues/22748):
 
