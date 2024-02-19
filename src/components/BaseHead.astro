@@ -24,6 +24,9 @@ const { title, description, image } = Astro.props;
 <link rel="preload" href={`${import.meta.env.SITE}fonts/atkinson-regular.woff`} as="font" type="font/woff" crossorigin />
 <link rel="preload" href={`${import.meta.env.SITE}fonts/atkinson-bold.woff`} as="font" type="font/woff" crossorigin />
 
+<!-- Sitemap -->
+<link rel="sitemap" type="application/xml" href={`${import.meta.env.SITE}sitemap-index.xml`} />
+
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
 
