@@ -6,11 +6,8 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 import { getCollection } from 'astro:content';
 import FormattedDate from '../../components/FormattedDate.astro';
 
-const exclude = ['markdown-style-guide', 'using-mdx']
 
-const posts = (await getCollection('blog')).filter((a) => {
-	return !exclude.includes(a.slug);
-}).sort(
+const posts = (await getCollection('blog')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 ---

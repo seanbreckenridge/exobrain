@@ -6,11 +6,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 import { getCollection } from 'astro:content';
 import { createTree, walkTree } from "../../helpers/tree";
 
-const exclude: string[]= [];
-
-const posts = (await getCollection('notes')).filter((a) => {
-	return !exclude.includes(a.slug);
-});
+const posts = (await getCollection('notes'))
 
 const tree = createTree(posts);
 const lines = walkTree(tree);
