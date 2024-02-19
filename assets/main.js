@@ -31,12 +31,12 @@ body.appendChild(copied);
 
 // force *all* external links to open new tab
 D.querySelectorAll('a[href^="http"]').forEach((l) =>
-  l.setAttribute("target", "_blank")
+  l.setAttribute("target", "_blank"),
 );
 
 // progressively upgrade to full search if javascript
 D.querySelectorAll('a[href*="lite"]').forEach((l) =>
-  l.setAttribute("href", l.getAttribute("href").replace("lite", ""))
+  l.setAttribute("href", l.getAttribute("href").replace("lite", "")),
 );
 
 const showCopied = (e) => {
@@ -116,3 +116,40 @@ const copyToClipboard = (str) => {
     D.getSelection().addRange(selected);
   }
 };
+
+// on every page, create a banner that tells you that this is
+// the old version of the website, link to the new notes tree/blog
+// not going to take this down since it is essentially free and
+// dont want to contribute to more link rot
+let banner = D.createElement("div");
+banner.style.position = "fixed";
+banner.style.top = "0";
+banner.style.left = "0";
+banner.style.width = "100%";
+banner.style.textAlign = "center";
+banner.style.background = "black";
+banner.style.color = "white";
+banner.style.zIndex = "100";
+banner.style.padding = "0.5rem";
+banner.style.fontSize = "1.25rem";
+banner.innerHTML = `This is my old exobrain, which after a few years of use and hacking on, <a href="https://exobrain.sean.fish/meta/#build-tool">became a mess of pandoc templates, one-off build scripts, perl and metadata validation</a>. The content here won't be updated anymore, but I will leave this up for the forseeable future to prevent link rot.<br />New version: <a href="https://sean.fish/x/notes/">notes tree</a> and <a href="https://sean.fish/x/blog/">blog</a><br />`;
+
+// close button
+let close = D.createElement("span");
+close.innerHTML = "close ❌";
+close.style.padding = "0.5rem";
+close.style.cursor = "pointer";
+close.style.unselectable = "on";
+// underline
+close.onmouseover = (_) => (close.style.textDecoration = "underline");
+close.onclick = (_) => {
+  banner.style.display = "none"
+  localStorage.setItem("hideBanner", "true")
+}
+banner.appendChild(close);
+
+// if the user has hidden the banner, don't show it
+if (localStorage.getItem("hideBanner") === "true") {
+  banner.style.display = "none"
+}
+body.appendChild(banner);

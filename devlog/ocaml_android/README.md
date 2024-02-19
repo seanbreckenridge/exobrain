@@ -33,7 +33,7 @@ export LD_LIBRARY_PATH=/data/data/com.termux/files/usr/lib
 opam init --bypass-checks --disable-sandboxing
 ```
 
- That which sets up the basic `~/.opam` directory (but eventually fails). That asks you to clean up the broken switch (version), so I did.
+That which sets up the basic `~/.opam` directory (but eventually fails). That asks you to clean up the broken switch (version), so I did.
 
 Then, following the debugging [here](https://github.com/ocaml/opam-repository/issues/22748):
 

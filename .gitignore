@@ -1,6 +1,9 @@
 # Mac
 /exoharden_cmd
 /exosearch_cmd
+.astro
+node_modules
+dist
 
 .DS_Store
 .DS_Store?
