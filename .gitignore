@@ -1,26 +1,23 @@
-# Mac
-/exoharden_cmd
-/exosearch_cmd
+# build output
+dist/
+out/
+x/
+# generated types
+.astro/
 
+# dependencies
+node_modules/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+
+# environment variables
+.env
+.env.production
+
+# macOS-specific files
 .DS_Store
-.DS_Store?
-.DS_Store
-.Spotlight-V100
-.Trashes
-
-# Windows
-
-Thumbs.db
-Desktop.ini
-
-# Emacs
-
-*~
-\#*\#
-.\#*
-
-tags*
-*.pdf
-meta.json
-*-pmark
-.mypy_cache

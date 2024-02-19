@@ -1,0 +1,29 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+---
+
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header title={SITE_TITLE} />
+    <main>
+			<p>
+				Go back <a href="/">home</a>
+			</p>
+      <p>
+        This is originally inspired by the idea of an <a href="https://beepb00p.xyz/exobrain/" target="_blank">exobrain</a> - I
+				use this store notes, any random thoughts I have, blog posts, art, anything else.
+      </p>
+      <p>
+        Head to the <a href="./notes/">notes tree</a>,{" "}
+        <a href="./blog/">blog</a>, or <a href="./notes/tools/">tools</a>
+      </p>
+    </main>
+    <Footer />
+  </body>
+</html>
