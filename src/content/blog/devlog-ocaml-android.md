@@ -1,8 +1,11 @@
 ---
 title: "Devlog: Opam on Android"
 pubDate: 2023/09/17
+updatedDate: 2024/02/18
 description: Getting opam to work on Android
 ---
+
+A post describing my process of getting opam ([ocaml](https://ocaml.org/) package manager) to work on android using [termux](https://termux.dev/en).
 
 [Related issue on dune](https://github.com/ocaml/dune/issues/8676)
 
