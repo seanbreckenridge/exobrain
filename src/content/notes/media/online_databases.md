@@ -31,8 +31,8 @@ Unfortunately, databases by the nature catalogue a specific thing, and there wil
 - If no API, no way to query your list. However, your own local list/spreadsheet means without a bunch of work, no access to metadata to filter your personal list
 - Using a website in general:
   - Not owning your information (especially since this is a personal list, and not being able to export it easily means if the site disappears, your list/community disappears)
-  - Being advertised to
-  - Being the product
+  - General advertising/tracking concerns
+  - No way to add a feature you may want
 
 ## Using a personal system (like CSV/google sheets)
 
@@ -58,4 +58,4 @@ Generally good metadata:
 
 Average metadata, tons of downtime, generally not a great experience:
 
-- <https://myanimelist.net/> - however, im personally invested a lot and have a lot of the domain knowledge of how the site works here, and am friends with a lot of the power users. Moving away from MAL is something that Im actively working on.
+- <https://myanimelist.net/> - however, im personally invested a lot and have a lot of the domain knowledge of how the site works here, and am friends with a lot of the power users. Moving away from MAL is something Ive tried to do a few times, but havent for one reason or another.
