@@ -76,7 +76,7 @@ Because we typed `output` as a `str`, there are quite literally infinite possibi
      match output:
 ```
 
-You can get the arguments out of a `Literal` by using `typing.get_args`, so we could remove the duplication in the `@click.option`:
+You can get the arguments out of a `Literal` by using [`typing.get_args`](https://docs.python.org/3/library/typing.html#typing.get_args), so we could remove the duplication in the `@click.option`:
 
 ```
 @click.option("-o", "--ouptut", type=click.Choice(typing.get_args(OutputFormat)), default="text")
