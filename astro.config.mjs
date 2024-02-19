@@ -23,7 +23,8 @@ export default defineConfig({
   vite: {
     resolve: {
       alias: {
-        $fonts: resolve("x/fonts"),
+        // I have no clue why this is needed...
+        $fonts: isProd ? resolve("/x/fonts") : resolve("./x/fonts"),
       },
     },
   },
