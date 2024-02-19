@@ -40,6 +40,10 @@ const posts = (await getCollection('blog')).sort(
 			ul li a {
 				display: block;
 			}
+			/* right align */
+			.rss {
+				text-align: right;
+			}
 			.title {
 				margin: 0;
 				color: rgb(var(--offwhite));
@@ -76,6 +80,11 @@ const posts = (await getCollection('blog')).sort(
 	<body>
 		<Header />
 		<main>
+			<div class="title rss">
+				<a href={`${import.meta.env.BASE_URL}rss.xml/`}>
+					RSS
+				</a>
+			</div>
 			<section>
 				<ul>
 					{
