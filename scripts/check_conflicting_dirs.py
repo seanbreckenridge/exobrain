@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 
+import sys
 from pathlib import Path
+
 import click
 
 
@@ -20,10 +22,10 @@ def check_conflicting_dirs(base_path: str):
 
     # get all the directories
     bp = Path(base_path)
-    dirs = [d for d in bp.iterdir() if d.is_dir()]
 
     # check for conflicting names
     for d in bp.rglob("*"):
+        # TODO: check if this works for linked directories
         if not d.is_dir():
             continue
         # ignore hidden files
@@ -33,8 +35,7 @@ def check_conflicting_dirs(base_path: str):
         matching_md = d.with_suffix(".md")
         if matching_md.exists():
             print(f"conflicting directories: {d} and {matching_md}")
-            exit(1)
-
+            sys.exit(1)
 
 
 @click.command()
