@@ -24,7 +24,7 @@ export default defineConfig({
     resolve: {
       alias: {
         // I have no clue why this is needed...
-        $fonts: isProd ? resolve("/x/fonts") : resolve("./x/fonts"),
+        $fonts: isProd ? resolve("public/fonts") : resolve("./x/fonts"),
       },
     },
   },
