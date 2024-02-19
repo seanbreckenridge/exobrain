@@ -9,6 +9,6 @@ const isProd = import.meta.env.PROD;
 export default defineConfig({
   site: isProd ? "https://sean.fish/x/" : "http://localhost:4321/x/",
   base: "/x",
-  trailingSlash: "ignore",
+  trailingSlash: "always",
   integrations: [mdx(), sitemap()],
 });
