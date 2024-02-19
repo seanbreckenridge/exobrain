@@ -12,7 +12,7 @@ For more, see [my github stars](https://github.com/seanbreckenridge?direction=de
 
 - Shells
   - [`zsh`](http://zsh.sourceforge.net/) - for the [`fish`](https://fishshell.com/)-like [highlighting and auto completion](https://github.com/marlonrichert/zsh-autocomplete). Manually configuring everything makes this much faster than the monstrous `oh-my-zsh`
-  - bash/[`dash`](https://wiki.archlinux.org/index.php/Dash) - for shell scripting. My `zsh` setup is also much more dependent on external plugins, so I don't use that on servers, I just stick to bash there. My [`bootstrap`](https://github.com/seanbreckenridge/bootstrap/) script sets up new bash servers for me nicely, see [this post](/post/server_setup) for more info
+  - bash/[`dash`](https://wiki.archlinux.org/index.php/Dash) - for shell scripting. My `zsh` setup is also much more dependent on external plugins, so I don't use that on servers, I just stick to bash there. My [`bootstrap`](https://github.com/seanbreckenridge/bootstrap/) script sets up new bash servers for me nicely, see [this post](../../blog/server-setup/) for more info
 - Terminal
   - [`wezterm`](https://wezfurlong.org/wezterm/index.html), which I've customized some:
     - a special [`cat`](https://github.com/seanbreckenridge/dotfiles/blob/8457f501779f6eefccef14a9551c1eeafe0d629e/.config/zsh/progressive_enhancement.zsh#L72-L107) alias which lets me `cat` images and directories, while in the terminal

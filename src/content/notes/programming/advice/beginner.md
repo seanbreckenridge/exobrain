@@ -22,4 +22,4 @@ I will stress this again. I'm listing tutorials here, but the best way to learn 
 
 I know me saying "just make something" isn't really good direction, but I don't know what you're passionate about. You have to pick something you want to make, and go do it.
 
-See also: [After beginner advice](./beginner_plus)
+See also: [After beginner advice](./../beginner_plus/)

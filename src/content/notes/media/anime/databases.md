@@ -2,7 +2,7 @@
 title: MAL and Anime Databases
 ---
 
-For general thoughts on online databases, see [online databases](/media/online_databases/).
+For general thoughts on online databases, see [online databases](../../online_databases/)
 
 ### MAL?
 
