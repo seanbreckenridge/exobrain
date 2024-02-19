@@ -51,7 +51,7 @@ function walkTree(tree: any, indent = ""): Line[] {
     } else {
       if (item === "") {
         lines.push({
-          text: ".notes",
+          text: "notes/",
         });
       } else {
         lines.push({
