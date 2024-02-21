@@ -4,10 +4,14 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
+import urljoin from '../helpers/join';
 
-type Props = CollectionEntry<'blog'>['data'];
+type PropsBase = CollectionEntry<'blog'>['data'];
+interface Props extends PropsBase {
+	slug: string;
+}
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, slug } = Astro.props;
 ---
 
 <html lang="en">
@@ -57,7 +61,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 	<body>
 		<Header />
 		<main>
-			<article>
+			<article data-slug={urljoin("blog", slug)}>
 				<div class="hero-image">
 					{heroImage && <img width={1020} height={510} src={heroImage} alt="" />}
 				</div>

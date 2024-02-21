@@ -5,6 +5,7 @@ import Footer from '../../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 import { getCollection } from 'astro:content';
 import { createTree, walkTree } from "../../helpers/tree";
+import url_for from '../../helpers/url';
 
 const posts = (await getCollection('notes'))
 
@@ -32,7 +33,6 @@ const lines = walkTree(tree);
 			ul li * {
 				text-decoration: none;
 				/* monospace */
-				font-family: 'Fira Code', monospace;
 				transition: 0.2s ease;
 			}
 			.title {
@@ -72,9 +72,6 @@ const lines = walkTree(tree);
 		<main>
 			<section>
 				<ul>
-					<!-- <li> -->
-					<!-- 	<a href={`${import.meta.env.BASE_URL}blog/${post.slug}/`}> -->
-					<!-- </li> -->
 					{lines.map((line, index) => (
 						<li>
 							<style>
@@ -82,7 +79,7 @@ const lines = walkTree(tree);
 							{line.data ? (
 									<h4 class="title">
 										{line.text}
-										<a href={`${import.meta.env.BASE_URL}notes/${line.data.slug}/`}>
+										<a href={url_for(`notes/${line.data.slug}/`)}>
 											{line.name}
 										</a>
 									</h4>

@@ -5,6 +5,7 @@ import Footer from '../../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 import { getCollection } from 'astro:content';
 import FormattedDate from '../../components/FormattedDate.astro';
+import url_for from '../../helpers/url';
 
 
 const posts = (await getCollection('blog')).sort(
@@ -81,7 +82,7 @@ const posts = (await getCollection('blog')).sort(
 		<Header />
 		<main>
 			<div class="title rss">
-				<a href={`${import.meta.env.BASE_URL}rss.xml`}>
+				<a href={url_for("rss.xml")}>
 					RSS
 				</a>
 			</div>
@@ -90,7 +91,7 @@ const posts = (await getCollection('blog')).sort(
 					{
 						posts.map((post) => (
 							<li>
-								<a href={`${import.meta.env.BASE_URL}blog/${post.slug}/`}>
+								<a href={url_for(`blog/${post.slug}/`)}>
 									<h4 class="title">{post.data.title}</h4>
 									<p class="date">
 										<FormattedDate date={post.data.pubDate} />

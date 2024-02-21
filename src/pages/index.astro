@@ -3,6 +3,7 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import url_for from '../helpers/url';
 ---
 
 <html lang="en">
@@ -12,14 +13,14 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
   <body>
     <Header title={SITE_TITLE} />
     <main>
-      <p>Back to <a href="/">main website</a></p>
+      <p>Back to <a href="https://sean.fish">main website</a></p>
       <p>
         This is originally inspired by the idea of an <a href="https://beepb00p.xyz/exobrain/" target="_blank">exobrain</a> - I
 	  use this store notes, any random thoughts I have, blog posts, art, anything else.
       </p>
       <p>
-        Head to the <a href="./notes/">notes tree</a>,{" "}
-        <a href="./blog/">blog</a>, or <a href="./notes/tools/">tools</a>
+        Head to the <a href={url_for("notes/")}>notes tree</a>,{" "}
+        <a href={url_for("blog/")}>blog</a>, or <a href={url_for("notes/tools/")}>tools</a>
       </p>
     </main>
     <Footer />

@@ -3,6 +3,7 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import url_for from '../helpers/url';
 ---
 
 <html lang="en">
@@ -14,7 +15,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
     <main>
       <h3>404 - Not found</h3>
       <p>
-        Head to the <a href="./notes/">notes tree</a>,{" "} or <a href="./blog/">blog</a>
+        Head to the <a href={url_for("notes/")}>notes tree</a>,{" "} or <a href="./blog/">blog</a>
       </p>
     </main>
     <Footer />

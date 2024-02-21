@@ -1,29 +1,53 @@
-import { resolve } from "path";
 import { defineConfig } from "astro/config";
 import mdx from "@astrojs/mdx";
 // https://docs.astro.build/en/guides/integrations-guide/sitemap/
 import sitemap from "@astrojs/sitemap";
+import urljoin from "./src/helpers/join";
+import { loadEnv } from "vite";
+
+// load config-specfic env vars
+import Compress from "astro-compress";
+const env = loadEnv(process.env.NODE_ENV, process.cwd(), "");
 const isProd = import.meta.env.PROD;
+let base = env.BASE || "/";
+let site = env.SITE || "https://sean.fish";
+let port = env.PORT || "4321";
+
+// force localhost if not prod
+if (!isProd) {
+  site = `http://localhost:${port}`;
+}
+const url = urljoin(site, base);
+console.log({
+  base,
+  url,
+  isProd,
+});
 
 // https://astro.build/config
 export default defineConfig({
-  site: isProd ? "https://sean.fish/x/" : "http://localhost:4321/x/",
+  site: url,
   prefetch: {
     defaultStrategy: "hover",
     prefetchAll: true, // on hover, pre fetch site links
   },
-  base: "/x",
-  // changing this breaks a bunch of the links
-  // since import.meta.env.BASE_URL is used in the code
-  // and trailingSlash being always means it has a `/`
-  trailingSlash: "always",
-  integrations: [mdx(), sitemap()],
+  base: base,
+  trailingSlash: "ignore",
+  integrations: [
+    mdx(),
+    sitemap(),
+    Compress({
+      CSS: true,
+      HTML: false,
+      Image: true,
+      JavaScript: true,
+      SVG: true,
+    }),
+  ],
   vite: {
-    resolve: {
-      alias: {
-        // I have no clue why this is needed...
-        $fonts: isProd ? resolve("public/fonts") : resolve("./x/fonts"),
-      },
+    // ignore d.ts files
+    optimizeDeps: {
+      exclude: ["*.d.ts"],
     },
   },
 });

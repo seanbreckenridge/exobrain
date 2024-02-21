@@ -1,14 +1,15 @@
 ---
 import HeaderLink from './HeaderLink.astro';
 import { SITE_TITLE } from '../consts';
+import url_for from '../helpers/url';
 ---
 
 <header>
 	<nav>
 		<h2><a href={import.meta.env.BASE_URL}>{SITE_TITLE}</a></h2>
 		<div class="internal-links">
-			<HeaderLink href={`${import.meta.env.BASE_URL}notes/`}>Notes</HeaderLink>
-			<HeaderLink href={`${import.meta.env.BASE_URL}blog/`}>Blog</HeaderLink>
+			<HeaderLink href={url_for("notes/")}>Notes</HeaderLink>
+			<HeaderLink href={url_for("blog/")}>Blog</HeaderLink>
 		</div>
 		<div class="social-links">
 			<a href="https://sean.fish" target="_blank">
@@ -16,7 +17,7 @@ import { SITE_TITLE } from '../consts';
 				<img src="https://sean.fish/favicon.ico" alt="sean.fish" width="32" height="32" />
 			</a>
 			<a href="https://github.com/seanbreckenridge" target="_blank">
-				<span class="sr-only">Go to Astro's GitHub repo</span>
+				<span class="sr-only">Go to My GitHub Page</span>
 				<svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32"
 					><path
 						fill="currentColor"
