@@ -7,12 +7,10 @@ Just a list of tea I generally like and don't
 Good:
 
 - English Breafast
-- Earl Grey, cool be good with citrus/spices
-- Samovar Tea (this is the tea I grew up with, drinking iced tea)
-
-Meh:
-
-- Haven't particularly found any green teas I like
+- Earl Grey, cool be good with citrus/spices (Viennese also good, means I dont have to add lemon as its already acidic)
+- Sencha green tea
+- Soba (Buckwheat) tea
+- Samovar Tea (I think this is the tea I grew up with, drinking iced tea)
 
 ---
 
