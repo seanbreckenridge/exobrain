@@ -11,4 +11,4 @@ commit() {
 	fi
 }
 
-make check && git add -A && commit "$*" && git push && deploy exobrain
+make check && make compile && git add -A && commit "$*" && git push && deploy exobrain

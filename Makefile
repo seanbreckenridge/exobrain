@@ -1,4 +1,4 @@
-compile: install
+compile:
 	npm run build
 install:
 	npm install
@@ -8,9 +8,8 @@ generate_types:
 	npx -p typescript tsc src/helpers/join.js --declaration --allowJs --emitDeclarationOnly --outDir src/helpers
 check:
 	python3 ./scripts/check_conflicting_dirs.py ./src/content
-	npm run astro check
 dev:
 	npm run dev
-move_to_www: compile
+move_to_www: install compile
 	rm -rf ~/static_files/x
 	mv dist ~/static_files/x
