@@ -5,6 +5,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 import urljoin from '../helpers/join';
+import url_for from '../helpers/url';
 
 type PropsBase = CollectionEntry<'blog'>['data'];
 interface Props extends PropsBase {
@@ -17,6 +18,7 @@ const { title, description, pubDate, updatedDate, heroImage, slug } = Astro.prop
 <html lang="en">
 	<head>
 		<BaseHead title={title} description={description} />
+		<script src={url_for("launch_in_editor.js")} defer></script>
 		<style>
 			main {
 				width: calc(100% - 2em);

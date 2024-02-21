@@ -1,6 +1,6 @@
 package main
 
-// server which listens for requests from the corresponding editor.js
+// server which listens for requests from the corresponding launch_in_editor.js
 // and launches the editor with the given file in nvim
 //
 // this runs in the background on my machine on port 12593
