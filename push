@@ -3,12 +3,14 @@
 THIS_DIR="$(realpath "$(dirname "${BASH_SOURCE[0]}")")"
 cd "${THIS_DIR}" || exit $?
 
-commit() {
-	if [[ -z "$1" ]]; then
-		git commit
-	else
-		git commit -m "$*"
-	fi
-}
+commit_message="$*"
+if [[ -z "$commit_message" ]]; then
+	commit_message="$(gum input --prompt='commit message> ')"
+fi
 
-make check && make compile && git add -A && commit "$*" && git push && deploy exobrain
+if [[ -z "$commit_message" ]]; then
+	echo "No commit message provided" >&2
+	exit 1
+fi
+
+make check && make && git add -A && git commit -m "$commit_message" && git push && deploy exobrain
