@@ -1,7 +1,11 @@
 #!/usr/bin/env bash
 
+set -eux
+set -o errexit
+set -o pipefail
+
 THIS_DIR="$(realpath "$(dirname "${BASH_SOURCE[0]}")")"
 cd "${THIS_DIR}/.." || exit $?
 
 # https://sean.fish/d/with-secrets?redirect
-with-secrets go run ./scripts/launch_in_editor.go -dir ./src/content "$@" >>/tmp/exobrain-launch-in-editor.log 2>&1
+with-secrets go run ./scripts/launch_in_editor.go -dir ./src/content "$@" 2>&1 | tee -a /tmp/exobrain-launch-in-editor.log

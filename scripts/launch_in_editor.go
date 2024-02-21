@@ -83,6 +83,7 @@ func ParseServerConfig() ServerConfig {
 var possibleExts = [...]string{"md", "mdx", "astro", "html", "ts"}
 
 func (config *ServerConfig) LaunchServer(w http.ResponseWriter, r *http.Request) {
+	log.Printf("URL: %s\n", r.URL)
 	w.Header().Set("Access-Control-Allow-Origin", "*")
 	// get the file from the request
 	file := r.URL.Query().Get("file")
