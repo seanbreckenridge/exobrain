@@ -39,9 +39,9 @@ export default defineConfig({
     Compress({
       CSS: true,
       HTML: false,
-      Image: true,
+      Image: false,
       JavaScript: true,
-      SVG: true,
+      SVG: false,
     }),
   ],
   vite: {
