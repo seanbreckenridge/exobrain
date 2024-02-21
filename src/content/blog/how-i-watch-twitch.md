@@ -72,10 +72,6 @@ twitchlive -output-format=table
 |               |        |              | @Kripparrian                        |
 | sodapoppin    | 06:42  |        14003 | serkfgjhlbnlsebfoldtghnodilurngudrg |
 | LilyPichu     | 04:01  |         7676 | hhiiiii                             |
-| Mizkif        | 08:47  |         6742 | YO GET IN HERE                      |
-| Trainwreckstv | 00:49  |         3337 | recap + ban appeals | !twitter      |
-|               |        |              | | !podcast                          |
-| Greekgodx     | 07:34  |         2868 | @Greekgodx on Twitter               |
 | SirhcEz       | 01:44  |         1430 | SINGEEDDDDDD | SirhcEz cafe &       |
 |               |        |              | chill | #LeaguePartner              |
 +---------------+--------+--------------+-------------------------------------+
