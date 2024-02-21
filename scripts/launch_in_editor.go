@@ -35,7 +35,7 @@ func ParseServerConfig() ServerConfig {
 		// try to find 'launch' in the PATH
 		lScript, err := exec.LookPath("launch")
 		if err != nil {
-			fmt.Fprintln(os.Stderr, "Error: no launch script found")
+			fmt.Fprintf(os.Stderr, "Error: %s\n", err)
 			os.Exit(1)
 		}
 		if lScript == "" {
@@ -45,8 +45,7 @@ func ParseServerConfig() ServerConfig {
 		*launchScript = lScript
 	}
 	if *baseDir == "" {
-		// use the current directory
-		fmt.Fprintln(os.Stderr, "No base directory specified")
+		fmt.Fprintln(os.Stderr, "No base directory specified, this should be the location of src/content")
 		os.Exit(1)
 	}
 
@@ -92,8 +91,7 @@ func (config *ServerConfig) LaunchServer(w http.ResponseWriter, r *http.Request)
 		return
 	}
 
-	joined := filepath.Join(config.baseDir, file)
-	absFile, err := filepath.Abs(joined)
+	absFile, err := filepath.Abs(filepath.Join(config.baseDir, file))
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return

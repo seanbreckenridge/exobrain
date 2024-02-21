@@ -9,6 +9,7 @@ These are other sites/blogs/things I'm a fan of. Inspired by [superhighway98](ht
 - [beepb00p](https://beepb00p.xyz/)
 - [Alvaro Videla](https://alvaro-videla.com/archive.html)
 - [Domenic](https://blog.domenic.me/)
+- [plaintext productivity](https://plaintext-productivity.net/)
 
 ## Other Wikis
 
@@ -29,4 +30,4 @@ There's also a few lists of these personal wikis, see [here](https://github.com/
 ## Media/Entertainment
 
 - [comic sans criminal](https://www.comicsanscriminal.com/)
-- [xkcd](https://xkcd.com/)
+- [xkcd](https://xkcd.com/), I list my favorites [here](https://sean.fish/xkcd/)
