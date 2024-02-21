@@ -4,7 +4,7 @@ pubDate: 2020/09/21
 description: Issues installing sonic-pi on arch
 ---
 
-Me documenting my issues installing [`sonic-pi`](https://github.com/sonic-pi-net/sonic-pi/blob/main/INSTALL-LINUX.md) on arch.
+Me documenting my issues installing [`sonic-pi`](https://github.com/sonic-pi-net/sonic-pi/blob/5a25d300e41668adee865ff361208cc84c2e647a/BUILD-LINUX.md) on arch.
 
 <https://github.com/seanbreckenridge/sonic_pi_music>
 

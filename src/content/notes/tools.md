@@ -64,7 +64,7 @@ For more, see [my github stars](https://github.com/seanbreckenridge?direction=de
   - For basic image cropping, I use [`pinta`](https://www.pinta-project.com/) (should probably learn gimp but Ive never had the need).
   - For general image manipulation tasks I create lots of small [`imagemagick`](https://imagemagick.org/index.php) scripts to do random resizes/converts. I have a larger script to [convert videos to gifs](https://github.com/seanbreckenridge/seanb-utils/blob/main/shellscripts/gifme), and use [`gifsicle`](https://github.com/kohler/gifsicle) for manipulating gifs
   - Lots of small [`ffmpeg`](https://ffmpeg.org/) scripts to convert between video formats.
-  - For trimming video, I use an [edited version](https://sean.fish/d/slicing.lua?redirect) of [this](https://github.com/Kagami/mpv_slicing) mpv plugin
+  - For trimming video, I use an [encode_webm](https://github.com/occivink/mpv-scripts/blob/master/script-opts/encode_webm.conf)
 
 ### Android Apps
 
@@ -81,9 +81,9 @@ For more, see [my github stars](https://github.com/seanbreckenridge?direction=de
 
 Mine:
 
-- FileHosting: To host files publicly quickly, I just sync it up to my server and serve it with `nginx`, using my [`remsync`](https://github.com/seanbreckenridge/vps/blob/master/remsync) script. [`croc`](https://github.com/schollz/croc) is nice, but that assumes the other person has terminal literacy
+- FileHosting: To host files publicly quickly, I just sync it up to my server and serve it with `nginx`, using my [`remsync`](https://github.com/seanbreckenridge/vps/blob/master/bin/remsync) script. [`croc`](https://github.com/schollz/croc) is nice, but that assumes the other person has terminal literacy
 - [password generator](https://github.com/seanbreckenridge/genpasswd)
-- [url shortener](https://github.com/seanbreckenridge/no-db-shorturl/) with [this script](https://github.com/seanbreckenridge/vps/blob/master/shorten) to create new public URLs
+- [url shortener](https://github.com/seanbreckenridge/no-db-shorturl/) with [this script](https://github.com/seanbreckenridge/vps/blob/master/bin/shorten) to create new public URLs
 
 Others:
 
@@ -98,7 +98,6 @@ Others:
 - [`hyperfine`](https://github.com/sharkdp/hyperfine) to do benchmarks
 - [`pandoc`](https://pandoc.org/) to convert formats (lots of markdown -> html)
 - [`pygmentize`](https://pygments.org/docs/cmdline/) to convert text to HTML - [`text2html`](https://sean.fish/d/text2html?redirect)
-- [`imgur-uploader`](https://pypi.org/project/imgur-uploader/) to quickly upload images online, with a [script](https://sean.fish/d/screenshot-to-imgur?redirect) to upload my most recent screenshot to imgur
 - [`jq`](https://stedolan.github.io/jq/) to process json streams
 - [`oh-my-stars`](https://github.com/seanbreckenridge/oh-my-stars) (my fork) to search github stars offline
 - [`vipe`](https://linux.die.net/man/1/vipe), to quickly edit my clipboard in a vim buffer
