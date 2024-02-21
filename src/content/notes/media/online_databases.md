@@ -58,4 +58,4 @@ Generally good metadata:
 
 Average metadata, tons of downtime, generally not a great experience:
 
-- <https://myanimelist.net/> - however, im personally invested a lot and have a lot of the domain knowledge of how the site works here, and am friends with a lot of the power users. Moving away from MAL is something Ive tried to do a few times, but havent for one reason or another.
+- <https://myanimelist.net/> - however, im personally invested a lot and have a lot of the domain knowledge of how the site works here, and am friends with a lot of the power users. Moving away from MAL is something Ive tried to do a few times, but haven't for one reason or another.
