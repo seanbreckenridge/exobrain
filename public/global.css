@@ -16,7 +16,13 @@
     0 8px 24px rgb(var(--gray), 33%), 0 16px 32px rgb(var(--gray), 33%);
 }
 body {
-  font-family: "Fira Code", "Iosevka", "IBM Plex Mono", "Roboto Mono", monospace;
+  /* just give me some monospace font, I dont want to load my own...
+   * try to use some nicer fonts people might have installed */
+  font-family: "Fira Code Mono", "Iosevka Mono", "Source Code Pro",
+    "JetBrains Mono", "Droid Sans Mono", "Andale Mono", "Lucida Console",
+    "Monaco", "Consolas", "Liberation Mono", "DejaVu Sans Mono",
+    "Bitstream Vera Sans Mono", "Nimbus Mono L", "IBM Plex Mono", "Roboto Mono",
+    "Courier New", monospace;
   margin: 0;
   padding: 0;
   text-align: left;

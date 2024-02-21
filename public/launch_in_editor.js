@@ -21,14 +21,12 @@
     return;
   }
 
-  const openInEditor = () =>
-    fetch(`http://localhost:12593/launch?file=${slug}`);
-
   // change the top-left button to open in editor
   const title = document.querySelector("nav h2");
-  // change the top-left button to open in editor
   title.innerText = "Editor";
-  title.addEventListener("click", openInEditor);
+  title.addEventListener("click", () =>
+    fetch(`http://localhost:12593/launch?file=${slug}`),
+  );
   title.style.cursor = "pointer";
   title.style.textDecoration = "underline";
   title.role = "button";
