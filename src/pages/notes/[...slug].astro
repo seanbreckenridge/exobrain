@@ -15,6 +15,6 @@ const post = Astro.props;
 const { Content } = await post.render();
 ---
 
-<Notes {...post.data} slug={post.slug}>
+<Notes {...post.data} editor_slug={post.slug}>
 	<Content />
 </Notes>

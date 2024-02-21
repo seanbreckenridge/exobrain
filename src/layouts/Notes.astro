@@ -8,10 +8,10 @@ import url_for from '../helpers/url';
 
 type PropsBase = CollectionEntry<'notes'>['data'];
 interface Props extends PropsBase {
-	slug: string;
+	editor_slug: string;
 }
 
-const { title, slug } = Astro.props;
+const { title, editor_slug } = Astro.props;
 ---
 
 <html lang="en">
@@ -46,7 +46,7 @@ const { title, slug } = Astro.props;
 	<body>
 		<Header />
 		<main>
-			<article data-slug={urljoin("notes", slug)}>
+			<article data-slug={urljoin("notes", editor_slug)}>
 				<div class="prose">
 					<div class="title">
 						<h1>{title}</h1>

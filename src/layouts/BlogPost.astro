@@ -9,10 +9,10 @@ import url_for from '../helpers/url';
 
 type PropsBase = CollectionEntry<'blog'>['data'];
 interface Props extends PropsBase {
-	slug: string;
+	editor_slug: string;
 }
 
-const { title, description, pubDate, updatedDate, heroImage, slug } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, editor_slug } = Astro.props;
 ---
 
 <html lang="en">
@@ -63,7 +63,7 @@ const { title, description, pubDate, updatedDate, heroImage, slug } = Astro.prop
 	<body>
 		<Header />
 		<main>
-			<article data-slug={urljoin("blog", slug)}>
+			<article data-slug={urljoin("blog", editor_slug)}>
 				<div class="hero-image">
 					{heroImage && <img width={1020} height={510} src={heroImage} alt="" />}
 				</div>
