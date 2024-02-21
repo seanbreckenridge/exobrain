@@ -1,12 +1,8 @@
 ---
-title: Magic Wands
+title: "Vim: `!!`"
 ---
 
-Use `magic wands`! They're awesome. Learnt about them from [`rwx.gg`](https://rwx.gg) (the `magic wands` is his term)
-
 The vi term is `cmdline-ranges`, see `:help cmdline-ranges`, [good youtube video](https://www.youtube.com/watch?v=U9bsqulWgqc) that describes a lot of related `ex` commands and how these work
-
-See <https://rwx.gg/tools/editors/vi/how/magic/>
 
 In command mode, you can hit `!!` twice, to bring up a prompt which will send the current line to some external command.
 
