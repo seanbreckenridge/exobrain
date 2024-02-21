@@ -11,4 +11,4 @@ check:
 dev:
 	npm run dev
 deploy: install compile
-	rsync -Pavh --delete ./dist/ ~/static_files/x
+	rsync -Pavh --checksum --delete ./dist/ ~/static_files/x
