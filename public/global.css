@@ -85,7 +85,6 @@ a {
 }
 a:hover {
   transition: 0.5s ease;
-  /* darken the whole link */
   filter: brightness(0.9);
 }
 .prose a {
@@ -94,7 +93,6 @@ a:hover {
 .prose code a:hover {
   color: var(--accent-dark);
   transition: 0.5s ease;
-  /* darken the whole link */
   filter: brightness(0.9);
 }
 p {
@@ -157,8 +155,6 @@ hr {
   height: 1px;
   width: 1px;
   overflow: hidden;
-  /* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
-  clip: rect(1px 1px 1px 1px);
   /* maybe deprecated but we need to support legacy browsers */
   clip: rect(1px, 1px, 1px, 1px);
   /* modern browsers, clip-path works inwards from each corner */
