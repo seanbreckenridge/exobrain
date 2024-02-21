@@ -21,5 +21,13 @@
   "devDependencies": {
     "prettier": "^3.2.5",
     "prettier-plugin-astro": "^0.13.0"
+  },
+  "overrides": {
+    "astro-compress": {
+      "sharp": "0.33.2"
+    },
+    "astro": {
+      "sharp": "0.33.2"
+    }
   }
 }
