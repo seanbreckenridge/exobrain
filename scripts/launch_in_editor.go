@@ -83,6 +83,7 @@ func ParseServerConfig() ServerConfig {
 var possibleExts = [...]string{"md", "mdx", "astro", "html", "ts"}
 
 func (config *ServerConfig) LaunchServer(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Access-Control-Allow-Origin", "*")
 	// get the file from the request
 	file := r.URL.Query().Get("file")
 	if file == "" {
@@ -137,9 +138,13 @@ func (config *ServerConfig) LaunchServer(w http.ResponseWriter, r *http.Request)
 func main() {
 	config := ParseServerConfig()
 	http.HandleFunc("/ping", func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Access-Control-Allow-Origin", "*")
 		fmt.Fprintln(w, "pong")
 	})
 	http.HandleFunc("/launch", config.LaunchServer)
 	fmt.Printf("Listening on port %d with launch script '%s', base directory '%s', and editor '%s'\n", config.port, config.launchScript, config.baseDir, config.editor)
-	http.ListenAndServe(fmt.Sprintf(":%d", config.port), nil)
+	err := http.ListenAndServe(fmt.Sprintf(":%d", config.port), nil)
+	if err != nil {
+		log.Fatal("ListenAndServe: ", err)
+	}
 }

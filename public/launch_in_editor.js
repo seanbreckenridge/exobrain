@@ -9,7 +9,7 @@
     return;
   }
   // check if server is up
-  const resp = await fetch(`http://localhost:12593/ping`);
+  const resp = await fetch(`http://localhost:12593/ping`).catch(() => {});
   if (resp.status !== 200) {
     return;
   }
