@@ -10,6 +10,5 @@ check:
 	python3 ./scripts/check_conflicting_dirs.py ./src/content
 dev:
 	npm run dev
-move_to_www: install compile
-	rm -rf ~/static_files/x
-	mv dist ~/static_files/x
+deploy: install compile
+	rsync -Pavh --delete ./dist/ ~/static_files/x
