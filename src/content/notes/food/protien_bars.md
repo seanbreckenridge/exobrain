@@ -6,13 +6,13 @@ I like to carry a protien bar around with me in case I get hungry, so that Im no
 
 A lot of these are sweetened with sugar alcohol, which feel like they affect my gut a bit in larger quantities. Probably not going to hit those unless Im eating 2+ of these bars a day, but I also dont like the taste of sweet things that much that I crave sugar alcohol as a replacement, so might as well just pick something that isn't sweet.
 
-I do not really care about taste, as long as its palatable. A lot of these bars double as candy bar replacements which Im not really into, too much sugar for me.
+I do not really care about taste, as long as the texture is not terrible (am okay with some flakyness). A lot of these bars double as candy bar replacements which Im not really into, too much sugar for me.
 
 Ideally, Id get something with 15-20g of protien, some amount of fibre, no sugar alcohol, and no more than about 5g of sugar.
 
 ones to try:
 
-- aloha bars
+- aloha bars (these use monkfruit)
 - protien bars
 
 here are ones Ive tested:
