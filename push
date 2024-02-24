@@ -13,4 +13,16 @@ if [[ -z "$commit_message" ]]; then
 	exit 1
 fi
 
-make spell && make check && make && git add -A && git commit -m "$commit_message" && git push && deploy exobrain
+on_laptop() {
+	[[ "$(on_machine)" == 'linux_arch_io' ]]
+}
+
+make spell && make check && make && git add -A && git commit -m "$commit_message" && git push && {
+	if on_laptop; then
+		# do a manual sync from this ./dist to remote, this prevents having to build again remotely
+		make sync_to_server
+	else
+		# otherwise, if im on my phone or somewhere else, I can just push and let it build remotely
+		deploy exobrain
+	fi
+}
