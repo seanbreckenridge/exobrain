@@ -31,7 +31,7 @@ sync_on_server: built
 
 sync_to_server: built
 	rsync -Pahz --checksum -e ssh --delete ./dist/ vultr:~/static_files/x
-	@ echo "Synced to server"
+	@ echo "Synced to server" | boxes
 
 deploy: package.json built sync_on_server
 	@ echo "Manual compile on server done"
