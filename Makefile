@@ -34,4 +34,4 @@ sync_to_server: built
 	@ echo "Synced to server"
 
 deploy: package.json built sync_on_server
-	echo "Manual compile on server done"
+	@ echo "Manual compile on server done"
