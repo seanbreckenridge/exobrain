@@ -17,7 +17,14 @@ on_laptop() {
 	[[ "$(on_machine)" == 'linux_arch_io' ]]
 }
 
-make lint && make && git add -A && git --no-pager diff --staged && git commit -m "$commit_message" && git push && {
+precommit() {
+	if on_laptop; then
+		make lint && make || return $?
+	fi
+	true
+}
+
+precommit && git add -A && git --no-pager diff --staged && git commit -m "$commit_message" && git push && {
 	if on_laptop; then
 		# do a manual sync from this ./dist to remote, this prevents having to build again remotely
 		make sync_to_server
