@@ -29,6 +29,8 @@ dev:
 sync_on_server: built
 	rsync -Pahz --checksum --delete ./dist/ ~/static_files/x
 
+sync: sync_to_server
+
 sync_to_server: built
 	rsync -Pahz --checksum -e ssh --delete ./dist/ vultr:~/static_files/x
 	@ echo "Synced to server" | boxes
