@@ -15,3 +15,13 @@ read through a bunch of the meta-analyses (I think [this one](https://www.annall
 There is also conflict between the US and Europe on the effectiveness of these treatments, is unclear if that is due to environmental differences or something else.
 
 in any case, I am still going to control my environment to maybe reduce some symptom severity, but I do wonder if a lot of the personal anecdotes of these remedies fixing things is because they happened to be comorbid with other environmental/lifestyle changes people make when they realize they are allergic.
+
+---
+
+<https://pubmed.ncbi.nlm.nih.gov/24484971/>
+
+There are some that refute this:
+
+<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6474366/#R31>
+
+but those are referencing asthma symptoms/primary development/exposure in infants/children, not a blocked nose or anything like I have 
