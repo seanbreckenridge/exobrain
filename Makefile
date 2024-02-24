@@ -3,8 +3,8 @@ compile:
 install:
 	npm install
 spell:
-	# https://github.com/codespell-project/codespell using a wrapper script of mine:
-	# https://github.com/seanbreckenridge/dotfiles/blob/08c77680069ffd3313e02d4c99fa1f7b1f0c4169/.config/shortcuts.toml#L838-L850
+	@ # https://github.com/codespell-project/codespell using a wrapper script of mine:
+	@ # https://github.com/seanbreckenridge/dotfiles/blob/08c77680069ffd3313e02d4c99fa1f7b1f0c4169/.config/shortcuts.toml#L838-L850
 	spell '.' './src/'
 generate_types:
 	# just generate types for the one library javascript file I have
