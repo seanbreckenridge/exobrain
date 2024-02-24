@@ -1,6 +1,6 @@
 SOURCE_FILES := $(shell find ./src ./public -type f)
 
-./dist/sitemap-0.xml: package.json package-lock.json $(SOURCE_FILES)
+./dist/sitemap-0.xml: package.json package-lock.json astro.config.mjs ./tsconfig.json $(SOURCE_FILES)
 	npm run build || (npm install && npm run build)
 
 built: ./dist/sitemap-0.xml
