@@ -13,4 +13,4 @@ if [[ -z "$commit_message" ]]; then
 	exit 1
 fi
 
-make check && make && git add -A && git commit -m "$commit_message" && git push && deploy exobrain
+make spell && make check && make && git add -A && git commit -m "$commit_message" && git push && deploy exobrain
