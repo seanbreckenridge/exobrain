@@ -26,7 +26,7 @@ lint: check spell
 dev:
 	npm run dev
 
-LOCAL_NOTES_DIR := $(shell realpath "${XDG_DOCUMENTS_DIR}/Notes/exo/")
+LOCAL_NOTES_DIR := $(shell if [ -d "${XDG_DOCUMENTS_DIR}" ]; then realpath "$(XDG_DOCUMENTS_DIR)/Notes/exo/"; else echo ""; fi)
 
 link_personal_notes:
 	@ # sync from ~/Documents/Notes/exo/ to ./src/content/notes/personal
