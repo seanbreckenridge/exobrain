@@ -30,7 +30,13 @@ LOCAL_NOTES_DIR := $(shell if [ -d "${XDG_DOCUMENTS_DIR}" ]; then realpath "$(XD
 
 link_personal_notes:
 	@ # sync from ~/Documents/Notes/exo/ to ./src/content/notes/personal
-	rsync -Pavh --checksum --link-dest="$(LOCAL_NOTES_DIR)/" "$(LOCAL_NOTES_DIR)/" ~/Repos/exobrain/src/content/notes/personal
+	rsync -Pavh --checksum --link-dest="$(LOCAL_NOTES_DIR)/" "$(LOCAL_NOTES_DIR)/" ./src/content/notes/personal
+
+# incase I made changes on my phone in my ~/Documents directory
+# I cant link between the two directories because its a cross-device link
+# TODO: might be able to use a symbolic link? Not sure how that would work with astros content collections
+copy_personal_notes:
+	rsync -Pavh --checksum "$(LOCAL_NOTES_DIR)/" ./src/content/notes/personal
 
 sync_personal_notes_to_server:
 	@ # sync from the local directory to remote, so that if we're building on remote, we can build
