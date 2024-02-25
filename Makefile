@@ -26,10 +26,21 @@ lint: check spell
 dev:
 	npm run dev
 
-sync_on_server: built
-	rsync -Pahz --checksum --delete ./dist/ ~/static_files/x
+LOCAL_NOTES_DIR := $(shell realpath "${XDG_DOCUMENTS_DIR}/Notes/exo/")
 
-sync: sync_to_server
+link_personal_notes:
+	@ # sync from ~/Documents/Notes/exo/ to ./src/content/notes/personal
+	rsync -Pavh --checksum --link-dest="$(LOCAL_NOTES_DIR)/" "$(LOCAL_NOTES_DIR)/" ~/Repos/exobrain/src/content/notes/personal
+
+sync_personal_notes_to_server:
+	@ # sync from the local directory to remote, so that if we're building on remote, we can build
+	@ # the latest notes. this is needed sometimes since I can't build on my phone
+	rsync -Pavh --checksum ./src/content/notes/personal/ vultr:~/code/exobrain/src/content/notes/personal
+
+sync_on_server: built
+	# dont delete here, since stuff in ./notes/personal/ (that is synced after its built from
+	# my computer) might be deleted
+	rsync -Pahz --delete --checksum ./dist/ ~/static_files/x
 
 sync_to_server: built
 	rsync -Pahz --checksum -e ssh --delete ./dist/ vultr:~/static_files/x

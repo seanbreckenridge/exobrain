@@ -35,7 +35,14 @@ export default defineConfig({
   trailingSlash: "ignore",
   integrations: [
     mdx(),
-    sitemap(),
+    sitemap({
+      filter: (page) => {
+        if (page.includes("notes/personal")) {
+          return false;
+        }
+        return true;
+      },
+    }),
     Compress({
       CSS: true,
       HTML: false,

@@ -30,6 +30,7 @@ precommit && git add -A && git --no-pager diff --staged && git commit -m "$commi
 		make sync_to_server
 	else
 		# otherwise, if im on my phone or somewhere else, I can just push and let it build remotely
+		make sync_personal_notes_to_server
 		deploy exobrain
 	fi
 }

@@ -5,6 +5,9 @@ x/
 # generated types
 .astro/
 
+# personal notes
+src/content/notes/personal
+
 # dependencies
 node_modules/
 
