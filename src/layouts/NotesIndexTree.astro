@@ -7,15 +7,16 @@ import url_for from '../helpers/url';
 type Post = CollectionEntry<'notes'>;
 
 type Props = {
+	title: string;
 	description: string;
 	posts: Post[];
 };
 
-const { posts, description } = Astro.props;
+const { title, posts, description } = Astro.props;
 const lines = walkTree(createTree(posts));
 ---
 
-<Base description={description}>
+<Base title={title} description={description}>
 	<style>
 		ul {
 			display: flex;
