@@ -1,0 +1,64 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection, type CollectionEntry } from 'astro:content';
+import url_for from '../../helpers/url';
+import { journalDate } from '../../helpers/date';
+
+type Post = CollectionEntry<'journal'>;
+
+const posts: Post[] = (await getCollection('journal')).sort((a, b) => {
+	return a.data.date > b.data.date ? -1 : 1;
+});
+
+---
+
+<Base description="a public weblog/journal" disableFooter={true}>
+	<style>
+		ul {
+			display: flex;
+			flex-wrap: wrap;
+			flex-direction: column;
+			gap: 1rem;
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+		}
+		ul li * {
+			text-decoration: none;
+			transition: 0.2s ease;
+		}
+		.title {
+			margin: 0;
+			color: rgb(var(--offwhite));
+			line-height: 1;
+		}
+		ul li a:hover h4 {
+			color: rgb(var(--accent));
+		}
+		/* reduce font size if screen is small */
+		@media (max-width: 768px) {
+			main {
+				width: 100%;
+			}
+			.title {
+				font-size: 1.75rem;
+			}
+		}
+		@media (max-width: 500px) {
+			.title {
+				font-size: 1.25rem;
+			}
+		}
+	</style>
+	<section>
+		<ul>
+			{posts.map((line) => (
+				<li>
+					<a href={url_for(`journal/${line.slug}/`)}>
+						{journalDate(line.data.date)}
+					</a>
+			</li>
+			))}
+		</ul>
+	</section>
+</Base>

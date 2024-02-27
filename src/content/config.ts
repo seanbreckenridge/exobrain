@@ -21,4 +21,11 @@ const notes = defineCollection({
   }),
 });
 
-export const collections = { blog, notes };
+const journal = defineCollection({
+  type: "content",
+  schema: z.object({
+    date: z.number().transform((val) => new Date(val * 1000)),
+  }),
+});
+
+export const collections = { blog, notes, journal };

@@ -1,8 +1,8 @@
 ---
-import NotesIndexTree from '../../components/NotesIndexTree.astro';
+import NotesIndexTree from '../../layouts/NotesIndexTree.astro';
 import { getCollection } from 'astro:content';
 
 const posts = (await getCollection('notes')).filter((post) => !post.slug.startsWith("personal/"));
 ---
 
-<NotesIndexTree posts={posts} />
+<NotesIndexTree posts={posts} description="All my notes" />

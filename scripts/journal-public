@@ -1,0 +1,81 @@
+#!/usr/bin/env python
+import os
+from datetime import datetime, timezone
+from typing import Optional
+
+import click
+
+
+def _nl(contents: str) -> None:
+    for i, line in enumerate(contents.split("\n"), 1):
+        click.echo(f"{i:2d} {line}")
+
+
+def _parse_datetime(
+    ctx: click.Context, param: click.Argument, value: Optional[str]
+) -> datetime:
+    import dateparser
+    import warnings
+
+    # remove pytz warning from dateparser module
+    warnings.filterwarnings("ignore", "The localize method is no longer necessary")
+
+    if value is None:
+        return datetime.now(tz=timezone.utc)
+
+    ds = value.strip()
+    dt = dateparser.parse(ds)
+    if dt is None:
+        raise click.BadParameter(f"Could not parse '{ds}' into a date")
+    else:
+        ts = dt.timestamp()
+        local_dt = datetime.fromtimestamp(ts)
+        click.echo(f"Date: {local_dt}", err=True)
+        return datetime.fromtimestamp(ts, tz=timezone.utc)
+
+
+@click.command()
+@click.argument(
+    "at",
+    type=click.UNPROCESSED,
+    callback=_parse_datetime,
+)
+def main(at: datetime) -> int:
+    """
+    Create a new journal post given a date
+
+    dateparser accepts dozens of different date formats
+    """
+    THIS_DIR = os.path.dirname(os.path.realpath(__file__))
+    os.chdir(os.path.join(THIS_DIR, ".."))
+
+    basename = at.strftime("%Y%m%d%H%M") + ".md"
+    epoch = int(at.timestamp())
+
+    filename = os.path.join("src", "content", "journal", basename)
+
+    initial_content = f"""---
+date: {epoch}
+---"""
+
+    # I have a literal script 'editor' that wraps nvim
+    contents = click.edit(initial_content, editor="editor", extension=".md")
+
+    if contents is None:
+        click.echo("No entry, exiting")
+        return 1
+
+    contents = contents.strip("\n")
+
+    click.echo("New entry:\n")
+    _nl(contents)
+
+    if contents is not None and click.confirm("Save this entry?", default=True):
+        with open(filename, "w") as f:
+            f.write(contents)
+
+    return 0
+
+
+if __name__ == "__main__":
+    exit(main())
