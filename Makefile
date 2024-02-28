@@ -51,10 +51,10 @@ sync_personal_notes_to_server:
 	@ # the latest notes. this is needed sometimes since I can't build on my phone
 	rsync -Pavh --checksum ./src/content/notes/personal/ vultr:~/code/exobrain/src/content/notes/personal
 
-sync_on_server: built_and_stork
-	# dont delete here, since stuff in ./notes/personal/ (that is synced after its built from
-	# my computer) might be deleted
-	rsync -Pahz --delete --checksum ./dist/ ~/static_files/x
+sync_on_server: built
+	# dont delete here, since search index/personal files might be differently
+	# synced from my machine
+	rsync -Pahz --checksum ./dist/ ~/static_files/x
 
 sync_to_server: built_and_stork
 	rsync -Pahz --checksum -e ssh --delete ./dist/ vultr:~/static_files/x
