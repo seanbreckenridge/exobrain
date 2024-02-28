@@ -1,5 +1,5 @@
 ---
-title: DE Shaving Razors
+title: Double Edged Shaving Razors
 ---
 
 I use a double-edged safety razor

@@ -1,6 +1,6 @@
 // generates a unix-tree like structure
 
-import path from "path";
+import path from "node:path";
 
 function createTree(files: any[]): any {
   const tree: any = {};

@@ -1,7 +1,7 @@
 import url_for from "../helpers/url";
 import { getCollection } from "astro:content";
-import path from "path";
-import fs from "fs/promises";
+import path from "node:path";
+import fs from "node:fs/promises";
 import { journalDate } from "./date";
 import TOML from "@ltd/j-toml";
 
