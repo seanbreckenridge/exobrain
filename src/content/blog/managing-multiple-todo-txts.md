@@ -18,7 +18,7 @@ Following some version of the [plaintext productivity](https://plaintext-product
 
 My main `todo.txt` are only things that if I have free time, I can do immediately. They should not be timed gated behind someone else, a date, or anything else.
 
-In the past, I've created [entirely new config files and a big script](https://github.com/seanbreckenridge/bookmark.txt) to help manage  this complexity, but as I've added todo-actions (third party commands like [`@proycon`s scripts](https://git.sr.ht/~proycon/todotxt-more)), it gets more annoying to sync configuration changes between multiple files.
+In the past, I've created [entirely new config files and a big script](https://github.com/seanbreckenridge/bookmark.txt) to help manage this complexity, but as I've added todo-actions (third party commands like [`@proycon`s scripts](https://git.sr.ht/~proycon/todotxt-more)), it gets more annoying to sync configuration changes between multiple files.
 
 Instead, for example, for my `eventually` (more long-term goals/ideas), `todo.txt` list, I have a tiny script:
 
