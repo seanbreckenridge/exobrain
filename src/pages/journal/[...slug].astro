@@ -15,7 +15,7 @@ const post = Astro.props;
 const { Content } = await post.render();
 ---
 
-<Journal {...post.data}>
+<Journal {...post.data} editor_slug={post.slug}>
 	<Content />
 </Journal>
 

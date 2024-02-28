@@ -3,16 +3,22 @@ import type { CollectionEntry } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import { journalDate } from '../helpers/date';
+import url_for from '../helpers/url';
+import urljoin from '../helpers/join';
 
-type Props = CollectionEntry<'journal'>['data'];
+type PropsBase = CollectionEntry<'journal'>['data'];
+export interface Props extends PropsBase {
+	editor_slug: string;
+}
 
-const { date } = Astro.props;
+const { date, editor_slug } = Astro.props;
 const dateFmt = journalDate(date);
 ---
 
 <html lang="en">
 	<head>
 		<BaseHead title={dateFmt} description={dateFmt} />
+		<script src={url_for("launch_in_editor.js")} defer is:inline></script>
 		<style>
 			main {
 				width: calc(100% - 2em);
@@ -40,7 +46,7 @@ const dateFmt = journalDate(date);
 	<body>
 		<Header />
 		<main>
-			<article>
+			<article data-slug={urljoin("journal", editor_slug)}
 				<div class="prose">
 					<div class="title">
 						<h5>{dateFmt}</h4>
