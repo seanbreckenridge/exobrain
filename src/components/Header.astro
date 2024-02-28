@@ -12,7 +12,7 @@ const index = url_for("index.st")
 			<HeaderLink href={url_for("notes/")}>Notes</HeaderLink>
 			<HeaderLink href={url_for("blog/")}>Blog</HeaderLink>
 			<HeaderLink href={url_for("journal/")}>Journal</HeaderLink>
-			<button class="search-icon" role="button"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" /><path d="M21 21l-6 -6" /></svg></button>
+			<button class="search-icon" role="button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" /><path d="M21 21l-6 -6" /></svg></button>
 		</div>
 		<div class="social-links">
 			<a href="https://sean.fish" target="_blank">
@@ -36,7 +36,6 @@ const index = url_for("index.st")
 	<input data-stork="search" class="stork-input" />
 	<div data-stork="search-output" class="stork-output"></div>
 </div>
-<!-- TODO: dont use CDN for this? -->
 <script is:inline src="https://files.stork-search.net/releases/v1.6.0/stork.js"></script>
 <script is:inline>
 	const indexUrl = document.querySelector('.stork-wrapper-dark').dataset.indexUrl
