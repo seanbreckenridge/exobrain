@@ -11,9 +11,7 @@ toggleSearch = () => {
     wrapper.classList.add("hide");
   }
 };
-document
-  .querySelector(".search-icon")
-  .addEventListener("click", () => toggleSearch());
+document.querySelector(".search-icon").addEventListener("click", toggleSearch);
 // check the URL for 'search' GET arg
 // if its there, open the search bar
 const url = new URL(window.location.href);
