@@ -18,3 +18,10 @@ const url = new URL(window.location.href);
 if (url.searchParams.get("search") !== null) {
   toggleSearch();
 }
+// if user hits Ctrl+K, open the search bar
+document.addEventListener("keydown", (e) => {
+  if (e.ctrlKey && e.key === "k") {
+    toggleSearch();
+    e.preventDefault();
+  }
+});
