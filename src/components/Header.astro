@@ -1,10 +1,12 @@
 ---
 import HeaderLink from './HeaderLink.astro';
+import { ViewTransitions } from 'astro:transitions';
 import { SITE_TITLE } from '../consts';
 import url_for from '../helpers/url';
 const index = url_for("index.st")
 ---
 
+<ViewTransitions />
 <header>
 	<nav>
 		<h2><a href={import.meta.env.BASE_URL}>{SITE_TITLE}</a></h2>
