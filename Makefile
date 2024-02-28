@@ -23,8 +23,16 @@ check:
 
 lint: check spell
 
-dev:
+stork:
+	stork build --input ./stork_input.toml --output ./dist/index.st
+
+dev: stork
+	cp ./dist/index.st ./public/index.st
 	npm run dev
+
+./dist/index.st: built ./stork_input.toml stork
+
+built_and_stork: built ./dist/index.st
 
 LOCAL_NOTES_DIR := $(shell if [ -d "${XDG_DOCUMENTS_DIR}" ]; then realpath "$(XDG_DOCUMENTS_DIR)/Notes/exo/"; else echo ""; fi)
 
@@ -43,14 +51,14 @@ sync_personal_notes_to_server:
 	@ # the latest notes. this is needed sometimes since I can't build on my phone
 	rsync -Pavh --checksum ./src/content/notes/personal/ vultr:~/code/exobrain/src/content/notes/personal
 
-sync_on_server: built
+sync_on_server: built_and_stork
 	# dont delete here, since stuff in ./notes/personal/ (that is synced after its built from
 	# my computer) might be deleted
 	rsync -Pahz --delete --checksum ./dist/ ~/static_files/x
 
-sync_to_server: built
+sync_to_server: built_and_stork
 	rsync -Pahz --checksum -e ssh --delete ./dist/ vultr:~/static_files/x
 	@ echo "Synced to server" | boxes
 
-deploy: package.json built sync_on_server
+deploy: package.json built_and_stork sync_on_server
 	@ echo "Manual compile on server done"

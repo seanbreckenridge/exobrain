@@ -2,8 +2,12 @@
 dist/
 out/
 x/
+/public/index.st
+
 # generated types
 .astro/
+stork_input.toml
+*.st
 
 # personal notes
 src/content/notes/personal

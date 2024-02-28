@@ -18,7 +18,7 @@ const { title, description, pubDate, updatedDate, heroImage, editor_slug } = Ast
 <html lang="en">
 	<head>
 		<BaseHead title={title} description={description} />
-		<script src={url_for("launch_in_editor.js")} defer></script>
+		<script src={url_for("launch_in_editor.js")} defer is:inline></script>
 		<style>
 			main {
 				width: calc(100% - 2em);

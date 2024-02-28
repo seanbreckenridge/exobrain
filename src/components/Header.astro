@@ -2,6 +2,7 @@
 import HeaderLink from './HeaderLink.astro';
 import { SITE_TITLE } from '../consts';
 import url_for from '../helpers/url';
+const index = url_for("index.st")
 ---
 
 <header>
@@ -11,6 +12,7 @@ import url_for from '../helpers/url';
 			<HeaderLink href={url_for("notes/")}>Notes</HeaderLink>
 			<HeaderLink href={url_for("blog/")}>Blog</HeaderLink>
 			<HeaderLink href={url_for("journal/")}>Journal</HeaderLink>
+			<button class="search-icon" role="button"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" /><path d="M21 21l-6 -6" /></svg></button>
 		</div>
 		<div class="social-links">
 			<a href="https://sean.fish" target="_blank">
@@ -29,6 +31,29 @@ import url_for from '../helpers/url';
 		</div>
 	</nav>
 </header>
+<!-- floating stork search bar -->
+<div class="stork-wrapper-dark hide" data-index-url={index}>
+	<input data-stork="search" class="stork-input" />
+	<div data-stork="search-output" class="stork-output"></div>
+</div>
+<!-- TODO: dont use CDN for this? -->
+<script is:inline src="https://files.stork-search.net/releases/v1.6.0/stork.js"></script>
+<script is:inline>
+	const indexUrl = document.querySelector('.stork-wrapper-dark').dataset.indexUrl
+	stork.register("search", indexUrl)
+	const searchIcon = document.querySelector('.search-icon')
+	const wrapper = document.querySelector('.stork-wrapper-dark')
+	const sInput = document.querySelector('.stork-input')
+	searchIcon.addEventListener('click', () => {
+		if (wrapper.classList.contains('hide')) {
+			wrapper.classList.remove('hide')
+			sInput.focus()
+		} else {
+			wrapper.classList.add('hide')
+		}
+	})
+</script>
+<link rel="stylesheet" href="https://files.stork-search.net/releases/v1.6.0/dark.css" />
 <style>
 	header {
 		margin: 0;
@@ -41,7 +66,20 @@ import url_for from '../helpers/url';
 		margin: 0;
 		font-size: 1em;
 	}
-
+	.search-icon {
+		/* fix height of search icon */
+		position: relative;
+		top: 0.2em;
+		padding: 1em 0.5em;
+		cursor: pointer;
+		/* remove background and border */
+		border: none;
+		background: none;
+		color: var(--offwhite);
+	}
+	.hide {
+		display: none;
+	}
 	h2 a,
 	h2 a.active {
 		text-decoration: none;
@@ -66,8 +104,16 @@ import url_for from '../helpers/url';
 		display: flex;
 	}
 	@media (max-width: 720px) {
-		.social-links {
+		.social-links, nav h2 {
 			display: none;
+		}
+		nav a {
+			padding: 1em 0.25em;
+		}
+	}
+	@media (max-width: 1024px) {
+		nav a {
+			font-size: 0.9em;
 		}
 	}
 </style>
