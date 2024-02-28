@@ -44,14 +44,21 @@ const index = url_for("index.st")
 	const searchIcon = document.querySelector('.search-icon')
 	const wrapper = document.querySelector('.stork-wrapper-dark')
 	const sInput = document.querySelector('.stork-input')
-	searchIcon.addEventListener('click', () => {
+	toggleSearch = () => {
 		if (wrapper.classList.contains('hide')) {
 			wrapper.classList.remove('hide')
 			sInput.focus()
 		} else {
 			wrapper.classList.add('hide')
 		}
-	})
+	}
+	searchIcon.addEventListener('click', () => toggleSearch())
+	// check the URL for 'search' GET arg
+	// if its there, open the search bar
+	const url = new URL(window.location.href)
+	if (url.searchParams.get('search') !== null) {
+		toggleSearch()
+	}
 </script>
 <link rel="stylesheet" href="https://files.stork-search.net/releases/v1.6.0/dark.css" />
 <style>
@@ -69,7 +76,7 @@ const index = url_for("index.st")
 	.search-icon {
 		/* fix height of search icon */
 		position: relative;
-		top: 0.2em;
+		top: 0.4em;
 		padding: 1em 0.5em;
 		cursor: pointer;
 		/* remove background and border */
