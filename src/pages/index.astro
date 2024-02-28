@@ -6,7 +6,10 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import url_for from '../helpers/url';
 import generateStorkIndex from '../helpers/generate_stork_index';
 // sort of a hack, but want to do this during build time instead
-// of figuring out how to run a script in astro
+// of figuring out how to run a script in astro (need to have access to astro:content)
+//
+// this just runs once at build time since this is a static page,
+// it does not run in the browser
 generateStorkIndex()
 ---
 
