@@ -28,6 +28,8 @@ stork:
 
 dev: stork
 	cp ./dist/index.st ./public/index.st
+	# wait 2 seconds, then open in browser
+	setsid -f sh -c 'sleep 2 && xdg-open http://localhost:4321/x/'
 	npm run dev
 
 ./dist/index.st: built ./stork_input.toml stork
