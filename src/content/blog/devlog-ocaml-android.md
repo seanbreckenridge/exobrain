@@ -1,7 +1,7 @@
 ---
 title: "Devlog: Opam on Android"
 pubDate: 2023/09/17
-updatedDate: 2024/02/18
+updatedDate: 2024/03/01
 description: Getting opam to work on Android
 ---
 
@@ -66,3 +66,19 @@ default-compiler: [
 Then, `export LDFLAGS="-landroid-shmem"` and `opam switch create 5.0.0 --jobs=1`
 
 A then just wait a while for it to build.
+
+To install dune, [after a bunch of troubleshooting](https://github.com/ocaml/dune/issues/8676):
+
+```sh
+pkg install proot
+unset LD_PRELOAD
+termux-chroot
+
+git clone --depth=1 https://github.com/ocaml/dune
+cd dune
+
+make release
+make install PREFIX=$PREFIX
+```
+
+Still not sure if third party deps install properly, I've only used it for a `dune` build with no package dependencies.
