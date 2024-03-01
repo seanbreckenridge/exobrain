@@ -5,4 +5,4 @@ import { getCollection } from 'astro:content';
 const posts = (await getCollection('notes')).filter((post) => post.slug.startsWith("personal/"));
 ---
 
-<NotesIndexTree posts={posts} title="Personal Notes Index" description="Personal notes" />
+<NotesIndexTree skip_directories={true} posts={posts} title="Personal Notes Index" description="Personal notes" />
