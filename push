@@ -5,6 +5,8 @@ cd "${THIS_DIR}" || exit $?
 
 commit_message="$*"
 if [[ -z "$commit_message" ]]; then
+	git --no-pager diff
+	git --no-pager diff --staged
 	commit_message="$(gum input --prompt='commit message> ')"
 fi
 

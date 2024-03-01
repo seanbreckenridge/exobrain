@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+
+THIS_DIR="$(realpath "$(dirname "${BASH_SOURCE[0]}")")"
+cd "${THIS_DIR}/.." || exit $?
+
+PERSONAL_NOTES="${XDG_DOCUMENTS_DIR}/Notes/exo"
+
+if [[ ! -d "${PERSONAL_NOTES}" ]]; then
+	echo "Personal notes directory not found: ${PERSONAL_NOTES}" >&2
+	exit 1
+fi
+
+on_termux() {
+	case "$(on_machine)" in
+	android_*) return 0 ;;
+	*) return 1 ;;
+	esac
+}
+
+FILE="$(fd '\.md$' './src/content/notes' "${PERSONAL_NOTES}" --type file | grep -v personal | fzfp)" || exit $?
+if [[ -n "${FILE}" ]]; then
+	editor "${FILE}" || true
+fi
+
+if on_termux; then
+	make copy_personal_notes
+else
+	make link_personal_notes
+fi
+
+./push
