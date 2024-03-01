@@ -28,7 +28,7 @@ bash setup-pointless-repo.sh
 pkg install opam
 ```
 
-I believe the only reason this works is because the creator of that repository wrote a giant patch for the `opam` build process to work on android. So, it installs a specific version of `opam`, and I'm not sure if that's going to change anytime soon.
+I believe the only reason this works is because the creator of that repository wrote a giant patch for the opam build process to work on android. So, it installs a specific version of opam, and I'm not sure if that's going to change anytime soon.
 
 Then:
 
@@ -39,7 +39,7 @@ export LD_LIBRARY_PATH=/data/data/com.termux/files/usr/lib
 opam init --bypass-checks --disable-sandboxing
 ```
 
-That sets up the basic `~/.opam` directory (but eventually fails). That asks you to clean up the broken switch (version), so I did.
+That sets up the basic `~/.opam` directory (but eventually fails). That prompts you to clean up the broken switch (version), so I said yes.
 
 Then, following the debugging [here](https://github.com/ocaml/opam-repository/issues/22748):
 
@@ -67,9 +67,9 @@ default-compiler: [
 
 Then, `export LDFLAGS="-landroid-shmem"` and `opam switch create 5.0.0 --jobs=1`
 
-A then just wait a while for it to build.
+A then just wait a *while* for it to build.
 
-To install dune, [after a bunch of troubleshooting](https://github.com/ocaml/dune/issues/8676):
+To install dune, [after a bunch of troubleshooting and some patches I submitted](https://github.com/ocaml/dune/issues/8676):
 
 ```sh
 pkg install proot
@@ -83,4 +83,4 @@ make release
 make install PREFIX=$PREFIX
 ```
 
-Still not sure if third party deps install properly, I've only used it for a `dune` build with no package dependencies.
+Still not sure if third party deps install properly, I've only used it for a `dune` build with no package dependencies (A little [calculator](https://github.com/seanbreckenridge/calc_ans) I wrote)
