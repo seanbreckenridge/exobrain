@@ -28,6 +28,8 @@ bash setup-pointless-repo.sh
 pkg install opam
 ```
 
+I believe the only reason this works is because the creator of that repository wrote a giant patch for the `opam` build process to work on android. So, it installs a specific version of `opam`, and I'm not sure if that's going to change anytime soon.
+
 Then:
 
 ```
@@ -37,7 +39,7 @@ export LD_LIBRARY_PATH=/data/data/com.termux/files/usr/lib
 opam init --bypass-checks --disable-sandboxing
 ```
 
-That which sets up the basic `~/.opam` directory (but eventually fails). That asks you to clean up the broken switch (version), so I did.
+That sets up the basic `~/.opam` directory (but eventually fails). That asks you to clean up the broken switch (version), so I did.
 
 Then, following the debugging [here](https://github.com/ocaml/opam-repository/issues/22748):
 
