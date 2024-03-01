@@ -40,7 +40,7 @@ LOCAL_NOTES_DIR := $(shell if [ -d "${XDG_DOCUMENTS_DIR}" ]; then realpath "$(XD
 
 link_personal_notes:
 	@ # sync from ~/Documents/Notes/exo/ to ./src/content/notes/personal
-	rsync -Pavh --checksum --link-dest="$(LOCAL_NOTES_DIR)/" "$(LOCAL_NOTES_DIR)/" ./src/content/notes/personal
+	rsync -Pavh --checksum --delete --link-dest="$(LOCAL_NOTES_DIR)/" "$(LOCAL_NOTES_DIR)/" ./src/content/notes/personal
 
 # in case I made changes on my phone in my ~/Documents directory
 # I can't link between the two directories because its a cross-device link

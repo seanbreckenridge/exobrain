@@ -27,6 +27,7 @@ precommit() {
 precommit && git add -A && git --no-pager diff --staged && git commit -m "$commit_message" && git push && {
 	if on_laptop; then
 		# do a manual sync from this ./dist to remote, this prevents having to build again remotely
+		make link_personal_notes
 		make sync_to_server
 	else
 		# otherwise, if im on my phone or somewhere else, I can just push and let it build remotely
