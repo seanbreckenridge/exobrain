@@ -64,3 +64,6 @@ sync_to_server: built_and_stork
 
 deploy: package.json built_and_stork sync_on_server
 	@ echo "Manual compile on server done"
+
+clean:
+	rm -rf ./dist
