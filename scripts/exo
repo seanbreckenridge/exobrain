@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# edit a note and push changes
+# if I edit a personal note, sync it
+# correctly based on the machine I'm on
 
 THIS_DIR="$(realpath "$(dirname "${BASH_SOURCE[0]}")")"
 cd "${THIS_DIR}/.." || exit $?
@@ -17,7 +20,7 @@ on_termux() {
 	esac
 }
 
-FILE="$(fd '\.md$' './src/content/notes' "${PERSONAL_NOTES}" --type file | grep -v personal | fzfp)" || exit $?
+FILE="$(fd --absolute-path '\.md$' './src/content/notes' "${PERSONAL_NOTES}" --type file | grep -v personal | fzfp)" || exit $?
 if [[ -n "${FILE}" ]]; then
 	editor "${FILE}" || true
 fi
