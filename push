@@ -11,7 +11,7 @@ if [[ -z "$commit_message" ]]; then
 fi
 
 if [[ -z "$commit_message" ]]; then
-	echo 'Pushing without committing...' >&2
+	echo 'Deploying without committing...' >&2
 fi
 
 on_laptop() {
