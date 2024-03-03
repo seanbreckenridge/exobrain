@@ -7,12 +7,11 @@ commit_message="$*"
 if [[ -z "$commit_message" ]]; then
 	git --no-pager diff
 	git --no-pager diff --staged
-	commit_message="$(gum input --prompt='commit message> ')"
+	commit_message="$(gum input --prompt='commit message (empty to skip)> ')" || exit $?
 fi
 
 if [[ -z "$commit_message" ]]; then
-	echo "No commit message provided" >&2
-	exit 1
+	echo 'Pushing without committing...' >&2
 fi
 
 on_laptop() {
@@ -26,7 +25,16 @@ precommit() {
 	true
 }
 
-precommit && git add -A && git --no-pager diff --staged && git commit -m "$commit_message" && git push && {
+commit() {
+	if [[ -z "$commit_message" ]]; then
+		echo 'No commit message, skipping commit' >&2
+		return 0
+	else
+		git add -A && git --no-pager diff --staged && git commit -m "$commit_message" && git push
+	fi
+}
+
+precommit && commit && {
 	if on_laptop; then
 		# do a manual sync from this ./dist to remote, this prevents having to build again remotely
 		make link_personal_notes
