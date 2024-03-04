@@ -58,11 +58,13 @@ sync_on_server: built
 	# synced from my machine
 	rsync -Pahz --checksum ./dist/ ~/static_files/x
 
-sync_to_server: built_and_stork
+# typically done on my laptop
+sync_to_server:
 	rsync -Pahz --checksum -e ssh --delete ./dist/ vultr:~/static_files/x
 	@ echo "Synced to server" | boxes
 
-deploy: package.json built_and_stork sync_on_server
+# done on the server
+deploy: package.json built sync_on_server
 	@ echo "Manual compile on server done"
 
 clean:
