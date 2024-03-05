@@ -13,6 +13,12 @@ Ideally, Id get something with 15-20g of protien, some amount of fibre, no sugar
 ones to try:
 
 - aloha bars (these use monkfruit)
+  - chocolate mint
+  - peanut butter chocolate chip
+  - chocolate fudge brownie
+  - chocolate chip cookie dough
+  - vanilla almond crunch
+  - coconut chocolate (tastes good, but 7g of saturated fat)
 - protien bars
 
 here are ones Ive tested:
