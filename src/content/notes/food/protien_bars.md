@@ -18,6 +18,7 @@ ones to try:
   - chocolate fudge brownie
   - chocolate chip cookie dough
   - vanilla almond crunch
+  - chocolate caramel pecan (5/10, too sweet)
   - lemon cashew (5/10, not enough lemon)
   - coconut chocolate (7/10 tastes good, but 7g of saturated fat)
 - protien bars
