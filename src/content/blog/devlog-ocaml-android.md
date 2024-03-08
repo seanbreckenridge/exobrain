@@ -67,7 +67,7 @@ default-compiler: [
 
 Then, `export LDFLAGS="-landroid-shmem"` and `opam switch create 5.0.0 --jobs=1`
 
-A then just wait a *while* for it to build.
+A then just wait a _while_ for it to build.
 
 To install dune, [after a bunch of troubleshooting and some patches I submitted](https://github.com/ocaml/dune/issues/8676):
 

@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 import os
-from datetime import datetime, timezone
+from datetime import datetime
 from typing import Optional
 
 import click
@@ -21,7 +21,7 @@ def _parse_datetime(
     warnings.filterwarnings("ignore", "The localize method is no longer necessary")
 
     if value is None:
-        return datetime.now(tz=timezone.utc)
+        return datetime.now()
 
     ds = value.strip()
     dt = dateparser.parse(ds)
@@ -31,7 +31,7 @@ def _parse_datetime(
         ts = dt.timestamp()
         local_dt = datetime.fromtimestamp(ts)
         click.echo(f"Date: {local_dt}", err=True)
-        return datetime.fromtimestamp(ts, tz=timezone.utc)
+        return local_dt
 
 
 @click.command()
