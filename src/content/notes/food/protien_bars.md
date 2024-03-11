@@ -10,21 +10,19 @@ I do not really care about taste, as long as the texture is not terrible (am oka
 
 Ideally, Id get something with 15-20g of protien, some amount of fibre, no sugar alcohol, and no more than about 5g of sugar.
 
-ones to try:
-
-- aloha bars (these use monkfruit)
-  - chocolate mint
-  - peanut butter chocolate chip (6/10, 3g saturated fat, a bit too sweet and has milk)
-  - peanut butter cup
-  - chocolate fudge brownie
-  - chocolate chip cookie dough
-  - vanilla almond crunch
-  - chocolate caramel pecan (5/10, too sweet)
-  - lemon cashew (5/10, not enough lemon)
-  - coconut chocolate (7/10 tastes good, but 7g of saturated fat)
-- protien bars
-
 here are ones Ive tested:
+
+- pretty good:
+  - aloha bars (these use monkfruit)
+    - chocolate mint
+    - peanut butter chocolate chip (6/10, 3g saturated fat, a bit too sweet and has milk)
+    - peanut butter cup
+    - chocolate fudge brownie
+    - chocolate chip cookie dough
+    - vanilla almond crunch
+    - chocolate caramel pecan (5/10, too sweet)
+    - lemon cashew (5/10, not enough lemon)
+    - coconut chocolate (7/10 tastes good, but 7g of saturated fat)
 
 good-ish, but not something I love:
 
