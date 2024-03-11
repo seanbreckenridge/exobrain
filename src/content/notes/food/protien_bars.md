@@ -14,7 +14,8 @@ ones to try:
 
 - aloha bars (these use monkfruit)
   - chocolate mint
-  - peanut butter chocolate chip
+  - peanut butter chocolate chip (6/10, 3g saturated fat, a bit too sweet and has milk)
+  - peanut butter cup
   - chocolate fudge brownie
   - chocolate chip cookie dough
   - vanilla almond crunch
