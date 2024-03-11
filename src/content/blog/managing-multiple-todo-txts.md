@@ -2,6 +2,7 @@
 title: Managing multiple todo.txt files
 description: How I manage multiple todo.txt files
 pubDate: 2024/02/27
+updatedDate: 2024/03/11
 ---
 
 This is relating to using [`todo.txt`](https://github.com/todotxt/todo.txt) format to manage todos, which I've been using for a few years now.
