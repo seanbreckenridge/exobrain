@@ -47,3 +47,5 @@ The `todo.txt` configuration file is just a `bash` script, so it makes it very e
 Ive found this to be the least amount of mental overhead to create a new `todo.txt` file, which I see as more important than creating some very specific system with filters and tags which I can waste time fiddling with.
 
 Since my `~/Documents/` directory is synced with [syncthing](https://syncthing.net/), everything is automatically backed up and synced across my devices.
+
+Edit: I've since created a [script](https://sean.fish/d/todo-create-new-data-dir?redirect) that just generates that tiny file for me, so I can create new lists whenever I want.
