@@ -20,7 +20,7 @@ on_termux() {
 	esac
 }
 
-FILE="$(fd --absolute-path '\.md$' './src/content/notes' "${PERSONAL_NOTES}" --type file | grep -v personal | fzfp)" || exit $?
+FILE="$(fd --absolute-path '\.md$' './src/content' "${PERSONAL_NOTES}" --type file | grep -v personal | fzfp)" || exit $?
 if [[ -n "${FILE}" ]]; then
 	editor "${FILE}" || true
 fi
