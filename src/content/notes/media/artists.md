@@ -13,3 +13,4 @@ Some artists I like, no particular order to lookup/research later:
 - ralston crawford
 - piet mondrian
 - yoshitake nara
+- [jerrin wagstaff](https://jerrinwagstaff.com/)
