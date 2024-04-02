@@ -12,7 +12,7 @@ Nowadays, if you don't want to go straight to `C` or `golang` to learn the funda
 
 [Eloquent JavaScript](https://eloquentjavascript.net/) is free pretty good.
 
-Otherwise, to get a general understanding of programming and problem solving in general, the [CS50 Harvard course](https://www.youtube.com/watch?v=y62zj9ozPOM&list=PLhQjrBD2T3828ZVcVzEIhsHVgjANGZveu) is great. The [CS50 Beyond](https://www.youtube.com/playlist?list=PLhQjrBD2T381Q6R1jRxgXknYO7VuTYPBI) course is also worth a mention (goes over more concepts, web programming, `git`, `SQL`, React)
+Otherwise, to get a general understanding of programming and problem solving in general, the [CS50 Harvard course](https://www.youtube.com/watch?v=y62zj9ozPOM&list=PLhQjrBD2T3828ZVcVzEIhsHVgjANGZveu) is great. The [CS50 Beyond](https://www.youtube.com/playlist?list=PLhQjrBD2T381Q6R1jRxgXknYO7VuTYPBI) course is also worth a mention (goes over more concepts, web programming, `git`, `SQL`, React). The [missing semester](https://missing.csail.mit.edu/) also goes over a bunch of terminal/shell information that is useful.
 
 For webdev, the quality may vary from project to project, but [freecodecamp](https://www.freecodecamp.org/) and [theodinproject](https://www.theodinproject.com/) are worth a mention.
 
