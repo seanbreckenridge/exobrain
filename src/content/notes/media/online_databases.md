@@ -54,7 +54,7 @@ Generally Good Metadata, have APIs which I use:
 Generally good metadata:
 
 - <https://letterboxd.com>
-- <https://www.grouvee.com>
+- <https://www.grouvee.com> (this uses [giantbomb](https://www.giantbomb.com/api/) internally)
 
 Average metadata, tons of downtime, generally not a great experience:
 
