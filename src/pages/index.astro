@@ -21,15 +21,10 @@ generateStorkIndex()
     <Header title={SITE_TITLE} />
     <main>
       <p>
-        This is originally inspired by the idea of an <a href="https://beepb00p.xyz/exobrain/" target="_blank">exobrain</a> - I
-	  use this store notes, any random thoughts I have, blog posts, art, anything else.
-      </p>
-      <p>
         This is a mix between larger thought out posts and perhaps false, researchy notes/lists, so take everything with a grain of salt.
       </p>
       <p>
-        Head to the <a href={url_for("notes/")}>notes tree</a>,{" "}
-        <a href={url_for("blog/")}>blog</a>, or <a href={url_for("notes/tools/")}>tools</a>
+        Head to the <a href={url_for("notes/")}>notes tree</a>,{" "}<a href={url_for("blog/")}>blog</a>, <a href={url_for("notes/tools/")}>tools</a>, or <a href={url_for("notes/") + "?search"}>search</a> for something.
       </p>
       <hr />
       <p>
