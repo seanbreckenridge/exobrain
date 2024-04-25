@@ -3,6 +3,11 @@
 THIS_DIR="$(realpath "$(dirname "${BASH_SOURCE[0]}")")"
 cd "${THIS_DIR}" || exit $?
 
+if [[ ! -f .env ]]; then
+	echo 'No .env file found' >&2
+	exit 1
+fi
+
 commit_message="$*"
 if [[ -z "$commit_message" ]]; then
 	git --no-pager diff
