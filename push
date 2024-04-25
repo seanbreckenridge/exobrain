@@ -15,7 +15,12 @@ if [[ -z "$commit_message" ]]; then
 fi
 
 on_laptop() {
-	[[ "$(on_machine)" == 'linux_arch_io' ]]
+	case "$(on_machine)" in
+	linux_arch_*)
+		return 0
+		;;
+	esac
+	return 1
 }
 
 precommit() {
