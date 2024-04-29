@@ -7,21 +7,27 @@ import TOML from "@ltd/j-toml";
 
 const outputFilePath = path.join(process.cwd(), "./stork_input.toml");
 
+function okayFile(fileId: string) {
+  const ok = fileId.endsWith(".md");
+  if (!ok) {
+    console.log(`Skipping ${fileId}, not markdown`);
+  }
+  return ok;
+}
+
 async function generateStorkIndex() {
   console.log("Generating Stork index...");
 
   const blogs = await getCollection("blog");
   const posts = (await getCollection("notes")).filter(
-    (post) => !post.slug.startsWith("personal/")
+    (post) => !post.slug.startsWith("personal/"),
   );
   const journal = await getCollection("journal");
 
   const files = [];
 
   for (const b of blogs) {
-    // if not markdown, skip
-    if (!b.id.endsWith(".md")) {
-      console.log(`Skipping ${b.id}, not markdown`);
+    if (!okayFile(b.id)) {
       continue;
     }
     files.push({
@@ -33,9 +39,7 @@ async function generateStorkIndex() {
   }
 
   for (const p of posts) {
-    // if not markdown, skip
-    if (!p.id.endsWith(".md")) {
-      console.log(`Skipping ${p.id}, not markdown`);
+    if (!okayFile(p.id)) {
       continue;
     }
     files.push({
@@ -47,9 +51,7 @@ async function generateStorkIndex() {
   }
 
   for (const j of journal) {
-    // if not markdown, skip
-    if (!j.id.endsWith(".md")) {
-      console.log(`Skipping ${j.id}, not markdown`);
+    if (!okayFile(j.id)) {
       continue;
     }
     files.push({

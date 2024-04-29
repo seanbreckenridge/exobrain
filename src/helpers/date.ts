@@ -1,4 +1,6 @@
 function journalDate(date: Date) {
+  // this formats the date like:
+  // 1.1.21  12:00 am
   const day = date.getDate();
   const month = date.getMonth() + 1; // Months are zero-indexed, so we add 1
   const year = date.getFullYear() % 100; // Extract last two digits of the year
