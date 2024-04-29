@@ -1,21 +1,35 @@
 SOURCE_FILES := $(shell find ./src ./public -type f)
 
+##############
+#            #
+#  BUILDING  #
+#            #
+##############
+
 ./dist/sitemap-0.xml: .env package.json package-lock.json astro.config.mjs ./tsconfig.json $(SOURCE_FILES)
 	npm run build || (npm install && npm run build)
 
+# if the sitemap is newer than all the source files, site is considered 'built'
 built: ./dist/sitemap-0.xml
 
 build:
 	npm run build
 
+# helper script
+# just generate types for the one library javascript file I have
+# needs to be JS since its used in astro.config.js
 generate_types: built
-	# just generate types for the one library javascript file I have
-	# needs to be JS since its used in astro.config.js
 	npx -p typescript tsc src/helpers/join.js --declaration --allowJs --emitDeclarationOnly --outDir src/helpers
 
+#############
+#           #
+#  LINTING  #
+#           #
+#############
+
+# https://github.com/codespell-project/codespell using a wrapper script of mine:
+# https://github.com/seanbreckenridge/dotfiles/blob/08c77680069ffd3313e02d4c99fa1f7b1f0c4169/.config/shortcuts.toml#L838-L850
 spell:
-	@ # https://github.com/codespell-project/codespell using a wrapper script of mine:
-	@ # https://github.com/seanbreckenridge/dotfiles/blob/08c77680069ffd3313e02d4c99fa1f7b1f0c4169/.config/shortcuts.toml#L838-L850
 	spell '.' './src/'
 
 check:
@@ -23,18 +37,32 @@ check:
 
 lint: check spell
 
-stork:
-	stork build --input ./stork_input.toml --output ./dist/index.st
-
 dev: stork
 	cp ./dist/index.st ./public/index.st
 	# wait 2 seconds, then open in browser
 	setsid -f sh -c 'sleep 2 && xdg-open http://localhost:4321/x/'
 	npm run dev
 
+##################
+#                #
+#  SEARCH INDEX  #
+#                #
+##################
+
+stork:
+	stork build --input ./stork_input.toml --output ./dist/index.st
+
 ./dist/index.st: built ./stork_input.toml stork
 
 built_and_stork: built ./dist/index.st
+
+#######################
+#                     #
+#  SYNCING TO SERVER  #
+#                     #
+#######################
+
+# For examples of use, check out the ./push script
 
 LOCAL_NOTES_DIR := $(shell if [ -d "${XDG_DOCUMENTS_DIR}" ]; then realpath "$(XDG_DOCUMENTS_DIR)/Notes/exo/"; else echo ""; fi)
 
@@ -48,9 +76,9 @@ link_personal_notes:
 copy_personal_notes:
 	rsync -Pavh --checksum "$(LOCAL_NOTES_DIR)/" ./src/content/notes/personal
 
+# sync from the local directory to remote, so that if we're building on remote, we can build
+# the latest notes. this is needed sometimes since I can't build on my phone
 sync_personal_notes_to_server:
-	@ # sync from the local directory to remote, so that if we're building on remote, we can build
-	@ # the latest notes. this is needed sometimes since I can't build on my phone
 	rsync -Pavh --checksum ./src/content/notes/personal/ vultr:~/code/exobrain/src/content/notes/personal
 
 sync_on_server: built
@@ -64,6 +92,7 @@ sync_to_server:
 	@ echo "Synced to server" | boxes
 
 # done on the server
+# since stork just seems to hang there, this just ignores that while deploying remotely
 deploy: package.json built sync_on_server
 	@ echo "Manual compile on server done"
 
