@@ -93,4 +93,6 @@ CTRL-B or <Home>	to begin of command line
 CTRL-E or <End>		to end of command line
 ```
 
+#### Editing Tables
 
+If you have a table that is separates by some white space, you can do `set virtualedit=all`. vim infers where empty slots for the table would be, word movements move you across the empty fields.
