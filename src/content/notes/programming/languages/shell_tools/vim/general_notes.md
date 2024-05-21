@@ -52,3 +52,11 @@ Other than the typical `Ctrl+O`, `Ctrl+I` to jump forward/back in your tag stack
 #### Files/Buffers
 
 You can use `:next`, `:wnext` (write + next), `:first`, `:last`, to cycle through the files that vim was started with. If you want to change those after vim has started, you can use `:args` to change the CLI args. You can even do something like `:args *.py`. However, if you just want to cycle through all files, the `[f` and `]f` mappings from [vim-unimpaired](http://github.com/tpope/vim-unimpaired) pretty nice for that.
+
+#### cmdline-ranges
+
+`:help cmdline-ranges`. [This video](https://www.youtube.com/watch?v=U9bsqulWgqc) goes over a lot of useful `:Ex` commands that are still pretty good to know, even in nvim.
+
+ The `'<,'>` that appears when running commands on visual selection is a command line range, describing two marks `'<` and `'>`. These are set when you start selecting text. See `:help `'<`
+
+You could similarly do something like `:'<,$` to select from the beginning of your selection to the end of the file. Or like `:.,.+10` to select the next 10 lines.
