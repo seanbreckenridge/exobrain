@@ -73,6 +73,13 @@ You can also run commands without replacing the current line, by entering the cm
 
 You can also just `:write` to the STDIN of a command, like `:write !wc`. This prints the output of the command using the pager, and it _does not_ write the current file.
 
+```
+:!{program}		execute {program}
+:r !{program}		execute {program} and read its output
+:w !{program}		execute {program} and send text to its input
+:[range]!{program}	filter text through {program}
+```
+
 #### Cmdline editing
 
 while entering a command you can use different keybinds to move back and forth in the command:
@@ -85,3 +92,5 @@ while entering a command you can use different keybinds to move back and forth i
 CTRL-B or <Home>	to begin of command line
 CTRL-E or <End>		to end of command line
 ```
+
+
