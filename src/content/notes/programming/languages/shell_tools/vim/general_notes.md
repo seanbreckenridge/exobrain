@@ -8,6 +8,8 @@ title: Vim Notes
 
 Once you've selected text you can `I`/`A` to insert and the beginning/end, or `c` (change) to delete the selected text, and change to insert mode. Once you're done typing, hit `Esc` to affect each line from the visual block selection.
 
+`o` swaps the corner that your modifying, so if you're currently moving down and right, and the cursor is in the bottom right, this switches it to the top left. See `:help 04.4` `/going to the other side`
+
 ### autobuf commands
 
 Examples from my vim config:
@@ -40,3 +42,13 @@ Ctrl+A and Ctrl+X increment/decrement integers, very useful for automating thing
 ### Jumping
 
 Other than the typical `Ctrl+O`, `Ctrl+I` to jump forward/back in your tag stack, can also use `*` and `#` to jump forward/backward against the word currently under the cursor, which is useful for variable names/constants
+
+#### Commands
+
+`nmap`, `vmap`, `options`, `command` lists key -> value pairs for each of these items. `:options` includes an editor, as well!
+
+`|` can be used to chain commands
+
+#### Files/Buffers
+
+You can use `:next`, `:wnext` (write + next), `:first`, `:last`, to cycle through the files that vim was started with. If you want to change those after vim has started, you can use `:args` to change the CLI args. You can even do something like `:args *.py`. However, if you just want to cycle through all files, the `[f` and `]f` mappings from [vim-unimpaired](http://github.com/tpope/vim-unimpaired) pretty nice for that.
