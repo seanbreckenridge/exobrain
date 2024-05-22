@@ -53,7 +53,7 @@ Other than the typical `Ctrl+O`, `Ctrl+I` to jump forward/back in your tag stack
 
 You can use `:next`, `:wnext` (write + next), `:first`, `:last`, to cycle through the files that vim was started with. If you want to change those after vim has started, you can use `:args` to change the CLI args. You can even do something like `:args *.py`. However, if you just want to cycle through all files, the `[f` and `]f` mappings from [vim-unimpaired](http://github.com/tpope/vim-unimpaired) pretty nice for that.
 
-this can be used along with recursive mappings to do automation pretty nicely. see `:help 40.1` `/recursive`. I tend to use nnoremap to avoid expanding the subtitution again, but if you include something like this:
+this can be used along with recursive mappings to do automation pretty nicely. see `:help 40.1` `/recursive`. I tend to use nnoremap to avoid expanding the substitution again, but if you include something like this:
 
 ```
 :map ,, :s/5.1/5.2/<CR>:wnext<CR>,,
@@ -61,7 +61,7 @@ this can be used along with recursive mappings to do automation pretty nicely. s
 
 ... the `,,` at the end triggers the mapping again.
 
-so, this replaces 5.1 with 5.2, writes the file, and then goes to the next item in `:args`, and starts the mapping again. It ends when theres an error, either when there are no more files, or it cant find a match.
+so, this replaces 5.1 with 5.2, writes the file, and then goes to the next item in `:args`, and starts the mapping again. It ends when there's an error, either when there are no more files, or it can't find a match.
 
 If you want to continue even when there are no matches, you can add `e` after the substitution: `s/5.1/5.2/e`.
 
