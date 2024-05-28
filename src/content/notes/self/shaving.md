@@ -6,7 +6,7 @@ I use a double-edged safety razor
 
 metal impact:
 
-- platinum - imrpoves durability, how many times you can use it
+- platinum - improves durability, how many times you can use it
 - tungsten - reduces corrosion, keeps sharp longer in humid environments
 - chromium - improves sharpness for closer shave
 
