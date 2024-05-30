@@ -69,7 +69,7 @@ If you want to continue even when there are no matches, you can add `e` after th
 
 `:help cmdline-ranges`. [This video](https://www.youtube.com/watch?v=U9bsqulWgqc) goes over a lot of useful `:Ex` commands that are still pretty good to know, even in nvim.
 
-The `'<,'>` that appears when running commands on visual selection is a command line range, describing two marks `'<` and `'>`. These are set when you start selecting text. See `:help `'<`
+The `'<,'>` that appears when running commands on visual selection is a command line range, describing two marks `'<` and `'>`. These are set when you start selecting text. See `:help '<`
 
 You could similarly do something like `:'<,$` to select from the beginning of your selection to the end of the file. Or like `:.,.+10` to select the next 10 lines.
 
