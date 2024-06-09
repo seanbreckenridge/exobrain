@@ -20,13 +20,13 @@ These are sets of configuration, plugins that setup functionality like 'I have t
 - [`nvim-lint`](https://github.com/mfussenegger/nvim-lint) - linting (language-specific warnings, code style)
 - [`conform`](https://github.com/stevearc/conform.nvim) - autoformatting files on save etc.
 
-nvim-lint and nvim-lspconfig use the neovim builtin `:help vim.diagnostic`, to show errors on the screen
+`nvim-lint` and `nvim-lspconfig` use the neovim builtin `:help vim.diagnostic`, to show errors on the screen
 
 _Sidenote: some LSP servers also do have a formatter built in `:help vim.lsp.buf.format`, `conform` has options to let you fallback to using the LSP formatter if you don't have a CLI tool available, but it does not require lsp to format otherwise_
 
 ## Installer
 
-- [`Mason`](https://github.com/williamboman/mason.nvim) installs linters, LSPs, formatters into a ~/.local/share/nvim/mason.
+- [`mason`](https://github.com/williamboman/mason.nvim) installs linters, LSPs, formatters into a `~/.local/share/nvim/mason`.
 
 However, `nvim-lspconfig`, `conform`, and `nvim-lint` don't know where Mason install things.
 
