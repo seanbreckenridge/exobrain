@@ -2,6 +2,8 @@
 title: LSPs, Linters, Formatters...
 ---
 
+If you dont want to deal with any of this yourself, you can use a pre-configured experience, like [lazyvim](https://github.com/LazyVim/LazyVim)
+
 An explanation of how the current 'automatic installation' plugin ecosystem for neovim is laid out.
 
 If you don't know what LSP is, [heres a video](https://www.youtube.com/watch?v=LaS32vctfOY)
