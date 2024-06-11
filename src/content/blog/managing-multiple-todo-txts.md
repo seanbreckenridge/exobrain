@@ -7,7 +7,7 @@ updatedDate: 2024/03/11
 
 This is relating to using [`todo.txt`](https://github.com/todotxt/todo.txt) format to manage todos, which I've been using for a few years now.
 
-For the unitiated, `todo.txt` is a simple format for managing todos. Its just a textfile, and each line is a task.
+For the uninitiated, `todo.txt` is a simple format for managing todos. Its just a textfile, and each line is a task.
 
 There are lots of more tags/contexts/priorities you can add, but I tend to only use priority and about half of the time add one project tag.
 
