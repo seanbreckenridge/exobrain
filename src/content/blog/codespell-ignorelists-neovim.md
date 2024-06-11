@@ -75,7 +75,7 @@ Create a wrapper script, `codespell-conf`, that uses that as an ignorelist, pass
 exec codespell --ignore-words="$NVIM_SPELLFILE" "$@"
 ```
 
-Update my `init.lua` to use the environment variable `NVIM_SPELLFILE` as the location for its `spellfile`, as well add a custom command so I can quickly edit it if I want:
+Update my `init.lua` to use the environment variable `NVIM_SPELLFILE` as the location for its `spellfile`, and add a custom command so I can quickly edit it if I want:
 
 ```lua
 -- save spellfile to my Documents
@@ -83,6 +83,7 @@ local os = require("os")
 local spellfile = os.getenv("NVIM_SPELLFILE")
 if spellfile then
     vim.opt.spellfile = spellfile
+    -- running :Spellfile edits the file in nvim
     vim.api.nvim_create_user_command("Spellfile", function()
         vim.cmd.edit(spellfile)
     end, {
