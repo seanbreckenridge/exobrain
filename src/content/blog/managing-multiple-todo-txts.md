@@ -21,7 +21,7 @@ My main `todo.txt` are only things that if I have free time, I can do immediatel
 
 In the past, I've created [entirely new config files and a big script](https://github.com/seanbreckenridge/bookmark.txt) to help manage this complexity, but as I've added todo-actions (third party commands like [`@proycon`s scripts](https://git.sr.ht/~proycon/todotxt-more)), it gets more annoying to sync configuration changes between multiple files.
 
-To solve this, I create a wrapper `todo.txt` script which maintains a separate data directory entirely. For more long-term goals/ideas, I create a script called `eventually`, and set the location to `todo.txt` list, I have a tiny script:
+To solve this, I create a wrapper `todo.txt` script which maintains a separate data directory entirely. For more long-term goals/ideas, I create a script called `eventually`:
 
 ```bash
 #!/bin/sh
