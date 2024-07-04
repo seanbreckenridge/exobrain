@@ -66,7 +66,7 @@ For other stuff I might be using, see [my github stars](https://github.com/seanb
   - For basic image cropping, I use [`pinta`](https://www.pinta-project.com/) (should probably learn gimp but Ive never had the need).
   - For general image manipulation tasks I create lots of small [`imagemagick`](https://imagemagick.org/index.php) scripts to do random resizes/converts. I have a larger script to [convert videos to gifs](https://github.com/seanbreckenridge/seanb-utils/blob/main/shellscripts/gifme), and use [`gifsicle`](https://github.com/kohler/gifsicle) for manipulating gifs
   - Lots of small [`ffmpeg`](https://ffmpeg.org/) scripts to convert between video formats.
-  - For trimming video, I use an [encode_webm](https://github.com/occivink/mpv-scripts/blob/master/script-opts/encode_webm.conf)
+  - For trimming video, I use an [encode_webm](https://github.com/occivink/mpv-scripts/blob/master/script-opts/encode_webm.conf) keybinding in mpv
 
 ### Android Apps
 
