@@ -2,13 +2,13 @@
 title: Tools, or how I do everything
 ---
 
-This is an extension of my [`dotfiles`](https://github.com/seanbreckenridge/dotfiles)
+This describes a lot of the tools I use in my [`dotfiles`](https://github.com/seanbreckenridge/dotfiles)
 
 This is an ever evolving list of tools and scripts I use and recommend, or combinations of tools I use to optimize my workflow.
 
 Most of these are command line based, I wrap a lot of them in scripts [here](https://github.com/seanbreckenridge/dotfiles/tree/master/.local/scripts) and in my [`seanb-utils`](https://github.com/seanbreckenridge/seanb-utils) scripts repo
 
-For more, see [my github stars](https://github.com/seanbreckenridge?direction=desc&sort=stars&tab=stars)
+For other stuff I might be using, see [my github stars](https://github.com/seanbreckenridge?direction=desc&sort=stars&tab=stars)
 
 - Shells
   - [`zsh`](http://zsh.sourceforge.net/) - for the [`fish`](https://fishshell.com/)-like [highlighting and auto completion](https://github.com/marlonrichert/zsh-autocomplete). Manually configuring everything makes this much faster than the monstrous `oh-my-zsh`
@@ -110,7 +110,7 @@ Others:
 ### Other CLI Tools I use less often
 
 - [`boxes`](https://boxes.thomasjensen.com/) to print fancy boxes in the terminal
-- [`codepsell`](https://github.com/codespell-project/codespell) to correct common misspellings in code
+- [`codepsell`](https://github.com/codespell-project/codespell) to correct common misspellings in code files
 - [`chafa`](https://github.com/hpjansson/chafa/) to print gifs in terminal
 - [`dex`](https://github.com/jceb/dex) to open `.desktop` files
 - [`dunk`](https://github.com/darrenburns/dunk), for nicer git diffs in the terminal
