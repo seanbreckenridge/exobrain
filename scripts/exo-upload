@@ -1,0 +1,254 @@
+#!/usr/bin/env python3
+
+import sys
+import json
+import subprocess
+import shutil
+import tempfile
+
+from pathlib import Path
+from typing import NamedTuple, Literal, get_args, Generator, Optional, List
+from datetime import datetime
+from dataclasses import dataclass
+from contextlib import contextmanager
+
+import click
+import exifread
+import autotui.namedtuple_prompt
+from PIL import Image, ImageFile
+
+base_dir = Path(__file__).resolve().parent.parent
+content_dir = base_dir / "src" / "content"
+public_dir = base_dir / "public"
+
+
+@click.group()
+def main() -> None:
+    pass
+
+
+class PublicInfo(NamedTuple):
+    full: Path
+    thumbs: Path
+
+
+@dataclass
+class BaseImageMixin:
+    source: Path
+    _tempfile: Path | None = None
+
+    THUMB_SIZE = 480
+
+    @classmethod
+    def content_metadata_dir(cls) -> Path:
+        ct = content_dir / cls.__name__.casefold()
+        ct.mkdir(exist_ok=True, parents=True)
+        return ct
+
+    @classmethod
+    def public_dir(cls) -> PublicInfo:
+        pb = PublicInfo(
+            full=public_dir / cls.__name__.casefold() / "full",
+            thumbs=public_dir / cls.__name__.casefold() / "thumbs",
+        )
+        pb.full.mkdir(exist_ok=True, parents=True)
+        pb.thumbs.mkdir(exist_ok=True, parents=True)
+        return pb
+
+    def taken_at(self) -> datetime:
+        # use EXIF tag
+        with open(self.source, "rb") as fp:
+            tags = exifread.process_file(fp)
+            if "EXIF DateTimeOriginal" in tags:
+                data = tags["EXIF DateTimeOriginal"].values
+                date_obj = datetime.strptime(data, "%Y:%m:%d %H:%M:%S")
+                return date_obj.astimezone()
+
+        # use creation time
+        return datetime.fromtimestamp(self.source.stat().st_ctime)
+
+    @contextmanager
+    def img(self) -> Generator[ImageFile.ImageFile, None, None]:
+        with Image.open(self.source) as im:
+            yield im
+
+    @property
+    def tempfile(self) -> Path:
+        if self._tempfile is not None:
+            return self._tempfile
+        td = Path(tempfile.gettempdir())
+
+        # create application directory
+        td_app = td / "exobrain_uploader"
+        td_app.mkdir(exist_ok=True, parents=True)
+        self._tempfile = td_app / self.source.name
+        if self._tempfile.exists():
+            click.echo(f"Removing existing temporary file: {self._tempfile}")
+            self._tempfile.unlink()
+        # copy file
+        shutil.copy(self.source, self._tempfile)
+        return self._tempfile
+
+    def strip_tempfile_metadata(self) -> None:
+        tf = self.tempfile
+        # auto-orient in-case, to bake-in
+        subprocess.run(["mogrify", "-auto-orient", str(tf)])
+        # remove all EXIF data
+        subprocess.run(["exiftool", "-all=", str(tf)])
+
+    def create_thumb(self) -> Path:
+        # figure out which orientation to use as the limiting factor
+        # resize so that the largest dimension is 320px, unless
+        # its already smaller than that
+        with Image.open(self.tempfile) as im:
+            width, height = im.size
+
+            thumb_target_dir = self.public_dir().thumbs
+            thumb_target = thumb_target_dir / self.source.name
+            if thumb_target.exists():
+                click.secho(f"Thumb already exists {thumb_target}, aborting", fg="red")
+                sys.exit(1)
+
+            if width < self.THUMB_SIZE and height < self.THUMB_SIZE:
+                shutil.copy(self.tempfile, thumb_target)
+                return thumb_target
+
+            if width < height:
+                # height is larger, so we make that be THUMB_SIZE
+                target_size = (int(width * self.THUMB_SIZE / height), self.THUMB_SIZE)
+            else:
+                target_size = (self.THUMB_SIZE, int(height * self.THUMB_SIZE / width))
+
+            im.thumbnail(target_size)
+            im.save(thumb_target)
+            return thumb_target
+
+    def create_full(self) -> Path:
+        target = self.public_dir().full / self.source.name
+        if target.exists():
+            click.secho(f"Full already exists {target}, aborting", fg="red")
+            sys.exit(1)
+        shutil.copy(self.tempfile, target)
+        return target
+
+    def create_metadata(
+        self,
+        *,
+        title: Optional[str],
+        img_path: str,
+        date: datetime,
+        tags: List[str],
+        caption: Optional[str],
+    ) -> Path:
+        # get thumbnail height/width
+        tf = self.public_dir().thumbs / self.source.name
+        with Image.open(tf) as im:
+            thumb_w, thumb_h = im.size
+
+        # get full height/width
+        with self.img() as im:
+            full_w, full_h = im.size
+
+        # create a markdown file with the name of the image as part of the metadata
+        content = f"""---
+title: {'null' if not title else f'{json.dumps(title)}'}
+date: {int(date.timestamp())}
+image: {img_path}
+tags: {json.dumps(tags or [])}
+caption: {'null' if not caption else f'{json.dumps(caption)}'}
+thumbnail_width: {thumb_w}
+thumbnail_height: {thumb_h}
+full_width: {full_w}
+full_height: {full_h}
+---"""
+        metadata_file = self.content_metadata_dir() / str(
+            int(datetime.now().timestamp())
+        )
+        if metadata_file.exists():
+            click.secho(f"Metadata already exists {metadata_file}, aborting", fg="red")
+            sys.exit(1)
+
+        metadata_file.write_text(content)
+        return metadata_file
+
+
+@dataclass
+class Photography(BaseImageMixin):
+    pass
+
+
+@dataclass
+class Art(BaseImageMixin):
+    pass
+
+
+IMAGE_TYPES = {
+    "photography": Photography,
+    "art": Art,
+}
+
+ImageType = Literal[tuple(IMAGE_TYPES.keys())]
+
+
+class Metadata(NamedTuple):
+    title: Optional[str]
+    tags: Optional[List[str]]
+    caption: Optional[str]
+
+
+@main.command()
+@click.option(
+    "-t", "--type", "image_type", type=click.Choice(get_args(ImageType)), required=True
+)
+@click.argument("PATH", type=click.Path(exists=True, path_type=Path))
+def upload(path: Path, image_type: ImageType) -> None:  # type: ignore
+    assert image_type in IMAGE_TYPES, f"Unknown image type: {image_type}"
+    img_cls = IMAGE_TYPES[image_type]
+    file = img_cls(path)
+
+    assert '"' not in file.source.name, f"File name contains quotes: {file.source.name}"
+    assert " " not in file.source.name, f"File name contains spaces: {file.source.name}"
+
+    # exiftool source file
+    subprocess.run(["exiftool", str(file.source)])
+
+    # use rifle to open file
+    if click.confirm("Open image?", default=True):
+        subprocess.run(["rifle", file.source])
+
+    # prompt to confirm date
+    # remove all private metadata
+    # optional tags (TODO: parse other known tags as options?)
+    # create thumbnail
+    # copy full image
+    # create markdown file with metadata which astro collection parses
+
+    # parse 'Date/Time Original' EXIF attribute
+    # otherwise use 'GPS Date/Time'
+    # otherwise use 'Create Date'
+    # otherwise use modification time of file
+    creation_date: datetime = file.taken_at()
+    if not click.confirm(f"Confirm {creation_date}", default=False):
+        click.secho("Aborting...")
+        sys.exit(1)
+
+    file.strip_tempfile_metadata()
+    thumb_path = file.create_thumb()
+    subprocess.run(["exiftool", str(thumb_path)])
+    full_path = file.create_full()
+    subprocess.run(["exiftool", str(full_path)])
+
+    metadata = autotui.namedtuple_prompt.prompt_namedtuple(Metadata)
+
+    created = file.create_metadata(
+        title=metadata.title,
+        img_path=file.source.name,
+        date=creation_date,
+        tags=metadata.tags,
+        caption=metadata.caption,
+    )
+    click.echo(f"Created {created}")
+
+
+if __name__ == "__main__":
+    main(prog_name="exo-upload")

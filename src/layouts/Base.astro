@@ -1,24 +1,26 @@
 ---
-import BaseHead from './../components/BaseHead.astro';
-import Header from './../components/Header.astro';
-import Footer from './../components/Footer.astro';
+import BaseHead from "./../components/BaseHead.astro";
+import Header from "./../components/Header.astro";
+import Footer from "./../components/Footer.astro";
 
 type Props = {
 	title: string;
 	description: string;
 	disableFooter?: boolean;
+	fullWidth?: boolean;
 };
 
-const { title, description, disableFooter } = Astro.props;
+const { title, description, disableFooter, fullWidth } = Astro.props;
+const fw = fullWidth ? "100%" : "1080px";
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<BaseHead title={title} description={description} />
-		<style>
+		<style define:vars={{ fw }}>
 			main {
-				width: 1080px;
+				width: var(--fw)
 			}
 			.title {
 				margin: 0;
@@ -49,4 +51,3 @@ const { title, description, disableFooter } = Astro.props;
 		{!disableFooter && <Footer />}
 	</body>
 </html>
-
