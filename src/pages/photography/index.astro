@@ -68,7 +68,10 @@ function photoDate(date: Date) {
 				photos.map((line) => {
 					return (
 						<figure class="gallery-item">
-							<a href={url_for(`/photography/full/${line.data.image}`)}>
+							<a
+								href={url_for(`/photography/full/${line.data.image}`)}
+								target="_blank"
+							>
 								<img
 									width={line.data.thumbnail_width}
 									height={line.data.thumbnail_height}
