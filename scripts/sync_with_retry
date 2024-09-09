@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+# run 'make sync_to_server' until it succeeds,
+# trying 10 times before giving up
+# sleep 1 between tries
+
+THIS_DIR="$(realpath "$(dirname "${BASH_SOURCE[0]}")")"
+cd "${THIS_DIR}/.." || exit $?
+
+run_sync() {
+	make sync_to_server
+}
+
+rs() {
+	local count="${1:-1}"
+	if ((count > 10)); then
+		return 2
+	fi
+	if ((count > 1)); then
+		echo "Waiting..." >&2
+		sleep 1
+	fi
+	if run_sync; then
+		return 0
+	else
+		rs "$((count + 1))" || return $?
+	fi
+}
+
+rs || exit $?

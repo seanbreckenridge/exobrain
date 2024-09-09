@@ -49,7 +49,7 @@ precommit && commit && {
 		# do a manual sync from this ./dist to remote, this prevents having to build again remotely
 		make link_personal_notes
 		make built_and_stork
-		make sync_to_server
+		./scripts/sync_with_retry
 	else
 		# otherwise, if im on my phone or somewhere else, I can just push and let it build remotely
 		make sync_personal_notes_to_server
