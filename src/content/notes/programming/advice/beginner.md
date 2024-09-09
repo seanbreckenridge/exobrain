@@ -8,6 +8,10 @@ Its very easy to just get stuck in the so called 'tutorial hell' - watching codi
 
 This really depends on what you want to do. As is the case with most difficult problems, the answer is 'It depends'.
 
+---
+
+### javascript
+
 Nowadays, if you don't want to go straight to `C` or `golang` to learn the fundamentals (which is probably what I would recommend), `JavaScript` is a decent enough first language; it teaches you lots of the basics and you can apply some of it to make small websites if you want
 
 [Eloquent JavaScript](https://eloquentjavascript.net/) is free pretty good.
@@ -17,6 +21,14 @@ Otherwise, to get a general understanding of programming and problem solving in 
 For webdev, the quality may vary from project to project, but [freecodecamp](https://www.freecodecamp.org/) and [theodinproject](https://www.theodinproject.com/) are worth a mention.
 
 For giant lists of resources, check out [project-based-learning](https://github.com/tuvtran/project-based-learning) and [awesome.re](https://github.com/sindresorhus/awesome#contents).
+
+---
+
+### python
+
+If you want to do data science, AI, or just write little scripts for yourself, python has thousands of libraries that make this pretty easy. I like [automate the boring stuff](https://automatetheboringstuff.com/) as a introduction, as it actually shows you how to do things you might want to do with python.
+
+---
 
 I will stress this again. I'm listing tutorials here, but the best way to learn is application - make something. You need tutorials to get started and have some context, but your loop should be: Learn something, take notes, apply it, and perhaps to keep yourself accountable - put it out there somewhere (e.g. on [Github](https://github.com/), you can always make these private later!). Else, you risk just watching tutorials and feeling this sense of accomplishment copying code down without gaining the underlying problem solving skills.
 
