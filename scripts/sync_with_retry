@@ -6,6 +6,7 @@
 # if i dont have internet, quit
 if ! wait-for-internet -q --timeout "${WFI_TIMEOUT:-10}"; then
 	echo 'No internet!' >&2
+	exit 1
 fi
 
 THIS_DIR="$(realpath "$(dirname "${BASH_SOURCE[0]}")")"
