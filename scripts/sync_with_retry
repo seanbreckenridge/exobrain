@@ -3,6 +3,11 @@
 # trying 10 times before giving up
 # sleep 1 between tries
 
+# if i dont have internet, quit
+if ! wait-for-internet -q --timeout "${WFI_TIMEOUT:-10}"; then
+	echo 'No internet!' >&2
+fi
+
 THIS_DIR="$(realpath "$(dirname "${BASH_SOURCE[0]}")")"
 cd "${THIS_DIR}/.." || exit $?
 
