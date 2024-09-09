@@ -134,7 +134,6 @@ class BaseImageMixin:
     def create_metadata(
         self,
         *,
-        title: Optional[str],
         img_path: str,
         date: datetime,
         tags: List[str],
@@ -151,7 +150,6 @@ class BaseImageMixin:
 
         # create a markdown file with the name of the image as part of the metadata
         content = f"""---
-title: {'null' if not title else f'{json.dumps(title)}'}
 date: {int(date.timestamp())}
 image: {img_path}
 tags: {json.dumps(tags or [])}
@@ -191,7 +189,6 @@ ImageType = Literal[tuple(IMAGE_TYPES.keys())]
 
 
 class Metadata(NamedTuple):
-    title: Optional[str]
     tags: Optional[List[str]]
     caption: Optional[str]
 
@@ -241,7 +238,6 @@ def upload(path: Path, image_type: ImageType) -> None:  # type: ignore
     metadata = autotui.namedtuple_prompt.prompt_namedtuple(Metadata)
 
     created = file.create_metadata(
-        title=metadata.title,
         img_path=file.source.name,
         date=creation_date,
         tags=metadata.tags,

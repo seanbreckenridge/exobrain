@@ -31,7 +31,6 @@ const journal = defineCollection({
 const photography = defineCollection({
   type: "content",
   schema: z.object({
-    title: z.string().nullable(),
     image: z.string(),
     date: z.number().transform((val) => new Date(val * 1000)),
     tags: z.array(z.string()),
