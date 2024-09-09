@@ -92,7 +92,8 @@ function capitalize(name: string | undefined): string {
 							<figcaption>
 								<p>
 									{photoDate(line.data.date)}{" "}
-									{line.data.tags.length > 0 && `| ${line.data.tags}`}
+									{line.data.tags.length > 0 &&
+										`| ${line.data.tags.join(" | ")}`}
 								</p>
 								{line.data.caption && (
 									<p class="caption">{line.data.caption}</p>
