@@ -1,5 +1,5 @@
 ---
-title: Terminology
+title: Photography Terminology
 ---
 
 ### aperture
