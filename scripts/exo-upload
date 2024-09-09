@@ -23,6 +23,7 @@ public_dir = base_dir / "public"
 
 
 def exiftool(path: Path) -> None:
+    click.secho(f"Data for {path}", fg="blue")
     opts = [
         "--FilePermissions",
         "--EncodingProcess",
@@ -233,6 +234,7 @@ def upload(path: Path, image_type: ImageType) -> None:  # type: ignore
     # this is just so I dont shoot myself in the foot
     assert file.source.suffix.lower() in (
         ".jpg",
+        ".jpeg",
         ".png",
     ), f"File is not a jpg or png: {file.source.name}"
 
