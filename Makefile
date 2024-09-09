@@ -86,8 +86,8 @@ sync_personal_notes_to_server:
 	rsync -Pavh --checksum ./src/content/notes/personal/ vultr:~/code/exobrain/src/content/notes/personal
 
 sync_on_server: built
-	# dont delete here, since search index/personal files might be differently
-	# synced from my machine
+	# dont delete here, since search index/personal files/photography images are
+	# synced from my machine, and not stored in the git repo
 	rsync -Pahz --checksum ./dist/ ~/static_files/x
 
 # typically done on my laptop
