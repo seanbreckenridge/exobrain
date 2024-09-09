@@ -211,6 +211,14 @@ def upload(path: Path, image_type: ImageType) -> None:  # type: ignore
     assert '"' not in file.source.name, f"File name contains quotes: {file.source.name}"
     assert " " not in file.source.name, f"File name contains spaces: {file.source.name}"
 
+    # make sure this is a jpg or png
+    # I can add more filetypes, I just need to make sure they work with exiftool/PIL to create thumbnails
+    # this is just so I dont shoot myself in the foot
+    assert file.source.suffix.lower() in (
+        ".jpg",
+        ".png",
+    ), f"File is not a jpg or png: {file.source.name}"
+
     # exiftool source file
     subprocess.run(["exiftool", str(file.source)])
 
