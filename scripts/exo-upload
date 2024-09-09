@@ -7,7 +7,7 @@ import shutil
 import tempfile
 
 from pathlib import Path
-from typing import NamedTuple, Literal, get_args, Generator, Optional, List
+from typing import NamedTuple, Literal, get_args, Generator, Optional, List, Type
 from datetime import datetime
 from dataclasses import dataclass
 from contextlib import contextmanager
@@ -20,6 +20,23 @@ from PIL import Image, ImageFile
 base_dir = Path(__file__).resolve().parent.parent
 content_dir = base_dir / "src" / "content"
 public_dir = base_dir / "public"
+
+
+def exiftool(path: Path) -> None:
+    opts = [
+        "--FilePermissions",
+        "--EncodingProcess",
+        "--BitsPerSample",
+        "--YCbCr*",
+        "--Megapixels",
+        "--ImageSize",
+        "--ColorComponents",
+        "--Directory",
+        "--*Version*",
+        "--LensID",
+    ]
+    cmd = ["exiftool"] + opts + [str(path)]
+    subprocess.run(cmd)
 
 
 @click.group()
@@ -152,7 +169,7 @@ class BaseImageMixin:
         content = f"""---
 date: {int(date.timestamp())}
 image: {img_path}
-tags: {json.dumps(tags or [])}
+tags: {json.dumps(tags)}
 caption: {'null' if not caption else f'{json.dumps(caption)}'}
 thumbnail_width: {thumb_w}
 thumbnail_height: {thumb_h}
@@ -180,7 +197,7 @@ class Art(BaseImageMixin):
     pass
 
 
-IMAGE_TYPES = {
+IMAGE_TYPES: dict[str, Type[BaseImageMixin]] = {
     "photography": Photography,
     "art": Art,
 }
@@ -220,7 +237,7 @@ def upload(path: Path, image_type: ImageType) -> None:  # type: ignore
     ), f"File is not a jpg or png: {file.source.name}"
 
     # exiftool source file
-    subprocess.run(["exiftool", str(file.source)])
+    exiftool(file.source)
 
     # use rifle to open file
     if click.confirm("Open image?", default=True):
@@ -233,10 +250,6 @@ def upload(path: Path, image_type: ImageType) -> None:  # type: ignore
     # copy full image
     # create markdown file with metadata which astro collection parses
 
-    # parse 'Date/Time Original' EXIF attribute
-    # otherwise use 'GPS Date/Time'
-    # otherwise use 'Create Date'
-    # otherwise use modification time of file
     creation_date: datetime = file.taken_at()
     if not click.confirm(f"Confirm {creation_date}", default=False):
         click.secho("Aborting...")
@@ -246,17 +259,20 @@ def upload(path: Path, image_type: ImageType) -> None:  # type: ignore
 
     file.strip_tempfile_metadata()
     thumb_path = file.create_thumb()
-    subprocess.run(["exiftool", str(thumb_path)])
+    exiftool(thumb_path)
     full_path = file.create_full()
-    subprocess.run(["exiftool", str(full_path)])
+    exiftool(full_path)
 
     created = file.create_metadata(
         img_path=file.source.name,
         date=creation_date,
-        tags=metadata.tags,
+        tags=metadata.tags or [],
         caption=metadata.caption,
     )
-    click.echo(f"Created {created}")
+    click.secho("Created:", fg="green")
+    click.echo(created)
+    click.echo(thumb_path)
+    click.echo(full_path)
 
 
 if __name__ == "__main__":
