@@ -199,6 +199,11 @@ class Metadata(NamedTuple):
 )
 @click.argument("PATH", type=click.Path(exists=True, path_type=Path))
 def upload(path: Path, image_type: ImageType) -> None:  # type: ignore
+    for cmd in ["exiftool", "mogrify", "rifle"]:
+        if shutil.which(cmd) is None:
+            click.secho(f"Missing required command '{cmd}'", fg="red")
+            sys.exit(1)
+
     assert image_type in IMAGE_TYPES, f"Unknown image type: {image_type}"
     img_cls = IMAGE_TYPES[image_type]
     file = img_cls(path)
