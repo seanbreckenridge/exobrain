@@ -234,13 +234,13 @@ def upload(path: Path, image_type: ImageType) -> None:  # type: ignore
         click.secho("Aborting...")
         sys.exit(1)
 
+    metadata = autotui.namedtuple_prompt.prompt_namedtuple(Metadata)
+
     file.strip_tempfile_metadata()
     thumb_path = file.create_thumb()
     subprocess.run(["exiftool", str(thumb_path)])
     full_path = file.create_full()
     subprocess.run(["exiftool", str(full_path)])
-
-    metadata = autotui.namedtuple_prompt.prompt_namedtuple(Metadata)
 
     created = file.create_metadata(
         img_path=file.source.name,
