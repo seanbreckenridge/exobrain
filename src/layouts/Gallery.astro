@@ -1,0 +1,107 @@
+---
+import Base from "./Base.astro";
+import { getCollection, type CollectionEntry } from "astro:content";
+import url_for from "../helpers/url";
+
+type Post = CollectionEntry<"photography"> | CollectionEntry<"art">;
+
+// update here if I ever add any more galleries that match this schema
+type Props = {
+	mediaType: "photography" | "art";
+};
+
+const { mediaType } = Astro.props;
+
+const photos: Post[] = (await getCollection(mediaType)).sort((a, b) => {
+	return a.data.date > b.data.date ? -1 : 1;
+});
+
+function photoDate(date: Date) {
+	// format like YYYY/MM/DD
+	return date.toISOString().slice(0, 10);
+}
+
+function capitalize(name: string | undefined): string {
+	if (name === undefined) {
+		throw new Error("name undefined");
+	}
+	return name.slice(0, 1).toUpperCase() + name.slice(1);
+}
+---
+
+<Base
+	title={capitalize(mediaType)}
+	description="my ${mediaType}"
+	disableFooter={true}
+	fullWidth={true}
+>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		.gallery {
+			display: flex;
+			flex-flow: wrap;
+			justify-content: center;
+			align-items: center;
+		}
+		.gallery-item {
+			flex-grow: 1;
+			max-width: 480px;
+		}
+		.gallery-item:before {
+			content: "";
+			display: block;
+			padding-top: 10%;
+		}
+		figure img {
+			width: 90%;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		figcaption {
+			font-size: 0.9em;
+		}
+		figcaption .caption {
+			font-style: italic;
+		}
+		figcaption .tags {
+		}
+		.intro {
+			text-align: center;
+			margin-top: 2rem;
+		}
+	</style>
+	<section>
+		<div class="gallery">
+			{
+				photos.map((line) => {
+					return (
+						<figure class="gallery-item">
+							<a
+								href={url_for(`/${mediaType}/full/${line.data.image}`)}
+								target="_blank"
+							>
+								<img
+									width={line.data.thumbnail_width}
+									height={line.data.thumbnail_height}
+									src={url_for(`/${mediaType}/thumbs/${line.data.image}`)}
+								/>
+							</a>
+							<figcaption>
+								<p>
+									{photoDate(line.data.date)}{" "}
+									{line.data.tags.length > 0 && `| ${line.data.tags}`}
+								</p>
+								{line.data.caption && (
+									<p class="caption">{line.data.caption}</p>
+								)}
+							</figcaption>
+						</figure>
+					);
+				})
+			}
+		</div>
+	</section>
+</Base>
