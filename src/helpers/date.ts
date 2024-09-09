@@ -9,5 +9,7 @@ export function journalDate(date: Date) {
   const minutes = date.getMinutes().toString().padStart(2, "0");
   const ampm = hours >= 12 ? "pm" : "am";
 
-  return `${month}.${date.getDay()}.${year}  ${hours % 12 || 12}:${minutes} ${ampm}`;
+  return `${month}.${date.getDay()}.${year}  ${
+    hours % 12 || 12
+  }:${minutes} ${ampm}`;
 }
