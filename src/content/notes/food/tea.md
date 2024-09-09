@@ -20,7 +20,7 @@ To try:
 
 Spiced Tea Recipe
 
-Growing up in India used to drink this all the time. Sometimes will have 4-6 cups of this a day, have it all the time
+Growing up in India used to drink this all the time. This is the recipe I've landed on after years of experimenting.
 
 - 1 star anise (dried)
 - 2 green cardamom pods (prefer the actual stuff, grinded makes it taste grainy), cut open

@@ -28,4 +28,19 @@ const journal = defineCollection({
   }),
 });
 
-export const collections = { blog, notes, journal };
+const photography = defineCollection({
+  type: "content",
+  schema: z.object({
+    title: z.string().nullable(),
+    image: z.string(),
+    date: z.number().transform((val) => new Date(val * 1000)),
+    tags: z.array(z.string()),
+    caption: z.string().nullable(),
+    thumbnail_width: z.number(),
+    thumbnail_height: z.number(),
+    full_width: z.number(),
+    full_height: z.number(),
+  }),
+});
+
+export const collections = { blog, notes, journal, photography };

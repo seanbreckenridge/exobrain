@@ -35,13 +35,17 @@ spell:
 check:
 	python3 ./scripts/check_conflicting_dirs.py ./src/content
 
-lint: check spell
+images:
+	python3 ./scripts/check_photos_exist.py
+
+lint: check spell images
 
 dev: stork
 	cp ./dist/index.st ./public/index.st
 	# wait 2 seconds, then open in browser
 	setsid -f sh -c 'sleep 2 && xdg-open http://localhost:4321/x/'
 	npm run dev
+
 
 ##################
 #                #
