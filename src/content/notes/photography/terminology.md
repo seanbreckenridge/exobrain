@@ -70,3 +70,7 @@ strategy:
 ---
 
 - ambient light - how bright the outside world is
+
+---
+
+<https://www.youtube.com/@theartofphotography>

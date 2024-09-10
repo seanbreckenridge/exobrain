@@ -7,9 +7,6 @@ import click
 base_dir = Path(__file__).resolve().parent.parent
 content_dir = base_dir / "src" / "content"
 public_dir = base_dir / "public"
-public_photography_dir = public_dir / "photography"
-
-photo_md_dir = content_dir / "photography"
 
 
 def get_img_from_markdown_file(file: Path) -> str:
@@ -24,13 +21,19 @@ def get_img_from_markdown_file(file: Path) -> str:
 
 
 @click.command()
-def main() -> None:
-    for p in photo_md_dir.glob("*.md"):
-        img = get_img_from_markdown_file(p)
-        for subdir in ["full", "thumbs"]:
-            f = public_photography_dir / subdir / img
-            if not f.exists():
-                raise RuntimeError(f"Missing {f}")
+@click.option("-v", "--verbose", is_flag=True, default=False)
+def main(verbose: bool) -> None:
+    for mtype in ("photography", "art"):
+        for p in (content_dir / mtype).glob("*.md"):
+            img = get_img_from_markdown_file(p)
+            click.echo(f"Checking content: {p}", err=True)
+            click.echo(f"Extracted image: {img}", err=True)
+            for subdir in ["full", "thumbs"]:
+                f = public_dir / mtype / subdir / img
+                if verbose:
+                    click.echo(f"Checking file: {f}", err=True)
+                if not f.exists():
+                    raise RuntimeError(f"Missing {f}")
 
 
 if __name__ == "__main__":
