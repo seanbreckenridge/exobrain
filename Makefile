@@ -38,7 +38,7 @@ check:
 images:
 	python3 ./scripts/check_photos_exist.py
 
-lint: check spell images
+lint: check images spell
 
 dev: stork
 	cp ./dist/index.st ./public/index.st
