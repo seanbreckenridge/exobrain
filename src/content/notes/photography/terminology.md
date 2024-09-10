@@ -2,7 +2,7 @@
 title: Photography Terminology
 ---
 
-### aperture
+### Aperture
 
 <https://www.youtube.com/watch?v=Npmt7_mlEeg>
 
