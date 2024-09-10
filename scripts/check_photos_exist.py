@@ -25,9 +25,11 @@ def get_img_from_markdown_file(file: Path) -> str:
 def main(verbose: bool) -> None:
     for mtype in ("photography", "art"):
         for p in (content_dir / mtype).glob("*.md"):
+            if verbose:
+                click.echo(f"Checking content: {p}", err=True)
             img = get_img_from_markdown_file(p)
-            click.echo(f"Checking content: {p}", err=True)
-            click.echo(f"Extracted image: {img}", err=True)
+            if verbose:
+                click.echo(f"Extracted image: {img}", err=True)
             for subdir in ["full", "thumbs"]:
                 f = public_dir / mtype / subdir / img
                 if verbose:
