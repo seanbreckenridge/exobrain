@@ -30,7 +30,7 @@ def main(verbose: bool) -> None:
             img = get_img_from_markdown_file(p)
             if verbose:
                 click.echo(f"Extracted image: {img}", err=True)
-            for subdir in ["full", "thumbs"]:
+            for subdir in ("full", "thumbs"):
                 f = public_dir / mtype / subdir / img
                 if verbose:
                     click.echo(f"Checking file: {f}", err=True)

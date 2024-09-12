@@ -6,8 +6,9 @@ SOURCE_FILES := $(shell find ./src ./public -type f)
 #            #
 ##############
 
-./dist/sitemap-0.xml: .env package.json package-lock.json astro.config.mjs ./tsconfig.json $(SOURCE_FILES)
+./dist/sitemap-0.xml: .env package.json package-lock.json astro.config.mjs tsconfig.json $(SOURCE_FILES)
 	npm run build || (npm install && npm run build)
+	uglifycss ./dist/global.css --output ./dist/global.css
 
 # if the sitemap is newer than all the source files, site is considered 'built'
 built: ./dist/sitemap-0.xml
