@@ -142,10 +142,10 @@ class BaseImageMixin:
             im.thumbnail(target_size)
             im.save(thumb_target)
 
-            if shutil.which("rifleman") is not None:
-                subprocess.run(["rifleman", "-a", "image", str(thumb_target)])
+        if shutil.which("rifleman") is not None:
+            subprocess.run(["rifleman", "-a", "image", str(thumb_target)])
 
-            return thumb_target
+        return thumb_target
 
     def create_full(self) -> Path:
         target = self.public_dir().full / self.source.name
