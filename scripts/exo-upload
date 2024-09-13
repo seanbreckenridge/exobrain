@@ -15,7 +15,7 @@ from contextlib import contextmanager
 import click
 import exifread
 import autotui.namedtuple_prompt
-from PIL import Image, ImageFile
+from PIL import Image
 
 base_dir = Path(__file__).resolve().parent.parent
 content_dir = base_dir / "src" / "content"
@@ -55,7 +55,7 @@ class BaseImageMixin:
     source: Path
     _tempfile: Path | None = None
 
-    THUMB_SIZE = 480
+    THUMB_SIZE = 720
 
     @classmethod
     def content_metadata_dir(cls) -> Path:
@@ -86,7 +86,7 @@ class BaseImageMixin:
         return datetime.fromtimestamp(self.source.stat().st_ctime)
 
     @contextmanager
-    def img(self) -> Generator[ImageFile.ImageFile, None, None]:
+    def img(self) -> Generator[Image.Image, None, None]:
         with Image.open(self.source) as im:
             yield im
 
@@ -114,11 +114,13 @@ class BaseImageMixin:
         # remove all EXIF data
         subprocess.run(["exiftool", "-all=", str(tf)])
 
-    def create_thumb(self) -> Path:
+    def create_thumb(self, from_file: Path | None = None) -> Path:
+        if from_file is None:
+            from_file = self.tempfile
         # figure out which orientation to use as the limiting factor
         # resize so that the largest dimension is 320px, unless
         # its already smaller than that
-        with Image.open(self.tempfile) as im:
+        with Image.open(from_file) as im:
             width, height = im.size
 
             thumb_target_dir = self.public_dir().thumbs
@@ -128,7 +130,7 @@ class BaseImageMixin:
                 sys.exit(1)
 
             if width < self.THUMB_SIZE and height < self.THUMB_SIZE:
-                shutil.copy(self.tempfile, thumb_target)
+                shutil.copy(from_file, thumb_target)
                 return thumb_target
 
             if width < height:
@@ -139,6 +141,10 @@ class BaseImageMixin:
 
             im.thumbnail(target_size)
             im.save(thumb_target)
+
+            if shutil.which("rifleman") is not None:
+                subprocess.run(["rifleman", "-a", "image", str(thumb_target)])
+
             return thumb_target
 
     def create_full(self) -> Path:
@@ -275,6 +281,26 @@ def upload(path: Path, image_type: ImageType) -> None:  # type: ignore
     click.echo(created)
     click.echo(thumb_path)
     click.echo(full_path)
+
+
+@main.command()
+def update_thumbnails() -> None:
+    """
+    If the /full path exists but a /thumbs doesn't, then
+    create the thumbnail from the /full image
+
+    I probably updated some configuration for how the
+    thumbnails should be generated, and wanted to re-run this
+    """
+    for mtype in IMAGE_TYPES.values():
+        dirs = mtype.public_dir()
+        for file in dirs.full.iterdir():
+            name = file.name
+            thumb_target = dirs.thumbs / name
+            if not thumb_target.exists():
+                click.secho(f"Creating thumbnail for {name}", err=True, fg="green")
+                src = mtype(file)
+                mtype.create_thumb(src, from_file=file)
 
 
 if __name__ == "__main__":
