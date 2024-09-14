@@ -10,7 +10,7 @@ Use `python3 -m a.main` when invoking scripts as it handles `PYTHONPATH` better
 
 <https://www.youtube.com/watch?v=ABJvdsIANds>
 
-Dont use `urlparse`, use `urlsplit` as it is doesn't use the archaic params field (so it has a splight perf cost)
+Dont use `urlparse`, use `urlsplit` as it is doesn't use the archaic params field (so it has a slight perf cost)
 
 <https://www.youtube.com/watch?v=jH39c5-y6kg>
 
