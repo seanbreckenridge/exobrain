@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
 
+"""
+This script takes an image, and creates thumbnails and metadata
+"""
+
 import sys
 import json
 import subprocess
@@ -40,7 +44,7 @@ def exiftool(path: Path) -> None:
     subprocess.run(cmd)
 
 
-@click.group()
+@click.group(help=__doc__)
 def main() -> None:
     pass
 
@@ -217,12 +221,17 @@ class Metadata(NamedTuple):
     caption: Optional[str]
 
 
-@main.command()
+@main.command(short_help="upload an image")
 @click.option(
     "-t", "--type", "image_type", type=click.Choice(get_args(ImageType)), required=True
 )
 @click.argument("PATH", type=click.Path(exists=True, path_type=Path))
 def upload(path: Path, image_type: ImageType) -> None:  # type: ignore
+    """
+    Upload an image to the public directory
+
+    Removes metadata, generates a thumbnail and prompts for metadata
+    """
     for cmd in ["exiftool", "mogrify", "rifle"]:
         if shutil.which(cmd) is None:
             click.secho(f"Missing required command '{cmd}'", fg="red")
@@ -283,7 +292,7 @@ def upload(path: Path, image_type: ImageType) -> None:  # type: ignore
     click.echo(full_path)
 
 
-@main.command()
+@main.command(short_help="re-generate missing thumbnails")
 def update_thumbnails() -> None:
     """
     If the /full path exists but a /thumbs doesn't, then
