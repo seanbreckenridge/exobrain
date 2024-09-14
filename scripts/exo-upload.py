@@ -15,6 +15,7 @@ from pathlib import Path
 from typing import (
     NamedTuple,
     Literal,
+    assert_never,
     get_args,
     Generator,
     Optional,
@@ -28,7 +29,7 @@ from dataclasses import dataclass
 from contextlib import contextmanager
 
 import click
-import exifread
+import exifread  # type: ignore[import]
 import autotui.namedtuple_prompt
 from PIL import Image
 
@@ -224,7 +225,7 @@ IMAGE_TYPES: dict[str, Type[BaseImageMixin]] = {
     "art": Art,
 }
 
-ImageType = Literal[tuple(IMAGE_TYPES.keys())]
+ImageType = Literal[tuple(IMAGE_TYPES.keys())]  # type: ignore[valid-type]
 
 
 class Metadata(NamedTuple):
@@ -333,7 +334,7 @@ class ImageInfo(NamedTuple):
 
 
 def iter_image_infos() -> Iterator[ImageInfo]:
-    from check_photos_exist import get_img_from_markdown_file
+    from common import get_img_from_markdown_file
 
     for mname, mtype in IMAGE_TYPES.items():
         mname_content_dir = content_dir / mname
@@ -364,7 +365,7 @@ ImageInfoOutput = Literal["json", "text"]
     default=get_args(ImageInfoOutput)[0],
     help="output format",
 )
-def image_info(exists: bool, output: str) -> None:
+def image_info(exists: bool, output: ImageInfoOutput) -> None:
     """
     Output image info
     """
@@ -380,10 +381,13 @@ def image_info(exists: bool, output: str) -> None:
                     f"{info.thumb_path} does not exist, referred from {info.md_path}"
                 )
         items.append(info)
-    if output == "json":
-        click.echo(json.dumps(items, indent=4))
-    else:
-        click.echo("\n".join([item.pretty_print() for item in items]))
+    match output:
+        case "json":
+            click.echo(json.dumps(items, indent=4))
+        case "text":
+            click.echo("\n".join([item.pretty_print() for item in items]))
+        case _:
+            assert_never(output)
 
 
 if __name__ == "__main__":

@@ -1,4 +1,5 @@
 SOURCE_FILES := $(shell find ./src ./public -type f)
+PYTHON_FILES := scripts/exo-upload.py scripts/check_conflicting_dirs.py scripts/check_photos_exist.py scripts/journal-public
 
 ##############
 #            #
@@ -39,7 +40,10 @@ check:
 images:
 	python3 ./scripts/check_photos_exist.py
 
-lint: check images spell
+mypy:
+	find $(PYTHON_FILES) -exec mypy --install-types {} \;
+
+lint: check images spell mypy
 
 dev: stork
 	cp ./dist/index.st ./public/index.st

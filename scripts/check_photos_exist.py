@@ -4,20 +4,11 @@ from pathlib import Path
 
 import click
 
+from common import get_img_from_markdown_file
+
 base_dir = Path(__file__).resolve().parent.parent
 content_dir = base_dir / "src" / "content"
 public_dir = base_dir / "public"
-
-
-def get_img_from_markdown_file(file: Path) -> str:
-    for line in file.open("r"):
-        if line.startswith("image"):
-            part = line.split()[1].strip()
-            if part.startswith('"') and part.endswith('"'):
-                return part[1:-1]
-            return part
-    else:
-        raise RuntimeError(f"No image in {file}")
 
 
 @click.command()

@@ -6,7 +6,7 @@ from pathlib import Path
 import click
 
 
-def check_conflicting_dirs(base_path: str):
+def check_conflicting_dirs(base_path: str) -> None:
     """
     under some base path, recursively check for directories with conflicting names
 
@@ -40,7 +40,7 @@ def check_conflicting_dirs(base_path: str):
 
 @click.command()
 @click.argument("BASE_PATH")
-def main(base_path: str):
+def main(base_path: str) -> None:
     check_conflicting_dirs(base_path)
 
 
