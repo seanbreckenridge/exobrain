@@ -4,6 +4,7 @@
 This script takes an image, and creates thumbnails and metadata
 """
 
+import os
 import sys
 import json
 import subprocess
@@ -11,7 +12,17 @@ import shutil
 import tempfile
 
 from pathlib import Path
-from typing import NamedTuple, Literal, get_args, Generator, Optional, List, Type
+from typing import (
+    NamedTuple,
+    Literal,
+    get_args,
+    Generator,
+    Optional,
+    List,
+    Type,
+    Iterator,
+    Self,
+)
 from datetime import datetime
 from dataclasses import dataclass
 from contextlib import contextmanager
@@ -310,6 +321,69 @@ def update_thumbnails() -> None:
                 click.secho(f"Creating thumbnail for {name}", err=True, fg="green")
                 src = mtype(file)
                 mtype.create_thumb(src, from_file=file)
+
+
+class ImageInfo(NamedTuple):
+    md_path: str
+    thumb_path: str
+    full_path: str
+
+    def pretty_print(self: Self) -> str:
+        return f"{click.style(self.md_path, fg='green')} {self.thumb_path} {self.full_path}"
+
+
+def iter_image_infos() -> Iterator[ImageInfo]:
+    from check_photos_exist import get_img_from_markdown_file
+
+    for mname, mtype in IMAGE_TYPES.items():
+        mname_content_dir = content_dir / mname
+        # assert mname_content_dir.exists(), f"Missing {mname} content directory"
+        p_info = mtype.public_dir()
+        for file in mname_content_dir.iterdir():
+            if file.name.startswith("_"):
+                continue
+            img = get_img_from_markdown_file(file)
+            yield ImageInfo(
+                md_path=str(file.absolute()),
+                thumb_path=str(p_info.thumbs / img),
+                full_path=str(p_info.full / img),
+            )
+
+
+ImageInfoOutput = Literal["json", "text"]
+
+
+@main.command()
+@click.option(
+    "-e", "--exists", is_flag=True, default=False, help="Check if each file exists"
+)
+@click.option(
+    "-o",
+    "--output",
+    type=click.Choice(get_args(ImageInfoOutput)),
+    default=get_args(ImageInfoOutput)[0],
+    help="output format",
+)
+def image_info(exists: bool, output: str) -> None:
+    """
+    Output image info
+    """
+    items: List[ImageInfo] = []
+    for info in iter_image_infos():
+        if exists:
+            if not os.path.exists(info.full_path):
+                raise FileNotFoundError(
+                    f"{info.full_path} does not exist, referred from {info.md_path}"
+                )
+            if not os.path.exists(info.thumb_path):
+                raise FileNotFoundError(
+                    f"{info.thumb_path} does not exist, referred from {info.md_path}"
+                )
+        items.append(info)
+    if output == "json":
+        click.echo(json.dumps(items, indent=4))
+    else:
+        click.echo("\n".join([item.pretty_print() for item in items]))
 
 
 if __name__ == "__main__":
