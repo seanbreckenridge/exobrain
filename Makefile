@@ -43,7 +43,10 @@ images:
 mypy:
 	find $(PYTHON_FILES) -exec mypy --install-types {} \;
 
-lint: check images spell mypy
+flake8:
+	find $(PYTHON_FILES) -exec flake8 {} \;
+
+lint: check images spell mypy flake8
 
 dev: stork
 	cp ./dist/index.st ./public/index.st
