@@ -44,7 +44,7 @@ mypy:
 	find $(PYTHON_FILES) -exec mypy --install-types {} \;
 
 flake8:
-	find $(PYTHON_FILES) -exec flake8 {} \;
+	find $(PYTHON_FILES) -exec flake8 {} +;
 
 lint: check images spell mypy flake8
 
