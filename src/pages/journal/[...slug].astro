@@ -1,15 +1,16 @@
 ---
-import { type CollectionEntry, getCollection } from 'astro:content';
-import Journal from '../../layouts/Journal.astro';
+import { type CollectionEntry, getCollection } from "astro:content";
+import Journal from "../../layouts/Journal.astro";
+import url_for from "../../helpers/url";
 
 export async function getStaticPaths() {
-	const posts = await getCollection('journal');
+	const posts = await getCollection("journal");
 	return posts.map((post) => ({
 		params: { slug: post.slug },
 		props: post,
 	}));
 }
-type Props = CollectionEntry<'journal'>;
+type Props = CollectionEntry<"journal">;
 
 const post = Astro.props;
 const { Content } = await post.render();
@@ -17,5 +18,11 @@ const { Content } = await post.render();
 
 <Journal {...post.data} editor_slug={post.slug}>
 	<Content />
+	{
+		post.data.audio && (
+			<audio controls src={url_for(post.data.audio)}>
+				<p>Your browser does not support the audio element.</p>
+			</audio>
+		)
+	}
 </Journal>
-

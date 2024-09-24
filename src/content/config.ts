@@ -25,6 +25,7 @@ const journal = defineCollection({
   type: "content",
   schema: z.object({
     date: z.number().transform((val) => new Date(val * 1000)),
+    audio: z.string().nullish(),
   }),
 });
 
