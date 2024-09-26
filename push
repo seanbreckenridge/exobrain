@@ -30,7 +30,10 @@ on_laptop() {
 
 precommit() {
 	if on_laptop; then
+		make link_personal_notes
 		make lint && make || return $?
+	else
+		make sync_personal_notes_to_server
 	fi
 	true
 }
@@ -47,12 +50,10 @@ commit() {
 precommit && commit && {
 	if on_laptop; then
 		# do a manual sync from this ./dist to remote, this prevents having to build again remotely
-		make link_personal_notes
 		make built_and_stork
 		./scripts/sync_with_retry
 	else
 		# otherwise, if im on my phone or somewhere else, I can just push and let it build remotely
-		make sync_personal_notes_to_server
 		deploy exobrain
 	fi
 }
