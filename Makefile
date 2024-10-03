@@ -16,6 +16,7 @@ built: ./dist/sitemap-0.xml
 
 build:
 	npm run build
+	uglifycss ./dist/global.css -o ./dist/global.css
 
 # helper script
 # just generate types for the one library javascript file I have
