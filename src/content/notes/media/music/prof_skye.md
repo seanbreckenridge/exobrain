@@ -2,6 +2,8 @@
 title: Professor Skye Record Reviews
 ---
 
+Notes from Professor Skye Record Reviews
+
 ### [mr morale - kendrick lamar](https://www.youtube.com/watch?v=mX4BRbsXmHA)
 
 christ of paternity - [pere goriot](https://en.wikipedia.org/wiki/P%C3%A8re_Goriot) - prof. talks about this as an analogy to the album, parents have an almost religious calling to self sacrifice for their children, which is what kendrick is doing - choosing himself/his family over being a saviour for the culture
